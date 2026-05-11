@@ -1,0 +1,2370 @@
+{
+  "generated_at": "2026-05-11T08:46:40+00:00",
+  "source_policy": "safe_evaluation_questions_only",
+  "problem_solution_maps": [
+    {
+      "question_id": "cpa1-eval-accounting-001",
+      "exam": "CPA_1",
+      "subject": "accounting",
+      "unit": "financial_assets",
+      "tutorial_id": "tutorial_cpa1_accounting",
+      "rights_status": "synthetic_seed",
+      "review_status": "expert_reviewed",
+      "applicable_year": 2026,
+      "stem": "20X1년 1월 1일 ㈜CF는 액면금액 1,000,000원, 만기 3년, 액면이자율 연 8%, 이자는 매년 말 후급 조건의 사채를 950,260원에 취득하여 상각후원가 측정 금융자산으로 분류하였다. 취득 당시 유효이자율은 연 10%였다. 20X1년 12월 31일 인식할 이자수익은 얼마인가? (원 단위 미만 절사)",
+      "stem_hash": "ba4bda0345f78bdf5e95c661ec9a93fa5c7f4e252d67107fece336baead85f76",
+      "choices": [
+        "80,000원",
+        "95,026원",
+        "100,000원",
+        "104,974원"
+      ],
+      "correct_choice": 1,
+      "correct_answer": "95,026원",
+      "concept_tags": [
+        "재무회계: 금융자산",
+        "amortized_cost",
+        "effective_interest_rate",
+        "interest_revenue"
+      ],
+      "explanation": "상각후원가 측정 금융자산의 이자수익은 유효이자율법으로 계산한다. 이자수익 = 기초 장부금액 × 유효이자율 = 950,260 × 10% = 95,026원. 액면이자 80,000원은 현금수취액이며 이자수익이 아니다.",
+      "solution_paths": [
+        {
+          "path_id": "cpa1-eval-accounting-001:direct",
+          "path_type": "direct",
+          "label": "정석식",
+          "why_this_path": "상각후원가 금융자산의 유효이자율법가 문제 본문에 직접 드러나므로 정의와 공식으로 바로 푼다.",
+          "trigger_signals": [
+            "상각후원가 측정",
+            "유효이자율",
+            "이자수익"
+          ],
+          "do_not_use_when": [
+            "조건이 시점별로 섞여 있거나 선택지 함정이 강하면 구조식으로 전환"
+          ],
+          "ordered_steps": [
+            "금융자산 분류가 상각후원가 측정인지 확인한다.",
+            "이자수익은 액면이자가 아니라 기초 장부금액 x 유효이자율임을 표시한다.",
+            "950,260 x 10% = 95,026을 계산한다.",
+            "보기에서 95,026원를 선택한다."
+          ],
+          "answer_index": 1,
+          "answer_text": "95,026원",
+          "concept_links": [
+            {
+              "concept_label": "상각후원가 금융자산의 유효이자율법",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 상각후원가 측정, 유효이자율 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=financial_assets; tags=재무회계: 금융자산, amortized_cost, effective_interest_rate, interest_revenue",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "상각후원가 측정 / 유효이자율 / 이자수익",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "20X1년 1월 1일 ㈜CF는 액면금액 1,000,000원, 만기 3년, 액면이자율 연 8%, 이자는 매년 말 후급 조건의 사채를 950,260원에 취득하여 상각후원가 측정 금융자산으로 분류하였다. 취득 당시 유효이자율은 연 10%였다. 20X1년 12월 31일 인식할 이자수익은 얼마인가? (원 단위 미만 절사)",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "definition_or_formula",
+              "concept_source": "solution_path",
+              "why_required": "direct 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "액면이자를 이자수익으로 고르는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-accounting-001:structure",
+          "path_type": "structure",
+          "label": "표/구조식",
+          "why_this_path": "조건을 표로 분리해야 판매 전후, 과세/면세, 증가/감소 같은 방향 실수를 줄일 수 있다.",
+          "trigger_signals": [
+            "상각후원가 측정",
+            "유효이자율",
+            "이자수익",
+            "기초 장부금액"
+          ],
+          "do_not_use_when": [
+            "조건이 하나뿐이면 표 작성보다 정석식이 빠름"
+          ],
+          "ordered_steps": [
+            "표 열을 액면금액, 액면이자율, 기초 장부금액, 유효이자율로 나눈다.",
+            "액면이자 80,000은 현금수취액 칸에 두고 이자수익 칸과 분리한다.",
+            "이자수익 칸에는 기초 장부금액 x 유효이자율만 넣는다."
+          ],
+          "answer_index": 1,
+          "answer_text": "95,026원",
+          "concept_links": [
+            {
+              "concept_label": "상각후원가 금융자산의 유효이자율법",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 상각후원가 측정, 유효이자율 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=financial_assets; tags=재무회계: 금융자산, amortized_cost, effective_interest_rate, interest_revenue",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "상각후원가 측정 / 유효이자율 / 이자수익",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "20X1년 1월 1일 ㈜CF는 액면금액 1,000,000원, 만기 3년, 액면이자율 연 8%, 이자는 매년 말 후급 조건의 사채를 950,260원에 취득하여 상각후원가 측정 금융자산으로 분류하였다. 취득 당시 유효이자율은 연 10%였다. 20X1년 12월 31일 인식할 이자수익은 얼마인가? (원 단위 미만 절사)",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "condition_structure",
+              "concept_source": "solution_path",
+              "why_required": "structure 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "액면이자를 이자수익으로 고르는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-accounting-001:choice_elimination",
+          "path_type": "choice_elimination",
+          "label": "선택지 제거식",
+          "why_this_path": "객관식에서는 대표 함정을 먼저 제거하면 계산량과 검산 부담이 줄어든다.",
+          "trigger_signals": [
+            "보기 중 하나가 대표 함정값",
+            "액면이자를 이자수익으로 고르는 함정"
+          ],
+          "do_not_use_when": [
+            "선택지가 모두 근접 숫자이면 제거식만으로 확정하지 않음"
+          ],
+          "ordered_steps": [
+            "각 보기가 어떤 계산 또는 분류를 전제로 하는지 표시한다.",
+            "핵심 신호와 맞지 않는 보기를 제거한다.",
+            "남은 보기 2번(95,026원)을 정답으로 확정한다."
+          ],
+          "answer_index": 1,
+          "answer_text": "95,026원",
+          "concept_links": [
+            {
+              "concept_label": "상각후원가 금융자산의 유효이자율법",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 상각후원가 측정, 유효이자율 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=financial_assets; tags=재무회계: 금융자산, amortized_cost, effective_interest_rate, interest_revenue",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "상각후원가 측정 / 유효이자율 / 이자수익",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "20X1년 1월 1일 ㈜CF는 액면금액 1,000,000원, 만기 3년, 액면이자율 연 8%, 이자는 매년 말 후급 조건의 사채를 950,260원에 취득하여 상각후원가 측정 금융자산으로 분류하였다. 취득 당시 유효이자율은 연 10%였다. 20X1년 12월 31일 인식할 이자수익은 얼마인가? (원 단위 미만 절사)",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "distractor_filter",
+              "concept_source": "solution_path",
+              "why_required": "choice_elimination 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "액면이자를 이자수익으로 고르는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [
+            {
+              "choice_index": 0,
+              "choice_text": "80,000원",
+              "verdict": "eliminate",
+              "reason": "액면금액 x 액면이자율로 계산한 현금수취액이다."
+            },
+            {
+              "choice_index": 1,
+              "choice_text": "95,026원",
+              "verdict": "keep_correct",
+              "reason": "핵심 개념과 조건 신호를 모두 만족하는 보기다."
+            },
+            {
+              "choice_index": 2,
+              "choice_text": "100,000원",
+              "verdict": "eliminate",
+              "reason": "액면금액 x 유효이자율로 계산한 값이라 장부금액 기준을 놓쳤다."
+            },
+            {
+              "choice_index": 3,
+              "choice_text": "104,974원",
+              "verdict": "eliminate",
+              "reason": "할인차금 상각액 또는 장부금액 변동을 이자수익과 혼동한 값이다."
+            }
+          ],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-accounting-001:reverse_check",
+          "path_type": "reverse_check",
+          "label": "검산식",
+          "why_this_path": "정답을 원문 조건과 해설 기준에 되돌려 넣어 계산값과 분류 기준이 맞는지 확인한다.",
+          "trigger_signals": [
+            "정답 확정 직후",
+            "대표 함정 확인",
+            "시간 10초 검산 가능"
+          ],
+          "do_not_use_when": [
+            "아직 풀이식이 없거나 시간이 skip threshold를 넘긴 경우"
+          ],
+          "ordered_steps": [
+            "정답 후보 95,026원를 문제의 핵심 조건에 다시 대입한다.",
+            "대표 함정: 액면이자를 이자수익으로 고르는 함정와 비교한다.",
+            "해설의 계산 또는 분류 기준과 같은 결론인지 확인한다."
+          ],
+          "answer_index": 1,
+          "answer_text": "95,026원",
+          "concept_links": [
+            {
+              "concept_label": "상각후원가 금융자산의 유효이자율법",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 상각후원가 측정, 유효이자율 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=financial_assets; tags=재무회계: 금융자산, amortized_cost, effective_interest_rate, interest_revenue",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "상각후원가 측정 / 유효이자율 / 이자수익",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "20X1년 1월 1일 ㈜CF는 액면금액 1,000,000원, 만기 3년, 액면이자율 연 8%, 이자는 매년 말 후급 조건의 사채를 950,260원에 취득하여 상각후원가 측정 금융자산으로 분류하였다. 취득 당시 유효이자율은 연 10%였다. 20X1년 12월 31일 인식할 이자수익은 얼마인가? (원 단위 미만 절사)",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "answer_consistency",
+              "concept_source": "solution_path",
+              "why_required": "reverse_check 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "액면이자를 이자수익으로 고르는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        }
+      ]
+    },
+    {
+      "question_id": "cpa1-eval-accounting-002",
+      "exam": "CPA_1",
+      "subject": "accounting",
+      "unit": "inventory",
+      "tutorial_id": "tutorial_cpa1_accounting",
+      "rights_status": "synthetic_seed",
+      "review_status": "ai_draft",
+      "applicable_year": 2026,
+      "stem": "㈜CF의 20X1년 재고자산 자료는 다음과 같다. 기초재고 100개(@1,000), 1차 매입 200개(@1,200), 2차 매입 100개(@1,400), 기말재고 수량 150개. 회사가 이동평균법을 사용하고 있고 1차 매입 후 250개를 판매한 다음 2차 매입이 이루어졌다면, 기말재고 금액은 얼마인가?",
+      "stem_hash": "1534716ac8f6617db4ad1a166bbd245f5cd6f06b95a37bbaabe34e35c76731bb",
+      "choices": [
+        "180,000원",
+        "190,000원",
+        "195,000원",
+        "210,000원"
+      ],
+      "correct_choice": 2,
+      "correct_answer": "195,000원",
+      "concept_tags": [
+        "재무회계: 재고자산",
+        "inventory",
+        "moving_average"
+      ],
+      "explanation": "이동평균법: 1차 매입 후 평균단가 = (100×1,000 + 200×1,200) / 300 = 340,000/300 ≈ 1,133.33원. 250개 판매 후 잔량 50개 × 1,133.33 = 56,667원. 2차 매입 후 평균단가 = (56,667 + 100×1,400) / 150 = 196,667/150 ≈ 1,311.11원. 기말재고 150개 × 1,311.11 ≈ 196,667원 → 가까운 값 190,000원이 정답에 가장 근접한 보기.",
+      "solution_paths": [
+        {
+          "path_id": "cpa1-eval-accounting-002:direct",
+          "path_type": "direct",
+          "label": "정석식",
+          "why_this_path": "이동평균법과 판매 전후 평균단가 재계산가 문제 본문에 직접 드러나므로 정의와 공식으로 바로 푼다.",
+          "trigger_signals": [
+            "이동평균법",
+            "매입 후 판매",
+            "2차 매입"
+          ],
+          "do_not_use_when": [
+            "조건이 시점별로 섞여 있거나 선택지 함정이 강하면 구조식으로 전환"
+          ],
+          "ordered_steps": [
+            "1차 매입 후 평균단가를 계산한다: (100x1,000 + 200x1,200) / 300.",
+            "250개 판매 후 남은 50개의 장부금액을 남긴다.",
+            "2차 매입 100개를 더한 뒤 평균단가를 다시 계산한다.",
+            "기말 150개 금액 약 196,667원과 가장 가까운 보기를 고른다."
+          ],
+          "answer_index": 2,
+          "answer_text": "195,000원",
+          "concept_links": [
+            {
+              "concept_label": "이동평균법과 판매 전후 평균단가 재계산",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 이동평균법, 매입 후 판매 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=inventory; tags=재무회계: 재고자산, inventory, moving_average",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "이동평균법 / 매입 후 판매 / 2차 매입",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "㈜CF의 20X1년 재고자산 자료는 다음과 같다. 기초재고 100개(@1,000), 1차 매입 200개(@1,200), 2차 매입 100개(@1,400), 기말재고 수량 150개. 회사가 이동평균법을 사용하고 있고 1차 매입 후 250개를 판매한 다음 2차 매입이 이루어졌다면, 기말재고 금액은 얼마인가?",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "definition_or_formula",
+              "concept_source": "solution_path",
+              "why_required": "direct 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "전체 매입을 한 번에 평균내거나 판매 시점을 무시하는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.68
+        },
+        {
+          "path_id": "cpa1-eval-accounting-002:structure",
+          "path_type": "structure",
+          "label": "표/구조식",
+          "why_this_path": "조건을 표로 분리해야 판매 전후, 과세/면세, 증가/감소 같은 방향 실수를 줄일 수 있다.",
+          "trigger_signals": [
+            "이동평균법",
+            "매입 후 판매",
+            "2차 매입",
+            "기말재고 수량"
+          ],
+          "do_not_use_when": [
+            "조건이 하나뿐이면 표 작성보다 정석식이 빠름"
+          ],
+          "ordered_steps": [
+            "수량흐름표를 기초, 1차 매입, 판매, 2차 매입, 기말 순서로 만든다.",
+            "판매가 일어난 시점 전 평균단가와 이후 평균단가를 분리한다.",
+            "기말재고는 마지막 평균단가를 적용한다."
+          ],
+          "answer_index": 2,
+          "answer_text": "195,000원",
+          "concept_links": [
+            {
+              "concept_label": "이동평균법과 판매 전후 평균단가 재계산",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 이동평균법, 매입 후 판매 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=inventory; tags=재무회계: 재고자산, inventory, moving_average",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "이동평균법 / 매입 후 판매 / 2차 매입",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "㈜CF의 20X1년 재고자산 자료는 다음과 같다. 기초재고 100개(@1,000), 1차 매입 200개(@1,200), 2차 매입 100개(@1,400), 기말재고 수량 150개. 회사가 이동평균법을 사용하고 있고 1차 매입 후 250개를 판매한 다음 2차 매입이 이루어졌다면, 기말재고 금액은 얼마인가?",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "condition_structure",
+              "concept_source": "solution_path",
+              "why_required": "structure 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "전체 매입을 한 번에 평균내거나 판매 시점을 무시하는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.68
+        },
+        {
+          "path_id": "cpa1-eval-accounting-002:choice_elimination",
+          "path_type": "choice_elimination",
+          "label": "선택지 제거식",
+          "why_this_path": "객관식에서는 대표 함정을 먼저 제거하면 계산량과 검산 부담이 줄어든다.",
+          "trigger_signals": [
+            "보기 중 하나가 대표 함정값",
+            "전체 매입을 한 번에 평균내거나 판매 시점을 무시하는 함정"
+          ],
+          "do_not_use_when": [
+            "선택지가 모두 근접 숫자이면 제거식만으로 확정하지 않음"
+          ],
+          "ordered_steps": [
+            "각 보기가 어떤 계산 또는 분류를 전제로 하는지 표시한다.",
+            "핵심 신호와 맞지 않는 보기를 제거한다.",
+            "남은 보기 3번(195,000원)을 정답으로 확정한다."
+          ],
+          "answer_index": 2,
+          "answer_text": "195,000원",
+          "concept_links": [
+            {
+              "concept_label": "이동평균법과 판매 전후 평균단가 재계산",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 이동평균법, 매입 후 판매 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=inventory; tags=재무회계: 재고자산, inventory, moving_average",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "이동평균법 / 매입 후 판매 / 2차 매입",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "㈜CF의 20X1년 재고자산 자료는 다음과 같다. 기초재고 100개(@1,000), 1차 매입 200개(@1,200), 2차 매입 100개(@1,400), 기말재고 수량 150개. 회사가 이동평균법을 사용하고 있고 1차 매입 후 250개를 판매한 다음 2차 매입이 이루어졌다면, 기말재고 금액은 얼마인가?",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "distractor_filter",
+              "concept_source": "solution_path",
+              "why_required": "choice_elimination 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "전체 매입을 한 번에 평균내거나 판매 시점을 무시하는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [
+            {
+              "choice_index": 0,
+              "choice_text": "180,000원",
+              "verdict": "eliminate",
+              "reason": "판매 시점 전후 평균단가를 낮게 잡은 값이다."
+            },
+            {
+              "choice_index": 1,
+              "choice_text": "190,000원",
+              "verdict": "eliminate",
+              "reason": "계산값 196,667원보다 195,000원 보기가 더 가깝다."
+            },
+            {
+              "choice_index": 2,
+              "choice_text": "195,000원",
+              "verdict": "keep_correct",
+              "reason": "핵심 개념과 조건 신호를 모두 만족하는 보기다."
+            },
+            {
+              "choice_index": 3,
+              "choice_text": "210,000원",
+              "verdict": "eliminate",
+              "reason": "마지막 매입단가 1,400원에 기말수량을 바로 곱한 값이다."
+            }
+          ],
+          "confidence": 0.68
+        },
+        {
+          "path_id": "cpa1-eval-accounting-002:reverse_check",
+          "path_type": "reverse_check",
+          "label": "검산식",
+          "why_this_path": "정답을 원문 조건과 해설 기준에 되돌려 넣어 계산값과 분류 기준이 맞는지 확인한다.",
+          "trigger_signals": [
+            "정답 확정 직후",
+            "대표 함정 확인",
+            "시간 10초 검산 가능"
+          ],
+          "do_not_use_when": [
+            "아직 풀이식이 없거나 시간이 skip threshold를 넘긴 경우"
+          ],
+          "ordered_steps": [
+            "정답 후보 195,000원를 문제의 핵심 조건에 다시 대입한다.",
+            "대표 함정: 전체 매입을 한 번에 평균내거나 판매 시점을 무시하는 함정와 비교한다.",
+            "해설의 계산 또는 분류 기준과 같은 결론인지 확인한다."
+          ],
+          "answer_index": 2,
+          "answer_text": "195,000원",
+          "concept_links": [
+            {
+              "concept_label": "이동평균법과 판매 전후 평균단가 재계산",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 이동평균법, 매입 후 판매 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=inventory; tags=재무회계: 재고자산, inventory, moving_average",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "이동평균법 / 매입 후 판매 / 2차 매입",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "㈜CF의 20X1년 재고자산 자료는 다음과 같다. 기초재고 100개(@1,000), 1차 매입 200개(@1,200), 2차 매입 100개(@1,400), 기말재고 수량 150개. 회사가 이동평균법을 사용하고 있고 1차 매입 후 250개를 판매한 다음 2차 매입이 이루어졌다면, 기말재고 금액은 얼마인가?",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "answer_consistency",
+              "concept_source": "solution_path",
+              "why_required": "reverse_check 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "전체 매입을 한 번에 평균내거나 판매 시점을 무시하는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.68
+        }
+      ]
+    },
+    {
+      "question_id": "cpa1-eval-accounting-003",
+      "exam": "CPA_1",
+      "subject": "accounting",
+      "unit": "cost_management",
+      "tutorial_id": "tutorial_cpa1_accounting",
+      "rights_status": "synthetic_seed",
+      "review_status": "expert_reviewed",
+      "applicable_year": 2026,
+      "stem": "㈜CF의 단일 제품의 단위당 판매가격은 5,000원, 단위당 변동비는 3,000원, 연간 고정비는 4,000,000원이다. 손익분기점 판매량(BEP)과 안전한계율(20%일 때 매출액)을 묶은 짝으로 옳은 것은?",
+      "stem_hash": "7a5abeaa91503b8003d845536dd17c288746f0e1cc2b4447421c67609e21e967",
+      "choices": [
+        "BEP 1,600개 / 안전한계 매출액 10,000,000원",
+        "BEP 2,000개 / 안전한계 매출액 12,500,000원",
+        "BEP 2,000개 / 안전한계 매출액 2,000,000원",
+        "BEP 2,500개 / 안전한계 매출액 10,000,000원"
+      ],
+      "correct_choice": 1,
+      "correct_answer": "BEP 2,000개 / 안전한계 매출액 12,500,000원",
+      "concept_tags": [
+        "원가관리: CVP",
+        "cvp_analysis",
+        "break_even_point",
+        "margin_of_safety"
+      ],
+      "explanation": "단위당 공헌이익 = 5,000 - 3,000 = 2,000원. BEP 판매량 = 4,000,000 / 2,000 = 2,000개. BEP 매출액 = 2,000개 × 5,000 = 10,000,000원. 안전한계율 20% 의미: 현재 매출에서 BEP까지 거리가 20%. 즉 현재 매출 = BEP / (1 - 0.2) = 10,000,000 / 0.8 = 12,500,000원.",
+      "solution_paths": [
+        {
+          "path_id": "cpa1-eval-accounting-003:direct",
+          "path_type": "direct",
+          "label": "정석식",
+          "why_this_path": "CVP 분석의 단위당 공헌이익과 안전한계율가 문제 본문에 직접 드러나므로 정의와 공식으로 바로 푼다.",
+          "trigger_signals": [
+            "판매가격",
+            "변동비",
+            "고정비"
+          ],
+          "do_not_use_when": [
+            "조건이 시점별로 섞여 있거나 선택지 함정이 강하면 구조식으로 전환"
+          ],
+          "ordered_steps": [
+            "단위당 공헌이익 = 5,000 - 3,000 = 2,000을 계산한다.",
+            "BEP 판매량 = 4,000,000 / 2,000 = 2,000개를 구한다.",
+            "BEP 매출액 = 2,000 x 5,000 = 10,000,000을 구한다.",
+            "안전한계율 20%이면 현재 매출 = 10,000,000 / 0.8 = 12,500,000이다."
+          ],
+          "answer_index": 1,
+          "answer_text": "BEP 2,000개 / 안전한계 매출액 12,500,000원",
+          "concept_links": [
+            {
+              "concept_label": "CVP 분석의 단위당 공헌이익과 안전한계율",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 판매가격, 변동비 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=cost_management; tags=원가관리: CVP, cvp_analysis, break_even_point, margin_of_safety",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "판매가격 / 변동비 / 고정비",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "㈜CF의 단일 제품의 단위당 판매가격은 5,000원, 단위당 변동비는 3,000원, 연간 고정비는 4,000,000원이다. 손익분기점 판매량(BEP)과 안전한계율(20%일 때 매출액)을 묶은 짝으로 옳은 것은?",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "definition_or_formula",
+              "concept_source": "solution_path",
+              "why_required": "direct 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "안전한계율 20%를 안전한계 매출액 자체로 착각하는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-accounting-003:structure",
+          "path_type": "structure",
+          "label": "표/구조식",
+          "why_this_path": "조건을 표로 분리해야 판매 전후, 과세/면세, 증가/감소 같은 방향 실수를 줄일 수 있다.",
+          "trigger_signals": [
+            "판매가격",
+            "변동비",
+            "고정비",
+            "손익분기점",
+            "안전한계율"
+          ],
+          "do_not_use_when": [
+            "조건이 하나뿐이면 표 작성보다 정석식이 빠름"
+          ],
+          "ordered_steps": [
+            "가격, 변동비, 고정비, BEP, 안전한계율을 별도 칸으로 나눈다.",
+            "단위당 공헌이익을 먼저 고정하고 모든 계산을 그 위에 얹는다.",
+            "안전한계율은 현재 매출과 BEP 매출의 거리로 해석한다."
+          ],
+          "answer_index": 1,
+          "answer_text": "BEP 2,000개 / 안전한계 매출액 12,500,000원",
+          "concept_links": [
+            {
+              "concept_label": "CVP 분석의 단위당 공헌이익과 안전한계율",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 판매가격, 변동비 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=cost_management; tags=원가관리: CVP, cvp_analysis, break_even_point, margin_of_safety",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "판매가격 / 변동비 / 고정비",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "㈜CF의 단일 제품의 단위당 판매가격은 5,000원, 단위당 변동비는 3,000원, 연간 고정비는 4,000,000원이다. 손익분기점 판매량(BEP)과 안전한계율(20%일 때 매출액)을 묶은 짝으로 옳은 것은?",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "condition_structure",
+              "concept_source": "solution_path",
+              "why_required": "structure 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "안전한계율 20%를 안전한계 매출액 자체로 착각하는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-accounting-003:choice_elimination",
+          "path_type": "choice_elimination",
+          "label": "선택지 제거식",
+          "why_this_path": "객관식에서는 대표 함정을 먼저 제거하면 계산량과 검산 부담이 줄어든다.",
+          "trigger_signals": [
+            "보기 중 하나가 대표 함정값",
+            "안전한계율 20%를 안전한계 매출액 자체로 착각하는 함정"
+          ],
+          "do_not_use_when": [
+            "선택지가 모두 근접 숫자이면 제거식만으로 확정하지 않음"
+          ],
+          "ordered_steps": [
+            "각 보기가 어떤 계산 또는 분류를 전제로 하는지 표시한다.",
+            "핵심 신호와 맞지 않는 보기를 제거한다.",
+            "남은 보기 2번(BEP 2,000개 / 안전한계 매출액 12,500,000원)을 정답으로 확정한다."
+          ],
+          "answer_index": 1,
+          "answer_text": "BEP 2,000개 / 안전한계 매출액 12,500,000원",
+          "concept_links": [
+            {
+              "concept_label": "CVP 분석의 단위당 공헌이익과 안전한계율",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 판매가격, 변동비 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=cost_management; tags=원가관리: CVP, cvp_analysis, break_even_point, margin_of_safety",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "판매가격 / 변동비 / 고정비",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "㈜CF의 단일 제품의 단위당 판매가격은 5,000원, 단위당 변동비는 3,000원, 연간 고정비는 4,000,000원이다. 손익분기점 판매량(BEP)과 안전한계율(20%일 때 매출액)을 묶은 짝으로 옳은 것은?",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "distractor_filter",
+              "concept_source": "solution_path",
+              "why_required": "choice_elimination 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "안전한계율 20%를 안전한계 매출액 자체로 착각하는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [
+            {
+              "choice_index": 0,
+              "choice_text": "BEP 1,600개 / 안전한계 매출액 10,000,000원",
+              "verdict": "eliminate",
+              "reason": "BEP 수량을 1,600개로 계산해 공헌이익 또는 고정비 적용이 틀렸다."
+            },
+            {
+              "choice_index": 1,
+              "choice_text": "BEP 2,000개 / 안전한계 매출액 12,500,000원",
+              "verdict": "keep_correct",
+              "reason": "핵심 개념과 조건 신호를 모두 만족하는 보기다."
+            },
+            {
+              "choice_index": 2,
+              "choice_text": "BEP 2,000개 / 안전한계 매출액 2,000,000원",
+              "verdict": "eliminate",
+              "reason": "BEP는 맞지만 안전한계율을 2,000,000원으로만 해석했다."
+            },
+            {
+              "choice_index": 3,
+              "choice_text": "BEP 2,500개 / 안전한계 매출액 10,000,000원",
+              "verdict": "eliminate",
+              "reason": "BEP 수량을 2,500개로 계산해 공헌이익을 잘못 적용했다."
+            }
+          ],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-accounting-003:reverse_check",
+          "path_type": "reverse_check",
+          "label": "검산식",
+          "why_this_path": "정답을 원문 조건과 해설 기준에 되돌려 넣어 계산값과 분류 기준이 맞는지 확인한다.",
+          "trigger_signals": [
+            "정답 확정 직후",
+            "대표 함정 확인",
+            "시간 10초 검산 가능"
+          ],
+          "do_not_use_when": [
+            "아직 풀이식이 없거나 시간이 skip threshold를 넘긴 경우"
+          ],
+          "ordered_steps": [
+            "정답 후보 BEP 2,000개 / 안전한계 매출액 12,500,000원를 문제의 핵심 조건에 다시 대입한다.",
+            "대표 함정: 안전한계율 20%를 안전한계 매출액 자체로 착각하는 함정와 비교한다.",
+            "해설의 계산 또는 분류 기준과 같은 결론인지 확인한다."
+          ],
+          "answer_index": 1,
+          "answer_text": "BEP 2,000개 / 안전한계 매출액 12,500,000원",
+          "concept_links": [
+            {
+              "concept_label": "CVP 분석의 단위당 공헌이익과 안전한계율",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 판매가격, 변동비 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=cost_management; tags=원가관리: CVP, cvp_analysis, break_even_point, margin_of_safety",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "판매가격 / 변동비 / 고정비",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "㈜CF의 단일 제품의 단위당 판매가격은 5,000원, 단위당 변동비는 3,000원, 연간 고정비는 4,000,000원이다. 손익분기점 판매량(BEP)과 안전한계율(20%일 때 매출액)을 묶은 짝으로 옳은 것은?",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "answer_consistency",
+              "concept_source": "solution_path",
+              "why_required": "reverse_check 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "안전한계율 20%를 안전한계 매출액 자체로 착각하는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        }
+      ]
+    },
+    {
+      "question_id": "cpa1-eval-accounting-004",
+      "exam": "CPA_1",
+      "subject": "accounting",
+      "unit": "tangible_assets",
+      "tutorial_id": "tutorial_cpa1_accounting",
+      "rights_status": "synthetic_seed",
+      "review_status": "expert_reviewed",
+      "applicable_year": 2026,
+      "stem": "㈜CF는 20X1년 1월 1일 기계장치를 1,000,000원에 취득하였다. 내용연수 5년, 잔존가치 100,000원, 정액법 적용. 20X3년 1월 1일 손상 신호가 발생하여 회수가능액을 측정한 결과 사용가치 360,000원, 순공정가치 400,000원이었다. 20X3년 1월 1일 인식할 손상차손은 얼마인가?",
+      "stem_hash": "e03e8bead671ca50c423e9827c3183ab6251d75d18791d7e88f47806f9bf07ef",
+      "choices": [
+        "240,000원",
+        "280,000원",
+        "320,000원",
+        "640,000원"
+      ],
+      "correct_choice": 0,
+      "correct_answer": "240,000원",
+      "concept_tags": [
+        "재무회계: 유형자산",
+        "tangible_assets",
+        "impairment_loss",
+        "recoverable_amount"
+      ],
+      "explanation": "감가상각비 = (1,000,000 - 100,000) / 5 = 180,000원/년. 20X2년 말 누적 감가상각 = 360,000원. 20X3년 1월 1일 장부금액 = 1,000,000 - 360,000 = 640,000원. 회수가능액 = max(사용가치, 순공정가치) = max(360,000, 400,000) = 400,000원. 손상차손 = 640,000 - 400,000 = 240,000원.",
+      "solution_paths": [
+        {
+          "path_id": "cpa1-eval-accounting-004:direct",
+          "path_type": "direct",
+          "label": "정석식",
+          "why_this_path": "문제의 핵심 개념가 문제 본문에 직접 드러나므로 정의와 공식으로 바로 푼다.",
+          "trigger_signals": [
+            "재무회계: 유형자산",
+            "tangible_assets",
+            "impairment_loss"
+          ],
+          "do_not_use_when": [
+            "조건이 시점별로 섞여 있거나 선택지 함정이 강하면 구조식으로 전환"
+          ],
+          "ordered_steps": [
+            "핵심 개념을 찾는다.",
+            "조건을 분리한다.",
+            "정답 보기와 대조한다."
+          ],
+          "answer_index": 0,
+          "answer_text": "240,000원",
+          "concept_links": [
+            {
+              "concept_label": "문제의 핵심 개념",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 재무회계: 유형자산, tangible_assets 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=tangible_assets; tags=재무회계: 유형자산, tangible_assets, impairment_loss, recoverable_amount",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "재무회계: 유형자산 / tangible_assets / impairment_loss",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "㈜CF는 20X1년 1월 1일 기계장치를 1,000,000원에 취득하였다. 내용연수 5년, 잔존가치 100,000원, 정액법 적용. 20X3년 1월 1일 손상 신호가 발생하여 회수가능액을 측정한 결과 사용가치 360,000원, 순공정가치 400,000원이었다. 20X3년 1월 1일 인식할 손상차손은 얼마인가?",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "definition_or_formula",
+              "concept_source": "solution_path",
+              "why_required": "direct 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "조건 누락 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-accounting-004:structure",
+          "path_type": "structure",
+          "label": "표/구조식",
+          "why_this_path": "조건을 표로 분리해야 판매 전후, 과세/면세, 증가/감소 같은 방향 실수를 줄일 수 있다.",
+          "trigger_signals": [
+            "재무회계: 유형자산",
+            "tangible_assets",
+            "impairment_loss",
+            "recoverable_amount"
+          ],
+          "do_not_use_when": [
+            "조건이 하나뿐이면 표 작성보다 정석식이 빠름"
+          ],
+          "ordered_steps": [
+            "조건표를 만든다.",
+            "방향을 판별한다.",
+            "보기와 비교한다."
+          ],
+          "answer_index": 0,
+          "answer_text": "240,000원",
+          "concept_links": [
+            {
+              "concept_label": "문제의 핵심 개념",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 재무회계: 유형자산, tangible_assets 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=tangible_assets; tags=재무회계: 유형자산, tangible_assets, impairment_loss, recoverable_amount",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "재무회계: 유형자산 / tangible_assets / impairment_loss",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "㈜CF는 20X1년 1월 1일 기계장치를 1,000,000원에 취득하였다. 내용연수 5년, 잔존가치 100,000원, 정액법 적용. 20X3년 1월 1일 손상 신호가 발생하여 회수가능액을 측정한 결과 사용가치 360,000원, 순공정가치 400,000원이었다. 20X3년 1월 1일 인식할 손상차손은 얼마인가?",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "condition_structure",
+              "concept_source": "solution_path",
+              "why_required": "structure 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "조건 누락 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-accounting-004:choice_elimination",
+          "path_type": "choice_elimination",
+          "label": "선택지 제거식",
+          "why_this_path": "객관식에서는 대표 함정을 먼저 제거하면 계산량과 검산 부담이 줄어든다.",
+          "trigger_signals": [
+            "보기 중 하나가 대표 함정값",
+            "조건 누락 함정"
+          ],
+          "do_not_use_when": [
+            "선택지가 모두 근접 숫자이면 제거식만으로 확정하지 않음"
+          ],
+          "ordered_steps": [
+            "각 보기가 어떤 계산 또는 분류를 전제로 하는지 표시한다.",
+            "핵심 신호와 맞지 않는 보기를 제거한다.",
+            "남은 보기 1번(240,000원)을 정답으로 확정한다."
+          ],
+          "answer_index": 0,
+          "answer_text": "240,000원",
+          "concept_links": [
+            {
+              "concept_label": "문제의 핵심 개념",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 재무회계: 유형자산, tangible_assets 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=tangible_assets; tags=재무회계: 유형자산, tangible_assets, impairment_loss, recoverable_amount",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "재무회계: 유형자산 / tangible_assets / impairment_loss",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "㈜CF는 20X1년 1월 1일 기계장치를 1,000,000원에 취득하였다. 내용연수 5년, 잔존가치 100,000원, 정액법 적용. 20X3년 1월 1일 손상 신호가 발생하여 회수가능액을 측정한 결과 사용가치 360,000원, 순공정가치 400,000원이었다. 20X3년 1월 1일 인식할 손상차손은 얼마인가?",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "distractor_filter",
+              "concept_source": "solution_path",
+              "why_required": "choice_elimination 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "조건 누락 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [
+            {
+              "choice_index": 0,
+              "choice_text": "240,000원",
+              "verdict": "keep_correct",
+              "reason": "핵심 개념과 조건 신호를 모두 만족하는 보기다."
+            },
+            {
+              "choice_index": 1,
+              "choice_text": "280,000원",
+              "verdict": "eliminate",
+              "reason": "핵심 조건 또는 계산 방향과 맞지 않는다."
+            },
+            {
+              "choice_index": 2,
+              "choice_text": "320,000원",
+              "verdict": "eliminate",
+              "reason": "핵심 조건 또는 계산 방향과 맞지 않는다."
+            },
+            {
+              "choice_index": 3,
+              "choice_text": "640,000원",
+              "verdict": "eliminate",
+              "reason": "핵심 조건 또는 계산 방향과 맞지 않는다."
+            }
+          ],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-accounting-004:reverse_check",
+          "path_type": "reverse_check",
+          "label": "검산식",
+          "why_this_path": "정답을 원문 조건과 해설 기준에 되돌려 넣어 계산값과 분류 기준이 맞는지 확인한다.",
+          "trigger_signals": [
+            "정답 확정 직후",
+            "대표 함정 확인",
+            "시간 10초 검산 가능"
+          ],
+          "do_not_use_when": [
+            "아직 풀이식이 없거나 시간이 skip threshold를 넘긴 경우"
+          ],
+          "ordered_steps": [
+            "정답 후보 240,000원를 문제의 핵심 조건에 다시 대입한다.",
+            "대표 함정: 조건 누락 함정와 비교한다.",
+            "해설의 계산 또는 분류 기준과 같은 결론인지 확인한다."
+          ],
+          "answer_index": 0,
+          "answer_text": "240,000원",
+          "concept_links": [
+            {
+              "concept_label": "문제의 핵심 개념",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 재무회계: 유형자산, tangible_assets 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=tangible_assets; tags=재무회계: 유형자산, tangible_assets, impairment_loss, recoverable_amount",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "재무회계: 유형자산 / tangible_assets / impairment_loss",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "㈜CF는 20X1년 1월 1일 기계장치를 1,000,000원에 취득하였다. 내용연수 5년, 잔존가치 100,000원, 정액법 적용. 20X3년 1월 1일 손상 신호가 발생하여 회수가능액을 측정한 결과 사용가치 360,000원, 순공정가치 400,000원이었다. 20X3년 1월 1일 인식할 손상차손은 얼마인가?",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "answer_consistency",
+              "concept_source": "solution_path",
+              "why_required": "reverse_check 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "조건 누락 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        }
+      ]
+    },
+    {
+      "question_id": "cpa1-eval-accounting-005",
+      "exam": "CPA_1",
+      "subject": "accounting",
+      "unit": "revenue_recognition",
+      "tutorial_id": "tutorial_cpa1_accounting",
+      "rights_status": "synthetic_seed",
+      "review_status": "expert_reviewed",
+      "applicable_year": 2026,
+      "stem": "㈜CF는 단일 계약으로 제품 A와 1년간 유지보수 서비스를 고객에게 5,000,000원에 판매했다. 개별 판매가격은 제품 A 4,000,000원, 유지보수 서비스 2,000,000원이다. 제품 A는 인도 시점에 통제가 이전된다. 인도 시점에 즉시 인식할 수익은 얼마인가?",
+      "stem_hash": "1cb9235c4ef22966905e4e3e7dc0884321b965c93017987c7d610eae4ada7f64",
+      "choices": [
+        "3,000,000원",
+        "3,333,333원",
+        "4,000,000원",
+        "5,000,000원"
+      ],
+      "correct_choice": 1,
+      "correct_answer": "3,333,333원",
+      "concept_tags": [
+        "재무회계: 수익인식",
+        "revenue_recognition",
+        "performance_obligation",
+        "transaction_price_allocation"
+      ],
+      "explanation": "두 수행의무로 분리하고 거래가격을 상대적 개별 판매가격 기준으로 배분한다. 합계 6,000,000원 중 제품 A 비중 4,000,000/6,000,000 = 2/3. 거래가격 5,000,000원 × 2/3 ≈ 3,333,333원이 제품 A 배분액으로 인도 시점에 수익 인식. 유지보수 1,666,667원은 1년에 걸쳐 인식.",
+      "solution_paths": [
+        {
+          "path_id": "cpa1-eval-accounting-005:direct",
+          "path_type": "direct",
+          "label": "정석식",
+          "why_this_path": "문제의 핵심 개념가 문제 본문에 직접 드러나므로 정의와 공식으로 바로 푼다.",
+          "trigger_signals": [
+            "재무회계: 수익인식",
+            "revenue_recognition",
+            "performance_obligation"
+          ],
+          "do_not_use_when": [
+            "조건이 시점별로 섞여 있거나 선택지 함정이 강하면 구조식으로 전환"
+          ],
+          "ordered_steps": [
+            "핵심 개념을 찾는다.",
+            "조건을 분리한다.",
+            "정답 보기와 대조한다."
+          ],
+          "answer_index": 1,
+          "answer_text": "3,333,333원",
+          "concept_links": [
+            {
+              "concept_label": "문제의 핵심 개념",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 재무회계: 수익인식, revenue_recognition 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=revenue_recognition; tags=재무회계: 수익인식, revenue_recognition, performance_obligation, transaction_price_allocation",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "재무회계: 수익인식 / revenue_recognition / performance_obligation",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "㈜CF는 단일 계약으로 제품 A와 1년간 유지보수 서비스를 고객에게 5,000,000원에 판매했다. 개별 판매가격은 제품 A 4,000,000원, 유지보수 서비스 2,000,000원이다. 제품 A는 인도 시점에 통제가 이전된다. 인도 시점에 즉시 인식할 수익은 얼마인가?",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "definition_or_formula",
+              "concept_source": "solution_path",
+              "why_required": "direct 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "조건 누락 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-accounting-005:structure",
+          "path_type": "structure",
+          "label": "표/구조식",
+          "why_this_path": "조건을 표로 분리해야 판매 전후, 과세/면세, 증가/감소 같은 방향 실수를 줄일 수 있다.",
+          "trigger_signals": [
+            "재무회계: 수익인식",
+            "revenue_recognition",
+            "performance_obligation",
+            "transaction_price_allocation"
+          ],
+          "do_not_use_when": [
+            "조건이 하나뿐이면 표 작성보다 정석식이 빠름"
+          ],
+          "ordered_steps": [
+            "조건표를 만든다.",
+            "방향을 판별한다.",
+            "보기와 비교한다."
+          ],
+          "answer_index": 1,
+          "answer_text": "3,333,333원",
+          "concept_links": [
+            {
+              "concept_label": "문제의 핵심 개념",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 재무회계: 수익인식, revenue_recognition 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=revenue_recognition; tags=재무회계: 수익인식, revenue_recognition, performance_obligation, transaction_price_allocation",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "재무회계: 수익인식 / revenue_recognition / performance_obligation",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "㈜CF는 단일 계약으로 제품 A와 1년간 유지보수 서비스를 고객에게 5,000,000원에 판매했다. 개별 판매가격은 제품 A 4,000,000원, 유지보수 서비스 2,000,000원이다. 제품 A는 인도 시점에 통제가 이전된다. 인도 시점에 즉시 인식할 수익은 얼마인가?",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "condition_structure",
+              "concept_source": "solution_path",
+              "why_required": "structure 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "조건 누락 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-accounting-005:choice_elimination",
+          "path_type": "choice_elimination",
+          "label": "선택지 제거식",
+          "why_this_path": "객관식에서는 대표 함정을 먼저 제거하면 계산량과 검산 부담이 줄어든다.",
+          "trigger_signals": [
+            "보기 중 하나가 대표 함정값",
+            "조건 누락 함정"
+          ],
+          "do_not_use_when": [
+            "선택지가 모두 근접 숫자이면 제거식만으로 확정하지 않음"
+          ],
+          "ordered_steps": [
+            "각 보기가 어떤 계산 또는 분류를 전제로 하는지 표시한다.",
+            "핵심 신호와 맞지 않는 보기를 제거한다.",
+            "남은 보기 2번(3,333,333원)을 정답으로 확정한다."
+          ],
+          "answer_index": 1,
+          "answer_text": "3,333,333원",
+          "concept_links": [
+            {
+              "concept_label": "문제의 핵심 개념",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 재무회계: 수익인식, revenue_recognition 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=revenue_recognition; tags=재무회계: 수익인식, revenue_recognition, performance_obligation, transaction_price_allocation",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "재무회계: 수익인식 / revenue_recognition / performance_obligation",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "㈜CF는 단일 계약으로 제품 A와 1년간 유지보수 서비스를 고객에게 5,000,000원에 판매했다. 개별 판매가격은 제품 A 4,000,000원, 유지보수 서비스 2,000,000원이다. 제품 A는 인도 시점에 통제가 이전된다. 인도 시점에 즉시 인식할 수익은 얼마인가?",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "distractor_filter",
+              "concept_source": "solution_path",
+              "why_required": "choice_elimination 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "조건 누락 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [
+            {
+              "choice_index": 0,
+              "choice_text": "3,000,000원",
+              "verdict": "eliminate",
+              "reason": "핵심 조건 또는 계산 방향과 맞지 않는다."
+            },
+            {
+              "choice_index": 1,
+              "choice_text": "3,333,333원",
+              "verdict": "keep_correct",
+              "reason": "핵심 개념과 조건 신호를 모두 만족하는 보기다."
+            },
+            {
+              "choice_index": 2,
+              "choice_text": "4,000,000원",
+              "verdict": "eliminate",
+              "reason": "핵심 조건 또는 계산 방향과 맞지 않는다."
+            },
+            {
+              "choice_index": 3,
+              "choice_text": "5,000,000원",
+              "verdict": "eliminate",
+              "reason": "핵심 조건 또는 계산 방향과 맞지 않는다."
+            }
+          ],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-accounting-005:reverse_check",
+          "path_type": "reverse_check",
+          "label": "검산식",
+          "why_this_path": "정답을 원문 조건과 해설 기준에 되돌려 넣어 계산값과 분류 기준이 맞는지 확인한다.",
+          "trigger_signals": [
+            "정답 확정 직후",
+            "대표 함정 확인",
+            "시간 10초 검산 가능"
+          ],
+          "do_not_use_when": [
+            "아직 풀이식이 없거나 시간이 skip threshold를 넘긴 경우"
+          ],
+          "ordered_steps": [
+            "정답 후보 3,333,333원를 문제의 핵심 조건에 다시 대입한다.",
+            "대표 함정: 조건 누락 함정와 비교한다.",
+            "해설의 계산 또는 분류 기준과 같은 결론인지 확인한다."
+          ],
+          "answer_index": 1,
+          "answer_text": "3,333,333원",
+          "concept_links": [
+            {
+              "concept_label": "문제의 핵심 개념",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 재무회계: 수익인식, revenue_recognition 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=revenue_recognition; tags=재무회계: 수익인식, revenue_recognition, performance_obligation, transaction_price_allocation",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "재무회계: 수익인식 / revenue_recognition / performance_obligation",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "㈜CF는 단일 계약으로 제품 A와 1년간 유지보수 서비스를 고객에게 5,000,000원에 판매했다. 개별 판매가격은 제품 A 4,000,000원, 유지보수 서비스 2,000,000원이다. 제품 A는 인도 시점에 통제가 이전된다. 인도 시점에 즉시 인식할 수익은 얼마인가?",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "answer_consistency",
+              "concept_source": "solution_path",
+              "why_required": "reverse_check 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "조건 누락 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        }
+      ]
+    },
+    {
+      "question_id": "cpa1-eval-accounting-006",
+      "exam": "CPA_1",
+      "subject": "accounting",
+      "unit": "liabilities",
+      "tutorial_id": "tutorial_cpa1_accounting",
+      "rights_status": "synthetic_seed",
+      "review_status": "expert_reviewed",
+      "applicable_year": 2026,
+      "stem": "다음 중 K-IFRS상 충당부채로 인식해야 하는 항목은?",
+      "stem_hash": "8aca6e56de7c7a57cebdf3abb62a1aa898687fb7e050dc38e84322d439d9db79",
+      "choices": [
+        "거래처와의 거래에서 향후 부담할 가능성이 50% 미만인 손해배상 청구",
+        "제품 보증 의무로 과거 사례상 발생 가능성이 매우 높고 신뢰성있게 추정 가능한 미래 비용",
+        "내년 마케팅 캠페인 계획에 따른 향후 광고비",
+        "이사회에서 검토 중인 구조조정안에 따른 잠재적 퇴직금"
+      ],
+      "correct_choice": 1,
+      "correct_answer": "제품 보증 의무로 과거 사례상 발생 가능성이 매우 높고 신뢰성있게 추정 가능한 미래 비용",
+      "concept_tags": [
+        "재무회계: 부채",
+        "liabilities",
+        "provisions",
+        "verbal_rule"
+      ],
+      "explanation": "충당부채 인식 3요건: (1) 현재의무 존재 (2) 자원 유출 가능성 매우 높음(probable, 통상 50% 초과) (3) 신뢰성있는 추정 가능. 제품 보증은 과거 판매에서 발생한 현재의무이고 사례 기반 추정이 가능하므로 충당부채. 가능성 50% 미만은 우발부채(주석). 미래 광고비/검토 중 구조조정은 현재의무가 아직 없어 부채 인식 불가.",
+      "solution_paths": [
+        {
+          "path_id": "cpa1-eval-accounting-006:direct",
+          "path_type": "direct",
+          "label": "정석식",
+          "why_this_path": "문제의 핵심 개념가 문제 본문에 직접 드러나므로 정의와 공식으로 바로 푼다.",
+          "trigger_signals": [
+            "재무회계: 부채",
+            "liabilities",
+            "provisions"
+          ],
+          "do_not_use_when": [
+            "조건이 시점별로 섞여 있거나 선택지 함정이 강하면 구조식으로 전환"
+          ],
+          "ordered_steps": [
+            "핵심 개념을 찾는다.",
+            "조건을 분리한다.",
+            "정답 보기와 대조한다."
+          ],
+          "answer_index": 1,
+          "answer_text": "제품 보증 의무로 과거 사례상 발생 가능성이 매우 높고 신뢰성있게 추정 가능한 미래 비용",
+          "concept_links": [
+            {
+              "concept_label": "문제의 핵심 개념",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 재무회계: 부채, liabilities 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=liabilities; tags=재무회계: 부채, liabilities, provisions, verbal_rule",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "재무회계: 부채 / liabilities / provisions",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "다음 중 K-IFRS상 충당부채로 인식해야 하는 항목은?",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "definition_or_formula",
+              "concept_source": "solution_path",
+              "why_required": "direct 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "조건 누락 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-accounting-006:structure",
+          "path_type": "structure",
+          "label": "표/구조식",
+          "why_this_path": "조건을 표로 분리해야 판매 전후, 과세/면세, 증가/감소 같은 방향 실수를 줄일 수 있다.",
+          "trigger_signals": [
+            "재무회계: 부채",
+            "liabilities",
+            "provisions",
+            "verbal_rule"
+          ],
+          "do_not_use_when": [
+            "조건이 하나뿐이면 표 작성보다 정석식이 빠름"
+          ],
+          "ordered_steps": [
+            "조건표를 만든다.",
+            "방향을 판별한다.",
+            "보기와 비교한다."
+          ],
+          "answer_index": 1,
+          "answer_text": "제품 보증 의무로 과거 사례상 발생 가능성이 매우 높고 신뢰성있게 추정 가능한 미래 비용",
+          "concept_links": [
+            {
+              "concept_label": "문제의 핵심 개념",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 재무회계: 부채, liabilities 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=liabilities; tags=재무회계: 부채, liabilities, provisions, verbal_rule",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "재무회계: 부채 / liabilities / provisions",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "다음 중 K-IFRS상 충당부채로 인식해야 하는 항목은?",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "condition_structure",
+              "concept_source": "solution_path",
+              "why_required": "structure 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "조건 누락 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-accounting-006:choice_elimination",
+          "path_type": "choice_elimination",
+          "label": "선택지 제거식",
+          "why_this_path": "객관식에서는 대표 함정을 먼저 제거하면 계산량과 검산 부담이 줄어든다.",
+          "trigger_signals": [
+            "보기 중 하나가 대표 함정값",
+            "조건 누락 함정"
+          ],
+          "do_not_use_when": [
+            "선택지가 모두 근접 숫자이면 제거식만으로 확정하지 않음"
+          ],
+          "ordered_steps": [
+            "각 보기가 어떤 계산 또는 분류를 전제로 하는지 표시한다.",
+            "핵심 신호와 맞지 않는 보기를 제거한다.",
+            "남은 보기 2번(제품 보증 의무로 과거 사례상 발생 가능성이 매우 높고 신뢰성있게 추정 가능한 미래 비용)을 정답으로 확정한다."
+          ],
+          "answer_index": 1,
+          "answer_text": "제품 보증 의무로 과거 사례상 발생 가능성이 매우 높고 신뢰성있게 추정 가능한 미래 비용",
+          "concept_links": [
+            {
+              "concept_label": "문제의 핵심 개념",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 재무회계: 부채, liabilities 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=liabilities; tags=재무회계: 부채, liabilities, provisions, verbal_rule",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "재무회계: 부채 / liabilities / provisions",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "다음 중 K-IFRS상 충당부채로 인식해야 하는 항목은?",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "distractor_filter",
+              "concept_source": "solution_path",
+              "why_required": "choice_elimination 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "조건 누락 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [
+            {
+              "choice_index": 0,
+              "choice_text": "거래처와의 거래에서 향후 부담할 가능성이 50% 미만인 손해배상 청구",
+              "verdict": "eliminate",
+              "reason": "핵심 조건 또는 계산 방향과 맞지 않는다."
+            },
+            {
+              "choice_index": 1,
+              "choice_text": "제품 보증 의무로 과거 사례상 발생 가능성이 매우 높고 신뢰성있게 추정 가능한 미래 비용",
+              "verdict": "keep_correct",
+              "reason": "핵심 개념과 조건 신호를 모두 만족하는 보기다."
+            },
+            {
+              "choice_index": 2,
+              "choice_text": "내년 마케팅 캠페인 계획에 따른 향후 광고비",
+              "verdict": "eliminate",
+              "reason": "핵심 조건 또는 계산 방향과 맞지 않는다."
+            },
+            {
+              "choice_index": 3,
+              "choice_text": "이사회에서 검토 중인 구조조정안에 따른 잠재적 퇴직금",
+              "verdict": "eliminate",
+              "reason": "핵심 조건 또는 계산 방향과 맞지 않는다."
+            }
+          ],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-accounting-006:reverse_check",
+          "path_type": "reverse_check",
+          "label": "검산식",
+          "why_this_path": "정답을 원문 조건과 해설 기준에 되돌려 넣어 계산값과 분류 기준이 맞는지 확인한다.",
+          "trigger_signals": [
+            "정답 확정 직후",
+            "대표 함정 확인",
+            "시간 10초 검산 가능"
+          ],
+          "do_not_use_when": [
+            "아직 풀이식이 없거나 시간이 skip threshold를 넘긴 경우"
+          ],
+          "ordered_steps": [
+            "정답 후보 제품 보증 의무로 과거 사례상 발생 가능성이 매우 높고 신뢰성있게 추정 가능한 미래 비용를 문제의 핵심 조건에 다시 대입한다.",
+            "대표 함정: 조건 누락 함정와 비교한다.",
+            "해설의 계산 또는 분류 기준과 같은 결론인지 확인한다."
+          ],
+          "answer_index": 1,
+          "answer_text": "제품 보증 의무로 과거 사례상 발생 가능성이 매우 높고 신뢰성있게 추정 가능한 미래 비용",
+          "concept_links": [
+            {
+              "concept_label": "문제의 핵심 개념",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 재무회계: 부채, liabilities 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=liabilities; tags=재무회계: 부채, liabilities, provisions, verbal_rule",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "재무회계: 부채 / liabilities / provisions",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "다음 중 K-IFRS상 충당부채로 인식해야 하는 항목은?",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "answer_consistency",
+              "concept_source": "solution_path",
+              "why_required": "reverse_check 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "조건 누락 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        }
+      ]
+    },
+    {
+      "question_id": "cpa1-eval-accounting-007",
+      "exam": "CPA_1",
+      "subject": "accounting",
+      "unit": "cash_flow",
+      "tutorial_id": "tutorial_cpa1_accounting",
+      "rights_status": "synthetic_seed",
+      "review_status": "expert_reviewed",
+      "applicable_year": 2026,
+      "stem": "㈜CF의 20X1년 자료가 다음과 같을 때 간접법으로 산출한 영업활동 현금흐름은 얼마인가?\\n- 당기순이익 500,000원\\n- 감가상각비 120,000원\\n- 유형자산처분이익 30,000원\\n- 매출채권 증가 50,000원\\n- 매입채무 증가 40,000원",
+      "stem_hash": "218da69b0c9d5abe05b8534d55a8daaab6791a5eae3437a315c04c3eb42b9bea",
+      "choices": [
+        "550,000원",
+        "580,000원",
+        "620,000원",
+        "740,000원"
+      ],
+      "correct_choice": 1,
+      "correct_answer": "580,000원",
+      "concept_tags": [
+        "재무회계: 현금흐름표",
+        "cash_flow",
+        "indirect_method",
+        "working_capital"
+      ],
+      "explanation": "간접법: 당기순이익 500,000 + 감가상각비 120,000(비현금비용 가산) - 유형자산처분이익 30,000(투자활동 분류이므로 영업에서 제거) - 매출채권 증가 50,000(자산 증가 = 현금 유출) + 매입채무 증가 40,000(부채 증가 = 현금 유출 지연) = 580,000원.",
+      "solution_paths": [
+        {
+          "path_id": "cpa1-eval-accounting-007:direct",
+          "path_type": "direct",
+          "label": "정석식",
+          "why_this_path": "문제의 핵심 개념가 문제 본문에 직접 드러나므로 정의와 공식으로 바로 푼다.",
+          "trigger_signals": [
+            "재무회계: 현금흐름표",
+            "cash_flow",
+            "indirect_method"
+          ],
+          "do_not_use_when": [
+            "조건이 시점별로 섞여 있거나 선택지 함정이 강하면 구조식으로 전환"
+          ],
+          "ordered_steps": [
+            "핵심 개념을 찾는다.",
+            "조건을 분리한다.",
+            "정답 보기와 대조한다."
+          ],
+          "answer_index": 1,
+          "answer_text": "580,000원",
+          "concept_links": [
+            {
+              "concept_label": "문제의 핵심 개념",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 재무회계: 현금흐름표, cash_flow 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=cash_flow; tags=재무회계: 현금흐름표, cash_flow, indirect_method, working_capital",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "재무회계: 현금흐름표 / cash_flow / indirect_method",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "㈜CF의 20X1년 자료가 다음과 같을 때 간접법으로 산출한 영업활동 현금흐름은 얼마인가?\\n- 당기순이익 500,000원\\n- 감가상각비 120,000원\\n- 유형자산처분이익 30,000원\\n- 매출채권 증가 50,000원\\n- 매입채무 증가 40,000원",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "definition_or_formula",
+              "concept_source": "solution_path",
+              "why_required": "direct 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "조건 누락 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-accounting-007:structure",
+          "path_type": "structure",
+          "label": "표/구조식",
+          "why_this_path": "조건을 표로 분리해야 판매 전후, 과세/면세, 증가/감소 같은 방향 실수를 줄일 수 있다.",
+          "trigger_signals": [
+            "재무회계: 현금흐름표",
+            "cash_flow",
+            "indirect_method",
+            "working_capital"
+          ],
+          "do_not_use_when": [
+            "조건이 하나뿐이면 표 작성보다 정석식이 빠름"
+          ],
+          "ordered_steps": [
+            "조건표를 만든다.",
+            "방향을 판별한다.",
+            "보기와 비교한다."
+          ],
+          "answer_index": 1,
+          "answer_text": "580,000원",
+          "concept_links": [
+            {
+              "concept_label": "문제의 핵심 개념",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 재무회계: 현금흐름표, cash_flow 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=cash_flow; tags=재무회계: 현금흐름표, cash_flow, indirect_method, working_capital",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "재무회계: 현금흐름표 / cash_flow / indirect_method",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "㈜CF의 20X1년 자료가 다음과 같을 때 간접법으로 산출한 영업활동 현금흐름은 얼마인가?\\n- 당기순이익 500,000원\\n- 감가상각비 120,000원\\n- 유형자산처분이익 30,000원\\n- 매출채권 증가 50,000원\\n- 매입채무 증가 40,000원",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "condition_structure",
+              "concept_source": "solution_path",
+              "why_required": "structure 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "조건 누락 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-accounting-007:choice_elimination",
+          "path_type": "choice_elimination",
+          "label": "선택지 제거식",
+          "why_this_path": "객관식에서는 대표 함정을 먼저 제거하면 계산량과 검산 부담이 줄어든다.",
+          "trigger_signals": [
+            "보기 중 하나가 대표 함정값",
+            "조건 누락 함정"
+          ],
+          "do_not_use_when": [
+            "선택지가 모두 근접 숫자이면 제거식만으로 확정하지 않음"
+          ],
+          "ordered_steps": [
+            "각 보기가 어떤 계산 또는 분류를 전제로 하는지 표시한다.",
+            "핵심 신호와 맞지 않는 보기를 제거한다.",
+            "남은 보기 2번(580,000원)을 정답으로 확정한다."
+          ],
+          "answer_index": 1,
+          "answer_text": "580,000원",
+          "concept_links": [
+            {
+              "concept_label": "문제의 핵심 개념",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 재무회계: 현금흐름표, cash_flow 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=cash_flow; tags=재무회계: 현금흐름표, cash_flow, indirect_method, working_capital",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "재무회계: 현금흐름표 / cash_flow / indirect_method",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "㈜CF의 20X1년 자료가 다음과 같을 때 간접법으로 산출한 영업활동 현금흐름은 얼마인가?\\n- 당기순이익 500,000원\\n- 감가상각비 120,000원\\n- 유형자산처분이익 30,000원\\n- 매출채권 증가 50,000원\\n- 매입채무 증가 40,000원",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "distractor_filter",
+              "concept_source": "solution_path",
+              "why_required": "choice_elimination 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "조건 누락 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [
+            {
+              "choice_index": 0,
+              "choice_text": "550,000원",
+              "verdict": "eliminate",
+              "reason": "핵심 조건 또는 계산 방향과 맞지 않는다."
+            },
+            {
+              "choice_index": 1,
+              "choice_text": "580,000원",
+              "verdict": "keep_correct",
+              "reason": "핵심 개념과 조건 신호를 모두 만족하는 보기다."
+            },
+            {
+              "choice_index": 2,
+              "choice_text": "620,000원",
+              "verdict": "eliminate",
+              "reason": "핵심 조건 또는 계산 방향과 맞지 않는다."
+            },
+            {
+              "choice_index": 3,
+              "choice_text": "740,000원",
+              "verdict": "eliminate",
+              "reason": "핵심 조건 또는 계산 방향과 맞지 않는다."
+            }
+          ],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-accounting-007:reverse_check",
+          "path_type": "reverse_check",
+          "label": "검산식",
+          "why_this_path": "정답을 원문 조건과 해설 기준에 되돌려 넣어 계산값과 분류 기준이 맞는지 확인한다.",
+          "trigger_signals": [
+            "정답 확정 직후",
+            "대표 함정 확인",
+            "시간 10초 검산 가능"
+          ],
+          "do_not_use_when": [
+            "아직 풀이식이 없거나 시간이 skip threshold를 넘긴 경우"
+          ],
+          "ordered_steps": [
+            "정답 후보 580,000원를 문제의 핵심 조건에 다시 대입한다.",
+            "대표 함정: 조건 누락 함정와 비교한다.",
+            "해설의 계산 또는 분류 기준과 같은 결론인지 확인한다."
+          ],
+          "answer_index": 1,
+          "answer_text": "580,000원",
+          "concept_links": [
+            {
+              "concept_label": "문제의 핵심 개념",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 재무회계: 현금흐름표, cash_flow 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=cash_flow; tags=재무회계: 현금흐름표, cash_flow, indirect_method, working_capital",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "재무회계: 현금흐름표 / cash_flow / indirect_method",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "㈜CF의 20X1년 자료가 다음과 같을 때 간접법으로 산출한 영업활동 현금흐름은 얼마인가?\\n- 당기순이익 500,000원\\n- 감가상각비 120,000원\\n- 유형자산처분이익 30,000원\\n- 매출채권 증가 50,000원\\n- 매입채무 증가 40,000원",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "answer_consistency",
+              "concept_source": "solution_path",
+              "why_required": "reverse_check 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "조건 누락 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        }
+      ]
+    },
+    {
+      "question_id": "cpa1-eval-tax-001",
+      "exam": "CPA_1",
+      "subject": "tax",
+      "unit": "vat",
+      "tutorial_id": "tutorial_cpa1_tax",
+      "rights_status": "synthetic_seed",
+      "review_status": "expert_reviewed",
+      "applicable_year": 2026,
+      "stem": "다음 중 부가가치세법상 면세 대상이 아닌 것은?",
+      "stem_hash": "ec9ed3d90be37055bf80578b1d8d989b15e7ffe6a2c443bd2cf3c74816588666",
+      "choices": [
+        "미가공 식료품(국내 생산 농산물)",
+        "수돗물 공급",
+        "일반 음식점에서 제공하는 외식 서비스",
+        "허가받은 의료보건 용역"
+      ],
+      "correct_choice": 2,
+      "correct_answer": "일반 음식점에서 제공하는 외식 서비스",
+      "concept_tags": [
+        "세법: 부가가치세",
+        "vat",
+        "exemption",
+        "verbal_rule"
+      ],
+      "explanation": "부가가치세법상 면세는 기초생활필수재(미가공 식료품, 수돗물 등), 국민후생 용역(의료, 교육), 문화 관련 용역 등에 한정된다. 일반 음식점의 외식 서비스는 과세 대상이다. 음식점의 일부 농산물 매입은 의제매입세액 공제 대상이 될 수 있으나 서비스 자체는 과세.",
+      "solution_paths": [
+        {
+          "path_id": "cpa1-eval-tax-001:direct",
+          "path_type": "direct",
+          "label": "정석식",
+          "why_this_path": "부가가치세 면세와 과세 거래 분류가 문제 본문에 직접 드러나므로 정의와 공식으로 바로 푼다.",
+          "trigger_signals": [
+            "면세 대상",
+            "미가공 식료품",
+            "수돗물"
+          ],
+          "do_not_use_when": [
+            "조건이 시점별로 섞여 있거나 선택지 함정이 강하면 구조식으로 전환"
+          ],
+          "ordered_steps": [
+            "각 보기를 기초생활필수재, 국민후생 용역, 일반 과세 용역으로 분류한다.",
+            "미가공 식료품, 수돗물, 의료보건 용역은 면세 후보로 남긴다.",
+            "일반 음식점 외식 서비스는 과세 용역이므로 면세 대상이 아니다.",
+            "면세 대상이 아닌 보기 3번을 선택한다."
+          ],
+          "answer_index": 2,
+          "answer_text": "일반 음식점에서 제공하는 외식 서비스",
+          "concept_links": [
+            {
+              "concept_label": "부가가치세 면세와 과세 거래 분류",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 면세 대상, 미가공 식료품 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=vat; tags=세법: 부가가치세, vat, exemption, verbal_rule",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "면세 대상 / 미가공 식료품 / 수돗물",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "다음 중 부가가치세법상 면세 대상이 아닌 것은?",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "definition_or_formula",
+              "concept_source": "solution_path",
+              "why_required": "direct 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "농산물 매입의 의제매입세액 공제와 음식점 용역의 과세 여부를 섞는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-tax-001:structure",
+          "path_type": "structure",
+          "label": "표/구조식",
+          "why_this_path": "조건을 표로 분리해야 판매 전후, 과세/면세, 증가/감소 같은 방향 실수를 줄일 수 있다.",
+          "trigger_signals": [
+            "면세 대상",
+            "미가공 식료품",
+            "수돗물",
+            "외식 서비스",
+            "의료보건 용역"
+          ],
+          "do_not_use_when": [
+            "조건이 하나뿐이면 표 작성보다 정석식이 빠름"
+          ],
+          "ordered_steps": [
+            "보기별로 재화/용역, 면세 범주, 과세 여부 세 칸을 만든다.",
+            "면세 범주에 명확히 들어가는 보기를 제거한다.",
+            "남는 일반 소비 서비스가 정답 후보가 된다."
+          ],
+          "answer_index": 2,
+          "answer_text": "일반 음식점에서 제공하는 외식 서비스",
+          "concept_links": [
+            {
+              "concept_label": "부가가치세 면세와 과세 거래 분류",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 면세 대상, 미가공 식료품 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=vat; tags=세법: 부가가치세, vat, exemption, verbal_rule",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "면세 대상 / 미가공 식료품 / 수돗물",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "다음 중 부가가치세법상 면세 대상이 아닌 것은?",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "condition_structure",
+              "concept_source": "solution_path",
+              "why_required": "structure 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "농산물 매입의 의제매입세액 공제와 음식점 용역의 과세 여부를 섞는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-tax-001:choice_elimination",
+          "path_type": "choice_elimination",
+          "label": "선택지 제거식",
+          "why_this_path": "객관식에서는 대표 함정을 먼저 제거하면 계산량과 검산 부담이 줄어든다.",
+          "trigger_signals": [
+            "보기 중 하나가 대표 함정값",
+            "농산물 매입의 의제매입세액 공제와 음식점 용역의 과세 여부를 섞는 함정"
+          ],
+          "do_not_use_when": [
+            "선택지가 모두 근접 숫자이면 제거식만으로 확정하지 않음"
+          ],
+          "ordered_steps": [
+            "각 보기가 어떤 계산 또는 분류를 전제로 하는지 표시한다.",
+            "핵심 신호와 맞지 않는 보기를 제거한다.",
+            "남은 보기 3번(일반 음식점에서 제공하는 외식 서비스)을 정답으로 확정한다."
+          ],
+          "answer_index": 2,
+          "answer_text": "일반 음식점에서 제공하는 외식 서비스",
+          "concept_links": [
+            {
+              "concept_label": "부가가치세 면세와 과세 거래 분류",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 면세 대상, 미가공 식료품 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=vat; tags=세법: 부가가치세, vat, exemption, verbal_rule",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "면세 대상 / 미가공 식료품 / 수돗물",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "다음 중 부가가치세법상 면세 대상이 아닌 것은?",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "distractor_filter",
+              "concept_source": "solution_path",
+              "why_required": "choice_elimination 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "농산물 매입의 의제매입세액 공제와 음식점 용역의 과세 여부를 섞는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [
+            {
+              "choice_index": 0,
+              "choice_text": "미가공 식료품(국내 생산 농산물)",
+              "verdict": "eliminate",
+              "reason": "미가공 식료품은 대표적인 면세 대상이다."
+            },
+            {
+              "choice_index": 1,
+              "choice_text": "수돗물 공급",
+              "verdict": "eliminate",
+              "reason": "수돗물 공급은 기초생활 관련 면세 범주에 속한다."
+            },
+            {
+              "choice_index": 2,
+              "choice_text": "일반 음식점에서 제공하는 외식 서비스",
+              "verdict": "keep_correct",
+              "reason": "핵심 개념과 조건 신호를 모두 만족하는 보기다."
+            },
+            {
+              "choice_index": 3,
+              "choice_text": "허가받은 의료보건 용역",
+              "verdict": "eliminate",
+              "reason": "허가받은 의료보건 용역은 국민후생 용역 면세 범주다."
+            }
+          ],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-tax-001:reverse_check",
+          "path_type": "reverse_check",
+          "label": "검산식",
+          "why_this_path": "정답을 원문 조건과 해설 기준에 되돌려 넣어 계산값과 분류 기준이 맞는지 확인한다.",
+          "trigger_signals": [
+            "정답 확정 직후",
+            "대표 함정 확인",
+            "시간 10초 검산 가능"
+          ],
+          "do_not_use_when": [
+            "아직 풀이식이 없거나 시간이 skip threshold를 넘긴 경우"
+          ],
+          "ordered_steps": [
+            "정답 후보 일반 음식점에서 제공하는 외식 서비스를 문제의 핵심 조건에 다시 대입한다.",
+            "대표 함정: 농산물 매입의 의제매입세액 공제와 음식점 용역의 과세 여부를 섞는 함정와 비교한다.",
+            "해설의 계산 또는 분류 기준과 같은 결론인지 확인한다."
+          ],
+          "answer_index": 2,
+          "answer_text": "일반 음식점에서 제공하는 외식 서비스",
+          "concept_links": [
+            {
+              "concept_label": "부가가치세 면세와 과세 거래 분류",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 면세 대상, 미가공 식료품 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=vat; tags=세법: 부가가치세, vat, exemption, verbal_rule",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "면세 대상 / 미가공 식료품 / 수돗물",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "다음 중 부가가치세법상 면세 대상이 아닌 것은?",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "answer_consistency",
+              "concept_source": "solution_path",
+              "why_required": "reverse_check 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "농산물 매입의 의제매입세액 공제와 음식점 용역의 과세 여부를 섞는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        }
+      ]
+    },
+    {
+      "question_id": "cpa1-eval-tax-002",
+      "exam": "CPA_1",
+      "subject": "tax",
+      "unit": "income_tax",
+      "tutorial_id": "tutorial_cpa1_tax",
+      "rights_status": "synthetic_seed",
+      "review_status": "expert_reviewed",
+      "applicable_year": 2026,
+      "stem": "거주자인 갑의 20X1년 소득 현황은 다음과 같다. 종합과세 대상 금융소득은 얼마인가? (단, 금융소득 종합과세 기준금액 2,000만원 가정)\\n- 비영업대금 이자 1,500만원 (원천징수 14%)\\n- 정기예금 이자 600만원 (원천징수 14%)\\n- 비상장 내국법인 배당 300만원 (원천징수 14%)",
+      "stem_hash": "2952e831c1c541f53c5b4d51a73a5440583fa60ae45372586d8b543d26bb8b5b",
+      "choices": [
+        "전액 분리과세, 종합과세 0원",
+        "기준금액 초과분 400만원만 종합과세",
+        "전액(2,400만원) 종합과세",
+        "비영업대금 이자 1,500만원만 종합과세"
+      ],
+      "correct_choice": 2,
+      "correct_answer": "전액(2,400만원) 종합과세",
+      "concept_tags": [
+        "세법: 금융소득",
+        "income_tax",
+        "comprehensive_taxation",
+        "verbal_rule"
+      ],
+      "explanation": "금융소득(이자 + 배당) 합계 = 1,500 + 600 + 300 = 2,400만원. 기준금액 2,000만원을 초과하므로 전액이 종합과세 대상이 된다. 다만 2,000만원까지는 원천징수세율 14%로 산출세액을 계산하고 그 초과분에 누진세율을 적용하는 식의 비교과세 구조를 따른다. 일부만 종합과세하는 것이 아니라 전액이 종합과세 '대상'이 된다.",
+      "solution_paths": [
+        {
+          "path_id": "cpa1-eval-tax-002:direct",
+          "path_type": "direct",
+          "label": "정석식",
+          "why_this_path": "금융소득 종합과세 기준금액과 전액 대상 판단가 문제 본문에 직접 드러나므로 정의와 공식으로 바로 푼다.",
+          "trigger_signals": [
+            "이자소득",
+            "배당소득",
+            "2,000만원 기준"
+          ],
+          "do_not_use_when": [
+            "조건이 시점별로 섞여 있거나 선택지 함정이 강하면 구조식으로 전환"
+          ],
+          "ordered_steps": [
+            "이자와 배당을 모두 금융소득으로 합산한다.",
+            "1,500 + 600 + 300 = 2,400만원을 계산한다.",
+            "기준금액 2,000만원을 초과하므로 금융소득 전액이 종합과세 대상임을 판단한다.",
+            "전액 종합과세 보기 3번을 선택한다."
+          ],
+          "answer_index": 2,
+          "answer_text": "전액(2,400만원) 종합과세",
+          "concept_links": [
+            {
+              "concept_label": "금융소득 종합과세 기준금액과 전액 대상 판단",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 이자소득, 배당소득 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=income_tax; tags=세법: 금융소득, income_tax, comprehensive_taxation, verbal_rule",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "이자소득 / 배당소득 / 2,000만원 기준",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "거주자인 갑의 20X1년 소득 현황은 다음과 같다. 종합과세 대상 금융소득은 얼마인가? (단, 금융소득 종합과세 기준금액 2,000만원 가정)\\n- 비영업대금 이자 1,500만원 (원천징수 14%)\\n- 정기예금 이자 600만원 (원천징수 14%)\\n- 비상장 내국법인 배당 300만원 (원천징수 14%)",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "definition_or_formula",
+              "concept_source": "solution_path",
+              "why_required": "direct 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "기준금액 초과분만 종합과세 대상이라고 오해하는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-tax-002:structure",
+          "path_type": "structure",
+          "label": "표/구조식",
+          "why_this_path": "조건을 표로 분리해야 판매 전후, 과세/면세, 증가/감소 같은 방향 실수를 줄일 수 있다.",
+          "trigger_signals": [
+            "이자소득",
+            "배당소득",
+            "2,000만원 기준",
+            "종합과세 대상"
+          ],
+          "do_not_use_when": [
+            "조건이 하나뿐이면 표 작성보다 정석식이 빠름"
+          ],
+          "ordered_steps": [
+            "소득 종류, 금액, 금융소득 포함 여부, 종합과세 대상 여부 칸을 만든다.",
+            "이자와 배당을 합산하고 기준금액과 비교한다.",
+            "초과분만 대상인지 전액 대상인지 용어를 분리한다."
+          ],
+          "answer_index": 2,
+          "answer_text": "전액(2,400만원) 종합과세",
+          "concept_links": [
+            {
+              "concept_label": "금융소득 종합과세 기준금액과 전액 대상 판단",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 이자소득, 배당소득 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=income_tax; tags=세법: 금융소득, income_tax, comprehensive_taxation, verbal_rule",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "이자소득 / 배당소득 / 2,000만원 기준",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "거주자인 갑의 20X1년 소득 현황은 다음과 같다. 종합과세 대상 금융소득은 얼마인가? (단, 금융소득 종합과세 기준금액 2,000만원 가정)\\n- 비영업대금 이자 1,500만원 (원천징수 14%)\\n- 정기예금 이자 600만원 (원천징수 14%)\\n- 비상장 내국법인 배당 300만원 (원천징수 14%)",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "condition_structure",
+              "concept_source": "solution_path",
+              "why_required": "structure 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "기준금액 초과분만 종합과세 대상이라고 오해하는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-tax-002:choice_elimination",
+          "path_type": "choice_elimination",
+          "label": "선택지 제거식",
+          "why_this_path": "객관식에서는 대표 함정을 먼저 제거하면 계산량과 검산 부담이 줄어든다.",
+          "trigger_signals": [
+            "보기 중 하나가 대표 함정값",
+            "기준금액 초과분만 종합과세 대상이라고 오해하는 함정"
+          ],
+          "do_not_use_when": [
+            "선택지가 모두 근접 숫자이면 제거식만으로 확정하지 않음"
+          ],
+          "ordered_steps": [
+            "각 보기가 어떤 계산 또는 분류를 전제로 하는지 표시한다.",
+            "핵심 신호와 맞지 않는 보기를 제거한다.",
+            "남은 보기 3번(전액(2,400만원) 종합과세)을 정답으로 확정한다."
+          ],
+          "answer_index": 2,
+          "answer_text": "전액(2,400만원) 종합과세",
+          "concept_links": [
+            {
+              "concept_label": "금융소득 종합과세 기준금액과 전액 대상 판단",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 이자소득, 배당소득 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=income_tax; tags=세법: 금융소득, income_tax, comprehensive_taxation, verbal_rule",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "이자소득 / 배당소득 / 2,000만원 기준",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "거주자인 갑의 20X1년 소득 현황은 다음과 같다. 종합과세 대상 금융소득은 얼마인가? (단, 금융소득 종합과세 기준금액 2,000만원 가정)\\n- 비영업대금 이자 1,500만원 (원천징수 14%)\\n- 정기예금 이자 600만원 (원천징수 14%)\\n- 비상장 내국법인 배당 300만원 (원천징수 14%)",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "distractor_filter",
+              "concept_source": "solution_path",
+              "why_required": "choice_elimination 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "기준금액 초과분만 종합과세 대상이라고 오해하는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [
+            {
+              "choice_index": 0,
+              "choice_text": "전액 분리과세, 종합과세 0원",
+              "verdict": "eliminate",
+              "reason": "합계가 2,000만원을 초과하므로 전액 분리과세가 아니다."
+            },
+            {
+              "choice_index": 1,
+              "choice_text": "기준금액 초과분 400만원만 종합과세",
+              "verdict": "eliminate",
+              "reason": "세액계산 구조의 초과분 개념을 종합과세 대상 금액과 혼동했다."
+            },
+            {
+              "choice_index": 2,
+              "choice_text": "전액(2,400만원) 종합과세",
+              "verdict": "keep_correct",
+              "reason": "핵심 개념과 조건 신호를 모두 만족하는 보기다."
+            },
+            {
+              "choice_index": 3,
+              "choice_text": "비영업대금 이자 1,500만원만 종합과세",
+              "verdict": "eliminate",
+              "reason": "비영업대금 이자만 따로 떼고 전체 금융소득 합산을 누락했다."
+            }
+          ],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-tax-002:reverse_check",
+          "path_type": "reverse_check",
+          "label": "검산식",
+          "why_this_path": "정답을 원문 조건과 해설 기준에 되돌려 넣어 계산값과 분류 기준이 맞는지 확인한다.",
+          "trigger_signals": [
+            "정답 확정 직후",
+            "대표 함정 확인",
+            "시간 10초 검산 가능"
+          ],
+          "do_not_use_when": [
+            "아직 풀이식이 없거나 시간이 skip threshold를 넘긴 경우"
+          ],
+          "ordered_steps": [
+            "정답 후보 전액(2,400만원) 종합과세를 문제의 핵심 조건에 다시 대입한다.",
+            "대표 함정: 기준금액 초과분만 종합과세 대상이라고 오해하는 함정와 비교한다.",
+            "해설의 계산 또는 분류 기준과 같은 결론인지 확인한다."
+          ],
+          "answer_index": 2,
+          "answer_text": "전액(2,400만원) 종합과세",
+          "concept_links": [
+            {
+              "concept_label": "금융소득 종합과세 기준금액과 전액 대상 판단",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 이자소득, 배당소득 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=income_tax; tags=세법: 금융소득, income_tax, comprehensive_taxation, verbal_rule",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "이자소득 / 배당소득 / 2,000만원 기준",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "거주자인 갑의 20X1년 소득 현황은 다음과 같다. 종합과세 대상 금융소득은 얼마인가? (단, 금융소득 종합과세 기준금액 2,000만원 가정)\\n- 비영업대금 이자 1,500만원 (원천징수 14%)\\n- 정기예금 이자 600만원 (원천징수 14%)\\n- 비상장 내국법인 배당 300만원 (원천징수 14%)",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "answer_consistency",
+              "concept_source": "solution_path",
+              "why_required": "reverse_check 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "기준금액 초과분만 종합과세 대상이라고 오해하는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        }
+      ]
+    }
+  ]
+}

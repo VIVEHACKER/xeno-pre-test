@@ -170,7 +170,7 @@ function render(rx) {
 }
 
 let inflight = null;
-let debounceTimer = null;
+let diagnoseTimer = null;
 
 async function triggerDiagnose() {
   const payload = buildPayload();
@@ -189,8 +189,8 @@ async function triggerDiagnose() {
 
 function scheduleDiagnose() {
   updateSliderOutputs();
-  if (debounceTimer) clearTimeout(debounceTimer);
-  debounceTimer = setTimeout(triggerDiagnose, 300);
+  if (diagnoseTimer) clearTimeout(diagnoseTimer);
+  diagnoseTimer = setTimeout(triggerDiagnose, 300);
 }
 
 function escapeHtml(s) {
@@ -239,6 +239,326 @@ $("#evidenceList").addEventListener("click", (event) => {
   loadEvidenceDetail(btn.dataset.refType, btn.dataset.refId);
 });
 
+// ----- 과목별 튜토리얼 -----
+
+let subjectTutorials = [];
+let selectedTutorialId = null;
+let selectedStepIndex = 0;
+
+function phaseOptionValue(tutorial) {
+  return `${tutorial.exam_id}:${tutorial.phase_id}`;
+}
+
+function phaseOptionLabel(tutorial) {
+  return `${tutorial.exam_id} · ${tutorial.phase_name}`;
+}
+
+function filteredTutorials() {
+  const phase = $("#tutorialPhaseFilter").value;
+  return subjectTutorials.filter((tutorial) => phase === "all" || phaseOptionValue(tutorial) === phase);
+}
+
+function renderTutorialFilters() {
+  const phases = new Map();
+  subjectTutorials.forEach((tutorial) => phases.set(phaseOptionValue(tutorial), phaseOptionLabel(tutorial)));
+  $("#tutorialPhaseFilter").innerHTML = [
+    `<option value="all">전체</option>`,
+    ...Array.from(phases, ([value, label]) => `<option value="${escapeAttr(value)}">${escapeHtml(label)}</option>`),
+  ].join("");
+  renderTutorialSubjectOptions();
+}
+
+function renderTutorialSubjectOptions() {
+  const tutorials = filteredTutorials();
+  if (!tutorials.length) {
+    $("#tutorialSubjectSelect").innerHTML = `<option value="">과목 없음</option>`;
+    return;
+  }
+  if (!tutorials.some((tutorial) => tutorial.tutorial_id === selectedTutorialId)) {
+    selectedTutorialId = tutorials[0].tutorial_id;
+    selectedStepIndex = 0;
+  }
+  $("#tutorialSubjectSelect").innerHTML = tutorials
+    .map(
+      (tutorial) =>
+        `<option value="${escapeAttr(tutorial.tutorial_id)}" ${tutorial.tutorial_id === selectedTutorialId ? "selected" : ""}>${escapeHtml(tutorial.subject_name)} · ${escapeHtml(tutorial.entry_topic)}</option>`,
+    )
+    .join("");
+  renderSelectedTutorial();
+}
+
+function renderSelectedTutorial() {
+  const tutorial = subjectTutorials.find((item) => item.tutorial_id === selectedTutorialId);
+  if (!tutorial) {
+    $("#tutorialTitle").textContent = "튜토리얼 데이터 없음";
+    $("#tutorialObjective").textContent = "subject_tutorials.json을 먼저 생성해야 합니다.";
+    $("#tutorialAtoms").innerHTML = "";
+    $("#tutorialFlow").innerHTML = "";
+    $("#tutorialStepDetail").innerHTML = "";
+    return;
+  }
+  selectedStepIndex = Math.min(selectedStepIndex, tutorial.steps.length - 1);
+  $("#tutorialSummary").textContent = `${subjectTutorials.length}개 과목 · ${subjectTutorials.reduce((sum, item) => sum + item.steps.length, 0)}개 단계`;
+  $("#tutorialMeta").textContent = `${tutorial.exam_id} · ${tutorial.phase_name} · ${tutorial.assessment_type === "written" ? "주관식" : "객관식"}`;
+  $("#tutorialTitle").textContent = tutorial.title;
+  $("#tutorialObjective").textContent = tutorial.objective;
+  $("#tutorialTopic").textContent = tutorial.entry_topic;
+  $("#tutorialAtoms").innerHTML = tutorial.concept_atoms
+    .map(
+      (atom, index) => `
+        <article>
+          <span>atom ${index + 1}</span>
+          ${escapeHtml(atom)}
+        </article>
+      `,
+    )
+    .join("");
+  $("#tutorialFlow").innerHTML = tutorial.steps
+    .map(
+      (step, index) => `
+        <button class="tutorial-step-button ${index === selectedStepIndex ? "active" : ""}" data-step-index="${index}">
+          <span>${escapeHtml(step.label)}</span>
+          <strong>${escapeHtml(step.title)}</strong>
+        </button>
+      `,
+    )
+    .join("");
+  renderTutorialStep(tutorial, selectedStepIndex);
+}
+
+function renderTutorialStep(tutorial, index) {
+  const step = tutorial.steps[index];
+  const paths = step.solution_paths || [];
+  $("#tutorialStepDetail").innerHTML = `
+    <p class="eyebrow">${escapeHtml(step.label)} · 난이도 ${step.difficulty}</p>
+    <h3>${escapeHtml(step.title)}</h3>
+    <p>${escapeHtml(step.core_explanation)}</p>
+    <div class="tutorial-step-body">
+      <div class="tutorial-problem">
+        <strong>문제</strong>
+        <p>${escapeHtml(step.prompt)}</p>
+        <strong>해야 할 일</strong>
+        <p>${escapeHtml(step.learner_action)}</p>
+      </div>
+      <div class="tutorial-answer">
+        <strong>기본 풀이</strong>
+        <p>${escapeHtml(step.model_answer)}</p>
+        <div class="checkpoint-list">
+          ${step.checkpoints.map((item) => `<span>${escapeHtml(item)}</span>`).join("")}
+        </div>
+      </div>
+    </div>
+    <div class="solution-paths">
+      ${paths
+        .map(
+          (path) => `
+            <article class="solution-path">
+              <strong>${escapeHtml(path.label)}</strong>
+              <p>${escapeHtml(path.method)}</p>
+              <small>${escapeHtml(path.when_to_use)}</small>
+              <div class="path-rationale">
+                <span>왜 이 풀이인가</span>
+                <p>${escapeHtml(path.selection_rationale?.why_this_path ?? "")}</p>
+              </div>
+              <div class="path-signal-grid">
+                <div>
+                  <span>사용 신호</span>
+                  ${(path.selection_rationale?.use_when_signals ?? []).map((signal) => `<em>${escapeHtml(signal)}</em>`).join("")}
+                </div>
+                <div>
+                  <span>배제 신호</span>
+                  ${(path.selection_rationale?.do_not_use_when ?? []).map((signal) => `<em>${escapeHtml(signal)}</em>`).join("")}
+                </div>
+              </div>
+              <div class="concept-link-block">
+                <span>연결 개념</span>
+                ${(path.concept_links ?? [])
+                  .map(
+                    (link) => `
+                      <div class="concept-link">
+                        <strong>${escapeHtml(link.concept_label)}</strong>
+                        <small>${escapeHtml(link.concept_role)}</small>
+                        <p>${escapeHtml(link.why_required)}</p>
+                      </div>
+                    `,
+                  )
+                  .join("")}
+              </div>
+            </article>
+          `,
+        )
+        .join("")}
+    </div>
+  `;
+}
+
+async function loadSubjectTutorials() {
+  try {
+    const response = await fetch("subject_tutorials.json", { cache: "no-store" });
+    if (!response.ok) throw new Error(`tutorials ${response.status}`);
+    const data = await response.json();
+    subjectTutorials = data.tutorials || [];
+    renderTutorialFilters();
+  } catch (err) {
+    $("#tutorialSummary").textContent = `튜토리얼 로딩 실패: ${err.message}`;
+    renderSelectedTutorial();
+  }
+}
+
+$("#tutorialPhaseFilter").addEventListener("change", () => {
+  selectedTutorialId = null;
+  selectedStepIndex = 0;
+  renderTutorialSubjectOptions();
+});
+
+$("#tutorialSubjectSelect").addEventListener("change", (event) => {
+  selectedTutorialId = event.target.value;
+  selectedStepIndex = 0;
+  renderSelectedTutorial();
+});
+
+$("#tutorialFlow").addEventListener("click", (event) => {
+  const button = event.target.closest(".tutorial-step-button");
+  if (!button) return;
+  selectedStepIndex = Number(button.dataset.stepIndex);
+  renderSelectedTutorial();
+});
+
+// ----- 문제별 풀이 맵 -----
+
+let problemSolutionMaps = [];
+let selectedProblemId = null;
+
+function filteredProblemMaps() {
+  const subject = $("#problemSubjectFilter").value;
+  return problemSolutionMaps.filter((item) => subject === "all" || item.subject === subject);
+}
+
+function renderProblemFilters() {
+  const subjects = new Map();
+  problemSolutionMaps.forEach((item) => subjects.set(item.subject, SUBJECT_LABEL[item.subject] ?? item.subject));
+  $("#problemSubjectFilter").innerHTML = [
+    `<option value="all">전체</option>`,
+    ...Array.from(subjects, ([value, label]) => `<option value="${escapeAttr(value)}">${escapeHtml(label)}</option>`),
+  ].join("");
+  renderProblemOptions();
+}
+
+function renderProblemOptions() {
+  const items = filteredProblemMaps();
+  if (!items.length) {
+    $("#problemSolutionSelect").innerHTML = `<option value="">문제 없음</option>`;
+    return;
+  }
+  if (!items.some((item) => item.question_id === selectedProblemId)) {
+    selectedProblemId = items[0].question_id;
+  }
+  $("#problemSolutionSelect").innerHTML = items
+    .map(
+      (item) =>
+        `<option value="${escapeAttr(item.question_id)}" ${item.question_id === selectedProblemId ? "selected" : ""}>${escapeHtml(item.question_id)} · ${escapeHtml(item.unit)}</option>`,
+    )
+    .join("");
+  renderSelectedProblemMap();
+}
+
+function renderSelectedProblemMap() {
+  const item = problemSolutionMaps.find((problem) => problem.question_id === selectedProblemId);
+  if (!item) {
+    $("#problemSolutionSummary").textContent = "문제 풀이맵 없음";
+    $("#problemMeta").textContent = "데이터 없음";
+    $("#problemTitle").textContent = "문제별 풀이 지능";
+    $("#problemStem").textContent = "problem_solution_maps.json을 먼저 생성해야 합니다.";
+    $("#problemConceptTags").innerHTML = "";
+    $("#problemSolutionPaths").innerHTML = "";
+    return;
+  }
+
+  $("#problemSolutionSummary").textContent = `${problemSolutionMaps.length}개 문제 · ${problemSolutionMaps.reduce((sum, problem) => sum + problem.solution_paths.length, 0)}개 풀이`;
+  $("#problemMeta").textContent = `${SUBJECT_LABEL[item.subject] ?? item.subject} · ${item.unit} · ${item.applicable_year ?? "연도 미지정"}`;
+  $("#problemTitle").textContent = item.question_id;
+  $("#problemStem").textContent = item.stem;
+  $("#problemConceptTags").innerHTML = item.concept_tags
+    .map((tag) => `<span>${escapeHtml(tag)}</span>`)
+    .join("");
+  $("#problemCorrectAnswer").textContent = `${item.correct_choice + 1}. ${item.correct_answer}`;
+  $("#problemRightsStatus").textContent = item.rights_status;
+  $("#problemReviewStatus").textContent = item.review_status;
+  $("#problemSolutionPaths").innerHTML = item.solution_paths
+    .map(
+      (path) => `
+        <article class="problem-path-card">
+          <p class="eyebrow">${escapeHtml(path.path_type)} · 신뢰도 ${Math.round(path.confidence * 100)}%</p>
+          <h3>${escapeHtml(path.label)}</h3>
+          <p>${escapeHtml(path.why_this_path)}</p>
+          <div class="problem-path-meta">
+            ${path.trigger_signals.map((signal) => `<span>${escapeHtml(signal)}</span>`).join("")}
+          </div>
+          <ol>
+            ${path.ordered_steps.map((step) => `<li>${escapeHtml(step)}</li>`).join("")}
+          </ol>
+          <div class="problem-link-grid">
+            ${(path.concept_links ?? [])
+              .map(
+                (link) => `
+                  <div class="problem-concept-link">
+                    <strong>${escapeHtml(link.concept_label)}</strong>
+                    <small>${escapeHtml(link.why_required)}</small>
+                    <small>판별: ${escapeHtml(link.decision_test)}</small>
+                    <small>배제: ${escapeHtml(link.rejection_test)}</small>
+                  </div>
+                `,
+              )
+              .join("")}
+          </div>
+          ${
+            path.choice_eliminations?.length
+              ? `
+                <div class="choice-elimination-list">
+                  ${path.choice_eliminations
+                    .map(
+                      (choice) => `
+                        <div class="choice-elimination">
+                          <strong>${choice.choice_index + 1}. ${escapeHtml(choice.choice_text)}</strong>
+                          <span class="choice-verdict">${choice.verdict === "keep_correct" ? "정답 유지" : "제거"}</span>
+                          <small>${escapeHtml(choice.reason)}</small>
+                        </div>
+                      `,
+                    )
+                    .join("")}
+                </div>
+              `
+              : ""
+          }
+        </article>
+      `,
+    )
+    .join("");
+}
+
+async function loadProblemSolutionMaps() {
+  try {
+    const response = await fetch("problem_solution_maps.json", { cache: "no-store" });
+    if (!response.ok) throw new Error(`problem solutions ${response.status}`);
+    const data = await response.json();
+    problemSolutionMaps = data.problem_solution_maps || [];
+    renderProblemFilters();
+  } catch (err) {
+    $("#problemSolutionSummary").textContent = `문제 풀이맵 로딩 실패: ${err.message}`;
+    renderSelectedProblemMap();
+  }
+}
+
+$("#problemSubjectFilter").addEventListener("change", () => {
+  selectedProblemId = null;
+  renderProblemOptions();
+});
+
+$("#problemSolutionSelect").addEventListener("change", (event) => {
+  selectedProblemId = event.target.value;
+  renderSelectedProblemMap();
+});
+
 // ----- 06번 데이터 적재 manifest (기존 보존) -----
 
 function renderDataManifest(manifest) {
@@ -255,6 +575,14 @@ function renderDataManifest(manifest) {
   $("#learningJobCount").textContent = stats.learning_jobs ?? 0;
   $("#trainableAfterReviewCount").textContent = stats.trainable_after_review_jobs ?? 0;
   $("#blockedLearningJobCount").textContent = stats.learning_status?.blocked ?? 0;
+  $("#subjectTutorialCount").textContent = stats.subject_tutorials ?? 0;
+  $("#tutorialStepCount").textContent = stats.tutorial_steps ?? 0;
+  $("#solutionPathCount").textContent = stats.solution_paths ?? 0;
+  $("#solutionConceptLinkCount").textContent = stats.solution_concept_links ?? 0;
+  $("#solutionRationaleCount").textContent = stats.solution_rationales ?? 0;
+  $("#problemSolutionMapCount").textContent = stats.problem_solution_maps ?? 0;
+  $("#problemSolutionPathCount").textContent = stats.problem_solution_paths ?? 0;
+  $("#problemChoiceEliminationCount").textContent = stats.problem_choice_eliminations ?? 0;
   $("#manifestGeneratedAt").textContent = manifest.generated_at
     ? `마지막 적재 ${new Date(manifest.generated_at).toLocaleString("ko-KR")}`
     : "DB manifest 없음";
@@ -328,6 +656,8 @@ async function healthCheck() {
 updateSliderOutputs();
 renderWeek();
 loadDataManifest();
+loadSubjectTutorials();
+loadProblemSolutionMaps();
 healthCheck().then((ok) => {
   if (ok) triggerDiagnose();
 });

@@ -19,6 +19,7 @@
         </div>
         <nav class="nav-list" aria-label="주요 화면">
           <button class="nav-item active" data-view="dashboard">전략 대시보드</button>
+          <button class="nav-item" data-view="tutorials">과목 튜토리얼</button>
           <button class="nav-item" data-view="problem">문제 지능</button>
           <button class="nav-item" data-view="stories">합격수기 분석</button>
           <button class="nav-item" data-view="interview">인터뷰 설계</button>
@@ -150,43 +151,82 @@
           </section>
         </section>
 
+        <section class="view" id="tutorials">
+          <div class="panel tutorial-panel">
+            <div class="panel-header">
+              <h2>과목별 튜토리얼</h2>
+              <span id="tutorialSummary">기초부터 변형까지</span>
+            </div>
+            <div class="tutorial-toolbar" aria-label="튜토리얼 선택">
+              <label>
+                시험 단계
+                <select id="tutorialPhaseFilter">
+                  <option value="all">전체</option>
+                </select>
+              </label>
+              <label>
+                과목
+                <select id="tutorialSubjectSelect"></select>
+              </label>
+            </div>
+            <div class="tutorial-head">
+              <div>
+                <p class="eyebrow" id="tutorialMeta">CPA · 1차</p>
+                <h3 id="tutorialTitle">튜토리얼 로딩 중</h3>
+                <p id="tutorialObjective">과목별 튜토리얼 데이터를 불러오고 있습니다.</p>
+              </div>
+              <div class="tutorial-topic">
+                <span>입문 단원</span>
+                <strong id="tutorialTopic">-</strong>
+              </div>
+            </div>
+            <div class="atom-list" id="tutorialAtoms"></div>
+            <div class="tutorial-flow" id="tutorialFlow"></div>
+            <div class="tutorial-step-detail" id="tutorialStepDetail"></div>
+          </div>
+        </section>
+
         <section class="view" id="problem">
           <div class="panel">
             <div class="panel-header">
               <h2>문제 지능 카드</h2>
-              <span>정답보다 풀이 판단을 저장</span>
+              <span id="problemSolutionSummary">문제별 풀이 경로 로딩 중</span>
+            </div>
+            <div class="problem-toolbar" aria-label="문제 선택">
+              <label>
+                과목
+                <select id="problemSubjectFilter">
+                  <option value="all">전체</option>
+                </select>
+              </label>
+              <label>
+                문제
+                <select id="problemSolutionSelect"></select>
+              </label>
             </div>
             <div class="problem-card">
               <div class="problem-main">
-                <p class="eyebrow">회계학 · 금융자산</p>
-                <h3>상각후원가와 유효이자율 문제</h3>
-                <p>취득일, 이자 조건, 장부금액 변화를 분리해서 처리해야 하는 유형입니다.</p>
+                <p class="eyebrow" id="problemMeta">문제 로딩 중</p>
+                <h3 id="problemTitle">문제별 풀이 지능</h3>
+                <p id="problemStem">problem_solution_maps.json을 불러오고 있습니다.</p>
               </div>
-              <div class="tag-cloud">
-                <span>상각후원가</span>
-                <span>유효이자율</span>
-                <span>조건 누락</span>
-                <span>2회전 풀이</span>
-              </div>
+              <div class="tag-cloud" id="problemConceptTags"></div>
             </div>
-            <div class="intelligence-grid">
+            <div class="problem-answer-strip">
               <article>
-                <h3>풀이 시작점</h3>
-                <p>취득시점, 액면이자율, 유효이자율, 이자 지급일을 먼저 표시합니다.</p>
+                <span>정답</span>
+                <strong id="problemCorrectAnswer">-</strong>
               </article>
               <article>
-                <h3>함정</h3>
-                <p>액면이자를 이자수익으로 바로 쓰거나 처분 조건을 놓치는 경우가 많습니다.</p>
+                <span>권리 상태</span>
+                <strong id="problemRightsStatus">-</strong>
               </article>
               <article>
-                <h3>시간 전략</h3>
-                <p>60초 안에 식이 잡히지 않으면 표시 후 다음 문제로 넘어갑니다.</p>
-              </article>
-              <article>
-                <h3>변형 포인트</h3>
-                <p>손상, 중도 처분, 이자 지급 횟수 변경으로 난도를 조정할 수 있습니다.</p>
+                <span>검수 상태</span>
+                <strong id="problemReviewStatus">-</strong>
               </article>
             </div>
+            <div class="problem-solution-paths" id="problemSolutionPaths"></div>
           </div>
         </section>
 
@@ -244,6 +284,38 @@
               <article>
                 <span>학습 차단</span>
                 <strong id="blockedLearningJobCount">0</strong>
+              </article>
+              <article>
+                <span>과목 튜토리얼</span>
+                <strong id="subjectTutorialCount">0</strong>
+              </article>
+              <article>
+                <span>튜토리얼 단계</span>
+                <strong id="tutorialStepCount">0</strong>
+              </article>
+              <article>
+                <span>풀이 경로</span>
+                <strong id="solutionPathCount">0</strong>
+              </article>
+              <article>
+                <span>개념-풀이 링크</span>
+                <strong id="solutionConceptLinkCount">0</strong>
+              </article>
+              <article>
+                <span>풀이 근거</span>
+                <strong id="solutionRationaleCount">0</strong>
+              </article>
+              <article>
+                <span>문제 풀이맵</span>
+                <strong id="problemSolutionMapCount">0</strong>
+              </article>
+              <article>
+                <span>문제별 풀이</span>
+                <strong id="problemSolutionPathCount">0</strong>
+              </article>
+              <article>
+                <span>보기 판별</span>
+                <strong id="problemChoiceEliminationCount">0</strong>
               </article>
             </div>
             <div class="story-pipeline">

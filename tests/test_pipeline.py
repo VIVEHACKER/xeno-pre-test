@@ -5,6 +5,8 @@ from pathlib import Path
 
 from scripts import cpa_data_pipeline as pipeline
 
+ROOT = Path(__file__).resolve().parents[1]
+
 
 def _connect_memory() -> sqlite3.Connection:
     conn = sqlite3.connect(":memory:")
@@ -57,3 +59,106 @@ def test_owned_generated_exam_asset_can_queue_generation(tmp_path: Path):
 
     assert job["status"] == "queued_generation"
     assert job["blocker"] is None
+
+
+def test_subject_tutorials_cover_all_ontology_subjects_with_solution_paths(tmp_path: Path):
+    conn = _connect_memory()
+
+    pipeline.seed_exam_ontology(conn, ROOT / "data" / "seeds" / "exam_ontology.json")
+    result = pipeline.seed_subject_tutorials(
+        conn,
+        ROOT / "data" / "seeds" / "subject_tutorials.json",
+        tmp_path / "subject_tutorials.json",
+    )
+
+    assert result["subject_tutorials"] == 18
+    assert result["tutorial_steps"] == 108
+    assert result["solution_concept_links"] == 1296
+
+    missing = conn.execute(
+        """
+        SELECT s.subject_id
+        FROM exam_subjects s
+        LEFT JOIN subject_tutorials t ON t.subject_id = s.subject_id
+        WHERE t.subject_id IS NULL
+        """
+    ).fetchall()
+    assert missing == []
+
+    weak_steps = conn.execute(
+        """
+        SELECT step_id
+        FROM tutorial_steps
+        WHERE json_array_length(solution_paths_json) < 4
+        """
+    ).fetchall()
+    assert weak_steps == []
+
+    weak_paths = conn.execute(
+        """
+        SELECT step_id
+        FROM tutorial_steps
+        WHERE EXISTS (
+          SELECT 1
+          FROM json_each(solution_paths_json)
+          WHERE json_extract(value, '$.selection_rationale.why_this_path') IS NULL
+             OR json_array_length(json_extract(value, '$.concept_links')) < 3
+        )
+        """
+    ).fetchall()
+    assert weak_paths == []
+
+
+def test_problem_solution_maps_connect_questions_to_concepts_and_eliminations(tmp_path: Path):
+    conn = _connect_memory()
+    questions = [
+        question
+        for question in pipeline.load_evaluation_questions(ROOT / "data" / "seeds" / "evaluation")
+        if pipeline.safe_problem_for_solution_map(question)
+    ]
+    expected_question_count = len(questions)
+    expected_choice_count = sum(len(question["choices"]) for question in questions)
+
+    result = pipeline.seed_problem_solution_maps(
+        conn,
+        ROOT / "data" / "seeds" / "evaluation",
+        tmp_path / "problem_solution_maps.json",
+    )
+
+    assert expected_question_count >= 5
+    assert result["problem_solution_maps"] == expected_question_count
+    assert result["problem_solution_paths"] == expected_question_count * 4
+    assert result["problem_solution_concept_links"] == expected_question_count * 4 * 3
+    assert result["problem_choice_eliminations"] == expected_choice_count
+
+    inventory = conn.execute(
+        """
+        SELECT correct_choice
+        FROM problem_solution_maps
+        WHERE problem_id = 'cpa1-eval-accounting-002'
+        """
+    ).fetchone()
+    assert inventory["correct_choice"] == 2
+
+    weak_paths = conn.execute(
+        """
+        SELECT p.path_id
+        FROM problem_solution_paths p
+        LEFT JOIN problem_solution_concept_links c ON c.path_id = p.path_id
+        GROUP BY p.path_id
+        HAVING COUNT(c.link_id) < 3
+        """
+    ).fetchall()
+    assert weak_paths == []
+
+    choice_paths = conn.execute(
+        """
+        SELECT p.path_id, COUNT(e.elimination_id) AS elimination_count
+        FROM problem_solution_paths p
+        LEFT JOIN problem_choice_eliminations e ON e.path_id = p.path_id
+        WHERE p.path_type = 'choice_elimination'
+        GROUP BY p.path_id
+        """
+    ).fetchall()
+    assert len(choice_paths) == expected_question_count
+    assert all(row["elimination_count"] == 4 for row in choice_paths)

@@ -2,7 +2,7 @@
   --ink: #18201c;
   --muted: #64716a;
   --line: #d9e2dc;
-  --panel: #ffffff;
+  --panel: #fffefa;
   --canvas: #f5f7f2;
   --teal: #0f766e;
   --green: #2f7d32;
@@ -26,6 +26,10 @@ body {
 
 button,
 input {
+  font: inherit;
+}
+
+select {
   font: inherit;
 }
 
@@ -55,7 +59,7 @@ input {
   height: 44px;
   border-radius: 8px;
   background: var(--ink);
-  color: #fff;
+  color: #f8fbf8;
   font-weight: 800;
 }
 
@@ -328,6 +332,31 @@ h3 {
   margin-bottom: 14px;
 }
 
+.problem-toolbar {
+  display: grid;
+  grid-template-columns: 190px minmax(260px, 1fr);
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.problem-toolbar label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.problem-toolbar select {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfcfa;
+  color: var(--ink);
+  padding: 8px 10px;
+}
+
 .problem-main h3 {
   font-size: 22px;
 }
@@ -362,6 +391,105 @@ h3 {
   background: #fbfcfa;
   border-radius: 8px;
   padding: 14px;
+}
+
+.problem-answer-strip {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.problem-answer-strip article {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfcfa;
+  padding: 13px;
+}
+
+.problem-answer-strip span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.problem-answer-strip strong {
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.problem-solution-paths {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.problem-path-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfcfa;
+  padding: 14px;
+}
+
+.problem-path-card h3 {
+  font-size: 17px;
+}
+
+.problem-path-card p,
+.problem-path-card li {
+  line-height: 1.5;
+}
+
+.problem-path-card ol {
+  margin: 10px 0 0;
+  padding-left: 20px;
+}
+
+.problem-path-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 10px 0;
+}
+
+.problem-path-meta span,
+.choice-verdict {
+  border: 1px solid #bcd6ce;
+  border-radius: 999px;
+  color: var(--teal);
+  background: #e8f3ef;
+  padding: 5px 8px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.problem-link-grid,
+.choice-elimination-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.problem-concept-link,
+.choice-elimination {
+  border: 1px solid #d7e0da;
+  border-radius: 8px;
+  background: var(--panel);
+  padding: 10px;
+}
+
+.problem-concept-link strong,
+.choice-elimination strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.problem-concept-link small,
+.choice-elimination small {
+  display: block;
+  color: var(--muted);
+  line-height: 1.45;
 }
 
 .story-pipeline {
@@ -446,10 +574,10 @@ h3 {
 }
 
 .selected-question {
-  border-left: 4px solid var(--teal);
+  border: 1px solid #bcd6ce;
   background: #edf7f3;
   padding: 12px 14px;
-  border-radius: 0 8px 8px 0;
+  border-radius: 8px;
 }
 
 @media (max-width: 980px) {
@@ -463,17 +591,23 @@ h3 {
   }
 
   .nav-list {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
   .control-strip,
   .metric-grid,
   .two-column,
   .problem-card,
+  .problem-toolbar,
+  .problem-answer-strip,
+  .problem-solution-paths,
   .intelligence-grid,
   .interview-layout,
   .data-metrics,
   .story-pipeline,
+  .tutorial-head,
+  .tutorial-step-body,
+  .solution-paths,
   .week-grid {
     grid-template-columns: 1fr;
   }
@@ -503,6 +637,289 @@ h3 {
   }
 
   .priority-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 과목별 튜토리얼 */
+
+.tutorial-panel {
+  display: grid;
+  gap: 16px;
+}
+
+.tutorial-toolbar {
+  display: grid;
+  grid-template-columns: 220px minmax(260px, 1fr);
+  gap: 12px;
+}
+
+.tutorial-toolbar label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.tutorial-toolbar select {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfcfa;
+  color: var(--ink);
+  padding: 8px 10px;
+}
+
+.tutorial-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: 14px;
+  align-items: stretch;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f8faf7;
+}
+
+.tutorial-head h3 {
+  font-size: 23px;
+  line-height: 1.25;
+}
+
+.tutorial-topic {
+  display: grid;
+  align-content: center;
+  gap: 6px;
+  border: 1px solid #cfd9d2;
+  border-radius: 8px;
+  padding: 14px;
+  background: var(--panel);
+}
+
+.tutorial-topic span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.tutorial-topic strong {
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.atom-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.atom-list article {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 13px;
+  background: #fbfcfa;
+  color: var(--ink);
+  line-height: 1.45;
+}
+
+.atom-list span {
+  display: block;
+  color: var(--teal);
+  font-size: 11px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.tutorial-flow {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.tutorial-step-button {
+  min-height: 76px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfcfa;
+  color: var(--ink);
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.tutorial-step-button.active,
+.tutorial-step-button:hover {
+  border-color: #99c7bb;
+  background: #e8f3ef;
+}
+
+.tutorial-step-button span {
+  display: block;
+  color: var(--teal);
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.tutorial-step-button strong {
+  display: block;
+  line-height: 1.35;
+}
+
+.tutorial-step-detail {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfcfa;
+  padding: 16px;
+}
+
+.tutorial-step-body {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.tutorial-problem,
+.tutorial-answer {
+  border: 1px solid #d7e0da;
+  border-radius: 8px;
+  background: var(--panel);
+  padding: 14px;
+}
+
+.tutorial-problem strong,
+.tutorial-answer strong,
+.solution-path strong {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.checkpoint-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.checkpoint-list span {
+  border: 1px solid #bcd6ce;
+  border-radius: 999px;
+  color: var(--teal);
+  background: #e8f3ef;
+  padding: 5px 9px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.solution-paths {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.solution-path {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  padding: 12px;
+}
+
+.solution-path small {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.path-rationale,
+.concept-link-block {
+  margin-top: 12px;
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+}
+
+.path-rationale span,
+.path-signal-grid span,
+.concept-link-block > span {
+  display: block;
+  color: var(--teal);
+  font-size: 11px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.path-rationale p,
+.solution-path p {
+  line-height: 1.5;
+}
+
+.path-signal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.path-signal-grid div {
+  border: 1px solid #d7e0da;
+  border-radius: 8px;
+  background: #fbfcfa;
+  padding: 10px;
+}
+
+.path-signal-grid em {
+  display: block;
+  color: var(--ink);
+  font-size: 12px;
+  font-style: normal;
+  line-height: 1.4;
+}
+
+.path-signal-grid em + em {
+  margin-top: 5px;
+}
+
+.concept-link {
+  border: 1px solid #d7e0da;
+  border-radius: 8px;
+  background: #fbfcfa;
+  padding: 10px;
+}
+
+.concept-link + .concept-link {
+  margin-top: 8px;
+}
+
+.concept-link strong {
+  margin-bottom: 2px;
+}
+
+.concept-link small {
+  margin: 0 0 6px;
+}
+
+@media (max-width: 1180px) {
+  .tutorial-flow,
+  .atom-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .solution-paths,
+  .path-signal-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .tutorial-toolbar,
+  .tutorial-flow,
+  .atom-list,
+  .solution-paths {
     grid-template-columns: 1fr;
   }
 }
