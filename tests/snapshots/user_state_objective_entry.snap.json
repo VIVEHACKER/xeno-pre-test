@@ -1,0 +1,87 @@
+{
+  "prescription_id": "rx-seed-user-objective-entry-f51bb0285b20dab7",
+  "user_id": "seed-user-objective-entry",
+  "generated_at": "2026-05-11T04:00:00+00:00",
+  "diagnosis": {
+    "summary": "단계 objective_entry에서 매칭된 신호: 회계학 2회전 풀이 드릴, 객관식 전환 조건, 회계/세법 핵심축 집중, 시간 집착 방지. 잔여 180일, 리스크 점수 55/100.",
+    "risk_level": "high",
+    "risk_drivers": [
+      "accounting 시간 초과 위험",
+      "accounting 핵심 개념 공백",
+      "tax 핵심 개념 공백",
+      "복수 규칙 동시 발동",
+      "회계학 2회전 풀이 드릴",
+      "객관식 전환 조건",
+      "회계/세법 핵심축 집중",
+      "시간 집착 방지",
+      "objective_entry_delay",
+      "time_pressure"
+    ]
+  },
+  "weekly_goal": {
+    "goal_text": "1회전에서 계산량 많은 문제를 표시 후 통과하고, 2회전에서 재진입한다. 풀이 시간보다 통과 결정 시간을 훈련한다.",
+    "verification_metric": "주간 처방 수행률 80% 이상, 매칭 규칙 accounting_two_pass_drill 관련 약점 지표 측정"
+  },
+  "daily_tasks": [
+    {
+      "task_text": "1회전에서 계산량 많은 문제를 표시 후 통과하고, 2회전에서 재진입한다. 풀이 시간보다 통과 결정 시간을 훈련한다.",
+      "subject": "accounting",
+      "estimated_minutes": 30
+    },
+    {
+      "task_text": "신규 강의 확장을 제한하고 객관식 세트와 오답 원인 분류를 주간 처방에 포함한다.",
+      "subject": "mixed",
+      "estimated_minutes": 60
+    },
+    {
+      "task_text": "회계학과 세법개론을 주간 점수 상승의 중심축으로 두고, 나머지 과목은 유지 블록으로 분리한다.",
+      "subject": "mixed",
+      "estimated_minutes": 45
+    },
+    {
+      "task_text": "문제별 통과 기준을 두고 1회전/2회전 풀이를 훈련한다.",
+      "subject": "mixed",
+      "estimated_minutes": 30
+    }
+  ],
+  "concepts_to_review": [
+    "원가관리: CVP",
+    "세법: 법인세 손금",
+    "재무회계: 수익인식"
+  ],
+  "problems_to_solve": [],
+  "problems_to_skip": [],
+  "triggered_rule_keys": [
+    "accounting_two_pass_drill",
+    "objective_entry_timing",
+    "accounting_tax_core_focus",
+    "time_efficiency_guardrail"
+  ],
+  "evidence_refs": [
+    {
+      "ref_type": "user_state",
+      "ref_id": "seed-user-objective-entry",
+      "note": "stage=objective_entry, days_until_exam=180"
+    },
+    {
+      "ref_type": "decision_rule",
+      "ref_id": "accounting_two_pass_drill",
+      "note": "회계학 2회전 풀이 드릴"
+    },
+    {
+      "ref_type": "decision_rule",
+      "ref_id": "objective_entry_timing",
+      "note": "객관식 전환 조건"
+    },
+    {
+      "ref_type": "decision_rule",
+      "ref_id": "accounting_tax_core_focus",
+      "note": "회계/세법 핵심축 집중"
+    },
+    {
+      "ref_type": "decision_rule",
+      "ref_id": "time_efficiency_guardrail",
+      "note": "시간 집착 방지"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "user_id": "seed-user-post-lecture",
+  "target_exam": "CPA_1",
+  "days_until_exam": 240,
+  "available_hours_per_day": 8,
+  "current_stage": "post_lecture",
+  "subject_states": [
+    {
+      "subject": "accounting",
+      "accuracy": 0.38,
+      "time_overrun_rate": 0.18,
+      "risk_tags": ["objective_entry_delay", "concept_gap"],
+      "concept_mastery": [
+        { "concept": "재무회계: 금융자산", "mastery": 0.42 },
+        { "concept": "재무회계: 수익인식", "mastery": 0.36 },
+        { "concept": "원가관리: CVP", "mastery": 0.28 }
+      ]
+    },
+    {
+      "subject": "tax",
+      "accuracy": 0.41,
+      "time_overrun_rate": 0.22,
+      "risk_tags": ["objective_entry_delay"],
+      "concept_mastery": [
+        { "concept": "세법: 법인세 손금", "mastery": 0.39 },
+        { "concept": "세법: 부가가치세", "mastery": 0.45 }
+      ]
+    }
+  ]
+}

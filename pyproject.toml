@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cpa-first"
+version = "0.1.0"
+description = "CPA 1차 회계학/세법개론 합격 운영체계 — 처방 엔진 트랙"
+requires-python = ">=3.11"
+dependencies = [
+    "jsonschema>=4.21",
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "pydantic>=2.6",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "httpx>=0.27",
+]
+
+[project.scripts]
+cpa-validate = "cpa_first.cli.validate:main"
+cpa-export-rules = "cpa_first.cli.export_rules:main"
+cpa-serve = "cpa_first.api.main:cli"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["cpa_first*"]

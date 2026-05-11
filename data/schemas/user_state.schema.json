@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cpa-first.local/schemas/user_state.schema.json",
+  "title": "UserState",
+  "type": "object",
+  "required": [
+    "user_id",
+    "target_exam",
+    "days_until_exam",
+    "available_hours_per_day",
+    "current_stage",
+    "subject_states"
+  ],
+  "properties": {
+    "user_id": { "type": "string" },
+    "target_exam": { "type": "string", "enum": ["CPA_1"] },
+    "days_until_exam": { "type": "integer", "minimum": 0 },
+    "available_hours_per_day": { "type": "number", "minimum": 0 },
+    "current_stage": {
+      "type": "string",
+      "enum": [
+        "intro",
+        "post_lecture",
+        "objective_entry",
+        "past_exam_rotation",
+        "mock_exam",
+        "final"
+      ]
+    },
+    "subject_states": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["subject", "accuracy", "time_overrun_rate", "risk_tags"],
+        "properties": {
+          "subject": { "type": "string", "enum": ["accounting", "tax"] },
+          "accuracy": { "type": "number", "minimum": 0, "maximum": 1 },
+          "time_overrun_rate": { "type": "number", "minimum": 0, "maximum": 1 },
+          "risk_tags": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "concept_mastery": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["concept", "mastery"],
+              "properties": {
+                "concept": { "type": "string" },
+                "mastery": { "type": "number", "minimum": 0, "maximum": 1 }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

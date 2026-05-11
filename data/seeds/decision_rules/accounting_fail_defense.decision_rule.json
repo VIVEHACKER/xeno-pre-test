@@ -1,0 +1,14 @@
+{
+  "rule_key": "accounting_fail_defense",
+  "rule_name": "회계학 과락 방어",
+  "condition_text": "회계학 정답률이 35% 미만이고 핵심 개념 공백이 있는 상태",
+  "action_text": "신규 단원 진입을 중단하고, 약점 단원의 객관식 기초형부터 회복한다. 매일 동일 단원 객관식 12문항을 동일 시간대에 반복해 흡수율을 끌어올린다.",
+  "exception_text": "시험까지 30일 미만이면 신규 단원 진입 차단만 유지하고 일정 압축에 맞춘다.",
+  "applicable_stages": ["post_lecture", "objective_entry", "past_exam_rotation"],
+  "applicable_subjects": ["accounting"],
+  "required_risk_tags": ["concept_gap"],
+  "source_signal_count": 0,
+  "source_case_ids": [],
+  "confidence": 0.74,
+  "review_status": "machine_draft"
+}

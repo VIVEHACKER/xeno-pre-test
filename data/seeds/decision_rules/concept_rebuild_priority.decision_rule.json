@@ -1,0 +1,14 @@
+{
+  "rule_key": "concept_rebuild_priority",
+  "rule_name": "개념 재정렬 우선",
+  "condition_text": "기본강의 이후 또는 객관식 진입 단계에서 정답률이 낮고 핵심 개념 공백 신호가 있는 상태",
+  "action_text": "문제량 확대를 잠시 멈추고, 핵심 개념 5개를 골라 정의/적용/예외/구분 기준 4단으로 재정렬한다. 재정렬 후 같은 단원 객관식 15문항으로 검증한다.",
+  "exception_text": "시험까지 30일 미만이면 적용 금지(시간 회수 불가).",
+  "applicable_stages": ["post_lecture", "objective_entry"],
+  "applicable_subjects": ["accounting", "tax", "accounting_tax"],
+  "required_risk_tags": ["concept_gap"],
+  "source_signal_count": 0,
+  "source_case_ids": [],
+  "confidence": 0.70,
+  "review_status": "machine_draft"
+}

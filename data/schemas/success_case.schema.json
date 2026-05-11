@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cpa-first.local/schemas/success_case.schema.json",
+  "title": "SuccessCase",
+  "type": "object",
+  "required": [
+    "case_id",
+    "source_type",
+    "exam",
+    "candidate_profile",
+    "study_timeline",
+    "decision_rules",
+    "review_status"
+  ],
+  "properties": {
+    "case_id": { "type": "string" },
+    "source_type": {
+      "type": "string",
+      "enum": ["public_story", "interview", "video", "internal_research"]
+    },
+    "source_url": { "type": ["string", "null"] },
+    "exam": { "type": "string", "enum": ["CPA_1", "CPA_FINAL"] },
+    "candidate_profile": {
+      "type": "object",
+      "properties": {
+        "major": { "type": ["string", "null"] },
+        "prior_knowledge": { "type": "string" },
+        "study_mode": {
+          "type": "string",
+          "enum": ["full_time", "student", "working", "unknown"]
+        },
+        "attempt": { "type": "string" },
+        "study_months": { "type": ["number", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "study_timeline": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["phase", "action", "timing"],
+        "properties": {
+          "phase": { "type": "string" },
+          "action": { "type": "string" },
+          "timing": { "type": "string" },
+          "evidence": { "type": ["string", "null"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "subject_strategy": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["subject", "strategy"],
+        "properties": {
+          "subject": { "type": "string" },
+          "strategy": { "type": "string" },
+          "risk": { "type": ["string", "null"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "decision_rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["rule_name", "condition", "action"],
+        "properties": {
+          "rule_name": { "type": "string" },
+          "condition": { "type": "string" },
+          "action": { "type": "string" },
+          "exception": { "type": ["string", "null"] },
+          "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "review_status": {
+      "type": "string",
+      "enum": ["raw", "ai_extracted", "human_reviewed", "approved"]
+    }
+  },
+  "additionalProperties": false
+}

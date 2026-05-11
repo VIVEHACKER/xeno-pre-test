@@ -1,0 +1,73 @@
+{
+  "prescription_id": "sample-prescription-001",
+  "user_id": "sample-user-001",
+  "generated_at": "2026-05-11T03:30:00+00:00",
+  "diagnosis": {
+    "summary": "회계학 시간 압박과 세법 말문제 휘발이 동시에 진행 중. 신규 강의 확장보다 풀이 운영과 회상 블록을 먼저 잡아야 한다.",
+    "risk_level": "high",
+    "risk_drivers": [
+      "회계학 시간 초과율 34%",
+      "세법 말문제 정답률 42%",
+      "객관식 진입 단계에서 정체 12일"
+    ]
+  },
+  "weekly_goal": {
+    "goal_text": "회계학 시간 초과율을 34%에서 25% 이하로 감소시키고, 세법 말문제 일일 회상 30개를 5일 연속 수행한다.",
+    "verification_metric": "회계학 평균 풀이시간 95초 이하, 세법 말문제 재오답 5개 이하"
+  },
+  "daily_tasks": [
+    {
+      "task_text": "회계학 금융자산 12문항을 1회전/2회전 방식으로 풀이",
+      "subject": "accounting",
+      "estimated_minutes": 60
+    },
+    {
+      "task_text": "세법 말문제 30개를 정답이 아닌 판단 기준 문장으로 회상",
+      "subject": "tax",
+      "estimated_minutes": 35
+    },
+    {
+      "task_text": "오답을 개념 부족, 조건 누락, 계산 실수, 시간 압박으로 분류",
+      "subject": "mixed",
+      "estimated_minutes": 20
+    }
+  ],
+  "concepts_to_review": [
+    "상각후원가",
+    "유효이자율법",
+    "법인세 익금/손금 판단"
+  ],
+  "problems_to_solve": [
+    "sample-cpa1-accounting-001"
+  ],
+  "problems_to_skip": [
+    "고난도 연결재무제표 계산형"
+  ],
+  "triggered_rule_keys": [
+    "objective_entry_timing",
+    "tax_verbal_recall",
+    "time_efficiency_guardrail"
+  ],
+  "evidence_refs": [
+    {
+      "ref_type": "decision_rule",
+      "ref_id": "objective_entry_timing",
+      "note": "기본강의 이후 객관식 진입 정체"
+    },
+    {
+      "ref_type": "decision_rule",
+      "ref_id": "tax_verbal_recall",
+      "note": "세법 말문제 정답률 < 50%"
+    },
+    {
+      "ref_type": "decision_rule",
+      "ref_id": "time_efficiency_guardrail",
+      "note": "회계학 시간 초과율 > 30%"
+    },
+    {
+      "ref_type": "problem_intelligence",
+      "ref_id": "sample-cpa1-accounting-001",
+      "note": "조건 누락/시간 압박 진단 사례"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "log_id": "sample-log-001",
+  "user_id": "sample-user-001",
+  "problem_id": "sample-cpa1-accounting-001",
+  "attempt_at": "2026-05-10T14:22:00+00:00",
+  "correct": false,
+  "time_seconds": 138,
+  "skipped": false,
+  "mistake_categories": [
+    "condition_miss",
+    "time_pressure"
+  ],
+  "self_note": "후반부 처분 조건을 못 보고 첫 식으로 들어감. 95초 안에 식이 안 잡힌 시점에서 표시 처리 안 한 것이 원인.",
+  "session_id": "sample-session-2026-05-10-pm"
+}

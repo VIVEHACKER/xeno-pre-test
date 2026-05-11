@@ -1,0 +1,14 @@
+{
+  "rule_key": "past_exam_rotation",
+  "rule_name": "기출 회독 목적 분리",
+  "condition_text": "기출 또는 회독 신호가 반복되고 사용자가 회독 목적을 구분하지 못하는 상태",
+  "action_text": "1회독은 개념 연결, 2회독은 함정/오답, 3회독은 시간 압박 검증으로 목적을 분리한다.",
+  "exception_text": "시험까지 30일 미만이면 고빈도 오답 유형 중심으로 압축한다.",
+  "applicable_stages": ["past_exam_rotation", "mock_exam"],
+  "applicable_subjects": ["accounting", "tax", "accounting_tax"],
+  "required_risk_tags": ["rotation_confusion"],
+  "source_signal_count": 3,
+  "source_case_ids": [],
+  "confidence": 0.69,
+  "review_status": "machine_draft"
+}

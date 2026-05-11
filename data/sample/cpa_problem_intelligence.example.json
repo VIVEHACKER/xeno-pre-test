@@ -1,0 +1,58 @@
+{
+  "problem_id": "sample-cpa1-accounting-001",
+  "exam": "CPA_1",
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "source": {
+    "source_type": "synthetic_training_example",
+    "exam_year": null,
+    "rights_status": "original_sample",
+    "url": null
+  },
+  "concept_tags": [
+    "amortized_cost",
+    "effective_interest_rate",
+    "interest_revenue"
+  ],
+  "required_concepts": [
+    {
+      "concept": "상각후원가",
+      "role": "기말 장부금액 계산의 중심 개념",
+      "prerequisite": true
+    },
+    {
+      "concept": "유효이자율법",
+      "role": "이자수익과 현금수취액을 분리",
+      "prerequisite": true
+    }
+  ],
+  "solving_entry_point": "취득일, 액면이자율, 유효이자율, 이자 지급일을 먼저 찾고 손상 또는 처분 조건이 있는지 확인한다.",
+  "solving_steps": [
+    "취득원가와 액면금액의 차이를 확인한다.",
+    "유효이자율로 이자수익을 계산한다.",
+    "현금수취 이자와 이자수익의 차이를 장부금액에 반영한다.",
+    "기말 장부금액 또는 당기손익에 묻는 값을 선택지와 대조한다."
+  ],
+  "trap_patterns": [
+    "액면이자를 이자수익으로 바로 사용한다.",
+    "취득 직후와 기말 시점의 장부금액을 혼동한다.",
+    "문제 후반부의 처분 또는 손상 조건을 놓친다."
+  ],
+  "time_strategy": {
+    "target_seconds": 95,
+    "skip_threshold_seconds": 120,
+    "exam_room_rule": "식이 60초 안에 잡히지 않으면 표시 후 다음 문제로 이동하고 2회전에서 재진입한다."
+  },
+  "variant_axes": [
+    "취득 시점 변경",
+    "이자 지급 횟수 변경",
+    "손상 발생 연도 추가",
+    "중도 처분 조건 추가"
+  ],
+  "mistake_diagnosis": [
+    "condition_miss",
+    "calculation_error",
+    "time_pressure"
+  ],
+  "review_status": "ai_draft"
+}

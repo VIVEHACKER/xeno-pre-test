@@ -1,0 +1,14 @@
+{
+  "rule_key": "time_efficiency_guardrail",
+  "rule_name": "시간 집착 방지",
+  "condition_text": "시간, 효율, 시험장 운영 관련 신호가 반복되고 시간 초과율이 높은 상태",
+  "action_text": "문제별 통과 기준을 두고 1회전/2회전 풀이를 훈련한다.",
+  "exception_text": "개념 공백이 큰 단원은 시간 제한보다 개념 재정렬을 먼저 적용한다.",
+  "applicable_stages": ["objective_entry", "past_exam_rotation", "mock_exam", "final"],
+  "applicable_subjects": ["accounting", "tax", "accounting_tax"],
+  "required_risk_tags": ["time_pressure"],
+  "source_signal_count": 1,
+  "source_case_ids": [],
+  "confidence": 0.6,
+  "review_status": "machine_draft"
+}

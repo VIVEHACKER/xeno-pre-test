@@ -1,0 +1,22 @@
+target_id,exam_scope,subject_scope,data_category,url,source_owner,rights_policy,acquisition_method,priority,notes
+official_cpa_2026_notice,CPA,all,official_exam_notice,https://www.fsc.go.kr/po040200/85723,금융위원회,metadata_and_notice_text,fetch,1,2026년도 제61회 공인회계사시험 시행계획 공고
+official_cpa_portal,CPA,all,official_exam_portal,https://cpa.fss.or.kr,금융감독원,metadata_only,manual_registry,1,공인회계사시험 공식 포털
+official_cta_2026_notice,CTA,all,official_exam_notice,https://www.q-net.or.kr/crf002.do?gId=22&gSite=L&id=crf00201,한국산업인력공단,metadata_and_notice_text,fetch,1,2026년도 제63회 세무사 자격시험 시행계획 공고
+official_cta_portal,CTA,all,official_exam_portal,https://www.q-net.or.kr/man001.do?gSite=L&gId=22,한국산업인력공단,metadata_only,manual_registry,1,세무사 국가전문자격 포털
+qnet_cta_past_questions,CTA,all,past_questions_official,https://www.q-net.or.kr/cst006.do?id=cst00601&gSite=L&gId=22,한국산업인력공단,official_download_check_required,manual_review,1,기출문제 내려받기 후보. 원문 재배포 금지
+qnet_cta_final_answers,CTA,all,official_answers,https://www.q-net.or.kr/anc002.do?id=anc00201&gSite=L&gId=22,한국산업인력공단,official_download_check_required,manual_review,1,최종정답 공개 후보
+qnet_cta_statistics,CTA,all,exam_statistics,https://www.q-net.or.kr/cst006.do?id=cst00605&gSite=L&gId=22,한국산업인력공단,metadata_only,manual_review,2,시험통계자료 후보
+law_go_kr_tax,CPA_CTA,tax,laws,https://www.law.go.kr,국가법령정보센터,public_law_text_with_attribution,api_or_fetch,1,세법 조문/시행령/시행규칙 버전 관리
+nts_tax_law,CPA_CTA,tax,tax_rulings_and_guidance,https://taxlaw.nts.go.kr,국세청,public_guidance_with_attribution,manual_review,1,예규/판례/해석례 후보
+nts_home,CPA_CTA,tax,tax_administration_guidance,https://www.nts.go.kr,국세청,public_guidance_with_attribution,manual_review,2,국세청 신고안내/해설자료 후보
+kasb_standards,CPA_CTA,accounting,accounting_standards,https://www.kasb.or.kr,한국회계기준원,rights_check_required,manual_review,1,K-IFRS 기준서/해석서. 이용조건 확인 필요
+kicpa_audit,CPA,audit,audit_standards_and_profession,https://www.kicpa.or.kr,한국공인회계사회,rights_check_required,manual_review,2,감사/윤리/전문가 기준 후보
+dart_filings,CPA,accounting_audit,real_world_financial_statements,https://dart.fss.or.kr,금융감독원,public_filing_data_with_terms,api_or_fetch,2,재무제표/감사보고서 실전 사례
+fss_accounting_portal,CPA,accounting_audit,accounting_supervision,https://www.fss.or.kr,금융감독원,public_notice_with_attribution,manual_review,2,회계감리/감독자료 후보
+academy_success_stories_cpa,CPA,all,success_stories,manual://academy-cpa-success-stories,학원/합격자,permission_required,partner_or_manual_upload,2,원문은 제휴/허락 후 적재. 비허락 공개문은 신호만 추출
+academy_success_stories_cta,CTA,all,success_stories,manual://academy-cta-success-stories,학원/합격자,permission_required,partner_or_manual_upload,2,CTA 합격수기/인터뷰 후보
+interview_cpa_passers,CPA,all,expert_interviews,manual://interview-cpa-passers,합격자,consent_required,structured_interview,1,합격자 인터뷰 녹취/요약/규칙화
+interview_cta_passers,CTA,all,expert_interviews,manual://interview-cta-passers,합격자,consent_required,structured_interview,1,세무사 합격자 인터뷰 녹취/요약/규칙화
+licensed_textbooks_cpa,CPA,all,textbooks,manual://licensed-cpa-textbooks,출판사/저자,license_required,partner_ingestion,1,교재 원문/목차/문제는 권리 확보 전 적재 금지
+licensed_textbooks_cta,CTA,all,textbooks,manual://licensed-cta-textbooks,출판사/저자,license_required,partner_ingestion,1,세무사 교재 원문/목차/문제는 권리 확보 전 적재 금지
+user_learning_logs,CPA_CTA,all,user_behavior,internal://user-learning-logs,서비스 사용자,user_consent_required,product_event_stream,1,풀이시간/오답/회독/성장곡선

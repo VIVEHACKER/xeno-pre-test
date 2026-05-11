@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cpa-first.local/schemas/problem_intelligence.schema.json",
+  "title": "ProblemIntelligence",
+  "type": "object",
+  "required": [
+    "problem_id",
+    "exam",
+    "subject",
+    "unit",
+    "concept_tags",
+    "required_concepts",
+    "solving_entry_point",
+    "solving_steps",
+    "trap_patterns",
+    "time_strategy",
+    "variant_axes",
+    "mistake_diagnosis",
+    "review_status"
+  ],
+  "properties": {
+    "problem_id": { "type": "string" },
+    "exam": { "type": "string", "enum": ["CPA_1"] },
+    "subject": { "type": "string", "enum": ["accounting", "tax"] },
+    "unit": { "type": "string" },
+    "source": {
+      "type": "object",
+      "properties": {
+        "source_type": { "type": "string" },
+        "exam_year": { "type": ["integer", "null"] },
+        "rights_status": { "type": "string" },
+        "url": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "concept_tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "required_concepts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["concept", "role"],
+        "properties": {
+          "concept": { "type": "string" },
+          "role": { "type": "string" },
+          "prerequisite": { "type": "boolean" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "solving_entry_point": { "type": "string" },
+    "solving_steps": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "trap_patterns": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "time_strategy": {
+      "type": "object",
+      "required": ["target_seconds", "skip_threshold_seconds", "exam_room_rule"],
+      "properties": {
+        "target_seconds": { "type": "integer" },
+        "skip_threshold_seconds": { "type": "integer" },
+        "exam_room_rule": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "variant_axes": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "mistake_diagnosis": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "concept_gap",
+          "formula_gap",
+          "condition_miss",
+          "calculation_error",
+          "time_pressure",
+          "distractor_trap",
+          "memory_decay",
+          "strategy_error"
+        ]
+      }
+    },
+    "review_status": {
+      "type": "string",
+      "enum": ["ai_draft", "expert_reviewed", "approved", "rejected"]
+    }
+  },
+  "additionalProperties": false
+}

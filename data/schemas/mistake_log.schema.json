@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cpa-first.local/schemas/mistake_log.schema.json",
+  "title": "MistakeLog",
+  "description": "사용자 풀이 1회분 로그. user_state 자동 갱신과 처방 엔진의 약점 계산 입력.",
+  "type": "object",
+  "required": [
+    "log_id",
+    "user_id",
+    "problem_id",
+    "attempt_at",
+    "correct",
+    "time_seconds"
+  ],
+  "properties": {
+    "log_id": { "type": "string" },
+    "user_id": { "type": "string" },
+    "problem_id": { "type": "string" },
+    "attempt_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "correct": { "type": "boolean" },
+    "time_seconds": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "skipped": { "type": "boolean" },
+    "mistake_categories": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "concept_gap",
+          "formula_gap",
+          "condition_miss",
+          "calculation_error",
+          "time_pressure",
+          "distractor_trap",
+          "memory_decay",
+          "strategy_error"
+        ]
+      }
+    },
+    "self_note": { "type": ["string", "null"] },
+    "session_id": {
+      "type": ["string", "null"],
+      "description": "같은 학습 세션에 묶인 풀이 그룹 식별자."
+    }
+  },
+  "additionalProperties": false
+}

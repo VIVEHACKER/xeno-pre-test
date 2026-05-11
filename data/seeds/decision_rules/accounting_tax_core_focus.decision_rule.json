@@ -1,0 +1,14 @@
+{
+  "rule_key": "accounting_tax_core_focus",
+  "rule_name": "회계/세법 핵심축 집중",
+  "condition_text": "회계와 세법 관련 신호가 같은 문서 또는 여러 사례에서 함께 반복됨",
+  "action_text": "회계학과 세법개론을 주간 점수 상승의 중심축으로 두고, 나머지 과목은 유지 블록으로 분리한다.",
+  "exception_text": "경제/기업법 과락 위험이 감지되면 최소 방어 시간을 별도 배정한다.",
+  "applicable_stages": ["post_lecture", "objective_entry", "past_exam_rotation", "mock_exam", "final"],
+  "applicable_subjects": ["accounting_tax"],
+  "required_risk_tags": [],
+  "source_signal_count": 8,
+  "source_case_ids": [],
+  "confidence": 0.66,
+  "review_status": "machine_draft"
+}

@@ -1,0 +1,14 @@
+{
+  "rule_key": "accounting_two_pass_drill",
+  "rule_name": "회계학 2회전 풀이 드릴",
+  "condition_text": "회계학 정답률은 55% 이상이지만 시간 초과율이 30% 이상이어서 시간 운영이 점수 전환을 막고 있는 상태",
+  "action_text": "1회전에서 계산량 많은 문제를 표시 후 통과하고, 2회전에서 재진입한다. 풀이 시간보다 통과 결정 시간을 훈련한다.",
+  "exception_text": "기초 개념 정답률이 45% 미만이면 적용을 보류하고 개념 복구를 먼저 한다.",
+  "applicable_stages": ["objective_entry", "past_exam_rotation", "mock_exam"],
+  "applicable_subjects": ["accounting"],
+  "required_risk_tags": ["time_pressure"],
+  "source_signal_count": 0,
+  "source_case_ids": [],
+  "confidence": 0.72,
+  "review_status": "machine_draft"
+}

@@ -1,0 +1,14 @@
+{
+  "rule_key": "mock_exam_time_simulation",
+  "rule_name": "모의고사 실전 시간표 시뮬레이션",
+  "condition_text": "모의고사 단계에서 시간 운영 신호가 약하거나 회계학 시간 초과 패턴이 누적된 상태",
+  "action_text": "실제 시험 시간표 그대로 50문항을 통째로 푼다. 끝난 직후 시간 초과 문제를 분리하고 다음 회차 통과 기준을 갱신한다.",
+  "exception_text": "기초 정답률이 50% 미만이면 모의고사보다 단원별 회독을 먼저 한다.",
+  "applicable_stages": ["mock_exam"],
+  "applicable_subjects": ["accounting", "tax", "accounting_tax"],
+  "required_risk_tags": [],
+  "source_signal_count": 0,
+  "source_case_ids": [],
+  "confidence": 0.68,
+  "review_status": "machine_draft"
+}

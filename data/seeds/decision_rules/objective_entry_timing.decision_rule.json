@@ -1,0 +1,14 @@
+{
+  "rule_key": "objective_entry_timing",
+  "rule_name": "객관식 전환 조건",
+  "condition_text": "기본강의 이후 객관식 관련 신호가 반복되고, 사용자가 개념 이해는 있으나 문제 전환이 늦은 상태",
+  "action_text": "신규 강의 확장을 제한하고 객관식 세트와 오답 원인 분류를 주간 처방에 포함한다.",
+  "exception_text": "핵심 개념 정답률이 40% 미만이면 객관식 양치기보다 개념 복구를 우선한다.",
+  "applicable_stages": ["post_lecture", "objective_entry"],
+  "applicable_subjects": ["accounting", "tax", "accounting_tax"],
+  "required_risk_tags": ["objective_entry_delay"],
+  "source_signal_count": 20,
+  "source_case_ids": [],
+  "confidence": 0.67,
+  "review_status": "machine_draft"
+}

@@ -1,0 +1,37 @@
+official_sources:
+  - name: 금융위원회 2026년도 제61회 공인회계사시험 시행계획 공고
+    url: https://www.fsc.go.kr/po040200/85723
+    source_type: official_exam_notice
+    usage: 시험 일정, 공식 과목 범위, 시행 기준 확인
+  - name: 금융감독원 공인회계사시험
+    url: https://cpa.fss.or.kr
+    source_type: official_exam_portal
+    usage: 공지, 합격자 발표, 시험 제도 확인
+
+success_story_source_types:
+  - type: exam_media
+    examples:
+      - 법률저널 합격수기
+    usage: 공개 합격수기 분석
+    storage_policy: 원문 재배포 금지, URL과 구조화 신호 중심 저장
+  - type: academy_board
+    examples:
+      - 회계사 학원 합격수기 게시판
+    usage: 수험 타임라인, 과목별 전략 추출
+    storage_policy: 약관 확인 후 수집, 원문 노출 금지
+  - type: university_exam_class
+    examples:
+      - 대학 고시반 학습 자료
+    usage: 학습 순서, 공식 설명, 고시반 운영 지표 확인
+    storage_policy: 공개 파일만 메타데이터화
+  - type: personal_blog
+    examples:
+      - CPA 합격자 개인 블로그
+    usage: 암묵지 후보 수집
+    storage_policy: 본문 요약과 전략 규칙만 저장
+
+excluded_until_rights_confirmed:
+  - 유료 교재 문제 원문
+  - 유료 강의 자료
+  - 학원 모의고사 원문
+  - 비공개 커뮤니티 게시글

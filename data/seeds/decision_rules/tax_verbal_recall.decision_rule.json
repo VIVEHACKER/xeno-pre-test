@@ -1,0 +1,14 @@
+{
+  "rule_key": "tax_verbal_recall",
+  "rule_name": "세법 말문제 회상 블록",
+  "condition_text": "세법 말문제, 휘발, 암기 관련 신호가 반복되고 세법 말문제 정답률이 낮은 상태",
+  "action_text": "매일 짧은 회상 블록을 배정하고 정답 문장이 아니라 판단 기준 문장으로 압축한다.",
+  "exception_text": "계산문제 정답률도 낮으면 법인세/부가세 계산 구조를 먼저 복구한다.",
+  "applicable_stages": ["objective_entry", "past_exam_rotation", "mock_exam", "final"],
+  "applicable_subjects": ["tax"],
+  "required_risk_tags": ["memory_decay"],
+  "source_signal_count": 5,
+  "source_case_ids": [],
+  "confidence": 0.63,
+  "review_status": "machine_draft"
+}

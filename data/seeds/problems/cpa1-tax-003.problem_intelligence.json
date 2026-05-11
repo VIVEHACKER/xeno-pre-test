@@ -1,0 +1,59 @@
+{
+  "problem_id": "cpa1-tax-003",
+  "exam": "CPA_1",
+  "subject": "tax",
+  "unit": "income_tax",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "세법: 부가가치세 말문제",
+    "income_tax",
+    "comprehensive_income",
+    "verbal_rule"
+  ],
+  "required_concepts": [
+    {
+      "concept": "종합소득 합산 대상",
+      "role": "사업/근로/이자/배당/연금/기타 분류",
+      "prerequisite": true
+    },
+    {
+      "concept": "분리과세와 종합과세 경계",
+      "role": "선택/원천징수 처리",
+      "prerequisite": true
+    }
+  ],
+  "solving_entry_point": "각 소득의 종합과세 vs 분리과세 vs 비과세 분류를 한 줄로 먼저 결정한다. 계산보다 분류가 우선이다.",
+  "solving_steps": [
+    "각 항목을 종합/분리/비과세로 분류한다.",
+    "종합과세 대상은 필요경비 또는 근로소득공제를 적용한다.",
+    "이자/배당 금융소득은 종합과세 기준 금액(2,000만원) 초과 여부를 확인한다.",
+    "종합소득금액에서 종합소득공제를 차감한다.",
+    "산출세액에서 세액공제/감면을 적용한다."
+  ],
+  "trap_patterns": [
+    "분리과세 대상 소득을 종합과세에 포함한다.",
+    "사업소득 결손금 통산 순서를 잘못 잡는다.",
+    "근로소득 비과세 항목을 과세로 처리한다."
+  ],
+  "time_strategy": {
+    "target_seconds": 85,
+    "skip_threshold_seconds": 115,
+    "exam_room_rule": "분류표가 50초 안에 안 잡히면 표시 후 넘기고 말문제 회상 블록을 다음 날 보강한다."
+  },
+  "variant_axes": [
+    "금융소득 기준 금액 변경",
+    "사업/근로 통산 조건 변경",
+    "기타소득 필요경비 의제비율 변경"
+  ],
+  "mistake_diagnosis": [
+    "memory_decay",
+    "concept_gap",
+    "distractor_trap"
+  ],
+  "review_status": "ai_draft"
+}

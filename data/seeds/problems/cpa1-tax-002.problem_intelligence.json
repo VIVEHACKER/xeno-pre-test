@@ -1,0 +1,59 @@
+{
+  "problem_id": "cpa1-tax-002",
+  "exam": "CPA_1",
+  "subject": "tax",
+  "unit": "vat",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "세법: 부가가치세",
+    "vat",
+    "input_tax_credit",
+    "non_deductible_input"
+  ],
+  "required_concepts": [
+    {
+      "concept": "매입세액 공제 요건",
+      "role": "공제/불공제 판단 기준",
+      "prerequisite": true
+    },
+    {
+      "concept": "공통매입세액 안분",
+      "role": "면세사업 겸영 시 안분 계산",
+      "prerequisite": false
+    }
+  ],
+  "solving_entry_point": "거래별 매입의 사용 용도(과세/면세/공통)와 증빙 종류를 먼저 분류한다. 분류가 끝나면 한 줄로 공제/불공제가 결정된다.",
+  "solving_steps": [
+    "매입 거래를 과세사업/면세사업/공통사용으로 분류한다.",
+    "세금계산서 등 증빙 유무를 확인한다.",
+    "비영업용 소형승용차, 접대 관련 등 불공제 항목을 분리한다.",
+    "공통매입세액은 과세공급가액 비율로 안분한다.",
+    "최종 공제 매입세액 합계를 계산한다."
+  ],
+  "trap_patterns": [
+    "면세사업 관련 매입을 공제로 잡는다.",
+    "비영업용 소형승용차 관련 매입을 부분 공제로 처리한다.",
+    "공통매입세액 안분 시 적용 비율의 기준 기간을 잘못 잡는다."
+  ],
+  "time_strategy": {
+    "target_seconds": 100,
+    "skip_threshold_seconds": 130,
+    "exam_room_rule": "거래 분류표 작성이 40초 안에 시작되지 않으면 표시 후 넘긴다."
+  },
+  "variant_axes": [
+    "공통매입세액 비율 변경",
+    "불공제 항목 신설/변경",
+    "수입재화 처리 추가"
+  ],
+  "mistake_diagnosis": [
+    "condition_miss",
+    "concept_gap",
+    "distractor_trap"
+  ],
+  "review_status": "ai_draft"
+}

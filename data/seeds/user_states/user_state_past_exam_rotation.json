@@ -1,0 +1,29 @@
+{
+  "user_id": "seed-user-past-exam-rotation",
+  "target_exam": "CPA_1",
+  "days_until_exam": 120,
+  "available_hours_per_day": 8,
+  "current_stage": "past_exam_rotation",
+  "subject_states": [
+    {
+      "subject": "accounting",
+      "accuracy": 0.61,
+      "time_overrun_rate": 0.24,
+      "risk_tags": ["rotation_confusion"],
+      "concept_mastery": [
+        { "concept": "재무회계: 금융자산", "mastery": 0.66 },
+        { "concept": "재무회계: 연결재무제표", "mastery": 0.48 }
+      ]
+    },
+    {
+      "subject": "tax",
+      "accuracy": 0.45,
+      "time_overrun_rate": 0.19,
+      "risk_tags": ["memory_decay", "rotation_confusion"],
+      "concept_mastery": [
+        { "concept": "세법: 법인세 손금", "mastery": 0.52 },
+        { "concept": "세법: 부가가치세 말문제", "mastery": 0.38 }
+      ]
+    }
+  ]
+}

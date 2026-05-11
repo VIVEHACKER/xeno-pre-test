@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cpa-first.local/schemas/decision_rule.schema.json",
+  "title": "DecisionRule",
+  "description": "처방 엔진이 사용하는 의사결정 규칙. 06번 데이터 파이프라인의 strategy_rules 테이블 컬럼과 일대일 호환되며, 적용 조건/대상을 표현하는 메타 필드를 추가한다.",
+  "type": "object",
+  "required": [
+    "rule_key",
+    "rule_name",
+    "condition_text",
+    "action_text",
+    "source_signal_count",
+    "confidence",
+    "review_status"
+  ],
+  "properties": {
+    "rule_key": {
+      "type": "string",
+      "description": "규칙 고유 키. 06번 strategy_rules 테이블의 rule_key와 동일."
+    },
+    "rule_name": { "type": "string" },
+    "condition_text": {
+      "type": "string",
+      "description": "사람이 읽을 수 있는 적용 조건 서술."
+    },
+    "action_text": { "type": "string" },
+    "exception_text": { "type": ["string", "null"] },
+    "applicable_stages": {
+      "type": "array",
+      "description": "이 규칙이 적용 가능한 사용자 단계 목록.",
+      "items": {
+        "type": "string",
+        "enum": [
+          "intro",
+          "post_lecture",
+          "objective_entry",
+          "past_exam_rotation",
+          "mock_exam",
+          "final"
+        ]
+      }
+    },
+    "applicable_subjects": {
+      "type": "array",
+      "description": "이 규칙이 적용 가능한 과목 목록.",
+      "items": {
+        "type": "string",
+        "enum": ["accounting", "tax", "accounting_tax", "general"]
+      }
+    },
+    "required_risk_tags": {
+      "type": "array",
+      "description": "이 규칙이 발동하기 위해 사용자의 subject_states[].risk_tags에 하나 이상 존재해야 하는 태그. 빈 배열이면 risk_tags 조건 무관.",
+      "items": { "type": "string" }
+    },
+    "source_signal_count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "규칙을 뒷받침하는 신호 수."
+    },
+    "source_case_ids": {
+      "type": "array",
+      "description": "근거가 된 success_case.case_id 목록.",
+      "items": { "type": "string" }
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "review_status": {
+      "type": "string",
+      "enum": [
+        "machine_draft",
+        "machine_extracted",
+        "human_reviewed",
+        "approved",
+        "rejected"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,398 @@
+{
+  "version": "2026.05.cpa-cta.full-scope-v1",
+  "basis": [
+    {
+      "name": "금융위원회 2026년도 제61회 공인회계사시험 시행계획 공고",
+      "url": "https://www.fsc.go.kr/po040200/85723"
+    },
+    {
+      "name": "금융감독원 공인회계사시험 홈페이지",
+      "url": "https://cpa.fss.or.kr"
+    },
+    {
+      "name": "Q-Net 2026년도 제63회 세무사 자격시험 시행계획 공고",
+      "url": "https://www.q-net.or.kr/crf002.do?gId=22&gSite=L&id=crf00201"
+    }
+  ],
+  "subjects": [
+    {
+      "subject_id": "cpa1_business",
+      "exam_id": "CPA",
+      "phase_id": "CPA_1",
+      "phase_name": "공인회계사 1차",
+      "subject_name": "경영학",
+      "assessment_type": "objective",
+      "question_count": 40,
+      "minutes": 110,
+      "points": 100,
+      "source_url": "https://www.fsc.go.kr/po040200/85723",
+      "notes": "1교시 경영학/경제원론 묶음 시간 기준",
+      "nodes": [
+        ["cpa1_business_general_management", null, "일반경영", "unit", 2],
+        ["cpa1_business_organization", "cpa1_business_general_management", "조직행동/조직설계", "concept_cluster", 3],
+        ["cpa1_business_strategy", "cpa1_business_general_management", "경영전략", "concept_cluster", 3],
+        ["cpa1_business_marketing", "cpa1_business_general_management", "마케팅", "concept_cluster", 4],
+        ["cpa1_business_operations", "cpa1_business_general_management", "생산/운영관리", "concept_cluster", 4],
+        ["cpa1_business_finance", null, "재무관리", "unit", 1],
+        ["cpa1_business_time_value", "cpa1_business_finance", "화폐의 시간가치", "concept_cluster", 2],
+        ["cpa1_business_risk_return", "cpa1_business_finance", "위험과 수익률", "concept_cluster", 2],
+        ["cpa1_business_capital_budgeting", "cpa1_business_finance", "자본예산", "concept_cluster", 2],
+        ["cpa1_business_capital_structure", "cpa1_business_finance", "자본구조/배당정책", "concept_cluster", 3],
+        ["cpa1_business_derivatives", "cpa1_business_finance", "파생상품/위험관리", "concept_cluster", 4]
+      ]
+    },
+    {
+      "subject_id": "cpa1_economics",
+      "exam_id": "CPA",
+      "phase_id": "CPA_1",
+      "phase_name": "공인회계사 1차",
+      "subject_name": "경제원론",
+      "assessment_type": "objective",
+      "question_count": 40,
+      "minutes": 110,
+      "points": 100,
+      "source_url": "https://www.fsc.go.kr/po040200/85723",
+      "notes": "1교시 경영학/경제원론 묶음 시간 기준",
+      "nodes": [
+        ["cpa1_econ_micro", null, "미시경제학", "unit", 2],
+        ["cpa1_econ_demand_supply", "cpa1_econ_micro", "수요/공급/탄력성", "concept_cluster", 2],
+        ["cpa1_econ_consumer", "cpa1_econ_micro", "소비자이론", "concept_cluster", 3],
+        ["cpa1_econ_producer", "cpa1_econ_micro", "생산자이론/비용", "concept_cluster", 3],
+        ["cpa1_econ_market", "cpa1_econ_micro", "시장구조", "concept_cluster", 3],
+        ["cpa1_econ_macro", null, "거시경제학", "unit", 2],
+        ["cpa1_econ_gdp", "cpa1_econ_macro", "국민소득/물가/실업", "concept_cluster", 3],
+        ["cpa1_econ_is_lm", "cpa1_econ_macro", "IS-LM/AD-AS", "concept_cluster", 3],
+        ["cpa1_econ_money", "cpa1_econ_macro", "화폐금융론", "concept_cluster", 3],
+        ["cpa1_econ_international", "cpa1_econ_macro", "국제경제", "concept_cluster", 4]
+      ]
+    },
+    {
+      "subject_id": "cpa1_corporate_law",
+      "exam_id": "CPA",
+      "phase_id": "CPA_1",
+      "phase_name": "공인회계사 1차",
+      "subject_name": "기업법",
+      "assessment_type": "objective",
+      "question_count": 40,
+      "minutes": 120,
+      "points": 100,
+      "source_url": "https://www.fsc.go.kr/po040200/85723",
+      "notes": "상법 중심에서 기업법 체계로 관리. 공인회계사법/외부감사법 포함 범위는 연도별 공고 기준으로 갱신",
+      "nodes": [
+        ["cpa1_law_commercial_general", null, "상법총칙/상행위", "unit", 2],
+        ["cpa1_law_company", null, "회사법", "unit", 1],
+        ["cpa1_law_stock_company", "cpa1_law_company", "주식회사", "concept_cluster", 1],
+        ["cpa1_law_organs", "cpa1_law_company", "주주총회/이사회/감사", "concept_cluster", 2],
+        ["cpa1_law_financing", "cpa1_law_company", "주식/사채/자본금", "concept_cluster", 2],
+        ["cpa1_law_reorganization", "cpa1_law_company", "합병/분할/조직변경", "concept_cluster", 3],
+        ["cpa1_law_cpa_act", null, "공인회계사법", "unit", 2],
+        ["cpa1_law_external_audit", null, "외부감사법", "unit", 2]
+      ]
+    },
+    {
+      "subject_id": "cpa1_tax",
+      "exam_id": "CPA",
+      "phase_id": "CPA_1",
+      "phase_name": "공인회계사 1차",
+      "subject_name": "세법개론",
+      "assessment_type": "objective",
+      "question_count": 40,
+      "minutes": 120,
+      "points": 100,
+      "source_url": "https://www.fsc.go.kr/po040200/85723",
+      "notes": "2교시 기업법/세법개론 묶음 시간 기준. 적용 법령은 시험일 기준 공고에 따름",
+      "nodes": [
+        ["tax_framework", null, "조세총론/국세기본법", "unit", 1],
+        ["tax_corporate", null, "법인세법", "unit", 1],
+        ["tax_corporate_income", "tax_corporate", "익금/손금", "concept_cluster", 1],
+        ["tax_corporate_depreciation", "tax_corporate", "감가상각/충당금", "concept_cluster", 2],
+        ["tax_corporate_tax_base", "tax_corporate", "과세표준/세액계산", "concept_cluster", 1],
+        ["tax_income", null, "소득세법", "unit", 1],
+        ["tax_income_classification", "tax_income", "소득구분/종합소득", "concept_cluster", 1],
+        ["tax_income_withholding", "tax_income", "원천징수", "concept_cluster", 2],
+        ["tax_vat", null, "부가가치세법", "unit", 1],
+        ["tax_vat_supply", "tax_vat", "과세거래/공급시기", "concept_cluster", 1],
+        ["tax_vat_input_tax", "tax_vat", "매입세액/공제", "concept_cluster", 1],
+        ["tax_local_and_other", null, "기타세법/절차", "unit", 3]
+      ]
+    },
+    {
+      "subject_id": "cpa1_accounting",
+      "exam_id": "CPA",
+      "phase_id": "CPA_1",
+      "phase_name": "공인회계사 1차",
+      "subject_name": "회계학",
+      "assessment_type": "objective",
+      "question_count": 50,
+      "minutes": 80,
+      "points": 150,
+      "source_url": "https://www.fsc.go.kr/po040200/85723",
+      "notes": "회계학 단독 교시",
+      "nodes": [
+        ["acct_financial", null, "재무회계", "unit", 1],
+        ["acct_conceptual_framework", "acct_financial", "재무보고 개념체계", "concept_cluster", 2],
+        ["acct_revenue", "acct_financial", "수익인식", "concept_cluster", 1],
+        ["acct_inventory", "acct_financial", "재고자산", "concept_cluster", 1],
+        ["acct_ppe", "acct_financial", "유형자산/무형자산", "concept_cluster", 1],
+        ["acct_financial_assets", "acct_financial", "금융자산", "concept_cluster", 1],
+        ["acct_liabilities", "acct_financial", "부채/충당부채", "concept_cluster", 1],
+        ["acct_equity", "acct_financial", "자본", "concept_cluster", 2],
+        ["acct_income_tax", "acct_financial", "법인세회계", "concept_cluster", 2],
+        ["acct_cash_flow", "acct_financial", "현금흐름표", "concept_cluster", 2],
+        ["acct_consolidation", "acct_financial", "연결/지분법", "concept_cluster", 2],
+        ["acct_cost", null, "원가관리회계", "unit", 1],
+        ["acct_cost_flow", "acct_cost", "원가흐름/개별/종합원가", "concept_cluster", 1],
+        ["acct_cvp", "acct_cost", "CVP/관련원가", "concept_cluster", 1],
+        ["acct_standard_cost", "acct_cost", "표준원가/차이분석", "concept_cluster", 2],
+        ["acct_budget", "acct_cost", "예산/성과평가", "concept_cluster", 3],
+        ["acct_government", null, "정부회계", "unit", 3]
+      ]
+    },
+    {
+      "subject_id": "cpa2_tax",
+      "exam_id": "CPA",
+      "phase_id": "CPA_2",
+      "phase_name": "공인회계사 2차",
+      "subject_name": "세법",
+      "assessment_type": "written",
+      "question_count": null,
+      "minutes": 120,
+      "points": 100,
+      "source_url": "https://www.fsc.go.kr/po040200/85723",
+      "notes": "주관식. 세무회계 계산과 세법 판단을 분리 관리",
+      "nodes": [
+        ["cpa2_tax_corporate", "tax_corporate", "법인세 세무조정", "concept_cluster", 1],
+        ["cpa2_tax_income", "tax_income", "소득세 세무조정", "concept_cluster", 2],
+        ["cpa2_tax_vat", "tax_vat", "부가가치세 계산구조", "concept_cluster", 2],
+        ["cpa2_tax_procedure", "tax_framework", "국세기본법/절차", "concept_cluster", 3]
+      ]
+    },
+    {
+      "subject_id": "cpa2_financial_management",
+      "exam_id": "CPA",
+      "phase_id": "CPA_2",
+      "phase_name": "공인회계사 2차",
+      "subject_name": "재무관리",
+      "assessment_type": "written",
+      "question_count": null,
+      "minutes": 120,
+      "points": 100,
+      "source_url": "https://www.fsc.go.kr/po040200/85723",
+      "notes": "계산형 주관식",
+      "nodes": [
+        ["cpa2_fm_valuation", "cpa1_business_finance", "기업가치평가", "concept_cluster", 1],
+        ["cpa2_fm_investment", "cpa1_business_finance", "투자론", "concept_cluster", 1],
+        ["cpa2_fm_derivatives", "cpa1_business_derivatives", "파생상품", "concept_cluster", 2],
+        ["cpa2_fm_working_capital", "cpa1_business_finance", "운전자본/배당/자본구조", "concept_cluster", 2]
+      ]
+    },
+    {
+      "subject_id": "cpa2_audit",
+      "exam_id": "CPA",
+      "phase_id": "CPA_2",
+      "phase_name": "공인회계사 2차",
+      "subject_name": "회계감사",
+      "assessment_type": "written",
+      "question_count": null,
+      "minutes": 120,
+      "points": 100,
+      "source_url": "https://www.fsc.go.kr/po040200/85723",
+      "notes": "감사기준과 사례형 판단",
+      "nodes": [
+        ["audit_framework", null, "감사총론/감사기준", "unit", 1],
+        ["audit_risk", "audit_framework", "감사위험/중요성", "concept_cluster", 1],
+        ["audit_evidence", "audit_framework", "감사증거/절차", "concept_cluster", 1],
+        ["audit_internal_control", "audit_framework", "내부통제", "concept_cluster", 2],
+        ["audit_report", "audit_framework", "감사보고서", "concept_cluster", 1]
+      ]
+    },
+    {
+      "subject_id": "cpa2_cost_accounting",
+      "exam_id": "CPA",
+      "phase_id": "CPA_2",
+      "phase_name": "공인회계사 2차",
+      "subject_name": "원가회계",
+      "assessment_type": "written",
+      "question_count": null,
+      "minutes": 120,
+      "points": 100,
+      "source_url": "https://www.fsc.go.kr/po040200/85723",
+      "notes": "원가관리회계 주관식",
+      "nodes": [
+        ["cpa2_cost_systems", "acct_cost_flow", "원가계산시스템", "concept_cluster", 1],
+        ["cpa2_cost_decision", "acct_cvp", "의사결정/관련원가", "concept_cluster", 1],
+        ["cpa2_cost_variance", "acct_standard_cost", "차이분석", "concept_cluster", 1],
+        ["cpa2_cost_performance", "acct_budget", "성과평가", "concept_cluster", 2]
+      ]
+    },
+    {
+      "subject_id": "cpa2_financial_accounting",
+      "exam_id": "CPA",
+      "phase_id": "CPA_2",
+      "phase_name": "공인회계사 2차",
+      "subject_name": "재무회계",
+      "assessment_type": "written",
+      "question_count": null,
+      "minutes": 150,
+      "points": 150,
+      "source_url": "https://www.fsc.go.kr/po040200/85723",
+      "notes": "재무회계 주관식. 1차 재무회계 노드와 공유",
+      "nodes": [
+        ["cpa2_fa_statement", "acct_financial", "재무제표 작성/표시", "concept_cluster", 1],
+        ["cpa2_fa_complex_accounting", "acct_financial", "복합거래 회계처리", "concept_cluster", 1],
+        ["cpa2_fa_consolidation", "acct_consolidation", "연결재무제표", "concept_cluster", 1],
+        ["cpa2_fa_cashflow", "acct_cash_flow", "현금흐름표 작성", "concept_cluster", 2]
+      ]
+    },
+    {
+      "subject_id": "cta1_public_finance",
+      "exam_id": "CTA",
+      "phase_id": "CTA_1",
+      "phase_name": "세무사 1차",
+      "subject_name": "재정학",
+      "assessment_type": "objective",
+      "question_count": 40,
+      "minutes": 80,
+      "points": 100,
+      "source_url": "https://www.q-net.or.kr/crf002.do?gId=22&gSite=L&id=crf00201",
+      "notes": "1교시 세법학개론과 묶음 시간 기준",
+      "nodes": [
+        ["finance_public_goods", null, "공공재/외부성", "unit", 2],
+        ["finance_tax_incidence", null, "조세귀착/초과부담", "unit", 1],
+        ["finance_public_choice", null, "공공선택/재정정책", "unit", 3],
+        ["finance_budget", null, "예산제도/지방재정", "unit", 3]
+      ]
+    },
+    {
+      "subject_id": "cta1_tax_intro",
+      "exam_id": "CTA",
+      "phase_id": "CTA_1",
+      "phase_name": "세무사 1차",
+      "subject_name": "세법학개론",
+      "assessment_type": "objective",
+      "question_count": 40,
+      "minutes": 80,
+      "points": 100,
+      "source_url": "https://www.q-net.or.kr/crf002.do?gId=22&gSite=L&id=crf00201",
+      "notes": "국세기본법, 국세징수법, 조세범처벌법, 소득세법, 법인세법, 부가가치세법, 국제조세조정에 관한 법률",
+      "nodes": [
+        ["cta_tax_basic", "tax_framework", "국세기본법", "concept_cluster", 1],
+        ["cta_tax_collection", null, "국세징수법", "unit", 2],
+        ["cta_tax_penalty", null, "조세범처벌법", "unit", 3],
+        ["cta_tax_income", "tax_income", "소득세법", "concept_cluster", 1],
+        ["cta_tax_corporate", "tax_corporate", "법인세법", "concept_cluster", 1],
+        ["cta_tax_vat", "tax_vat", "부가가치세법", "concept_cluster", 1],
+        ["cta_tax_international", null, "국제조세조정", "unit", 3]
+      ]
+    },
+    {
+      "subject_id": "cta1_accounting_intro",
+      "exam_id": "CTA",
+      "phase_id": "CTA_1",
+      "phase_name": "세무사 1차",
+      "subject_name": "회계학개론",
+      "assessment_type": "objective",
+      "question_count": 40,
+      "minutes": 80,
+      "points": 100,
+      "source_url": "https://www.q-net.or.kr/crf002.do?gId=22&gSite=L&id=crf00201",
+      "notes": "2교시 선택법과 묶음 시간 기준",
+      "nodes": [
+        ["cta_acct_financial", "acct_financial", "재무회계", "concept_cluster", 1],
+        ["cta_acct_cost", "acct_cost", "원가관리회계", "concept_cluster", 1],
+        ["cta_acct_bookkeeping", null, "회계원리/분개", "unit", 1]
+      ]
+    },
+    {
+      "subject_id": "cta1_elective_law",
+      "exam_id": "CTA",
+      "phase_id": "CTA_1",
+      "phase_name": "세무사 1차",
+      "subject_name": "선택법",
+      "assessment_type": "objective",
+      "question_count": 40,
+      "minutes": 80,
+      "points": 100,
+      "source_url": "https://www.q-net.or.kr/crf002.do?gId=22&gSite=L&id=crf00201",
+      "notes": "상법(회사편), 민법(총칙), 행정소송법 중 택1",
+      "nodes": [
+        ["cta_law_commercial_company", "cpa1_law_company", "상법 회사편", "unit", 2],
+        ["cta_law_civil_general", null, "민법 총칙", "unit", 2],
+        ["cta_law_admin_litigation", null, "행정소송법", "unit", 2]
+      ]
+    },
+    {
+      "subject_id": "cta2_accounting_part1",
+      "exam_id": "CTA",
+      "phase_id": "CTA_2",
+      "phase_name": "세무사 2차",
+      "subject_name": "회계학 1부",
+      "assessment_type": "written",
+      "question_count": 4,
+      "minutes": 90,
+      "points": 100,
+      "source_url": "https://www.q-net.or.kr/crf002.do?gId=22&gSite=L&id=crf00201",
+      "notes": "재무회계, 원가관리회계",
+      "nodes": [
+        ["cta2_acct_financial", "acct_financial", "재무회계 주관식", "concept_cluster", 1],
+        ["cta2_acct_cost", "acct_cost", "원가관리회계 주관식", "concept_cluster", 1]
+      ]
+    },
+    {
+      "subject_id": "cta2_accounting_part2",
+      "exam_id": "CTA",
+      "phase_id": "CTA_2",
+      "phase_name": "세무사 2차",
+      "subject_name": "회계학 2부",
+      "assessment_type": "written",
+      "question_count": 4,
+      "minutes": 90,
+      "points": 100,
+      "source_url": "https://www.q-net.or.kr/crf002.do?gId=22&gSite=L&id=crf00201",
+      "notes": "세무회계",
+      "nodes": [
+        ["cta2_tax_accounting_corporate", "tax_corporate", "법인세 세무회계", "concept_cluster", 1],
+        ["cta2_tax_accounting_income", "tax_income", "소득세 세무회계", "concept_cluster", 2],
+        ["cta2_tax_accounting_vat", "tax_vat", "부가가치세 세무회계", "concept_cluster", 2]
+      ]
+    },
+    {
+      "subject_id": "cta2_tax_law_part1",
+      "exam_id": "CTA",
+      "phase_id": "CTA_2",
+      "phase_name": "세무사 2차",
+      "subject_name": "세법학 1부",
+      "assessment_type": "written",
+      "question_count": 4,
+      "minutes": 90,
+      "points": 100,
+      "source_url": "https://www.q-net.or.kr/crf002.do?gId=22&gSite=L&id=crf00201",
+      "notes": "국세기본법, 소득세법, 법인세법, 상속세및증여세법",
+      "nodes": [
+        ["cta2_tax_law_basic", "tax_framework", "국세기본법 논술", "concept_cluster", 1],
+        ["cta2_tax_law_income", "tax_income", "소득세법 논술", "concept_cluster", 1],
+        ["cta2_tax_law_corporate", "tax_corporate", "법인세법 논술", "concept_cluster", 1],
+        ["cta2_tax_law_inheritance_gift", null, "상속세및증여세법", "unit", 2]
+      ]
+    },
+    {
+      "subject_id": "cta2_tax_law_part2",
+      "exam_id": "CTA",
+      "phase_id": "CTA_2",
+      "phase_name": "세무사 2차",
+      "subject_name": "세법학 2부",
+      "assessment_type": "written",
+      "question_count": 4,
+      "minutes": 90,
+      "points": 100,
+      "source_url": "https://www.q-net.or.kr/crf002.do?gId=22&gSite=L&id=crf00201",
+      "notes": "부가가치세법, 개별소비세법, 조세특례제한법, 지방세법 계열",
+      "nodes": [
+        ["cta2_tax_law_vat", "tax_vat", "부가가치세법 논술", "concept_cluster", 1],
+        ["cta2_tax_law_excise", null, "개별소비세법", "unit", 3],
+        ["cta2_tax_law_local", null, "지방세법/지방세기본법/지방세특례제한법", "unit", 2],
+        ["cta2_tax_law_special", null, "조세특례제한법", "unit", 2]
+      ]
+    }
+  ]
+}

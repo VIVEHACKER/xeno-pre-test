@@ -1,0 +1,73 @@
+{
+  "prescription_id": "rx-seed-user-past-exam-rotation-89dfae32e5ac9020",
+  "user_id": "seed-user-past-exam-rotation",
+  "generated_at": "2026-05-11T04:00:00+00:00",
+  "diagnosis": {
+    "summary": "단계 past_exam_rotation에서 매칭된 신호: 기출 회독 목적 분리, 회계/세법 핵심축 집중, 세법 말문제 회상 블록. 잔여 120일, 리스크 점수 25/100.",
+    "risk_level": "moderate",
+    "risk_drivers": [
+      "tax 핵심 개념 공백",
+      "복수 규칙 동시 발동",
+      "기출 회독 목적 분리",
+      "회계/세법 핵심축 집중",
+      "세법 말문제 회상 블록",
+      "memory_decay",
+      "rotation_confusion"
+    ]
+  },
+  "weekly_goal": {
+    "goal_text": "1회독은 개념 연결, 2회독은 함정/오답, 3회독은 시간 압박 검증으로 목적을 분리한다.",
+    "verification_metric": "주간 처방 수행률 80% 이상, 매칭 규칙 past_exam_rotation 관련 약점 지표 측정"
+  },
+  "daily_tasks": [
+    {
+      "task_text": "1회독은 개념 연결, 2회독은 함정/오답, 3회독은 시간 압박 검증으로 목적을 분리한다.",
+      "subject": "mixed",
+      "estimated_minutes": 45
+    },
+    {
+      "task_text": "회계학과 세법개론을 주간 점수 상승의 중심축으로 두고, 나머지 과목은 유지 블록으로 분리한다.",
+      "subject": "mixed",
+      "estimated_minutes": 45
+    },
+    {
+      "task_text": "매일 짧은 회상 블록을 배정하고 정답 문장이 아니라 판단 기준 문장으로 압축한다.",
+      "subject": "tax",
+      "estimated_minutes": 45
+    }
+  ],
+  "concepts_to_review": [
+    "세법: 부가가치세 말문제",
+    "세법: 법인세 손금",
+    "재무회계: 금융자산"
+  ],
+  "problems_to_solve": [],
+  "problems_to_skip": [],
+  "triggered_rule_keys": [
+    "past_exam_rotation",
+    "accounting_tax_core_focus",
+    "tax_verbal_recall"
+  ],
+  "evidence_refs": [
+    {
+      "ref_type": "user_state",
+      "ref_id": "seed-user-past-exam-rotation",
+      "note": "stage=past_exam_rotation, days_until_exam=120"
+    },
+    {
+      "ref_type": "decision_rule",
+      "ref_id": "past_exam_rotation",
+      "note": "기출 회독 목적 분리"
+    },
+    {
+      "ref_type": "decision_rule",
+      "ref_id": "accounting_tax_core_focus",
+      "note": "회계/세법 핵심축 집중"
+    },
+    {
+      "ref_type": "decision_rule",
+      "ref_id": "tax_verbal_recall",
+      "note": "세법 말문제 회상 블록"
+    }
+  ]
+}

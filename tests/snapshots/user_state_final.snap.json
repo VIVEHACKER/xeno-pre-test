@@ -1,0 +1,85 @@
+{
+  "prescription_id": "rx-seed-user-final-742cb937373aefc4",
+  "user_id": "seed-user-final",
+  "generated_at": "2026-05-11T04:00:00+00:00",
+  "diagnosis": {
+    "summary": "단계 final에서 매칭된 신호: 파이널 압축 모드, 회계/세법 핵심축 집중, 세법 말문제 회상 블록, 시간 집착 방지. 잔여 20일, 리스크 점수 35/100.",
+    "risk_level": "moderate",
+    "risk_drivers": [
+      "잔여 20일 — 압축 구간",
+      "복수 규칙 동시 발동",
+      "파이널 압축 모드",
+      "회계/세법 핵심축 집중",
+      "세법 말문제 회상 블록",
+      "시간 집착 방지",
+      "memory_decay",
+      "time_pressure"
+    ]
+  },
+  "weekly_goal": {
+    "goal_text": "새 유형/새 단원 시도를 차단한다. 익숙한 유형의 정답률 + 시간 압축에만 집중하고, 세법은 매일 짧은 회상 블록을 유지한다.",
+    "verification_metric": "주간 처방 수행률 80% 이상, 매칭 규칙 final_consolidation 관련 약점 지표 측정"
+  },
+  "daily_tasks": [
+    {
+      "task_text": "새 유형/새 단원 시도를 차단한다. 익숙한 유형의 정답률 + 시간 압축에만 집중하고, 세법은 매일 짧은 회상 블록을 유지한다.",
+      "subject": "mixed",
+      "estimated_minutes": 30
+    },
+    {
+      "task_text": "회계학과 세법개론을 주간 점수 상승의 중심축으로 두고, 나머지 과목은 유지 블록으로 분리한다.",
+      "subject": "mixed",
+      "estimated_minutes": 45
+    },
+    {
+      "task_text": "매일 짧은 회상 블록을 배정하고 정답 문장이 아니라 판단 기준 문장으로 압축한다.",
+      "subject": "tax",
+      "estimated_minutes": 45
+    },
+    {
+      "task_text": "문제별 통과 기준을 두고 1회전/2회전 풀이를 훈련한다.",
+      "subject": "mixed",
+      "estimated_minutes": 30
+    }
+  ],
+  "concepts_to_review": [
+    "세법: 부가가치세 말문제",
+    "세법: 법인세 손금",
+    "재무회계: 금융자산"
+  ],
+  "problems_to_solve": [],
+  "problems_to_skip": [],
+  "triggered_rule_keys": [
+    "final_consolidation",
+    "accounting_tax_core_focus",
+    "tax_verbal_recall",
+    "time_efficiency_guardrail"
+  ],
+  "evidence_refs": [
+    {
+      "ref_type": "user_state",
+      "ref_id": "seed-user-final",
+      "note": "stage=final, days_until_exam=20"
+    },
+    {
+      "ref_type": "decision_rule",
+      "ref_id": "final_consolidation",
+      "note": "파이널 압축 모드"
+    },
+    {
+      "ref_type": "decision_rule",
+      "ref_id": "accounting_tax_core_focus",
+      "note": "회계/세법 핵심축 집중"
+    },
+    {
+      "ref_type": "decision_rule",
+      "ref_id": "tax_verbal_recall",
+      "note": "세법 말문제 회상 블록"
+    },
+    {
+      "ref_type": "decision_rule",
+      "ref_id": "time_efficiency_guardrail",
+      "note": "시간 집착 방지"
+    }
+  ]
+}

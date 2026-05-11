@@ -1,0 +1,58 @@
+{
+  "problem_id": "cpa1-accounting-002",
+  "exam": "CPA_1",
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "재무회계: 금융자산",
+    "amortized_cost",
+    "impairment_loss"
+  ],
+  "required_concepts": [
+    {
+      "concept": "상각후원가",
+      "role": "장부금액 계산의 기준",
+      "prerequisite": true
+    },
+    {
+      "concept": "손상차손",
+      "role": "기대신용손실 인식 시점 판단",
+      "prerequisite": true
+    }
+  ],
+  "solving_entry_point": "취득일/만기일/이자 지급 조건을 표시한 다음, 신용위험 변동 신호와 손상 발생 조건을 먼저 분리한다.",
+  "solving_steps": [
+    "취득원가, 액면금액, 유효이자율을 표시한다.",
+    "각 연도 이자수익을 유효이자율로 계산한다.",
+    "기대신용손실 인식 단계(stage 1/2/3) 조건을 확인한다.",
+    "손상 직전과 직후의 장부금액 차이를 계산한다.",
+    "묻는 시점(직전/직후/말잔)을 보기와 대조한다."
+  ],
+  "trap_patterns": [
+    "stage 전이를 무시하고 단일 손실율을 적용한다.",
+    "손상 인식 시점과 회수가능액 측정 시점을 혼동한다.",
+    "잔여 만기와 잔여 이자 지급 횟수를 다르게 계산한다."
+  ],
+  "time_strategy": {
+    "target_seconds": 110,
+    "skip_threshold_seconds": 140,
+    "exam_room_rule": "stage 판단이 70초 안에 끝나지 않으면 표시 후 다음 문제로 이동한다."
+  },
+  "variant_axes": [
+    "신용위험 stage 변경",
+    "이자 지급 횟수 변경",
+    "회수가능액 측정 가정 변경"
+  ],
+  "mistake_diagnosis": [
+    "condition_miss",
+    "concept_gap",
+    "calculation_error"
+  ],
+  "review_status": "ai_draft"
+}

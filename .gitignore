@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+.venv/
+venv/
+
+# 런타임 상태 (단일 사용자 처방 + 풀이 로그)
+data/runtime/
+
+# 06번 파이프라인 결과물 (재생성 가능)
+data/warehouse/*.sqlite
+data/warehouse/*.sqlite-journal
+data/warehouse/manifest.json
+prototype/data_manifest.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp

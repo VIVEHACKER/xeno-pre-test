@@ -1,0 +1,14 @@
+{
+  "rule_key": "final_consolidation",
+  "rule_name": "파이널 압축 모드",
+  "condition_text": "시험까지 30일 미만 구간에 진입한 상태",
+  "action_text": "새 유형/새 단원 시도를 차단한다. 익숙한 유형의 정답률 + 시간 압축에만 집중하고, 세법은 매일 짧은 회상 블록을 유지한다.",
+  "exception_text": "특정 과목 과락 위험이 명백하면 해당 과목 핵심 단원만 보강한다.",
+  "applicable_stages": ["final"],
+  "applicable_subjects": ["accounting", "tax", "accounting_tax"],
+  "required_risk_tags": [],
+  "source_signal_count": 0,
+  "source_case_ids": [],
+  "confidence": 0.75,
+  "review_status": "machine_draft"
+}

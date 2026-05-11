@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CPA First 합격 운영체계</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">CF</div>
+          <div>
+            <strong>CPA First</strong>
+            <span>회계학/세법 전략 엔진</span>
+          </div>
+        </div>
+        <nav class="nav-list" aria-label="주요 화면">
+          <button class="nav-item active" data-view="dashboard">전략 대시보드</button>
+          <button class="nav-item" data-view="problem">문제 지능</button>
+          <button class="nav-item" data-view="stories">합격수기 분석</button>
+          <button class="nav-item" data-view="interview">인터뷰 설계</button>
+        </nav>
+        <p class="sidebar-footnote" id="apiStatus">처방 엔진 연결 확인 중…</p>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">CPA 1차 A-scope</p>
+            <h1>오늘의 합격 전략</h1>
+          </div>
+          <div class="exam-badge">
+            <span>대상</span>
+            <strong>회계학 · 세법개론</strong>
+          </div>
+        </header>
+
+        <section class="control-strip" aria-label="진단 입력">
+          <label>
+            시험까지
+            <input id="monthsInput" type="number" value="6" min="1" max="24" />
+            <span>개월</span>
+          </label>
+          <label>
+            회계 정답률
+            <input id="accountingInput" type="range" value="52" min="20" max="90" />
+            <output id="accountingOutput">52%</output>
+          </label>
+          <label>
+            세법 정답률
+            <input id="taxInput" type="range" value="46" min="20" max="90" />
+            <output id="taxOutput">46%</output>
+          </label>
+          <label>
+            하루 공부
+            <input id="hoursInput" type="number" value="7" min="1" max="16" />
+            <span>시간</span>
+          </label>
+        </section>
+
+        <section class="control-strip" aria-label="추가 진단 입력">
+          <label>
+            단계
+            <select id="stageInput">
+              <option value="post_lecture">기본강의 이후</option>
+              <option value="objective_entry" selected>객관식 진입</option>
+              <option value="past_exam_rotation">기출 회독</option>
+              <option value="mock_exam">모의고사</option>
+              <option value="final">파이널</option>
+            </select>
+          </label>
+          <label>
+            회계 시간초과
+            <input id="acctTimeInput" type="range" value="30" min="0" max="80" />
+            <output id="acctTimeOutput">30%</output>
+          </label>
+          <label>
+            세법 시간초과
+            <input id="taxTimeInput" type="range" value="15" min="0" max="80" />
+            <output id="taxTimeOutput">15%</output>
+          </label>
+        </section>
+
+        <section class="control-strip risk-tags" aria-label="리스크 태그">
+          <span class="strip-label">리스크 태그</span>
+          <label><input type="checkbox" data-tag="time_pressure" checked /> 시간 압박</label>
+          <label><input type="checkbox" data-tag="memory_decay" /> 휘발</label>
+          <label><input type="checkbox" data-tag="concept_gap" /> 개념 공백</label>
+          <label><input type="checkbox" data-tag="objective_entry_delay" checked /> 객관식 진입 지연</label>
+          <label><input type="checkbox" data-tag="rotation_confusion" /> 회독 혼동</label>
+        </section>
+
+        <section class="view active" id="dashboard">
+          <div class="metric-grid">
+            <article class="metric">
+              <span>합격 리스크</span>
+              <strong id="riskLabel">높음</strong>
+              <p id="riskReason">회계 시간 압박과 세법 휘발 리스크가 큽니다.</p>
+            </article>
+            <article class="metric">
+              <span>이번 주 목표</span>
+              <strong id="weeklyGoal">시간 초과율 8%p 감소</strong>
+              <p id="weeklyMetric">점수보다 먼저 풀이 순서를 안정화합니다.</p>
+            </article>
+            <article class="metric">
+              <span>매칭 규칙</span>
+              <strong id="matchCount">—</strong>
+              <p id="matchRules">발동된 의사결정 규칙이 표시됩니다.</p>
+            </article>
+          </div>
+
+          <div class="two-column">
+            <section class="panel">
+              <div class="panel-header">
+                <h2>개념 우선순위</h2>
+                <span>중요도 x 약점도</span>
+              </div>
+              <div class="priority-list" id="priorityList"></div>
+            </section>
+
+            <section class="panel">
+              <div class="panel-header">
+                <h2>오늘의 처방</h2>
+                <span id="planSummary">7시간 기준</span>
+              </div>
+              <ol class="task-list" id="taskList"></ol>
+            </section>
+          </div>
+
+          <section class="panel">
+            <div class="panel-header">
+              <h2>주간 운영판</h2>
+              <span>실행 후 다음 진단에서 수정</span>
+            </div>
+            <div class="week-grid" id="weekGrid"></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-header">
+              <h2>처방 근거 (Evidence)</h2>
+              <span id="evidenceSummary">각 항목을 클릭하면 원본 데이터를 조회합니다</span>
+            </div>
+            <ul class="evidence-list" id="evidenceList">
+              <li class="muted-note">진단 후 처방의 근거가 표시됩니다.</li>
+            </ul>
+            <pre class="evidence-detail" id="evidenceDetail" hidden></pre>
+          </section>
+        </section>
+
+        <section class="view" id="problem">
+          <div class="panel">
+            <div class="panel-header">
+              <h2>문제 지능 카드</h2>
+              <span>정답보다 풀이 판단을 저장</span>
+            </div>
+            <div class="problem-card">
+              <div class="problem-main">
+                <p class="eyebrow">회계학 · 금융자산</p>
+                <h3>상각후원가와 유효이자율 문제</h3>
+                <p>취득일, 이자 조건, 장부금액 변화를 분리해서 처리해야 하는 유형입니다.</p>
+              </div>
+              <div class="tag-cloud">
+                <span>상각후원가</span>
+                <span>유효이자율</span>
+                <span>조건 누락</span>
+                <span>2회전 풀이</span>
+              </div>
+            </div>
+            <div class="intelligence-grid">
+              <article>
+                <h3>풀이 시작점</h3>
+                <p>취득시점, 액면이자율, 유효이자율, 이자 지급일을 먼저 표시합니다.</p>
+              </article>
+              <article>
+                <h3>함정</h3>
+                <p>액면이자를 이자수익으로 바로 쓰거나 처분 조건을 놓치는 경우가 많습니다.</p>
+              </article>
+              <article>
+                <h3>시간 전략</h3>
+                <p>60초 안에 식이 잡히지 않으면 표시 후 다음 문제로 넘어갑니다.</p>
+              </article>
+              <article>
+                <h3>변형 포인트</h3>
+                <p>손상, 중도 처분, 이자 지급 횟수 변경으로 난도를 조정할 수 있습니다.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" id="stories">
+          <div class="panel">
+            <div class="panel-header">
+              <h2>데이터 적재 현황</h2>
+              <span id="manifestGeneratedAt">DB manifest 대기 중</span>
+            </div>
+            <div class="data-metrics" aria-label="데이터 적재 지표">
+              <article>
+                <span>원천 URL</span>
+                <strong id="sourceCount">0</strong>
+              </article>
+              <article>
+                <span>fetch 문서</span>
+                <strong id="documentCount">0</strong>
+              </article>
+              <article>
+                <span>추출 신호</span>
+                <strong id="signalCount">0</strong>
+              </article>
+              <article>
+                <span>전략 규칙</span>
+                <strong id="ruleCount">0</strong>
+              </article>
+              <article>
+                <span>전 과목</span>
+                <strong id="subjectCount">0</strong>
+              </article>
+              <article>
+                <span>지식 노드</span>
+                <strong id="knowledgeNodeCount">0</strong>
+              </article>
+              <article>
+                <span>수집 타깃</span>
+                <strong id="acquisitionTargetCount">0</strong>
+              </article>
+            </div>
+            <div class="story-pipeline">
+              <div>URL 원천 등록</div>
+              <div>fetch 결과 저장</div>
+              <div>신호 추출</div>
+              <div>규칙 승격</div>
+              <div>검수 대기열</div>
+            </div>
+            <table class="signal-table">
+              <thead>
+                <tr>
+                  <th>규칙</th>
+                  <th>근거 신호</th>
+                  <th>신뢰도</th>
+                  <th>상태</th>
+                </tr>
+              </thead>
+              <tbody id="ruleTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="view" id="interview">
+          <div class="panel">
+            <div class="panel-header">
+              <h2>합격자 인터뷰</h2>
+              <span>암묵지 추출용 질문</span>
+            </div>
+            <div class="interview-layout">
+              <article>
+                <h3>문제를 같이 보며 묻기</h3>
+                <p>정답 설명이 아니라 어디를 먼저 보고, 언제 넘기는지 말하게 합니다.</p>
+              </article>
+              <article>
+                <h3>수기 밖의 판단 캐기</h3>
+                <p>왜 그 시점에 객관식으로 넘어갔는지, 왜 어떤 유형을 버렸는지 확인합니다.</p>
+              </article>
+              <article>
+                <h3>전략 규칙화</h3>
+                <p>인터뷰 문장을 적용 조건, 행동, 예외 조건, 신뢰도로 바꿉니다.</p>
+              </article>
+            </div>
+            <div class="question-bank">
+              <button data-question="회계학에서 점수가 오르기 시작한 순간은 언제였나요?">회계 전환점</button>
+              <button data-question="시험장에서 50문항을 어떤 순서로 풀었나요?">풀이 순서</button>
+              <button data-question="세법 말문제와 계산문제를 어떻게 분리했나요?">세법 분리</button>
+              <button data-question="지금 다시 준비한다면 가장 먼저 바꿀 것은 무엇인가요?">재시작 판단</button>
+            </div>
+            <p class="selected-question" id="selectedQuestion">질문을 선택하면 인터뷰 문항이 표시됩니다.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

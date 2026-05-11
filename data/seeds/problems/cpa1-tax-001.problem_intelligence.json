@@ -1,0 +1,59 @@
+{
+  "problem_id": "cpa1-tax-001",
+  "exam": "CPA_1",
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "세법: 법인세 손금",
+    "corporate_tax",
+    "deductible_expense",
+    "entertainment_expense"
+  ],
+  "required_concepts": [
+    {
+      "concept": "접대비 한도",
+      "role": "손금산입 한도 계산",
+      "prerequisite": true
+    },
+    {
+      "concept": "기본한도와 수입금액별 한도",
+      "role": "한도 합산 구조",
+      "prerequisite": true
+    }
+  ],
+  "solving_entry_point": "발생액과 한도 산식의 두 축을 먼저 분리한다. 적용연도와 중소기업 가산을 반드시 확인한다.",
+  "solving_steps": [
+    "당해 사업연도 접대비 발생액을 정리한다.",
+    "기본한도(연 1,200/3,600만원 등 적용연도 확인)와 수입금액별 한도를 각각 계산한다.",
+    "한도 합계를 산출한다.",
+    "발생액 - 한도 = 손금불산입 금액을 결정한다.",
+    "신용카드 미사용 등 손금불산입 가산 항목을 확인한다."
+  ],
+  "trap_patterns": [
+    "수입금액 한도에서 매출 종류별 비율 적용을 누락한다.",
+    "중소기업 가산 한도를 적용연도 기준과 다르게 적용한다.",
+    "신용카드 미사용 가산을 한도 계산과 별개로 처리하지 않는다."
+  ],
+  "time_strategy": {
+    "target_seconds": 95,
+    "skip_threshold_seconds": 125,
+    "exam_room_rule": "한도 식이 50초 안에 안 잡히면 표시 후 넘기고 2회전에 재진입한다."
+  },
+  "variant_axes": [
+    "적용연도 변경(개정사항)",
+    "중소기업 여부 변경",
+    "신용카드 사용 비율 변경"
+  ],
+  "mistake_diagnosis": [
+    "condition_miss",
+    "formula_gap",
+    "calculation_error"
+  ],
+  "review_status": "ai_draft"
+}

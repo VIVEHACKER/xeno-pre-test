@@ -1,0 +1,59 @@
+{
+  "problem_id": "cpa1-accounting-003",
+  "exam": "CPA_1",
+  "subject": "accounting",
+  "unit": "revenue_recognition",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "재무회계: 수익인식",
+    "revenue_recognition",
+    "variable_consideration",
+    "performance_obligation"
+  ],
+  "required_concepts": [
+    {
+      "concept": "수행의무 식별",
+      "role": "단일/복수 의무 분리의 출발점",
+      "prerequisite": true
+    },
+    {
+      "concept": "변동대가",
+      "role": "할인/리베이트/성과조건 처리",
+      "prerequisite": true
+    }
+  ],
+  "solving_entry_point": "계약 단위로 수행의무를 식별하고, 거래가격 배분과 변동대가 추정 시점부터 잡는다.",
+  "solving_steps": [
+    "계약 내 수행의무 개수를 분리한다.",
+    "거래가격을 각 수행의무에 배분한다.",
+    "변동대가의 추정 방법(기댓값/최선추정)을 선택한다.",
+    "수익 인식 시점(시점/기간)을 결정한다.",
+    "묻는 기간 수익을 보기와 대조한다."
+  ],
+  "trap_patterns": [
+    "단일 수행의무로 일괄 계산해 배분을 누락한다.",
+    "변동대가의 인식 제한(highly probable)을 무시한다.",
+    "기간에 걸친 진행률 측정 단위를 혼동한다."
+  ],
+  "time_strategy": {
+    "target_seconds": 105,
+    "skip_threshold_seconds": 135,
+    "exam_room_rule": "수행의무 분리 표시가 60초 안에 안 잡히면 표시 후 다음 문제로 이동한다."
+  },
+  "variant_axes": [
+    "수행의무 개수 변경",
+    "변동대가 유형 변경",
+    "진행률 측정 방법 변경"
+  ],
+  "mistake_diagnosis": [
+    "concept_gap",
+    "condition_miss",
+    "distractor_trap"
+  ],
+  "review_status": "ai_draft"
+}
