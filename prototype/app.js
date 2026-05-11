@@ -253,6 +253,8 @@ function renderDataManifest(manifest) {
   $("#pastExamAssetCount").textContent = stats.past_exam_assets ?? 0;
   $("#assetDocumentCount").textContent = stats.asset_documents ?? 0;
   $("#learningJobCount").textContent = stats.learning_jobs ?? 0;
+  $("#trainableAfterReviewCount").textContent = stats.trainable_after_review_jobs ?? 0;
+  $("#blockedLearningJobCount").textContent = stats.learning_status?.blocked ?? 0;
   $("#manifestGeneratedAt").textContent = manifest.generated_at
     ? `마지막 적재 ${new Date(manifest.generated_at).toLocaleString("ko-KR")}`
     : "DB manifest 없음";

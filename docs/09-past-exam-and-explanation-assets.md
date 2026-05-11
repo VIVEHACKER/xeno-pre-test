@@ -22,6 +22,12 @@ data/seeds/past_exam_assets.csv
 - `fetch_policy`: metadata_page, metadata_only, internal_queue
 - `training_policy`: train_after_rights_review, do_not_train_until_permission, train_allowed_after_review
 
+권리 가드레일:
+
+- `permission_required`, `rights_check_required`, `license_required`는 CSV에 어떤 `training_policy`가 들어와도 파이프라인에서 `do_not_train_until_permission`으로 강제한다.
+- 학원/출판사 해설은 출처를 숨겨 학습하거나 재배포하지 않는다. 제휴 또는 명시 허락이 생기면 별도 권리 상태로 승격한다.
+- 실제 풀이 지능은 공식 기출/정답의 권리 검토, 자체 생성 해설, 사용자 풀이 로그, 전문가 검수 데이터로 쌓는다.
+
 ## DB 테이블
 
 ### past_exam_assets

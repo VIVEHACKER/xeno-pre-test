@@ -26,6 +26,8 @@ DEFAULT_EXAM_ASSETS = ROOT / "data" / "seeds" / "past_exam_assets.csv"
 DEFAULT_MANIFEST = ROOT / "data" / "warehouse" / "manifest.json"
 DEFAULT_PUBLIC_MANIFEST = ROOT / "prototype" / "data_manifest.json"
 USER_AGENT = "CPAFirstResearchBot/0.1 (+local research prototype)"
+BLOCKED_RIGHTS_POLICIES = {"permission_required", "rights_check_required", "license_required"}
+TRAINING_REVIEW_POLICIES = {"train_allowed_after_review", "train_after_rights_review"}
 
 
 SCHEMA = """
@@ -422,11 +424,24 @@ def as_optional_int(value: str | None) -> int | None:
   return int(value)
 
 
+def effective_training_policy(row: dict[str, str] | sqlite3.Row) -> str:
+  rights_policy = row["rights_policy"]
+  requested_policy = row["training_policy"]
+  source_type = row["source_type"]
+
+  if rights_policy in BLOCKED_RIGHTS_POLICIES:
+    return "do_not_train_until_permission"
+  if source_type == "internal" and rights_policy == "owned_generated_content":
+    return "train_allowed_after_review"
+  return requested_policy
+
+
 def seed_past_exam_assets(conn: sqlite3.Connection, assets_path: Path) -> int:
   timestamp = now()
   rows = 0
   with assets_path.open("r", encoding="utf-8-sig", newline="") as f:
     for row in csv.DictReader(f):
+      training_policy = effective_training_policy(row)
       conn.execute(
         """
         INSERT INTO past_exam_assets
@@ -466,7 +481,7 @@ def seed_past_exam_assets(conn: sqlite3.Connection, assets_path: Path) -> int:
           row["source_type"],
           row["rights_policy"],
           row["fetch_policy"],
-          row["training_policy"],
+          training_policy,
           int(row.get("priority") or 3),
           row.get("notes"),
           timestamp,
@@ -593,14 +608,15 @@ def seed_problem_learning_jobs(conn: sqlite3.Connection) -> dict:
     else:
       job_type = "asset_review"
 
-    if row["training_policy"] in {"train_allowed_after_review", "train_after_rights_review"}:
+    training_policy = effective_training_policy(row)
+    if training_policy in TRAINING_REVIEW_POLICIES:
       status = "queued_rights_review"
       blocker = "rights_review_required_before_training"
     else:
       status = "blocked"
       blocker = "permission_or_license_required_before_training"
 
-    if row["source_type"] == "internal" and row["training_policy"] == "train_allowed_after_review":
+    if row["source_type"] == "internal" and training_policy == "train_allowed_after_review":
       status = "queued_generation"
       blocker = None
 
@@ -623,7 +639,7 @@ def seed_problem_learning_jobs(conn: sqlite3.Connection) -> dict:
         row["asset_id"],
         job_type,
         row["rights_policy"],
-        row["training_policy"],
+        training_policy,
         status,
         blocker,
         timestamp,
