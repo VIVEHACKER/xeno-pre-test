@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cpa-first.local/schemas/evaluation_question.schema.json",
+  "title": "EvaluationQuestion",
+  "description": "AI 응시자 벤치마크용 객관식 모의 문제. 권리 가드레일에 안전한 자체 생성 자산만 허용.",
+  "type": "object",
+  "required": [
+    "question_id",
+    "exam",
+    "subject",
+    "unit",
+    "stem",
+    "choices",
+    "correct_choice",
+    "rights_status",
+    "review_status"
+  ],
+  "properties": {
+    "question_id": { "type": "string" },
+    "exam": { "type": "string", "enum": ["CPA_1"] },
+    "subject": { "type": "string", "enum": ["accounting", "tax"] },
+    "unit": { "type": "string" },
+    "applicable_year": {
+      "type": ["integer", "null"],
+      "description": "세법은 적용연도 필수 (개정 분기). 회계는 K-IFRS 적용연도."
+    },
+    "stem": {
+      "type": "string",
+      "description": "문제 본문. 자체 생성 또는 공식 기출의 권리 처리된 버전."
+    },
+    "choices": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 5,
+      "items": { "type": "string" }
+    },
+    "correct_choice": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "choices 배열의 0-기반 인덱스."
+    },
+    "explanation": {
+      "type": "string",
+      "description": "정답 해설. 채점 후 solver 출력과 비교용."
+    },
+    "concept_tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "expected_seconds": {
+      "type": ["integer", "null"],
+      "description": "예상 풀이 시간 (벤치마크 기록용)."
+    },
+    "rights_status": {
+      "type": "string",
+      "enum": [
+        "original_sample",
+        "synthetic_seed",
+        "rights_cleared_past_exam",
+        "internal_draft"
+      ]
+    },
+    "review_status": {
+      "type": "string",
+      "enum": ["ai_draft", "expert_reviewed", "approved", "rejected"]
+    }
+  },
+  "additionalProperties": false
+}

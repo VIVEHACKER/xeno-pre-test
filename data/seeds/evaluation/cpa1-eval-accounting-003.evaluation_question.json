@@ -1,0 +1,25 @@
+{
+  "question_id": "cpa1-eval-accounting-003",
+  "exam": "CPA_1",
+  "subject": "accounting",
+  "unit": "cost_management",
+  "applicable_year": 2026,
+  "stem": "㈜CF의 단일 제품의 단위당 판매가격은 5,000원, 단위당 변동비는 3,000원, 연간 고정비는 4,000,000원이다. 손익분기점 판매량(BEP)과 안전한계율(20%일 때 매출액)을 묶은 짝으로 옳은 것은?",
+  "choices": [
+    "BEP 1,600개 / 안전한계 매출액 10,000,000원",
+    "BEP 2,000개 / 안전한계 매출액 12,500,000원",
+    "BEP 2,000개 / 안전한계 매출액 2,000,000원",
+    "BEP 2,500개 / 안전한계 매출액 10,000,000원"
+  ],
+  "correct_choice": 1,
+  "explanation": "단위당 공헌이익 = 5,000 - 3,000 = 2,000원. BEP 판매량 = 4,000,000 / 2,000 = 2,000개. BEP 매출액 = 2,000개 × 5,000 = 10,000,000원. 안전한계율 20% 의미: 현재 매출에서 BEP까지 거리가 20%. 즉 현재 매출 = BEP / (1 - 0.2) = 10,000,000 / 0.8 = 12,500,000원.",
+  "concept_tags": [
+    "원가관리: CVP",
+    "cvp_analysis",
+    "break_even_point",
+    "margin_of_safety"
+  ],
+  "expected_seconds": 75,
+  "rights_status": "synthetic_seed",
+  "review_status": "expert_reviewed"
+}

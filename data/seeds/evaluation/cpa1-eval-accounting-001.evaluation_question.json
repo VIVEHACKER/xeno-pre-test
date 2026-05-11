@@ -1,0 +1,25 @@
+{
+  "question_id": "cpa1-eval-accounting-001",
+  "exam": "CPA_1",
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "applicable_year": 2026,
+  "stem": "20X1년 1월 1일 ㈜CF는 액면금액 1,000,000원, 만기 3년, 액면이자율 연 8%, 이자는 매년 말 후급 조건의 사채를 950,260원에 취득하여 상각후원가 측정 금융자산으로 분류하였다. 취득 당시 유효이자율은 연 10%였다. 20X1년 12월 31일 인식할 이자수익은 얼마인가? (원 단위 미만 절사)",
+  "choices": [
+    "80,000원",
+    "95,026원",
+    "100,000원",
+    "104,974원"
+  ],
+  "correct_choice": 1,
+  "explanation": "상각후원가 측정 금융자산의 이자수익은 유효이자율법으로 계산한다. 이자수익 = 기초 장부금액 × 유효이자율 = 950,260 × 10% = 95,026원. 액면이자 80,000원은 현금수취액이며 이자수익이 아니다.",
+  "concept_tags": [
+    "재무회계: 금융자산",
+    "amortized_cost",
+    "effective_interest_rate",
+    "interest_revenue"
+  ],
+  "expected_seconds": 90,
+  "rights_status": "synthetic_seed",
+  "review_status": "expert_reviewed"
+}

@@ -1,0 +1,25 @@
+{
+  "question_id": "cpa1-eval-tax-001",
+  "exam": "CPA_1",
+  "subject": "tax",
+  "unit": "vat",
+  "applicable_year": 2026,
+  "stem": "다음 중 부가가치세법상 면세 대상이 아닌 것은?",
+  "choices": [
+    "미가공 식료품(국내 생산 농산물)",
+    "수돗물 공급",
+    "일반 음식점에서 제공하는 외식 서비스",
+    "허가받은 의료보건 용역"
+  ],
+  "correct_choice": 2,
+  "explanation": "부가가치세법상 면세는 기초생활필수재(미가공 식료품, 수돗물 등), 국민후생 용역(의료, 교육), 문화 관련 용역 등에 한정된다. 일반 음식점의 외식 서비스는 과세 대상이다. 음식점의 일부 농산물 매입은 의제매입세액 공제 대상이 될 수 있으나 서비스 자체는 과세.",
+  "concept_tags": [
+    "세법: 부가가치세",
+    "vat",
+    "exemption",
+    "verbal_rule"
+  ],
+  "expected_seconds": 60,
+  "rights_status": "synthetic_seed",
+  "review_status": "expert_reviewed"
+}
