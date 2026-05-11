@@ -1,0 +1,25 @@
+{
+  "question_id": "cpa1-eval-accounting-005",
+  "exam": "CPA_1",
+  "subject": "accounting",
+  "unit": "revenue_recognition",
+  "applicable_year": 2026,
+  "stem": "㈜CF는 단일 계약으로 제품 A와 1년간 유지보수 서비스를 고객에게 5,000,000원에 판매했다. 개별 판매가격은 제품 A 4,000,000원, 유지보수 서비스 2,000,000원이다. 제품 A는 인도 시점에 통제가 이전된다. 인도 시점에 즉시 인식할 수익은 얼마인가?",
+  "choices": [
+    "3,000,000원",
+    "3,333,333원",
+    "4,000,000원",
+    "5,000,000원"
+  ],
+  "correct_choice": 1,
+  "explanation": "두 수행의무로 분리하고 거래가격을 상대적 개별 판매가격 기준으로 배분한다. 합계 6,000,000원 중 제품 A 비중 4,000,000/6,000,000 = 2/3. 거래가격 5,000,000원 × 2/3 ≈ 3,333,333원이 제품 A 배분액으로 인도 시점에 수익 인식. 유지보수 1,666,667원은 1년에 걸쳐 인식.",
+  "concept_tags": [
+    "재무회계: 수익인식",
+    "revenue_recognition",
+    "performance_obligation",
+    "transaction_price_allocation"
+  ],
+  "expected_seconds": 85,
+  "rights_status": "synthetic_seed",
+  "review_status": "expert_reviewed"
+}

@@ -37,6 +37,8 @@ class Solver:
     model: str = DEFAULT_MODEL
     client: Any = None  # live 모드에서 anthropic.Anthropic 인스턴스
     invoke: Callable[[str, str], str] | None = None  # 테스트용 주입 가능
+    rag_chunks: list[Any] = field(default_factory=list)  # 있으면 live에 context 주입
+    rag_top_k: int = 3
 
     def solve(self, question: dict[str, Any]) -> SolveResult:
         if self.mode == "mock":
@@ -54,8 +56,19 @@ class Solver:
         raise ValueError(f"unknown solver mode: {self.mode}")
 
 
-def create_solver(mode: str | None = None, **kwargs: Any) -> Solver:
+def create_solver(
+    mode: str | None = None,
+    *,
+    rag_dir: Any = None,
+    **kwargs: Any,
+) -> Solver:
     resolved_mode = mode or os.environ.get("CPA_SOLVER_MODE", "mock")
+    rag_chunks: list[Any] = []
+    if rag_dir is not None:
+        from cpa_first.rag import load_chunks
+
+        rag_chunks = load_chunks(rag_dir)
+
     if resolved_mode == "live":
         try:
             import anthropic  # type: ignore
@@ -64,8 +77,14 @@ def create_solver(mode: str | None = None, **kwargs: Any) -> Solver:
                 "live 모드는 anthropic 패키지가 필요합니다: pip install anthropic"
             ) from exc
         client = anthropic.Anthropic()
-        return Solver(mode="live", model=kwargs.get("model", DEFAULT_MODEL), client=client)
-    return Solver(mode=resolved_mode, **kwargs)
+        return Solver(
+            mode="live",
+            model=kwargs.get("model", DEFAULT_MODEL),
+            client=client,
+            rag_chunks=rag_chunks,
+            rag_top_k=kwargs.get("rag_top_k", 3),
+        )
+    return Solver(mode=resolved_mode, rag_chunks=rag_chunks, **kwargs)
 
 
 # ----- mock -----
@@ -134,6 +153,10 @@ def _solve_live(question: dict[str, Any], solver: Solver) -> SolveResult:
         choices_block=choices_block,
     )
 
+    context_block = _build_rag_context(solver, question)
+    if context_block:
+        user_message = f"{context_block}\n\n{user_message}"
+
     if solver.invoke is not None:
         raw = solver.invoke(SYSTEM_PROMPT, user_message)
     else:
@@ -149,6 +172,22 @@ def _solve_live(question: dict[str, Any], solver: Solver) -> SolveResult:
         model=solver.model,
         raw_response=raw,
     )
+
+
+def _build_rag_context(solver: Solver, question: dict[str, Any]) -> str:
+    if not solver.rag_chunks:
+        return ""
+    # 지연 import: rag 모듈이 없어도 solver 자체는 동작해야 함
+    from cpa_first.rag import format_context, retrieve
+
+    hits = retrieve(
+        question["stem"],
+        solver.rag_chunks,
+        subject=question.get("subject"),
+        unit=question.get("unit"),
+        top_k=solver.rag_top_k,
+    )
+    return format_context(hits)
 
 
 def _call_anthropic(solver: Solver, user_message: str) -> str:

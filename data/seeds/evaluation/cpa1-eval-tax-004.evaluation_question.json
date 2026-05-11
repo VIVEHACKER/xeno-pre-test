@@ -1,0 +1,25 @@
+{
+  "question_id": "cpa1-eval-tax-004",
+  "exam": "CPA_1",
+  "subject": "tax",
+  "unit": "national_tax_basic_act",
+  "applicable_year": 2026,
+  "stem": "다음 중 국세기본법상 국세 부과의 제척기간으로 옳은 것은? (부정행위 등 가중 사유 없음)",
+  "choices": [
+    "신고납세 세목의 일반 제척기간은 부과할 수 있는 날부터 5년이다.",
+    "부과과세 세목의 일반 제척기간은 10년이다.",
+    "원천징수의 일반 제척기간은 3년이다.",
+    "모든 세목의 일반 제척기간은 7년이다."
+  ],
+  "correct_choice": 0,
+  "explanation": "국세 부과 제척기간 일반 원칙: 신고납세·부과과세 세목 모두 부과할 수 있는 날부터 5년. 부정행위가 있는 경우 10년 또는 15년으로 가중. 원천징수는 별도의 제척기간 규정이 없고 5년 원칙 또는 소멸시효 적용. '7년 일률'은 잘못된 선지.",
+  "concept_tags": [
+    "세법: 국세기본법",
+    "national_tax_basic_act",
+    "statute_of_limitations",
+    "verbal_rule"
+  ],
+  "expected_seconds": 60,
+  "rights_status": "synthetic_seed",
+  "review_status": "expert_reviewed"
+}

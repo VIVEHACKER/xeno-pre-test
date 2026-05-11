@@ -1,0 +1,25 @@
+{
+  "question_id": "cpa1-eval-accounting-007",
+  "exam": "CPA_1",
+  "subject": "accounting",
+  "unit": "cash_flow",
+  "applicable_year": 2026,
+  "stem": "㈜CF의 20X1년 자료가 다음과 같을 때 간접법으로 산출한 영업활동 현금흐름은 얼마인가?\\n- 당기순이익 500,000원\\n- 감가상각비 120,000원\\n- 유형자산처분이익 30,000원\\n- 매출채권 증가 50,000원\\n- 매입채무 증가 40,000원",
+  "choices": [
+    "550,000원",
+    "580,000원",
+    "620,000원",
+    "740,000원"
+  ],
+  "correct_choice": 1,
+  "explanation": "간접법: 당기순이익 500,000 + 감가상각비 120,000(비현금비용 가산) - 유형자산처분이익 30,000(투자활동 분류이므로 영업에서 제거) - 매출채권 증가 50,000(자산 증가 = 현금 유출) + 매입채무 증가 40,000(부채 증가 = 현금 유출 지연) = 580,000원.",
+  "concept_tags": [
+    "재무회계: 현금흐름표",
+    "cash_flow",
+    "indirect_method",
+    "working_capital"
+  ],
+  "expected_seconds": 100,
+  "rights_status": "synthetic_seed",
+  "review_status": "expert_reviewed"
+}

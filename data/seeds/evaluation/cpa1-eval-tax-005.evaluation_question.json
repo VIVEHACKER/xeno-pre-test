@@ -1,0 +1,25 @@
+{
+  "question_id": "cpa1-eval-tax-005",
+  "exam": "CPA_1",
+  "subject": "tax",
+  "unit": "income_tax",
+  "applicable_year": 2026,
+  "stem": "거주자 갑이 보유하던 조정대상지역 외 1세대 1주택을 양도했다. 보유기간 3년, 거주기간 2년이며, 매매가액 8억원, 취득가액 5억원, 필요경비 0원이다. 양도소득 비과세 적용 여부와 산식이 옳은 것은? (별장이나 고가주택 아님)",
+  "choices": [
+    "비과세 비적용. 양도차익 3억원 전액 과세",
+    "비과세 적용. 양도소득세 0원",
+    "비과세 비적용. 장기보유특별공제만 적용",
+    "비과세 적용하되 12억 초과분만 과세"
+  ],
+  "correct_choice": 1,
+  "explanation": "1세대 1주택 비과세 핵심 요건: (1) 1세대 1주택 (2) 보유기간 2년 이상 (3) 조정대상지역인 경우 거주기간 2년 이상. 본 사례는 조정지역 외 + 보유 3년 충족이므로 비과세 적용. 매매가액 8억은 고가주택(12억) 기준 미달이라 전액 비과세. 단 12억 초과분이 있다면 그 비율만큼 과세.",
+  "concept_tags": [
+    "세법: 양도소득",
+    "income_tax",
+    "capital_gains",
+    "one_house_non_taxation"
+  ],
+  "expected_seconds": 80,
+  "rights_status": "synthetic_seed",
+  "review_status": "expert_reviewed"
+}

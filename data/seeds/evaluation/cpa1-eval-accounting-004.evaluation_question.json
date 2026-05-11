@@ -1,0 +1,25 @@
+{
+  "question_id": "cpa1-eval-accounting-004",
+  "exam": "CPA_1",
+  "subject": "accounting",
+  "unit": "tangible_assets",
+  "applicable_year": 2026,
+  "stem": "㈜CF는 20X1년 1월 1일 기계장치를 1,000,000원에 취득하였다. 내용연수 5년, 잔존가치 100,000원, 정액법 적용. 20X3년 1월 1일 손상 신호가 발생하여 회수가능액을 측정한 결과 사용가치 360,000원, 순공정가치 400,000원이었다. 20X3년 1월 1일 인식할 손상차손은 얼마인가?",
+  "choices": [
+    "240,000원",
+    "280,000원",
+    "320,000원",
+    "640,000원"
+  ],
+  "correct_choice": 0,
+  "explanation": "감가상각비 = (1,000,000 - 100,000) / 5 = 180,000원/년. 20X2년 말 누적 감가상각 = 360,000원. 20X3년 1월 1일 장부금액 = 1,000,000 - 360,000 = 640,000원. 회수가능액 = max(사용가치, 순공정가치) = max(360,000, 400,000) = 400,000원. 손상차손 = 640,000 - 400,000 = 240,000원.",
+  "concept_tags": [
+    "재무회계: 유형자산",
+    "tangible_assets",
+    "impairment_loss",
+    "recoverable_amount"
+  ],
+  "expected_seconds": 90,
+  "rights_status": "synthetic_seed",
+  "review_status": "expert_reviewed"
+}

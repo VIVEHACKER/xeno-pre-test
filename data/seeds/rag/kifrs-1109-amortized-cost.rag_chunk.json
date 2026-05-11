@@ -1,0 +1,28 @@
+{
+  "chunk_id": "kifrs-1109-amortized-cost",
+  "source": {
+    "source_kind": "internal_summary",
+    "title": "상각후원가 측정 금융자산 — 핵심 규정 요약",
+    "reference": "K-IFRS 1109호"
+  },
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "topic_tags": [
+    "amortized_cost",
+    "effective_interest_rate",
+    "interest_revenue",
+    "impairment_loss"
+  ],
+  "applicable_year": 2026,
+  "text": "상각후원가 측정 금융자산의 이자수익은 유효이자율법으로 인식한다. 이자수익 = 기초 장부금액 × 유효이자율. 액면이자(현금수취액)와 이자수익의 차이는 사채할인/할증발행차금 상각액으로 장부금액에 반영한다. 만기 시점에 장부금액은 액면금액과 일치한다. 손상은 기대신용손실(ECL) 모형을 적용하며 신용위험 변동에 따라 stage 1(12개월 ECL), stage 2/3(전체 잔여기간 ECL)으로 구분한다. 회수가능액과 장부금액의 차액이 손상차손이다. 처분손익은 처분대가에서 처분 직전 장부금액을 차감해 산출한다.",
+  "keywords": [
+    "유효이자율",
+    "상각후원가",
+    "이자수익",
+    "사채할인발행차금",
+    "기대신용손실",
+    "손상차손"
+  ],
+  "rights_status": "official_paraphrase",
+  "review_status": "expert_reviewed"
+}

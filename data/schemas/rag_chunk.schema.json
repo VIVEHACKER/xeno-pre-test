@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cpa-first.local/schemas/rag_chunk.schema.json",
+  "title": "RagChunk",
+  "description": "Solver가 참조하는 검색 청크. 본문은 자체 요약본 또는 권리 처리된 자료만 허용.",
+  "type": "object",
+  "required": [
+    "chunk_id",
+    "source",
+    "subject",
+    "topic_tags",
+    "text",
+    "rights_status",
+    "review_status"
+  ],
+  "properties": {
+    "chunk_id": { "type": "string" },
+    "source": {
+      "type": "object",
+      "required": ["source_kind", "title"],
+      "properties": {
+        "source_kind": {
+          "type": "string",
+          "enum": [
+            "internal_summary",
+            "official_regulation_paraphrase",
+            "self_generated_note"
+          ]
+        },
+        "title": { "type": "string" },
+        "reference": {
+          "type": ["string", "null"],
+          "description": "예: K-IFRS 1109호, 법인세법 시행령 제19조"
+        }
+      },
+      "additionalProperties": false
+    },
+    "subject": {
+      "type": "string",
+      "enum": ["accounting", "tax", "general"]
+    },
+    "unit": { "type": ["string", "null"] },
+    "topic_tags": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" }
+    },
+    "applicable_year": { "type": ["integer", "null"] },
+    "text": {
+      "type": "string",
+      "description": "검색 대상 본문. 자체 요약본 또는 권리 처리된 텍스트만."
+    },
+    "keywords": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "토큰화로 잡기 어려운 추가 키워드(예: 동의어). 검색 가중치에 반영."
+    },
+    "rights_status": {
+      "type": "string",
+      "enum": [
+        "self_generated",
+        "official_paraphrase",
+        "rights_cleared"
+      ]
+    },
+    "review_status": {
+      "type": "string",
+      "enum": ["ai_draft", "expert_reviewed", "approved", "rejected"]
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,27 @@
+{
+  "chunk_id": "kifrs-1115-revenue",
+  "source": {
+    "source_kind": "internal_summary",
+    "title": "수익 인식 5단계 모델 — 핵심 규정 요약",
+    "reference": "K-IFRS 1115호"
+  },
+  "subject": "accounting",
+  "unit": "revenue_recognition",
+  "topic_tags": [
+    "revenue_recognition",
+    "performance_obligation",
+    "variable_consideration",
+    "transaction_price_allocation"
+  ],
+  "applicable_year": 2026,
+  "text": "수익은 5단계로 인식한다. 1) 계약 식별, 2) 수행의무 식별(구별되는 재화·용역), 3) 거래가격 산정(변동대가/금융요소 포함), 4) 거래가격을 수행의무에 배분(상대적 개별 판매가격 기준), 5) 수행의무 이행 시 수익 인식. 시점에 이행되는 수행의무는 통제 이전 시점에, 기간에 걸쳐 이행되는 수행의무는 진행률로 인식한다. 변동대가는 기댓값 또는 가장 가능성 높은 금액으로 추정하되 highly probable 제약을 적용한다. 단일 수행의무로 일괄 계산하지 않고 반드시 분리해 배분해야 한다.",
+  "keywords": [
+    "수행의무",
+    "변동대가",
+    "거래가격 배분",
+    "진행률",
+    "수익인식 5단계"
+  ],
+  "rights_status": "official_paraphrase",
+  "review_status": "expert_reviewed"
+}

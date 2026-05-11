@@ -1,0 +1,25 @@
+{
+  "question_id": "cpa1-eval-accounting-006",
+  "exam": "CPA_1",
+  "subject": "accounting",
+  "unit": "liabilities",
+  "applicable_year": 2026,
+  "stem": "다음 중 K-IFRS상 충당부채로 인식해야 하는 항목은?",
+  "choices": [
+    "거래처와의 거래에서 향후 부담할 가능성이 50% 미만인 손해배상 청구",
+    "제품 보증 의무로 과거 사례상 발생 가능성이 매우 높고 신뢰성있게 추정 가능한 미래 비용",
+    "내년 마케팅 캠페인 계획에 따른 향후 광고비",
+    "이사회에서 검토 중인 구조조정안에 따른 잠재적 퇴직금"
+  ],
+  "correct_choice": 1,
+  "explanation": "충당부채 인식 3요건: (1) 현재의무 존재 (2) 자원 유출 가능성 매우 높음(probable, 통상 50% 초과) (3) 신뢰성있는 추정 가능. 제품 보증은 과거 판매에서 발생한 현재의무이고 사례 기반 추정이 가능하므로 충당부채. 가능성 50% 미만은 우발부채(주석). 미래 광고비/검토 중 구조조정은 현재의무가 아직 없어 부채 인식 불가.",
+  "concept_tags": [
+    "재무회계: 부채",
+    "liabilities",
+    "provisions",
+    "verbal_rule"
+  ],
+  "expected_seconds": 60,
+  "rights_status": "synthetic_seed",
+  "review_status": "expert_reviewed"
+}

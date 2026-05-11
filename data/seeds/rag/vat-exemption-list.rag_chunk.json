@@ -1,0 +1,29 @@
+{
+  "chunk_id": "vat-exemption-list",
+  "source": {
+    "source_kind": "internal_summary",
+    "title": "부가가치세 면세 vs 영세율 핵심 분류",
+    "reference": "부가가치세법 제26조(면세) / 제21~24조(영세율)"
+  },
+  "subject": "tax",
+  "unit": "vat",
+  "topic_tags": [
+    "vat",
+    "exemption",
+    "zero_rate",
+    "verbal_rule"
+  ],
+  "applicable_year": 2026,
+  "text": "면세는 부가가치세를 부과하지 않고 매입세액도 공제되지 않는다. 면세 대상: 미가공 식료품(국내 생산 농·축·수·임산물 포함), 수돗물, 연탄·무연탄, 여성용 위생용품, 의료보건 용역(허가받은 의료), 교육 용역(허가받은 학교/학원의 일부), 도서·신문·잡지(광고 제외), 금융·보험 용역, 토지 공급 등. 영세율은 매출세액이 0이지만 매입세액은 공제되어 환급이 가능하다. 영세율 대상: 수출하는 재화, 국외 제공 용역, 외국항행 용역 등. 일반 음식점의 외식 서비스, 가공 식품, 의류, 일반 도소매는 과세 대상.",
+  "keywords": [
+    "면세",
+    "영세율",
+    "미가공 식료품",
+    "수돗물",
+    "의료보건",
+    "수출",
+    "도서"
+  ],
+  "rights_status": "official_paraphrase",
+  "review_status": "expert_reviewed"
+}

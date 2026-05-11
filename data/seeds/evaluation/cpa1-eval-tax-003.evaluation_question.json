@@ -1,0 +1,25 @@
+{
+  "question_id": "cpa1-eval-tax-003",
+  "exam": "CPA_1",
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "applicable_year": 2026,
+  "stem": "다음 중 법인세법상 손금에 산입할 수 있는 항목은? (다른 조건은 무시)",
+  "choices": [
+    "임원에 대한 한도 초과 상여금",
+    "업무 무관 자산의 유지·관리 비용",
+    "업무용 차량의 적정 한도 내 유류비",
+    "법인이 부담한 대표이사 개인 명의 카드 지출"
+  ],
+  "correct_choice": 2,
+  "explanation": "손금산입 일반 원칙: 사업 관련성 + 통상성 + 합리적 한도. 임원 상여 한도 초과는 손금불산입(상여 처분). 업무 무관 자산 관련 비용은 손금불산입. 대표이사 개인 명의 카드 지출은 손금불산입(상여 또는 기타사외유출). 업무용 차량의 한도 내 유류비는 정상 손금.",
+  "concept_tags": [
+    "세법: 법인세 손금",
+    "corporate_tax",
+    "deductible_expense",
+    "verbal_rule"
+  ],
+  "expected_seconds": 65,
+  "rights_status": "synthetic_seed",
+  "review_status": "expert_reviewed"
+}

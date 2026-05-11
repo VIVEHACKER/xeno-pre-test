@@ -34,6 +34,7 @@ FILENAME_PATTERNS: tuple[tuple[str, str], ...] = (
     ("mistake_log", "mistake_log"),
     ("subject_tutorials", "subject_tutorials"),
     ("evaluation_question", "evaluation_question"),
+    ("rag_chunk", "rag_chunk"),
 )
 
 KNOWN_SCHEMAS = {key for _, key in FILENAME_PATTERNS}
