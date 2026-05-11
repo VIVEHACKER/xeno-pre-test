@@ -1,0 +1,58 @@
+{
+  "problem_id": "cpa1-accounting-007",
+  "exam": "CPA_1",
+  "subject": "accounting",
+  "unit": "intangible_assets",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "재무회계: 무형자산",
+    "intangible_assets",
+    "goodwill",
+    "research_vs_development"
+  ],
+  "required_concepts": [
+    {
+      "concept": "연구단계 vs 개발단계 비용 구분",
+      "role": "자산화 가능 여부 결정",
+      "prerequisite": true
+    },
+    {
+      "concept": "영업권 손상",
+      "role": "현금창출단위 손상검사",
+      "prerequisite": true
+    }
+  ],
+  "solving_entry_point": "지출이 연구단계인지 개발단계인지 먼저 분류하고, 자산화 6가지 요건을 충족하는지 확인한다.",
+  "solving_steps": [
+    "지출 발생 시점이 연구/개발 중 어느 단계인지 식별한다.",
+    "개발단계라면 자산화 6요건을 차례로 점검한다.",
+    "자산화 이전 발생 지출은 비용 처리한다.",
+    "영업권은 매년 손상검사를 수행한다.",
+    "회수가능액을 현금창출단위 단위로 측정한다."
+  ],
+  "trap_patterns": [
+    "연구단계 지출을 자산화한다.",
+    "자산화 6요건 중 일부만 확인하고 결론짓는다.",
+    "영업권을 정액 상각한다."
+  ],
+  "time_strategy": {
+    "target_seconds": 95,
+    "skip_threshold_seconds": 125,
+    "exam_room_rule": "단계 분류가 30초 안에 안 끝나면 표시 후 넘긴다."
+  },
+  "variant_axes": [
+    "자산화 요건 일부 미충족",
+    "영업권 손상 시나리오",
+    "내용연수 비한정 vs 한정"
+  ],
+  "mistake_diagnosis": [
+    "concept_gap",
+    "condition_miss"
+  ],
+  "review_status": "ai_draft"
+}

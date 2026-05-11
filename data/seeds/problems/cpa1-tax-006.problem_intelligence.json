@@ -1,0 +1,64 @@
+{
+  "problem_id": "cpa1-tax-006",
+  "exam": "CPA_1",
+  "subject": "tax",
+  "unit": "income_tax",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "세법: 양도소득",
+    "income_tax",
+    "capital_gains",
+    "one_house_non_taxation"
+  ],
+  "required_concepts": [
+    {
+      "concept": "양도소득 과세대상",
+      "role": "부동산/주식/파생 등 자산 구분",
+      "prerequisite": true
+    },
+    {
+      "concept": "1세대 1주택 비과세 요건",
+      "role": "보유/거주 기간 충족 여부",
+      "prerequisite": true
+    },
+    {
+      "concept": "장기보유특별공제",
+      "role": "보유·거주기간별 공제율",
+      "prerequisite": true
+    }
+  ],
+  "solving_entry_point": "자산 종류와 보유/거주 기간을 먼저 확인하고, 비과세 요건 충족 여부를 한 줄로 판단한다.",
+  "solving_steps": [
+    "자산 종류를 식별한다(주택/토지/주식 등).",
+    "1세대 1주택 비과세 요건(2년 보유, 조정지역 거주 등)을 점검한다.",
+    "비과세 미해당 시 양도가액 - 취득가액 - 필요경비로 양도차익을 계산한다.",
+    "장기보유특별공제를 적용한다.",
+    "양도소득기본공제(연 250만원)를 차감하고 세율을 적용한다."
+  ],
+  "trap_patterns": [
+    "조정대상지역 거주 요건을 빠뜨린다.",
+    "장기보유특별공제율 적용 기간을 잘못 잡는다.",
+    "주식 양도소득과 부동산 양도소득을 합산한다."
+  ],
+  "time_strategy": {
+    "target_seconds": 110,
+    "skip_threshold_seconds": 140,
+    "exam_room_rule": "비과세 요건 점검이 40초 안에 안 끝나면 표시 후 넘긴다."
+  },
+  "variant_axes": [
+    "보유/거주 기간 변경",
+    "조정대상지역 여부 변경",
+    "다주택자 중과 시나리오"
+  ],
+  "mistake_diagnosis": [
+    "condition_miss",
+    "memory_decay",
+    "concept_gap"
+  ],
+  "review_status": "ai_draft"
+}

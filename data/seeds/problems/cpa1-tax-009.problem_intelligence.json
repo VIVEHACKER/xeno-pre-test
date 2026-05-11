@@ -1,0 +1,64 @@
+{
+  "problem_id": "cpa1-tax-009",
+  "exam": "CPA_1",
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "세법: 법인세 손금",
+    "corporate_tax",
+    "gross_income_inclusion",
+    "deductible_expense_timing"
+  ],
+  "required_concepts": [
+    {
+      "concept": "익금산입·익금불산입",
+      "role": "세무조정 두 축 중 익금 측",
+      "prerequisite": true
+    },
+    {
+      "concept": "손금산입·손금불산입",
+      "role": "세무조정 두 축 중 손금 측",
+      "prerequisite": true
+    },
+    {
+      "concept": "유보·기타 사외유출 분류",
+      "role": "소득처분",
+      "prerequisite": true
+    }
+  ],
+  "solving_entry_point": "회계상 손익과 세무상 손익의 차이를 거래별로 표시하고, 익금/손금 산입·불산입 + 소득처분(유보/사외유출)을 두 줄로 분리한다.",
+  "solving_steps": [
+    "회계상 처리를 정리한다.",
+    "거래별 세무조정 사항(익금/손금 산입·불산입)을 분류한다.",
+    "유보·사외유출 등 소득처분을 결정한다.",
+    "각 항목을 과세표준 계산에 반영한다.",
+    "이월결손금/공제 항목을 추가 적용한다."
+  ],
+  "trap_patterns": [
+    "익금산입과 손금불산입을 같은 행동으로 본다.",
+    "유보 처분을 기타사외유출로 처리한다.",
+    "이월결손금 공제 한도를 누락한다."
+  ],
+  "time_strategy": {
+    "target_seconds": 115,
+    "skip_threshold_seconds": 150,
+    "exam_room_rule": "익금/손금 분류표가 50초 안에 안 끝나면 표시 후 넘긴다."
+  },
+  "variant_axes": [
+    "특수관계인 거래 추가",
+    "이월결손금 시나리오 변경",
+    "재고자산 평가방법 변경 추가"
+  ],
+  "mistake_diagnosis": [
+    "concept_gap",
+    "condition_miss",
+    "memory_decay"
+  ],
+  "review_status": "ai_draft"
+}

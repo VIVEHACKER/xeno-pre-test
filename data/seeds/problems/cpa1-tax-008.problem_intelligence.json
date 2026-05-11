@@ -1,0 +1,59 @@
+{
+  "problem_id": "cpa1-tax-008",
+  "exam": "CPA_1",
+  "subject": "tax",
+  "unit": "income_tax",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "세법: 원천징수",
+    "income_tax",
+    "withholding",
+    "interest_dividend_wage"
+  ],
+  "required_concepts": [
+    {
+      "concept": "원천징수 대상 소득",
+      "role": "이자/배당/근로/사업/기타 분류",
+      "prerequisite": true
+    },
+    {
+      "concept": "원천징수 세율",
+      "role": "분리과세/예납적 원천 구분",
+      "prerequisite": true
+    }
+  ],
+  "solving_entry_point": "지급 소득의 종류와 지급자/수령자의 신분(거주자/비거주자, 법인/개인)을 먼저 식별한다.",
+  "solving_steps": [
+    "지급 소득의 종류를 분류한다.",
+    "원천징수 의무자와 지급 시기를 확인한다.",
+    "세율을 적용한다(이자 14%, 배당 14%, 일용근로 6% 등).",
+    "비과세/감면 항목을 차감한다.",
+    "원천징수영수증 발급/납부 기한을 점검한다."
+  ],
+  "trap_patterns": [
+    "일용근로소득과 일반 근로소득 세율을 혼동한다.",
+    "비거주자 원천징수 세율을 거주자와 동일하게 본다.",
+    "지급명세서 제출 기한을 잘못 잡는다."
+  ],
+  "time_strategy": {
+    "target_seconds": 80,
+    "skip_threshold_seconds": 105,
+    "exam_room_rule": "소득 분류가 25초 안에 안 끝나면 표시 후 넘긴다."
+  },
+  "variant_axes": [
+    "소득 종류 변경",
+    "비거주자 시나리오 추가",
+    "감면 적용 조건 변경"
+  ],
+  "mistake_diagnosis": [
+    "memory_decay",
+    "concept_gap",
+    "calculation_error"
+  ],
+  "review_status": "ai_draft"
+}

@@ -22,6 +22,7 @@ DEFAULT_DB = ROOT / "data" / "warehouse" / "cpa_first.sqlite"
 DEFAULT_SEED = ROOT / "data" / "seeds" / "cpa_success_sources.csv"
 DEFAULT_ONTOLOGY = ROOT / "data" / "seeds" / "exam_ontology.json"
 DEFAULT_TARGETS = ROOT / "data" / "seeds" / "acquisition_targets.csv"
+DEFAULT_EXAM_ASSETS = ROOT / "data" / "seeds" / "past_exam_assets.csv"
 DEFAULT_MANIFEST = ROOT / "data" / "warehouse" / "manifest.json"
 DEFAULT_PUBLIC_MANIFEST = ROOT / "prototype" / "data_manifest.json"
 USER_AGENT = "CPAFirstResearchBot/0.1 (+local research prototype)"
@@ -142,6 +143,56 @@ CREATE TABLE IF NOT EXISTS acquisition_targets (
   priority INTEGER NOT NULL DEFAULT 3,
   notes TEXT,
   collection_status TEXT NOT NULL DEFAULT 'registered',
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS past_exam_assets (
+  asset_id TEXT PRIMARY KEY,
+  exam_id TEXT NOT NULL,
+  phase_id TEXT NOT NULL,
+  exam_year INTEGER,
+  round_label TEXT NOT NULL,
+  asset_kind TEXT NOT NULL,
+  subject_scope TEXT NOT NULL,
+  title TEXT NOT NULL,
+  url TEXT NOT NULL,
+  source_owner TEXT NOT NULL,
+  source_type TEXT NOT NULL,
+  rights_policy TEXT NOT NULL,
+  fetch_policy TEXT NOT NULL,
+  training_policy TEXT NOT NULL,
+  priority INTEGER NOT NULL DEFAULT 3,
+  notes TEXT,
+  processing_status TEXT NOT NULL DEFAULT 'registered',
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS asset_documents (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  asset_id TEXT NOT NULL REFERENCES past_exam_assets(asset_id) ON DELETE CASCADE,
+  fetched_at TEXT NOT NULL,
+  robots_allowed INTEGER NOT NULL,
+  http_status INTEGER,
+  content_type TEXT,
+  content_hash TEXT,
+  content_length INTEGER NOT NULL DEFAULT 0,
+  extracted_title TEXT,
+  attachment_names_json TEXT NOT NULL DEFAULT '[]',
+  normalized_text_hash TEXT,
+  fetch_error TEXT,
+  UNIQUE(asset_id, content_hash)
+);
+
+CREATE TABLE IF NOT EXISTS problem_learning_jobs (
+  job_id TEXT PRIMARY KEY,
+  asset_id TEXT NOT NULL REFERENCES past_exam_assets(asset_id) ON DELETE CASCADE,
+  job_type TEXT NOT NULL,
+  input_policy TEXT NOT NULL,
+  training_policy TEXT NOT NULL,
+  status TEXT NOT NULL,
+  blocker TEXT,
   created_at TEXT NOT NULL,
   updated_at TEXT NOT NULL
 );
@@ -363,6 +414,232 @@ def seed_acquisition_targets(conn: sqlite3.Connection, targets_path: Path) -> in
       rows += 1
   conn.commit()
   return rows
+
+
+def as_optional_int(value: str | None) -> int | None:
+  if value is None or value == "":
+    return None
+  return int(value)
+
+
+def seed_past_exam_assets(conn: sqlite3.Connection, assets_path: Path) -> int:
+  timestamp = now()
+  rows = 0
+  with assets_path.open("r", encoding="utf-8-sig", newline="") as f:
+    for row in csv.DictReader(f):
+      conn.execute(
+        """
+        INSERT INTO past_exam_assets
+          (asset_id, exam_id, phase_id, exam_year, round_label, asset_kind,
+           subject_scope, title, url, source_owner, source_type, rights_policy,
+           fetch_policy, training_policy, priority, notes, created_at, updated_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ON CONFLICT(asset_id) DO UPDATE SET
+          exam_id = excluded.exam_id,
+          phase_id = excluded.phase_id,
+          exam_year = excluded.exam_year,
+          round_label = excluded.round_label,
+          asset_kind = excluded.asset_kind,
+          subject_scope = excluded.subject_scope,
+          title = excluded.title,
+          url = excluded.url,
+          source_owner = excluded.source_owner,
+          source_type = excluded.source_type,
+          rights_policy = excluded.rights_policy,
+          fetch_policy = excluded.fetch_policy,
+          training_policy = excluded.training_policy,
+          priority = excluded.priority,
+          notes = excluded.notes,
+          updated_at = excluded.updated_at
+        """,
+        (
+          row["asset_id"],
+          row["exam_id"],
+          row["phase_id"],
+          as_optional_int(row.get("exam_year")),
+          row["round_label"],
+          row["asset_kind"],
+          row["subject_scope"],
+          row["title"],
+          row["url"],
+          row["source_owner"],
+          row["source_type"],
+          row["rights_policy"],
+          row["fetch_policy"],
+          row["training_policy"],
+          int(row.get("priority") or 3),
+          row.get("notes"),
+          timestamp,
+          timestamp,
+        ),
+      )
+      rows += 1
+  conn.commit()
+  return rows
+
+
+def attachment_names_from_text(text: str) -> list[str]:
+  names: list[str] = []
+  for line in text.splitlines():
+    stripped = line.strip()
+    if not stripped:
+      continue
+    if re.search(r"\.(pdf|zip|hwp|hwpx|xlsx?|jpe?g|png)\b", stripped, flags=re.I):
+      names.append(stripped[:240])
+  return list(dict.fromkeys(names))
+
+
+def fetch_past_exam_asset_metadata(conn: sqlite3.Connection, limit: int | None) -> dict:
+  rows = conn.execute(
+    """
+    SELECT *
+    FROM past_exam_assets
+    WHERE fetch_policy = 'metadata_page'
+      AND url NOT LIKE 'internal://%'
+      AND url NOT LIKE 'manual://%'
+    ORDER BY priority ASC, asset_id ASC
+    """
+  ).fetchall()
+  if limit:
+    rows = rows[:limit]
+
+  stats = {"attempted": 0, "fetched": 0, "skipped_by_robots": 0, "failed": 0}
+  for row in rows:
+    stats["attempted"] += 1
+    allowed = robots_allowed(row["url"])
+    if not allowed:
+      conn.execute(
+        "UPDATE past_exam_assets SET processing_status = ?, updated_at = ? WHERE asset_id = ?",
+        ("robots_disallowed", now(), row["asset_id"]),
+      )
+      conn.execute(
+        """
+        INSERT INTO asset_documents
+          (asset_id, fetched_at, robots_allowed, fetch_error)
+        VALUES (?, ?, ?, ?)
+        """,
+        (row["asset_id"], now(), 0, "robots.txt disallowed fetch"),
+      )
+      stats["skipped_by_robots"] += 1
+      continue
+
+    try:
+      request = Request(row["url"], headers={"User-Agent": USER_AGENT})
+      with urlopen(request, timeout=15) as response:
+        body = response.read()
+        status = getattr(response, "status", 200)
+        content_type = response.headers.get("content-type")
+      decoded = decode_body(body, content_type)
+      title, text = normalize_html(decoded)
+      raw_hash = hashlib.sha256(body).hexdigest()
+      text_hash = hashlib.sha256(text.encode("utf-8")).hexdigest()
+      attachments = attachment_names_from_text(text)
+      conn.execute(
+        """
+        INSERT OR IGNORE INTO asset_documents
+          (asset_id, fetched_at, robots_allowed, http_status, content_type,
+           content_hash, content_length, extracted_title, attachment_names_json,
+           normalized_text_hash, fetch_error)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL)
+        """,
+        (
+          row["asset_id"],
+          now(),
+          1,
+          status,
+          content_type,
+          raw_hash,
+          len(text),
+          title,
+          json.dumps(attachments, ensure_ascii=False),
+          text_hash,
+        ),
+      )
+      status_value = "metadata_fetched_with_attachments" if attachments else "metadata_fetched"
+      conn.execute(
+        "UPDATE past_exam_assets SET processing_status = ?, updated_at = ? WHERE asset_id = ?",
+        (status_value, now(), row["asset_id"]),
+      )
+      stats["fetched"] += 1
+    except (HTTPError, URLError, TimeoutError, OSError) as exc:
+      conn.execute(
+        "UPDATE past_exam_assets SET processing_status = ?, updated_at = ? WHERE asset_id = ?",
+        ("fetch_failed", now(), row["asset_id"]),
+      )
+      conn.execute(
+        """
+        INSERT INTO asset_documents
+          (asset_id, fetched_at, robots_allowed, fetch_error)
+        VALUES (?, ?, ?, ?)
+        """,
+        (row["asset_id"], now(), 1, str(exc)[:500]),
+      )
+      stats["failed"] += 1
+  conn.commit()
+  return stats
+
+
+def seed_problem_learning_jobs(conn: sqlite3.Connection) -> dict:
+  timestamp = now()
+  rows = conn.execute("SELECT * FROM past_exam_assets ORDER BY priority ASC, asset_id ASC").fetchall()
+  created = 0
+  for row in rows:
+    if row["asset_kind"] in {"question", "question_answer"}:
+      job_type = "problem_parse_and_solve"
+    elif row["asset_kind"] == "answer":
+      job_type = "answer_key_alignment"
+    elif row["asset_kind"] == "explanation":
+      job_type = "explanation_ingestion_or_generation"
+    else:
+      job_type = "asset_review"
+
+    if row["training_policy"] in {"train_allowed_after_review", "train_after_rights_review"}:
+      status = "queued_rights_review"
+      blocker = "rights_review_required_before_training"
+    else:
+      status = "blocked"
+      blocker = "permission_or_license_required_before_training"
+
+    if row["source_type"] == "internal" and row["training_policy"] == "train_allowed_after_review":
+      status = "queued_generation"
+      blocker = None
+
+    job_id = f"{row['asset_id']}:{job_type}"
+    conn.execute(
+      """
+      INSERT INTO problem_learning_jobs
+        (job_id, asset_id, job_type, input_policy, training_policy, status, blocker,
+         created_at, updated_at)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+      ON CONFLICT(job_id) DO UPDATE SET
+        input_policy = excluded.input_policy,
+        training_policy = excluded.training_policy,
+        status = excluded.status,
+        blocker = excluded.blocker,
+        updated_at = excluded.updated_at
+      """,
+      (
+        job_id,
+        row["asset_id"],
+        job_type,
+        row["rights_policy"],
+        row["training_policy"],
+        status,
+        blocker,
+        timestamp,
+        timestamp,
+      ),
+    )
+    created += 1
+  conn.commit()
+  return {"learning_jobs": created}
+
+
+def seed_and_fetch_past_exam_assets(conn: sqlite3.Connection, assets_path: Path, limit: int | None) -> dict:
+  seeded = seed_past_exam_assets(conn, assets_path)
+  fetched = fetch_past_exam_asset_metadata(conn, limit)
+  jobs = seed_problem_learning_jobs(conn)
+  return {"seeded_assets": seeded, "fetch": fetched, **jobs}
 
 
 def robots_allowed(url: str) -> bool:
@@ -775,6 +1052,24 @@ def stats(conn: sqlite3.Connection) -> dict:
       "SELECT data_category, COUNT(*) AS count FROM acquisition_targets GROUP BY data_category"
     )
   }
+  by_asset_kind = {
+    row["asset_kind"]: row["count"]
+    for row in conn.execute(
+      "SELECT asset_kind, COUNT(*) AS count FROM past_exam_assets GROUP BY asset_kind"
+    )
+  }
+  by_asset_status = {
+    row["processing_status"]: row["count"]
+    for row in conn.execute(
+      "SELECT processing_status, COUNT(*) AS count FROM past_exam_assets GROUP BY processing_status"
+    )
+  }
+  by_learning_status = {
+    row["status"]: row["count"]
+    for row in conn.execute(
+      "SELECT status, COUNT(*) AS count FROM problem_learning_jobs GROUP BY status"
+    )
+  }
   subject_coverage = [
     dict(row)
     for row in conn.execute(
@@ -804,9 +1099,18 @@ def stats(conn: sqlite3.Connection) -> dict:
     "exam_subjects": scalar("SELECT COUNT(*) FROM exam_subjects"),
     "knowledge_nodes": scalar("SELECT COUNT(*) FROM knowledge_nodes"),
     "acquisition_targets": scalar("SELECT COUNT(*) FROM acquisition_targets"),
+    "past_exam_assets": scalar("SELECT COUNT(*) FROM past_exam_assets"),
+    "asset_documents": scalar("SELECT COUNT(*) FROM asset_documents WHERE fetch_error IS NULL"),
+    "learning_jobs": scalar("SELECT COUNT(*) FROM problem_learning_jobs"),
+    "trainable_after_review_jobs": scalar(
+      "SELECT COUNT(*) FROM problem_learning_jobs WHERE status IN ('queued_rights_review', 'queued_generation')"
+    ),
     "source_status": by_status,
     "signal_types": by_signal,
     "data_categories": by_data_category,
+    "asset_kinds": by_asset_kind,
+    "asset_status": by_asset_status,
+    "learning_status": by_learning_status,
     "subject_coverage": subject_coverage,
     "rules": rules,
   }
@@ -841,17 +1145,18 @@ def record_run(conn: sqlite3.Connection, command: str, started_at: str, run_stat
 
 def main(argv: Iterable[str]) -> int:
   parser = argparse.ArgumentParser(description="CPA First data accumulation pipeline")
-  parser.add_argument("commands", nargs="+", choices=["init", "seed", "ontology", "fetch", "extract", "rules", "stats", "all"])
+  parser.add_argument("commands", nargs="+", choices=["init", "seed", "ontology", "exam-assets", "fetch", "extract", "rules", "stats", "all"])
   parser.add_argument("--db", type=Path, default=DEFAULT_DB)
   parser.add_argument("--seed", type=Path, default=DEFAULT_SEED)
   parser.add_argument("--ontology", type=Path, default=DEFAULT_ONTOLOGY)
   parser.add_argument("--targets", type=Path, default=DEFAULT_TARGETS)
+  parser.add_argument("--exam-assets", type=Path, default=DEFAULT_EXAM_ASSETS)
   parser.add_argument("--limit", type=int)
   parser.add_argument("--max-signals-per-document", type=int, default=20)
   parser.add_argument("--store-text", action="store_true", help="Store normalized source text for internal analysis")
   args = parser.parse_args(list(argv))
 
-  commands = ["init", "seed", "ontology", "fetch", "extract", "rules", "stats"] if "all" in args.commands else args.commands
+  commands = ["init", "seed", "ontology", "exam-assets", "fetch", "extract", "rules", "stats"] if "all" in args.commands else args.commands
   conn = connect(args.db)
   started_at = now()
   run_stats: dict[str, object] = {}
@@ -868,6 +1173,9 @@ def main(argv: Iterable[str]) -> int:
         init_db(conn)
         run_stats["ontology"] = seed_exam_ontology(conn, args.ontology)
         run_stats["acquisition_targets"] = seed_acquisition_targets(conn, args.targets)
+      elif command == "exam-assets":
+        init_db(conn)
+        run_stats["exam_assets"] = seed_and_fetch_past_exam_assets(conn, args.exam_assets, args.limit)
       elif command == "fetch":
         init_db(conn)
         run_stats["fetch"] = fetch_sources(conn, args.limit, args.store_text)

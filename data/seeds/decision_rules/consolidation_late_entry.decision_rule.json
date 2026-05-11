@@ -1,0 +1,14 @@
+{
+  "rule_key": "consolidation_late_entry",
+  "rule_name": "연결재무제표 후반 진입",
+  "condition_text": "연결재무제표는 단원 자체 무게가 크고 시간 소비가 많아 회독 후반에 진입하는 게 점수 기여도 측면에서 유리한 상태",
+  "action_text": "회계학 전체 정답률이 55% 이상이 되기 전에는 연결재무제표 신규 문제를 도입하지 않는다. 진입 후에는 지배력 판단 → 영업권 → 내부거래 순서로 분리 훈련한다.",
+  "exception_text": "회독 후반인데 회계 정답률이 50% 미만이면 다른 단원 보강을 우선한다.",
+  "applicable_stages": ["past_exam_rotation", "mock_exam"],
+  "applicable_subjects": ["accounting"],
+  "required_risk_tags": [],
+  "source_signal_count": 0,
+  "source_case_ids": [],
+  "confidence": 0.68,
+  "review_status": "machine_draft"
+}

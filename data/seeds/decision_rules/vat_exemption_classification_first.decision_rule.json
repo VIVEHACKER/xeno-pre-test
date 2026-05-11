@@ -1,0 +1,14 @@
+{
+  "rule_key": "vat_exemption_classification_first",
+  "rule_name": "부가가치세 면세·영세율 분류 우선",
+  "condition_text": "부가가치세 문제에서 계산보다 면세/영세율 분류 실수로 점수를 잃는 상태",
+  "action_text": "매 회독마다 면세 대상 14개 항목과 영세율 대상을 한 표에 정리하고, 분류표 30개 문항을 반복 회상한다.",
+  "exception_text": "세금계산서 의무 가산세 등 절차 문제 비중이 큰 회차라면 분류와 절차를 병행한다.",
+  "applicable_stages": ["objective_entry", "past_exam_rotation", "mock_exam", "final"],
+  "applicable_subjects": ["tax"],
+  "required_risk_tags": ["memory_decay", "concept_gap"],
+  "source_signal_count": 0,
+  "source_case_ids": [],
+  "confidence": 0.71,
+  "review_status": "machine_draft"
+}

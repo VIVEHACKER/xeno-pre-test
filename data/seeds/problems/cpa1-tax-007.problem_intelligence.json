@@ -1,0 +1,59 @@
+{
+  "problem_id": "cpa1-tax-007",
+  "exam": "CPA_1",
+  "subject": "tax",
+  "unit": "national_tax_basic_act",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "세법: 국세기본법",
+    "national_tax_basic_act",
+    "tax_obligation_establishment",
+    "verbal_rule"
+  ],
+  "required_concepts": [
+    {
+      "concept": "납세의무 성립·확정",
+      "role": "세목별 시점 차이",
+      "prerequisite": true
+    },
+    {
+      "concept": "제척기간과 소멸시효",
+      "role": "세무서·납세자 권리 한계",
+      "prerequisite": true
+    }
+  ],
+  "solving_entry_point": "보기마다 세목과 시점을 추출한 다음, 성립/확정/소멸의 어느 단계인지 한 줄로 매칭한다.",
+  "solving_steps": [
+    "세목을 분류한다(법인세/소득세/부가세 등).",
+    "각 세목의 성립 시점을 점검한다.",
+    "확정 방식(신고납세/부과과세/원천)을 판단한다.",
+    "제척기간(부과 후 5/7/10년)과 소멸시효(5/10년)를 구분한다.",
+    "보기 중 시점·기간이 다른 것을 골라낸다."
+  ],
+  "trap_patterns": [
+    "법인세 성립을 결산확정일로 본다.",
+    "부정행위 제척기간(10년)을 일반(5년)과 혼동한다.",
+    "원천징수의무 성립을 지급일이 아닌 결제일로 본다."
+  ],
+  "time_strategy": {
+    "target_seconds": 75,
+    "skip_threshold_seconds": 100,
+    "exam_room_rule": "말문제 보기 4개 분류가 40초 안에 안 끝나면 표시 후 회상 블록 후 재진입."
+  },
+  "variant_axes": [
+    "세목 종류 변경",
+    "부정행위 가산 시나리오",
+    "수정신고/경정청구 추가"
+  ],
+  "mistake_diagnosis": [
+    "memory_decay",
+    "distractor_trap",
+    "concept_gap"
+  ],
+  "review_status": "ai_draft"
+}

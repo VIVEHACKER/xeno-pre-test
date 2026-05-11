@@ -1,0 +1,59 @@
+{
+  "problem_id": "cpa1-accounting-005",
+  "exam": "CPA_1",
+  "subject": "accounting",
+  "unit": "inventory",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "재무회계: 재고자산",
+    "inventory",
+    "fifo_weighted_average",
+    "lower_of_cost_or_nrv"
+  ],
+  "required_concepts": [
+    {
+      "concept": "FIFO/이동평균 차이",
+      "role": "단가 계산 분기점",
+      "prerequisite": true
+    },
+    {
+      "concept": "저가법 측정",
+      "role": "기말 평가손실 인식",
+      "prerequisite": true
+    }
+  ],
+  "solving_entry_point": "기초/매입/매출/기말의 수량 흐름을 먼저 정리하고, 평가방법과 저가법 적용 여부를 분리한다.",
+  "solving_steps": [
+    "수량 흐름표(기초+매입-매출=기말)를 작성한다.",
+    "평가방법(FIFO/이동평균/총평균) 별 단가를 계산한다.",
+    "순실현가능가치(NRV)와 장부원가를 비교한다.",
+    "저가법 평가손실을 매출원가에 가산한다.",
+    "기말재고와 매출원가 중 묻는 값을 선택지와 대조한다."
+  ],
+  "trap_patterns": [
+    "총평균법과 이동평균법을 혼동한다.",
+    "NRV 측정에 처분부대원가를 빠뜨린다.",
+    "평가손실 환입 한도를 무시한다."
+  ],
+  "time_strategy": {
+    "target_seconds": 100,
+    "skip_threshold_seconds": 130,
+    "exam_room_rule": "수량 흐름표가 40초 안에 안 잡히면 표시 후 다음 문제로 이동한다."
+  },
+  "variant_axes": [
+    "평가방법 변경",
+    "NRV 측정 시점 변경",
+    "환입 한도 조건 추가"
+  ],
+  "mistake_diagnosis": [
+    "calculation_error",
+    "condition_miss",
+    "formula_gap"
+  ],
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,59 @@
+{
+  "problem_id": "cpa1-accounting-009",
+  "exam": "CPA_1",
+  "subject": "accounting",
+  "unit": "equity",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "재무회계: 자본",
+    "equity",
+    "treasury_stock",
+    "share_based_payment"
+  ],
+  "required_concepts": [
+    {
+      "concept": "자본 분류 (자본금/잉여금/자본조정/기타포괄손익누계)",
+      "role": "거래의 자본 구성 영향 식별",
+      "prerequisite": true
+    },
+    {
+      "concept": "주식기준보상 측정",
+      "role": "공정가치 기반 보상비용 인식",
+      "prerequisite": true
+    }
+  ],
+  "solving_entry_point": "거래 유형(자기주식/주식배당/주식기준보상)을 먼저 식별하고, 각 거래가 자본의 어느 구성요소에 영향을 주는지 표시한다.",
+  "solving_steps": [
+    "거래 시점의 자본 구성을 정리한다.",
+    "자기주식 거래는 자본조정으로 분류하고 처분손익은 자본잉여금/결손에 가산한다.",
+    "주식기준보상은 부여일 공정가치로 측정하고 가득기간에 안분 인식한다.",
+    "행사 시 자본금/주식발행초과금에 가산한다.",
+    "기말 자본 총액 변동을 추적한다."
+  ],
+  "trap_patterns": [
+    "자기주식 처분손익을 당기손익으로 인식한다.",
+    "주식기준보상을 행사 시점에 일괄 인식한다.",
+    "주식배당을 현금배당과 같이 처리한다."
+  ],
+  "time_strategy": {
+    "target_seconds": 100,
+    "skip_threshold_seconds": 130,
+    "exam_room_rule": "거래 분류가 30초 안에 안 끝나면 표시 후 넘긴다."
+  },
+  "variant_axes": [
+    "자기주식 처분손익 시나리오",
+    "주식기준보상 조건 변경",
+    "주식병합/분할 추가"
+  ],
+  "mistake_diagnosis": [
+    "concept_gap",
+    "formula_gap",
+    "condition_miss"
+  ],
+  "review_status": "ai_draft"
+}

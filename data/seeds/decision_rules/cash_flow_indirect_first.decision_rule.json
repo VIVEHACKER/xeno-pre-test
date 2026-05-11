@@ -1,0 +1,14 @@
+{
+  "rule_key": "cash_flow_indirect_first",
+  "rule_name": "현금흐름표 간접법 우선",
+  "condition_text": "현금흐름표 단원 진입 시점에 직접법/간접법 두 가지를 동시에 학습하면 혼란이 커지는 상태",
+  "action_text": "간접법(당기순이익 → 운전자본 조정 → 영업활동)을 먼저 안정화한 다음 직접법을 학습한다. 활동 분류표 작성을 반복한다.",
+  "exception_text": "직접법으로 출제된 문제 비중이 높아진 해라면 직접법도 병행한다.",
+  "applicable_stages": ["objective_entry", "past_exam_rotation"],
+  "applicable_subjects": ["accounting"],
+  "required_risk_tags": ["concept_gap"],
+  "source_signal_count": 0,
+  "source_case_ids": [],
+  "confidence": 0.65,
+  "review_status": "machine_draft"
+}

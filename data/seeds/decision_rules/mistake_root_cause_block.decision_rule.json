@@ -1,0 +1,14 @@
+{
+  "rule_key": "mistake_root_cause_block",
+  "rule_name": "오답 원인 분류 일일 블록",
+  "condition_text": "풀이량은 많지만 오답이 어디서 나오는지(개념·조건·계산·시간) 누적 분류가 없는 상태",
+  "action_text": "매일 30분 오답 원인 분류 블록을 배정한다. 각 오답을 concept_gap/condition_miss/calculation_error/time_pressure 중 1개 이상으로 분류해 저장한다.",
+  "exception_text": "분류 자체가 부담이라면 시간을 15분으로 줄이고 상위 3가지 원인만 선택한다.",
+  "applicable_stages": ["objective_entry", "past_exam_rotation", "mock_exam"],
+  "applicable_subjects": ["accounting", "tax", "accounting_tax"],
+  "required_risk_tags": [],
+  "source_signal_count": 0,
+  "source_case_ids": [],
+  "confidence": 0.70,
+  "review_status": "machine_draft"
+}

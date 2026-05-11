@@ -1,0 +1,14 @@
+{
+  "rule_key": "corporate_tax_appendix_loading",
+  "rule_name": "법인세 부속서식 직전 적재",
+  "condition_text": "법인세 익금·손금 산입·불산입 + 소득처분이 휘발성이 강해 시험 직전에 재적재가 필요한 상태",
+  "action_text": "시험 직전 30일 구간에 매일 10분 부속서식 회상 블록을 배정한다. 익금산입/손금불산입 사례 30개를 한 줄 문장으로 압축해 반복한다.",
+  "exception_text": "정답률이 이미 80% 이상이면 다른 단원의 직전 보강을 우선한다.",
+  "applicable_stages": ["mock_exam", "final"],
+  "applicable_subjects": ["tax"],
+  "required_risk_tags": ["memory_decay"],
+  "source_signal_count": 0,
+  "source_case_ids": [],
+  "confidence": 0.69,
+  "review_status": "machine_draft"
+}

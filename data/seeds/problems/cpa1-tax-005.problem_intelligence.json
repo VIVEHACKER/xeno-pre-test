@@ -1,0 +1,59 @@
+{
+  "problem_id": "cpa1-tax-005",
+  "exam": "CPA_1",
+  "subject": "tax",
+  "unit": "vat",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "세법: 부가가치세",
+    "vat",
+    "exemption_vs_zero_rate",
+    "tax_invoice"
+  ],
+  "required_concepts": [
+    {
+      "concept": "면세 vs 영세율 구분",
+      "role": "매출세액·매입세액 처리 분기",
+      "prerequisite": true
+    },
+    {
+      "concept": "세금계산서 발급 의무",
+      "role": "발급 시기와 가산세",
+      "prerequisite": true
+    }
+  ],
+  "solving_entry_point": "거래가 면세 대상인지 영세율 대상인지, 또는 일반 과세인지 먼저 분류한다. 매출세액과 매입세액 공제 여부가 한 줄에 결정된다.",
+  "solving_steps": [
+    "재화/용역의 면세·영세율·과세를 분류한다.",
+    "면세: 매출세액 없음, 매입세액 불공제.",
+    "영세율: 매출세액 0, 매입세액 공제.",
+    "세금계산서 발급 시기를 확인한다 (재화: 인도일, 용역: 역무 완료일).",
+    "발급 지연/누락 시 가산세를 산출한다."
+  ],
+  "trap_patterns": [
+    "면세사업과 영세율 대상을 혼동한다.",
+    "세금계산서 발급 시기를 결제일로 본다.",
+    "겸영사업자의 공통매입세액 안분을 빠뜨린다."
+  ],
+  "time_strategy": {
+    "target_seconds": 90,
+    "skip_threshold_seconds": 120,
+    "exam_room_rule": "면세/영세율 분류가 30초 안에 안 끝나면 표시 후 넘긴다."
+  },
+  "variant_axes": [
+    "면세 대상 변경",
+    "영세율 대상 변경",
+    "세금계산서 발급 지연 시나리오"
+  ],
+  "mistake_diagnosis": [
+    "concept_gap",
+    "memory_decay",
+    "distractor_trap"
+  ],
+  "review_status": "ai_draft"
+}

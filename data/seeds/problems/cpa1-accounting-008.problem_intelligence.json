@@ -1,0 +1,59 @@
+{
+  "problem_id": "cpa1-accounting-008",
+  "exam": "CPA_1",
+  "subject": "accounting",
+  "unit": "liabilities",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "재무회계: 부채",
+    "liabilities",
+    "bonds_payable",
+    "provisions"
+  ],
+  "required_concepts": [
+    {
+      "concept": "사채 유효이자율법",
+      "role": "이자비용과 장부금액 산출",
+      "prerequisite": true
+    },
+    {
+      "concept": "충당부채 인식 3요건",
+      "role": "현재의무·유출가능성·신뢰성있는 추정",
+      "prerequisite": true
+    }
+  ],
+  "solving_entry_point": "발행조건(액면이자율/유효이자율/만기)을 표시한 다음, 사채할인/할증발행을 구분한다. 충당부채 인식 요건도 같은 톤으로 분리.",
+  "solving_steps": [
+    "발행가액과 액면가액 차이를 사채할인/할증발행차금으로 인식한다.",
+    "유효이자율법으로 매기 이자비용을 계산한다.",
+    "장부금액 변동을 추적한다.",
+    "충당부채는 3요건을 모두 충족할 때만 인식한다.",
+    "우발부채/우발자산은 주석 공시 대상으로 분리한다."
+  ],
+  "trap_patterns": [
+    "사채발행비를 발행가액에서 차감하지 않는다.",
+    "충당부채 측정 시 최선 추정치를 평균으로 잡는다.",
+    "우발부채를 부채로 인식한다."
+  ],
+  "time_strategy": {
+    "target_seconds": 105,
+    "skip_threshold_seconds": 135,
+    "exam_room_rule": "사채 vs 충당부채 분리가 30초 안에 안 끝나면 표시 후 넘긴다."
+  },
+  "variant_axes": [
+    "사채발행비 처리 변경",
+    "충당부채 요건 부분 충족",
+    "조기상환 조건 추가"
+  ],
+  "mistake_diagnosis": [
+    "condition_miss",
+    "formula_gap",
+    "calculation_error"
+  ],
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,59 @@
+{
+  "problem_id": "cpa1-accounting-011",
+  "exam": "CPA_1",
+  "subject": "accounting",
+  "unit": "cash_flow",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "재무회계: 현금흐름표",
+    "cash_flow",
+    "indirect_method",
+    "operating_investing_financing"
+  ],
+  "required_concepts": [
+    {
+      "concept": "영업/투자/재무 활동 분류",
+      "role": "각 거래의 활동 식별",
+      "prerequisite": true
+    },
+    {
+      "concept": "간접법 조정 항목",
+      "role": "당기순이익에서 영업활동 현금흐름 환원",
+      "prerequisite": true
+    }
+  ],
+  "solving_entry_point": "각 거래를 영업/투자/재무 중 하나로 먼저 분류한다. 간접법 시작은 당기순이익에서, 직접법 시작은 매출에서.",
+  "solving_steps": [
+    "거래 목록을 활동별로 분류한다.",
+    "간접법: 당기순이익 + 비현금비용 + 운전자본 변동 = 영업활동 현금흐름.",
+    "투자활동: 유형자산 취득/처분, 금융자산 거래.",
+    "재무활동: 차입금/사채/자본 거래.",
+    "이자/배당 분류 정책(K-IFRS 선택)을 확인한다."
+  ],
+  "trap_patterns": [
+    "이자비용을 영업활동에서 빼지 않고 그대로 둔다.",
+    "유형자산 처분이익을 영업활동에 남긴다.",
+    "운전자본 증가/감소 방향을 반대로 적용한다."
+  ],
+  "time_strategy": {
+    "target_seconds": 110,
+    "skip_threshold_seconds": 145,
+    "exam_room_rule": "활동 분류표가 40초 안에 안 끝나면 표시 후 넘긴다."
+  },
+  "variant_axes": [
+    "이자/배당 분류 정책 변경",
+    "직접법 vs 간접법",
+    "외환차이 추가"
+  ],
+  "mistake_diagnosis": [
+    "calculation_error",
+    "condition_miss",
+    "formula_gap"
+  ],
+  "review_status": "ai_draft"
+}

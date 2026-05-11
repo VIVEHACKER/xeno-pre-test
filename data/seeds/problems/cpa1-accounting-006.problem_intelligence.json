@@ -1,0 +1,64 @@
+{
+  "problem_id": "cpa1-accounting-006",
+  "exam": "CPA_1",
+  "subject": "accounting",
+  "unit": "tangible_assets",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "재무회계: 유형자산",
+    "tangible_assets",
+    "depreciation_methods",
+    "impairment_loss"
+  ],
+  "required_concepts": [
+    {
+      "concept": "감가상각 4가지 방법",
+      "role": "정액/정률/연수합계/이중체감 구분",
+      "prerequisite": true
+    },
+    {
+      "concept": "손상차손과 회수가능액",
+      "role": "사용가치 vs 순공정가치 비교",
+      "prerequisite": true
+    },
+    {
+      "concept": "재평가모형 잉여금",
+      "role": "기타포괄손익 처리",
+      "prerequisite": false
+    }
+  ],
+  "solving_entry_point": "취득일/잔존가치/내용연수와 함께 모형(원가/재평가)을 먼저 식별한다. 손상 신호가 있으면 회수가능액 측정을 우선한다.",
+  "solving_steps": [
+    "감가상각 방법별 연도 감가상각비를 계산한다.",
+    "장부금액을 누적 감가상각으로 차감한다.",
+    "손상 신호가 있다면 사용가치와 순공정가치 중 큰 값으로 회수가능액을 산출한다.",
+    "장부금액 > 회수가능액이면 손상차손을 인식한다.",
+    "재평가모형은 잉여금/감소를 OCI/PL에 적절히 배분한다."
+  ],
+  "trap_patterns": [
+    "정률법 적용 시 잔존가치를 기초 장부금액에서 차감한다.",
+    "재평가증가를 당기손익으로 인식한다.",
+    "손상 후 감가상각 기간을 재산정하지 않는다."
+  ],
+  "time_strategy": {
+    "target_seconds": 110,
+    "skip_threshold_seconds": 140,
+    "exam_room_rule": "감가상각 방법 식별이 30초 안에 안 끝나면 표시 후 넘긴다."
+  },
+  "variant_axes": [
+    "감가상각 방법 변경",
+    "손상 발생 연도 변경",
+    "재평가모형 도입 시점 변경"
+  ],
+  "mistake_diagnosis": [
+    "formula_gap",
+    "calculation_error",
+    "condition_miss"
+  ],
+  "review_status": "ai_draft"
+}

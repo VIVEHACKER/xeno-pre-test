@@ -1,0 +1,14 @@
+{
+  "rule_key": "mock_exam_recovery_protocol",
+  "rule_name": "모의고사 후 복구 프로토콜",
+  "condition_text": "모의고사에서 평소보다 10점 이상 하락한 결과를 받은 경우, 다음 주 회독이 자책으로 무너지기 쉬운 상태",
+  "action_text": "모의고사 다음 날 새 단원 진입을 차단하고, 직전 모의고사 오답 25개를 원인 분류 후 약점 단원 1개에 집중한다.",
+  "exception_text": "점수 하락이 시간 운영 한 원인에만 집중되어 있다면 단원 보강보다 시간 운영 드릴을 먼저 한다.",
+  "applicable_stages": ["mock_exam"],
+  "applicable_subjects": ["accounting", "tax", "accounting_tax"],
+  "required_risk_tags": [],
+  "source_signal_count": 0,
+  "source_case_ids": [],
+  "confidence": 0.67,
+  "review_status": "machine_draft"
+}

@@ -1,29 +1,50 @@
 {
-  "prescription_id": "rx-seed-user-past-exam-rotation-89dfae32e5ac9020",
+  "prescription_id": "rx-seed-user-past-exam-rotation-034a19a5b10bd771",
   "user_id": "seed-user-past-exam-rotation",
   "generated_at": "2026-05-11T04:00:00+00:00",
   "diagnosis": {
-    "summary": "단계 past_exam_rotation에서 매칭된 신호: 기출 회독 목적 분리, 회계/세법 핵심축 집중, 세법 말문제 회상 블록. 잔여 120일, 리스크 점수 25/100.",
+    "summary": "단계 past_exam_rotation에서 매칭된 신호: 부가가치세 면세·영세율 분류 우선, 오답 원인 분류 일일 블록, 기출 회독 목적 분리, 연결재무제표 후반 진입, 회계/세법 핵심축 집중, 소득세 분류표 우선, 자본·주식보상 종합문제 진입 전 정리, 세법 말문제 회상 블록, 주간 회독 점검. 잔여 120일, 리스크 점수 35/100.",
     "risk_level": "moderate",
     "risk_drivers": [
       "tax 핵심 개념 공백",
-      "복수 규칙 동시 발동",
+      "다수 규칙 동시 발동",
+      "부가가치세 면세·영세율 분류 우선",
+      "오답 원인 분류 일일 블록",
       "기출 회독 목적 분리",
+      "연결재무제표 후반 진입",
       "회계/세법 핵심축 집중",
+      "소득세 분류표 우선",
+      "자본·주식보상 종합문제 진입 전 정리",
       "세법 말문제 회상 블록",
+      "주간 회독 점검",
       "memory_decay",
       "rotation_confusion"
     ]
   },
   "weekly_goal": {
-    "goal_text": "1회독은 개념 연결, 2회독은 함정/오답, 3회독은 시간 압박 검증으로 목적을 분리한다.",
-    "verification_metric": "주간 처방 수행률 80% 이상, 매칭 규칙 past_exam_rotation 관련 약점 지표 측정"
+    "goal_text": "매 회독마다 면세 대상 14개 항목과 영세율 대상을 한 표에 정리하고, 분류표 30개 문항을 반복 회상한다.",
+    "verification_metric": "주간 처방 수행률 80% 이상, 매칭 규칙 vat_exemption_classification_first 관련 약점 지표 측정"
   },
   "daily_tasks": [
+    {
+      "task_text": "매 회독마다 면세 대상 14개 항목과 영세율 대상을 한 표에 정리하고, 분류표 30개 문항을 반복 회상한다.",
+      "subject": "tax",
+      "estimated_minutes": 30
+    },
+    {
+      "task_text": "매일 30분 오답 원인 분류 블록을 배정한다. 각 오답을 concept_gap/condition_miss/calculation_error/time_pressure 중 1개 이상으로 분류해 저장한다.",
+      "subject": "mixed",
+      "estimated_minutes": 30
+    },
     {
       "task_text": "1회독은 개념 연결, 2회독은 함정/오답, 3회독은 시간 압박 검증으로 목적을 분리한다.",
       "subject": "mixed",
       "estimated_minutes": 45
+    },
+    {
+      "task_text": "회계학 전체 정답률이 55% 이상이 되기 전에는 연결재무제표 신규 문제를 도입하지 않는다. 진입 후에는 지배력 판단 → 영업권 → 내부거래 순서로 분리 훈련한다.",
+      "subject": "accounting",
+      "estimated_minutes": 30
     },
     {
       "task_text": "회계학과 세법개론을 주간 점수 상승의 중심축으로 두고, 나머지 과목은 유지 블록으로 분리한다.",
@@ -31,22 +52,43 @@
       "estimated_minutes": 45
     },
     {
+      "task_text": "각 소득(이자/배당/사업/근로/연금/기타)별 종합·분리·비과세를 한 표에 정리하고, 매주 분류표 20개 문항을 회상한다.",
+      "subject": "tax",
+      "estimated_minutes": 30
+    },
+    {
+      "task_text": "종합문제(모의고사) 진입 전 자본 거래 분류표(자기주식·주식배당·주식기준보상)를 한 장으로 압축한다. 매주 2회 회상한다.",
+      "subject": "accounting",
+      "estimated_minutes": 30
+    },
+    {
       "task_text": "매일 짧은 회상 블록을 배정하고 정답 문장이 아니라 판단 기준 문장으로 압축한다.",
       "subject": "tax",
       "estimated_minutes": 45
+    },
+    {
+      "task_text": "매주 일요일 30분을 비워 한 주 풀이 로그의 오답 원인 비중을 정리하고, 다음 주 약점 단원 1개를 명시한다.",
+      "subject": "mixed",
+      "estimated_minutes": 30
     }
   ],
   "concepts_to_review": [
-    "세법: 부가가치세 말문제",
     "세법: 법인세 손금",
-    "재무회계: 금융자산"
+    "세법: 부가가치세 말문제",
+    "재무회계: 연결재무제표"
   ],
   "problems_to_solve": [],
   "problems_to_skip": [],
   "triggered_rule_keys": [
+    "vat_exemption_classification_first",
+    "mistake_root_cause_block",
     "past_exam_rotation",
+    "consolidation_late_entry",
     "accounting_tax_core_focus",
-    "tax_verbal_recall"
+    "income_tax_classification_table",
+    "equity_priority_block",
+    "tax_verbal_recall",
+    "weekly_rotation_review"
   ],
   "evidence_refs": [
     {
@@ -56,8 +98,23 @@
     },
     {
       "ref_type": "decision_rule",
+      "ref_id": "vat_exemption_classification_first",
+      "note": "부가가치세 면세·영세율 분류 우선"
+    },
+    {
+      "ref_type": "decision_rule",
+      "ref_id": "mistake_root_cause_block",
+      "note": "오답 원인 분류 일일 블록"
+    },
+    {
+      "ref_type": "decision_rule",
       "ref_id": "past_exam_rotation",
       "note": "기출 회독 목적 분리"
+    },
+    {
+      "ref_type": "decision_rule",
+      "ref_id": "consolidation_late_entry",
+      "note": "연결재무제표 후반 진입"
     },
     {
       "ref_type": "decision_rule",
@@ -66,8 +123,23 @@
     },
     {
       "ref_type": "decision_rule",
+      "ref_id": "income_tax_classification_table",
+      "note": "소득세 분류표 우선"
+    },
+    {
+      "ref_type": "decision_rule",
+      "ref_id": "equity_priority_block",
+      "note": "자본·주식보상 종합문제 진입 전 정리"
+    },
+    {
+      "ref_type": "decision_rule",
       "ref_id": "tax_verbal_recall",
       "note": "세법 말문제 회상 블록"
+    },
+    {
+      "ref_type": "decision_rule",
+      "ref_id": "weekly_rotation_review",
+      "note": "주간 회독 점검"
     }
   ]
 }

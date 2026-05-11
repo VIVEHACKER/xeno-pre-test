@@ -1,0 +1,59 @@
+{
+  "problem_id": "cpa1-tax-004",
+  "exam": "CPA_1",
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "세법: 법인세 손금",
+    "corporate_tax",
+    "depreciation_addition_deduction",
+    "tax_book_difference"
+  ],
+  "required_concepts": [
+    {
+      "concept": "감가상각 시부인 구조",
+      "role": "회계상 vs 세무상 차이 산출",
+      "prerequisite": true
+    },
+    {
+      "concept": "내용연수 및 신고",
+      "role": "기준내용연수와 신고내용연수 차이",
+      "prerequisite": true
+    }
+  ],
+  "solving_entry_point": "회계상 감가상각비와 세무상 한도(상각방법·내용연수·잔존가치)를 두 줄로 분리한 후 시인부족액/시부인액을 계산한다.",
+  "solving_steps": [
+    "회계상 감가상각비를 계산한다.",
+    "세무상 상각범위액(법령에 따른 신고)을 계산한다.",
+    "시부인액 = 회계상 - 세무상 한도.",
+    "시인부족액은 다음 사업연도로 이월한다.",
+    "특별감가상각/시설투자 등 특례를 별도 적용한다."
+  ],
+  "trap_patterns": [
+    "신고 내용연수 미신고 시 기준내용연수 사용을 누락한다.",
+    "시인부족액 이월기간을 잘못 계산한다.",
+    "정률법 잔존가치 처리를 회계와 동일하게 본다."
+  ],
+  "time_strategy": {
+    "target_seconds": 100,
+    "skip_threshold_seconds": 130,
+    "exam_room_rule": "시부인 구조 표시가 40초 안에 안 끝나면 표시 후 넘긴다."
+  },
+  "variant_axes": [
+    "신고/기준 내용연수 변경",
+    "특별감가상각 시나리오",
+    "사용중단 자산 추가"
+  ],
+  "mistake_diagnosis": [
+    "formula_gap",
+    "calculation_error",
+    "condition_miss"
+  ],
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,14 @@
+{
+  "rule_key": "weekly_rotation_review",
+  "rule_name": "주간 회독 점검",
+  "condition_text": "주간 단위로 회독·풀이 진척이 측정되지 않으면 다음 주 계획이 동일 단원을 반복할 위험이 있는 상태",
+  "action_text": "매주 일요일 30분을 비워 한 주 풀이 로그의 오답 원인 비중을 정리하고, 다음 주 약점 단원 1개를 명시한다.",
+  "exception_text": "이미 풀이 로그를 매일 분류하는 사용자라면 주간 점검 시간을 15분으로 단축한다.",
+  "applicable_stages": ["objective_entry", "past_exam_rotation", "mock_exam", "final"],
+  "applicable_subjects": ["accounting", "tax", "accounting_tax"],
+  "required_risk_tags": [],
+  "source_signal_count": 0,
+  "source_case_ids": [],
+  "confidence": 0.62,
+  "review_status": "machine_draft"
+}

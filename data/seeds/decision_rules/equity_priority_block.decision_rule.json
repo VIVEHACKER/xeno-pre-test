@@ -1,0 +1,14 @@
+{
+  "rule_key": "equity_priority_block",
+  "rule_name": "자본·주식보상 종합문제 진입 전 정리",
+  "condition_text": "자본/주식기준보상 단원이 종합문제 후반에 섞이면 정확도가 흔들리고 시간 소모가 커지는 상태",
+  "action_text": "종합문제(모의고사) 진입 전 자본 거래 분류표(자기주식·주식배당·주식기준보상)를 한 장으로 압축한다. 매주 2회 회상한다.",
+  "exception_text": "자본 단원 정답률이 이미 75% 이상이면 회상 빈도를 주 1회로 줄인다.",
+  "applicable_stages": ["past_exam_rotation", "mock_exam"],
+  "applicable_subjects": ["accounting"],
+  "required_risk_tags": ["concept_gap", "memory_decay"],
+  "source_signal_count": 0,
+  "source_case_ids": [],
+  "confidence": 0.64,
+  "review_status": "machine_draft"
+}

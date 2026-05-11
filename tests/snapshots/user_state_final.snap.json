@@ -1,16 +1,20 @@
 {
-  "prescription_id": "rx-seed-user-final-742cb937373aefc4",
+  "prescription_id": "rx-seed-user-final-8ea4bfc3435974dc",
   "user_id": "seed-user-final",
   "generated_at": "2026-05-11T04:00:00+00:00",
   "diagnosis": {
-    "summary": "단계 final에서 매칭된 신호: 파이널 압축 모드, 회계/세법 핵심축 집중, 세법 말문제 회상 블록, 시간 집착 방지. 잔여 20일, 리스크 점수 35/100.",
+    "summary": "단계 final에서 매칭된 신호: 파이널 압축 모드, 강제 통과 훈련, 부가가치세 면세·영세율 분류 우선, 법인세 부속서식 직전 적재, 회계/세법 핵심축 집중, 세법 말문제 회상 블록, 주간 회독 점검, 시간 집착 방지. 잔여 20일, 리스크 점수 45/100.",
     "risk_level": "moderate",
     "risk_drivers": [
       "잔여 20일 — 압축 구간",
-      "복수 규칙 동시 발동",
+      "다수 규칙 동시 발동",
       "파이널 압축 모드",
+      "강제 통과 훈련",
+      "부가가치세 면세·영세율 분류 우선",
+      "법인세 부속서식 직전 적재",
       "회계/세법 핵심축 집중",
       "세법 말문제 회상 블록",
+      "주간 회독 점검",
       "시간 집착 방지",
       "memory_decay",
       "time_pressure"
@@ -27,6 +31,21 @@
       "estimated_minutes": 30
     },
     {
+      "task_text": "회계학 50문항 풀이 시 1문제 목표 시간의 80%가 지나면 즉시 표시 후 통과하는 드릴을 매일 1세트 수행한다. 통과한 문제만 별도 회상 큐로 보낸다.",
+      "subject": "accounting",
+      "estimated_minutes": 30
+    },
+    {
+      "task_text": "매 회독마다 면세 대상 14개 항목과 영세율 대상을 한 표에 정리하고, 분류표 30개 문항을 반복 회상한다.",
+      "subject": "tax",
+      "estimated_minutes": 30
+    },
+    {
+      "task_text": "시험 직전 30일 구간에 매일 10분 부속서식 회상 블록을 배정한다. 익금산입/손금불산입 사례 30개를 한 줄 문장으로 압축해 반복한다.",
+      "subject": "tax",
+      "estimated_minutes": 30
+    },
+    {
       "task_text": "회계학과 세법개론을 주간 점수 상승의 중심축으로 두고, 나머지 과목은 유지 블록으로 분리한다.",
       "subject": "mixed",
       "estimated_minutes": 45
@@ -37,22 +56,31 @@
       "estimated_minutes": 45
     },
     {
+      "task_text": "매주 일요일 30분을 비워 한 주 풀이 로그의 오답 원인 비중을 정리하고, 다음 주 약점 단원 1개를 명시한다.",
+      "subject": "mixed",
+      "estimated_minutes": 30
+    },
+    {
       "task_text": "문제별 통과 기준을 두고 1회전/2회전 풀이를 훈련한다.",
       "subject": "mixed",
       "estimated_minutes": 30
     }
   ],
   "concepts_to_review": [
-    "세법: 부가가치세 말문제",
     "세법: 법인세 손금",
-    "재무회계: 금융자산"
+    "세법: 부가가치세 말문제",
+    "재무회계: 연결재무제표"
   ],
   "problems_to_solve": [],
   "problems_to_skip": [],
   "triggered_rule_keys": [
     "final_consolidation",
+    "anti_perfectionism_pass_drill",
+    "vat_exemption_classification_first",
+    "corporate_tax_appendix_loading",
     "accounting_tax_core_focus",
     "tax_verbal_recall",
+    "weekly_rotation_review",
     "time_efficiency_guardrail"
   ],
   "evidence_refs": [
@@ -68,6 +96,21 @@
     },
     {
       "ref_type": "decision_rule",
+      "ref_id": "anti_perfectionism_pass_drill",
+      "note": "강제 통과 훈련"
+    },
+    {
+      "ref_type": "decision_rule",
+      "ref_id": "vat_exemption_classification_first",
+      "note": "부가가치세 면세·영세율 분류 우선"
+    },
+    {
+      "ref_type": "decision_rule",
+      "ref_id": "corporate_tax_appendix_loading",
+      "note": "법인세 부속서식 직전 적재"
+    },
+    {
+      "ref_type": "decision_rule",
       "ref_id": "accounting_tax_core_focus",
       "note": "회계/세법 핵심축 집중"
     },
@@ -75,6 +118,11 @@
       "ref_type": "decision_rule",
       "ref_id": "tax_verbal_recall",
       "note": "세법 말문제 회상 블록"
+    },
+    {
+      "ref_type": "decision_rule",
+      "ref_id": "weekly_rotation_review",
+      "note": "주간 회독 점검"
     },
     {
       "ref_type": "decision_rule",

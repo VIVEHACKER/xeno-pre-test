@@ -1,0 +1,64 @@
+{
+  "problem_id": "cpa1-accounting-010",
+  "exam": "CPA_1",
+  "subject": "accounting",
+  "unit": "consolidation",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "재무회계: 연결재무제표",
+    "consolidation",
+    "equity_method",
+    "non_controlling_interest"
+  ],
+  "required_concepts": [
+    {
+      "concept": "지배력 판단",
+      "role": "연결 대상 여부 결정",
+      "prerequisite": true
+    },
+    {
+      "concept": "투자제거와 영업권",
+      "role": "취득시점 차이 분석",
+      "prerequisite": true
+    },
+    {
+      "concept": "내부거래 미실현손익",
+      "role": "연결조정 핵심",
+      "prerequisite": true
+    }
+  ],
+  "solving_entry_point": "지분율과 의결권을 먼저 확인해 지배력 여부를 판단한다. 그 다음 취득일 자산/부채 공정가치 평가에서 영업권을 도출한다.",
+  "solving_steps": [
+    "지배력 여부와 비지배지분율을 계산한다.",
+    "취득시점 자산/부채 공정가치 평가차액을 인식한다.",
+    "영업권 또는 염가매수차익을 측정한다.",
+    "내부거래 미실현손익을 연결조정으로 제거한다.",
+    "비지배지분과 지배기업소유주 귀속 이익을 분리한다."
+  ],
+  "trap_patterns": [
+    "비지배지분 측정에 공정가치/순자산비례법을 혼동한다.",
+    "내부거래 재고 미실현손익을 부분 제거한다.",
+    "하향거래와 상향거래 처리를 동일하게 본다."
+  ],
+  "time_strategy": {
+    "target_seconds": 130,
+    "skip_threshold_seconds": 160,
+    "exam_room_rule": "지배력 판단이 60초 안에 안 끝나면 표시 후 넘긴다. 회독 후반에 재진입한다."
+  },
+  "variant_axes": [
+    "비지배지분 측정 방법 변경",
+    "내부거래 유형 변경",
+    "단계적 취득 시나리오"
+  ],
+  "mistake_diagnosis": [
+    "concept_gap",
+    "condition_miss",
+    "calculation_error"
+  ],
+  "review_status": "ai_draft"
+}

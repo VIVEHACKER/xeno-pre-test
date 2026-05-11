@@ -1,29 +1,44 @@
 {
-  "prescription_id": "rx-seed-user-mock-exam-aa64bf236a803456",
+  "prescription_id": "rx-seed-user-mock-exam-ec9faad353f2544a",
   "user_id": "seed-user-mock-exam",
   "generated_at": "2026-05-11T04:00:00+00:00",
   "diagnosis": {
-    "summary": "단계 mock_exam에서 매칭된 신호: 회계학 2회전 풀이 드릴, 기출 회독 목적 분리, 모의고사 실전 시간표 시뮬레이션, 회계/세법 핵심축 집중, 시간 집착 방지. 잔여 60일, 리스크 점수 20/100.",
+    "summary": "단계 mock_exam에서 매칭된 신호: 강제 통과 훈련, 회계학 2회전 풀이 드릴, 오답 원인 분류 일일 블록, 기출 회독 목적 분리, 연결재무제표 후반 진입, 모의고사 실전 시간표 시뮬레이션, 모의고사 후 복구 프로토콜, 회계/세법 핵심축 집중, 주간 회독 점검, 시간 집착 방지. 잔여 60일, 리스크 점수 20/100.",
     "risk_level": "low",
     "risk_drivers": [
       "다수 규칙 동시 발동",
+      "강제 통과 훈련",
       "회계학 2회전 풀이 드릴",
+      "오답 원인 분류 일일 블록",
       "기출 회독 목적 분리",
+      "연결재무제표 후반 진입",
       "모의고사 실전 시간표 시뮬레이션",
+      "모의고사 후 복구 프로토콜",
       "회계/세법 핵심축 집중",
+      "주간 회독 점검",
       "시간 집착 방지",
       "rotation_confusion",
       "time_pressure"
     ]
   },
   "weekly_goal": {
-    "goal_text": "1회전에서 계산량 많은 문제를 표시 후 통과하고, 2회전에서 재진입한다. 풀이 시간보다 통과 결정 시간을 훈련한다.",
-    "verification_metric": "주간 처방 수행률 80% 이상, 매칭 규칙 accounting_two_pass_drill 관련 약점 지표 측정"
+    "goal_text": "회계학 50문항 풀이 시 1문제 목표 시간의 80%가 지나면 즉시 표시 후 통과하는 드릴을 매일 1세트 수행한다. 통과한 문제만 별도 회상 큐로 보낸다.",
+    "verification_metric": "주간 처방 수행률 80% 이상, 매칭 규칙 anti_perfectionism_pass_drill 관련 약점 지표 측정"
   },
   "daily_tasks": [
     {
+      "task_text": "회계학 50문항 풀이 시 1문제 목표 시간의 80%가 지나면 즉시 표시 후 통과하는 드릴을 매일 1세트 수행한다. 통과한 문제만 별도 회상 큐로 보낸다.",
+      "subject": "accounting",
+      "estimated_minutes": 30
+    },
+    {
       "task_text": "1회전에서 계산량 많은 문제를 표시 후 통과하고, 2회전에서 재진입한다. 풀이 시간보다 통과 결정 시간을 훈련한다.",
       "subject": "accounting",
+      "estimated_minutes": 30
+    },
+    {
+      "task_text": "매일 30분 오답 원인 분류 블록을 배정한다. 각 오답을 concept_gap/condition_miss/calculation_error/time_pressure 중 1개 이상으로 분류해 저장한다.",
+      "subject": "mixed",
       "estimated_minutes": 30
     },
     {
@@ -32,7 +47,17 @@
       "estimated_minutes": 45
     },
     {
+      "task_text": "회계학 전체 정답률이 55% 이상이 되기 전에는 연결재무제표 신규 문제를 도입하지 않는다. 진입 후에는 지배력 판단 → 영업권 → 내부거래 순서로 분리 훈련한다.",
+      "subject": "accounting",
+      "estimated_minutes": 30
+    },
+    {
       "task_text": "실제 시험 시간표 그대로 50문항을 통째로 푼다. 끝난 직후 시간 초과 문제를 분리하고 다음 회차 통과 기준을 갱신한다.",
+      "subject": "mixed",
+      "estimated_minutes": 30
+    },
+    {
+      "task_text": "모의고사 다음 날 새 단원 진입을 차단하고, 직전 모의고사 오답 25개를 원인 분류 후 약점 단원 1개에 집중한다.",
       "subject": "mixed",
       "estimated_minutes": 30
     },
@@ -42,23 +67,33 @@
       "estimated_minutes": 45
     },
     {
+      "task_text": "매주 일요일 30분을 비워 한 주 풀이 로그의 오답 원인 비중을 정리하고, 다음 주 약점 단원 1개를 명시한다.",
+      "subject": "mixed",
+      "estimated_minutes": 30
+    },
+    {
       "task_text": "문제별 통과 기준을 두고 1회전/2회전 풀이를 훈련한다.",
       "subject": "mixed",
       "estimated_minutes": 30
     }
   ],
   "concepts_to_review": [
-    "세법: 부가가치세",
     "세법: 법인세 손금",
-    "재무회계: 금융자산"
+    "세법: 부가가치세",
+    "재무회계: 연결재무제표"
   ],
   "problems_to_solve": [],
   "problems_to_skip": [],
   "triggered_rule_keys": [
+    "anti_perfectionism_pass_drill",
     "accounting_two_pass_drill",
+    "mistake_root_cause_block",
     "past_exam_rotation",
+    "consolidation_late_entry",
     "mock_exam_time_simulation",
+    "mock_exam_recovery_protocol",
     "accounting_tax_core_focus",
+    "weekly_rotation_review",
     "time_efficiency_guardrail"
   ],
   "evidence_refs": [
@@ -69,8 +104,18 @@
     },
     {
       "ref_type": "decision_rule",
+      "ref_id": "anti_perfectionism_pass_drill",
+      "note": "강제 통과 훈련"
+    },
+    {
+      "ref_type": "decision_rule",
       "ref_id": "accounting_two_pass_drill",
       "note": "회계학 2회전 풀이 드릴"
+    },
+    {
+      "ref_type": "decision_rule",
+      "ref_id": "mistake_root_cause_block",
+      "note": "오답 원인 분류 일일 블록"
     },
     {
       "ref_type": "decision_rule",
@@ -79,13 +124,28 @@
     },
     {
       "ref_type": "decision_rule",
+      "ref_id": "consolidation_late_entry",
+      "note": "연결재무제표 후반 진입"
+    },
+    {
+      "ref_type": "decision_rule",
       "ref_id": "mock_exam_time_simulation",
       "note": "모의고사 실전 시간표 시뮬레이션"
     },
     {
       "ref_type": "decision_rule",
+      "ref_id": "mock_exam_recovery_protocol",
+      "note": "모의고사 후 복구 프로토콜"
+    },
+    {
+      "ref_type": "decision_rule",
       "ref_id": "accounting_tax_core_focus",
       "note": "회계/세법 핵심축 집중"
+    },
+    {
+      "ref_type": "decision_rule",
+      "ref_id": "weekly_rotation_review",
+      "note": "주간 회독 점검"
     },
     {
       "ref_type": "decision_rule",

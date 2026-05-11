@@ -1,0 +1,14 @@
+{
+  "rule_key": "anti_perfectionism_pass_drill",
+  "rule_name": "강제 통과 훈련",
+  "condition_text": "한 문제에 너무 오래 매달려 시험장 시간 운영이 무너지는 패턴이 반복되는 상태",
+  "action_text": "회계학 50문항 풀이 시 1문제 목표 시간의 80%가 지나면 즉시 표시 후 통과하는 드릴을 매일 1세트 수행한다. 통과한 문제만 별도 회상 큐로 보낸다.",
+  "exception_text": "사용자가 이미 통과 결정이 빠르다면 적용 강도를 낮춘다.",
+  "applicable_stages": ["objective_entry", "past_exam_rotation", "mock_exam", "final"],
+  "applicable_subjects": ["accounting", "accounting_tax"],
+  "required_risk_tags": ["time_pressure"],
+  "source_signal_count": 0,
+  "source_case_ids": [],
+  "confidence": 0.73,
+  "review_status": "machine_draft"
+}

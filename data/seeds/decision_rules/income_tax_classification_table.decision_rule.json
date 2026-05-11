@@ -1,0 +1,14 @@
+{
+  "rule_key": "income_tax_classification_table",
+  "rule_name": "소득세 분류표 우선",
+  "condition_text": "종합소득세 문제에서 계산보다 종합/분리/비과세 분류 누락으로 오답이 누적되는 상태",
+  "action_text": "각 소득(이자/배당/사업/근로/연금/기타)별 종합·분리·비과세를 한 표에 정리하고, 매주 분류표 20개 문항을 회상한다.",
+  "exception_text": "사업·근로 통산 결손금 처리가 약점인 경우 통산 흐름 보강을 먼저 한다.",
+  "applicable_stages": ["objective_entry", "past_exam_rotation", "mock_exam"],
+  "applicable_subjects": ["tax"],
+  "required_risk_tags": ["memory_decay", "concept_gap"],
+  "source_signal_count": 0,
+  "source_case_ids": [],
+  "confidence": 0.66,
+  "review_status": "machine_draft"
+}
