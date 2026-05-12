@@ -789,6 +789,71 @@ async function submitProblemAttemptDiagnosis() {
   }
 }
 
+function renderQuestionAnalysis(item) {
+  const analysis = item.question_analysis;
+  if (!analysis) {
+    $("#problemQuestionType").textContent = "-";
+    $("#problemIntent").innerHTML = `<p class="muted-note">출제 의도 분석이 아직 생성되지 않았습니다.</p>`;
+    $("#stemConditionList").innerHTML = "";
+    return;
+  }
+
+  const combinations = analysis.concept_combination ?? [];
+  const stemConditions = analysis.stem_conditions ?? [];
+  const mustNotMiss = analysis.question_stem_parse?.must_not_miss ?? [];
+  const roleLabel = { trigger: "판별 신호", ask: "질문 요구", distractor: "오답 유인" };
+
+  $("#problemQuestionType").textContent = analysis.question_type ?? "mixed";
+  $("#problemIntent").innerHTML = `
+    <div class="intent-grid">
+      <section>
+        <span>의도</span>
+        <p>${escapeHtml(analysis.examiner_intent ?? "")}</p>
+      </section>
+      <section>
+        <span>질문</span>
+        <p>${escapeHtml(analysis.asked_output ?? analysis.question_stem_parse?.target_entity ?? "")}</p>
+      </section>
+      <section>
+        <span>놓치면 안 되는 조건</span>
+        <div class="intent-chip-row">
+          ${mustNotMiss.map((item) => `<em>${escapeHtml(item)}</em>`).join("")}
+        </div>
+      </section>
+    </div>
+    <div class="intent-section-label">개념 조합</div>
+    <div class="concept-combination-list">
+      ${combinations
+        .map(
+          (row) => `
+            <section>
+              <strong>${escapeHtml(row.concept ?? "개념 조합")}</strong>
+              <p>${escapeHtml(row.why_combined ?? "")}</p>
+              <small>${escapeHtml(row.examiner_objective ?? "")}</small>
+            </section>
+          `,
+        )
+        .join("")}
+    </div>
+  `;
+  $("#stemConditionList").innerHTML = `
+    <div class="intent-section-label">본문 신호</div>
+    <div class="stem-condition-list">
+      ${stemConditions
+        .map(
+          (condition) => `
+            <section>
+              <span>${escapeHtml(roleLabel[condition.role] ?? condition.role ?? "signal")}</span>
+              <strong>${escapeHtml(condition.text ?? "")}</strong>
+              <p>${escapeHtml(condition.why_it_matters ?? "")}</p>
+            </section>
+          `,
+        )
+        .join("")}
+    </div>
+  `;
+}
+
 function renderSelectedProblemMap() {
   const item = problemSolutionMaps.find((problem) => problem.question_id === selectedProblemId);
   if (!item) {
@@ -801,6 +866,9 @@ function renderSelectedProblemMap() {
     setAttemptStatus();
     clearAttemptDiagnosis();
     $("#problemSolutionPaths").innerHTML = "";
+    $("#problemQuestionType").textContent = "-";
+    $("#problemIntent").innerHTML = "";
+    $("#stemConditionList").innerHTML = "";
     return;
   }
 
@@ -815,6 +883,7 @@ function renderSelectedProblemMap() {
   $("#problemRightsStatus").textContent = item.rights_status;
   $("#problemReviewStatus").textContent = item.review_status;
   renderChoiceBoard(item);
+  renderQuestionAnalysis(item);
   resetProblemAttempt();
   $("#problemSolutionPaths").innerHTML = `
     <details class="solution-library">

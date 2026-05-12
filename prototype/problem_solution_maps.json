@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-11T08:46:40+00:00",
+  "generated_at": "2026-05-12T02:01:15+00:00",
   "source_policy": "safe_evaluation_questions_only",
   "problem_solution_maps": [
     {
@@ -28,6 +28,65 @@
         "interest_revenue"
       ],
       "explanation": "상각후원가 측정 금융자산의 이자수익은 유효이자율법으로 계산한다. 이자수익 = 기초 장부금액 × 유효이자율 = 950,260 × 10% = 95,026원. 액면이자 80,000원은 현금수취액이며 이자수익이 아니다.",
+      "question_analysis": {
+        "examiner_intent": "문항 조건에서 필요한 개념 체계(상각후원가 금융자산의 유효이자율법 개념)를 식별하고 요구 산출물(이자수익)까지 연결하는 능력을 본다.",
+        "question_type": "calculation",
+        "asked_output": "이자수익",
+        "concept_combination": [
+          {
+            "concept": "상각후원가 금융자산의 유효이자율법",
+            "paired_with": [
+              "상각후원가 측정",
+              "유효이자율",
+              "이자수익"
+            ],
+            "why_combined": "단일 암기가 아니라 조건 신호, 계산 또는 분류 기준, 오답 함정을 동시에 판별하게 하려는 조합이다.",
+            "examiner_objective": "요구 산출물(이자수익)을 구하기 전에 어떤 개념 체계를 먼저 선택해야 하는지 검증한다."
+          }
+        ],
+        "stem_conditions": [
+          {
+            "text": "상각후원가 측정",
+            "role": "trigger",
+            "why_it_matters": "상각후원가 측정 신호가 상각후원가 금융자산의 유효이자율법 개념 적용 여부를 결정한다."
+          },
+          {
+            "text": "유효이자율",
+            "role": "trigger",
+            "why_it_matters": "유효이자율 신호가 상각후원가 금융자산의 유효이자율법 개념 적용 여부를 결정한다."
+          },
+          {
+            "text": "이자수익",
+            "role": "ask",
+            "why_it_matters": "문제가 최종적으로 요구하는 산출물이다."
+          },
+          {
+            "text": "액면이자를 이자수익으로 고르는 함정",
+            "role": "distractor",
+            "why_it_matters": "출제자가 오답 선택지를 만들기 위해 넣은 대표 혼동 지점이다."
+          }
+        ],
+        "question_stem_parse": {
+          "ask_verb": "calculate",
+          "target_entity": "이자수익",
+          "time_scope": "stem-defined",
+          "negation": false,
+          "unit_or_rounding": "stem-defined",
+          "must_not_miss": [
+            "상각후원가 측정",
+            "유효이자율",
+            "이자수익"
+          ]
+        },
+        "intent_hypothesis": {
+          "primary": "정답 계산 전에 상각후원가 금융자산의 유효이자율법 개념 체계를 선택할 수 있는지 검증한다.",
+          "secondary": [
+            "액면이자를 이자수익으로 고르는 함정을 피하는지 확인한다.",
+            "본문 조건과 보기의 오답 유인을 연결해 판별하게 한다."
+          ],
+          "confidence": 0.78
+        }
+      },
       "solution_paths": [
         {
           "path_id": "cpa1-eval-accounting-001:direct",
@@ -290,6 +349,65 @@
         "moving_average"
       ],
       "explanation": "이동평균법: 1차 매입 후 평균단가 = (100×1,000 + 200×1,200) / 300 = 340,000/300 ≈ 1,133.33원. 250개 판매 후 잔량 50개 × 1,133.33 = 56,667원. 2차 매입 후 평균단가 = (56,667 + 100×1,400) / 150 = 196,667/150 ≈ 1,311.11원. 기말재고 150개 × 1,311.11 ≈ 196,667원 → 가까운 값 190,000원이 정답에 가장 근접한 보기.",
+      "question_analysis": {
+        "examiner_intent": "문항 조건에서 필요한 개념 체계(이동평균법과 판매 전후 평균단가 재계산 개념)를 식별하고 요구 산출물(기말재고)까지 연결하는 능력을 본다.",
+        "question_type": "calculation",
+        "asked_output": "기말재고",
+        "concept_combination": [
+          {
+            "concept": "이동평균법과 판매 전후 평균단가 재계산",
+            "paired_with": [
+              "이동평균법",
+              "매입 후 판매",
+              "2차 매입"
+            ],
+            "why_combined": "단일 암기가 아니라 조건 신호, 계산 또는 분류 기준, 오답 함정을 동시에 판별하게 하려는 조합이다.",
+            "examiner_objective": "요구 산출물(기말재고)을 구하기 전에 어떤 개념 체계를 먼저 선택해야 하는지 검증한다."
+          }
+        ],
+        "stem_conditions": [
+          {
+            "text": "이동평균법",
+            "role": "trigger",
+            "why_it_matters": "이동평균법 신호가 이동평균법과 판매 전후 평균단가 재계산 개념 적용 여부를 결정한다."
+          },
+          {
+            "text": "매입 후 판매",
+            "role": "trigger",
+            "why_it_matters": "매입 후 판매 신호가 이동평균법과 판매 전후 평균단가 재계산 개념 적용 여부를 결정한다."
+          },
+          {
+            "text": "기말재고",
+            "role": "ask",
+            "why_it_matters": "문제가 최종적으로 요구하는 산출물이다."
+          },
+          {
+            "text": "전체 매입을 한 번에 평균내거나 판매 시점을 무시하는 함정",
+            "role": "distractor",
+            "why_it_matters": "출제자가 오답 선택지를 만들기 위해 넣은 대표 혼동 지점이다."
+          }
+        ],
+        "question_stem_parse": {
+          "ask_verb": "calculate",
+          "target_entity": "기말재고",
+          "time_scope": "stem-defined",
+          "negation": false,
+          "unit_or_rounding": "stem-defined",
+          "must_not_miss": [
+            "이동평균법",
+            "매입 후 판매",
+            "2차 매입"
+          ]
+        },
+        "intent_hypothesis": {
+          "primary": "정답 계산 전에 이동평균법과 판매 전후 평균단가 재계산 개념 체계를 선택할 수 있는지 검증한다.",
+          "secondary": [
+            "전체 매입을 한 번에 평균내거나 판매 시점을 무시하는 함정을 피하는지 확인한다.",
+            "본문 조건과 보기의 오답 유인을 연결해 판별하게 한다."
+          ],
+          "confidence": 0.78
+        }
+      },
       "solution_paths": [
         {
           "path_id": "cpa1-eval-accounting-002:direct",
@@ -553,6 +671,65 @@
         "margin_of_safety"
       ],
       "explanation": "단위당 공헌이익 = 5,000 - 3,000 = 2,000원. BEP 판매량 = 4,000,000 / 2,000 = 2,000개. BEP 매출액 = 2,000개 × 5,000 = 10,000,000원. 안전한계율 20% 의미: 현재 매출에서 BEP까지 거리가 20%. 즉 현재 매출 = BEP / (1 - 0.2) = 10,000,000 / 0.8 = 12,500,000원.",
+      "question_analysis": {
+        "examiner_intent": "문항 조건에서 필요한 개념 체계(CVP 분석의 단위당 공헌이익과 안전한계율 개념)를 식별하고 요구 산출물(손익분기점)까지 연결하는 능력을 본다.",
+        "question_type": "statement_selection",
+        "asked_output": "손익분기점",
+        "concept_combination": [
+          {
+            "concept": "CVP 분석의 단위당 공헌이익과 안전한계율",
+            "paired_with": [
+              "판매가격",
+              "변동비",
+              "고정비"
+            ],
+            "why_combined": "단일 암기가 아니라 조건 신호, 계산 또는 분류 기준, 오답 함정을 동시에 판별하게 하려는 조합이다.",
+            "examiner_objective": "요구 산출물(손익분기점)을 구하기 전에 어떤 개념 체계를 먼저 선택해야 하는지 검증한다."
+          }
+        ],
+        "stem_conditions": [
+          {
+            "text": "판매가격",
+            "role": "trigger",
+            "why_it_matters": "판매가격 신호가 CVP 분석의 단위당 공헌이익과 안전한계율 개념 적용 여부를 결정한다."
+          },
+          {
+            "text": "변동비",
+            "role": "trigger",
+            "why_it_matters": "변동비 신호가 CVP 분석의 단위당 공헌이익과 안전한계율 개념 적용 여부를 결정한다."
+          },
+          {
+            "text": "손익분기점",
+            "role": "ask",
+            "why_it_matters": "문제가 최종적으로 요구하는 산출물이다."
+          },
+          {
+            "text": "안전한계율 20%를 안전한계 매출액 자체로 착각하는 함정",
+            "role": "distractor",
+            "why_it_matters": "출제자가 오답 선택지를 만들기 위해 넣은 대표 혼동 지점이다."
+          }
+        ],
+        "question_stem_parse": {
+          "ask_verb": "select",
+          "target_entity": "손익분기점",
+          "time_scope": "stem-defined",
+          "negation": false,
+          "unit_or_rounding": "stem-defined",
+          "must_not_miss": [
+            "판매가격",
+            "변동비",
+            "고정비"
+          ]
+        },
+        "intent_hypothesis": {
+          "primary": "정답 계산 전에 CVP 분석의 단위당 공헌이익과 안전한계율 개념 체계를 선택할 수 있는지 검증한다.",
+          "secondary": [
+            "안전한계율 20%를 안전한계 매출액 자체로 착각하는 함정을 피하는지 확인한다.",
+            "본문 조건과 보기의 오답 유인을 연결해 판별하게 한다."
+          ],
+          "confidence": 0.78
+        }
+      },
       "solution_paths": [
         {
           "path_id": "cpa1-eval-accounting-003:direct",
@@ -817,39 +994,99 @@
         "recoverable_amount"
       ],
       "explanation": "감가상각비 = (1,000,000 - 100,000) / 5 = 180,000원/년. 20X2년 말 누적 감가상각 = 360,000원. 20X3년 1월 1일 장부금액 = 1,000,000 - 360,000 = 640,000원. 회수가능액 = max(사용가치, 순공정가치) = max(360,000, 400,000) = 400,000원. 손상차손 = 640,000 - 400,000 = 240,000원.",
+      "question_analysis": {
+        "examiner_intent": "문항 조건에서 필요한 개념 체계(유형자산 손상차손의 장부금액과 회수가능액 비교 개념)를 식별하고 요구 산출물(손상차손)까지 연결하는 능력을 본다.",
+        "question_type": "calculation",
+        "asked_output": "손상차손",
+        "concept_combination": [
+          {
+            "concept": "유형자산 손상차손의 장부금액과 회수가능액 비교",
+            "paired_with": [
+              "손상 신호",
+              "장부금액",
+              "회수가능액"
+            ],
+            "why_combined": "단일 암기가 아니라 조건 신호, 계산 또는 분류 기준, 오답 함정을 동시에 판별하게 하려는 조합이다.",
+            "examiner_objective": "요구 산출물(손상차손)을 구하기 전에 어떤 개념 체계를 먼저 선택해야 하는지 검증한다."
+          }
+        ],
+        "stem_conditions": [
+          {
+            "text": "손상 신호",
+            "role": "trigger",
+            "why_it_matters": "손상 신호 신호가 유형자산 손상차손의 장부금액과 회수가능액 비교 개념 적용 여부를 결정한다."
+          },
+          {
+            "text": "장부금액",
+            "role": "trigger",
+            "why_it_matters": "장부금액 신호가 유형자산 손상차손의 장부금액과 회수가능액 비교 개념 적용 여부를 결정한다."
+          },
+          {
+            "text": "손상차손",
+            "role": "ask",
+            "why_it_matters": "문제가 최종적으로 요구하는 산출물이다."
+          },
+          {
+            "text": "회수가능액을 작은 금액으로 고르거나 감가상각 전 취득원가와 바로 비교하는 함정",
+            "role": "distractor",
+            "why_it_matters": "출제자가 오답 선택지를 만들기 위해 넣은 대표 혼동 지점이다."
+          }
+        ],
+        "question_stem_parse": {
+          "ask_verb": "calculate",
+          "target_entity": "손상차손",
+          "time_scope": "stem-defined",
+          "negation": false,
+          "unit_or_rounding": "stem-defined",
+          "must_not_miss": [
+            "손상 신호",
+            "장부금액",
+            "회수가능액"
+          ]
+        },
+        "intent_hypothesis": {
+          "primary": "정답 계산 전에 유형자산 손상차손의 장부금액과 회수가능액 비교 개념 체계를 선택할 수 있는지 검증한다.",
+          "secondary": [
+            "회수가능액을 작은 금액으로 고르거나 감가상각 전 취득원가와 바로 비교하는 함정을 피하는지 확인한다.",
+            "본문 조건과 보기의 오답 유인을 연결해 판별하게 한다."
+          ],
+          "confidence": 0.78
+        }
+      },
       "solution_paths": [
         {
           "path_id": "cpa1-eval-accounting-004:direct",
           "path_type": "direct",
           "label": "정석식",
-          "why_this_path": "문제의 핵심 개념가 문제 본문에 직접 드러나므로 정의와 공식으로 바로 푼다.",
+          "why_this_path": "유형자산 손상차손의 장부금액과 회수가능액 비교가 문제 본문에 직접 드러나므로 정의와 공식으로 바로 푼다.",
           "trigger_signals": [
-            "재무회계: 유형자산",
-            "tangible_assets",
-            "impairment_loss"
+            "손상 신호",
+            "장부금액",
+            "회수가능액"
           ],
           "do_not_use_when": [
             "조건이 시점별로 섞여 있거나 선택지 함정이 강하면 구조식으로 전환"
           ],
           "ordered_steps": [
-            "핵심 개념을 찾는다.",
-            "조건을 분리한다.",
-            "정답 보기와 대조한다."
+            "취득원가에서 잔존가치를 뺀 금액을 내용연수로 나누어 연 감가상각비를 구한다.",
+            "손상검사일 직전까지의 감가상각누계액을 차감해 장부금액을 계산한다.",
+            "사용가치와 순공정가치 중 큰 금액을 회수가능액으로 잡는다.",
+            "장부금액과 회수가능액의 차이인 240,000원를 선택한다."
           ],
           "answer_index": 0,
           "answer_text": "240,000원",
           "concept_links": [
             {
-              "concept_label": "문제의 핵심 개념",
+              "concept_label": "유형자산 손상차손의 장부금액과 회수가능액 비교",
               "concept_source": "unit_profile",
               "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
-              "decision_test": "본문에 재무회계: 유형자산, tangible_assets 신호가 보이는가?",
+              "decision_test": "본문에 손상 신호, 장부금액 신호가 보이는가?",
               "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
               "evidence_basis": "unit=tangible_assets; tags=재무회계: 유형자산, tangible_assets, impairment_loss, recoverable_amount",
               "confidence": 0.82
             },
             {
-              "concept_label": "재무회계: 유형자산 / tangible_assets / impairment_loss",
+              "concept_label": "손상 신호 / 장부금액 / 회수가능액",
               "concept_source": "condition_signal",
               "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
               "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
@@ -863,7 +1100,7 @@
               "why_required": "direct 풀이를 쓰는 직접 근거다.",
               "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
               "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
-              "evidence_basis": "조건 누락 함정",
+              "evidence_basis": "회수가능액을 작은 금액으로 고르거나 감가상각 전 취득원가와 바로 비교하는 함정",
               "confidence": 0.76
             }
           ],
@@ -876,33 +1113,34 @@
           "label": "표/구조식",
           "why_this_path": "조건을 표로 분리해야 판매 전후, 과세/면세, 증가/감소 같은 방향 실수를 줄일 수 있다.",
           "trigger_signals": [
-            "재무회계: 유형자산",
-            "tangible_assets",
-            "impairment_loss",
-            "recoverable_amount"
+            "손상 신호",
+            "장부금액",
+            "회수가능액",
+            "사용가치",
+            "순공정가치"
           ],
           "do_not_use_when": [
             "조건이 하나뿐이면 표 작성보다 정석식이 빠름"
           ],
           "ordered_steps": [
-            "조건표를 만든다.",
-            "방향을 판별한다.",
-            "보기와 비교한다."
+            "감가상각 계산 칸과 손상 계산 칸을 분리한다.",
+            "회수가능액은 두 가치 중 작은 금액이 아니라 큰 금액임을 표시한다.",
+            "장부금액 - 회수가능액이 양수일 때만 손상차손으로 인식한다."
           ],
           "answer_index": 0,
           "answer_text": "240,000원",
           "concept_links": [
             {
-              "concept_label": "문제의 핵심 개념",
+              "concept_label": "유형자산 손상차손의 장부금액과 회수가능액 비교",
               "concept_source": "unit_profile",
               "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
-              "decision_test": "본문에 재무회계: 유형자산, tangible_assets 신호가 보이는가?",
+              "decision_test": "본문에 손상 신호, 장부금액 신호가 보이는가?",
               "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
               "evidence_basis": "unit=tangible_assets; tags=재무회계: 유형자산, tangible_assets, impairment_loss, recoverable_amount",
               "confidence": 0.82
             },
             {
-              "concept_label": "재무회계: 유형자산 / tangible_assets / impairment_loss",
+              "concept_label": "손상 신호 / 장부금액 / 회수가능액",
               "concept_source": "condition_signal",
               "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
               "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
@@ -916,7 +1154,7 @@
               "why_required": "structure 풀이를 쓰는 직접 근거다.",
               "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
               "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
-              "evidence_basis": "조건 누락 함정",
+              "evidence_basis": "회수가능액을 작은 금액으로 고르거나 감가상각 전 취득원가와 바로 비교하는 함정",
               "confidence": 0.76
             }
           ],
@@ -930,7 +1168,7 @@
           "why_this_path": "객관식에서는 대표 함정을 먼저 제거하면 계산량과 검산 부담이 줄어든다.",
           "trigger_signals": [
             "보기 중 하나가 대표 함정값",
-            "조건 누락 함정"
+            "회수가능액을 작은 금액으로 고르거나 감가상각 전 취득원가와 바로 비교하는 함정"
           ],
           "do_not_use_when": [
             "선택지가 모두 근접 숫자이면 제거식만으로 확정하지 않음"
@@ -944,16 +1182,16 @@
           "answer_text": "240,000원",
           "concept_links": [
             {
-              "concept_label": "문제의 핵심 개념",
+              "concept_label": "유형자산 손상차손의 장부금액과 회수가능액 비교",
               "concept_source": "unit_profile",
               "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
-              "decision_test": "본문에 재무회계: 유형자산, tangible_assets 신호가 보이는가?",
+              "decision_test": "본문에 손상 신호, 장부금액 신호가 보이는가?",
               "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
               "evidence_basis": "unit=tangible_assets; tags=재무회계: 유형자산, tangible_assets, impairment_loss, recoverable_amount",
               "confidence": 0.82
             },
             {
-              "concept_label": "재무회계: 유형자산 / tangible_assets / impairment_loss",
+              "concept_label": "손상 신호 / 장부금액 / 회수가능액",
               "concept_source": "condition_signal",
               "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
               "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
@@ -967,7 +1205,7 @@
               "why_required": "choice_elimination 풀이를 쓰는 직접 근거다.",
               "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
               "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
-              "evidence_basis": "조건 누락 함정",
+              "evidence_basis": "회수가능액을 작은 금액으로 고르거나 감가상각 전 취득원가와 바로 비교하는 함정",
               "confidence": 0.76
             }
           ],
@@ -982,19 +1220,19 @@
               "choice_index": 1,
               "choice_text": "280,000원",
               "verdict": "eliminate",
-              "reason": "핵심 조건 또는 계산 방향과 맞지 않는다."
+              "reason": "감가상각 또는 회수가능액 선택 중 하나를 잘못 적용한 값이다."
             },
             {
               "choice_index": 2,
               "choice_text": "320,000원",
               "verdict": "eliminate",
-              "reason": "핵심 조건 또는 계산 방향과 맞지 않는다."
+              "reason": "사용가치와 순공정가치의 선택 방향을 혼동한 값이다."
             },
             {
               "choice_index": 3,
               "choice_text": "640,000원",
               "verdict": "eliminate",
-              "reason": "핵심 조건 또는 계산 방향과 맞지 않는다."
+              "reason": "장부금액 전체를 손상차손으로 오해한 값이다."
             }
           ],
           "confidence": 0.78
@@ -1014,23 +1252,23 @@
           ],
           "ordered_steps": [
             "정답 후보 240,000원를 문제의 핵심 조건에 다시 대입한다.",
-            "대표 함정: 조건 누락 함정와 비교한다.",
+            "대표 함정: 회수가능액을 작은 금액으로 고르거나 감가상각 전 취득원가와 바로 비교하는 함정와 비교한다.",
             "해설의 계산 또는 분류 기준과 같은 결론인지 확인한다."
           ],
           "answer_index": 0,
           "answer_text": "240,000원",
           "concept_links": [
             {
-              "concept_label": "문제의 핵심 개념",
+              "concept_label": "유형자산 손상차손의 장부금액과 회수가능액 비교",
               "concept_source": "unit_profile",
               "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
-              "decision_test": "본문에 재무회계: 유형자산, tangible_assets 신호가 보이는가?",
+              "decision_test": "본문에 손상 신호, 장부금액 신호가 보이는가?",
               "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
               "evidence_basis": "unit=tangible_assets; tags=재무회계: 유형자산, tangible_assets, impairment_loss, recoverable_amount",
               "confidence": 0.82
             },
             {
-              "concept_label": "재무회계: 유형자산 / tangible_assets / impairment_loss",
+              "concept_label": "손상 신호 / 장부금액 / 회수가능액",
               "concept_source": "condition_signal",
               "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
               "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
@@ -1044,7 +1282,7 @@
               "why_required": "reverse_check 풀이를 쓰는 직접 근거다.",
               "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
               "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
-              "evidence_basis": "조건 누락 함정",
+              "evidence_basis": "회수가능액을 작은 금액으로 고르거나 감가상각 전 취득원가와 바로 비교하는 함정",
               "confidence": 0.76
             }
           ],
@@ -1079,39 +1317,99 @@
         "transaction_price_allocation"
       ],
       "explanation": "두 수행의무로 분리하고 거래가격을 상대적 개별 판매가격 기준으로 배분한다. 합계 6,000,000원 중 제품 A 비중 4,000,000/6,000,000 = 2/3. 거래가격 5,000,000원 × 2/3 ≈ 3,333,333원이 제품 A 배분액으로 인도 시점에 수익 인식. 유지보수 1,666,667원은 1년에 걸쳐 인식.",
+      "question_analysis": {
+        "examiner_intent": "문항 조건에서 필요한 개념 체계(수행의무 식별과 상대적 개별판매가격 배분 개념)를 식별하고 요구 산출물(수익)까지 연결하는 능력을 본다.",
+        "question_type": "calculation",
+        "asked_output": "수익",
+        "concept_combination": [
+          {
+            "concept": "수행의무 식별과 상대적 개별판매가격 배분",
+            "paired_with": [
+              "단일 계약",
+              "제품",
+              "유지보수 서비스"
+            ],
+            "why_combined": "단일 암기가 아니라 조건 신호, 계산 또는 분류 기준, 오답 함정을 동시에 판별하게 하려는 조합이다.",
+            "examiner_objective": "요구 산출물(수익)을 구하기 전에 어떤 개념 체계를 먼저 선택해야 하는지 검증한다."
+          }
+        ],
+        "stem_conditions": [
+          {
+            "text": "단일 계약",
+            "role": "trigger",
+            "why_it_matters": "단일 계약 신호가 수행의무 식별과 상대적 개별판매가격 배분 개념 적용 여부를 결정한다."
+          },
+          {
+            "text": "제품",
+            "role": "trigger",
+            "why_it_matters": "제품 신호가 수행의무 식별과 상대적 개별판매가격 배분 개념 적용 여부를 결정한다."
+          },
+          {
+            "text": "수익",
+            "role": "ask",
+            "why_it_matters": "문제가 최종적으로 요구하는 산출물이다."
+          },
+          {
+            "text": "제품 개별 판매가격 4,000,000원을 그대로 수익으로 고르거나 계약가격 전액을 즉시 인식하는 함정",
+            "role": "distractor",
+            "why_it_matters": "출제자가 오답 선택지를 만들기 위해 넣은 대표 혼동 지점이다."
+          }
+        ],
+        "question_stem_parse": {
+          "ask_verb": "calculate",
+          "target_entity": "수익",
+          "time_scope": "stem-defined",
+          "negation": false,
+          "unit_or_rounding": "stem-defined",
+          "must_not_miss": [
+            "단일 계약",
+            "제품",
+            "유지보수 서비스"
+          ]
+        },
+        "intent_hypothesis": {
+          "primary": "정답 계산 전에 수행의무 식별과 상대적 개별판매가격 배분 개념 체계를 선택할 수 있는지 검증한다.",
+          "secondary": [
+            "제품 개별 판매가격 4,000,000원을 그대로 수익으로 고르거나 계약가격 전액을 즉시 인식하는 함정을 피하는지 확인한다.",
+            "본문 조건과 보기의 오답 유인을 연결해 판별하게 한다."
+          ],
+          "confidence": 0.78
+        }
+      },
       "solution_paths": [
         {
           "path_id": "cpa1-eval-accounting-005:direct",
           "path_type": "direct",
           "label": "정석식",
-          "why_this_path": "문제의 핵심 개념가 문제 본문에 직접 드러나므로 정의와 공식으로 바로 푼다.",
+          "why_this_path": "수행의무 식별과 상대적 개별판매가격 배분가 문제 본문에 직접 드러나므로 정의와 공식으로 바로 푼다.",
           "trigger_signals": [
-            "재무회계: 수익인식",
-            "revenue_recognition",
-            "performance_obligation"
+            "단일 계약",
+            "제품",
+            "유지보수 서비스"
           ],
           "do_not_use_when": [
             "조건이 시점별로 섞여 있거나 선택지 함정이 강하면 구조식으로 전환"
           ],
           "ordered_steps": [
-            "핵심 개념을 찾는다.",
-            "조건을 분리한다.",
-            "정답 보기와 대조한다."
+            "제품과 유지보수 서비스를 별도 수행의무로 분리한다.",
+            "개별 판매가격 합계에서 제품의 상대적 비율을 구한다.",
+            "거래가격에 제품 비율을 곱해 제품에 배분된 금액을 계산한다.",
+            "인도 시점에 통제가 이전되는 제품 배분액 3,333,333원를 선택한다."
           ],
           "answer_index": 1,
           "answer_text": "3,333,333원",
           "concept_links": [
             {
-              "concept_label": "문제의 핵심 개념",
+              "concept_label": "수행의무 식별과 상대적 개별판매가격 배분",
               "concept_source": "unit_profile",
               "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
-              "decision_test": "본문에 재무회계: 수익인식, revenue_recognition 신호가 보이는가?",
+              "decision_test": "본문에 단일 계약, 제품 신호가 보이는가?",
               "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
               "evidence_basis": "unit=revenue_recognition; tags=재무회계: 수익인식, revenue_recognition, performance_obligation, transaction_price_allocation",
               "confidence": 0.82
             },
             {
-              "concept_label": "재무회계: 수익인식 / revenue_recognition / performance_obligation",
+              "concept_label": "단일 계약 / 제품 / 유지보수 서비스",
               "concept_source": "condition_signal",
               "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
               "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
@@ -1125,7 +1423,7 @@
               "why_required": "direct 풀이를 쓰는 직접 근거다.",
               "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
               "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
-              "evidence_basis": "조건 누락 함정",
+              "evidence_basis": "제품 개별 판매가격 4,000,000원을 그대로 수익으로 고르거나 계약가격 전액을 즉시 인식하는 함정",
               "confidence": 0.76
             }
           ],
@@ -1138,33 +1436,34 @@
           "label": "표/구조식",
           "why_this_path": "조건을 표로 분리해야 판매 전후, 과세/면세, 증가/감소 같은 방향 실수를 줄일 수 있다.",
           "trigger_signals": [
-            "재무회계: 수익인식",
-            "revenue_recognition",
-            "performance_obligation",
-            "transaction_price_allocation"
+            "단일 계약",
+            "제품",
+            "유지보수 서비스",
+            "개별 판매가격",
+            "통제 이전"
           ],
           "do_not_use_when": [
             "조건이 하나뿐이면 표 작성보다 정석식이 빠름"
           ],
           "ordered_steps": [
-            "조건표를 만든다.",
-            "방향을 판별한다.",
-            "보기와 비교한다."
+            "수행의무별 개별 판매가격과 인식 시점을 표로 나눈다.",
+            "총 거래가격은 계약가격이고 배분 기준은 개별 판매가격임을 분리한다.",
+            "즉시 인식할 금액은 통제가 이전된 수행의무 몫만 남긴다."
           ],
           "answer_index": 1,
           "answer_text": "3,333,333원",
           "concept_links": [
             {
-              "concept_label": "문제의 핵심 개념",
+              "concept_label": "수행의무 식별과 상대적 개별판매가격 배분",
               "concept_source": "unit_profile",
               "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
-              "decision_test": "본문에 재무회계: 수익인식, revenue_recognition 신호가 보이는가?",
+              "decision_test": "본문에 단일 계약, 제품 신호가 보이는가?",
               "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
               "evidence_basis": "unit=revenue_recognition; tags=재무회계: 수익인식, revenue_recognition, performance_obligation, transaction_price_allocation",
               "confidence": 0.82
             },
             {
-              "concept_label": "재무회계: 수익인식 / revenue_recognition / performance_obligation",
+              "concept_label": "단일 계약 / 제품 / 유지보수 서비스",
               "concept_source": "condition_signal",
               "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
               "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
@@ -1178,7 +1477,7 @@
               "why_required": "structure 풀이를 쓰는 직접 근거다.",
               "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
               "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
-              "evidence_basis": "조건 누락 함정",
+              "evidence_basis": "제품 개별 판매가격 4,000,000원을 그대로 수익으로 고르거나 계약가격 전액을 즉시 인식하는 함정",
               "confidence": 0.76
             }
           ],
@@ -1192,7 +1491,7 @@
           "why_this_path": "객관식에서는 대표 함정을 먼저 제거하면 계산량과 검산 부담이 줄어든다.",
           "trigger_signals": [
             "보기 중 하나가 대표 함정값",
-            "조건 누락 함정"
+            "제품 개별 판매가격 4,000,000원을 그대로 수익으로 고르거나 계약가격 전액을 즉시 인식하는 함정"
           ],
           "do_not_use_when": [
             "선택지가 모두 근접 숫자이면 제거식만으로 확정하지 않음"
@@ -1206,16 +1505,16 @@
           "answer_text": "3,333,333원",
           "concept_links": [
             {
-              "concept_label": "문제의 핵심 개념",
+              "concept_label": "수행의무 식별과 상대적 개별판매가격 배분",
               "concept_source": "unit_profile",
               "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
-              "decision_test": "본문에 재무회계: 수익인식, revenue_recognition 신호가 보이는가?",
+              "decision_test": "본문에 단일 계약, 제품 신호가 보이는가?",
               "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
               "evidence_basis": "unit=revenue_recognition; tags=재무회계: 수익인식, revenue_recognition, performance_obligation, transaction_price_allocation",
               "confidence": 0.82
             },
             {
-              "concept_label": "재무회계: 수익인식 / revenue_recognition / performance_obligation",
+              "concept_label": "단일 계약 / 제품 / 유지보수 서비스",
               "concept_source": "condition_signal",
               "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
               "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
@@ -1229,7 +1528,7 @@
               "why_required": "choice_elimination 풀이를 쓰는 직접 근거다.",
               "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
               "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
-              "evidence_basis": "조건 누락 함정",
+              "evidence_basis": "제품 개별 판매가격 4,000,000원을 그대로 수익으로 고르거나 계약가격 전액을 즉시 인식하는 함정",
               "confidence": 0.76
             }
           ],
@@ -1238,7 +1537,7 @@
               "choice_index": 0,
               "choice_text": "3,000,000원",
               "verdict": "eliminate",
-              "reason": "핵심 조건 또는 계산 방향과 맞지 않는다."
+              "reason": "상대적 배분비율을 잘못 적용한 값이다."
             },
             {
               "choice_index": 1,
@@ -1250,13 +1549,13 @@
               "choice_index": 2,
               "choice_text": "4,000,000원",
               "verdict": "eliminate",
-              "reason": "핵심 조건 또는 계산 방향과 맞지 않는다."
+              "reason": "제품의 개별 판매가격을 배분 후 수익과 혼동했다."
             },
             {
               "choice_index": 3,
               "choice_text": "5,000,000원",
               "verdict": "eliminate",
-              "reason": "핵심 조건 또는 계산 방향과 맞지 않는다."
+              "reason": "유지보수 몫까지 포함해 계약가격 전액을 즉시 인식했다."
             }
           ],
           "confidence": 0.78
@@ -1276,23 +1575,23 @@
           ],
           "ordered_steps": [
             "정답 후보 3,333,333원를 문제의 핵심 조건에 다시 대입한다.",
-            "대표 함정: 조건 누락 함정와 비교한다.",
+            "대표 함정: 제품 개별 판매가격 4,000,000원을 그대로 수익으로 고르거나 계약가격 전액을 즉시 인식하는 함정와 비교한다.",
             "해설의 계산 또는 분류 기준과 같은 결론인지 확인한다."
           ],
           "answer_index": 1,
           "answer_text": "3,333,333원",
           "concept_links": [
             {
-              "concept_label": "문제의 핵심 개념",
+              "concept_label": "수행의무 식별과 상대적 개별판매가격 배분",
               "concept_source": "unit_profile",
               "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
-              "decision_test": "본문에 재무회계: 수익인식, revenue_recognition 신호가 보이는가?",
+              "decision_test": "본문에 단일 계약, 제품 신호가 보이는가?",
               "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
               "evidence_basis": "unit=revenue_recognition; tags=재무회계: 수익인식, revenue_recognition, performance_obligation, transaction_price_allocation",
               "confidence": 0.82
             },
             {
-              "concept_label": "재무회계: 수익인식 / revenue_recognition / performance_obligation",
+              "concept_label": "단일 계약 / 제품 / 유지보수 서비스",
               "concept_source": "condition_signal",
               "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
               "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
@@ -1306,7 +1605,7 @@
               "why_required": "reverse_check 풀이를 쓰는 직접 근거다.",
               "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
               "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
-              "evidence_basis": "조건 누락 함정",
+              "evidence_basis": "제품 개별 판매가격 4,000,000원을 그대로 수익으로 고르거나 계약가격 전액을 즉시 인식하는 함정",
               "confidence": 0.76
             }
           ],
@@ -1341,39 +1640,99 @@
         "verbal_rule"
       ],
       "explanation": "충당부채 인식 3요건: (1) 현재의무 존재 (2) 자원 유출 가능성 매우 높음(probable, 통상 50% 초과) (3) 신뢰성있는 추정 가능. 제품 보증은 과거 판매에서 발생한 현재의무이고 사례 기반 추정이 가능하므로 충당부채. 가능성 50% 미만은 우발부채(주석). 미래 광고비/검토 중 구조조정은 현재의무가 아직 없어 부채 인식 불가.",
+      "question_analysis": {
+        "examiner_intent": "문항 조건에서 필요한 개념 체계(충당부채 인식요건 3요소 개념)를 식별하고 요구 산출물(충당부채 인식요건 3요소)까지 연결하는 능력을 본다.",
+        "question_type": "mixed",
+        "asked_output": "충당부채 인식요건 3요소",
+        "concept_combination": [
+          {
+            "concept": "충당부채 인식요건 3요소",
+            "paired_with": [
+              "현재의무",
+              "자원 유출 가능성",
+              "신뢰성 있는 추정"
+            ],
+            "why_combined": "단일 암기가 아니라 조건 신호, 계산 또는 분류 기준, 오답 함정을 동시에 판별하게 하려는 조합이다.",
+            "examiner_objective": "요구 산출물(충당부채 인식요건 3요소)을 구하기 전에 어떤 개념 체계를 먼저 선택해야 하는지 검증한다."
+          }
+        ],
+        "stem_conditions": [
+          {
+            "text": "현재의무",
+            "role": "trigger",
+            "why_it_matters": "현재의무 신호가 충당부채 인식요건 3요소 개념 적용 여부를 결정한다."
+          },
+          {
+            "text": "자원 유출 가능성",
+            "role": "trigger",
+            "why_it_matters": "자원 유출 가능성 신호가 충당부채 인식요건 3요소 개념 적용 여부를 결정한다."
+          },
+          {
+            "text": "충당부채 인식요건 3요소",
+            "role": "ask",
+            "why_it_matters": "문제가 최종적으로 요구하는 산출물이다."
+          },
+          {
+            "text": "미래 지출 계획을 현재의무로 보거나 가능성 낮은 청구를 부채로 인식하는 함정",
+            "role": "distractor",
+            "why_it_matters": "출제자가 오답 선택지를 만들기 위해 넣은 대표 혼동 지점이다."
+          }
+        ],
+        "question_stem_parse": {
+          "ask_verb": "solve",
+          "target_entity": "충당부채 인식요건 3요소",
+          "time_scope": "stem-defined",
+          "negation": false,
+          "unit_or_rounding": "stem-defined",
+          "must_not_miss": [
+            "현재의무",
+            "자원 유출 가능성",
+            "신뢰성 있는 추정"
+          ]
+        },
+        "intent_hypothesis": {
+          "primary": "정답 계산 전에 충당부채 인식요건 3요소 개념 체계를 선택할 수 있는지 검증한다.",
+          "secondary": [
+            "미래 지출 계획을 현재의무로 보거나 가능성 낮은 청구를 부채로 인식하는 함정을 피하는지 확인한다.",
+            "본문 조건과 보기의 오답 유인을 연결해 판별하게 한다."
+          ],
+          "confidence": 0.78
+        }
+      },
       "solution_paths": [
         {
           "path_id": "cpa1-eval-accounting-006:direct",
           "path_type": "direct",
           "label": "정석식",
-          "why_this_path": "문제의 핵심 개념가 문제 본문에 직접 드러나므로 정의와 공식으로 바로 푼다.",
+          "why_this_path": "충당부채 인식요건 3요소가 문제 본문에 직접 드러나므로 정의와 공식으로 바로 푼다.",
           "trigger_signals": [
-            "재무회계: 부채",
-            "liabilities",
-            "provisions"
+            "현재의무",
+            "자원 유출 가능성",
+            "신뢰성 있는 추정"
           ],
           "do_not_use_when": [
             "조건이 시점별로 섞여 있거나 선택지 함정이 강하면 구조식으로 전환"
           ],
           "ordered_steps": [
-            "핵심 개념을 찾는다.",
-            "조건을 분리한다.",
-            "정답 보기와 대조한다."
+            "각 보기에 현재의무가 이미 존재하는지 표시한다.",
+            "자원 유출 가능성이 높고 금액을 신뢰성 있게 추정할 수 있는지 확인한다.",
+            "미래 계획이나 가능성 낮은 청구는 인식 대상에서 제외한다.",
+            "세 요건을 모두 만족하는 보기 2번을 선택한다."
           ],
           "answer_index": 1,
           "answer_text": "제품 보증 의무로 과거 사례상 발생 가능성이 매우 높고 신뢰성있게 추정 가능한 미래 비용",
           "concept_links": [
             {
-              "concept_label": "문제의 핵심 개념",
+              "concept_label": "충당부채 인식요건 3요소",
               "concept_source": "unit_profile",
               "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
-              "decision_test": "본문에 재무회계: 부채, liabilities 신호가 보이는가?",
+              "decision_test": "본문에 현재의무, 자원 유출 가능성 신호가 보이는가?",
               "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
               "evidence_basis": "unit=liabilities; tags=재무회계: 부채, liabilities, provisions, verbal_rule",
               "confidence": 0.82
             },
             {
-              "concept_label": "재무회계: 부채 / liabilities / provisions",
+              "concept_label": "현재의무 / 자원 유출 가능성 / 신뢰성 있는 추정",
               "concept_source": "condition_signal",
               "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
               "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
@@ -1387,7 +1746,7 @@
               "why_required": "direct 풀이를 쓰는 직접 근거다.",
               "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
               "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
-              "evidence_basis": "조건 누락 함정",
+              "evidence_basis": "미래 지출 계획을 현재의무로 보거나 가능성 낮은 청구를 부채로 인식하는 함정",
               "confidence": 0.76
             }
           ],
@@ -1400,33 +1759,33 @@
           "label": "표/구조식",
           "why_this_path": "조건을 표로 분리해야 판매 전후, 과세/면세, 증가/감소 같은 방향 실수를 줄일 수 있다.",
           "trigger_signals": [
-            "재무회계: 부채",
-            "liabilities",
-            "provisions",
-            "verbal_rule"
+            "현재의무",
+            "자원 유출 가능성",
+            "신뢰성 있는 추정",
+            "제품 보증"
           ],
           "do_not_use_when": [
             "조건이 하나뿐이면 표 작성보다 정석식이 빠름"
           ],
           "ordered_steps": [
-            "조건표를 만든다.",
-            "방향을 판별한다.",
-            "보기와 비교한다."
+            "현재의무, 유출 가능성, 추정 가능성 세 칸 표를 만든다.",
+            "세 칸 중 하나라도 비면 충당부채 인식 대상에서 제거한다.",
+            "제품보증처럼 과거 판매에서 발생한 의무만 남긴다."
           ],
           "answer_index": 1,
           "answer_text": "제품 보증 의무로 과거 사례상 발생 가능성이 매우 높고 신뢰성있게 추정 가능한 미래 비용",
           "concept_links": [
             {
-              "concept_label": "문제의 핵심 개념",
+              "concept_label": "충당부채 인식요건 3요소",
               "concept_source": "unit_profile",
               "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
-              "decision_test": "본문에 재무회계: 부채, liabilities 신호가 보이는가?",
+              "decision_test": "본문에 현재의무, 자원 유출 가능성 신호가 보이는가?",
               "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
               "evidence_basis": "unit=liabilities; tags=재무회계: 부채, liabilities, provisions, verbal_rule",
               "confidence": 0.82
             },
             {
-              "concept_label": "재무회계: 부채 / liabilities / provisions",
+              "concept_label": "현재의무 / 자원 유출 가능성 / 신뢰성 있는 추정",
               "concept_source": "condition_signal",
               "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
               "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
@@ -1440,7 +1799,7 @@
               "why_required": "structure 풀이를 쓰는 직접 근거다.",
               "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
               "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
-              "evidence_basis": "조건 누락 함정",
+              "evidence_basis": "미래 지출 계획을 현재의무로 보거나 가능성 낮은 청구를 부채로 인식하는 함정",
               "confidence": 0.76
             }
           ],
@@ -1454,7 +1813,7 @@
           "why_this_path": "객관식에서는 대표 함정을 먼저 제거하면 계산량과 검산 부담이 줄어든다.",
           "trigger_signals": [
             "보기 중 하나가 대표 함정값",
-            "조건 누락 함정"
+            "미래 지출 계획을 현재의무로 보거나 가능성 낮은 청구를 부채로 인식하는 함정"
           ],
           "do_not_use_when": [
             "선택지가 모두 근접 숫자이면 제거식만으로 확정하지 않음"
@@ -1468,16 +1827,16 @@
           "answer_text": "제품 보증 의무로 과거 사례상 발생 가능성이 매우 높고 신뢰성있게 추정 가능한 미래 비용",
           "concept_links": [
             {
-              "concept_label": "문제의 핵심 개념",
+              "concept_label": "충당부채 인식요건 3요소",
               "concept_source": "unit_profile",
               "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
-              "decision_test": "본문에 재무회계: 부채, liabilities 신호가 보이는가?",
+              "decision_test": "본문에 현재의무, 자원 유출 가능성 신호가 보이는가?",
               "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
               "evidence_basis": "unit=liabilities; tags=재무회계: 부채, liabilities, provisions, verbal_rule",
               "confidence": 0.82
             },
             {
-              "concept_label": "재무회계: 부채 / liabilities / provisions",
+              "concept_label": "현재의무 / 자원 유출 가능성 / 신뢰성 있는 추정",
               "concept_source": "condition_signal",
               "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
               "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
@@ -1491,7 +1850,7 @@
               "why_required": "choice_elimination 풀이를 쓰는 직접 근거다.",
               "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
               "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
-              "evidence_basis": "조건 누락 함정",
+              "evidence_basis": "미래 지출 계획을 현재의무로 보거나 가능성 낮은 청구를 부채로 인식하는 함정",
               "confidence": 0.76
             }
           ],
@@ -1500,7 +1859,7 @@
               "choice_index": 0,
               "choice_text": "거래처와의 거래에서 향후 부담할 가능성이 50% 미만인 손해배상 청구",
               "verdict": "eliminate",
-              "reason": "핵심 조건 또는 계산 방향과 맞지 않는다."
+              "reason": "가능성이 낮아 충당부채 인식요건을 충족하지 못한다."
             },
             {
               "choice_index": 1,
@@ -1512,13 +1871,13 @@
               "choice_index": 2,
               "choice_text": "내년 마케팅 캠페인 계획에 따른 향후 광고비",
               "verdict": "eliminate",
-              "reason": "핵심 조건 또는 계산 방향과 맞지 않는다."
+              "reason": "미래 광고 계획은 현재의무가 아니다."
             },
             {
               "choice_index": 3,
               "choice_text": "이사회에서 검토 중인 구조조정안에 따른 잠재적 퇴직금",
               "verdict": "eliminate",
-              "reason": "핵심 조건 또는 계산 방향과 맞지 않는다."
+              "reason": "검토 중인 구조조정안만으로는 현재의무가 성립하지 않는다."
             }
           ],
           "confidence": 0.78
@@ -1538,23 +1897,23 @@
           ],
           "ordered_steps": [
             "정답 후보 제품 보증 의무로 과거 사례상 발생 가능성이 매우 높고 신뢰성있게 추정 가능한 미래 비용를 문제의 핵심 조건에 다시 대입한다.",
-            "대표 함정: 조건 누락 함정와 비교한다.",
+            "대표 함정: 미래 지출 계획을 현재의무로 보거나 가능성 낮은 청구를 부채로 인식하는 함정와 비교한다.",
             "해설의 계산 또는 분류 기준과 같은 결론인지 확인한다."
           ],
           "answer_index": 1,
           "answer_text": "제품 보증 의무로 과거 사례상 발생 가능성이 매우 높고 신뢰성있게 추정 가능한 미래 비용",
           "concept_links": [
             {
-              "concept_label": "문제의 핵심 개념",
+              "concept_label": "충당부채 인식요건 3요소",
               "concept_source": "unit_profile",
               "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
-              "decision_test": "본문에 재무회계: 부채, liabilities 신호가 보이는가?",
+              "decision_test": "본문에 현재의무, 자원 유출 가능성 신호가 보이는가?",
               "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
               "evidence_basis": "unit=liabilities; tags=재무회계: 부채, liabilities, provisions, verbal_rule",
               "confidence": 0.82
             },
             {
-              "concept_label": "재무회계: 부채 / liabilities / provisions",
+              "concept_label": "현재의무 / 자원 유출 가능성 / 신뢰성 있는 추정",
               "concept_source": "condition_signal",
               "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
               "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
@@ -1568,7 +1927,7 @@
               "why_required": "reverse_check 풀이를 쓰는 직접 근거다.",
               "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
               "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
-              "evidence_basis": "조건 누락 함정",
+              "evidence_basis": "미래 지출 계획을 현재의무로 보거나 가능성 낮은 청구를 부채로 인식하는 함정",
               "confidence": 0.76
             }
           ],
@@ -1603,39 +1962,99 @@
         "working_capital"
       ],
       "explanation": "간접법: 당기순이익 500,000 + 감가상각비 120,000(비현금비용 가산) - 유형자산처분이익 30,000(투자활동 분류이므로 영업에서 제거) - 매출채권 증가 50,000(자산 증가 = 현금 유출) + 매입채무 증가 40,000(부채 증가 = 현금 유출 지연) = 580,000원.",
+      "question_analysis": {
+        "examiner_intent": "문항 조건에서 필요한 개념 체계(간접법 영업활동 현금흐름 조정 개념)를 식별하고 요구 산출물(간접법)까지 연결하는 능력을 본다.",
+        "question_type": "calculation",
+        "asked_output": "간접법",
+        "concept_combination": [
+          {
+            "concept": "간접법 영업활동 현금흐름 조정",
+            "paired_with": [
+              "간접법",
+              "당기순이익",
+              "비현금비용"
+            ],
+            "why_combined": "단일 암기가 아니라 조건 신호, 계산 또는 분류 기준, 오답 함정을 동시에 판별하게 하려는 조합이다.",
+            "examiner_objective": "요구 산출물(간접법)을 구하기 전에 어떤 개념 체계를 먼저 선택해야 하는지 검증한다."
+          }
+        ],
+        "stem_conditions": [
+          {
+            "text": "간접법",
+            "role": "trigger",
+            "why_it_matters": "간접법 신호가 간접법 영업활동 현금흐름 조정 개념 적용 여부를 결정한다."
+          },
+          {
+            "text": "당기순이익",
+            "role": "trigger",
+            "why_it_matters": "당기순이익 신호가 간접법 영업활동 현금흐름 조정 개념 적용 여부를 결정한다."
+          },
+          {
+            "text": "간접법",
+            "role": "ask",
+            "why_it_matters": "문제가 최종적으로 요구하는 산출물이다."
+          },
+          {
+            "text": "처분이익을 더하거나 매출채권 증가를 더하는 부호 반전 함정",
+            "role": "distractor",
+            "why_it_matters": "출제자가 오답 선택지를 만들기 위해 넣은 대표 혼동 지점이다."
+          }
+        ],
+        "question_stem_parse": {
+          "ask_verb": "calculate",
+          "target_entity": "간접법",
+          "time_scope": "stem-defined",
+          "negation": false,
+          "unit_or_rounding": "stem-defined",
+          "must_not_miss": [
+            "간접법",
+            "당기순이익",
+            "비현금비용"
+          ]
+        },
+        "intent_hypothesis": {
+          "primary": "정답 계산 전에 간접법 영업활동 현금흐름 조정 개념 체계를 선택할 수 있는지 검증한다.",
+          "secondary": [
+            "처분이익을 더하거나 매출채권 증가를 더하는 부호 반전 함정을 피하는지 확인한다.",
+            "본문 조건과 보기의 오답 유인을 연결해 판별하게 한다."
+          ],
+          "confidence": 0.78
+        }
+      },
       "solution_paths": [
         {
           "path_id": "cpa1-eval-accounting-007:direct",
           "path_type": "direct",
           "label": "정석식",
-          "why_this_path": "문제의 핵심 개념가 문제 본문에 직접 드러나므로 정의와 공식으로 바로 푼다.",
+          "why_this_path": "간접법 영업활동 현금흐름 조정가 문제 본문에 직접 드러나므로 정의와 공식으로 바로 푼다.",
           "trigger_signals": [
-            "재무회계: 현금흐름표",
-            "cash_flow",
-            "indirect_method"
+            "간접법",
+            "당기순이익",
+            "비현금비용"
           ],
           "do_not_use_when": [
             "조건이 시점별로 섞여 있거나 선택지 함정이 강하면 구조식으로 전환"
           ],
           "ordered_steps": [
-            "핵심 개념을 찾는다.",
-            "조건을 분리한다.",
-            "정답 보기와 대조한다."
+            "당기순이익에서 출발한다.",
+            "감가상각비 같은 비현금비용은 가산하고 처분이익은 차감한다.",
+            "매출채권 증가는 차감, 매입채무 증가는 가산한다.",
+            "조정 후 영업활동 현금흐름 580,000원를 선택한다."
           ],
           "answer_index": 1,
           "answer_text": "580,000원",
           "concept_links": [
             {
-              "concept_label": "문제의 핵심 개념",
+              "concept_label": "간접법 영업활동 현금흐름 조정",
               "concept_source": "unit_profile",
               "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
-              "decision_test": "본문에 재무회계: 현금흐름표, cash_flow 신호가 보이는가?",
+              "decision_test": "본문에 간접법, 당기순이익 신호가 보이는가?",
               "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
               "evidence_basis": "unit=cash_flow; tags=재무회계: 현금흐름표, cash_flow, indirect_method, working_capital",
               "confidence": 0.82
             },
             {
-              "concept_label": "재무회계: 현금흐름표 / cash_flow / indirect_method",
+              "concept_label": "간접법 / 당기순이익 / 비현금비용",
               "concept_source": "condition_signal",
               "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
               "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
@@ -1649,7 +2068,7 @@
               "why_required": "direct 풀이를 쓰는 직접 근거다.",
               "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
               "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
-              "evidence_basis": "조건 누락 함정",
+              "evidence_basis": "처분이익을 더하거나 매출채권 증가를 더하는 부호 반전 함정",
               "confidence": 0.76
             }
           ],
@@ -1662,33 +2081,34 @@
           "label": "표/구조식",
           "why_this_path": "조건을 표로 분리해야 판매 전후, 과세/면세, 증가/감소 같은 방향 실수를 줄일 수 있다.",
           "trigger_signals": [
-            "재무회계: 현금흐름표",
-            "cash_flow",
-            "indirect_method",
-            "working_capital"
+            "간접법",
+            "당기순이익",
+            "비현금비용",
+            "처분손익",
+            "운전자본 변동"
           ],
           "do_not_use_when": [
             "조건이 하나뿐이면 표 작성보다 정석식이 빠름"
           ],
           "ordered_steps": [
-            "조건표를 만든다.",
-            "방향을 판별한다.",
-            "보기와 비교한다."
+            "비현금손익, 투자활동손익 제거, 운전자본 변동을 세 구역으로 나눈다.",
+            "자산 증가는 현금 유출, 부채 증가는 현금 유출 지연으로 표시한다.",
+            "각 조정의 부호를 더하기 전에 한 번 검산한다."
           ],
           "answer_index": 1,
           "answer_text": "580,000원",
           "concept_links": [
             {
-              "concept_label": "문제의 핵심 개념",
+              "concept_label": "간접법 영업활동 현금흐름 조정",
               "concept_source": "unit_profile",
               "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
-              "decision_test": "본문에 재무회계: 현금흐름표, cash_flow 신호가 보이는가?",
+              "decision_test": "본문에 간접법, 당기순이익 신호가 보이는가?",
               "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
               "evidence_basis": "unit=cash_flow; tags=재무회계: 현금흐름표, cash_flow, indirect_method, working_capital",
               "confidence": 0.82
             },
             {
-              "concept_label": "재무회계: 현금흐름표 / cash_flow / indirect_method",
+              "concept_label": "간접법 / 당기순이익 / 비현금비용",
               "concept_source": "condition_signal",
               "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
               "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
@@ -1702,7 +2122,7 @@
               "why_required": "structure 풀이를 쓰는 직접 근거다.",
               "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
               "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
-              "evidence_basis": "조건 누락 함정",
+              "evidence_basis": "처분이익을 더하거나 매출채권 증가를 더하는 부호 반전 함정",
               "confidence": 0.76
             }
           ],
@@ -1716,7 +2136,7 @@
           "why_this_path": "객관식에서는 대표 함정을 먼저 제거하면 계산량과 검산 부담이 줄어든다.",
           "trigger_signals": [
             "보기 중 하나가 대표 함정값",
-            "조건 누락 함정"
+            "처분이익을 더하거나 매출채권 증가를 더하는 부호 반전 함정"
           ],
           "do_not_use_when": [
             "선택지가 모두 근접 숫자이면 제거식만으로 확정하지 않음"
@@ -1730,16 +2150,16 @@
           "answer_text": "580,000원",
           "concept_links": [
             {
-              "concept_label": "문제의 핵심 개념",
+              "concept_label": "간접법 영업활동 현금흐름 조정",
               "concept_source": "unit_profile",
               "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
-              "decision_test": "본문에 재무회계: 현금흐름표, cash_flow 신호가 보이는가?",
+              "decision_test": "본문에 간접법, 당기순이익 신호가 보이는가?",
               "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
               "evidence_basis": "unit=cash_flow; tags=재무회계: 현금흐름표, cash_flow, indirect_method, working_capital",
               "confidence": 0.82
             },
             {
-              "concept_label": "재무회계: 현금흐름표 / cash_flow / indirect_method",
+              "concept_label": "간접법 / 당기순이익 / 비현금비용",
               "concept_source": "condition_signal",
               "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
               "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
@@ -1753,7 +2173,7 @@
               "why_required": "choice_elimination 풀이를 쓰는 직접 근거다.",
               "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
               "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
-              "evidence_basis": "조건 누락 함정",
+              "evidence_basis": "처분이익을 더하거나 매출채권 증가를 더하는 부호 반전 함정",
               "confidence": 0.76
             }
           ],
@@ -1762,7 +2182,7 @@
               "choice_index": 0,
               "choice_text": "550,000원",
               "verdict": "eliminate",
-              "reason": "핵심 조건 또는 계산 방향과 맞지 않는다."
+              "reason": "매입채무 증가 또는 매출채권 증가의 부호를 잘못 적용한 값이다."
             },
             {
               "choice_index": 1,
@@ -1774,13 +2194,13 @@
               "choice_index": 2,
               "choice_text": "620,000원",
               "verdict": "eliminate",
-              "reason": "핵심 조건 또는 계산 방향과 맞지 않는다."
+              "reason": "처분이익 제거 방향을 반대로 적용한 값이다."
             },
             {
               "choice_index": 3,
               "choice_text": "740,000원",
               "verdict": "eliminate",
-              "reason": "핵심 조건 또는 계산 방향과 맞지 않는다."
+              "reason": "감가상각비만 더하고 운전자본 조정을 누락한 값이다."
             }
           ],
           "confidence": 0.78
@@ -1800,23 +2220,23 @@
           ],
           "ordered_steps": [
             "정답 후보 580,000원를 문제의 핵심 조건에 다시 대입한다.",
-            "대표 함정: 조건 누락 함정와 비교한다.",
+            "대표 함정: 처분이익을 더하거나 매출채권 증가를 더하는 부호 반전 함정와 비교한다.",
             "해설의 계산 또는 분류 기준과 같은 결론인지 확인한다."
           ],
           "answer_index": 1,
           "answer_text": "580,000원",
           "concept_links": [
             {
-              "concept_label": "문제의 핵심 개념",
+              "concept_label": "간접법 영업활동 현금흐름 조정",
               "concept_source": "unit_profile",
               "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
-              "decision_test": "본문에 재무회계: 현금흐름표, cash_flow 신호가 보이는가?",
+              "decision_test": "본문에 간접법, 당기순이익 신호가 보이는가?",
               "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
               "evidence_basis": "unit=cash_flow; tags=재무회계: 현금흐름표, cash_flow, indirect_method, working_capital",
               "confidence": 0.82
             },
             {
-              "concept_label": "재무회계: 현금흐름표 / cash_flow / indirect_method",
+              "concept_label": "간접법 / 당기순이익 / 비현금비용",
               "concept_source": "condition_signal",
               "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
               "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
@@ -1830,7 +2250,329 @@
               "why_required": "reverse_check 풀이를 쓰는 직접 근거다.",
               "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
               "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
-              "evidence_basis": "조건 누락 함정",
+              "evidence_basis": "처분이익을 더하거나 매출채권 증가를 더하는 부호 반전 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        }
+      ]
+    },
+    {
+      "question_id": "cpa1-eval-accounting-008",
+      "exam": "CPA_1",
+      "subject": "accounting",
+      "unit": "equity",
+      "tutorial_id": "tutorial_cpa1_accounting",
+      "rights_status": "synthetic_seed",
+      "review_status": "expert_reviewed",
+      "applicable_year": 2026,
+      "stem": "㈜CF가 자기주식 100주를 주당 5,000원에 취득한 후, 60주를 주당 7,000원에 재발행했다. 자기주식 재발행으로 인식할 회계처리로 옳은 것은?",
+      "stem_hash": "385762b6902950aeb1695c2c465db94c5c9073e729475069f937fe6a9d3052d0",
+      "choices": [
+        "현금 420,000원 / 자기주식 300,000원, 자기주식처분이익(자본잉여금) 120,000원",
+        "현금 420,000원 / 자기주식 420,000원",
+        "현금 420,000원 / 자기주식 300,000원, 자기주식처분이익(당기손익) 120,000원",
+        "현금 420,000원 / 자기주식 420,000원, 자본잉여금 차변 120,000원"
+      ],
+      "correct_choice": 0,
+      "correct_answer": "현금 420,000원 / 자기주식 300,000원, 자기주식처분이익(자본잉여금) 120,000원",
+      "concept_tags": [
+        "재무회계: 자본",
+        "equity",
+        "treasury_stock"
+      ],
+      "explanation": "자기주식 재발행은 자본거래로 손익을 인식하지 않는다. 재발행가 60주×7,000=420,000원, 취득원가 60주×5,000=300,000원. 차액 120,000원은 자기주식처분이익(자본잉여금)으로 계상. 손실 발생 시에는 자기주식처분이익 잔액과 우선 상계.",
+      "question_analysis": {
+        "examiner_intent": "문항 조건에서 필요한 개념 체계(자기주식 재발행의 자본거래 처리 개념)를 식별하고 요구 산출물(자기주식)까지 연결하는 능력을 본다.",
+        "question_type": "statement_selection",
+        "asked_output": "자기주식",
+        "concept_combination": [
+          {
+            "concept": "자기주식 재발행의 자본거래 처리",
+            "paired_with": [
+              "자기주식",
+              "재발행",
+              "취득원가"
+            ],
+            "why_combined": "단일 암기가 아니라 조건 신호, 계산 또는 분류 기준, 오답 함정을 동시에 판별하게 하려는 조합이다.",
+            "examiner_objective": "요구 산출물(자기주식)을 구하기 전에 어떤 개념 체계를 먼저 선택해야 하는지 검증한다."
+          }
+        ],
+        "stem_conditions": [
+          {
+            "text": "자기주식",
+            "role": "trigger",
+            "why_it_matters": "자기주식 신호가 자기주식 재발행의 자본거래 처리 개념 적용 여부를 결정한다."
+          },
+          {
+            "text": "재발행",
+            "role": "trigger",
+            "why_it_matters": "재발행 신호가 자기주식 재발행의 자본거래 처리 개념 적용 여부를 결정한다."
+          },
+          {
+            "text": "자기주식",
+            "role": "ask",
+            "why_it_matters": "문제가 최종적으로 요구하는 산출물이다."
+          },
+          {
+            "text": "자기주식처분이익을 당기손익으로 인식하는 함정",
+            "role": "distractor",
+            "why_it_matters": "출제자가 오답 선택지를 만들기 위해 넣은 대표 혼동 지점이다."
+          }
+        ],
+        "question_stem_parse": {
+          "ask_verb": "select",
+          "target_entity": "자기주식",
+          "time_scope": "stem-defined",
+          "negation": false,
+          "unit_or_rounding": "stem-defined",
+          "must_not_miss": [
+            "자기주식",
+            "재발행",
+            "취득원가"
+          ]
+        },
+        "intent_hypothesis": {
+          "primary": "정답 계산 전에 자기주식 재발행의 자본거래 처리 개념 체계를 선택할 수 있는지 검증한다.",
+          "secondary": [
+            "자기주식처분이익을 당기손익으로 인식하는 함정을 피하는지 확인한다.",
+            "본문 조건과 보기의 오답 유인을 연결해 판별하게 한다."
+          ],
+          "confidence": 0.78
+        }
+      },
+      "solution_paths": [
+        {
+          "path_id": "cpa1-eval-accounting-008:direct",
+          "path_type": "direct",
+          "label": "정석식",
+          "why_this_path": "자기주식 재발행의 자본거래 처리가 문제 본문에 직접 드러나므로 정의와 공식으로 바로 푼다.",
+          "trigger_signals": [
+            "자기주식",
+            "재발행",
+            "취득원가"
+          ],
+          "do_not_use_when": [
+            "조건이 시점별로 섞여 있거나 선택지 함정이 강하면 구조식으로 전환"
+          ],
+          "ordered_steps": [
+            "재발행한 주식 수에 취득단가를 곱해 자기주식 감소액을 계산한다.",
+            "재발행가에 주식 수를 곱해 현금 유입액을 계산한다.",
+            "차액은 당기손익이 아니라 자기주식처분이익 등 자본잉여금으로 처리한다.",
+            "자본거래 처리가 반영된 보기 1번을 선택한다."
+          ],
+          "answer_index": 0,
+          "answer_text": "현금 420,000원 / 자기주식 300,000원, 자기주식처분이익(자본잉여금) 120,000원",
+          "concept_links": [
+            {
+              "concept_label": "자기주식 재발행의 자본거래 처리",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 자기주식, 재발행 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=equity; tags=재무회계: 자본, equity, treasury_stock",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "자기주식 / 재발행 / 취득원가",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "㈜CF가 자기주식 100주를 주당 5,000원에 취득한 후, 60주를 주당 7,000원에 재발행했다. 자기주식 재발행으로 인식할 회계처리로 옳은 것은?",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "definition_or_formula",
+              "concept_source": "solution_path",
+              "why_required": "direct 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "자기주식처분이익을 당기손익으로 인식하는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-accounting-008:structure",
+          "path_type": "structure",
+          "label": "표/구조식",
+          "why_this_path": "조건을 표로 분리해야 판매 전후, 과세/면세, 증가/감소 같은 방향 실수를 줄일 수 있다.",
+          "trigger_signals": [
+            "자기주식",
+            "재발행",
+            "취득원가",
+            "재발행가",
+            "자본잉여금"
+          ],
+          "do_not_use_when": [
+            "조건이 하나뿐이면 표 작성보다 정석식이 빠름"
+          ],
+          "ordered_steps": [
+            "현금, 자기주식, 자본잉여금 세 칸으로 분개를 나눈다.",
+            "자기주식은 원가로 제거하고 재발행가와의 차액만 자본잉여금으로 보낸다.",
+            "손익계정이 들어간 보기를 제거한다."
+          ],
+          "answer_index": 0,
+          "answer_text": "현금 420,000원 / 자기주식 300,000원, 자기주식처분이익(자본잉여금) 120,000원",
+          "concept_links": [
+            {
+              "concept_label": "자기주식 재발행의 자본거래 처리",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 자기주식, 재발행 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=equity; tags=재무회계: 자본, equity, treasury_stock",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "자기주식 / 재발행 / 취득원가",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "㈜CF가 자기주식 100주를 주당 5,000원에 취득한 후, 60주를 주당 7,000원에 재발행했다. 자기주식 재발행으로 인식할 회계처리로 옳은 것은?",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "condition_structure",
+              "concept_source": "solution_path",
+              "why_required": "structure 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "자기주식처분이익을 당기손익으로 인식하는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-accounting-008:choice_elimination",
+          "path_type": "choice_elimination",
+          "label": "선택지 제거식",
+          "why_this_path": "객관식에서는 대표 함정을 먼저 제거하면 계산량과 검산 부담이 줄어든다.",
+          "trigger_signals": [
+            "보기 중 하나가 대표 함정값",
+            "자기주식처분이익을 당기손익으로 인식하는 함정"
+          ],
+          "do_not_use_when": [
+            "선택지가 모두 근접 숫자이면 제거식만으로 확정하지 않음"
+          ],
+          "ordered_steps": [
+            "각 보기가 어떤 계산 또는 분류를 전제로 하는지 표시한다.",
+            "핵심 신호와 맞지 않는 보기를 제거한다.",
+            "남은 보기 1번(현금 420,000원 / 자기주식 300,000원, 자기주식처분이익(자본잉여금) 120,000원)을 정답으로 확정한다."
+          ],
+          "answer_index": 0,
+          "answer_text": "현금 420,000원 / 자기주식 300,000원, 자기주식처분이익(자본잉여금) 120,000원",
+          "concept_links": [
+            {
+              "concept_label": "자기주식 재발행의 자본거래 처리",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 자기주식, 재발행 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=equity; tags=재무회계: 자본, equity, treasury_stock",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "자기주식 / 재발행 / 취득원가",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "㈜CF가 자기주식 100주를 주당 5,000원에 취득한 후, 60주를 주당 7,000원에 재발행했다. 자기주식 재발행으로 인식할 회계처리로 옳은 것은?",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "distractor_filter",
+              "concept_source": "solution_path",
+              "why_required": "choice_elimination 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "자기주식처분이익을 당기손익으로 인식하는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [
+            {
+              "choice_index": 0,
+              "choice_text": "현금 420,000원 / 자기주식 300,000원, 자기주식처분이익(자본잉여금) 120,000원",
+              "verdict": "keep_correct",
+              "reason": "핵심 개념과 조건 신호를 모두 만족하는 보기다."
+            },
+            {
+              "choice_index": 1,
+              "choice_text": "현금 420,000원 / 자기주식 420,000원",
+              "verdict": "eliminate",
+              "reason": "자기주식을 재발행가로 제거해 취득원가 기준을 놓쳤다."
+            },
+            {
+              "choice_index": 2,
+              "choice_text": "현금 420,000원 / 자기주식 300,000원, 자기주식처분이익(당기손익) 120,000원",
+              "verdict": "eliminate",
+              "reason": "차액을 당기손익으로 처리해 자본거래 원칙을 위반했다."
+            },
+            {
+              "choice_index": 3,
+              "choice_text": "현금 420,000원 / 자기주식 420,000원, 자본잉여금 차변 120,000원",
+              "verdict": "eliminate",
+              "reason": "차액의 방향과 계정 위치가 반대다."
+            }
+          ],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-accounting-008:reverse_check",
+          "path_type": "reverse_check",
+          "label": "검산식",
+          "why_this_path": "정답을 원문 조건과 해설 기준에 되돌려 넣어 계산값과 분류 기준이 맞는지 확인한다.",
+          "trigger_signals": [
+            "정답 확정 직후",
+            "대표 함정 확인",
+            "시간 10초 검산 가능"
+          ],
+          "do_not_use_when": [
+            "아직 풀이식이 없거나 시간이 skip threshold를 넘긴 경우"
+          ],
+          "ordered_steps": [
+            "정답 후보 현금 420,000원 / 자기주식 300,000원, 자기주식처분이익(자본잉여금) 120,000원를 문제의 핵심 조건에 다시 대입한다.",
+            "대표 함정: 자기주식처분이익을 당기손익으로 인식하는 함정와 비교한다.",
+            "해설의 계산 또는 분류 기준과 같은 결론인지 확인한다."
+          ],
+          "answer_index": 0,
+          "answer_text": "현금 420,000원 / 자기주식 300,000원, 자기주식처분이익(자본잉여금) 120,000원",
+          "concept_links": [
+            {
+              "concept_label": "자기주식 재발행의 자본거래 처리",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 자기주식, 재발행 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=equity; tags=재무회계: 자본, equity, treasury_stock",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "자기주식 / 재발행 / 취득원가",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "㈜CF가 자기주식 100주를 주당 5,000원에 취득한 후, 60주를 주당 7,000원에 재발행했다. 자기주식 재발행으로 인식할 회계처리로 옳은 것은?",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "answer_consistency",
+              "concept_source": "solution_path",
+              "why_required": "reverse_check 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "자기주식처분이익을 당기손익으로 인식하는 함정",
               "confidence": 0.76
             }
           ],
@@ -1865,6 +2607,65 @@
         "verbal_rule"
       ],
       "explanation": "부가가치세법상 면세는 기초생활필수재(미가공 식료품, 수돗물 등), 국민후생 용역(의료, 교육), 문화 관련 용역 등에 한정된다. 일반 음식점의 외식 서비스는 과세 대상이다. 음식점의 일부 농산물 매입은 의제매입세액 공제 대상이 될 수 있으나 서비스 자체는 과세.",
+      "question_analysis": {
+        "examiner_intent": "문항 조건에서 필요한 개념 체계(부가가치세 면세와 과세 거래 분류)를 식별하고 요구 산출물(면세 대상)까지 연결하는 능력을 본다.",
+        "question_type": "statement_selection",
+        "asked_output": "면세 대상",
+        "concept_combination": [
+          {
+            "concept": "부가가치세 면세와 과세 거래 분류",
+            "paired_with": [
+              "면세 대상",
+              "미가공 식료품",
+              "수돗물"
+            ],
+            "why_combined": "단일 암기가 아니라 조건 신호, 계산 또는 분류 기준, 오답 함정을 동시에 판별하게 하려는 조합이다.",
+            "examiner_objective": "요구 산출물(면세 대상)을 구하기 전에 어떤 개념 체계를 먼저 선택해야 하는지 검증한다."
+          }
+        ],
+        "stem_conditions": [
+          {
+            "text": "면세 대상",
+            "role": "trigger",
+            "why_it_matters": "면세 대상 신호가 부가가치세 면세와 과세 거래 분류 적용 여부를 결정한다."
+          },
+          {
+            "text": "미가공 식료품",
+            "role": "trigger",
+            "why_it_matters": "미가공 식료품 신호가 부가가치세 면세와 과세 거래 분류 적용 여부를 결정한다."
+          },
+          {
+            "text": "면세 대상",
+            "role": "ask",
+            "why_it_matters": "문제가 최종적으로 요구하는 산출물이다."
+          },
+          {
+            "text": "농산물 매입의 의제매입세액 공제와 음식점 용역의 과세 여부를 섞는 함정",
+            "role": "distractor",
+            "why_it_matters": "출제자가 오답 선택지를 만들기 위해 넣은 대표 혼동 지점이다."
+          }
+        ],
+        "question_stem_parse": {
+          "ask_verb": "select",
+          "target_entity": "면세 대상",
+          "time_scope": "stem-defined",
+          "negation": true,
+          "unit_or_rounding": "stem-defined",
+          "must_not_miss": [
+            "면세 대상",
+            "미가공 식료품",
+            "수돗물"
+          ]
+        },
+        "intent_hypothesis": {
+          "primary": "정답 계산 전에 부가가치세 면세와 과세 거래 분류 체계를 선택할 수 있는지 검증한다.",
+          "secondary": [
+            "농산물 매입의 의제매입세액 공제와 음식점 용역의 과세 여부를 섞는 함정을 피하는지 확인한다.",
+            "본문 조건과 보기의 오답 유인을 연결해 판별하게 한다."
+          ],
+          "confidence": 0.78
+        }
+      },
       "solution_paths": [
         {
           "path_id": "cpa1-eval-tax-001:direct",
@@ -2129,6 +2930,65 @@
         "verbal_rule"
       ],
       "explanation": "금융소득(이자 + 배당) 합계 = 1,500 + 600 + 300 = 2,400만원. 기준금액 2,000만원을 초과하므로 전액이 종합과세 대상이 된다. 다만 2,000만원까지는 원천징수세율 14%로 산출세액을 계산하고 그 초과분에 누진세율을 적용하는 식의 비교과세 구조를 따른다. 일부만 종합과세하는 것이 아니라 전액이 종합과세 '대상'이 된다.",
+      "question_analysis": {
+        "examiner_intent": "문항 조건에서 필요한 개념 체계(금융소득 종합과세 기준금액과 전액 대상 판단 개념)를 식별하고 요구 산출물(종합과세 대상)까지 연결하는 능력을 본다.",
+        "question_type": "calculation",
+        "asked_output": "종합과세 대상",
+        "concept_combination": [
+          {
+            "concept": "금융소득 종합과세 기준금액과 전액 대상 판단",
+            "paired_with": [
+              "이자소득",
+              "배당소득",
+              "2,000만원 기준"
+            ],
+            "why_combined": "단일 암기가 아니라 조건 신호, 계산 또는 분류 기준, 오답 함정을 동시에 판별하게 하려는 조합이다.",
+            "examiner_objective": "요구 산출물(종합과세 대상)을 구하기 전에 어떤 개념 체계를 먼저 선택해야 하는지 검증한다."
+          }
+        ],
+        "stem_conditions": [
+          {
+            "text": "이자소득",
+            "role": "trigger",
+            "why_it_matters": "이자소득 신호가 금융소득 종합과세 기준금액과 전액 대상 판단 개념 적용 여부를 결정한다."
+          },
+          {
+            "text": "배당소득",
+            "role": "trigger",
+            "why_it_matters": "배당소득 신호가 금융소득 종합과세 기준금액과 전액 대상 판단 개념 적용 여부를 결정한다."
+          },
+          {
+            "text": "종합과세 대상",
+            "role": "ask",
+            "why_it_matters": "문제가 최종적으로 요구하는 산출물이다."
+          },
+          {
+            "text": "기준금액 초과분만 종합과세 대상이라고 오해하는 함정",
+            "role": "distractor",
+            "why_it_matters": "출제자가 오답 선택지를 만들기 위해 넣은 대표 혼동 지점이다."
+          }
+        ],
+        "question_stem_parse": {
+          "ask_verb": "calculate",
+          "target_entity": "종합과세 대상",
+          "time_scope": "stem-defined",
+          "negation": false,
+          "unit_or_rounding": "stem-defined",
+          "must_not_miss": [
+            "이자소득",
+            "배당소득",
+            "2,000만원 기준"
+          ]
+        },
+        "intent_hypothesis": {
+          "primary": "정답 계산 전에 금융소득 종합과세 기준금액과 전액 대상 판단 개념 체계를 선택할 수 있는지 검증한다.",
+          "secondary": [
+            "기준금액 초과분만 종합과세 대상이라고 오해하는 함정을 피하는지 확인한다.",
+            "본문 조건과 보기의 오답 유인을 연결해 판별하게 한다."
+          ],
+          "confidence": 0.78
+        }
+      },
       "solution_paths": [
         {
           "path_id": "cpa1-eval-tax-002:direct",
@@ -2358,6 +3218,975 @@
               "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
               "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
               "evidence_basis": "기준금액 초과분만 종합과세 대상이라고 오해하는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        }
+      ]
+    },
+    {
+      "question_id": "cpa1-eval-tax-003",
+      "exam": "CPA_1",
+      "subject": "tax",
+      "unit": "corporate_tax",
+      "tutorial_id": "tutorial_cpa1_tax",
+      "rights_status": "synthetic_seed",
+      "review_status": "expert_reviewed",
+      "applicable_year": 2026,
+      "stem": "다음 중 법인세법상 손금에 산입할 수 있는 항목은? (다른 조건은 무시)",
+      "stem_hash": "580d320c2fd66339ed3df1c3d45591b9fe55d705a95b3fa9ae22b89a335f06fa",
+      "choices": [
+        "임원에 대한 한도 초과 상여금",
+        "업무 무관 자산의 유지·관리 비용",
+        "업무용 차량의 적정 한도 내 유류비",
+        "법인이 부담한 대표이사 개인 명의 카드 지출"
+      ],
+      "correct_choice": 2,
+      "correct_answer": "업무용 차량의 적정 한도 내 유류비",
+      "concept_tags": [
+        "세법: 법인세 손금",
+        "corporate_tax",
+        "deductible_expense",
+        "verbal_rule"
+      ],
+      "explanation": "손금산입 일반 원칙: 사업 관련성 + 통상성 + 합리적 한도. 임원 상여 한도 초과는 손금불산입(상여 처분). 업무 무관 자산 관련 비용은 손금불산입. 대표이사 개인 명의 카드 지출은 손금불산입(상여 또는 기타사외유출). 업무용 차량의 한도 내 유류비는 정상 손금.",
+      "question_analysis": {
+        "examiner_intent": "문항 조건에서 필요한 개념 체계(법인세 손금산입의 사업 관련성과 한도 판단 개념)를 식별하고 요구 산출물(손금)까지 연결하는 능력을 본다.",
+        "question_type": "mixed",
+        "asked_output": "손금",
+        "concept_combination": [
+          {
+            "concept": "법인세 손금산입의 사업 관련성과 한도 판단",
+            "paired_with": [
+              "손금",
+              "사업 관련성",
+              "통상성"
+            ],
+            "why_combined": "단일 암기가 아니라 조건 신호, 계산 또는 분류 기준, 오답 함정을 동시에 판별하게 하려는 조합이다.",
+            "examiner_objective": "요구 산출물(손금)을 구하기 전에 어떤 개념 체계를 먼저 선택해야 하는지 검증한다."
+          }
+        ],
+        "stem_conditions": [
+          {
+            "text": "손금",
+            "role": "trigger",
+            "why_it_matters": "손금 신호가 법인세 손금산입의 사업 관련성과 한도 판단 개념 적용 여부를 결정한다."
+          },
+          {
+            "text": "사업 관련성",
+            "role": "trigger",
+            "why_it_matters": "사업 관련성 신호가 법인세 손금산입의 사업 관련성과 한도 판단 개념 적용 여부를 결정한다."
+          },
+          {
+            "text": "손금",
+            "role": "ask",
+            "why_it_matters": "문제가 최종적으로 요구하는 산출물이다."
+          },
+          {
+            "text": "법인이 부담했다는 이유만으로 사적 지출이나 한도 초과 비용을 손금으로 보는 함정",
+            "role": "distractor",
+            "why_it_matters": "출제자가 오답 선택지를 만들기 위해 넣은 대표 혼동 지점이다."
+          }
+        ],
+        "question_stem_parse": {
+          "ask_verb": "solve",
+          "target_entity": "손금",
+          "time_scope": "stem-defined",
+          "negation": false,
+          "unit_or_rounding": "stem-defined",
+          "must_not_miss": [
+            "손금",
+            "사업 관련성",
+            "통상성"
+          ]
+        },
+        "intent_hypothesis": {
+          "primary": "정답 계산 전에 법인세 손금산입의 사업 관련성과 한도 판단 개념 체계를 선택할 수 있는지 검증한다.",
+          "secondary": [
+            "법인이 부담했다는 이유만으로 사적 지출이나 한도 초과 비용을 손금으로 보는 함정을 피하는지 확인한다.",
+            "본문 조건과 보기의 오답 유인을 연결해 판별하게 한다."
+          ],
+          "confidence": 0.78
+        }
+      },
+      "solution_paths": [
+        {
+          "path_id": "cpa1-eval-tax-003:direct",
+          "path_type": "direct",
+          "label": "정석식",
+          "why_this_path": "법인세 손금산입의 사업 관련성과 한도 판단가 문제 본문에 직접 드러나므로 정의와 공식으로 바로 푼다.",
+          "trigger_signals": [
+            "손금",
+            "사업 관련성",
+            "통상성"
+          ],
+          "do_not_use_when": [
+            "조건이 시점별로 섞여 있거나 선택지 함정이 강하면 구조식으로 전환"
+          ],
+          "ordered_steps": [
+            "각 지출이 법인의 사업과 관련되는지 먼저 본다.",
+            "임원 상여, 업무무관 자산, 개인 명의 지출처럼 손금불산입 신호를 제거한다.",
+            "업무용 차량의 적정 한도 내 비용처럼 관련성과 한도를 충족한 항목을 남긴다.",
+            "손금산입 가능한 보기 3번을 선택한다."
+          ],
+          "answer_index": 2,
+          "answer_text": "업무용 차량의 적정 한도 내 유류비",
+          "concept_links": [
+            {
+              "concept_label": "법인세 손금산입의 사업 관련성과 한도 판단",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 손금, 사업 관련성 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=corporate_tax; tags=세법: 법인세 손금, corporate_tax, deductible_expense, verbal_rule",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "손금 / 사업 관련성 / 통상성",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "다음 중 법인세법상 손금에 산입할 수 있는 항목은? (다른 조건은 무시)",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "definition_or_formula",
+              "concept_source": "solution_path",
+              "why_required": "direct 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "법인이 부담했다는 이유만으로 사적 지출이나 한도 초과 비용을 손금으로 보는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-tax-003:structure",
+          "path_type": "structure",
+          "label": "표/구조식",
+          "why_this_path": "조건을 표로 분리해야 판매 전후, 과세/면세, 증가/감소 같은 방향 실수를 줄일 수 있다.",
+          "trigger_signals": [
+            "손금",
+            "사업 관련성",
+            "통상성",
+            "한도",
+            "업무용"
+          ],
+          "do_not_use_when": [
+            "조건이 하나뿐이면 표 작성보다 정석식이 빠름"
+          ],
+          "ordered_steps": [
+            "사업 관련성, 법정 한도, 사적 지출 여부 세 칸으로 분류한다.",
+            "사적 지출이나 한도 초과 항목은 손금불산입으로 표시한다.",
+            "남은 업무 관련 정상 비용만 손금 후보로 확정한다."
+          ],
+          "answer_index": 2,
+          "answer_text": "업무용 차량의 적정 한도 내 유류비",
+          "concept_links": [
+            {
+              "concept_label": "법인세 손금산입의 사업 관련성과 한도 판단",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 손금, 사업 관련성 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=corporate_tax; tags=세법: 법인세 손금, corporate_tax, deductible_expense, verbal_rule",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "손금 / 사업 관련성 / 통상성",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "다음 중 법인세법상 손금에 산입할 수 있는 항목은? (다른 조건은 무시)",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "condition_structure",
+              "concept_source": "solution_path",
+              "why_required": "structure 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "법인이 부담했다는 이유만으로 사적 지출이나 한도 초과 비용을 손금으로 보는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-tax-003:choice_elimination",
+          "path_type": "choice_elimination",
+          "label": "선택지 제거식",
+          "why_this_path": "객관식에서는 대표 함정을 먼저 제거하면 계산량과 검산 부담이 줄어든다.",
+          "trigger_signals": [
+            "보기 중 하나가 대표 함정값",
+            "법인이 부담했다는 이유만으로 사적 지출이나 한도 초과 비용을 손금으로 보는 함정"
+          ],
+          "do_not_use_when": [
+            "선택지가 모두 근접 숫자이면 제거식만으로 확정하지 않음"
+          ],
+          "ordered_steps": [
+            "각 보기가 어떤 계산 또는 분류를 전제로 하는지 표시한다.",
+            "핵심 신호와 맞지 않는 보기를 제거한다.",
+            "남은 보기 3번(업무용 차량의 적정 한도 내 유류비)을 정답으로 확정한다."
+          ],
+          "answer_index": 2,
+          "answer_text": "업무용 차량의 적정 한도 내 유류비",
+          "concept_links": [
+            {
+              "concept_label": "법인세 손금산입의 사업 관련성과 한도 판단",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 손금, 사업 관련성 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=corporate_tax; tags=세법: 법인세 손금, corporate_tax, deductible_expense, verbal_rule",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "손금 / 사업 관련성 / 통상성",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "다음 중 법인세법상 손금에 산입할 수 있는 항목은? (다른 조건은 무시)",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "distractor_filter",
+              "concept_source": "solution_path",
+              "why_required": "choice_elimination 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "법인이 부담했다는 이유만으로 사적 지출이나 한도 초과 비용을 손금으로 보는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [
+            {
+              "choice_index": 0,
+              "choice_text": "임원에 대한 한도 초과 상여금",
+              "verdict": "eliminate",
+              "reason": "임원 상여 한도 초과분은 손금불산입 대상이다."
+            },
+            {
+              "choice_index": 1,
+              "choice_text": "업무 무관 자산의 유지·관리 비용",
+              "verdict": "eliminate",
+              "reason": "업무 무관 자산 관련 비용은 사업 관련성이 없다."
+            },
+            {
+              "choice_index": 2,
+              "choice_text": "업무용 차량의 적정 한도 내 유류비",
+              "verdict": "keep_correct",
+              "reason": "핵심 개념과 조건 신호를 모두 만족하는 보기다."
+            },
+            {
+              "choice_index": 3,
+              "choice_text": "법인이 부담한 대표이사 개인 명의 카드 지출",
+              "verdict": "eliminate",
+              "reason": "대표이사 개인 명의 카드 지출은 법인 손금으로 보기 어렵다."
+            }
+          ],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-tax-003:reverse_check",
+          "path_type": "reverse_check",
+          "label": "검산식",
+          "why_this_path": "정답을 원문 조건과 해설 기준에 되돌려 넣어 계산값과 분류 기준이 맞는지 확인한다.",
+          "trigger_signals": [
+            "정답 확정 직후",
+            "대표 함정 확인",
+            "시간 10초 검산 가능"
+          ],
+          "do_not_use_when": [
+            "아직 풀이식이 없거나 시간이 skip threshold를 넘긴 경우"
+          ],
+          "ordered_steps": [
+            "정답 후보 업무용 차량의 적정 한도 내 유류비를 문제의 핵심 조건에 다시 대입한다.",
+            "대표 함정: 법인이 부담했다는 이유만으로 사적 지출이나 한도 초과 비용을 손금으로 보는 함정와 비교한다.",
+            "해설의 계산 또는 분류 기준과 같은 결론인지 확인한다."
+          ],
+          "answer_index": 2,
+          "answer_text": "업무용 차량의 적정 한도 내 유류비",
+          "concept_links": [
+            {
+              "concept_label": "법인세 손금산입의 사업 관련성과 한도 판단",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 손금, 사업 관련성 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=corporate_tax; tags=세법: 법인세 손금, corporate_tax, deductible_expense, verbal_rule",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "손금 / 사업 관련성 / 통상성",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "다음 중 법인세법상 손금에 산입할 수 있는 항목은? (다른 조건은 무시)",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "answer_consistency",
+              "concept_source": "solution_path",
+              "why_required": "reverse_check 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "법인이 부담했다는 이유만으로 사적 지출이나 한도 초과 비용을 손금으로 보는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        }
+      ]
+    },
+    {
+      "question_id": "cpa1-eval-tax-004",
+      "exam": "CPA_1",
+      "subject": "tax",
+      "unit": "national_tax_basic_act",
+      "tutorial_id": "tutorial_cpa1_tax",
+      "rights_status": "synthetic_seed",
+      "review_status": "expert_reviewed",
+      "applicable_year": 2026,
+      "stem": "다음 중 국세기본법상 국세 부과의 제척기간으로 옳은 것은? (부정행위 등 가중 사유 없음)",
+      "stem_hash": "e60a88e5d31cb1c22788fe6112223c2064d2427251df2f2012b4cd877d2473d5",
+      "choices": [
+        "신고납세 세목의 일반 제척기간은 부과할 수 있는 날부터 5년이다.",
+        "부과과세 세목의 일반 제척기간은 10년이다.",
+        "원천징수의 일반 제척기간은 3년이다.",
+        "모든 세목의 일반 제척기간은 7년이다."
+      ],
+      "correct_choice": 0,
+      "correct_answer": "신고납세 세목의 일반 제척기간은 부과할 수 있는 날부터 5년이다.",
+      "concept_tags": [
+        "세법: 국세기본법",
+        "national_tax_basic_act",
+        "statute_of_limitations",
+        "verbal_rule"
+      ],
+      "explanation": "국세 부과 제척기간 일반 원칙: 신고납세·부과과세 세목 모두 부과할 수 있는 날부터 5년. 부정행위가 있는 경우 10년 또는 15년으로 가중. 원천징수는 별도의 제척기간 규정이 없고 5년 원칙 또는 소멸시효 적용. '7년 일률'은 잘못된 선지.",
+      "question_analysis": {
+        "examiner_intent": "문항 조건에서 필요한 개념 체계(국세 부과 제척기간의 일반 원칙 개념)를 식별하고 요구 산출물(국세기본법)까지 연결하는 능력을 본다.",
+        "question_type": "statement_selection",
+        "asked_output": "국세기본법",
+        "concept_combination": [
+          {
+            "concept": "국세 부과 제척기간의 일반 원칙",
+            "paired_with": [
+              "국세기본법",
+              "제척기간",
+              "부과할 수 있는 날"
+            ],
+            "why_combined": "단일 암기가 아니라 조건 신호, 계산 또는 분류 기준, 오답 함정을 동시에 판별하게 하려는 조합이다.",
+            "examiner_objective": "요구 산출물(국세기본법)을 구하기 전에 어떤 개념 체계를 먼저 선택해야 하는지 검증한다."
+          }
+        ],
+        "stem_conditions": [
+          {
+            "text": "국세기본법",
+            "role": "trigger",
+            "why_it_matters": "국세기본법 신호가 국세 부과 제척기간의 일반 원칙 개념 적용 여부를 결정한다."
+          },
+          {
+            "text": "제척기간",
+            "role": "trigger",
+            "why_it_matters": "제척기간 신호가 국세 부과 제척기간의 일반 원칙 개념 적용 여부를 결정한다."
+          },
+          {
+            "text": "국세기본법",
+            "role": "ask",
+            "why_it_matters": "문제가 최종적으로 요구하는 산출물이다."
+          },
+          {
+            "text": "부정행위 가중기간이나 임의 기간을 일반 제척기간으로 고르는 함정",
+            "role": "distractor",
+            "why_it_matters": "출제자가 오답 선택지를 만들기 위해 넣은 대표 혼동 지점이다."
+          }
+        ],
+        "question_stem_parse": {
+          "ask_verb": "select",
+          "target_entity": "국세기본법",
+          "time_scope": "stem-defined",
+          "negation": false,
+          "unit_or_rounding": "stem-defined",
+          "must_not_miss": [
+            "국세기본법",
+            "제척기간",
+            "부과할 수 있는 날"
+          ]
+        },
+        "intent_hypothesis": {
+          "primary": "정답 계산 전에 국세 부과 제척기간의 일반 원칙 개념 체계를 선택할 수 있는지 검증한다.",
+          "secondary": [
+            "부정행위 가중기간이나 임의 기간을 일반 제척기간으로 고르는 함정을 피하는지 확인한다.",
+            "본문 조건과 보기의 오답 유인을 연결해 판별하게 한다."
+          ],
+          "confidence": 0.78
+        }
+      },
+      "solution_paths": [
+        {
+          "path_id": "cpa1-eval-tax-004:direct",
+          "path_type": "direct",
+          "label": "정석식",
+          "why_this_path": "국세 부과 제척기간의 일반 원칙가 문제 본문에 직접 드러나므로 정의와 공식으로 바로 푼다.",
+          "trigger_signals": [
+            "국세기본법",
+            "제척기간",
+            "부과할 수 있는 날"
+          ],
+          "do_not_use_when": [
+            "조건이 시점별로 섞여 있거나 선택지 함정이 강하면 구조식으로 전환"
+          ],
+          "ordered_steps": [
+            "문제가 가중 사유 없는 일반 제척기간을 묻는지 확인한다.",
+            "신고납세 세목의 일반 원칙을 부과할 수 있는 날부터 5년으로 잡는다.",
+            "10년, 7년 일률, 3년 같은 가중 또는 오답 기간을 제거한다.",
+            "일반 원칙을 말한 보기 1번을 선택한다."
+          ],
+          "answer_index": 0,
+          "answer_text": "신고납세 세목의 일반 제척기간은 부과할 수 있는 날부터 5년이다.",
+          "concept_links": [
+            {
+              "concept_label": "국세 부과 제척기간의 일반 원칙",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 국세기본법, 제척기간 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=national_tax_basic_act; tags=세법: 국세기본법, national_tax_basic_act, statute_of_limitations, verbal_rule",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "국세기본법 / 제척기간 / 부과할 수 있는 날",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "다음 중 국세기본법상 국세 부과의 제척기간으로 옳은 것은? (부정행위 등 가중 사유 없음)",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "definition_or_formula",
+              "concept_source": "solution_path",
+              "why_required": "direct 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "부정행위 가중기간이나 임의 기간을 일반 제척기간으로 고르는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-tax-004:structure",
+          "path_type": "structure",
+          "label": "표/구조식",
+          "why_this_path": "조건을 표로 분리해야 판매 전후, 과세/면세, 증가/감소 같은 방향 실수를 줄일 수 있다.",
+          "trigger_signals": [
+            "국세기본법",
+            "제척기간",
+            "부과할 수 있는 날",
+            "5년",
+            "부정행위 없음"
+          ],
+          "do_not_use_when": [
+            "조건이 하나뿐이면 표 작성보다 정석식이 빠름"
+          ],
+          "ordered_steps": [
+            "일반/부정행위/무신고 같은 사유 칸과 기간 칸을 분리한다.",
+            "본문의 '가중 사유 없음'을 표시해 일반 원칙만 남긴다.",
+            "모든 세목 일률 표현처럼 과도한 일반화를 제거한다."
+          ],
+          "answer_index": 0,
+          "answer_text": "신고납세 세목의 일반 제척기간은 부과할 수 있는 날부터 5년이다.",
+          "concept_links": [
+            {
+              "concept_label": "국세 부과 제척기간의 일반 원칙",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 국세기본법, 제척기간 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=national_tax_basic_act; tags=세법: 국세기본법, national_tax_basic_act, statute_of_limitations, verbal_rule",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "국세기본법 / 제척기간 / 부과할 수 있는 날",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "다음 중 국세기본법상 국세 부과의 제척기간으로 옳은 것은? (부정행위 등 가중 사유 없음)",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "condition_structure",
+              "concept_source": "solution_path",
+              "why_required": "structure 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "부정행위 가중기간이나 임의 기간을 일반 제척기간으로 고르는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-tax-004:choice_elimination",
+          "path_type": "choice_elimination",
+          "label": "선택지 제거식",
+          "why_this_path": "객관식에서는 대표 함정을 먼저 제거하면 계산량과 검산 부담이 줄어든다.",
+          "trigger_signals": [
+            "보기 중 하나가 대표 함정값",
+            "부정행위 가중기간이나 임의 기간을 일반 제척기간으로 고르는 함정"
+          ],
+          "do_not_use_when": [
+            "선택지가 모두 근접 숫자이면 제거식만으로 확정하지 않음"
+          ],
+          "ordered_steps": [
+            "각 보기가 어떤 계산 또는 분류를 전제로 하는지 표시한다.",
+            "핵심 신호와 맞지 않는 보기를 제거한다.",
+            "남은 보기 1번(신고납세 세목의 일반 제척기간은 부과할 수 있는 날부터 5년이다.)을 정답으로 확정한다."
+          ],
+          "answer_index": 0,
+          "answer_text": "신고납세 세목의 일반 제척기간은 부과할 수 있는 날부터 5년이다.",
+          "concept_links": [
+            {
+              "concept_label": "국세 부과 제척기간의 일반 원칙",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 국세기본법, 제척기간 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=national_tax_basic_act; tags=세법: 국세기본법, national_tax_basic_act, statute_of_limitations, verbal_rule",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "국세기본법 / 제척기간 / 부과할 수 있는 날",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "다음 중 국세기본법상 국세 부과의 제척기간으로 옳은 것은? (부정행위 등 가중 사유 없음)",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "distractor_filter",
+              "concept_source": "solution_path",
+              "why_required": "choice_elimination 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "부정행위 가중기간이나 임의 기간을 일반 제척기간으로 고르는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [
+            {
+              "choice_index": 0,
+              "choice_text": "신고납세 세목의 일반 제척기간은 부과할 수 있는 날부터 5년이다.",
+              "verdict": "keep_correct",
+              "reason": "핵심 개념과 조건 신호를 모두 만족하는 보기다."
+            },
+            {
+              "choice_index": 1,
+              "choice_text": "부과과세 세목의 일반 제척기간은 10년이다.",
+              "verdict": "eliminate",
+              "reason": "10년은 일반 원칙이 아니라 가중 사유와 연결되는 기간이다."
+            },
+            {
+              "choice_index": 2,
+              "choice_text": "원천징수의 일반 제척기간은 3년이다.",
+              "verdict": "eliminate",
+              "reason": "원천징수 일반 제척기간을 3년으로 단정할 수 없다."
+            },
+            {
+              "choice_index": 3,
+              "choice_text": "모든 세목의 일반 제척기간은 7년이다.",
+              "verdict": "eliminate",
+              "reason": "7년 일률 적용은 일반 원칙이 아니다."
+            }
+          ],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-tax-004:reverse_check",
+          "path_type": "reverse_check",
+          "label": "검산식",
+          "why_this_path": "정답을 원문 조건과 해설 기준에 되돌려 넣어 계산값과 분류 기준이 맞는지 확인한다.",
+          "trigger_signals": [
+            "정답 확정 직후",
+            "대표 함정 확인",
+            "시간 10초 검산 가능"
+          ],
+          "do_not_use_when": [
+            "아직 풀이식이 없거나 시간이 skip threshold를 넘긴 경우"
+          ],
+          "ordered_steps": [
+            "정답 후보 신고납세 세목의 일반 제척기간은 부과할 수 있는 날부터 5년이다.를 문제의 핵심 조건에 다시 대입한다.",
+            "대표 함정: 부정행위 가중기간이나 임의 기간을 일반 제척기간으로 고르는 함정와 비교한다.",
+            "해설의 계산 또는 분류 기준과 같은 결론인지 확인한다."
+          ],
+          "answer_index": 0,
+          "answer_text": "신고납세 세목의 일반 제척기간은 부과할 수 있는 날부터 5년이다.",
+          "concept_links": [
+            {
+              "concept_label": "국세 부과 제척기간의 일반 원칙",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 국세기본법, 제척기간 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=national_tax_basic_act; tags=세법: 국세기본법, national_tax_basic_act, statute_of_limitations, verbal_rule",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "국세기본법 / 제척기간 / 부과할 수 있는 날",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "다음 중 국세기본법상 국세 부과의 제척기간으로 옳은 것은? (부정행위 등 가중 사유 없음)",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "answer_consistency",
+              "concept_source": "solution_path",
+              "why_required": "reverse_check 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "부정행위 가중기간이나 임의 기간을 일반 제척기간으로 고르는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        }
+      ]
+    },
+    {
+      "question_id": "cpa1-eval-tax-005",
+      "exam": "CPA_1",
+      "subject": "tax",
+      "unit": "income_tax",
+      "tutorial_id": "tutorial_cpa1_tax",
+      "rights_status": "synthetic_seed",
+      "review_status": "expert_reviewed",
+      "applicable_year": 2026,
+      "stem": "거주자 갑이 보유하던 조정대상지역 외 1세대 1주택을 양도했다. 보유기간 3년, 거주기간 2년이며, 매매가액 8억원, 취득가액 5억원, 필요경비 0원이다. 양도소득 비과세 적용 여부와 산식이 옳은 것은? (별장이나 고가주택 아님)",
+      "stem_hash": "2734a66f0955bdffb9774286fe740b64333299f435e4bbec239ad557a4e12d63",
+      "choices": [
+        "비과세 비적용. 양도차익 3억원 전액 과세",
+        "비과세 적용. 양도소득세 0원",
+        "비과세 비적용. 장기보유특별공제만 적용",
+        "비과세 적용하되 12억 초과분만 과세"
+      ],
+      "correct_choice": 1,
+      "correct_answer": "비과세 적용. 양도소득세 0원",
+      "concept_tags": [
+        "세법: 양도소득",
+        "income_tax",
+        "capital_gains",
+        "one_house_non_taxation"
+      ],
+      "explanation": "1세대 1주택 비과세 핵심 요건: (1) 1세대 1주택 (2) 보유기간 2년 이상 (3) 조정대상지역인 경우 거주기간 2년 이상. 본 사례는 조정지역 외 + 보유 3년 충족이므로 비과세 적용. 매매가액 8억은 고가주택(12억) 기준 미달이라 전액 비과세. 단 12억 초과분이 있다면 그 비율만큼 과세.",
+      "question_analysis": {
+        "examiner_intent": "문항 조건에서 필요한 개념 체계(1세대 1주택 양도소득 비과세 요건 개념)를 식별하고 요구 산출물(1세대 1주택)까지 연결하는 능력을 본다.",
+        "question_type": "statement_selection",
+        "asked_output": "1세대 1주택",
+        "concept_combination": [
+          {
+            "concept": "1세대 1주택 양도소득 비과세 요건",
+            "paired_with": [
+              "1세대 1주택",
+              "보유기간",
+              "거주기간"
+            ],
+            "why_combined": "단일 암기가 아니라 조건 신호, 계산 또는 분류 기준, 오답 함정을 동시에 판별하게 하려는 조합이다.",
+            "examiner_objective": "요구 산출물(1세대 1주택)을 구하기 전에 어떤 개념 체계를 먼저 선택해야 하는지 검증한다."
+          }
+        ],
+        "stem_conditions": [
+          {
+            "text": "1세대 1주택",
+            "role": "trigger",
+            "why_it_matters": "1세대 1주택 신호가 1세대 1주택 양도소득 비과세 요건 개념 적용 여부를 결정한다."
+          },
+          {
+            "text": "보유기간",
+            "role": "trigger",
+            "why_it_matters": "보유기간 신호가 1세대 1주택 양도소득 비과세 요건 개념 적용 여부를 결정한다."
+          },
+          {
+            "text": "1세대 1주택",
+            "role": "ask",
+            "why_it_matters": "문제가 최종적으로 요구하는 산출물이다."
+          },
+          {
+            "text": "조정대상지역 외인데 거주요건을 과도하게 적용하거나 12억 이하 주택에 초과분 과세를 적용하는 함정",
+            "role": "distractor",
+            "why_it_matters": "출제자가 오답 선택지를 만들기 위해 넣은 대표 혼동 지점이다."
+          }
+        ],
+        "question_stem_parse": {
+          "ask_verb": "select",
+          "target_entity": "1세대 1주택",
+          "time_scope": "stem-defined",
+          "negation": false,
+          "unit_or_rounding": "stem-defined",
+          "must_not_miss": [
+            "1세대 1주택",
+            "보유기간",
+            "거주기간"
+          ]
+        },
+        "intent_hypothesis": {
+          "primary": "정답 계산 전에 1세대 1주택 양도소득 비과세 요건 개념 체계를 선택할 수 있는지 검증한다.",
+          "secondary": [
+            "조정대상지역 외인데 거주요건을 과도하게 적용하거나 12억 이하 주택에 초과분 과세를 적용하는 함정을 피하는지 확인한다.",
+            "본문 조건과 보기의 오답 유인을 연결해 판별하게 한다."
+          ],
+          "confidence": 0.78
+        }
+      },
+      "solution_paths": [
+        {
+          "path_id": "cpa1-eval-tax-005:direct",
+          "path_type": "direct",
+          "label": "정석식",
+          "why_this_path": "1세대 1주택 양도소득 비과세 요건가 문제 본문에 직접 드러나므로 정의와 공식으로 바로 푼다.",
+          "trigger_signals": [
+            "1세대 1주택",
+            "보유기간",
+            "거주기간"
+          ],
+          "do_not_use_when": [
+            "조건이 시점별로 섞여 있거나 선택지 함정이 강하면 구조식으로 전환"
+          ],
+          "ordered_steps": [
+            "1세대 1주택인지 확인한다.",
+            "조정대상지역 외 주택이므로 보유기간 2년 이상 충족 여부를 먼저 본다.",
+            "매매가액이 고가주택 기준 이하인지 확인한다.",
+            "비과세 적용 결론인 보기 2번을 선택한다."
+          ],
+          "answer_index": 1,
+          "answer_text": "비과세 적용. 양도소득세 0원",
+          "concept_links": [
+            {
+              "concept_label": "1세대 1주택 양도소득 비과세 요건",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 1세대 1주택, 보유기간 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=income_tax; tags=세법: 양도소득, income_tax, capital_gains, one_house_non_taxation",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "1세대 1주택 / 보유기간 / 거주기간",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "거주자 갑이 보유하던 조정대상지역 외 1세대 1주택을 양도했다. 보유기간 3년, 거주기간 2년이며, 매매가액 8억원, 취득가액 5억원, 필요경비 0원이다. 양도소득 비과세 적용 여부와 산식이 옳은 것은? (별장이나 고가주택 아님)",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "definition_or_formula",
+              "concept_source": "solution_path",
+              "why_required": "direct 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "조정대상지역 외인데 거주요건을 과도하게 적용하거나 12억 이하 주택에 초과분 과세를 적용하는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-tax-005:structure",
+          "path_type": "structure",
+          "label": "표/구조식",
+          "why_this_path": "조건을 표로 분리해야 판매 전후, 과세/면세, 증가/감소 같은 방향 실수를 줄일 수 있다.",
+          "trigger_signals": [
+            "1세대 1주택",
+            "보유기간",
+            "거주기간",
+            "조정대상지역 외",
+            "고가주택 아님"
+          ],
+          "do_not_use_when": [
+            "조건이 하나뿐이면 표 작성보다 정석식이 빠름"
+          ],
+          "ordered_steps": [
+            "주택 수, 보유기간, 거주기간, 고가주택 여부를 표로 나눈다.",
+            "조정대상지역 외 조건을 표시해 거주요건 판단을 단순화한다.",
+            "12억 초과분 과세는 고가주택일 때만 검토한다."
+          ],
+          "answer_index": 1,
+          "answer_text": "비과세 적용. 양도소득세 0원",
+          "concept_links": [
+            {
+              "concept_label": "1세대 1주택 양도소득 비과세 요건",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 1세대 1주택, 보유기간 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=income_tax; tags=세법: 양도소득, income_tax, capital_gains, one_house_non_taxation",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "1세대 1주택 / 보유기간 / 거주기간",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "거주자 갑이 보유하던 조정대상지역 외 1세대 1주택을 양도했다. 보유기간 3년, 거주기간 2년이며, 매매가액 8억원, 취득가액 5억원, 필요경비 0원이다. 양도소득 비과세 적용 여부와 산식이 옳은 것은? (별장이나 고가주택 아님)",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "condition_structure",
+              "concept_source": "solution_path",
+              "why_required": "structure 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "조정대상지역 외인데 거주요건을 과도하게 적용하거나 12억 이하 주택에 초과분 과세를 적용하는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-tax-005:choice_elimination",
+          "path_type": "choice_elimination",
+          "label": "선택지 제거식",
+          "why_this_path": "객관식에서는 대표 함정을 먼저 제거하면 계산량과 검산 부담이 줄어든다.",
+          "trigger_signals": [
+            "보기 중 하나가 대표 함정값",
+            "조정대상지역 외인데 거주요건을 과도하게 적용하거나 12억 이하 주택에 초과분 과세를 적용하는 함정"
+          ],
+          "do_not_use_when": [
+            "선택지가 모두 근접 숫자이면 제거식만으로 확정하지 않음"
+          ],
+          "ordered_steps": [
+            "각 보기가 어떤 계산 또는 분류를 전제로 하는지 표시한다.",
+            "핵심 신호와 맞지 않는 보기를 제거한다.",
+            "남은 보기 2번(비과세 적용. 양도소득세 0원)을 정답으로 확정한다."
+          ],
+          "answer_index": 1,
+          "answer_text": "비과세 적용. 양도소득세 0원",
+          "concept_links": [
+            {
+              "concept_label": "1세대 1주택 양도소득 비과세 요건",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 1세대 1주택, 보유기간 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=income_tax; tags=세법: 양도소득, income_tax, capital_gains, one_house_non_taxation",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "1세대 1주택 / 보유기간 / 거주기간",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "거주자 갑이 보유하던 조정대상지역 외 1세대 1주택을 양도했다. 보유기간 3년, 거주기간 2년이며, 매매가액 8억원, 취득가액 5억원, 필요경비 0원이다. 양도소득 비과세 적용 여부와 산식이 옳은 것은? (별장이나 고가주택 아님)",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "distractor_filter",
+              "concept_source": "solution_path",
+              "why_required": "choice_elimination 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "조정대상지역 외인데 거주요건을 과도하게 적용하거나 12억 이하 주택에 초과분 과세를 적용하는 함정",
+              "confidence": 0.76
+            }
+          ],
+          "choice_eliminations": [
+            {
+              "choice_index": 0,
+              "choice_text": "비과세 비적용. 양도차익 3억원 전액 과세",
+              "verdict": "eliminate",
+              "reason": "보유기간 2년 이상 요건을 충족하므로 전액 과세가 아니다."
+            },
+            {
+              "choice_index": 1,
+              "choice_text": "비과세 적용. 양도소득세 0원",
+              "verdict": "keep_correct",
+              "reason": "핵심 개념과 조건 신호를 모두 만족하는 보기다."
+            },
+            {
+              "choice_index": 2,
+              "choice_text": "비과세 비적용. 장기보유특별공제만 적용",
+              "verdict": "eliminate",
+              "reason": "비과세 요건 검토 없이 장기보유특별공제만 적용했다."
+            },
+            {
+              "choice_index": 3,
+              "choice_text": "비과세 적용하되 12억 초과분만 과세",
+              "verdict": "eliminate",
+              "reason": "12억 초과분 과세는 고가주택일 때의 구조다."
+            }
+          ],
+          "confidence": 0.78
+        },
+        {
+          "path_id": "cpa1-eval-tax-005:reverse_check",
+          "path_type": "reverse_check",
+          "label": "검산식",
+          "why_this_path": "정답을 원문 조건과 해설 기준에 되돌려 넣어 계산값과 분류 기준이 맞는지 확인한다.",
+          "trigger_signals": [
+            "정답 확정 직후",
+            "대표 함정 확인",
+            "시간 10초 검산 가능"
+          ],
+          "do_not_use_when": [
+            "아직 풀이식이 없거나 시간이 skip threshold를 넘긴 경우"
+          ],
+          "ordered_steps": [
+            "정답 후보 비과세 적용. 양도소득세 0원를 문제의 핵심 조건에 다시 대입한다.",
+            "대표 함정: 조정대상지역 외인데 거주요건을 과도하게 적용하거나 12억 이하 주택에 초과분 과세를 적용하는 함정와 비교한다.",
+            "해설의 계산 또는 분류 기준과 같은 결론인지 확인한다."
+          ],
+          "answer_index": 1,
+          "answer_text": "비과세 적용. 양도소득세 0원",
+          "concept_links": [
+            {
+              "concept_label": "1세대 1주택 양도소득 비과세 요건",
+              "concept_source": "unit_profile",
+              "why_required": "이 개념이 문제의 계산식 또는 법적 분류 기준을 결정한다.",
+              "decision_test": "본문에 1세대 1주택, 보유기간 신호가 보이는가?",
+              "rejection_test": "핵심 신호가 보이지 않으면 해당 단원 풀이가 아니라 다른 단원 판별부터 한다.",
+              "evidence_basis": "unit=income_tax; tags=세법: 양도소득, income_tax, capital_gains, one_house_non_taxation",
+              "confidence": 0.82
+            },
+            {
+              "concept_label": "1세대 1주택 / 보유기간 / 거주기간",
+              "concept_source": "condition_signal",
+              "why_required": "풀이 경로 선택은 문제 본문에 드러난 조건 신호로 판별한다.",
+              "decision_test": "조건 신호를 표시했을 때 계산 순서나 분류 순서가 하나로 정해지는가?",
+              "rejection_test": "조건 신호가 서로 충돌하면 표/구조식으로 전환한다.",
+              "evidence_basis": "거주자 갑이 보유하던 조정대상지역 외 1세대 1주택을 양도했다. 보유기간 3년, 거주기간 2년이며, 매매가액 8억원, 취득가액 5억원, 필요경비 0원이다. 양도소득 비과세 적용 여부와 산식이 옳은 것은? (별장이나 고가주택 아님)",
+              "confidence": 0.78
+            },
+            {
+              "concept_label": "answer_consistency",
+              "concept_source": "solution_path",
+              "why_required": "reverse_check 풀이를 쓰는 직접 근거다.",
+              "decision_test": "이 경로를 쓰면 오답 함정을 하나 이상 제거하거나 계산량을 줄이는가?",
+              "rejection_test": "오답 함정이 줄지 않거나 설명이 길어지면 다른 풀이로 바꾼다.",
+              "evidence_basis": "조정대상지역 외인데 거주요건을 과도하게 적용하거나 12억 이하 주택에 초과분 과세를 적용하는 함정",
               "confidence": 0.76
             }
           ],

@@ -501,6 +501,120 @@ h3 {
   font-weight: 700;
 }
 
+.problem-intent-panel {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfcfa;
+  padding: 14px;
+  margin: 12px 0 14px;
+}
+
+.problem-intent-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.problem-intent-head h3 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.problem-intent-head span {
+  border: 1px solid #cdd7d1;
+  border-radius: 999px;
+  color: var(--muted);
+  background: #fffefa;
+  padding: 5px 8px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.intent-grid,
+.stem-condition-list,
+.concept-combination-list {
+  display: grid;
+  gap: 10px;
+}
+
+.intent-grid {
+  grid-template-columns: 1.2fr 0.8fr 1fr;
+}
+
+.intent-grid section,
+.stem-condition-list section,
+.concept-combination-list section {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fffefa;
+  padding: 10px;
+}
+
+.intent-grid span,
+.stem-condition-list span {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+
+.intent-grid p,
+.stem-condition-list p,
+.concept-combination-list p,
+.concept-combination-list small {
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.intent-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.intent-chip-row em {
+  border: 1px solid #bcd6ce;
+  border-radius: 999px;
+  background: #e8f3ef;
+  color: var(--teal);
+  padding: 5px 8px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.concept-combination-list {
+  margin-top: 10px;
+}
+
+.intent-section-label {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+  margin: 12px 0 6px;
+}
+
+.concept-combination-list strong,
+.stem-condition-list strong {
+  display: block;
+  color: var(--ink);
+  margin-bottom: 5px;
+}
+
+.concept-combination-list small {
+  display: block;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.stem-condition-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 10px;
+}
+
 .attempt-panel {
   position: sticky;
   top: 18px;
@@ -1025,6 +1139,8 @@ h3 {
   .two-column,
   .problem-workbench,
   .problem-toolbar,
+  .intent-grid,
+  .stem-condition-list,
   .solution-library-grid,
   .intelligence-grid,
   .interview-layout,

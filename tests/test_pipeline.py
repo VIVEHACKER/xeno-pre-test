@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import sqlite3
 from pathlib import Path
 
@@ -151,14 +152,55 @@ def test_problem_solution_maps_connect_questions_to_concepts_and_eliminations(tm
     ).fetchall()
     assert weak_paths == []
 
+    analysis_gaps = conn.execute(
+        """
+        SELECT problem_id
+        FROM problem_solution_maps
+        WHERE question_analysis_json IS NULL
+           OR json_extract(question_analysis_json, '$.examiner_intent') IS NULL
+           OR json_array_length(json_extract(question_analysis_json, '$.stem_conditions')) < 3
+           OR json_array_length(json_extract(question_analysis_json, '$.concept_combination')) < 1
+        """
+    ).fetchall()
+    assert analysis_gaps == []
+
+    public_payload = json.loads((tmp_path / "problem_solution_maps.json").read_text(encoding="utf-8"))
+    assert all("question_analysis" in item for item in public_payload["problem_solution_maps"])
+
     choice_paths = conn.execute(
         """
-        SELECT p.path_id, COUNT(e.elimination_id) AS elimination_count
+        SELECT
+          p.path_id,
+          json_array_length(m.choices_json) AS choice_count,
+          COUNT(e.elimination_id) AS elimination_count
         FROM problem_solution_paths p
+        JOIN problem_solution_maps m ON m.problem_id = p.problem_id
         LEFT JOIN problem_choice_eliminations e ON e.path_id = p.path_id
         WHERE p.path_type = 'choice_elimination'
         GROUP BY p.path_id
         """
     ).fetchall()
     assert len(choice_paths) == expected_question_count
-    assert all(row["elimination_count"] == 4 for row in choice_paths)
+    assert all(row["elimination_count"] == row["choice_count"] for row in choice_paths)
+
+
+def test_problem_profile_is_specific_for_committed_seed_units():
+    questions = {
+        question["question_id"]: question
+        for question in pipeline.load_evaluation_questions(ROOT / "data" / "seeds" / "evaluation")
+    }
+    question_ids = [
+        "cpa1-eval-accounting-004",
+        "cpa1-eval-accounting-005",
+        "cpa1-eval-accounting-006",
+        "cpa1-eval-accounting-007",
+        "cpa1-eval-accounting-008",
+        "cpa1-eval-tax-003",
+        "cpa1-eval-tax-004",
+        "cpa1-eval-tax-005",
+    ]
+
+    for question_id in question_ids:
+        profile = pipeline.problem_profile(questions[question_id])
+        assert profile["core"] != "문제의 핵심 개념", question_id
+        assert len(profile["signals"]) >= 3, question_id

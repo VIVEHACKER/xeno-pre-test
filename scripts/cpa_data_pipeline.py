@@ -16,8 +16,12 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 
-
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+  sys.path.insert(0, str(ROOT))
+
+from cpa_first.problem_intent import analyze_question_intent
+
 DEFAULT_DB = ROOT / "data" / "warehouse" / "cpa_first.sqlite"
 DEFAULT_SEED = ROOT / "data" / "seeds" / "cpa_success_sources.csv"
 DEFAULT_ONTOLOGY = ROOT / "data" / "seeds" / "exam_ontology.json"
@@ -268,6 +272,7 @@ CREATE TABLE IF NOT EXISTS problem_solution_maps (
   correct_choice INTEGER NOT NULL,
   concept_tags_json TEXT NOT NULL,
   explanation TEXT NOT NULL,
+  question_analysis_json TEXT NOT NULL,
   updated_at TEXT NOT NULL
 );
 
@@ -376,7 +381,17 @@ def connect(db_path: Path) -> sqlite3.Connection:
 
 def init_db(conn: sqlite3.Connection) -> None:
   conn.executescript(SCHEMA)
+  ensure_problem_solution_map_columns(conn)
   conn.commit()
+
+
+def ensure_problem_solution_map_columns(conn: sqlite3.Connection) -> None:
+  columns = {
+    row["name"]
+    for row in conn.execute("PRAGMA table_info(problem_solution_maps)").fetchall()
+  }
+  if "question_analysis_json" not in columns:
+    conn.execute("ALTER TABLE problem_solution_maps ADD COLUMN question_analysis_json TEXT NOT NULL DEFAULT '{}'")
 
 
 def seed_sources(conn: sqlite3.Connection, seed_path: Path) -> int:
@@ -800,6 +815,7 @@ def tutorial_id_for_question(question: dict) -> str:
 
 def problem_profile(question: dict) -> dict:
   unit = question["unit"]
+  tags = question.get("concept_tags", [])
   choices = question["choices"]
   correct = question["correct_choice"]
   correct_text = choices[correct]
@@ -869,6 +885,160 @@ def problem_profile(question: dict) -> dict:
         3: "BEP 수량을 2,500개로 계산해 공헌이익을 잘못 적용했다.",
       },
     }
+  if unit == "tangible_assets":
+    return {
+      "core": "유형자산 손상차손의 장부금액과 회수가능액 비교",
+      "signals": ["손상 신호", "장부금액", "회수가능액", "사용가치", "순공정가치"],
+      "direct_steps": [
+        "취득원가에서 잔존가치를 뺀 금액을 내용연수로 나누어 연 감가상각비를 구한다.",
+        "손상검사일 직전까지의 감가상각누계액을 차감해 장부금액을 계산한다.",
+        "사용가치와 순공정가치 중 큰 금액을 회수가능액으로 잡는다.",
+        f"장부금액과 회수가능액의 차이인 {correct_text}를 선택한다.",
+      ],
+      "structure_steps": [
+        "감가상각 계산 칸과 손상 계산 칸을 분리한다.",
+        "회수가능액은 두 가치 중 작은 금액이 아니라 큰 금액임을 표시한다.",
+        "장부금액 - 회수가능액이 양수일 때만 손상차손으로 인식한다.",
+      ],
+      "trap": "회수가능액을 작은 금액으로 고르거나 감가상각 전 취득원가와 바로 비교하는 함정",
+      "eliminations": {
+        1: "감가상각 또는 회수가능액 선택 중 하나를 잘못 적용한 값이다.",
+        2: "사용가치와 순공정가치의 선택 방향을 혼동한 값이다.",
+        3: "장부금액 전체를 손상차손으로 오해한 값이다.",
+      },
+    }
+  if unit == "revenue_recognition":
+    return {
+      "core": "수행의무 식별과 상대적 개별판매가격 배분",
+      "signals": ["단일 계약", "제품", "유지보수 서비스", "개별 판매가격", "통제 이전"],
+      "direct_steps": [
+        "제품과 유지보수 서비스를 별도 수행의무로 분리한다.",
+        "개별 판매가격 합계에서 제품의 상대적 비율을 구한다.",
+        "거래가격에 제품 비율을 곱해 제품에 배분된 금액을 계산한다.",
+        f"인도 시점에 통제가 이전되는 제품 배분액 {correct_text}를 선택한다.",
+      ],
+      "structure_steps": [
+        "수행의무별 개별 판매가격과 인식 시점을 표로 나눈다.",
+        "총 거래가격은 계약가격이고 배분 기준은 개별 판매가격임을 분리한다.",
+        "즉시 인식할 금액은 통제가 이전된 수행의무 몫만 남긴다.",
+      ],
+      "trap": "제품 개별 판매가격 4,000,000원을 그대로 수익으로 고르거나 계약가격 전액을 즉시 인식하는 함정",
+      "eliminations": {
+        0: "상대적 배분비율을 잘못 적용한 값이다.",
+        2: "제품의 개별 판매가격을 배분 후 수익과 혼동했다.",
+        3: "유지보수 몫까지 포함해 계약가격 전액을 즉시 인식했다.",
+      },
+    }
+  if unit == "liabilities":
+    return {
+      "core": "충당부채 인식요건 3요소",
+      "signals": ["현재의무", "자원 유출 가능성", "신뢰성 있는 추정", "제품 보증"],
+      "direct_steps": [
+        "각 보기에 현재의무가 이미 존재하는지 표시한다.",
+        "자원 유출 가능성이 높고 금액을 신뢰성 있게 추정할 수 있는지 확인한다.",
+        "미래 계획이나 가능성 낮은 청구는 인식 대상에서 제외한다.",
+        f"세 요건을 모두 만족하는 보기 {correct + 1}번을 선택한다.",
+      ],
+      "structure_steps": [
+        "현재의무, 유출 가능성, 추정 가능성 세 칸 표를 만든다.",
+        "세 칸 중 하나라도 비면 충당부채 인식 대상에서 제거한다.",
+        "제품보증처럼 과거 판매에서 발생한 의무만 남긴다.",
+      ],
+      "trap": "미래 지출 계획을 현재의무로 보거나 가능성 낮은 청구를 부채로 인식하는 함정",
+      "eliminations": {
+        0: "가능성이 낮아 충당부채 인식요건을 충족하지 못한다.",
+        2: "미래 광고 계획은 현재의무가 아니다.",
+        3: "검토 중인 구조조정안만으로는 현재의무가 성립하지 않는다.",
+      },
+    }
+  if unit == "cash_flow":
+    return {
+      "core": "간접법 영업활동 현금흐름 조정",
+      "signals": ["간접법", "당기순이익", "비현금비용", "처분손익", "운전자본 변동"],
+      "direct_steps": [
+        "당기순이익에서 출발한다.",
+        "감가상각비 같은 비현금비용은 가산하고 처분이익은 차감한다.",
+        "매출채권 증가는 차감, 매입채무 증가는 가산한다.",
+        f"조정 후 영업활동 현금흐름 {correct_text}를 선택한다.",
+      ],
+      "structure_steps": [
+        "비현금손익, 투자활동손익 제거, 운전자본 변동을 세 구역으로 나눈다.",
+        "자산 증가는 현금 유출, 부채 증가는 현금 유출 지연으로 표시한다.",
+        "각 조정의 부호를 더하기 전에 한 번 검산한다.",
+      ],
+      "trap": "처분이익을 더하거나 매출채권 증가를 더하는 부호 반전 함정",
+      "eliminations": {
+        0: "매입채무 증가 또는 매출채권 증가의 부호를 잘못 적용한 값이다.",
+        2: "처분이익 제거 방향을 반대로 적용한 값이다.",
+        3: "감가상각비만 더하고 운전자본 조정을 누락한 값이다.",
+      },
+    }
+  if unit == "equity":
+    return {
+      "core": "자기주식 재발행의 자본거래 처리",
+      "signals": ["자기주식", "재발행", "취득원가", "재발행가", "자본잉여금"],
+      "direct_steps": [
+        "재발행한 주식 수에 취득단가를 곱해 자기주식 감소액을 계산한다.",
+        "재발행가에 주식 수를 곱해 현금 유입액을 계산한다.",
+        "차액은 당기손익이 아니라 자기주식처분이익 등 자본잉여금으로 처리한다.",
+        f"자본거래 처리가 반영된 보기 {correct + 1}번을 선택한다.",
+      ],
+      "structure_steps": [
+        "현금, 자기주식, 자본잉여금 세 칸으로 분개를 나눈다.",
+        "자기주식은 원가로 제거하고 재발행가와의 차액만 자본잉여금으로 보낸다.",
+        "손익계정이 들어간 보기를 제거한다.",
+      ],
+      "trap": "자기주식처분이익을 당기손익으로 인식하는 함정",
+      "eliminations": {
+        1: "자기주식을 재발행가로 제거해 취득원가 기준을 놓쳤다.",
+        2: "차액을 당기손익으로 처리해 자본거래 원칙을 위반했다.",
+        3: "차액의 방향과 계정 위치가 반대다.",
+      },
+    }
+  if unit == "corporate_tax":
+    return {
+      "core": "법인세 손금산입의 사업 관련성과 한도 판단",
+      "signals": ["손금", "사업 관련성", "통상성", "한도", "업무용"],
+      "direct_steps": [
+        "각 지출이 법인의 사업과 관련되는지 먼저 본다.",
+        "임원 상여, 업무무관 자산, 개인 명의 지출처럼 손금불산입 신호를 제거한다.",
+        "업무용 차량의 적정 한도 내 비용처럼 관련성과 한도를 충족한 항목을 남긴다.",
+        f"손금산입 가능한 보기 {correct + 1}번을 선택한다.",
+      ],
+      "structure_steps": [
+        "사업 관련성, 법정 한도, 사적 지출 여부 세 칸으로 분류한다.",
+        "사적 지출이나 한도 초과 항목은 손금불산입으로 표시한다.",
+        "남은 업무 관련 정상 비용만 손금 후보로 확정한다.",
+      ],
+      "trap": "법인이 부담했다는 이유만으로 사적 지출이나 한도 초과 비용을 손금으로 보는 함정",
+      "eliminations": {
+        0: "임원 상여 한도 초과분은 손금불산입 대상이다.",
+        1: "업무 무관 자산 관련 비용은 사업 관련성이 없다.",
+        3: "대표이사 개인 명의 카드 지출은 법인 손금으로 보기 어렵다.",
+      },
+    }
+  if unit == "national_tax_basic_act":
+    return {
+      "core": "국세 부과 제척기간의 일반 원칙",
+      "signals": ["국세기본법", "제척기간", "부과할 수 있는 날", "5년", "부정행위 없음"],
+      "direct_steps": [
+        "문제가 가중 사유 없는 일반 제척기간을 묻는지 확인한다.",
+        "신고납세 세목의 일반 원칙을 부과할 수 있는 날부터 5년으로 잡는다.",
+        "10년, 7년 일률, 3년 같은 가중 또는 오답 기간을 제거한다.",
+        f"일반 원칙을 말한 보기 {correct + 1}번을 선택한다.",
+      ],
+      "structure_steps": [
+        "일반/부정행위/무신고 같은 사유 칸과 기간 칸을 분리한다.",
+        "본문의 '가중 사유 없음'을 표시해 일반 원칙만 남긴다.",
+        "모든 세목 일률 표현처럼 과도한 일반화를 제거한다.",
+      ],
+      "trap": "부정행위 가중기간이나 임의 기간을 일반 제척기간으로 고르는 함정",
+      "eliminations": {
+        1: "10년은 일반 원칙이 아니라 가중 사유와 연결되는 기간이다.",
+        2: "원천징수 일반 제척기간을 3년으로 단정할 수 없다.",
+        3: "7년 일률 적용은 일반 원칙이 아니다.",
+      },
+    }
   if unit == "vat":
     return {
       "core": "부가가치세 면세와 과세 거래 분류",
@@ -892,6 +1062,28 @@ def problem_profile(question: dict) -> dict:
       },
     }
   if unit == "income_tax":
+    if "capital_gains" in tags:
+      return {
+        "core": "1세대 1주택 양도소득 비과세 요건",
+        "signals": ["1세대 1주택", "보유기간", "거주기간", "조정대상지역 외", "고가주택 아님"],
+        "direct_steps": [
+          "1세대 1주택인지 확인한다.",
+          "조정대상지역 외 주택이므로 보유기간 2년 이상 충족 여부를 먼저 본다.",
+          "매매가액이 고가주택 기준 이하인지 확인한다.",
+          f"비과세 적용 결론인 보기 {correct + 1}번을 선택한다.",
+        ],
+        "structure_steps": [
+          "주택 수, 보유기간, 거주기간, 고가주택 여부를 표로 나눈다.",
+          "조정대상지역 외 조건을 표시해 거주요건 판단을 단순화한다.",
+          "12억 초과분 과세는 고가주택일 때만 검토한다.",
+        ],
+        "trap": "조정대상지역 외인데 거주요건을 과도하게 적용하거나 12억 이하 주택에 초과분 과세를 적용하는 함정",
+        "eliminations": {
+          0: "보유기간 2년 이상 요건을 충족하므로 전액 과세가 아니다.",
+          2: "비과세 요건 검토 없이 장기보유특별공제만 적용했다.",
+          3: "12억 초과분 과세는 고가주택일 때의 구조다.",
+        },
+      }
     return {
       "core": "금융소득 종합과세 기준금액과 전액 대상 판단",
       "signals": ["이자소득", "배당소득", "2,000만원 기준", "종합과세 대상"],
@@ -1004,6 +1196,7 @@ def build_problem_solution_map(question: dict) -> dict:
     "correct_answer": answer_text,
     "concept_tags": question.get("concept_tags", []),
     "explanation": question.get("explanation", ""),
+    "question_analysis": analyze_question_intent(question, profile),
   }
   path_specs = [
     (
@@ -1091,8 +1284,8 @@ def seed_problem_solution_maps(
       INSERT INTO problem_solution_maps
         (problem_id, exam, subject, unit, tutorial_id, rights_status, review_status,
          applicable_year, stem_hash, stem, choices_json, correct_choice,
-         concept_tags_json, explanation, updated_at)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+         concept_tags_json, explanation, question_analysis_json, updated_at)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
       """,
       (
         item["question_id"],
@@ -1109,6 +1302,7 @@ def seed_problem_solution_maps(
         item["correct_choice"],
         json.dumps(item["concept_tags"], ensure_ascii=False),
         item["explanation"],
+        json.dumps(item["question_analysis"], ensure_ascii=False),
         timestamp,
       ),
     )
