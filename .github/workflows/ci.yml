@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Run pytest
+        run: pytest -v
+
+      - name: Validate JSON seeds against schemas
+        run: |
+          python -m cpa_first.cli.validate \
+            "data/seeds/decision_rules/*.decision_rule.json" \
+            "data/seeds/problems/*.problem_intelligence.json" \
+            "data/seeds/evaluation/*.evaluation_question.json" \
+            "data/seeds/rag/*.rag_chunk.json" \
+            "data/seeds/terms/*.term.json" \
+            --quiet
