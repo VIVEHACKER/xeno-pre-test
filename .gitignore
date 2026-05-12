@@ -20,6 +20,10 @@ data/warehouse/*.sqlite-journal
 data/warehouse/manifest.json
 prototype/data_manifest.json
 
+# Secrets
+.env
+.env.local
+
 # OS
 .DS_Store
 Thumbs.db

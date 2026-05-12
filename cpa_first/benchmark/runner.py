@@ -13,10 +13,14 @@ import json
 from dataclasses import asdict, dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
+
+from dotenv import load_dotenv
 
 from cpa_first.solver import create_solver, load_evaluation_questions
 from cpa_first.solver.solver import Solver, SolveResult
+
+load_dotenv()
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -37,6 +41,8 @@ class QuestionScore:
     chosen_index: int
     correct_index: int
     rationale: str
+    difficulty: str | None = None
+    bloom_level: str | None = None
 
 
 @dataclass
@@ -50,6 +56,9 @@ class BenchmarkResult:
     correct: int
     overall_accuracy: float
     per_subject: dict[str, dict[str, float]]
+    per_difficulty: dict[str, dict[str, float]]
+    per_bloom: dict[str, dict[str, float]]
+    per_unit: dict[str, dict[str, float]]
     pass_status: dict[str, Any]
     questions: list[QuestionScore] = field(default_factory=list)
 
@@ -72,20 +81,35 @@ def grade(question: dict[str, Any], result: SolveResult) -> QuestionScore:
         chosen_index=result.chosen_index,
         correct_index=question["correct_choice"],
         rationale=result.rationale[:500],
+        difficulty=question.get("difficulty"),
+        bloom_level=question.get("bloom_level"),
     )
 
 
-def _summarize_subjects(scores: list[QuestionScore]) -> dict[str, dict[str, float]]:
+def _group_accuracy(
+    scores: list[QuestionScore],
+    key: Callable[[QuestionScore], str | None],
+) -> dict[str, dict[str, float]]:
     out: dict[str, dict[str, float]] = {}
-    for subject in sorted({s.subject for s in scores}):
-        items = [s for s in scores if s.subject == subject]
+    buckets: dict[str, list[QuestionScore]] = {}
+    for s in scores:
+        k = key(s)
+        if k is None:
+            continue
+        buckets.setdefault(k, []).append(s)
+    for k in sorted(buckets.keys()):
+        items = buckets[k]
         correct = sum(1 for s in items if s.correct)
-        out[subject] = {
+        out[k] = {
             "total": len(items),
             "correct": correct,
             "accuracy": round(correct / len(items), 4) if items else 0.0,
         }
     return out
+
+
+def _summarize_subjects(scores: list[QuestionScore]) -> dict[str, dict[str, float]]:
+    return _group_accuracy(scores, key=lambda s: s.subject)
 
 
 def _pass_status(per_subject: dict[str, dict[str, float]], overall: float) -> dict[str, Any]:
@@ -129,6 +153,9 @@ def run_benchmark(
     correct = sum(1 for s in scores if s.correct)
     overall = correct / len(scores)
     per_subject = _summarize_subjects(scores)
+    per_difficulty = _group_accuracy(scores, key=lambda s: s.difficulty)
+    per_bloom = _group_accuracy(scores, key=lambda s: s.bloom_level)
+    per_unit = _group_accuracy(scores, key=lambda s: f"{s.subject}/{s.unit}")
     pass_status = _pass_status(per_subject, overall)
     finished_at = _now_iso()
 
@@ -142,6 +169,9 @@ def run_benchmark(
         correct=correct,
         overall_accuracy=round(overall, 4),
         per_subject=per_subject,
+        per_difficulty=per_difficulty,
+        per_bloom=per_bloom,
+        per_unit=per_unit,
         pass_status=pass_status,
         questions=scores,
     )
@@ -186,9 +216,27 @@ def cli() -> int:
         print(f"model      : {result.solver_model}")
     print(f"questions  : {result.total} (correct {result.correct})")
     print(f"overall    : {result.overall_accuracy * 100:.1f}%")
+    print()
+    print("[by subject]")
     for subject, stats in result.per_subject.items():
         print(f"  - {subject:<10} {stats['correct']}/{int(stats['total'])} "
               f"= {stats['accuracy'] * 100:.1f}%")
+    if result.per_difficulty:
+        print()
+        print("[by difficulty]")
+        for diff in ("easy", "mid", "hard"):
+            if diff not in result.per_difficulty:
+                continue
+            stats = result.per_difficulty[diff]
+            print(f"  - {diff:<10} {stats['correct']}/{int(stats['total'])} "
+                  f"= {stats['accuracy'] * 100:.1f}%")
+    if result.per_bloom:
+        print()
+        print("[by bloom level]")
+        for level, stats in result.per_bloom.items():
+            print(f"  - {level:<10} {stats['correct']}/{int(stats['total'])} "
+                  f"= {stats['accuracy'] * 100:.1f}%")
+    print()
     print(f"would pass : {result.pass_status['would_pass']}")
     return 0
 
