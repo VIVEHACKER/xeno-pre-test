@@ -5,59 +5,237 @@ const $$ = (selector) => Array.from(document.querySelectorAll(selector));
 
 const API_BASE = ""; // 같은 호스트(FastAPI가 정적도 서빙)
 
-const inputs = {
+// ============================================================
+// Subject registry — 백엔드 cpa_first/subjects.py와 동기화
+// ============================================================
+
+const SUBJECT_LABEL = {
+  accounting: "회계",
+  tax: "세법",
+  business: "경영학",
+  economics: "경제원론",
+  corporate_law: "기업법",
+  management: "경영",
+  finance: "재무관리",
+  cost_accounting: "원가관리",
+  mixed: "혼합",
+};
+
+const SUBJECT_ORDER = [
+  "accounting",
+  "tax",
+  "finance",
+  "cost_accounting",
+  "economics",
+  "corporate_law",
+  "business",
+  "management",
+];
+
+const RISK_TAGS = [
+  { id: "time_pressure", label: "시간 압박" },
+  { id: "memory_decay", label: "휘발" },
+  { id: "concept_gap", label: "개념 공백" },
+  { id: "objective_entry_delay", label: "객관식 진입" },
+  { id: "rotation_confusion", label: "회독 혼동" },
+];
+
+// 활성 과목/입력 상태 — UI와 payload의 단일 진실원
+function defaultSubjectState() {
+  const state = {};
+  for (const id of SUBJECT_ORDER) {
+    state[id] = {
+      active: id === "accounting" || id === "tax",
+      accuracy: id === "accounting" ? 52 : id === "tax" ? 46 : 50,
+      overrun: id === "accounting" ? 30 : id === "tax" ? 15 : 20,
+      tags: id === "accounting" || id === "tax" ? ["time_pressure", "objective_entry_delay"] : [],
+    };
+  }
+  return state;
+}
+
+let subjectState = defaultSubjectState();
+
+const env = {
   months: $("#monthsInput"),
-  accounting: $("#accountingInput"),
-  tax: $("#taxInput"),
   hours: $("#hoursInput"),
   stage: $("#stageInput"),
-  acctTime: $("#acctTimeInput"),
-  taxTime: $("#taxTimeInput"),
 };
 
-const slidersWithOutput = {
-  accounting: { input: $("#accountingInput"), output: $("#accountingOutput") },
-  tax: { input: $("#taxInput"), output: $("#taxOutput") },
-  acctTime: { input: $("#acctTimeInput"), output: $("#acctTimeOutput") },
-  taxTime: { input: $("#taxTimeInput"), output: $("#taxTimeOutput") },
-};
+// ============================================================
+// Subject smart table
+// ============================================================
 
-function updateSliderOutputs() {
-  for (const { input, output } of Object.values(slidersWithOutput)) {
-    if (input && output) output.textContent = `${input.value}%`;
+function renderSubjectTable() {
+  const container = $("#subjectRows");
+  if (!container) return;
+  container.innerHTML = SUBJECT_ORDER.map((id) => {
+    const s = subjectState[id];
+    const chips = RISK_TAGS.map((t) => {
+      const on = s.tags.includes(t.id);
+      return `<button type="button" class="chip" data-tag="${t.id}" aria-pressed="${on}">${escapeHtml(t.label)}</button>`;
+    }).join("");
+    return `
+      <div class="subject-row" data-subject="${id}" data-active="${s.active}" role="row">
+        <button class="subject-row__toggle" type="button" data-action="toggle" aria-pressed="${s.active}">${escapeHtml(SUBJECT_LABEL[id])}</button>
+        <input class="subject-row__num" type="number" data-field="accuracy" min="0" max="100" step="1" value="${s.accuracy}" ${s.active ? "" : "disabled"} aria-label="${escapeHtml(SUBJECT_LABEL[id])} 정답률" />
+        <input class="subject-row__num" type="number" data-field="overrun" min="0" max="100" step="1" value="${s.overrun}" ${s.active ? "" : "disabled"} aria-label="${escapeHtml(SUBJECT_LABEL[id])} 시간초과율" />
+        <div class="risk-chips" role="group" aria-label="${escapeHtml(SUBJECT_LABEL[id])} 리스크 태그">${chips}</div>
+      </div>
+    `;
+  }).join("");
+  updateSubjectTableMeta();
+}
+
+function updateSubjectTableMeta() {
+  const active = SUBJECT_ORDER.filter((id) => subjectState[id].active).length;
+  const meta = $("#subjectActiveCount");
+  if (meta) meta.textContent = `${active}개 과목 활성 / ${SUBJECT_ORDER.length}`;
+}
+
+function attachSubjectTableEvents() {
+  const container = $("#subjectRows");
+  if (!container) return;
+
+  container.addEventListener("click", (event) => {
+    const row = event.target.closest(".subject-row");
+    if (!row) return;
+    const id = row.dataset.subject;
+
+    if (event.target.matches('[data-action="toggle"]')) {
+      subjectState[id].active = !subjectState[id].active;
+      renderSubjectTable();
+      scheduleDiagnose();
+      return;
+    }
+
+    const chip = event.target.closest(".chip");
+    if (chip && subjectState[id].active) {
+      const tag = chip.dataset.tag;
+      const tags = subjectState[id].tags;
+      const idx = tags.indexOf(tag);
+      if (idx >= 0) tags.splice(idx, 1);
+      else tags.push(tag);
+      chip.setAttribute("aria-pressed", String(idx < 0));
+      scheduleDiagnose();
+    }
+  });
+
+  container.addEventListener("input", (event) => {
+    const input = event.target.closest(".subject-row__num");
+    if (!input) return;
+    const row = input.closest(".subject-row");
+    const id = row.dataset.subject;
+    const field = input.dataset.field;
+    let v = Number(input.value);
+    if (!Number.isFinite(v)) v = 0;
+    v = Math.max(0, Math.min(100, v));
+    subjectState[id][field] = v;
+    scheduleDiagnose();
+  });
+
+  const reset = $("#subjectResetBtn");
+  if (reset) {
+    reset.addEventListener("click", () => {
+      subjectState = defaultSubjectState();
+      renderSubjectTable();
+      scheduleDiagnose();
+      showToast("진단 입력을 초기화했습니다.", "info");
+    });
   }
 }
 
-function collectRiskTags() {
-  return $$('.risk-tags input[type="checkbox"]:checked').map((cb) => cb.dataset.tag);
+function getSubjectStates() {
+  return SUBJECT_ORDER.filter((id) => subjectState[id].active).map((id) => ({
+    subject: id,
+    accuracy: subjectState[id].accuracy / 100,
+    time_overrun_rate: subjectState[id].overrun / 100,
+    risk_tags: [...subjectState[id].tags],
+  }));
 }
 
 function buildPayload() {
-  const months = Number(inputs.months.value);
+  const months = Number(env.months.value);
   const days = Math.max(1, Math.round(months * 30));
-  const tags = collectRiskTags();
   return {
     user_id: "ui-user",
     target_exam: "CPA_1",
     days_until_exam: days,
-    available_hours_per_day: Number(inputs.hours.value),
-    current_stage: inputs.stage.value,
-    subject_states: [
-      {
-        subject: "accounting",
-        accuracy: Number(inputs.accounting.value) / 100,
-        time_overrun_rate: Number(inputs.acctTime.value) / 100,
-        risk_tags: tags,
-      },
-      {
-        subject: "tax",
-        accuracy: Number(inputs.tax.value) / 100,
-        time_overrun_rate: Number(inputs.taxTime.value) / 100,
-        risk_tags: tags,
-      },
-    ],
+    available_hours_per_day: Number(env.hours.value),
+    current_stage: env.stage.value,
+    subject_states: getSubjectStates(),
   };
 }
+
+// ============================================================
+// Toast / status / help
+// ============================================================
+
+let toastSeq = 0;
+function showToast(message, kind = "info", { duration = 3000 } = {}) {
+  const container = $("#toastContainer");
+  if (!container) return;
+  const id = `t-${++toastSeq}`;
+  const div = document.createElement("div");
+  div.className = `toast toast--${kind}`;
+  div.id = id;
+  div.setAttribute("role", kind === "error" ? "alert" : "status");
+  div.textContent = message;
+  container.appendChild(div);
+  setTimeout(() => {
+    div.style.opacity = "0";
+    div.style.transition = "opacity 0.2s ease";
+    setTimeout(() => div.remove(), 220);
+  }, duration);
+}
+
+function setStatusBar(text, kind = "ok") {
+  const bar = $("#statusBar");
+  const t = $("#statusText");
+  if (!bar || !t) return;
+  t.textContent = text;
+  bar.classList.remove("is-error", "is-loading");
+  if (kind === "error") bar.classList.add("is-error");
+  if (kind === "loading") bar.classList.add("is-loading");
+}
+
+function showHelpModal() {
+  if ($(".help-overlay")) return;
+  const overlay = document.createElement("div");
+  overlay.className = "help-overlay";
+  overlay.innerHTML = `
+    <div class="help-modal" role="dialog" aria-modal="true" aria-label="단축키">
+      <h2>키보드 단축키</h2>
+      <dl>
+        <dt>g d</dt><dd>오늘의 처방</dd>
+        <dt>g t</dt><dd>과목 튜토리얼</dd>
+        <dt>g p</dt><dd>문제 훈련</dd>
+        <dt>g s</dt><dd>맞춤 코치</dd>
+        <dt>g i</dt><dd>레벨 진단</dd>
+        <dt>g r</dt><dd>용어 사전</dd>
+        <dt>?</dt><dd>이 화면</dd>
+        <dt>Esc</dt><dd>닫기</dd>
+      </dl>
+      <button class="btn help-modal-close" type="button">닫기</button>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+  const close = () => overlay.remove();
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) close();
+  });
+  overlay.querySelector(".help-modal-close").addEventListener("click", close);
+}
+
+function closeOverlays() {
+  $$(".help-overlay").forEach((el) => el.remove());
+  const detail = $("#evidenceDetail");
+  if (detail && !detail.hidden) detail.hidden = true;
+}
+
+// ============================================================
+// API + render
+// ============================================================
 
 async function postDiagnose(payload) {
   const res = await fetch(`${API_BASE}/diagnose`, {
@@ -91,7 +269,6 @@ function renderPriority(rx) {
     $("#priorityList").innerHTML = `<p class="muted-note">우선순위 개념이 없습니다.</p>`;
     return;
   }
-  // 단순 시각화: 첫 항목 100, 마지막 50 사이를 보간
   $("#priorityList").innerHTML = concepts
     .map((concept, i) => {
       const width = Math.max(50, Math.round(100 - i * (50 / Math.max(1, concepts.length - 1))));
@@ -108,26 +285,17 @@ function renderPriority(rx) {
     .join("");
 }
 
-// SUBJECT_LABEL: 백엔드 cpa_first/subjects.py의 SUBJECTS와 동기화. 새 과목 추가 시 양쪽 갱신.
-const SUBJECT_LABEL = {
-  accounting: "회계",
-  tax: "세법",
-  business: "경영학",
-  economics: "경제원론",
-  corporate_law: "기업법",
-  management: "경영",
-  finance: "재무관리",
-  cost_accounting: "원가관리",
-  mixed: "혼합",
-};
-
 function renderTasks(rx) {
   $("#planSummary").textContent = `${rx.daily_tasks.length}개 처방`;
+  if (!rx.daily_tasks.length) {
+    $("#taskList").innerHTML = `<li class="muted-note">처방이 없습니다.</li>`;
+    return;
+  }
   $("#taskList").innerHTML = rx.daily_tasks
     .map((task) => {
       const subj = SUBJECT_LABEL[task.subject] ?? task.subject;
       const min = task.estimated_minutes ? ` · ${task.estimated_minutes}분` : "";
-      return `<li><strong>[${subj}${min}]</strong> ${escapeHtml(task.task_text)}</li>`;
+      return `<li><strong>${subj}${min}</strong>${escapeHtml(task.task_text)}</li>`;
     })
     .join("");
 }
@@ -149,10 +317,20 @@ const STAGE_LABEL = {
 };
 
 function classifyLearner(payload) {
-  const [accounting, tax] = payload.subject_states;
-  const avgAccuracy = (accounting.accuracy + tax.accuracy) / 2;
-  const maxOverrun = Math.max(accounting.time_overrun_rate, tax.time_overrun_rate);
-  const weakSubject = accounting.accuracy <= tax.accuracy ? "회계" : "세법";
+  const states = payload.subject_states;
+  if (!states.length) {
+    return {
+      level: "입력 대기",
+      mode: "과목 활성화 필요",
+      focus: "과목 행을 선택해 주세요",
+      defer: "—",
+      reason: "진단 입력 테이블에서 분석할 과목을 1개 이상 활성화해 주세요.",
+    };
+  }
+  const avgAccuracy = states.reduce((sum, s) => sum + s.accuracy, 0) / states.length;
+  const maxOverrun = Math.max(...states.map((s) => s.time_overrun_rate));
+  const weak = weakestSubjectState(payload);
+  const weakSubjectKo = SUBJECT_LABEL[weak.subject] ?? weak.subject;
   const stage = payload.current_stage;
   const days = payload.days_until_exam;
 
@@ -160,7 +338,7 @@ function classifyLearner(payload) {
     return {
       level: "기초 재구축",
       mode: "개념-예제 회복",
-      focus: `${weakSubject} 핵심 개념`,
+      focus: `${weakSubjectKo} 핵심 개념`,
       defer: "고난도 모의고사",
       reason: "평균 정답률이 50% 아래라 기출 회독보다 개념-풀이 연결을 먼저 복구해야 합니다.",
     };
@@ -169,7 +347,7 @@ function classifyLearner(payload) {
     return {
       level: "풀이 순서 교정",
       mode: "시간 방어",
-      focus: `${weakSubject} 시간초과 유형`,
+      focus: `${weakSubjectKo} 시간초과 유형`,
       defer: "풀이 오래 붙잡기",
       reason: "정답률보다 시간초과율이 더 큰 병목입니다. 넘김 기준과 풀이 순서를 먼저 고정합니다.",
     };
@@ -178,7 +356,7 @@ function classifyLearner(payload) {
     return {
       level: "객관식 전환",
       mode: "보기 판별 훈련",
-      focus: `${weakSubject} 낮은 난도 기출`,
+      focus: `${weakSubjectKo} 낮은 난도 기출`,
       defer: "기본서 정독 회귀",
       reason: "기본 개념을 문제 선택지로 바꾸는 단계입니다. 설명보다 판별 기준을 훈련합니다.",
     };
@@ -195,7 +373,7 @@ function classifyLearner(payload) {
   return {
     level: "회독 안정화",
     mode: "기출 회전",
-    focus: `${weakSubject} 약점 단원`,
+    focus: `${weakSubjectKo} 약점 단원`,
     defer: "무근거 양치기",
     reason: "현재는 많은 문제보다 왜 틀렸는지 남는 회독 구조를 만드는 단계입니다.",
   };
@@ -225,6 +403,9 @@ function weaknessScore(state) {
 }
 
 function weakestSubjectState(payload) {
+  if (!payload.subject_states.length) {
+    return { subject: "mixed", accuracy: 0.5, time_overrun_rate: 0, risk_tags: [] };
+  }
   return payload.subject_states.reduce((weakest, state) =>
     weaknessScore(state) < weaknessScore(weakest) ? state : weakest,
   );
@@ -271,9 +452,13 @@ function scoreProblemForToday(problem, weakSubject, concepts, payload) {
 }
 
 function selectTodayProblems(payload, concepts) {
-  const weakSubject = weakestSubjectState(payload).subject;
+  const weak = weakestSubjectState(payload);
   return [...problemSolutionMaps]
-    .sort((a, b) => scoreProblemForToday(b, weakSubject, concepts, payload) - scoreProblemForToday(a, weakSubject, concepts, payload))
+    .sort(
+      (a, b) =>
+        scoreProblemForToday(b, weak.subject, concepts, payload) -
+        scoreProblemForToday(a, weak.subject, concepts, payload),
+    )
     .slice(0, 3);
 }
 
@@ -290,7 +475,9 @@ function buildDailyPrescription(payload, rx = null) {
   const hours = payload.available_hours_per_day;
   const problemMinutes = Math.max(45, Math.min(120, Math.round(hours * 60 * 0.32)));
   const reviewMinutes = Math.max(15, Math.min(60, Math.round(hours * 60 * 0.14)));
-  const topUnit = problems[0] ? `${SUBJECT_LABEL[displaySubjectKey(problems[0])] ?? problems[0].subject} ${unitLabel(problems[0].unit)}` : profile.focus;
+  const topUnit = problems[0]
+    ? `${SUBJECT_LABEL[displaySubjectKey(problems[0])] ?? problems[0].subject} ${unitLabel(problems[0].unit)}`
+    : profile.focus;
   const otherUnits = problemSolutionMaps
     .filter((problem) => problem.subject !== weakState.subject)
     .slice(0, 2)
@@ -302,7 +489,9 @@ function buildDailyPrescription(payload, rx = null) {
     payload.days_until_exam <= 45 ? "새로운 범위 확장" : "고난도 실전 모의고사",
   ]).slice(0, 4);
   const firstProblem = problems[0];
-  const firstIntent = firstProblem?.question_analysis?.examiner_intent || "조건 신호를 보고 먼저 적용할 개념 체계를 고르는지 확인합니다.";
+  const firstIntent =
+    firstProblem?.question_analysis?.examiner_intent ||
+    "조건 신호를 보고 먼저 적용할 개념 체계를 고르는지 확인합니다.";
 
   return {
     title: `${weakLabel}부터 ${profile.mode} 모드로 시작`,
@@ -310,7 +499,8 @@ function buildDailyPrescription(payload, rx = null) {
     budget: `${hours}시간 중 문제 ${problemMinutes}분 · 복습 ${reviewMinutes}분 우선 배정`,
     riskMode: `${profile.level} · ${profile.mode}`,
     weakSubject: `${weakLabel} 정답률 ${Math.round(weakState.accuracy * 100)}% · 시간초과 ${Math.round(weakState.time_overrun_rate * 100)}%`,
-    verification: rx?.weekly_goal?.verification_metric || "오늘 문제별 선택지 제거 근거와 오답 원인 태그를 남깁니다.",
+    verification:
+      rx?.weekly_goal?.verification_metric || "오늘 문제별 선택지 제거 근거와 오답 원인 태그를 남깁니다.",
     problems,
     concepts,
     deferItems,
@@ -334,7 +524,9 @@ function renderDailyPrescription(payload, rx = null) {
   $("#dailyRiskMode").textContent = prescription.riskMode;
   $("#dailyWeakSubject").textContent = prescription.weakSubject;
   $("#dailyVerification").textContent = prescription.verification;
-  $("#todayProblemSummary").textContent = prescription.problems.length ? `${prescription.problems.length}개 문제` : "풀이맵 로딩 중";
+  $("#todayProblemSummary").textContent = prescription.problems.length
+    ? `${prescription.problems.length}개 문제`
+    : "풀이맵 로딩 중";
   $("#todayRotationMode").textContent = prescription.rotationMode;
 
   $("#todayProblemList").innerHTML = prescription.problems.length
@@ -351,19 +543,21 @@ function renderDailyPrescription(payload, rx = null) {
           `;
         })
         .join("")
-    : `<div class="daily-empty">풀이맵이 로딩되면 오늘 풀 문제를 자동으로 채웁니다.</div>`;
+    : `<div class="empty-state"><strong>풀이맵 로딩 대기</strong><p>로딩되면 오늘 풀 문제가 자동으로 채워집니다.</p></div>`;
 
-  $("#todayConceptList").innerHTML = prescription.concepts
-    .map(
-      (concept, index) => `
-        <article>
-          <span>${index + 1}</span>
-          <strong>${escapeHtml(concept)}</strong>
-          <p>풀이 전에 정의, 적용 조건, 대표 함정 1개를 말로 확인합니다.</p>
-        </article>
-      `,
-    )
-    .join("");
+  $("#todayConceptList").innerHTML = prescription.concepts.length
+    ? prescription.concepts
+        .map(
+          (concept, index) => `
+            <article>
+              <span>개념 ${index + 1}</span>
+              <strong>${escapeHtml(concept)}</strong>
+              <p>풀이 전에 정의, 적용 조건, 대표 함정 1개를 말로 확인합니다.</p>
+            </article>
+          `,
+        )
+        .join("")
+    : `<p class="muted-note">우선순위 개념이 없습니다.</p>`;
 
   $("#todayDeferList").innerHTML = prescription.deferItems
     .map((item) => `<li>${escapeHtml(item)}</li>`)
@@ -379,7 +573,8 @@ function renderCoachFromState(payload, rx = null) {
   const tasks = rx?.daily_tasks || [];
   const concepts = rx?.concepts_to_review || [];
   const firstTask = tasks[0]?.task_text || `${profile.focus}을 45분 단위로 풀고 오답 원인을 기록합니다.`;
-  const verification = rx?.weekly_goal?.verification_metric || "오늘 풀이 로그 20개와 오답 원인 태그를 남깁니다.";
+  const verification =
+    rx?.weekly_goal?.verification_metric || "오늘 풀이 로그 20개와 오답 원인 태그를 남깁니다.";
 
   $("#coachLevel").textContent = profile.level;
   $("#coachLevelReason").textContent = profile.reason;
@@ -389,38 +584,59 @@ function renderCoachFromState(payload, rx = null) {
   $("#coachPrimaryReason").textContent = rx?.diagnosis?.summary || "현재 입력값 기준의 임시 처방입니다.";
   $("#coachFocus").textContent = concepts[0] || profile.focus;
   $("#coachDefer").textContent = profile.defer;
-  $("#coachNextProblem").textContent = profile.level === "객관식 전환" ? "문제 훈련 탭의 낮은 난도 풀이맵" : "오답 원인이 남는 단원 문제";
+  $("#coachNextProblem").textContent =
+    profile.level === "객관식 전환" ? "문제 훈련 탭의 낮은 난도 풀이맵" : "오답 원인이 남는 단원 문제";
   $("#coachVerification").textContent = verification;
 
   const guidelines = [
     firstTask,
     profile.defer ? `오늘 제외: ${profile.defer}.` : "",
-    concepts[0] ? `${concepts[0]}은 풀이 전에 5분 요약 후 바로 문제로 확인합니다.` : `${profile.focus}은 개념 설명보다 예제 풀이로 확인합니다.`,
+    concepts[0]
+      ? `${concepts[0]}은 풀이 전에 5분 요약 후 바로 문제로 확인합니다.`
+      : `${profile.focus}은 개념 설명보다 예제 풀이로 확인합니다.`,
     "채점 후 정답보다 선택지 제거 근거를 먼저 확인합니다.",
   ].filter(Boolean);
   $("#coachGuidelines").innerHTML = guidelines.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
 
-  const accounting = payload.subject_states.find((s) => s.subject === "accounting");
-  const tax = payload.subject_states.find((s) => s.subject === "tax");
+  // Level signals — 활성 과목당 1개 카드
+  const states = payload.subject_states;
+  const signals = $("#levelSignals");
+  if (!states.length) {
+    signals.innerHTML = `<p class="muted-note">활성 과목이 없습니다.</p>`;
+  } else {
+    signals.innerHTML = states
+      .map(
+        (s) => `
+          <article class="level-signal">
+            <span>${escapeHtml(SUBJECT_LABEL[s.subject] ?? s.subject)}</span>
+            <strong>정답률 ${Math.round(s.accuracy * 100)}%</strong>
+            <small>시간초과 ${Math.round(s.time_overrun_rate * 100)}% · 태그 ${s.risk_tags.length}</small>
+          </article>
+        `,
+      )
+      .join("");
+  }
   $("#levelDiagnosisTitle").textContent = profile.level;
   $("#levelDiagnosisBody").textContent = profile.reason;
-  $("#levelAccountingSignal").textContent = `정답률 ${Math.round(accounting.accuracy * 100)}% · 시간초과 ${Math.round(accounting.time_overrun_rate * 100)}%`;
-  $("#levelTaxSignal").textContent = `정답률 ${Math.round(tax.accuracy * 100)}% · 시간초과 ${Math.round(tax.time_overrun_rate * 100)}%`;
-  $("#levelTimeSignal").textContent = Math.max(accounting.time_overrun_rate, tax.time_overrun_rate) >= 0.4 ? "시간 병목 우선" : "시간 관리 가능";
-  $("#levelTransitionSignal").textContent = profile.mode;
 }
 
 function renderEvidence(rx) {
   const list = $("#evidenceList");
   $("#evidenceSummary").textContent = `${rx.evidence_refs.length}개 근거. 클릭해서 원본 조회.`;
+  if (!rx.evidence_refs.length) {
+    list.innerHTML = `<li class="muted-note">근거 없음.</li>`;
+    return;
+  }
   list.innerHTML = rx.evidence_refs
     .map(
       (ref, i) => `
         <li>
           <button class="evidence-card" data-ref-type="${ref.ref_type}" data-ref-id="${escapeAttr(ref.ref_id)}" data-idx="${i}">
             <span class="evidence-type">${REF_TYPE_LABEL[ref.ref_type] ?? ref.ref_type}</span>
-            <strong>${escapeHtml(ref.ref_id)}</strong>
-            <small>${escapeHtml(ref.note ?? "")}</small>
+            <div>
+              <strong>${escapeHtml(ref.ref_id)}</strong>
+              <small>${escapeHtml(ref.note ?? "")}</small>
+            </div>
           </button>
         </li>
       `,
@@ -440,6 +656,7 @@ async function loadEvidenceDetail(refType, refId) {
     detail.textContent = JSON.stringify(data.data, null, 2);
   } catch (err) {
     detail.textContent = `오류: ${err.message}`;
+    showToast(`근거 조회 실패: ${err.message}`, "error");
   }
 }
 
@@ -461,23 +678,31 @@ async function triggerDiagnose() {
   const payload = buildPayload();
   renderCoachFromState(payload, latestPrescription);
   renderDailyPrescription(payload, latestPrescription);
+
+  if (!payload.subject_states.length) {
+    setStatusBar("활성 과목 없음 — 진단 보류", "loading");
+    return;
+  }
+
   if (inflight) inflight.aborted = true;
   const ticket = { aborted: false };
   inflight = ticket;
+  setStatusBar("진단 중…", "loading");
   try {
     const body = await postDiagnose(payload);
     if (ticket.aborted) return;
     latestPrescription = body.prescription;
     render(body.prescription);
-    $("#apiStatus").textContent = "처방 엔진 연결됨";
+    setStatusBar("처방 동기화됨", "ok");
   } catch (err) {
-    $("#apiStatus").textContent = `오류: ${err.message}`;
+    setStatusBar(`연결 실패: ${err.message}`, "error");
+    showToast(`진단 실패: ${err.message}`, "error");
   }
 }
 
 function scheduleDiagnose() {
-  updateSliderOutputs();
   const payload = buildPayload();
+  updateSubjectTableMeta();
   renderCoachFromState(payload, latestPrescription);
   renderDailyPrescription(payload, latestPrescription);
   if (diagnoseTimer) clearTimeout(diagnoseTimer);
@@ -498,13 +723,26 @@ function escapeAttr(s) {
   return escapeHtml(s);
 }
 
-// ----- 이벤트 -----
+// ============================================================
+// View routing + keyboard
+// ============================================================
+
+const VIEW_TITLE = {
+  dashboard: "오늘의 처방",
+  tutorials: "과목 튜토리얼",
+  problem: "문제 훈련",
+  stories: "맞춤 코치",
+  interview: "레벨 진단",
+  terms: "용어 사전",
+};
 
 function activateView(viewId) {
   const view = $(`#${viewId}`);
   if (!view) return;
   $$(".nav-item").forEach((item) => item.classList.toggle("active", item.dataset.view === viewId));
   $$(".view").forEach((item) => item.classList.toggle("active", item.id === viewId));
+  const title = VIEW_TITLE[viewId];
+  if (title) $("#topbarTitle").textContent = title;
 }
 
 $$(".nav-item").forEach((button) => {
@@ -520,22 +758,66 @@ $$("[data-jump-view]").forEach((button) => {
   });
 });
 
-// 모든 진단 입력에 디바운스 fetch 연결
-Object.values(inputs).forEach((input) => {
+// vim-style: g + key
+let pendingGo = false;
+let goTimeout = null;
+const VIEW_BY_KEY = {};
+$$(".nav-item").forEach((b) => {
+  if (b.dataset.key) VIEW_BY_KEY[b.dataset.key] = b.dataset.view;
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.metaKey || event.ctrlKey || event.altKey) return;
+  const target = event.target;
+  const inField = target && /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName);
+
+  if (event.key === "Escape") {
+    closeOverlays();
+    if (inField) target.blur();
+    return;
+  }
+
+  if (inField) return;
+
+  if (event.key === "?") {
+    event.preventDefault();
+    showHelpModal();
+    return;
+  }
+
+  if (pendingGo && VIEW_BY_KEY[event.key]) {
+    event.preventDefault();
+    activateView(VIEW_BY_KEY[event.key]);
+    pendingGo = false;
+    clearTimeout(goTimeout);
+    return;
+  }
+
+  if (event.key === "g") {
+    event.preventDefault();
+    pendingGo = true;
+    clearTimeout(goTimeout);
+    goTimeout = setTimeout(() => {
+      pendingGo = false;
+    }, 800);
+  }
+});
+
+// env input listeners
+Object.values(env).forEach((input) => {
   if (input) input.addEventListener("input", scheduleDiagnose);
 });
-$$('.risk-tags input[type="checkbox"]').forEach((cb) =>
-  cb.addEventListener("change", scheduleDiagnose),
-);
 
-// evidence 카드 클릭 위임
+// evidence card click delegation
 $("#evidenceList").addEventListener("click", (event) => {
   const btn = event.target.closest(".evidence-card");
   if (!btn) return;
   loadEvidenceDetail(btn.dataset.refType, btn.dataset.refId);
 });
 
-// ----- 과목별 튜토리얼 -----
+// ============================================================
+// 과목별 튜토리얼
+// ============================================================
 
 let subjectTutorials = [];
 let selectedTutorialId = null;
@@ -720,7 +1002,9 @@ $("#tutorialFlow").addEventListener("click", (event) => {
   renderSelectedTutorial();
 });
 
-// ----- 문제별 풀이 맵 -----
+// ============================================================
+// 문제별 풀이 맵
+// ============================================================
 
 let problemSolutionMaps = [];
 let selectedProblemId = null;
@@ -744,23 +1028,12 @@ function filteredProblemMaps() {
   return problemSolutionMaps.filter((item) => subject === "all" || displaySubjectKey(item) === subject);
 }
 
-// 등록 순서대로 chip을 보장하기 위한 표시 순서. SUBJECT_LABEL의 key와 일치해야 한다.
-const PROBLEM_FILTER_ORDER = [
-  "accounting",
-  "tax",
-  "finance",
-  "business",
-  "economics",
-  "corporate_law",
-  "management",
-  "cost_accounting",
-];
-
 function renderProblemFilters() {
   const present = new Set(problemSolutionMaps.map(displaySubjectKey));
-  const ordered = PROBLEM_FILTER_ORDER.filter((key) => present.has(key));
-  // 등록 순서 외에 등장한 미지의 키도 후미에 붙여 누락 방지.
-  Array.from(present).forEach((key) => { if (!ordered.includes(key)) ordered.push(key); });
+  const ordered = SUBJECT_ORDER.filter((key) => present.has(key));
+  Array.from(present).forEach((key) => {
+    if (!ordered.includes(key)) ordered.push(key);
+  });
   $("#problemSubjectFilter").innerHTML = [
     `<option value="all">전체</option>`,
     ...ordered.map((value) => `<option value="${escapeAttr(value)}">${escapeHtml(SUBJECT_LABEL[value] ?? value)}</option>`),
@@ -879,7 +1152,7 @@ function stopAttemptTimer() {
   updateAttemptClock();
 }
 
-function setAttemptStatus({ selected = "미선택", result = "대기", path = "-" } = {}) {
+function setAttemptStatus({ selected = "미선택", result = "대기", path = "—" } = {}) {
   $("#attemptSelectedLabel").textContent = selected;
   $("#attemptResultLabel").textContent = result;
   $("#attemptPathLabel").textContent = path;
@@ -918,7 +1191,7 @@ function updateChoiceSelection() {
   setAttemptStatus({
     selected: selectedAttemptChoice === null ? "미선택" : `${selectedAttemptChoice + 1}번`,
     result: latestAttemptDiagnosis ? (latestAttemptDiagnosis.correct ? "정답" : "오답") : "대기",
-    path: latestAttemptDiagnosis?.recommended_path?.label ?? "-",
+    path: latestAttemptDiagnosis?.recommended_path?.label ?? "—",
   });
 }
 
@@ -1011,12 +1284,7 @@ async function submitProblemAttemptDiagnosis() {
     const data = await response.json();
     renderAttemptDiagnosis(data.diagnosis, "서버 기록됨");
   } catch (_err) {
-    const diagnosis = diagnoseProblemAttemptLocal(
-      item,
-      selectedAttemptChoice,
-      timeSeconds,
-      120,
-    );
+    const diagnosis = diagnoseProblemAttemptLocal(item, selectedAttemptChoice, timeSeconds, 120);
     renderAttemptDiagnosis(diagnosis, "로컬 미리보기");
   }
 }
@@ -1024,7 +1292,7 @@ async function submitProblemAttemptDiagnosis() {
 function renderQuestionAnalysis(item) {
   const analysis = item.question_analysis;
   if (!analysis) {
-    $("#problemQuestionType").textContent = "-";
+    $("#problemQuestionType").textContent = "—";
     $("#problemIntent").innerHTML = `<p class="muted-note">출제 의도 분석이 아직 생성되지 않았습니다.</p>`;
     $("#stemConditionList").innerHTML = "";
     return;
@@ -1098,7 +1366,7 @@ function renderSelectedProblemMap() {
     setAttemptStatus();
     clearAttemptDiagnosis();
     $("#problemSolutionPaths").innerHTML = "";
-    $("#problemQuestionType").textContent = "-";
+    $("#problemQuestionType").textContent = "—";
     $("#problemIntent").innerHTML = "";
     $("#stemConditionList").innerHTML = "";
     return;
@@ -1186,10 +1454,11 @@ $("#problemChoiceBoard").addEventListener("click", (event) => {
 });
 
 $("#runAttemptDiagnosis").addEventListener("click", submitProblemAttemptDiagnosis);
-
 $("#resetProblemAttempt").addEventListener("click", resetProblemAttempt);
 
-// ----- 06번 데이터 적재 manifest (기존 보존) -----
+// ============================================================
+// 06번 데이터 적재 manifest (기존 보존)
+// ============================================================
 
 function renderDataManifest(manifest) {
   const stats = manifest.stats || {};
@@ -1244,7 +1513,9 @@ async function loadDataManifest() {
   }
 }
 
-// ----- 정적 주간 운영판 (참고 템플릿). 처방과는 별도. -----
+// ============================================================
+// 정적 주간 운영판
+// ============================================================
 
 const weeks = [
   ["월", "회계 금융자산 18문항", "세법 말문제 30개"],
@@ -1268,28 +1539,272 @@ function renderWeek() {
     .join("");
 }
 
-// ----- 부트 -----
+// ============================================================
+// 부트
+// ============================================================
 
 async function healthCheck() {
   try {
     const res = await fetch(`${API_BASE}/health`);
     if (!res.ok) throw new Error(String(res.status));
     const data = await res.json();
-    $("#apiStatus").textContent = `처방 엔진 준비됨 (규칙 ${data.decision_rules}, 문제 ${data.problems})`;
+    setStatusBar(`엔진 준비됨 · 규칙 ${data.decision_rules} · 문제 ${data.problems}`, "ok");
     return true;
   } catch (err) {
-    $("#apiStatus").textContent = `처방 엔진 연결 실패 — ${err.message}. \`cpa-serve\` 실행 필요`;
+    setStatusBar(`엔진 연결 실패 — cpa-serve 실행 필요 (${err.message})`, "error");
     return false;
   }
 }
 
-updateSliderOutputs();
+renderSubjectTable();
+attachSubjectTableEvents();
 renderCoachFromState(buildPayload());
 renderDailyPrescription(buildPayload());
 renderWeek();
 loadDataManifest();
 loadSubjectTutorials();
 loadProblemSolutionMaps();
+initTermsView();
 healthCheck().then((ok) => {
   if (ok) triggerDiagnose();
 });
+
+// ============================================================
+// 용어 사전 (Phase 7)
+// ============================================================
+
+const SUBJECT_LABEL_KO = {
+  accounting: "회계학",
+  tax: "세법",
+  business: "경영학",
+  economics: "경제학",
+  corporate_law: "상법",
+  management: "경영",
+  finance: "재무",
+  cost_accounting: "원가",
+  general: "일반",
+};
+
+const DIFFICULTY_LABEL_KO = {
+  foundational: "기초",
+  intermediate: "중급",
+  advanced: "심화",
+};
+
+let termSearchTimer = null;
+let lastTermQuery = "";
+
+function initTermsView() {
+  const input = $("#termSearchInput");
+  if (!input) return;
+  input.addEventListener("input", () => {
+    const q = input.value.trim();
+    if (q === lastTermQuery) return;
+    lastTermQuery = q;
+    if (termSearchTimer) clearTimeout(termSearchTimer);
+    termSearchTimer = setTimeout(() => runTermSearch(q), 150);
+  });
+}
+
+async function runTermSearch(q) {
+  const meta = $("#termSearchMeta");
+  const resultsBox = $("#termResults");
+  if (!q) {
+    meta.textContent = "검색어를 입력하면 결과가 표시됩니다.";
+    resultsBox.innerHTML = '<p class="terms-empty">왼쪽 검색창에 용어를 입력하세요.</p>';
+    return;
+  }
+  meta.textContent = `"${q}" 검색 중…`;
+  try {
+    const res = await fetch(`${API_BASE}/terms/search?q=${encodeURIComponent(q)}&limit=30`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    renderTermResults(data.results, q);
+  } catch (err) {
+    meta.textContent = `검색 실패 — ${err.message}`;
+    resultsBox.innerHTML = `<p class="terms-empty">서버 연결 실패. \`cpa-serve\` 실행 확인.</p>`;
+  }
+}
+
+function renderTermResults(results, query) {
+  const meta = $("#termSearchMeta");
+  const box = $("#termResults");
+  meta.textContent = `"${query}" — ${results.length}개 결과`;
+  if (!results.length) {
+    box.innerHTML = '<p class="terms-empty">매칭되는 용어가 없습니다.</p>';
+    return;
+  }
+  const html = results
+    .map((r) => {
+      const subject = SUBJECT_LABEL_KO[r.subject] || r.subject;
+      const difficulty = DIFFICULTY_LABEL_KO[r.difficulty] || r.difficulty;
+      return `
+        <button class="term-result" data-term-id="${escapeAttr(r.term_id)}">
+          <span class="term-result-name">${escapeHtml(r.name_ko)}</span>
+          <span class="term-result-meta">${escapeHtml(subject)} · ${escapeHtml(difficulty)}${
+        r.unit ? ` · ${escapeHtml(r.unit)}` : ""
+      }</span>
+        </button>
+      `;
+    })
+    .join("");
+  box.innerHTML = html;
+  box.querySelectorAll(".term-result").forEach((btn) => {
+    btn.addEventListener("click", () => loadTermDetail(btn.dataset.termId));
+  });
+}
+
+async function loadTermDetail(termId) {
+  const detail = $("#termDetail");
+  detail.innerHTML = '<p class="terms-empty">로딩 중…</p>';
+  try {
+    const res = await fetch(`${API_BASE}/terms/${encodeURIComponent(termId)}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    renderTermDetail(data);
+  } catch (err) {
+    detail.innerHTML = `<p class="terms-empty">불러오기 실패 — ${escapeHtml(err.message)}</p>`;
+  }
+}
+
+function renderTermDetail(data) {
+  const { term, related } = data;
+  const subject = SUBJECT_LABEL_KO[term.subject] || term.subject;
+  const difficulty = DIFFICULTY_LABEL_KO[term.difficulty] || term.difficulty;
+  const sections = [];
+
+  sections.push(`
+    <header class="term-detail-head">
+      <p class="term-detail-tags">
+        <span class="term-tag term-tag-subject">${escapeHtml(subject)}</span>
+        <span class="term-tag">${escapeHtml(difficulty)}</span>
+        ${term.unit ? `<span class="term-tag term-tag-unit">${escapeHtml(term.unit)}</span>` : ""}
+        <span class="term-tag term-tag-review">${escapeHtml(term.review_status)}</span>
+      </p>
+      <h3>${escapeHtml(term.name_ko)}</h3>
+      ${term.name_en ? `<p class="term-detail-en">${escapeHtml(term.name_en)}</p>` : ""}
+      ${
+        term.aliases && term.aliases.length
+          ? `<p class="term-detail-aliases">동의어: ${term.aliases.map(escapeHtml).join(", ")}</p>`
+          : ""
+      }
+    </header>
+  `);
+
+  sections.push(`
+    <section class="term-section">
+      <h4>정의</h4>
+      <p>${escapeHtml(term.definition)}</p>
+    </section>
+  `);
+
+  if (term.formula) {
+    sections.push(`
+      <section class="term-section">
+        <h4>공식</h4>
+        <pre class="term-formula">${escapeHtml(term.formula)}</pre>
+      </section>
+    `);
+  }
+
+  if (term.example) {
+    sections.push(`
+      <section class="term-section">
+        <h4>예시</h4>
+        <p>${escapeHtml(term.example)}</p>
+      </section>
+    `);
+  }
+
+  if (related.confusable_terms.length) {
+    const items = related.confusable_terms
+      .map((c) => {
+        const name = c.name_ko || c.term_id;
+        const action = c.in_seed
+          ? `<button class="term-link" data-term-id="${escapeAttr(c.term_id)}">${escapeHtml(name)}</button>`
+          : `<span class="term-link term-link-stub" title="시드에 등록되지 않은 용어">${escapeHtml(name)}</span>`;
+        return `<li>${action}<p>${escapeHtml(c.reason || "")}</p></li>`;
+      })
+      .join("");
+    sections.push(`
+      <section class="term-section">
+        <h4>헷갈리는 짝</h4>
+        <ul class="term-pair-list">${items}</ul>
+      </section>
+    `);
+  }
+
+  if (related.prerequisite_terms.length) {
+    const items = related.prerequisite_terms
+      .map((p) => {
+        const name = p.name_ko || p.term_id;
+        return p.in_seed
+          ? `<button class="term-link" data-term-id="${escapeAttr(p.term_id)}">${escapeHtml(name)}</button>`
+          : `<span class="term-link term-link-stub">${escapeHtml(name)}</span>`;
+      })
+      .join(" ");
+    sections.push(`
+      <section class="term-section">
+        <h4>선수 용어</h4>
+        <div class="term-link-row">${items}</div>
+      </section>
+    `);
+  }
+
+  if (related.chunks.length) {
+    const items = related.chunks
+      .map(
+        (c) =>
+          `<li><strong>${escapeHtml(c.title || c.chunk_id)}</strong><span class="term-related-meta">${escapeHtml(
+            c.subject,
+          )} · w=${c.weight}</span></li>`,
+      )
+      .join("");
+    sections.push(`
+      <section class="term-section">
+        <h4>관련 자료 (RAG)</h4>
+        <ul class="term-related-list">${items}</ul>
+      </section>
+    `);
+  }
+
+  if (related.problems.length) {
+    const items = related.problems
+      .map(
+        (p) =>
+          `<li><strong>${escapeHtml(p.problem_id)}</strong><span class="term-related-meta">${escapeHtml(
+            SUBJECT_LABEL_KO[p.subject] || p.subject,
+          )}${p.unit ? ` · ${escapeHtml(p.unit)}` : ""} · w=${p.weight}</span></li>`,
+      )
+      .join("");
+    sections.push(`
+      <section class="term-section">
+        <h4>관련 문제</h4>
+        <ul class="term-related-list">${items}</ul>
+      </section>
+    `);
+  }
+
+  if (related.tutorials.length) {
+    const items = related.tutorials
+      .map(
+        (t) =>
+          `<li><strong>${escapeHtml(t.title || t.tutorial_id)}</strong><span class="term-related-meta">${escapeHtml(
+            t.subject_name || "",
+          )}</span></li>`,
+      )
+      .join("");
+    sections.push(`
+      <section class="term-section">
+        <h4>튜토리얼</h4>
+        <ul class="term-related-list">${items}</ul>
+      </section>
+    `);
+  }
+
+  const detail = $("#termDetail");
+  detail.innerHTML = sections.join("");
+  detail.querySelectorAll(".term-link[data-term-id]").forEach((btn) => {
+    btn.addEventListener("click", () => loadTermDetail(btn.dataset.termId));
+  });
+}

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CPA First 합격 운영체계</title>
+    <title>CPA First — 합격 운영체계</title>
     <link rel="icon" href="data:," />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -14,28 +14,33 @@
           <div class="brand-mark">CF</div>
           <div>
             <strong>CPA First</strong>
-            <span>회계학/세법 전략 엔진</span>
+            <span>전략 엔진</span>
           </div>
         </div>
         <nav class="nav-list" aria-label="주요 화면">
-          <button class="nav-item active" data-view="dashboard">오늘의 처방</button>
-          <button class="nav-item" data-view="tutorials">과목 튜토리얼</button>
-          <button class="nav-item" data-view="problem">문제 훈련</button>
-          <button class="nav-item" data-view="stories">맞춤 코치</button>
-          <button class="nav-item" data-view="interview">레벨 진단</button>
+          <button class="nav-item active" data-view="dashboard" data-key="d">오늘의 처방<span class="nav-key">g d</span></button>
+          <button class="nav-item" data-view="tutorials" data-key="t">과목 튜토리얼<span class="nav-key">g t</span></button>
+          <button class="nav-item" data-view="problem" data-key="p">문제 훈련<span class="nav-key">g p</span></button>
+          <button class="nav-item" data-view="stories" data-key="s">맞춤 코치<span class="nav-key">g s</span></button>
+          <button class="nav-item" data-view="interview" data-key="i">레벨 진단<span class="nav-key">g i</span></button>
+          <button class="nav-item" data-view="terms" data-key="r">용어 사전<span class="nav-key">g r</span></button>
         </nav>
-        <p class="sidebar-footnote" id="apiStatus">처방 엔진 연결 확인 중…</p>
+        <p class="sidebar-footnote">
+          <kbd>?</kbd> 단축키 · <kbd>g</kbd> 후 키로 전환
+        </p>
       </aside>
 
       <main class="workspace">
         <header class="topbar">
-          <div>
-            <p class="eyebrow">CPA 1차 A-scope</p>
-            <h1>오늘의 처방</h1>
+          <div class="topbar-left">
+            <p class="eyebrow">CPA 1차 운영체계</p>
+            <h1 id="topbarTitle">오늘의 처방</h1>
           </div>
-          <div class="exam-badge">
-            <span>대상</span>
-            <strong>회계학 · 세법개론</strong>
+          <div class="topbar-right">
+            <div class="status-bar is-loading" id="statusBar" role="status" aria-live="polite">
+              <span class="status-dot"></span>
+              <span id="statusText">엔진 연결 확인 중…</span>
+            </div>
           </div>
         </header>
 
@@ -60,30 +65,30 @@
 
           <section class="daily-grid" aria-label="오늘의 실행 큐">
             <article class="daily-panel">
-              <div class="panel-header">
+              <div class="panel-h">
                 <h2>오늘 풀 문제</h2>
-                <span id="todayProblemSummary">풀이맵 로딩 중</span>
+                <span class="meta" id="todayProblemSummary">풀이맵 로딩 중</span>
               </div>
               <div class="today-problem-list" id="todayProblemList"></div>
             </article>
             <article class="daily-panel">
-              <div class="panel-header">
+              <div class="panel-h">
                 <h2>복습 개념</h2>
-                <span>풀이 전 5분 확인</span>
+                <span class="meta">풀이 전 5분 확인</span>
               </div>
               <div class="concept-action-list" id="todayConceptList"></div>
             </article>
             <article class="daily-panel">
-              <div class="panel-header">
+              <div class="panel-h">
                 <h2>오늘 버릴 단원</h2>
-                <span>회전율 방어</span>
+                <span class="meta">회전율 방어</span>
               </div>
               <ul class="defer-list" id="todayDeferList"></ul>
             </article>
             <article class="daily-panel">
-              <div class="panel-header">
+              <div class="panel-h">
                 <h2>회독 전략</h2>
-                <span id="todayRotationMode">자동 조정</span>
+                <span class="meta" id="todayRotationMode">자동 조정</span>
               </div>
               <ol class="rotation-list" id="todayRotationList"></ol>
             </article>
@@ -92,12 +97,12 @@
           <div class="metric-grid">
             <article class="metric">
               <span>합격 리스크</span>
-              <strong id="riskLabel">높음</strong>
-              <p id="riskReason">회계 시간 압박과 세법 휘발 리스크가 큽니다.</p>
+              <strong id="riskLabel">—</strong>
+              <p id="riskReason">진단 후 리스크와 근거가 표시됩니다.</p>
             </article>
             <article class="metric">
               <span>이번 주 목표</span>
-              <strong id="weeklyGoal">시간 초과율 8%p 감소</strong>
+              <strong id="weeklyGoal">—</strong>
               <p id="weeklyMetric">점수보다 먼저 풀이 순서를 안정화합니다.</p>
             </article>
             <article class="metric">
@@ -109,34 +114,34 @@
 
           <div class="two-column">
             <section class="panel">
-              <div class="panel-header">
+              <div class="panel-h">
                 <h2>개념 우선순위</h2>
-                <span>중요도 x 약점도</span>
+                <span class="meta">중요도 × 약점도</span>
               </div>
               <div class="priority-list" id="priorityList"></div>
             </section>
 
             <section class="panel">
-              <div class="panel-header">
+              <div class="panel-h">
                 <h2>오늘의 처방</h2>
-                <span id="planSummary">7시간 기준</span>
+                <span class="meta" id="planSummary">7시간 기준</span>
               </div>
               <ol class="task-list" id="taskList"></ol>
             </section>
           </div>
 
           <section class="panel">
-            <div class="panel-header">
+            <div class="panel-h">
               <h2>주간 운영판</h2>
-              <span>실행 후 다음 진단에서 수정</span>
+              <span class="meta">실행 후 다음 진단에서 수정</span>
             </div>
             <div class="week-grid" id="weekGrid"></div>
           </section>
 
           <section class="panel">
-            <div class="panel-header">
-              <h2>처방 근거 (Evidence)</h2>
-              <span id="evidenceSummary">각 항목을 클릭하면 원본 데이터를 조회합니다</span>
+            <div class="panel-h">
+              <h2>처방 근거</h2>
+              <span class="meta" id="evidenceSummary">각 항목을 클릭하면 원본을 조회합니다.</span>
             </div>
             <ul class="evidence-list" id="evidenceList">
               <li class="muted-note">진단 후 처방의 근거가 표시됩니다.</li>
@@ -147,9 +152,9 @@
 
         <section class="view" id="tutorials">
           <div class="panel tutorial-panel">
-            <div class="panel-header">
+            <div class="panel-h">
               <h2>과목별 튜토리얼</h2>
-              <span id="tutorialSummary">기초부터 변형까지</span>
+              <span class="meta" id="tutorialSummary">기초부터 변형까지</span>
             </div>
             <div class="tutorial-toolbar" aria-label="튜토리얼 선택">
               <label>
@@ -171,7 +176,7 @@
               </div>
               <div class="tutorial-topic">
                 <span>입문 단원</span>
-                <strong id="tutorialTopic">-</strong>
+                <strong id="tutorialTopic">—</strong>
               </div>
             </div>
             <div class="atom-list" id="tutorialAtoms"></div>
@@ -182,9 +187,9 @@
 
         <section class="view" id="problem">
           <div class="panel">
-            <div class="panel-header">
+            <div class="panel-h">
               <h2>문제 훈련</h2>
-              <span id="problemSolutionSummary">문제별 풀이 경로 로딩 중</span>
+              <span class="meta" id="problemSolutionSummary">문제별 풀이 경로 로딩 중</span>
             </div>
             <div class="problem-toolbar" aria-label="문제 선택">
               <label>
@@ -227,7 +232,7 @@
                   </article>
                   <article>
                     <span>추천 풀이</span>
-                    <strong id="attemptPathLabel">-</strong>
+                    <strong id="attemptPathLabel">—</strong>
                   </article>
                 </div>
                 <div class="attempt-diagnosis-result" id="problemAttemptDiagnosis">
@@ -239,14 +244,14 @@
               <div class="tag-cloud" id="problemConceptTags"></div>
               <div class="problem-source-meta">
                 <span id="problemCorrectAnswer">정답 비공개</span>
-                <span id="problemRightsStatus">-</span>
-                <span id="problemReviewStatus">-</span>
+                <span id="problemRightsStatus">—</span>
+                <span id="problemReviewStatus">—</span>
               </div>
             </div>
             <section class="problem-intent-panel" aria-labelledby="problemIntentTitle">
               <div class="problem-intent-head">
                 <h3 id="problemIntentTitle">출제 의도</h3>
-                <span id="problemQuestionType">-</span>
+                <span id="problemQuestionType">—</span>
               </div>
               <div id="problemIntent"></div>
               <div id="stemConditionList"></div>
@@ -257,9 +262,9 @@
 
         <section class="view" id="stories">
           <div class="panel coach-panel">
-            <div class="panel-header">
+            <div class="panel-h">
               <h2>맞춤 코치</h2>
-              <span>학습된 전략 데이터가 현재 상태에 맞춰 자동 적용됩니다</span>
+              <span class="meta">학습된 전략 데이터가 현재 상태에 맞춰 자동 적용됩니다</span>
             </div>
             <div class="coach-brief">
               <article class="coach-level-card">
@@ -269,34 +274,34 @@
               </article>
               <article>
                 <span>운영 모드</span>
-                <strong id="coachMode">-</strong>
+                <strong id="coachMode">—</strong>
                 <p id="coachModeReason">지금 해야 할 학습 모드가 표시됩니다.</p>
               </article>
               <article>
                 <span>오늘의 1순위</span>
-                <strong id="coachPrimaryAction">-</strong>
+                <strong id="coachPrimaryAction">—</strong>
                 <p id="coachPrimaryReason">전략 규칙과 문제풀이 로그가 결합된 지시입니다.</p>
               </article>
             </div>
             <div class="coach-guidance-grid">
               <article>
                 <span>집중</span>
-                <strong id="coachFocus">-</strong>
+                <strong id="coachFocus">—</strong>
                 <p>점수 상승에 직접 연결되는 과목과 단원만 앞으로 당깁니다.</p>
               </article>
               <article>
                 <span>보류</span>
-                <strong id="coachDefer">-</strong>
+                <strong id="coachDefer">—</strong>
                 <p>지금 붙잡으면 회전율을 떨어뜨리는 행동을 막습니다.</p>
               </article>
               <article>
                 <span>다음 문제</span>
-                <strong id="coachNextProblem">-</strong>
+                <strong id="coachNextProblem">—</strong>
                 <p>풀이맵과 개념 링크 기준으로 다음 훈련 위치를 지정합니다.</p>
               </article>
               <article>
                 <span>검증 기준</span>
-                <strong id="coachVerification">-</strong>
+                <strong id="coachVerification">—</strong>
                 <p>공부량이 아니라 결과를 바꾸는 지표로 체크합니다.</p>
               </article>
             </div>
@@ -347,66 +352,51 @@
 
         <section class="view" id="interview">
           <div class="panel">
-            <div class="panel-header">
+            <div class="panel-h">
               <h2>레벨 진단</h2>
-              <span>입력보다 행동 로그를 우선해서 판단합니다</span>
+              <span class="meta">과목 행을 클릭해 활성화 → 정답률·시간초과·리스크 입력</span>
             </div>
-            <div class="diagnosis-input-stack" aria-label="진단 입력">
-              <section class="control-strip">
-                <label>
-                  시험까지
-                  <input id="monthsInput" type="number" value="6" min="1" max="24" />
-                  <span>개월</span>
-                </label>
-                <label>
-                  회계 정답률
-                  <input id="accountingInput" type="range" value="52" min="20" max="90" />
-                  <output id="accountingOutput">52%</output>
-                </label>
-                <label>
-                  세법 정답률
-                  <input id="taxInput" type="range" value="46" min="20" max="90" />
-                  <output id="taxOutput">46%</output>
-                </label>
-                <label>
-                  하루 공부
-                  <input id="hoursInput" type="number" value="7" min="1" max="16" />
-                  <span>시간</span>
-                </label>
-              </section>
 
-              <section class="control-strip">
-                <label>
-                  단계
-                  <select id="stageInput">
-                    <option value="post_lecture">기본강의 이후</option>
-                    <option value="objective_entry" selected>객관식 진입</option>
-                    <option value="past_exam_rotation">기출 회독</option>
-                    <option value="mock_exam">모의고사</option>
-                    <option value="final">파이널</option>
-                  </select>
-                </label>
-                <label>
-                  회계 시간초과
-                  <input id="acctTimeInput" type="range" value="30" min="0" max="80" />
-                  <output id="acctTimeOutput">30%</output>
-                </label>
-                <label>
-                  세법 시간초과
-                  <input id="taxTimeInput" type="range" value="15" min="0" max="80" />
-                  <output id="taxTimeOutput">15%</output>
-                </label>
-              </section>
+            <section class="env-strip" aria-label="환경 입력">
+              <label>
+                시험까지 (개월)
+                <input id="monthsInput" type="number" value="6" min="1" max="24" />
+              </label>
+              <label>
+                하루 학습 (시간)
+                <input id="hoursInput" type="number" value="7" min="1" max="16" />
+              </label>
+              <label>
+                학습 단계
+                <select id="stageInput">
+                  <option value="post_lecture">기본강의 이후</option>
+                  <option value="objective_entry" selected>객관식 진입</option>
+                  <option value="past_exam_rotation">기출 회독</option>
+                  <option value="mock_exam">모의고사</option>
+                  <option value="final">파이널</option>
+                </select>
+              </label>
+            </section>
 
-              <section class="control-strip risk-tags">
-                <span class="strip-label">리스크 태그</span>
-                <label><input type="checkbox" data-tag="time_pressure" checked /> 시간 압박</label>
-                <label><input type="checkbox" data-tag="memory_decay" /> 휘발</label>
-                <label><input type="checkbox" data-tag="concept_gap" /> 개념 공백</label>
-                <label><input type="checkbox" data-tag="objective_entry_delay" checked /> 객관식 진입 지연</label>
-                <label><input type="checkbox" data-tag="rotation_confusion" /> 회독 혼동</label>
-              </section>
-            </div>
+            <section
+              class="subject-table"
+              role="grid"
+              aria-label="과목별 진단 입력"
+              id="subjectTable"
+            >
+              <header class="subject-table__head" role="row">
+                <div role="columnheader">과목</div>
+                <div role="columnheader">정답률 %</div>
+                <div role="columnheader">시간초과 %</div>
+                <div role="columnheader">리스크 태그</div>
+              </header>
+              <div id="subjectRows"></div>
+              <footer class="subject-table__foot">
+                <span id="subjectActiveCount">0개 과목 활성</span>
+                <button class="btn btn--sm btn--ghost" type="button" id="subjectResetBtn">초기화</button>
+              </footer>
+            </section>
+
             <div class="level-diagnosis-grid">
               <article>
                 <span>1. 상태 수집</span>
@@ -424,29 +414,46 @@
                 <p>기초 재구축, 객관식 전환, 회독 압축, 실전 방어 중 하나로 운영 모드를 바꿉니다.</p>
               </article>
             </div>
-            <div class="level-signals">
-              <article>
-                <span>회계 상태</span>
-                <strong id="levelAccountingSignal">-</strong>
-              </article>
-              <article>
-                <span>세법 상태</span>
-                <strong id="levelTaxSignal">-</strong>
-              </article>
-              <article>
-                <span>시간 상태</span>
-                <strong id="levelTimeSignal">-</strong>
-              </article>
-              <article>
-                <span>전환 판단</span>
-                <strong id="levelTransitionSignal">-</strong>
+
+            <div class="level-signals" id="levelSignals">
+              <p class="muted-note">활성 과목이 없습니다.</p>
+            </div>
+            <p class="selected-question">
+              사용자에게 수기를 읽히는 화면이 아니라, 내부 전략 데이터를 적용한 수준 판정 화면입니다.
+            </p>
+          </div>
+        </section>
+
+        <section class="view" id="terms">
+          <div class="terms-shell">
+            <header class="terms-header">
+              <h2>용어 사전</h2>
+              <p>1,001개 시드 + 1,823 엣지로 구성된 CPA 1차 용어 지식 그래프. 검색 → 클릭 → 정의·혼동쌍·관련 문제 확인.</p>
+              <div class="terms-search">
+                <input
+                  id="termSearchInput"
+                  type="search"
+                  placeholder="용어를 입력하세요 (예: 상각후원가, WACC, 종합과세)"
+                  autocomplete="off"
+                />
+                <span class="terms-search-meta" id="termSearchMeta">검색어를 입력하면 결과가 표시됩니다.</span>
+              </div>
+            </header>
+            <div class="terms-grid">
+              <aside class="terms-results" id="termResults" aria-label="검색 결과">
+                <p class="terms-empty">왼쪽 검색창에 용어를 입력하세요.</p>
+              </aside>
+              <article class="terms-detail" id="termDetail" aria-label="용어 상세">
+                <p class="terms-empty">검색 결과에서 용어를 선택하면 정의와 관련 자료가 표시됩니다.</p>
               </article>
             </div>
-            <p class="selected-question" id="selectedQuestion">사용자에게 수기를 읽히는 화면이 아니라, 내부 전략 데이터를 적용한 수준 판정 화면입니다.</p>
           </div>
         </section>
       </main>
     </div>
+
+    <div class="toast-container" id="toastContainer" role="region" aria-label="알림"></div>
+
     <script src="app.js"></script>
   </body>
 </html>
