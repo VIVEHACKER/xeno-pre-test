@@ -20,9 +20,9 @@
         <nav class="nav-list" aria-label="주요 화면">
           <button class="nav-item active" data-view="dashboard">전략 대시보드</button>
           <button class="nav-item" data-view="tutorials">과목 튜토리얼</button>
-          <button class="nav-item" data-view="problem">문제 지능</button>
-          <button class="nav-item" data-view="stories">합격수기 분석</button>
-          <button class="nav-item" data-view="interview">인터뷰 설계</button>
+          <button class="nav-item" data-view="problem">문제 훈련</button>
+          <button class="nav-item" data-view="stories">맞춤 코치</button>
+          <button class="nav-item" data-view="interview">레벨 진단</button>
         </nav>
         <p class="sidebar-footnote" id="apiStatus">처방 엔진 연결 확인 중…</p>
       </aside>
@@ -189,7 +189,7 @@
         <section class="view" id="problem">
           <div class="panel">
             <div class="panel-header">
-              <h2>문제 지능 카드</h2>
+              <h2>문제 훈련</h2>
               <span id="problemSolutionSummary">문제별 풀이 경로 로딩 중</span>
             </div>
             <div class="problem-toolbar" aria-label="문제 선택">
@@ -204,42 +204,49 @@
                 <select id="problemSolutionSelect"></select>
               </label>
             </div>
-            <div class="problem-card">
-              <div class="problem-main">
-                <p class="eyebrow" id="problemMeta">문제 로딩 중</p>
+            <div class="problem-workbench">
+              <article class="problem-stage">
+                <div class="problem-stage-head">
+                  <p class="eyebrow" id="problemMeta">문제 로딩 중</p>
+                  <div class="attempt-clock" aria-label="풀이 시간">
+                    <span>경과</span>
+                    <strong id="problemAttemptElapsed">00:00</strong>
+                  </div>
+                </div>
                 <h3 id="problemTitle">문제별 풀이 지능</h3>
-                <p id="problemStem">problem_solution_maps.json을 불러오고 있습니다.</p>
-              </div>
+                <p class="problem-stem" id="problemStem">problem_solution_maps.json을 불러오고 있습니다.</p>
+                <div class="choice-board" id="problemChoiceBoard"></div>
+                <div class="attempt-action-row">
+                  <button class="secondary-action" id="resetProblemAttempt" type="button">다시 풀기</button>
+                  <button class="primary-action" id="runAttemptDiagnosis" type="button" disabled>채점</button>
+                </div>
+              </article>
+              <aside class="attempt-panel">
+                <div class="attempt-status-grid">
+                  <article>
+                    <span>선택</span>
+                    <strong id="attemptSelectedLabel">미선택</strong>
+                  </article>
+                  <article>
+                    <span>결과</span>
+                    <strong id="attemptResultLabel">대기</strong>
+                  </article>
+                  <article>
+                    <span>추천 풀이</span>
+                    <strong id="attemptPathLabel">-</strong>
+                  </article>
+                </div>
+                <div class="attempt-diagnosis-result" id="problemAttemptDiagnosis">
+                  보기를 선택하면 채점할 수 있습니다.
+                </div>
+              </aside>
+            </div>
+            <div class="problem-support">
               <div class="tag-cloud" id="problemConceptTags"></div>
-            </div>
-            <div class="problem-answer-strip">
-              <article>
-                <span>정답</span>
-                <strong id="problemCorrectAnswer">-</strong>
-              </article>
-              <article>
-                <span>권리 상태</span>
-                <strong id="problemRightsStatus">-</strong>
-              </article>
-              <article>
-                <span>검수 상태</span>
-                <strong id="problemReviewStatus">-</strong>
-              </article>
-            </div>
-            <div class="attempt-diagnosis-panel">
-              <div class="attempt-controls" aria-label="응시 진단 입력">
-                <label>
-                  내 선택
-                  <select id="problemAttemptChoice"></select>
-                </label>
-                <label>
-                  풀이 시간(초)
-                  <input id="problemAttemptTime" type="number" min="0" step="5" value="120" />
-                </label>
-                <button class="primary-action" id="runAttemptDiagnosis" type="button">진단</button>
-              </div>
-              <div class="attempt-diagnosis-result" id="problemAttemptDiagnosis">
-                보기를 선택하고 진단을 실행하면 오답 원인과 다음 학습 행동이 표시됩니다.
+              <div class="problem-source-meta">
+                <span id="problemCorrectAnswer">정답 비공개</span>
+                <span id="problemRightsStatus">-</span>
+                <span id="problemReviewStatus">-</span>
               </div>
             </div>
             <div class="problem-solution-paths" id="problemSolutionPaths"></div>
@@ -247,141 +254,137 @@
         </section>
 
         <section class="view" id="stories">
-          <div class="panel">
+          <div class="panel coach-panel">
             <div class="panel-header">
-              <h2>데이터 적재 현황</h2>
-              <span id="manifestGeneratedAt">DB manifest 대기 중</span>
+              <h2>맞춤 코치</h2>
+              <span>학습된 전략 데이터가 현재 상태에 맞춰 자동 적용됩니다</span>
             </div>
-            <div class="data-metrics" aria-label="데이터 적재 지표">
-              <article>
-                <span>원천 URL</span>
-                <strong id="sourceCount">0</strong>
+            <div class="coach-brief">
+              <article class="coach-level-card">
+                <span>현재 레벨</span>
+                <strong id="coachLevel">판정 중</strong>
+                <p id="coachLevelReason">정답률, 시간초과율, 단계 정보를 합쳐 자동 판정합니다.</p>
               </article>
               <article>
-                <span>fetch 문서</span>
-                <strong id="documentCount">0</strong>
+                <span>운영 모드</span>
+                <strong id="coachMode">-</strong>
+                <p id="coachModeReason">지금 해야 할 학습 모드가 표시됩니다.</p>
               </article>
               <article>
-                <span>추출 신호</span>
-                <strong id="signalCount">0</strong>
-              </article>
-              <article>
-                <span>전략 규칙</span>
-                <strong id="ruleCount">0</strong>
-              </article>
-              <article>
-                <span>전 과목</span>
-                <strong id="subjectCount">0</strong>
-              </article>
-              <article>
-                <span>지식 노드</span>
-                <strong id="knowledgeNodeCount">0</strong>
-              </article>
-              <article>
-                <span>수집 타깃</span>
-                <strong id="acquisitionTargetCount">0</strong>
-              </article>
-              <article>
-                <span>기출/해설 자산</span>
-                <strong id="pastExamAssetCount">0</strong>
-              </article>
-              <article>
-                <span>자산 fetch</span>
-                <strong id="assetDocumentCount">0</strong>
-              </article>
-              <article>
-                <span>학습 작업</span>
-                <strong id="learningJobCount">0</strong>
-              </article>
-              <article>
-                <span>권리검토 후보</span>
-                <strong id="trainableAfterReviewCount">0</strong>
-              </article>
-              <article>
-                <span>학습 차단</span>
-                <strong id="blockedLearningJobCount">0</strong>
-              </article>
-              <article>
-                <span>과목 튜토리얼</span>
-                <strong id="subjectTutorialCount">0</strong>
-              </article>
-              <article>
-                <span>튜토리얼 단계</span>
-                <strong id="tutorialStepCount">0</strong>
-              </article>
-              <article>
-                <span>풀이 경로</span>
-                <strong id="solutionPathCount">0</strong>
-              </article>
-              <article>
-                <span>개념-풀이 링크</span>
-                <strong id="solutionConceptLinkCount">0</strong>
-              </article>
-              <article>
-                <span>풀이 근거</span>
-                <strong id="solutionRationaleCount">0</strong>
-              </article>
-              <article>
-                <span>문제 풀이맵</span>
-                <strong id="problemSolutionMapCount">0</strong>
-              </article>
-              <article>
-                <span>문제별 풀이</span>
-                <strong id="problemSolutionPathCount">0</strong>
-              </article>
-              <article>
-                <span>보기 판별</span>
-                <strong id="problemChoiceEliminationCount">0</strong>
+                <span>오늘의 1순위</span>
+                <strong id="coachPrimaryAction">-</strong>
+                <p id="coachPrimaryReason">전략 규칙과 문제풀이 로그가 결합된 지시입니다.</p>
               </article>
             </div>
-            <div class="story-pipeline">
-              <div>URL 원천 등록</div>
-              <div>fetch 결과 저장</div>
-              <div>신호 추출</div>
-              <div>규칙 승격</div>
-              <div>검수 대기열</div>
+            <div class="coach-guidance-grid">
+              <article>
+                <span>집중</span>
+                <strong id="coachFocus">-</strong>
+                <p>점수 상승에 직접 연결되는 과목과 단원만 앞으로 당깁니다.</p>
+              </article>
+              <article>
+                <span>보류</span>
+                <strong id="coachDefer">-</strong>
+                <p>지금 붙잡으면 회전율을 떨어뜨리는 행동을 막습니다.</p>
+              </article>
+              <article>
+                <span>다음 문제</span>
+                <strong id="coachNextProblem">-</strong>
+                <p>풀이맵과 개념 링크 기준으로 다음 훈련 위치를 지정합니다.</p>
+              </article>
+              <article>
+                <span>검증 기준</span>
+                <strong id="coachVerification">-</strong>
+                <p>공부량이 아니라 결과를 바꾸는 지표로 체크합니다.</p>
+              </article>
             </div>
-            <table class="signal-table">
-              <thead>
-                <tr>
-                  <th>규칙</th>
-                  <th>근거 신호</th>
-                  <th>신뢰도</th>
-                  <th>상태</th>
-                </tr>
-              </thead>
-              <tbody id="ruleTableBody"></tbody>
-            </table>
+            <div class="coach-playbook">
+              <h3>자동 가이드라인</h3>
+              <ol id="coachGuidelines">
+                <li>사용자 상태를 불러오면 자동 지시가 표시됩니다.</li>
+              </ol>
+            </div>
+            <details class="internal-data-status">
+              <summary>내부 전략 데이터 상태 <span id="manifestGeneratedAt">DB manifest 대기 중</span></summary>
+              <div class="data-metrics" aria-label="데이터 적재 지표">
+                <article><span>원천 URL</span><strong id="sourceCount">0</strong></article>
+                <article><span>fetch 문서</span><strong id="documentCount">0</strong></article>
+                <article><span>추출 신호</span><strong id="signalCount">0</strong></article>
+                <article><span>전략 규칙</span><strong id="ruleCount">0</strong></article>
+                <article><span>전 과목</span><strong id="subjectCount">0</strong></article>
+                <article><span>지식 노드</span><strong id="knowledgeNodeCount">0</strong></article>
+                <article><span>수집 타깃</span><strong id="acquisitionTargetCount">0</strong></article>
+                <article><span>기출/해설 자산</span><strong id="pastExamAssetCount">0</strong></article>
+                <article><span>자산 fetch</span><strong id="assetDocumentCount">0</strong></article>
+                <article><span>학습 작업</span><strong id="learningJobCount">0</strong></article>
+                <article><span>권리검토 후보</span><strong id="trainableAfterReviewCount">0</strong></article>
+                <article><span>학습 차단</span><strong id="blockedLearningJobCount">0</strong></article>
+                <article><span>과목 튜토리얼</span><strong id="subjectTutorialCount">0</strong></article>
+                <article><span>튜토리얼 단계</span><strong id="tutorialStepCount">0</strong></article>
+                <article><span>풀이 경로</span><strong id="solutionPathCount">0</strong></article>
+                <article><span>개념-풀이 링크</span><strong id="solutionConceptLinkCount">0</strong></article>
+                <article><span>풀이 근거</span><strong id="solutionRationaleCount">0</strong></article>
+                <article><span>문제 풀이맵</span><strong id="problemSolutionMapCount">0</strong></article>
+                <article><span>문제별 풀이</span><strong id="problemSolutionPathCount">0</strong></article>
+                <article><span>보기 판별</span><strong id="problemChoiceEliminationCount">0</strong></article>
+              </div>
+              <table class="signal-table">
+                <thead>
+                  <tr>
+                    <th>규칙</th>
+                    <th>근거 신호</th>
+                    <th>신뢰도</th>
+                    <th>상태</th>
+                  </tr>
+                </thead>
+                <tbody id="ruleTableBody"></tbody>
+              </table>
+            </details>
           </div>
         </section>
 
         <section class="view" id="interview">
           <div class="panel">
             <div class="panel-header">
-              <h2>합격자 인터뷰</h2>
-              <span>암묵지 추출용 질문</span>
+              <h2>레벨 진단</h2>
+              <span>입력보다 행동 로그를 우선해서 판단합니다</span>
             </div>
-            <div class="interview-layout">
+            <div class="level-diagnosis-grid">
               <article>
-                <h3>문제를 같이 보며 묻기</h3>
-                <p>정답 설명이 아니라 어디를 먼저 보고, 언제 넘기는지 말하게 합니다.</p>
+                <span>1. 상태 수집</span>
+                <h3>정답률보다 풀이 흔적</h3>
+                <p>선택한 보기, 경과 시간, 넘김 여부, 개념 링크를 묶어 현재 수준을 추정합니다.</p>
               </article>
               <article>
-                <h3>수기 밖의 판단 캐기</h3>
-                <p>왜 그 시점에 객관식으로 넘어갔는지, 왜 어떤 유형을 버렸는지 확인합니다.</p>
+                <span>2. 수준 판정</span>
+                <h3 id="levelDiagnosisTitle">판정 대기</h3>
+                <p id="levelDiagnosisBody">현재 입력값과 풀이 데이터를 기준으로 자동 분류합니다.</p>
               </article>
               <article>
-                <h3>전략 규칙화</h3>
-                <p>인터뷰 문장을 적용 조건, 행동, 예외 조건, 신뢰도로 바꿉니다.</p>
+                <span>3. 처방 적용</span>
+                <h3>가이드라인 자동 전환</h3>
+                <p>기초 재구축, 객관식 전환, 회독 압축, 실전 방어 중 하나로 운영 모드를 바꿉니다.</p>
               </article>
             </div>
-            <div class="question-bank">
-              <button data-question="회계학에서 점수가 오르기 시작한 순간은 언제였나요?">회계 전환점</button>
-              <button data-question="시험장에서 50문항을 어떤 순서로 풀었나요?">풀이 순서</button>
-              <button data-question="세법 말문제와 계산문제를 어떻게 분리했나요?">세법 분리</button>
-              <button data-question="지금 다시 준비한다면 가장 먼저 바꿀 것은 무엇인가요?">재시작 판단</button>
+            <div class="level-signals">
+              <article>
+                <span>회계 상태</span>
+                <strong id="levelAccountingSignal">-</strong>
+              </article>
+              <article>
+                <span>세법 상태</span>
+                <strong id="levelTaxSignal">-</strong>
+              </article>
+              <article>
+                <span>시간 상태</span>
+                <strong id="levelTimeSignal">-</strong>
+              </article>
+              <article>
+                <span>전환 판단</span>
+                <strong id="levelTransitionSignal">-</strong>
+              </article>
             </div>
-            <p class="selected-question" id="selectedQuestion">질문을 선택하면 인터뷰 문항이 표시됩니다.</p>
+            <p class="selected-question" id="selectedQuestion">사용자에게 수기를 읽히는 화면이 아니라, 내부 전략 데이터를 적용한 수준 판정 화면입니다.</p>
           </div>
         </section>
       </main>

@@ -125,9 +125,106 @@ const REF_TYPE_LABEL = {
   decision_rule: "의사결정 규칙",
   problem_intelligence: "문제 지능",
   user_state: "사용자 상태",
-  success_case: "합격수기",
+  success_case: "전략 사례",
   extracted_signal: "추출 신호",
 };
+
+const STAGE_LABEL = {
+  post_lecture: "기본강의 이후",
+  objective_entry: "객관식 진입",
+  past_exam_rotation: "기출 회독",
+  mock_exam: "모의고사",
+  final: "파이널",
+};
+
+function classifyLearner(payload) {
+  const [accounting, tax] = payload.subject_states;
+  const avgAccuracy = (accounting.accuracy + tax.accuracy) / 2;
+  const maxOverrun = Math.max(accounting.time_overrun_rate, tax.time_overrun_rate);
+  const weakSubject = accounting.accuracy <= tax.accuracy ? "회계" : "세법";
+  const stage = payload.current_stage;
+  const days = payload.days_until_exam;
+
+  if (avgAccuracy < 0.5) {
+    return {
+      level: "기초 재구축",
+      mode: "개념-예제 회복",
+      focus: `${weakSubject} 핵심 개념`,
+      defer: "고난도 모의고사",
+      reason: "평균 정답률이 50% 아래라 기출 회독보다 개념-풀이 연결을 먼저 복구해야 합니다.",
+    };
+  }
+  if (maxOverrun >= 0.4) {
+    return {
+      level: "풀이 순서 교정",
+      mode: "시간 방어",
+      focus: `${weakSubject} 시간초과 유형`,
+      defer: "풀이 오래 붙잡기",
+      reason: "정답률보다 시간초과율이 더 큰 병목입니다. 넘김 기준과 풀이 순서를 먼저 고정합니다.",
+    };
+  }
+  if (stage === "objective_entry") {
+    return {
+      level: "객관식 전환",
+      mode: "보기 판별 훈련",
+      focus: `${weakSubject} 낮은 난도 기출`,
+      defer: "기본서 정독 회귀",
+      reason: "기본 개념을 문제 선택지로 바꾸는 단계입니다. 설명보다 판별 기준을 훈련합니다.",
+    };
+  }
+  if (days <= 45 || stage === "final") {
+    return {
+      level: "실전 방어",
+      mode: "점수 보존",
+      focus: "실수 반복 유형",
+      defer: "새로운 범위 확장",
+      reason: "남은 기간이 짧아 새 범위보다 반복 실수와 시간 손실을 줄이는 편이 유리합니다.",
+    };
+  }
+  return {
+    level: "회독 안정화",
+    mode: "기출 회전",
+    focus: `${weakSubject} 약점 단원`,
+    defer: "무근거 양치기",
+    reason: "현재는 많은 문제보다 왜 틀렸는지 남는 회독 구조를 만드는 단계입니다.",
+  };
+}
+
+function renderCoachFromState(payload, rx = null) {
+  const profile = classifyLearner(payload);
+  const tasks = rx?.daily_tasks || [];
+  const concepts = rx?.concepts_to_review || [];
+  const firstTask = tasks[0]?.task_text || `${profile.focus}을 45분 단위로 풀고 오답 원인을 기록합니다.`;
+  const verification = rx?.weekly_goal?.verification_metric || "오늘 풀이 로그 20개와 오답 원인 태그를 남깁니다.";
+
+  $("#coachLevel").textContent = profile.level;
+  $("#coachLevelReason").textContent = profile.reason;
+  $("#coachMode").textContent = profile.mode;
+  $("#coachModeReason").textContent = `${STAGE_LABEL[payload.current_stage] ?? payload.current_stage} 단계에 맞춰 자동 전환됩니다.`;
+  $("#coachPrimaryAction").textContent = firstTask;
+  $("#coachPrimaryReason").textContent = rx?.diagnosis?.summary || "현재 입력값 기준의 임시 처방입니다.";
+  $("#coachFocus").textContent = concepts[0] || profile.focus;
+  $("#coachDefer").textContent = profile.defer;
+  $("#coachNextProblem").textContent = profile.level === "객관식 전환" ? "문제 훈련 탭의 낮은 난도 풀이맵" : "오답 원인이 남는 단원 문제";
+  $("#coachVerification").textContent = verification;
+
+  const guidelines = [
+    firstTask,
+    profile.defer ? `오늘 제외: ${profile.defer}.` : "",
+    concepts[0] ? `${concepts[0]}은 풀이 전에 5분 요약 후 바로 문제로 확인합니다.` : `${profile.focus}은 개념 설명보다 예제 풀이로 확인합니다.`,
+    "채점 후 정답보다 선택지 제거 근거를 먼저 확인합니다.",
+  ].filter(Boolean);
+  $("#coachGuidelines").innerHTML = guidelines.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+
+  const accounting = payload.subject_states.find((s) => s.subject === "accounting");
+  const tax = payload.subject_states.find((s) => s.subject === "tax");
+  $("#levelDiagnosisTitle").textContent = profile.level;
+  $("#levelDiagnosisBody").textContent = profile.reason;
+  $("#levelAccountingSignal").textContent = `정답률 ${Math.round(accounting.accuracy * 100)}% · 시간초과 ${Math.round(accounting.time_overrun_rate * 100)}%`;
+  $("#levelTaxSignal").textContent = `정답률 ${Math.round(tax.accuracy * 100)}% · 시간초과 ${Math.round(tax.time_overrun_rate * 100)}%`;
+  $("#levelTimeSignal").textContent = Math.max(accounting.time_overrun_rate, tax.time_overrun_rate) >= 0.4 ? "시간 병목 우선" : "시간 관리 가능";
+  $("#levelTransitionSignal").textContent = profile.mode;
+}
 
 function renderEvidence(rx) {
   const list = $("#evidenceList");
@@ -167,6 +264,7 @@ function render(rx) {
   renderPriority(rx);
   renderTasks(rx);
   renderEvidence(rx);
+  renderCoachFromState(buildPayload(), rx);
 }
 
 let inflight = null;
@@ -174,6 +272,7 @@ let diagnoseTimer = null;
 
 async function triggerDiagnose() {
   const payload = buildPayload();
+  renderCoachFromState(payload);
   if (inflight) inflight.aborted = true;
   const ticket = { aborted: false };
   inflight = ticket;
@@ -189,6 +288,7 @@ async function triggerDiagnose() {
 
 function scheduleDiagnose() {
   updateSliderOutputs();
+  renderCoachFromState(buildPayload());
   if (diagnoseTimer) clearTimeout(diagnoseTimer);
   diagnoseTimer = setTimeout(triggerDiagnose, 300);
 }
@@ -215,12 +315,6 @@ $$(".nav-item").forEach((button) => {
     $$(".view").forEach((view) => view.classList.remove("active"));
     button.classList.add("active");
     $(`#${button.dataset.view}`).classList.add("active");
-  });
-});
-
-$$(".question-bank button").forEach((button) => {
-  button.addEventListener("click", () => {
-    $("#selectedQuestion").textContent = button.dataset.question;
   });
 });
 
@@ -428,6 +522,10 @@ $("#tutorialFlow").addEventListener("click", (event) => {
 
 let problemSolutionMaps = [];
 let selectedProblemId = null;
+let selectedAttemptChoice = null;
+let attemptStartedAt = 0;
+let attemptTimer = null;
+let latestAttemptDiagnosis = null;
 
 function filteredProblemMaps() {
   const subject = $("#problemSubjectFilter").value;
@@ -520,25 +618,92 @@ function diagnoseProblemAttemptLocal(item, selectedChoice, timeSeconds, timeLimi
   };
 }
 
-function clearAttemptDiagnosis() {
-  $("#problemAttemptDiagnosis").textContent = "보기를 선택하고 진단을 실행하면 오답 원인과 다음 학습 행동이 표시됩니다.";
+function formatElapsed(totalSeconds) {
+  const safeSeconds = Math.max(0, Math.floor(totalSeconds));
+  const minutes = String(Math.floor(safeSeconds / 60)).padStart(2, "0");
+  const seconds = String(safeSeconds % 60).padStart(2, "0");
+  return `${minutes}:${seconds}`;
 }
 
-function renderAttemptControls(item) {
-  $("#problemAttemptChoice").innerHTML = item.choices
+function currentAttemptSeconds() {
+  if (!attemptStartedAt) return 0;
+  return Math.max(0, Math.round((Date.now() - attemptStartedAt) / 1000));
+}
+
+function updateAttemptClock() {
+  $("#problemAttemptElapsed").textContent = formatElapsed(currentAttemptSeconds());
+}
+
+function startAttemptTimer() {
+  if (attemptTimer) clearInterval(attemptTimer);
+  attemptStartedAt = Date.now();
+  updateAttemptClock();
+  attemptTimer = setInterval(updateAttemptClock, 1000);
+}
+
+function stopAttemptTimer() {
+  if (attemptTimer) clearInterval(attemptTimer);
+  attemptTimer = null;
+  updateAttemptClock();
+}
+
+function setAttemptStatus({ selected = "미선택", result = "대기", path = "-" } = {}) {
+  $("#attemptSelectedLabel").textContent = selected;
+  $("#attemptResultLabel").textContent = result;
+  $("#attemptPathLabel").textContent = path;
+}
+
+function clearAttemptDiagnosis() {
+  latestAttemptDiagnosis = null;
+  const selected = selectedAttemptChoice !== null;
+  $("#problemAttemptDiagnosis").innerHTML = `
+    <div class="attempt-empty">
+      <strong>${selected ? "채점 대기" : "진단 대기"}</strong>
+      <p>${selected ? `${selectedAttemptChoice + 1}번 선택됨` : "선택 전입니다."}</p>
+    </div>
+  `;
+}
+
+function renderChoiceBoard(item) {
+  $("#problemChoiceBoard").innerHTML = item.choices
     .map(
       (choice, index) =>
-        `<option value="${index}">${index + 1}. ${escapeHtml(choice)}</option>`,
+        `<button class="choice-option" data-choice-index="${index}" type="button">
+          <span>${index + 1}</span>
+          <strong>${escapeHtml(choice)}</strong>
+        </button>`,
     )
     .join("");
-  $("#problemAttemptTime").value = "120";
+}
+
+function updateChoiceSelection() {
+  const buttons = document.querySelectorAll(".choice-option");
+  buttons.forEach((button) => {
+    const active = Number(button.dataset.choiceIndex) === selectedAttemptChoice;
+    button.classList.toggle("selected", active);
+  });
+  $("#runAttemptDiagnosis").disabled = selectedAttemptChoice === null;
+  setAttemptStatus({
+    selected: selectedAttemptChoice === null ? "미선택" : `${selectedAttemptChoice + 1}번`,
+    result: latestAttemptDiagnosis ? (latestAttemptDiagnosis.correct ? "정답" : "오답") : "대기",
+    path: latestAttemptDiagnosis?.recommended_path?.label ?? "-",
+  });
+}
+
+function resetProblemAttempt() {
+  selectedAttemptChoice = null;
+  latestAttemptDiagnosis = null;
   clearAttemptDiagnosis();
+  updateChoiceSelection();
+  startAttemptTimer();
 }
 
 function renderAttemptDiagnosis(diagnosis, persistenceLabel) {
+  latestAttemptDiagnosis = diagnosis;
+  stopAttemptTimer();
   const tags = diagnosis.mistake_tags?.length
     ? diagnosis.mistake_tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")
-    : `<span>clear</span>`;
+    : `<span>정리 완료</span>`;
   const elimination = diagnosis.selected_choice_elimination
     ? `<p>${escapeHtml(diagnosis.selected_choice_elimination.reason)}</p>`
     : `<p>정답 보기의 조건을 검산 경로로 확인했습니다.</p>`;
@@ -553,6 +718,18 @@ function renderAttemptDiagnosis(diagnosis, persistenceLabel) {
       `,
     )
     .join("");
+  const steps = (diagnosis.recommended_path.ordered_steps || [])
+    .slice(0, 4)
+    .map((step) => `<li>${escapeHtml(step)}</li>`)
+    .join("");
+
+  setAttemptStatus({
+    selected: `${diagnosis.selected_choice + 1}번`,
+    result: diagnosis.correct ? "정답" : "오답",
+    path: diagnosis.recommended_path.label,
+  });
+  updateChoiceSelection();
+  $("#problemCorrectAnswer").textContent = `정답 ${diagnosis.correct_choice + 1}번`;
 
   $("#problemAttemptDiagnosis").innerHTML = `
     <div class="attempt-result-head">
@@ -560,14 +737,18 @@ function renderAttemptDiagnosis(diagnosis, persistenceLabel) {
       <span>${escapeHtml(persistenceLabel)}</span>
     </div>
     <div class="attempt-result-tags">${tags}</div>
-    ${elimination}
     <div class="attempt-next-action">
-      <span>다음 행동</span>
-      <p>${escapeHtml(diagnosis.next_action.action_text)}</p>
+      <span>판정 근거</span>
+      ${elimination}
     </div>
     <div class="attempt-next-action">
-      <span>추천 풀이</span>
+      <span>다음 풀이</span>
       <p>${escapeHtml(diagnosis.recommended_path.label)} · ${escapeHtml(diagnosis.recommended_path.why_this_path)}</p>
+      ${steps ? `<ol class="attempt-step-list">${steps}</ol>` : ""}
+    </div>
+    <div class="attempt-next-action">
+      <span>바로 할 일</span>
+      <p>${escapeHtml(diagnosis.next_action.action_text)}</p>
     </div>
     ${
       links
@@ -579,13 +760,12 @@ function renderAttemptDiagnosis(diagnosis, persistenceLabel) {
 
 async function submitProblemAttemptDiagnosis() {
   const item = problemSolutionMaps.find((problem) => problem.question_id === selectedProblemId);
-  if (!item) return;
-  const selectedChoice = Number($("#problemAttemptChoice").value);
-  const timeSeconds = Number($("#problemAttemptTime").value);
+  if (!item || selectedAttemptChoice === null) return;
+  const timeSeconds = currentAttemptSeconds();
   const payload = {
     question_id: item.question_id,
-    selected_choice: selectedChoice,
-    time_seconds: Number.isFinite(timeSeconds) ? timeSeconds : null,
+    selected_choice: selectedAttemptChoice,
+    time_seconds: timeSeconds,
     time_limit_seconds: 120,
   };
 
@@ -601,8 +781,8 @@ async function submitProblemAttemptDiagnosis() {
   } catch (_err) {
     const diagnosis = diagnoseProblemAttemptLocal(
       item,
-      selectedChoice,
-      Number.isFinite(timeSeconds) ? timeSeconds : null,
+      selectedAttemptChoice,
+      timeSeconds,
       120,
     );
     renderAttemptDiagnosis(diagnosis, "로컬 미리보기");
@@ -617,7 +797,8 @@ function renderSelectedProblemMap() {
     $("#problemTitle").textContent = "문제별 풀이 지능";
     $("#problemStem").textContent = "problem_solution_maps.json을 먼저 생성해야 합니다.";
     $("#problemConceptTags").innerHTML = "";
-    $("#problemAttemptChoice").innerHTML = "";
+    $("#problemChoiceBoard").innerHTML = "";
+    setAttemptStatus();
     clearAttemptDiagnosis();
     $("#problemSolutionPaths").innerHTML = "";
     return;
@@ -630,60 +811,35 @@ function renderSelectedProblemMap() {
   $("#problemConceptTags").innerHTML = item.concept_tags
     .map((tag) => `<span>${escapeHtml(tag)}</span>`)
     .join("");
-  $("#problemCorrectAnswer").textContent = `${item.correct_choice + 1}. ${item.correct_answer}`;
+  $("#problemCorrectAnswer").textContent = "정답 비공개";
   $("#problemRightsStatus").textContent = item.rights_status;
   $("#problemReviewStatus").textContent = item.review_status;
-  renderAttemptControls(item);
-  $("#problemSolutionPaths").innerHTML = item.solution_paths
-    .map(
-      (path) => `
-        <article class="problem-path-card">
-          <p class="eyebrow">${escapeHtml(path.path_type)} · 신뢰도 ${Math.round(path.confidence * 100)}%</p>
-          <h3>${escapeHtml(path.label)}</h3>
-          <p>${escapeHtml(path.why_this_path)}</p>
-          <div class="problem-path-meta">
-            ${path.trigger_signals.map((signal) => `<span>${escapeHtml(signal)}</span>`).join("")}
-          </div>
-          <ol>
-            ${path.ordered_steps.map((step) => `<li>${escapeHtml(step)}</li>`).join("")}
-          </ol>
-          <div class="problem-link-grid">
-            ${(path.concept_links ?? [])
-              .map(
-                (link) => `
-                  <div class="problem-concept-link">
-                    <strong>${escapeHtml(link.concept_label)}</strong>
-                    <small>${escapeHtml(link.why_required)}</small>
-                    <small>판별: ${escapeHtml(link.decision_test)}</small>
-                    <small>배제: ${escapeHtml(link.rejection_test)}</small>
-                  </div>
-                `,
-              )
-              .join("")}
-          </div>
-          ${
-            path.choice_eliminations?.length
-              ? `
-                <div class="choice-elimination-list">
-                  ${path.choice_eliminations
-                    .map(
-                      (choice) => `
-                        <div class="choice-elimination">
-                          <strong>${choice.choice_index + 1}. ${escapeHtml(choice.choice_text)}</strong>
-                          <span class="choice-verdict">${choice.verdict === "keep_correct" ? "정답 유지" : "제거"}</span>
-                          <small>${escapeHtml(choice.reason)}</small>
-                        </div>
-                      `,
-                    )
-                    .join("")}
+  renderChoiceBoard(item);
+  resetProblemAttempt();
+  $("#problemSolutionPaths").innerHTML = `
+    <details class="solution-library">
+      <summary>풀이 경로 ${item.solution_paths.length}개</summary>
+      <div class="solution-library-grid">
+        ${item.solution_paths
+          .map(
+            (path) => `
+              <article class="problem-path-card">
+                <p class="eyebrow">${escapeHtml(path.path_type)} · 신뢰도 ${Math.round(path.confidence * 100)}%</p>
+                <h3>${escapeHtml(path.label)}</h3>
+                <p>${escapeHtml(path.why_this_path)}</p>
+                <div class="problem-path-meta">
+                  ${path.trigger_signals.map((signal) => `<span>${escapeHtml(signal)}</span>`).join("")}
                 </div>
-              `
-              : ""
-          }
-        </article>
-      `,
-    )
-    .join("");
+                <ol>
+                  ${path.ordered_steps.map((step) => `<li>${escapeHtml(step)}</li>`).join("")}
+                </ol>
+              </article>
+            `,
+          )
+          .join("")}
+      </div>
+    </details>
+  `;
 }
 
 async function loadProblemSolutionMaps() {
@@ -709,7 +865,20 @@ $("#problemSolutionSelect").addEventListener("change", (event) => {
   renderSelectedProblemMap();
 });
 
+$("#problemChoiceBoard").addEventListener("click", (event) => {
+  const button = event.target.closest(".choice-option");
+  if (!button) return;
+  const hadDiagnosis = latestAttemptDiagnosis !== null;
+  selectedAttemptChoice = Number(button.dataset.choiceIndex);
+  latestAttemptDiagnosis = null;
+  clearAttemptDiagnosis();
+  if (hadDiagnosis) startAttemptTimer();
+  updateChoiceSelection();
+});
+
 $("#runAttemptDiagnosis").addEventListener("click", submitProblemAttemptDiagnosis);
+
+$("#resetProblemAttempt").addEventListener("click", resetProblemAttempt);
 
 // ----- 06번 데이터 적재 manifest (기존 보존) -----
 
@@ -806,6 +975,7 @@ async function healthCheck() {
 }
 
 updateSliderOutputs();
+renderCoachFromState(buildPayload());
 renderWeek();
 loadDataManifest();
 loadSubjectTutorials();
