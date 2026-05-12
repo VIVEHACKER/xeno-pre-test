@@ -3,6 +3,7 @@
 from cpa_first.engine.aggregate import (
     aggregate_subject_state,
     aggregate_user_state,
+    infer_current_stage,
 )
 from cpa_first.engine.prescribe import (
     load_decision_rules,
@@ -22,6 +23,7 @@ __all__ = [
     "load_problem_intelligence",
     "aggregate_user_state",
     "aggregate_subject_state",
+    "infer_current_stage",
     "diagnose_problem_attempt",
     "load_problem_solution_maps",
 ]

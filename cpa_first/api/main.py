@@ -103,8 +103,10 @@ class RefreshContext(BaseModel):
     target_exam: str = "CPA_1"
     days_until_exam: int = Field(ge=0)
     available_hours_per_day: float = Field(ge=0)
-    current_stage: str = Field(
-        pattern="^(intro|post_lecture|objective_entry|past_exam_rotation|mock_exam|final)$"
+    # None이면 누적 log 분량/정답률로 자동 추정 (aggregate.infer_current_stage)
+    current_stage: str | None = Field(
+        default=None,
+        pattern="^(intro|post_lecture|objective_entry|past_exam_rotation|mock_exam|final)$",
     )
 
 

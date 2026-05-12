@@ -2,7 +2,11 @@
 
 from __future__ import annotations
 
-from cpa_first.engine import aggregate_subject_state, aggregate_user_state
+from cpa_first.engine import (
+    aggregate_subject_state,
+    aggregate_user_state,
+    infer_current_stage,
+)
 
 
 PROBLEMS = [
@@ -124,3 +128,171 @@ def test_aggregate_user_state_unknown_problem_ignored():
     # UNKNOWN은 무시되고 P-A1만 누적
     assert len(us["subject_states"]) == 1
     assert us["subject_states"][0]["accuracy"] == 1.0
+
+
+# ---------- concept_mastery ----------
+
+PROBLEMS_WITH_CONCEPTS = [
+    {
+        "problem_id": "P-FA1",
+        "subject": "accounting",
+        "concept_tags": ["재무회계: 금융자산", "amortized_cost", "effective_interest_rate"],
+        "time_strategy": {"target_seconds": 90, "skip_threshold_seconds": 120, "exam_room_rule": ""},
+    },
+    {
+        "problem_id": "P-FA2",
+        "subject": "accounting",
+        "concept_tags": ["재무회계: 금융자산", "impairment_loss"],
+        "time_strategy": {"target_seconds": 90, "skip_threshold_seconds": 120, "exam_room_rule": ""},
+    },
+    {
+        "problem_id": "P-RV1",
+        "subject": "accounting",
+        "concept_tags": ["재무회계: 수익인식", "revenue_recognition"],
+        "time_strategy": {"target_seconds": 100, "skip_threshold_seconds": 130, "exam_room_rule": ""},
+    },
+    {
+        "problem_id": "P-NOTAG",
+        "subject": "accounting",
+        "concept_tags": ["amortized_cost"],  # Korean prefix 없음 → 집계 제외
+        "time_strategy": {"target_seconds": 90, "skip_threshold_seconds": 120, "exam_room_rule": ""},
+    },
+]
+
+
+def test_concept_mastery_aggregates_by_korean_primary_tag():
+    pbi = {p["problem_id"]: p for p in PROBLEMS_WITH_CONCEPTS}
+    logs = [
+        _log("P-FA1", True, 80),
+        _log("P-FA1", False, 90),
+        _log("P-FA2", False, 100),  # same concept = "재무회계: 금융자산"
+        _log("P-RV1", True, 95),
+        _log("P-RV1", True, 90),
+    ]
+    agg = aggregate_subject_state(logs, pbi, "accounting")
+    cm = {row["concept"]: row["mastery"] for row in agg["concept_mastery"]}
+    # 재무회계: 금융자산 — 3건 중 1건 정답 = 0.3333
+    assert cm["재무회계: 금융자산"] == round(1 / 3, 4)
+    # 재무회계: 수익인식 — 2건 모두 정답
+    assert cm["재무회계: 수익인식"] == 1.0
+
+
+def test_concept_mastery_ignores_problems_without_korean_tag():
+    pbi = {p["problem_id"]: p for p in PROBLEMS_WITH_CONCEPTS}
+    logs = [_log("P-NOTAG", True, 80), _log("P-NOTAG", False, 90)]
+    agg = aggregate_subject_state(logs, pbi, "accounting")
+    # 한국어 primary tag가 없으면 concept_mastery에서 누락
+    assert "concept_mastery" not in agg
+
+
+def test_concept_mastery_sorted_weakness_first():
+    pbi = {p["problem_id"]: p for p in PROBLEMS_WITH_CONCEPTS}
+    logs = [
+        _log("P-FA1", False, 80),  # 금융자산 0% (1건)
+        _log("P-RV1", True, 80),   # 수익인식 100%
+    ]
+    agg = aggregate_subject_state(logs, pbi, "accounting")
+    cm = agg["concept_mastery"]
+    # 약점 우선: 금융자산(0) 먼저, 수익인식(1.0) 나중
+    assert cm[0]["concept"] == "재무회계: 금융자산"
+    assert cm[-1]["concept"] == "재무회계: 수익인식"
+
+
+# ---------- inferred risk_tags ----------
+
+def test_risk_tags_inferred_time_pressure_when_overrun_high():
+    pbi = {p["problem_id"]: p for p in PROBLEMS}
+    # 4건 모두 시간초과 + 명시 태그 없음 → time_pressure 자동 추가
+    logs = [
+        _log("P-A1", True, 150),
+        _log("P-A1", False, 150),
+        _log("P-A2", True, 140),
+        _log("P-A2", False, 140),
+    ]
+    agg = aggregate_subject_state(logs, pbi, "accounting")
+    assert "time_pressure" in agg["risk_tags"]
+
+
+def test_risk_tags_inferred_concept_gap_when_low_mastery():
+    pbi = {p["problem_id"]: p for p in PROBLEMS_WITH_CONCEPTS}
+    # 금융자산 0% mastery — concept_gap 자동 추가
+    logs = [_log("P-FA1", False, 80), _log("P-FA1", False, 90)]
+    agg = aggregate_subject_state(logs, pbi, "accounting")
+    assert "concept_gap" in agg["risk_tags"]
+
+
+def test_explicit_mistake_categories_take_priority():
+    pbi = {p["problem_id"]: p for p in PROBLEMS}
+    # 4건 모두 시간초과 + 명시 태그 3개 → 명시가 슬롯 다 차지, 추론 안 들어옴
+    logs = [
+        _log("P-A1", False, 150, mistakes=["concept_gap", "memory_decay", "fact_error"]),
+    ]
+    agg = aggregate_subject_state(logs, pbi, "accounting")
+    # 상한 3개, 모두 명시 태그
+    assert len(agg["risk_tags"]) == 3
+    assert set(agg["risk_tags"]) == {"concept_gap", "memory_decay", "fact_error"}
+    # time_pressure는 슬롯이 꽉 차서 들어오지 못한다
+    assert "time_pressure" not in agg["risk_tags"]
+
+
+# ---------- infer_current_stage ----------
+
+def test_infer_stage_intro_when_no_logs():
+    assert infer_current_stage([]) == "intro"
+
+
+def test_infer_stage_post_lecture_when_few_logs():
+    logs = [_log("P-A1", True, 80) for _ in range(10)]
+    assert infer_current_stage(logs) == "post_lecture"
+
+
+def test_infer_stage_objective_entry_when_low_accuracy():
+    # 100건 풀었지만 정답률 40% — 단계 도약 막힘
+    logs = [_log("P-A1", True, 80) for _ in range(40)] + [
+        _log("P-A1", False, 80) for _ in range(60)
+    ]
+    assert infer_current_stage(logs) == "objective_entry"
+
+
+def test_infer_stage_past_exam_rotation_when_moderate_volume():
+    logs = [_log("P-A1", True, 80) for _ in range(80)] + [
+        _log("P-A1", False, 80) for _ in range(40)
+    ]
+    # n=120 (≥80, <200), accuracy=0.667
+    assert infer_current_stage(logs) == "past_exam_rotation"
+
+
+def test_infer_stage_mock_exam_when_high_volume_good_accuracy():
+    # n=250 (≥200, <400), accuracy=0.7 (≥0.62)
+    logs = [_log("P-A1", True, 80) for _ in range(175)] + [
+        _log("P-A1", False, 80) for _ in range(75)
+    ]
+    assert infer_current_stage(logs) == "mock_exam"
+
+
+def test_infer_stage_final_when_volume_and_accuracy_meet_bar():
+    # n=500 (≥400), accuracy=0.8 (≥0.72)
+    logs = [_log("P-A1", True, 80) for _ in range(400)] + [
+        _log("P-A1", False, 80) for _ in range(100)
+    ]
+    assert infer_current_stage(logs) == "final"
+
+
+def test_aggregate_user_state_uses_inferred_stage_when_none():
+    logs = [_log("P-A1", True, 80) for _ in range(5)]
+    us = aggregate_user_state(
+        logs, PROBLEMS, user_id="u", target_exam="CPA_1",
+        days_until_exam=90, available_hours_per_day=8, current_stage=None,
+    )
+    # 5건만 누적 → post_lecture
+    assert us["current_stage"] == "post_lecture"
+
+
+def test_aggregate_user_state_respects_explicit_stage():
+    logs = [_log("P-A1", True, 80) for _ in range(5)]
+    # 5건만 누적이지만 사용자가 final 명시 → 추정으로 덮어쓰지 않음
+    us = aggregate_user_state(
+        logs, PROBLEMS, user_id="u", target_exam="CPA_1",
+        days_until_exam=90, available_hours_per_day=8, current_stage="final",
+    )
+    assert us["current_stage"] == "final"
