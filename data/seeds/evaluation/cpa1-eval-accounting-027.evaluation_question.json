@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-accounting-027",
+  "exam": "CPA_1",
+  "subject": "accounting",
+  "unit": "cost_flow",
+  "applicable_year": 2026,
+  "stem": "㈜CF는 단일공정 종합원가계산을 적용한다. 20X1년 기초재공품 200단위(가공원가 완성도 40%), 당기 착수 1,800단위, 기말재공품 400단위(가공원가 완성도 50%), 당기 완성품 1,600단위이다. 평균법을 적용할 때 가공원가 완성품환산량은 몇 단위인가?",
+  "choices": [
+    "1,600단위",
+    "1,720단위",
+    "1,800단위",
+    "1,920단위"
+  ],
+  "correct_choice": 2,
+  "explanation": "평균법 완성품환산량 = 완성품 환산수량 + 기말재공품 환산수량. 기초재공품 완성도는 무시한다. 가공원가 환산량 = 완성품 1,600 × 100% + 기말재공품 400 × 50% = 1,600 + 200 = 1,800단위.",
+  "concept_tags": [
+    "원가관리회계: 원가흐름",
+    "process_costing",
+    "weighted_average_method",
+    "equivalent_units"
+  ],
+  "expected_seconds": 80,
+  "difficulty": "easy",
+  "difficulty_score": 2,
+  "bloom_level": "apply",
+  "attractor_traps": [
+    "기초재공품 완성도를 차감(FIFO 방식)",
+    "재료원가 환산량(100%)으로 답",
+    "완성품만 환산량으로 계산"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

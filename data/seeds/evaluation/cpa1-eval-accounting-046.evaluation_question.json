@@ -1,0 +1,32 @@
+{
+  "question_id": "cpa1-eval-accounting-046",
+  "exam": "CPA_1",
+  "subject": "accounting",
+  "unit": "cvp",
+  "applicable_year": 2026,
+  "stem": "㈜CF는 제품 X를 단위당 200원에 판매하며 단위당 변동원가 120원, 연간 고정원가 800,000원이다. 외부 고객으로부터 5,000단위를 단위당 150원에 특별주문하겠다는 제안을 받았다. 유휴생산능력은 충분하며 특별주문 수락 시 추가 고정원가는 발생하지 않는다. 특별주문 수락 시 영업이익은 얼마나 변동하는가?",
+  "choices": [
+    "100,000원 감소",
+    "150,000원 증가",
+    "250,000원 증가",
+    "750,000원 증가"
+  ],
+  "correct_choice": 1,
+  "explanation": "특별주문 단위당 공헌이익 = 150 - 120 = 30원. 증분 공헌이익 = 30 × 5,000 = 150,000원. 추가 고정원가가 없으므로 영업이익 150,000원 증가.",
+  "concept_tags": [
+    "원가관리회계: CVP",
+    "relevant_cost",
+    "special_order"
+  ],
+  "expected_seconds": 80,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "analyze",
+  "attractor_traps": [
+    "특별주문가가 정상 판매가보다 낮아 단순 감소로 답",
+    "전부원가(고정원가 배부 포함)로 비교",
+    "고정원가가 단위당 비용이라 추가 발생한다고 가정"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

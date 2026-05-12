@@ -1,0 +1,32 @@
+{
+  "question_id": "cpa1-eval-accounting-035",
+  "exam": "CPA_1",
+  "subject": "accounting",
+  "unit": "cvp",
+  "applicable_year": 2026,
+  "stem": "㈜CF의 20X1년 매출액은 5,000,000원, 변동원가 3,000,000원, 고정원가 1,200,000원이다. 안전한계율(margin of safety ratio)은 얼마인가?",
+  "choices": [
+    "20%",
+    "40%",
+    "60%",
+    "70%"
+  ],
+  "correct_choice": 1,
+  "explanation": "공헌이익 = 5,000,000 - 3,000,000 = 2,000,000원. 공헌이익률 = 2,000,000 / 5,000,000 = 40%. BEP 매출액 = 고정원가 / 공헌이익률 = 1,200,000 / 0.4 = 3,000,000원. 안전한계율 = (현재 매출 - BEP 매출) / 현재 매출 = (5,000,000 - 3,000,000) / 5,000,000 = 40%.",
+  "concept_tags": [
+    "원가관리회계: CVP",
+    "margin_of_safety",
+    "break_even_point"
+  ],
+  "expected_seconds": 90,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "apply",
+  "attractor_traps": [
+    "공헌이익률(40%)을 안전한계율로 혼동 — 본 문항은 우연히 동일",
+    "BEP 판매수량과 현재 판매수량 차이로 계산",
+    "고정원가 / 현재 매출 = 24%로 답"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

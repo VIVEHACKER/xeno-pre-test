@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-accounting-031",
+  "exam": "CPA_1",
+  "subject": "accounting",
+  "unit": "cost_flow",
+  "applicable_year": 2026,
+  "stem": "㈜CF의 20X1년 자료. 기초재공품 80,000원, 직접재료원가 220,000원, 직접노무원가 180,000원, 제조간접원가 150,000원, 기말재공품 110,000원, 기초제품재고 40,000원, 기말제품재고 70,000원이다. 20X1년 매출원가는 얼마인가?",
+  "choices": [
+    "490,000원",
+    "520,000원",
+    "550,000원",
+    "580,000원"
+  ],
+  "correct_choice": 0,
+  "explanation": "당기총제조원가 = 220,000 + 180,000 + 150,000 = 550,000. 당기제품제조원가 = 기초재공품 80,000 + 당기총제조원가 550,000 - 기말재공품 110,000 = 520,000. 매출원가 = 기초제품 40,000 + 당기제품제조원가 520,000 - 기말제품 70,000 = 490,000.",
+  "concept_tags": [
+    "원가관리회계: 원가흐름",
+    "manufacturing_cost",
+    "cost_of_goods_manufactured",
+    "cost_of_goods_sold"
+  ],
+  "expected_seconds": 75,
+  "difficulty": "easy",
+  "difficulty_score": 2,
+  "bloom_level": "apply",
+  "attractor_traps": [
+    "당기총제조원가를 매출원가로 혼동",
+    "재공품 재고 변동 누락",
+    "제품 재고 변동 누락"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

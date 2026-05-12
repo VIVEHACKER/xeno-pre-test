@@ -1,0 +1,32 @@
+{
+  "question_id": "cpa1-eval-accounting-036",
+  "exam": "CPA_1",
+  "subject": "accounting",
+  "unit": "cvp",
+  "applicable_year": 2026,
+  "stem": "㈜CF의 당기 영업이익은 400,000원이며 공헌이익은 1,200,000원이다. 다음 기에 매출이 10% 증가하고 단위당 변동원가율과 고정원가는 변하지 않는다고 가정할 때, 영업이익은 몇 % 증가하는가?",
+  "choices": [
+    "10%",
+    "20%",
+    "30%",
+    "33%"
+  ],
+  "correct_choice": 2,
+  "explanation": "영업레버리지도(DOL) = 공헌이익 / 영업이익 = 1,200,000 / 400,000 = 3. 매출 변화율 × DOL = 영업이익 변화율. 10% × 3 = 30%.",
+  "concept_tags": [
+    "원가관리회계: CVP",
+    "operating_leverage",
+    "DOL"
+  ],
+  "expected_seconds": 80,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "analyze",
+  "attractor_traps": [
+    "매출 증가율 그대로 영업이익 증가율로 답",
+    "DOL = 영업이익 / 공헌이익으로 역산",
+    "고정원가도 함께 10% 증가한다고 가정"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,32 @@
+{
+  "question_id": "cpa1-eval-accounting-041",
+  "exam": "CPA_1",
+  "subject": "accounting",
+  "unit": "cvp",
+  "applicable_year": 2026,
+  "stem": "㈜CF의 단위당 판매가격 1,000원, 단위당 변동원가 600원, 연간 고정원가 2,000,000원이다. 법인세율 25%, 세후 목표이익 600,000원을 달성하기 위해 필요한 판매수량은 몇 단위인가?",
+  "choices": [
+    "5,000단위",
+    "6,500단위",
+    "7,000단위",
+    "7,500단위"
+  ],
+  "correct_choice": 2,
+  "explanation": "세전 목표이익 = 세후 600,000 / (1 - 0.25) = 800,000원. 필요 공헌이익 = 고정원가 + 세전 목표이익 = 2,000,000 + 800,000 = 2,800,000원. 단위당 공헌이익 = 1,000 - 600 = 400원. 필요 판매수량 = 2,800,000 / 400 = 7,000단위.",
+  "concept_tags": [
+    "원가관리회계: CVP",
+    "target_profit",
+    "after_tax_target"
+  ],
+  "expected_seconds": 90,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "apply",
+  "attractor_traps": [
+    "세후 목표이익을 그대로 세전으로 사용",
+    "(1-세율)을 곱하여 세후 환산 방향 반대",
+    "법인세를 고정원가에 더해 계산"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

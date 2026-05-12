@@ -18,7 +18,20 @@
   "properties": {
     "question_id": { "type": "string" },
     "exam": { "type": "string", "enum": ["CPA_1"] },
-    "subject": { "type": "string", "enum": ["accounting", "tax"] },
+    "subject": {
+      "type": "string",
+      "description": "cpa_first.subjects 레지스트리와 동기화.",
+      "enum": [
+        "accounting",
+        "tax",
+        "business",
+        "economics",
+        "corporate_law",
+        "management",
+        "finance",
+        "cost_accounting"
+      ]
+    },
     "unit": { "type": "string" },
     "applicable_year": {
       "type": ["integer", "null"],
@@ -51,6 +64,27 @@
       "type": ["integer", "null"],
       "description": "예상 풀이 시간 (벤치마크 기록용)."
     },
+    "difficulty": {
+      "type": "string",
+      "enum": ["easy", "mid", "hard"],
+      "description": "3단계 난이도 카테고리. easy=단일식, mid=2-3단계, hard=다단계+매력적 오답."
+    },
+    "difficulty_score": {
+      "type": ["integer", "null"],
+      "minimum": 1,
+      "maximum": 5,
+      "description": "1=trivial, 5=함정+다단계. easy=1-2, mid=3, hard=4-5."
+    },
+    "bloom_level": {
+      "type": "string",
+      "enum": ["remember", "understand", "apply", "analyze", "evaluate"],
+      "description": "Bloom 인지단계. CPA 1차 객관식은 보통 understand~analyze."
+    },
+    "attractor_traps": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "문항이 노린 매력적 오답 종류 (검증 라운드에서 채움)."
+    },
     "rights_status": {
       "type": "string",
       "enum": [
@@ -62,7 +96,14 @@
     },
     "review_status": {
       "type": "string",
-      "enum": ["ai_draft", "expert_reviewed", "approved", "rejected"]
+      "enum": [
+        "ai_draft",
+        "ai_draft_verified",
+        "ai_draft_revised",
+        "expert_reviewed",
+        "approved",
+        "rejected"
+      ]
     }
   },
   "additionalProperties": false

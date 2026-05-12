@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-accounting-032",
+  "exam": "CPA_1",
+  "subject": "accounting",
+  "unit": "cost_flow",
+  "applicable_year": 2026,
+  "stem": "㈜CF는 정상개별원가계산을 적용하며, 제조간접원가는 직접노무시간 기준으로 예정배부한다. 20X1년 예정 제조간접원가 600,000원, 예정 직접노무시간 30,000시간, 실제 제조간접원가 700,000원, 실제 직접노무시간 32,000시간이다. 20X1년 제조간접원가 배부차이는 얼마인가?",
+  "choices": [
+    "과대배부 40,000원",
+    "과소배부 40,000원",
+    "과대배부 60,000원",
+    "과소배부 60,000원"
+  ],
+  "correct_choice": 3,
+  "explanation": "예정배부율 = 600,000 / 30,000 = @20원. 예정배부액 = 실제 직접노무시간 32,000 × @20 = 640,000원. 배부차이 = 실제발생 700,000 - 예정배부 640,000 = 60,000원, 실제발생이 더 크므로 과소배부.",
+  "concept_tags": [
+    "원가관리회계: 원가흐름",
+    "job_order_costing",
+    "predetermined_overhead_rate",
+    "over_under_applied_overhead"
+  ],
+  "expected_seconds": 90,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "apply",
+  "attractor_traps": [
+    "예정 직접노무시간 30,000으로 예정배부액 계산",
+    "과대/과소 부호 혼동",
+    "차액 절댓값만 답"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

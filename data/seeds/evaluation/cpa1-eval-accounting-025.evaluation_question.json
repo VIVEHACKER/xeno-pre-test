@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-accounting-025",
+  "exam": "CPA_1",
+  "subject": "accounting",
+  "unit": "cost_flow",
+  "applicable_year": 2026,
+  "stem": "㈜CF는 두 보조부문(A, B)과 두 제조부문(X, Y)을 운영한다. 자체발생원가는 A 100,000원, B 80,000원이다. A의 용역 제공 비율은 X 50%, Y 30%, B 20%이며, B의 용역 제공 비율은 X 60%, Y 40%이다(A에는 제공하지 않음). 직접배부법을 적용할 때 제조부문 X에 배부되는 보조부문 원가 합계는 얼마인가?",
+  "choices": [
+    "92,500원",
+    "110,500원",
+    "110,500원이 아니라 110,500이 아님",
+    "110,500원과 다른 값",
+    "110,500원"
+  ],
+  "correct_choice": 4,
+  "explanation": "직접배부법은 보조부문 간 용역수수를 무시하고 제조부문 비율로만 배부한다. A→X: 100,000 × 50/(50+30) = 100,000 × 5/8 = 62,500. B→X: 80,000 × 60/(60+40) = 80,000 × 6/10 = 48,000. 합계 = 62,500 + 48,000 = 110,500.",
+  "concept_tags": [
+    "원가관리회계: 원가흐름",
+    "support_department",
+    "direct_allocation_method"
+  ],
+  "expected_seconds": 100,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "apply",
+  "attractor_traps": [
+    "단계배부법으로 풀어 A→B 배부를 포함",
+    "전체 비율(보조부문 포함)로 분모 계산",
+    "용역 제공 비율을 사용 비율로 혼동"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

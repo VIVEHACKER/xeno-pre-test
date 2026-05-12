@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-accounting-033",
+  "exam": "CPA_1",
+  "subject": "accounting",
+  "unit": "cost_flow",
+  "applicable_year": 2026,
+  "stem": "㈜CF의 20X1년 종합원가계산 자료. 기초재공품 200단위(가공원가 완성도 60%), 당기 착수 1,600단위, 기말재공품 300단위(가공원가 완성도 40%), 당기 완성품 1,500단위이다. 선입선출법(FIFO)으로 계산한 가공원가 완성품환산량은 몇 단위인가?",
+  "choices": [
+    "1,500단위",
+    "1,620단위",
+    "1,800단위",
+    "1,920단위"
+  ],
+  "correct_choice": 0,
+  "explanation": "FIFO 가공원가 환산량 = 기초재공품 완성소요 + 당기 착수 후 완성 + 기말재공품 환산. 기초재공품 완성소요 = 200 × (1-0.6) = 80. 당기 착수 후 완성 = 완성품 1,500 - 기초재공품 200 = 1,300단위. 기말재공품 = 300 × 40% = 120. 합계 = 80 + 1,300 + 120 = 1,500단위.",
+  "concept_tags": [
+    "원가관리회계: 원가흐름",
+    "process_costing",
+    "fifo_method",
+    "equivalent_units"
+  ],
+  "expected_seconds": 110,
+  "difficulty": "hard",
+  "difficulty_score": 4,
+  "bloom_level": "analyze",
+  "attractor_traps": [
+    "평균법(완성품 + 기말재공품)으로 계산",
+    "기초재공품 완성소요분의 완성도 미차감",
+    "기말재공품 환산량을 100%로 계산"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}
