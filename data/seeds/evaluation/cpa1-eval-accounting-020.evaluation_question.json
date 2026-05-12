@@ -32,5 +32,6 @@
     "보기4 (1,085,000): 새로운 시설 개설원가를 가산한 오류",
     "보기5 (1,095,000): 광고비 또는 초기가동손실 등 비관련원가를 가산한 오류"
   ],
-  "question_id": "cpa1-eval-accounting-020"
+  "question_id": "cpa1-eval-accounting-020",
+  "correct_answer": "₩1,060,000"
 }

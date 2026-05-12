@@ -31,5 +31,6 @@
     "₩330,560: 외상분의 현재가치만 인식하고 즉시 수령한 현금 누락",
     "₩400,000: 외상분 명목금액만 인식"
   ],
-  "question_id": "cpa1-eval-accounting-030"
+  "question_id": "cpa1-eval-accounting-030",
+  "correct_answer": "₩430,560"
 }

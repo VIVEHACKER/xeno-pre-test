@@ -32,5 +32,6 @@
     "보기 3(₩120,000, ₩3,000): 항목 C를 원가 그대로 평가(확정판매계약 NRV 미적용)",
     "보기 5(₩118,000, ₩5,000): 항목 B만 평가하고 C는 원가 유지 등 부분적 오류"
   ],
-  "question_id": "cpa1-eval-accounting-018"
+  "question_id": "cpa1-eval-accounting-018",
+  "correct_answer": "재고자산 ₩115,000, 평가손실 ₩2,000"
 }

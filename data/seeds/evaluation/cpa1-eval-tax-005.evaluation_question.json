@@ -21,5 +21,6 @@
   ],
   "expected_seconds": 80,
   "rights_status": "synthetic_seed",
-  "review_status": "expert_reviewed"
+  "review_status": "expert_reviewed",
+  "correct_answer": "비과세 적용. 양도소득세 0원"
 }

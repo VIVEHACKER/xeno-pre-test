@@ -28,5 +28,6 @@
     "고정원가 / 현재 매출 = 24%로 답"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "40%"
 }

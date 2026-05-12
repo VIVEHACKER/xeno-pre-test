@@ -32,5 +32,6 @@
     "₩61,892: 현가계수 오용 또는 단순계산 오류",
     "₩92,295: 할인발행차금 전액을 1차연도에 상각하는 오류"
   ],
-  "question_id": "cpa1-eval-accounting-037"
+  "question_id": "cpa1-eval-accounting-037",
+  "correct_answer": "₩73,812"
 }

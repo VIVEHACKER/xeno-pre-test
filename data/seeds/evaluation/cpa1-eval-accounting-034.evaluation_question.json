@@ -31,5 +31,6 @@
     "₩946,520: 액면이자를 ₩76,000(=1,000,000×8%×?) 등으로 잘못 계산하거나 현가계수 적용 오류",
     "₩1,053,480: 액면금액에 할인차금을 가산하는 부호 오류"
   ],
-  "question_id": "cpa1-eval-accounting-034"
+  "question_id": "cpa1-eval-accounting-034",
+  "correct_answer": "₩950,252"
 }

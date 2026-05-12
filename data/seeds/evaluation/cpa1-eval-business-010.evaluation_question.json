@@ -29,5 +29,6 @@
     "회수기간법 등 다른 기준 적용"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "NPV가 더 큰 B를 채택"
 }

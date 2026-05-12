@@ -29,5 +29,6 @@
     "용역 제공 비율을 사용 비율로 혼동"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "110,500원"
 }

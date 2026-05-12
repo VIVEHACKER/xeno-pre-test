@@ -33,5 +33,6 @@
     "31,000,000원: Gross-up율 10% 오적용",
     "31,100,000원: Gross-up율 11% 정확 적용"
   ],
-  "question_id": "cpa1-eval-tax-008"
+  "question_id": "cpa1-eval-tax-008",
+  "correct_answer": "31,000,000원"
 }

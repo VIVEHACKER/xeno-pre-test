@@ -29,5 +29,6 @@
     "이사 전원 출석 필요로 잘못 암기"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "이사 과반수의 출석으로 출석 이사 과반수 찬성"
 }

@@ -21,5 +21,6 @@
   ],
   "expected_seconds": 65,
   "rights_status": "synthetic_seed",
-  "review_status": "expert_reviewed"
+  "review_status": "expert_reviewed",
+  "correct_answer": "업무용 차량의 적정 한도 내 유류비"
 }

@@ -29,5 +29,6 @@
     "비중을 잘못 적용(자기자본 40%, 부채 60%)"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "11.4%"
 }

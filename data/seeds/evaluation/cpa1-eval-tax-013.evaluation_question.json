@@ -31,5 +31,6 @@
     "1세대 1주택 양도: 분류과세를 종합과세로 오인 유도",
     "비영업대금이익: 이자소득=종합과세로 일반화 오인 유도"
   ],
-  "question_id": "cpa1-eval-tax-013"
+  "question_id": "cpa1-eval-tax-013",
+  "correct_answer": "비영업대금의 이익 2,500만원"
 }

@@ -29,5 +29,6 @@
     "회계기준 임의 적용 가능으로 오해"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "외부감사 대상 회사는 직전 사업연도 말의 자산총액 또는 매출액 등이 일정 기준 이상인 회사로 정한다."
 }

@@ -28,5 +28,6 @@
     "법인세를 고정원가에 더해 계산"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "7,000단위"
 }

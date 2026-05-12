@@ -30,5 +30,6 @@
     "보기3: 자문수수료를 이전대가(취득원가)에 가산하는 구 기준서식 오류",
     "보기4: 자문수수료까지 자본에서 차감하거나 무시하는 오류"
   ],
-  "question_id": "cpa1-eval-accounting-057"
+  "question_id": "cpa1-eval-accounting-057",
+  "correct_answer": "영업권 ₩2,000,000, 당기비용 ₩3,000,000"
 }

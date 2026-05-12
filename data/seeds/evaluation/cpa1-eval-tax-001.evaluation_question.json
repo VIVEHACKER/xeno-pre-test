@@ -21,5 +21,6 @@
   ],
   "expected_seconds": 60,
   "rights_status": "synthetic_seed",
-  "review_status": "expert_reviewed"
+  "review_status": "expert_reviewed",
+  "correct_answer": "일반 음식점에서 제공하는 외식 서비스"
 }

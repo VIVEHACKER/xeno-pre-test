@@ -29,5 +29,6 @@
     "상관계수를 +1로 잘못 적용"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "5%"
 }

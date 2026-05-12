@@ -21,5 +21,6 @@
   ],
   "expected_seconds": 80,
   "rights_status": "synthetic_seed",
-  "review_status": "expert_reviewed"
+  "review_status": "expert_reviewed",
+  "correct_answer": "전액(2,400만원) 종합과세"
 }

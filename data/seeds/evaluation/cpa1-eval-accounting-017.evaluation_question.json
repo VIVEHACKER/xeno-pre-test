@@ -33,5 +33,6 @@
     "￦455,000: NRV 합계(105+180+160) 그대로 적용",
     "￦430,000: 정답 - 항목별 저가법 정확 적용"
   ],
-  "question_id": "cpa1-eval-accounting-017"
+  "question_id": "cpa1-eval-accounting-017",
+  "correct_answer": "￦430,000"
 }

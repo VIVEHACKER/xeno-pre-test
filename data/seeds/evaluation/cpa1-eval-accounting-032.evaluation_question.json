@@ -29,5 +29,6 @@
     "차액 절댓값만 답"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "과소배부 60,000원"
 }

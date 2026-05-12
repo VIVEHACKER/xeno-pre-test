@@ -29,5 +29,6 @@
     "평준화 필요성 누락"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "수요 예측 실패 시에도 안정적으로 운영되도록 안전재고를 충분히 확보한다."
 }

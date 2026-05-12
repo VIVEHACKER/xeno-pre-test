@@ -29,5 +29,6 @@
     "제품 재고 변동 누락"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "490,000원"
 }

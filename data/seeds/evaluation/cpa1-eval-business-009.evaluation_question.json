@@ -28,5 +28,6 @@
     "할인율 무관 단순 비율 사용"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "13%"
 }

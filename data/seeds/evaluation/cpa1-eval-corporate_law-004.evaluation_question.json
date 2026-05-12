@@ -29,5 +29,6 @@
     "재무제표 승인 권한 누락"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "회사 자산의 처분에 관한 일상적 업무집행 결정"
 }

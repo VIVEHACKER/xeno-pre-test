@@ -28,5 +28,6 @@
     "수량과 가격의 변화율 분자/분모 위치 혼동"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "1.2"
 }

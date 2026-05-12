@@ -33,5 +33,6 @@
     "접대비 매입세액을 공제로 처리",
     "직수출을 매출세액에 포함(영세율 미적용)"
   ],
-  "question_id": "cpa1-eval-tax-007"
+  "question_id": "cpa1-eval-tax-007",
+  "correct_answer": "16,000,000원"
 }

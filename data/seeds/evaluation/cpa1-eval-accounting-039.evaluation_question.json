@@ -32,5 +32,6 @@
     "1년 후 장부금액이 아닌 발행시점 장부금액 사용 오류",
     "유효이자만 가산하고 표시이자 차감 누락"
   ],
-  "question_id": "cpa1-eval-accounting-039"
+  "question_id": "cpa1-eval-accounting-039",
+  "correct_answer": "상환손실 ₩23,533"
 }

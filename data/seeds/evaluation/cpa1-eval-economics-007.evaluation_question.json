@@ -29,5 +29,6 @@
     "이윤 양수로 잘못 판단"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "생산을 계속한다."
 }

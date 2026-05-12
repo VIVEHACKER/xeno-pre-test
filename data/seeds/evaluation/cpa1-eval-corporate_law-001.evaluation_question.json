@@ -28,5 +28,6 @@
     "회사의 영리법인 성격을 부정"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "당연상인은 자기 명의로 상행위를 영업으로 하는 자이다."
 }

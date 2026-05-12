@@ -32,5 +32,6 @@
     "보기④: 유효이자율이 아닌 표시이자율을 적용하여 이자수익을 계산하는 오류",
     "보기⑤: ②와 ③의 오류를 결합한 함정"
   ],
-  "question_id": "cpa1-eval-accounting-016"
+  "question_id": "cpa1-eval-accounting-016",
+  "correct_answer": "이자수익 ₩96,528, 손상차손 ₩17,000"
 }

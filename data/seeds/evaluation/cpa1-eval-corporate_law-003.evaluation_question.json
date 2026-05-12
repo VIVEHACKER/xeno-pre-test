@@ -29,5 +29,6 @@
     "정관 인증 요건 누락"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "회사의 성립 시기는 본점 소재지에서 설립등기를 신청한 날이다."
 }

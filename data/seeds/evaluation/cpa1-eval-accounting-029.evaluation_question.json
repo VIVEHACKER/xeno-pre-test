@@ -32,5 +32,6 @@
     "₩833,333: 제품 A,B 인식 + 유지보수 절반 인식의 오류 조합",
     "₩916,667: 정상 풀이 결과(정답)"
   ],
-  "question_id": "cpa1-eval-accounting-029"
+  "question_id": "cpa1-eval-accounting-029",
+  "correct_answer": "₩916,667"
 }

@@ -29,5 +29,6 @@
     "현실 자본구조 효과와 이론 가정을 혼용"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "기업가치는 자본구조와 무관하며, 자기자본비용은 부채비율 증가에 따라 선형적으로 증가한다."
 }

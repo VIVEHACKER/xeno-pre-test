@@ -12,6 +12,7 @@
     "stem",
     "choices",
     "correct_choice",
+    "correct_answer",
     "rights_status",
     "review_status"
   ],
@@ -51,6 +52,10 @@
       "type": "integer",
       "minimum": 0,
       "description": "choices 배열의 0-기반 인덱스."
+    },
+    "correct_answer": {
+      "type": "string",
+      "description": "choices[correct_choice]와 반드시 일치하는 정답 보기 텍스트."
     },
     "explanation": {
       "type": "string",

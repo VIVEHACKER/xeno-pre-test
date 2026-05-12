@@ -29,5 +29,6 @@
     "조세승수 식 (-MPC/(1-MPC)) 잘못 적용"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "400"
 }

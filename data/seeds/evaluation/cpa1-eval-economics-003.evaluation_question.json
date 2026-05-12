@@ -28,5 +28,6 @@
     "수요·공급 함수를 가격에 대해 풀지 않고 수량에 대해 풀이"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "P=30, Q=40"
 }

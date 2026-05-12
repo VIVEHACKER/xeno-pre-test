@@ -30,5 +30,6 @@
     "③: 상각을 누락하여 취득원가를 그대로 장부금액으로 인식",
     "④: 할증취득으로 오인하여 상각방향을 반대로 적용"
   ],
-  "question_id": "cpa1-eval-accounting-014"
+  "question_id": "cpa1-eval-accounting-014",
+  "correct_answer": "장부금액 ₩965,268, 이자수익 ₩95,024"
 }

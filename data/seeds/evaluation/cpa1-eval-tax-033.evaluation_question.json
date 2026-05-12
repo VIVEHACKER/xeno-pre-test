@@ -29,5 +29,6 @@
     "35,300,000원: 직장공제회 초과반환금까지 합산한 오류",
     "36,000,000원: 직장공제회 포함 + Gross-up 일부 오산"
   ],
-  "question_id": "cpa1-eval-tax-033"
+  "question_id": "cpa1-eval-tax-033",
+  "correct_answer": "34,300,000원"
 }

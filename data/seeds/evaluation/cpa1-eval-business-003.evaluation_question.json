@@ -28,5 +28,6 @@
     "단순 영구연금(g=0) 공식으로 계산"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "20,000,000원"
 }

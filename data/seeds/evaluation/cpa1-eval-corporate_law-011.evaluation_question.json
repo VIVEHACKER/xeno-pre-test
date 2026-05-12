@@ -29,5 +29,6 @@
     "채무분담 예외 인정 가능성 누락"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "단순분할의 경우 분할 후 신설회사는 분할 전 회사의 채무를 연대하여 책임지는 것이 원칙이다."
 }

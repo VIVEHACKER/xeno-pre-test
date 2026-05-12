@@ -29,5 +29,6 @@
     "장기와 단기 균형 조건 혼동"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "시장가격은 한계비용보다 높게 형성된다."
 }

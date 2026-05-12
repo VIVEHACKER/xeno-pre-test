@@ -32,5 +32,6 @@
     "면세비율로 안분 → 오답",
     "공통매입세액을 전액 공제 → 80,000,000원"
   ],
-  "question_id": "cpa1-eval-tax-024"
+  "question_id": "cpa1-eval-tax-024",
+  "correct_answer": "85,000,000원"
 }

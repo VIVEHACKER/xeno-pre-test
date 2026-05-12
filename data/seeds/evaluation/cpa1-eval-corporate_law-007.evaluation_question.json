@@ -29,5 +29,6 @@
     "감사 권한을 회계감사로만 제한"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "감사는 회계감사뿐 아니라 업무감사도 할 수 있다."
 }

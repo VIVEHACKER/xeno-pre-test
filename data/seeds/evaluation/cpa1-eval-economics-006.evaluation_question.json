@@ -29,5 +29,6 @@
     "TC를 Q로 나누지 않고 그대로 사용"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "AC=24, AVC=14, MC=24"
 }

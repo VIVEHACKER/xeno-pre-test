@@ -31,5 +31,6 @@
     "₩60,000: 손실 계산 시 주수를 60주로 잘못 적용",
     "₩140,000: 두 거래 모두 이익으로 처리(80,000+60,000) 또는 손실 부호 오류"
   ],
-  "question_id": "cpa1-eval-accounting-040"
+  "question_id": "cpa1-eval-accounting-040",
+  "correct_answer": "₩60,000"
 }

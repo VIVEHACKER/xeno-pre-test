@@ -32,5 +32,6 @@
     "₩1,160,000: 매입할인 차감 누락 + 시제품 매각액 차감(구 기준) 혼합 오류",
     "₩1,200,000: 일상적 수선유지비나 광고선전비 등 비관련 지출을 포함한 오답"
   ],
-  "question_id": "cpa1-eval-accounting-010"
+  "question_id": "cpa1-eval-accounting-010",
+  "correct_answer": "₩1,100,000"
 }

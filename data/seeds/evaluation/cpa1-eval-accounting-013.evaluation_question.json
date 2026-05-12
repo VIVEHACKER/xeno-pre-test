@@ -32,5 +32,6 @@
     "₩76,021: 표시이자×유효이자율 등 무의미한 곱셈 오류",
     "₩85,523: 액면과 장부금액의 평균 등을 사용한 잘못된 계산"
   ],
-  "question_id": "cpa1-eval-accounting-013"
+  "question_id": "cpa1-eval-accounting-013",
+  "correct_answer": "₩95,026"
 }

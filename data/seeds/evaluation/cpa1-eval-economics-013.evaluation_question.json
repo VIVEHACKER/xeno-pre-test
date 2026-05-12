@@ -29,5 +29,6 @@
     "1/(1-r) 식으로 잘못 계산 (≈222조)"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "2,000조 원"
 }

@@ -13,6 +13,7 @@ from __future__ import annotations
 import argparse
 import glob
 import json
+import re
 import sys
 from pathlib import Path
 from typing import Iterable
@@ -71,7 +72,55 @@ def validate_file(file_path: Path, schema_key: str) -> list[str]:
     schema = load_schema(schema_key)
     validator = Draft202012Validator(schema)
     errors = sorted(validator.iter_errors(data), key=lambda e: list(e.path))
-    return [_format_error(err) for err in errors]
+    return [_format_error(err) for err in errors] + _semantic_errors(data, schema_key)
+
+
+def _semantic_errors(data: dict, schema_key: str) -> list[str]:
+    if schema_key != "evaluation_question":
+        return []
+
+    errors: list[str] = []
+    choices = data.get("choices")
+    correct_choice = data.get("correct_choice")
+    if not isinstance(choices, list) or not isinstance(correct_choice, int):
+        return errors
+    if not 0 <= correct_choice < len(choices):
+        return ["[correct_choice] correct_choice must be a valid choices index"]
+
+    correct_answer = data.get("correct_answer")
+    if correct_answer is None:
+        errors.append("[correct_answer] correct_answer is required for answer-key audits")
+    elif correct_answer != choices[correct_choice]:
+        errors.append(
+            "[correct_answer] correct_answer must equal choices[correct_choice] "
+            f"(expected {choices[correct_choice]!r}, got {correct_answer!r})"
+        )
+
+    explanation = str(data.get("explanation") or "")
+    if "보기 보정 권장" in explanation:
+        errors.append("[explanation] explanation contains 보기 보정 권장; fix the choices instead")
+    if "보기 중 가장 근접" in explanation or "가장 근접한" in explanation:
+        errors.append("[explanation] explanation relies on nearest-choice grading; fix the choices")
+
+    for idx, choice in enumerate(choices):
+        if idx == correct_choice:
+            continue
+        if _explanation_claims_choice_is_answer(explanation, str(choice)):
+            errors.append(
+                "[explanation] explanation marks a non-correct choice as 정답 "
+                f"(choice {idx}: {choice!r})"
+            )
+
+    return errors
+
+
+def _explanation_claims_choice_is_answer(explanation: str, choice: str) -> bool:
+    if not explanation or not choice:
+        return False
+    for segment in re.split(r"(?<=[.!?。])\s+|[\r\n]+", explanation):
+        if "정답" in segment and choice in segment:
+            return True
+    return False
 
 
 def _format_error(err: ValidationError) -> str:

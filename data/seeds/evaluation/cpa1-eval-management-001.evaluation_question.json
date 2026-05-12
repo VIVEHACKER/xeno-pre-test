@@ -29,5 +29,6 @@
     "참여적 관리를 X이론에 잘못 매핑"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "X이론은 권위적·통제적 관리, Y이론은 참여적·자율적 관리를 시사한다."
 }

@@ -32,5 +32,6 @@
     "₩1,140,000: 매입할인 30,000을 차감하지 않은 오류",
     "₩1,155,000: 일반관리비 배분액 및 기타 비취득원가 항목을 포함한 오류"
   ],
-  "question_id": "cpa1-eval-accounting-019"
+  "question_id": "cpa1-eval-accounting-019",
+  "correct_answer": "₩1,070,000"
 }

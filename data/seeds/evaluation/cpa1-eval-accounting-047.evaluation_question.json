@@ -31,5 +31,6 @@
     "₩210: 분모를 8,600단위 등으로 잘못 계산",
     "₩250: 분모를 완성품 8,000과 기말 100% 또는 단순 평균 계산 오류"
   ],
-  "question_id": "cpa1-eval-accounting-047"
+  "question_id": "cpa1-eval-accounting-047",
+  "correct_answer": "₩200"
 }

@@ -21,5 +21,6 @@
   ],
   "expected_seconds": 60,
   "rights_status": "synthetic_seed",
-  "review_status": "expert_reviewed"
+  "review_status": "expert_reviewed",
+  "correct_answer": "신고납세 세목의 일반 제척기간은 부과할 수 있는 날부터 5년이다."
 }

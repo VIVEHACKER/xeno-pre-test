@@ -32,5 +32,6 @@
     "₩120,000: 재평가잉여금 잔액을 전혀 차감하지 않고 평가감 전액을 당기손실로 인식한 오류",
     "₩220,000: 감가상각비 220,000을 재평가손실로 혼동"
   ],
-  "question_id": "cpa1-eval-accounting-022"
+  "question_id": "cpa1-eval-accounting-022",
+  "correct_answer": "₩60,000"
 }

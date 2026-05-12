@@ -21,5 +21,6 @@
   ],
   "expected_seconds": 90,
   "rights_status": "synthetic_seed",
-  "review_status": "expert_reviewed"
+  "review_status": "expert_reviewed",
+  "correct_answer": "240,000원"
 }

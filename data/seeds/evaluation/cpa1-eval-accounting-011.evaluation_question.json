@@ -32,5 +32,6 @@
     "④: 액면금액 × 표시이자율이 아닌 액면 × 유효이자율(100,000)로 이자수익 계산 + 취득원가 대비 평가",
     "⑤: 상각후원가와 공정가치 차이는 맞으나 부호/방향 혼동"
   ],
-  "question_id": "cpa1-eval-accounting-011"
+  "question_id": "cpa1-eval-accounting-011",
+  "correct_answer": "이자수익 ₩95,024, 기타포괄이익 ₩4,732"
 }

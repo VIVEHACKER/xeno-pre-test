@@ -30,5 +30,6 @@
     "포지셔닝을 첫 단계로 잘못 분류"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "STP는 시장세분화 → 표적시장 선정 → 포지셔닝 순서로 진행된다."
 }

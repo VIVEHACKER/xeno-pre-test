@@ -31,5 +31,6 @@
     "상환손익 부호 혼동 (이익/손실 반대 선택)",
     "₩12,968: 의미 불명확한 숫자"
   ],
-  "question_id": "cpa1-eval-accounting-060"
+  "question_id": "cpa1-eval-accounting-060",
+  "correct_answer": "사채상환손실 ₩14,732"
 }

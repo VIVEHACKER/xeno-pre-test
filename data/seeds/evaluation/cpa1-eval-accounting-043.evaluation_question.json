@@ -32,5 +32,6 @@
     "₩600,000: 유형자산처분이익을 가산으로 잘못 처리 또는 매출채권 증가 부호 오류",
     "₩620,000: 유형자산처분이익을 차감하지 않음"
   ],
-  "question_id": "cpa1-eval-accounting-043"
+  "question_id": "cpa1-eval-accounting-043",
+  "correct_answer": "₩560,000"
 }

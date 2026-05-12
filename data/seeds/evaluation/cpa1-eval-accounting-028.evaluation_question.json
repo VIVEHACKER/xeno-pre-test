@@ -32,5 +32,6 @@
     "④: 거래가격 산정과 배분의 순서 혼동",
     "⑤: 수행의무 식별 단계 자체를 마지막 직전에 배치하여 누락에 가까운 오류"
   ],
-  "question_id": "cpa1-eval-accounting-028"
+  "question_id": "cpa1-eval-accounting-028",
+  "correct_answer": "계약 식별 → 수행의무 식별 → 거래가격 산정 → 거래가격 배분 → 수행의무 이행 시 수익인식"
 }

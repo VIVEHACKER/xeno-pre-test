@@ -31,5 +31,6 @@
     "보기3 ₩120,000: 처분차익 150,000에서 처분 거래원가 20,000과 취득 거래원가 10,000을 임의로 차감한 오류",
     "보기4(정답): FVOCI 지분상품 지정 시 재분류 금지로 당기손익 영향 없음"
   ],
-  "question_id": "cpa1-eval-accounting-015"
+  "question_id": "cpa1-eval-accounting-015",
+  "correct_answer": "영향 없음(0)"
 }

@@ -32,5 +32,6 @@
     "₩250,000: 과세소득 1,150,000 × 20%에서 추가 오류 또는 접대비만 가산한 계산 혼동",
     "₩200,000: 회계이익 1,000,000 × 20%만 계산하여 영구차이 효과 무시"
   ],
-  "question_id": "cpa1-eval-accounting-053"
+  "question_id": "cpa1-eval-accounting-053",
+  "correct_answer": "₩210,000"
 }

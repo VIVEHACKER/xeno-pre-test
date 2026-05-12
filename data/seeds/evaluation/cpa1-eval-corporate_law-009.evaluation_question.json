@@ -29,5 +29,6 @@
     "사채발행을 주주총회 결의로 잘못 이해"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "사채총액은 회사 자본금의 4배를 초과할 수 없다."
 }

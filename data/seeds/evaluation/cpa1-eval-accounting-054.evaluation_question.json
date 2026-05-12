@@ -32,5 +32,6 @@
     "₩254,000: 자기주식처분이익 세효과를 자본으로 분리하지 않고 법인세비용에 모두 포함시킨 경우",
     "₩214,000: 단순 계산 함정"
   ],
-  "question_id": "cpa1-eval-accounting-054"
+  "question_id": "cpa1-eval-accounting-054",
+  "correct_answer": "₩220,000"
 }

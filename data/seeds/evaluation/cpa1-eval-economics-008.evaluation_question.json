@@ -29,5 +29,6 @@
     "MR을 100 - Q로 잘못 미분"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "Q=40, P=60"
 }

@@ -29,5 +29,6 @@
     "Y에만 소득 전부 투입"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "X=50, Y=25"
 }

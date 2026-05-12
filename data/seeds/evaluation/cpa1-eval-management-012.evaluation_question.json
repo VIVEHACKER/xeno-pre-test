@@ -28,5 +28,6 @@
     "대안평가를 정보탐색 앞으로 배치"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "문제인식 → 정보탐색 → 대안평가 → 구매결정 → 구매 후 행동"
 }

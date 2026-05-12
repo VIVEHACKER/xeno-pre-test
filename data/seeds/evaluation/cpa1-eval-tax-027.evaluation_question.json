@@ -32,5 +32,6 @@
     "비과세 금양임야를 차감하지 않음(선지 4, 5)",
     "장례비 한도를 무시하고 전액 차감"
   ],
-  "question_id": "cpa1-eval-tax-027"
+  "question_id": "cpa1-eval-tax-027",
+  "correct_answer": "31억 8,500만원"
 }

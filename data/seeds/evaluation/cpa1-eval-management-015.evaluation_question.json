@@ -30,5 +30,6 @@
     "두 기법을 품질과 무관으로 답"
   ],
   "rights_status": "synthetic_seed",
-  "review_status": "ai_draft"
+  "review_status": "ai_draft",
+  "correct_answer": "식스시그마는 통계적 기법(DMAIC)을 활용해 결함을 백만 분의 3.4 수준으로 줄이는 것을 목표로 한다."
 }
