@@ -226,6 +226,22 @@
                 <strong id="problemReviewStatus">-</strong>
               </article>
             </div>
+            <div class="attempt-diagnosis-panel">
+              <div class="attempt-controls" aria-label="응시 진단 입력">
+                <label>
+                  내 선택
+                  <select id="problemAttemptChoice"></select>
+                </label>
+                <label>
+                  풀이 시간(초)
+                  <input id="problemAttemptTime" type="number" min="0" step="5" value="120" />
+                </label>
+                <button class="primary-action" id="runAttemptDiagnosis" type="button">진단</button>
+              </div>
+              <div class="attempt-diagnosis-result" id="problemAttemptDiagnosis">
+                보기를 선택하고 진단을 실행하면 오답 원인과 다음 학습 행동이 표시됩니다.
+              </div>
+            </div>
             <div class="problem-solution-paths" id="problemSolutionPaths"></div>
           </div>
         </section>

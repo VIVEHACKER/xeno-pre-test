@@ -27,6 +27,7 @@ def isolated_runtime(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Path:
     monkeypatch.setattr(api_main, "ACTIVE_USER_STATE_PATH", runtime / "active_user_state.json")
     monkeypatch.setattr(api_main, "ACTIVE_PRESCRIPTION_PATH", runtime / "active_prescription.json")
     monkeypatch.setattr(api_main, "MISTAKE_LOGS_PATH", runtime / "mistake_logs.jsonl")
+    monkeypatch.setattr(api_main, "ATTEMPT_DIAGNOSES_PATH", runtime / "attempt_diagnoses.jsonl")
     return runtime
 
 
@@ -311,6 +312,47 @@ def test_clear_logs(client: TestClient):
     delete_response = client.delete("/logs")
     assert delete_response.status_code == 200
     assert client.get("/logs").json()["count"] == 0
+
+
+# ----- M8: 풀이맵 기반 응시 진단 -----
+
+
+def test_attempt_diagnose_returns_concept_gap_and_persists(client: TestClient):
+    response = client.post(
+        "/attempts/diagnose",
+        json={
+            "attempt_id": "attempt-1",
+            "user_id": "active-user",
+            "question_id": "cpa1-eval-accounting-002",
+            "selected_choice": 1,
+            "time_seconds": 95,
+        },
+    )
+
+    assert response.status_code == 200, response.text
+    body = response.json()
+    diagnosis = body["diagnosis"]
+    assert diagnosis["correct"] is False
+    assert diagnosis["correct_choice"] == 2
+    assert diagnosis["recommended_path"]["path_type"] == "choice_elimination"
+    assert "concept_gap" in diagnosis["mistake_tags"]
+    assert len(diagnosis["missing_concept_links"]) == 3
+
+    listing = client.get("/attempts").json()
+    assert listing["count"] == 1
+    assert listing["attempts"][0]["attempt_id"] == "attempt-1"
+
+
+def test_attempt_diagnose_rejects_unknown_problem_map(client: TestClient):
+    response = client.post(
+        "/attempts/diagnose",
+        json={
+            "question_id": "not-a-map",
+            "selected_choice": 0,
+        },
+    )
+
+    assert response.status_code == 404
 
 
 # ----- M4: 검수 워크플로우 -----

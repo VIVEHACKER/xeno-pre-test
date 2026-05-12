@@ -462,6 +462,153 @@ function renderProblemOptions() {
   renderSelectedProblemMap();
 }
 
+function problemPathByType(item, pathType) {
+  return (item.solution_paths || []).find((path) => path.path_type === pathType);
+}
+
+function problemChoiceElimination(item, choiceIndex) {
+  const path = problemPathByType(item, "choice_elimination");
+  return (path?.choice_eliminations || []).find((choice) => choice.choice_index === choiceIndex) || null;
+}
+
+function diagnoseProblemAttemptLocal(item, selectedChoice, timeSeconds, timeLimitSeconds = 120) {
+  const correct = selectedChoice === item.correct_choice;
+  const slow = Number.isFinite(timeSeconds) && timeSeconds > timeLimitSeconds;
+  const recommendedPath = !correct
+    ? problemPathByType(item, "choice_elimination")
+    : slow
+      ? problemPathByType(item, "structure")
+      : problemPathByType(item, "reverse_check");
+  const missingLinks = correct && !slow ? [] : recommendedPath?.concept_links || [];
+  const mistakeTags = [];
+  if (!correct) mistakeTags.push("concept_gap", "distractor_trap");
+  if (slow) mistakeTags.push("time_pressure");
+  const action = !correct
+    ? {
+        action_type: "concept_rebuild",
+        action_text: "선택한 보기와 정답 보기의 조건 차이를 표시하고 같은 개념의 기초-예제-유제 순서로 다시 풉니다.",
+      }
+    : slow
+      ? {
+          action_type: "speed_rebuild",
+          action_text: "정답은 맞혔지만 제한 시간을 넘겼으므로 표/구조식으로 조건 분리 시간을 줄입니다.",
+        }
+      : {
+          action_type: "advance_to_variant",
+          action_text: "핵심 개념과 검산이 통과됐으므로 같은 단원의 낮은 난도 변형 문제로 이동합니다.",
+        };
+
+  return {
+    question_id: item.question_id,
+    correct,
+    selected_choice: selectedChoice,
+    selected_choice_text: item.choices[selectedChoice],
+    correct_choice: item.correct_choice,
+    correct_choice_text: item.choices[item.correct_choice],
+    time_seconds: Number.isFinite(timeSeconds) ? timeSeconds : null,
+    time_limit_seconds: timeLimitSeconds,
+    time_over_limit: slow,
+    mistake_tags: mistakeTags,
+    selected_choice_elimination: problemChoiceElimination(item, selectedChoice),
+    recommended_path: recommendedPath,
+    missing_concept_links: missingLinks,
+    next_tutorial: {
+      tutorial_id: item.tutorial_id,
+      focus_concepts: missingLinks.slice(0, 3).map((link) => link.concept_label),
+    },
+    next_action: action,
+  };
+}
+
+function clearAttemptDiagnosis() {
+  $("#problemAttemptDiagnosis").textContent = "보기를 선택하고 진단을 실행하면 오답 원인과 다음 학습 행동이 표시됩니다.";
+}
+
+function renderAttemptControls(item) {
+  $("#problemAttemptChoice").innerHTML = item.choices
+    .map(
+      (choice, index) =>
+        `<option value="${index}">${index + 1}. ${escapeHtml(choice)}</option>`,
+    )
+    .join("");
+  $("#problemAttemptTime").value = "120";
+  clearAttemptDiagnosis();
+}
+
+function renderAttemptDiagnosis(diagnosis, persistenceLabel) {
+  const tags = diagnosis.mistake_tags?.length
+    ? diagnosis.mistake_tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")
+    : `<span>clear</span>`;
+  const elimination = diagnosis.selected_choice_elimination
+    ? `<p>${escapeHtml(diagnosis.selected_choice_elimination.reason)}</p>`
+    : `<p>정답 보기의 조건을 검산 경로로 확인했습니다.</p>`;
+  const links = (diagnosis.missing_concept_links || [])
+    .slice(0, 3)
+    .map(
+      (link) => `
+        <li>
+          <strong>${escapeHtml(link.concept_label)}</strong>
+          <span>${escapeHtml(link.why_required)}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  $("#problemAttemptDiagnosis").innerHTML = `
+    <div class="attempt-result-head">
+      <strong>${diagnosis.correct ? "정답" : "오답"} · ${escapeHtml(diagnosis.next_action.action_type)}</strong>
+      <span>${escapeHtml(persistenceLabel)}</span>
+    </div>
+    <div class="attempt-result-tags">${tags}</div>
+    ${elimination}
+    <div class="attempt-next-action">
+      <span>다음 행동</span>
+      <p>${escapeHtml(diagnosis.next_action.action_text)}</p>
+    </div>
+    <div class="attempt-next-action">
+      <span>추천 풀이</span>
+      <p>${escapeHtml(diagnosis.recommended_path.label)} · ${escapeHtml(diagnosis.recommended_path.why_this_path)}</p>
+    </div>
+    ${
+      links
+        ? `<ol class="attempt-concept-list">${links}</ol>`
+        : `<p class="attempt-clear">이번 시도는 개념 재진입보다 변형 문제로 넘어가는 편이 낫습니다.</p>`
+    }
+  `;
+}
+
+async function submitProblemAttemptDiagnosis() {
+  const item = problemSolutionMaps.find((problem) => problem.question_id === selectedProblemId);
+  if (!item) return;
+  const selectedChoice = Number($("#problemAttemptChoice").value);
+  const timeSeconds = Number($("#problemAttemptTime").value);
+  const payload = {
+    question_id: item.question_id,
+    selected_choice: selectedChoice,
+    time_seconds: Number.isFinite(timeSeconds) ? timeSeconds : null,
+    time_limit_seconds: 120,
+  };
+
+  try {
+    const response = await fetch("/attempts/diagnose", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    if (!response.ok) throw new Error(`attempt ${response.status}`);
+    const data = await response.json();
+    renderAttemptDiagnosis(data.diagnosis, "서버 기록됨");
+  } catch (_err) {
+    const diagnosis = diagnoseProblemAttemptLocal(
+      item,
+      selectedChoice,
+      Number.isFinite(timeSeconds) ? timeSeconds : null,
+      120,
+    );
+    renderAttemptDiagnosis(diagnosis, "로컬 미리보기");
+  }
+}
+
 function renderSelectedProblemMap() {
   const item = problemSolutionMaps.find((problem) => problem.question_id === selectedProblemId);
   if (!item) {
@@ -470,6 +617,8 @@ function renderSelectedProblemMap() {
     $("#problemTitle").textContent = "문제별 풀이 지능";
     $("#problemStem").textContent = "problem_solution_maps.json을 먼저 생성해야 합니다.";
     $("#problemConceptTags").innerHTML = "";
+    $("#problemAttemptChoice").innerHTML = "";
+    clearAttemptDiagnosis();
     $("#problemSolutionPaths").innerHTML = "";
     return;
   }
@@ -484,6 +633,7 @@ function renderSelectedProblemMap() {
   $("#problemCorrectAnswer").textContent = `${item.correct_choice + 1}. ${item.correct_answer}`;
   $("#problemRightsStatus").textContent = item.rights_status;
   $("#problemReviewStatus").textContent = item.review_status;
+  renderAttemptControls(item);
   $("#problemSolutionPaths").innerHTML = item.solution_paths
     .map(
       (path) => `
@@ -558,6 +708,8 @@ $("#problemSolutionSelect").addEventListener("change", (event) => {
   selectedProblemId = event.target.value;
   renderSelectedProblemMap();
 });
+
+$("#runAttemptDiagnosis").addEventListener("click", submitProblemAttemptDiagnosis);
 
 // ----- 06번 데이터 적재 manifest (기존 보존) -----
 

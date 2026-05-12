@@ -19,8 +19,10 @@ from pydantic import BaseModel, Field
 
 from cpa_first.engine import (
     aggregate_user_state,
+    diagnose_problem_attempt,
     load_decision_rules,
     load_problem_intelligence,
+    load_problem_solution_maps,
     prescribe,
 )
 
@@ -29,10 +31,12 @@ ROOT = Path(__file__).resolve().parents[2]
 RULES_DIR = ROOT / "data" / "seeds" / "decision_rules"
 PROBLEMS_DIR = ROOT / "data" / "seeds" / "problems"
 PROTOTYPE_DIR = ROOT / "prototype"
+PROBLEM_MAPS_PATH = PROTOTYPE_DIR / "problem_solution_maps.json"
 RUNTIME_DIR = ROOT / "data" / "runtime"
 ACTIVE_USER_STATE_PATH = RUNTIME_DIR / "active_user_state.json"
 ACTIVE_PRESCRIPTION_PATH = RUNTIME_DIR / "active_prescription.json"
 MISTAKE_LOGS_PATH = RUNTIME_DIR / "mistake_logs.jsonl"
+ATTEMPT_DIAGNOSES_PATH = RUNTIME_DIR / "attempt_diagnoses.jsonl"
 
 REVIEWABLE_REF_TYPES = {"decision_rule", "problem_intelligence"}
 REVIEW_STATUSES_RULE = {"machine_draft", "machine_extracted", "human_reviewed", "approved", "rejected"}
@@ -79,6 +83,15 @@ class MistakeLogIn(BaseModel):
     mistake_categories: list[str] = Field(default_factory=list)
     self_note: str | None = None
     session_id: str | None = None
+
+
+class AttemptDiagnoseIn(BaseModel):
+    attempt_id: str | None = None
+    user_id: str = "active-user"
+    question_id: str
+    selected_choice: int = Field(ge=0)
+    time_seconds: int | None = Field(default=None, ge=0)
+    time_limit_seconds: int = Field(default=120, ge=1)
 
 
 class RefreshContext(BaseModel):
@@ -146,6 +159,7 @@ def create_app(
     *,
     rules_dir: Path = RULES_DIR,
     problems_dir: Path = PROBLEMS_DIR,
+    problem_maps_path: Path = PROBLEM_MAPS_PATH,
 ) -> FastAPI:
     """앱 팩토리. 테스트에서는 별도 디렉터리를 주입할 수 있다."""
     app = FastAPI(title="CPA First", version="0.1.0")
@@ -161,7 +175,16 @@ def create_app(
     # 시작 시 한 번 로드. 시드 갱신은 재시작으로 반영.
     rules = load_decision_rules(rules_dir)
     problems = load_problem_intelligence(problems_dir)
+    problem_solution_maps = (
+        load_problem_solution_maps(problem_maps_path) if problem_maps_path.exists() else []
+    )
     problems_by_id = {p["problem_id"]: p for p in problems}
+    problem_maps_by_id = {p["question_id"]: p for p in problem_solution_maps}
+    solution_paths_by_id = {
+        path["path_id"]: path
+        for problem in problem_solution_maps
+        for path in problem.get("solution_paths", [])
+    }
     rules_by_key = {r["rule_key"]: r for r in rules}
 
     @app.get("/health")
@@ -170,6 +193,7 @@ def create_app(
             "status": "ok",
             "decision_rules": len(rules),
             "problems": len(problems),
+            "problem_solution_maps": len(problem_solution_maps),
         }
 
     @app.post("/diagnose", response_model=DiagnoseResponse)
@@ -215,6 +239,18 @@ def create_app(
             if problem is None:
                 raise HTTPException(status_code=404, detail=f"problem not found: {ref_id}")
             return {"ref_type": ref_type, "ref_id": ref_id, "data": problem}
+
+        if ref_type == "problem_solution_map":
+            problem_map = problem_maps_by_id.get(ref_id)
+            if problem_map is None:
+                raise HTTPException(status_code=404, detail=f"problem_solution_map not found: {ref_id}")
+            return {"ref_type": ref_type, "ref_id": ref_id, "data": problem_map}
+
+        if ref_type == "solution_path":
+            path = solution_paths_by_id.get(ref_id)
+            if path is None:
+                raise HTTPException(status_code=404, detail=f"solution_path not found: {ref_id}")
+            return {"ref_type": ref_type, "ref_id": ref_id, "data": path}
 
         if ref_type == "user_state":
             active = _load_active()
@@ -262,6 +298,64 @@ def create_app(
         if MISTAKE_LOGS_PATH.exists():
             MISTAKE_LOGS_PATH.unlink()
         return {"status": "ok", "log_count": 0}
+
+    # ----- M8: 풀이맵 기반 응시 진단 -----
+
+    def _read_attempt_diagnoses() -> list[dict]:
+        if not ATTEMPT_DIAGNOSES_PATH.exists():
+            return []
+        out: list[dict] = []
+        with ATTEMPT_DIAGNOSES_PATH.open("r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line:
+                    out.append(json.loads(line))
+        return out
+
+    @app.post("/attempts/diagnose")
+    def diagnose_attempt(req: AttemptDiagnoseIn) -> dict[str, Any]:
+        problem_map = problem_maps_by_id.get(req.question_id)
+        if problem_map is None:
+            raise HTTPException(
+                status_code=404,
+                detail=f"problem_solution_map not found: {req.question_id}",
+            )
+        try:
+            diagnosis = diagnose_problem_attempt(
+                problem_map,
+                selected_choice=req.selected_choice,
+                time_seconds=req.time_seconds,
+                time_limit_seconds=req.time_limit_seconds,
+            )
+        except ValueError as exc:
+            raise HTTPException(status_code=422, detail=str(exc)) from exc
+
+        RUNTIME_DIR.mkdir(parents=True, exist_ok=True)
+        attempt_id = req.attempt_id or f"attempt-{_now_iso()}-{req.question_id}"
+        record = {
+            "attempt_id": attempt_id,
+            "user_id": req.user_id,
+            "question_id": req.question_id,
+            "selected_choice": req.selected_choice,
+            "time_seconds": req.time_seconds,
+            "time_limit_seconds": req.time_limit_seconds,
+            "created_at": _now_iso(),
+            "diagnosis": diagnosis,
+        }
+        with ATTEMPT_DIAGNOSES_PATH.open("a", encoding="utf-8") as f:
+            f.write(json.dumps(record, ensure_ascii=False) + "\n")
+        return {"status": "ok", "attempt": record, "diagnosis": diagnosis}
+
+    @app.get("/attempts")
+    def list_attempts() -> dict[str, Any]:
+        attempts = _read_attempt_diagnoses()
+        return {"count": len(attempts), "attempts": attempts}
+
+    @app.delete("/attempts")
+    def clear_attempts() -> dict[str, Any]:
+        if ATTEMPT_DIAGNOSES_PATH.exists():
+            ATTEMPT_DIAGNOSES_PATH.unlink()
+        return {"status": "ok", "count": 0}
 
     @app.post("/user-state/refresh", response_model=DiagnoseResponse)
     def refresh_state(ctx: RefreshContext) -> DiagnoseResponse:

@@ -10,6 +10,10 @@ from cpa_first.engine.prescribe import (
     load_user_state,
     prescribe,
 )
+from cpa_first.engine.problem_diagnosis import (
+    diagnose_problem_attempt,
+    load_problem_solution_maps,
+)
 
 __all__ = [
     "prescribe",
@@ -18,4 +22,6 @@ __all__ = [
     "load_problem_intelligence",
     "aggregate_user_state",
     "aggregate_subject_state",
+    "diagnose_problem_attempt",
+    "load_problem_solution_maps",
 ]
