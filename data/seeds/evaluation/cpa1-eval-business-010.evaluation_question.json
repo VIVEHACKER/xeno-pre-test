@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-business-010",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "financial_management",
+  "applicable_year": 2026,
+  "stem": "투자안 A와 B의 NPV와 IRR이 다음과 같다. 자본예산 의사결정 시 NPV법과 IRR법이 충돌하는 경우 어떤 기준으로 채택해야 하는가? (A: NPV 5억, IRR 18% / B: NPV 7억, IRR 15%, 자본비용 10%, 상호배타적 투자안)",
+  "choices": [
+    "IRR이 더 큰 A를 채택",
+    "NPV가 더 큰 B를 채택",
+    "두 안 모두 채택",
+    "두 안 모두 기각"
+  ],
+  "correct_choice": 1,
+  "explanation": "상호배타적 투자안의 NPV-IRR 충돌이 발생할 때는 NPV법이 기업가치 극대화 관점에서 우월하다. NPV는 절대금액 기준 가치 증가를 측정하므로 B(7억) 채택. IRR은 재투자수익률 가정 차이와 규모 차이 때문에 왜곡 발생.",
+  "concept_tags": [
+    "재무관리: 자본예산",
+    "NPV_IRR_conflict",
+    "mutually_exclusive",
+    "reinvestment_assumption"
+  ],
+  "expected_seconds": 70,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "evaluate",
+  "attractor_traps": [
+    "수익률(%)이 큰 IRR 기준으로 A 선택",
+    "둘 다 자본비용 이상이라 모두 채택(상호배타적이 아닐 때 답)",
+    "회수기간법 등 다른 기준 적용"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

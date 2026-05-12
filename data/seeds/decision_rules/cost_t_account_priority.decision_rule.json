@@ -1,0 +1,14 @@
+{
+  "rule_key": "cost_t_account_priority",
+  "rule_name": "원가 흐름 문제는 T계정 두 개 먼저",
+  "condition_text": "회계학 원가관리 단원에서 매출원가, 당기제품제조원가, 재공품/제품 재고 변동을 묻는 문제가 출제된 경우",
+  "action_text": "공식을 외워서 풀기 전에 재공품 T계정과 제품 T계정 두 개를 먼저 그린다. 차변(기초 + 당기투입)과 대변(완성/판매 + 기말)을 항상 같이 놓고 누락 자료를 즉시 표시한다.",
+  "exception_text": "단순 직접재료원가만 묻는 문제는 원재료 T계정 하나로 처리한다.",
+  "applicable_stages": ["post_lecture", "objective_entry", "past_exam_rotation"],
+  "applicable_subjects": ["accounting"],
+  "required_risk_tags": ["cost_flow_formula_gap", "condition_miss"],
+  "source_signal_count": 0,
+  "source_case_ids": [],
+  "confidence": 0.78,
+  "review_status": "machine_draft"
+}

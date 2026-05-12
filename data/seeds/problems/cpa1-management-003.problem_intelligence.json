@@ -1,0 +1,71 @@
+{
+  "problem_id": "cpa1-management-003",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "management_general",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "경영학: 마케팅",
+    "stp_strategy",
+    "marketing_mix",
+    "product_life_cycle",
+    "consumer_behavior"
+  ],
+  "required_concepts": [
+    {
+      "concept": "STP 전략",
+      "role": "Segmentation → Targeting → Positioning 순서",
+      "prerequisite": true
+    },
+    {
+      "concept": "4P 마케팅 믹스",
+      "role": "Product, Price, Place, Promotion",
+      "prerequisite": true
+    },
+    {
+      "concept": "제품수명주기(PLC)",
+      "role": "도입기·성장기·성숙기·쇠퇴기별 마케팅 전략 차이",
+      "prerequisite": true
+    },
+    {
+      "concept": "소비자 구매의사결정",
+      "role": "문제인식 → 정보탐색 → 대안평가 → 구매결정 → 구매 후 행동",
+      "prerequisite": false
+    }
+  ],
+  "solving_entry_point": "마케팅 프레임워크명을 먼저 식별(STP/4P/PLC/소비자 의사결정)하고 해당 모형의 단계나 요소를 표로 그린다.",
+  "solving_steps": [
+    "프레임워크 식별 — STP, 4P, PLC, 소비자 의사결정 중 어느 것인지.",
+    "STP는 3단계, 4P는 4요소, PLC는 4단계, 소비자 의사결정은 5단계로 메모.",
+    "단계 순서가 옳은지 확인(거꾸로 함정 자주 출제).",
+    "각 단계·요소의 정의를 보기와 대조.",
+    "포지셔닝과 4P를 혼동하지 않도록 차원 분리."
+  ],
+  "trap_patterns": [
+    "STP 약자(Segmentation·Targeting·Positioning)를 다른 단어로 잘못 해석",
+    "포지셔닝을 4P에 포함",
+    "PLC 단계별 특성 혼동(도입기와 성장기 등)",
+    "소비자 의사결정 단계 순서를 거꾸로 답"
+  ],
+  "time_strategy": {
+    "target_seconds": 60,
+    "skip_threshold_seconds": 90,
+    "exam_room_rule": "프레임워크 식별 20초 안에 못 하면 표시."
+  },
+  "variant_axes": [
+    "STP vs 4P",
+    "PLC 단계별 전략",
+    "소비자 의사결정 5단계"
+  ],
+  "mistake_diagnosis": [
+    "concept_gap",
+    "memory_decay",
+    "distractor_trap"
+  ],
+  "review_status": "ai_draft"
+}

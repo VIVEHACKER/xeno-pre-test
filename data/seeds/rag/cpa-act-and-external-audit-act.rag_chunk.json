@@ -1,0 +1,35 @@
+{
+  "chunk_id": "cpa-act-and-external-audit-act",
+  "source": {
+    "source_kind": "official_regulation_paraphrase",
+    "title": "공인회계사법과 외부감사법 — 자격·직무·감사 절차 요약",
+    "reference": "공인회계사법, 주식회사 등의 외부감사에 관한 법률"
+  },
+  "subject": "corporate_law",
+  "unit": "corporate_law_general",
+  "topic_tags": [
+    "cpa_act",
+    "scope_of_practice",
+    "disqualification",
+    "external_audit_act",
+    "auditor_appointment",
+    "audit_report"
+  ],
+  "applicable_year": 2026,
+  "text": "공인회계사법: 직무 범위(§2) — 재무제표 감사·증명, 회계 자문·기장 대행, 세무 자문(세무사 자격 보유 시 또는 등록 시 세무대리). 결격사유(§4) — 미성년자, 피성년후견인·피한정후견인, 파산선고 후 미복권자, 금고 이상 형 집행 종료 후 일정기간 미경과 등. 외국 국적은 결격사유 아님. 등록: 한국공인회계사회 등록 의무. 명칭 사용 금지: 자격 없는 자의 '공인회계사' 명칭 사용 금지. 외부감사법: 외부감사 대상(§4) — 직전 사업연도 말 자산총액·매출액·종업원수 등 기준 충족 회사. 상장·비상장 무관하게 일정 규모면 대상. 감사인 선임(§10): 회사는 매 사업연도 개시 후 일정 기한 내 감사인 선임. 감사 또는 감사위원회의 승인·제청 절차. 회사·감사인 간 독립성 요건(이해관계자 제한, 일정 가족·임원 관계 제한). 감사보고서(§23): 작성·제출, 회사의 재무제표·연결재무제표에 대한 의견 표명. 회계기준: K-IFRS(상장 등 일정 회사) 또는 일반기업회계기준. 외부감사인 책임: 부실감사 시 손해배상책임, 형사처벌 가능. 공시·금융위원회 보고 의무.",
+  "keywords": [
+    "공인회계사법",
+    "직무 범위",
+    "결격사유",
+    "외부감사법",
+    "외부감사 대상",
+    "감사인 선임",
+    "감사인 독립성",
+    "감사보고서",
+    "K-IFRS",
+    "일반기업회계기준",
+    "감사인 책임"
+  ],
+  "rights_status": "official_paraphrase",
+  "review_status": "expert_reviewed"
+}

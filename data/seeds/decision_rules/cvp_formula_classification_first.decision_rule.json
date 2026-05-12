@@ -1,0 +1,14 @@
+{
+  "rule_key": "cvp_formula_classification_first",
+  "rule_name": "CVP 문제는 묻는 단위부터 분류",
+  "condition_text": "CVP/관련원가 단원의 문제에서 묻는 결과가 판매수량, 매출액, 안전한계율, 영업이익 변화 중 하나로 명확하지 않거나, 학생이 어떤 공식을 사용할지 30초 안에 결정하지 못하는 상황",
+  "action_text": "문제를 풀기 전에 묻는 결과를 (판매수량/매출액/안전한계율/이익변화/세후이익) 다섯 카테고리 중 하나로 분류하고 해당 공식 하나만 쓴다. 분류 = (1)수량→고정원가÷단위공헌이익 (2)매출액→고정원가÷공헌이익률 (3)안전한계→(현재-BEP)÷현재 (4)이익변화→매출변화×DOL (5)세후→세전을 (1-세율)로 나눠 분자 보정.",
+  "exception_text": "복수제품 매출배합 문제는 묶음당 공헌이익부터 계산한다.",
+  "applicable_stages": ["objective_entry", "past_exam_rotation", "mock_exam"],
+  "applicable_subjects": ["accounting"],
+  "required_risk_tags": ["formula_confusion", "time_pressure"],
+  "source_signal_count": 0,
+  "source_case_ids": [],
+  "confidence": 0.74,
+  "review_status": "machine_draft"
+}

@@ -1,0 +1,64 @@
+{
+  "problem_id": "cpa1-accounting-013",
+  "exam": "CPA_1",
+  "subject": "accounting",
+  "unit": "cost_management",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "원가관리회계: 원가흐름",
+    "process_costing",
+    "equivalent_units",
+    "weighted_average_vs_fifo"
+  ],
+  "required_concepts": [
+    {
+      "concept": "완성품환산량",
+      "role": "공정에 투입된 원가를 완성품 단위로 환산해 단위원가를 구하기 위한 기준",
+      "prerequisite": true
+    },
+    {
+      "concept": "평균법",
+      "role": "기초재공품과 당기 발생을 합산해 평균 단위원가 계산",
+      "prerequisite": true
+    },
+    {
+      "concept": "선입선출법(FIFO)",
+      "role": "기초재공품 완성소요만 별도 계산해 당기 발생만으로 단위원가 계산",
+      "prerequisite": true
+    }
+  ],
+  "solving_entry_point": "재료비와 가공비 투입시점을 먼저 분리하고, 평균법/FIFO 중 어느 식인지 표시한다.",
+  "solving_steps": [
+    "재료비/가공비 각각의 완성도 시점을 표시한다.",
+    "평균법 환산량 = 완성품 + 기말재공품 환산. 기초재공품 완성도 무시.",
+    "FIFO 환산량 = 기초재공품 완성소요분 + 당기 착수 후 완성 + 기말재공품 환산.",
+    "총원가/총환산량으로 단위원가 산출 후 완성품·기말재공품에 배부.",
+    "묻는 항목(완성품 원가/기말재공품 원가/단위원가)을 보기에서 다시 확인."
+  ],
+  "trap_patterns": [
+    "평균법과 FIFO 식을 혼용해 기초재공품 환산을 누락 또는 중복",
+    "재료비 100%, 가공비 부분 완성도 차이를 잊고 동일 환산량 사용",
+    "기말재공품 완성도를 100%로 가정"
+  ],
+  "time_strategy": {
+    "target_seconds": 130,
+    "skip_threshold_seconds": 170,
+    "exam_room_rule": "환산량 표를 90초 안에 채우지 못하면 표시 후 이동, 2회전에 다시 채운다."
+  },
+  "variant_axes": [
+    "재료비 투입시점(전량 초기/중간/말일) 변경",
+    "공손 발생 시 정상/비정상 공손 처리",
+    "기초재공품 완성도와 기말재공품 완성도의 조합 변경"
+  ],
+  "mistake_diagnosis": [
+    "concept_gap",
+    "formula_gap",
+    "calculation_error"
+  ],
+  "review_status": "ai_draft"
+}

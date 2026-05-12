@@ -1,0 +1,14 @@
+{
+  "rule_key": "economics_graph_first",
+  "rule_name": "경제학 문제는 그래프와 이동 화살표부터",
+  "condition_text": "경제학 미시·거시 문제에서 변수 변화의 방향을 묻거나 곡선 이동을 분석해야 하는 상황. 학생이 식을 먼저 풀려다 가격·수량 부호를 자주 혼동",
+  "action_text": "문제를 읽자마자 P-Q 또는 Y-r 좌표축을 그리고 관련 곡선(수요·공급/IS·LM/AD·AS)을 그린다. 변화 요인이 가격(축 위 이동)인지 조건(곡선 이동)인지 화살표로 분리해 표시한 뒤 새 균형의 변화 방향을 그래프로 결정한다. 계산은 그 다음 단계.",
+  "exception_text": "탄력성 수치 계산 같은 순수 산술 문제는 식을 바로 적용해도 된다.",
+  "applicable_stages": ["post_lecture", "objective_entry", "past_exam_rotation"],
+  "applicable_subjects": ["economics"],
+  "required_risk_tags": ["sign_confusion", "concept_gap"],
+  "source_signal_count": 0,
+  "source_case_ids": [],
+  "confidence": 0.80,
+  "review_status": "machine_draft"
+}

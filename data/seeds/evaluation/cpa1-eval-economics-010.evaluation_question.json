@@ -1,0 +1,34 @@
+{
+  "question_id": "cpa1-eval-economics-010",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "economics_general",
+  "applicable_year": 2026,
+  "stem": "두 기업 A, B가 동시에 협력 또는 배신을 선택하는 1회성 게임이 있다. 보수표(A의 보수, B의 보수)는 (협력,협력)=(3,3), (협력,배신)=(0,5), (배신,협력)=(5,0), (배신,배신)=(1,1)이다. 우월전략과 내쉬균형은?",
+  "choices": [
+    "두 기업 모두의 우월전략은 협력. 내쉬균형은 (협력, 협력).",
+    "두 기업 모두의 우월전략은 배신. 내쉬균형은 (배신, 배신).",
+    "우월전략은 없고 내쉬균형은 (협력, 협력)이다.",
+    "두 기업의 우월전략이 다르므로 내쉬균형이 없다."
+  ],
+  "correct_choice": 1,
+  "explanation": "전형적 죄수의 딜레마. 상대가 협력하든 배신하든 자신은 배신이 더 큰 보수(5>3, 1>0)이므로 두 기업 모두 배신이 우월전략. 내쉬균형은 (배신, 배신) = (1,1). 사회적 최적인 (협력, 협력)=(3,3)에 비해 비효율적.",
+  "concept_tags": [
+    "경제학: 시장구조",
+    "game_theory",
+    "nash_equilibrium",
+    "prisoners_dilemma",
+    "dominant_strategy"
+  ],
+  "expected_seconds": 90,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "analyze",
+  "attractor_traps": [
+    "사회적 최적이 곧 내쉬균형이라고 가정",
+    "(협력, 협력)을 우월전략 결과로 답",
+    "반복게임 협력 결과를 1회성 게임에 적용"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

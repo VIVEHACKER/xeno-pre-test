@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-corporate_law-010",
+  "exam": "CPA_1",
+  "subject": "corporate_law",
+  "unit": "corporate_law_general",
+  "applicable_year": 2026,
+  "stem": "주식회사의 합병에 관한 설명으로 옳은 것은?",
+  "choices": [
+    "흡수합병의 경우 소멸회사 주주의 별도 동의 없이 존속회사가 일방적으로 결정한다.",
+    "합병은 양 회사의 주주총회 특별결의를 거쳐야 한다.",
+    "합병에 반대하는 주주는 주식매수청구권을 행사할 수 없다.",
+    "합병으로 인한 채무인수에는 채권자의 개별 동의가 필요하다."
+  ],
+  "correct_choice": 1,
+  "explanation": "합병은 양 회사(소멸회사·존속회사 또는 신설회사) 모두 주주총회 특별결의를 거쳐야 한다(상법 §522). ①은 틀림 — 소멸회사도 주주총회 결의 필요. ③은 틀림 — 반대주주는 주식매수청구권 행사 가능(상법 §522의3). ④는 틀림 — 합병은 포괄승계이므로 채권자의 개별 동의 불요, 다만 채권자보호 절차(이의제출 공고·최고) 필요.",
+  "concept_tags": [
+    "기업법: 합병/분할/조직변경",
+    "merger",
+    "appraisal_right",
+    "creditor_protection"
+  ],
+  "expected_seconds": 75,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "evaluate",
+  "attractor_traps": [
+    "흡수합병에서 소멸회사 결의 불필요로 오해",
+    "주식매수청구권 행사 불가로 오해",
+    "포괄승계 원칙을 모르고 채권자 개별 동의 필요로 답"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

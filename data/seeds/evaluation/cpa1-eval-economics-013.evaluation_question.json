@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-economics-013",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "economics_general",
+  "applicable_year": 2026,
+  "stem": "중앙은행이 법정지급준비율을 10%로 정하였다. 본원통화가 200조 원이고 모든 시중은행이 초과지급준비금을 보유하지 않으며 민간은 현금을 보유하지 않는다고 가정할 때, 통화승수에 의한 통화량은?",
+  "choices": [
+    "200조 원",
+    "1,000조 원",
+    "2,000조 원",
+    "20조 원"
+  ],
+  "correct_choice": 2,
+  "explanation": "현금 보유 없고 초과지급준비금 0 가정에서 통화승수 = 1 / 지급준비율 = 1 / 0.10 = 10. 통화량 = 본원통화 × 통화승수 = 200조 × 10 = 2,000조 원.",
+  "concept_tags": [
+    "경제학: 화폐금융론",
+    "money_multiplier",
+    "reserve_requirement",
+    "monetary_base"
+  ],
+  "expected_seconds": 60,
+  "difficulty": "easy",
+  "difficulty_score": 2,
+  "bloom_level": "apply",
+  "attractor_traps": [
+    "지급준비율을 곱해 20조 원",
+    "본원통화와 통화량을 같다고 가정 200조 원",
+    "1/(1-r) 식으로 잘못 계산 (≈222조)"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,32 @@
+{
+  "question_id": "cpa1-eval-corporate_law-013",
+  "exam": "CPA_1",
+  "subject": "corporate_law",
+  "unit": "corporate_law_general",
+  "applicable_year": 2026,
+  "stem": "공인회계사법상 공인회계사의 결격사유에 해당하지 않는 것은?",
+  "choices": [
+    "미성년자",
+    "피성년후견인 또는 피한정후견인",
+    "파산선고를 받고 복권되지 아니한 자",
+    "외국 국적 보유자"
+  ],
+  "correct_choice": 3,
+  "explanation": "공인회계사법상 결격사유(공인회계사법 §4): 미성년자, 피성년후견인·피한정후견인, 파산선고를 받고 복권되지 아니한 자, 금고 이상 형 집행 종료 후 일정기간 미경과 등. 외국 국적 보유 자체는 결격사유가 아니다. ①②③은 결격사유.",
+  "concept_tags": [
+    "기업법: 공인회계사법",
+    "cpa_act",
+    "disqualification"
+  ],
+  "expected_seconds": 50,
+  "difficulty": "easy",
+  "difficulty_score": 1,
+  "bloom_level": "remember",
+  "attractor_traps": [
+    "외국 국적을 결격사유로 잘못 암기",
+    "복권자도 결격으로 오해",
+    "성년후견과 한정후견 구분 누락"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

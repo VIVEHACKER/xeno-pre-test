@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-corporate_law-015",
+  "exam": "CPA_1",
+  "subject": "corporate_law",
+  "unit": "corporate_law_general",
+  "applicable_year": 2026,
+  "stem": "주식회사의 자본금 감소(감자)에 관한 설명으로 옳지 않은 것은?",
+  "choices": [
+    "자본금 감소에는 주주총회 특별결의가 필요하다.",
+    "유상감자는 주주에게 환급이 이루어지고, 무상감자는 환급 없이 결손 보전 등에 사용된다.",
+    "결손 보전을 위한 무상감자도 채권자보호 절차가 반드시 요구된다.",
+    "자본금 감소의 등기는 본점 소재지에서 한다."
+  ],
+  "correct_choice": 2,
+  "explanation": "결손 보전 목적의 무상감자(액면병합, 주식병합 등 자본조정)는 회사 재산이 사외 유출되지 않으므로 채권자보호 절차를 거치지 않을 수 있다(상법 §439). 유상감자는 환급으로 사외 유출이 발생하므로 채권자보호 절차가 필수. ①②④는 옳다.",
+  "concept_tags": [
+    "기업법: 주식/사채/자본금",
+    "capital_reduction",
+    "creditor_protection",
+    "shareholders_resolution"
+  ],
+  "expected_seconds": 75,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "analyze",
+  "attractor_traps": [
+    "유상·무상감자 모두 채권자 절차 필요로 오해",
+    "감자를 이사회 결의 사항으로 잘못 분류",
+    "유상감자에서 채권자 절차를 불필요로 오해"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

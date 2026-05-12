@@ -1,0 +1,35 @@
+{
+  "chunk_id": "is-lm-ad-as-model",
+  "source": {
+    "source_kind": "internal_summary",
+    "title": "IS-LM과 AD-AS — 단기 거시 모형",
+    "reference": null
+  },
+  "subject": "economics",
+  "unit": "economics_general",
+  "topic_tags": [
+    "is_lm_model",
+    "ad_as_model",
+    "fiscal_policy",
+    "monetary_policy",
+    "crowding_out",
+    "liquidity_trap"
+  ],
+  "applicable_year": null,
+  "text": "IS 곡선: 재화시장 균형(투자=저축). 정부지출 증가, 조세 감소, 자율투자 증가 → IS 우측 이동. LM 곡선: 화폐시장 균형(통화공급=통화수요). 통화량 증가 또는 물가 하락 → LM 우측 이동. IS-LM 균형은 (Y, r). 재정정책(IS 이동): 확장 시 Y↑, r↑. 이자율 상승이 민간투자를 일부 감소시키는 구축효과 발생. 통화정책(LM 이동): 확장 시 Y↑, r↓. 유동성함정에서는 LM이 수평이라 통화정책 무력. AD 곡선: 물가와 총수요 관계(우하향). AS 곡선: 단기 우상향, 장기 수직(자연산출량). 단기 균형 변화: 재정확장 → AD 우측 → 물가↑, Y↑. 장기 AS 수직 시 통화 충격은 물가만 변화(화폐 중립성).",
+  "keywords": [
+    "IS-LM",
+    "AD-AS",
+    "재정정책",
+    "통화정책",
+    "구축효과",
+    "crowding out",
+    "유동성함정",
+    "liquidity trap",
+    "단기·장기 균형",
+    "화폐 중립성",
+    "자연산출량"
+  ],
+  "rights_status": "self_generated",
+  "review_status": "expert_reviewed"
+}

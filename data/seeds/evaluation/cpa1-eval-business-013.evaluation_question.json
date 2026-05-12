@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-business-013",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "financial_management",
+  "applicable_year": 2026,
+  "stem": "법인세가 없는 완전 자본시장에서 Modigliani-Miller 제1명제가 성립한다. 다음 중 옳은 설명은?",
+  "choices": [
+    "기업의 자본구조 변경은 기업가치를 증가시킨다.",
+    "부채비율이 높아질수록 가중평균자본비용은 낮아진다.",
+    "기업가치는 자본구조와 무관하며, 자기자본비용은 부채비율 증가에 따라 선형적으로 증가한다.",
+    "이자비용의 절세효과로 부채사용이 기업가치를 항상 증가시킨다."
+  ],
+  "correct_choice": 2,
+  "explanation": "MM 제1명제(무세금): 기업가치는 자본구조와 무관(V_L = V_U). 제2명제(무세금): Re = Ra + (D/E)(Ra - Rd)로 부채비율 증가에 따라 자기자본비용이 선형 증가. 법인세 없으므로 절세효과(tax shield)도 없다. ①은 무관성 명제와 충돌, ②는 MM에서 WACC 일정, ④는 법인세 있을 때 명제다.",
+  "concept_tags": [
+    "재무관리: 자본구조",
+    "MM_proposition",
+    "capital_structure_irrelevance",
+    "cost_of_equity"
+  ],
+  "expected_seconds": 80,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "evaluate",
+  "attractor_traps": [
+    "법인세 있는 명제와 혼동해 부채 증가로 가치 상승",
+    "WACC가 부채 증가에 따라 감소한다고 답(MM 제1명제 위반)",
+    "현실 자본구조 효과와 이론 가정을 혼용"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

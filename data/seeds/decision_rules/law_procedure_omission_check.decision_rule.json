@@ -1,0 +1,14 @@
+{
+  "rule_key": "law_procedure_omission_check",
+  "rule_name": "절차 누락 체크리스트로 옳고 그름 판별",
+  "condition_text": "합병·분할·자본금 감소·신주발행 등 회사 구조 변경 사안에서 선택지 중 한 항목이 절차 누락이나 시기 누락을 함정으로 사용하는 문제",
+  "action_text": "구조 변경 사안에는 항상 5단계 체크리스트로 확인한다: ①주주총회 특별결의(필요 여부+요건) → ②반대주주 주식매수청구권 행사 가능 여부 → ③채권자보호 절차(공고·최고·변제·담보, 면제 가능 여부) → ④신주발행·합병교부금 등 효과 → ⑤본점 소재지 등기. 한 단계라도 누락한 선택지는 틀린 답으로 분류한다.",
+  "exception_text": "결손 보전 목적의 무상감자나 일정 요건의 약식 합병은 채권자보호 절차가 면제될 수 있어 별도 표시한다.",
+  "applicable_stages": ["objective_entry", "past_exam_rotation", "mock_exam"],
+  "applicable_subjects": ["corporate_law"],
+  "required_risk_tags": ["condition_miss", "memory_decay"],
+  "source_signal_count": 0,
+  "source_case_ids": [],
+  "confidence": 0.78,
+  "review_status": "machine_draft"
+}

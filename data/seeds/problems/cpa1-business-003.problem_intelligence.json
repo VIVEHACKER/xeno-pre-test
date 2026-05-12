@@ -1,0 +1,71 @@
+{
+  "problem_id": "cpa1-business-003",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "financial_management",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "재무관리: 자본예산",
+    "NPV",
+    "IRR",
+    "payback_period",
+    "decision_rule"
+  ],
+  "required_concepts": [
+    {
+      "concept": "NPV(순현재가치)",
+      "role": "현금유입 PV 합계 - 초기투자. 양수면 채택",
+      "prerequisite": true
+    },
+    {
+      "concept": "IRR(내부수익률)",
+      "role": "NPV=0을 만드는 할인율. 자본비용보다 크면 채택",
+      "prerequisite": true
+    },
+    {
+      "concept": "회수기간법",
+      "role": "초기투자액 회수까지의 명목 또는 할인 기간",
+      "prerequisite": false
+    },
+    {
+      "concept": "NPV-IRR 충돌",
+      "role": "상호배타적 안에서 NPV가 우월 (재투자수익률·규모 차이)",
+      "prerequisite": false
+    }
+  ],
+  "solving_entry_point": "현금흐름 표를 먼저 그리고(투자 0년, 유입 1년~n년) 묻는 결과(NPV/IRR/회수기간/채택여부)를 분류한다.",
+  "solving_steps": [
+    "현금흐름 시간표(0년 -, 1~n년 +)를 작성.",
+    "NPV는 각 연도 CF를 할인율로 할인 후 합산.",
+    "IRR은 보기 할인율을 대입해 NPV=0을 찾거나, 시행착오.",
+    "회수기간은 누적 명목 CF로(할인회수기간은 누적 할인 CF로).",
+    "상호배타적이면 NPV 우월. 독립적이면 둘 다 채택 기준 충족 시 둘 다 채택."
+  ],
+  "trap_patterns": [
+    "할인 누락한 명목 합계로 NPV 계산",
+    "IRR과 자본비용 비교 방향 혼동",
+    "회수기간법에서 할인 적용 여부 혼동",
+    "상호배타적 안에서 IRR이 큰 안을 선택"
+  ],
+  "time_strategy": {
+    "target_seconds": 120,
+    "skip_threshold_seconds": 160,
+    "exam_room_rule": "현금흐름 표 90초 안에 못 완성하면 표시 후 통과."
+  },
+  "variant_axes": [
+    "독립 vs 상호배타적 투자안",
+    "현금흐름 패턴(연금/불규칙/영구)",
+    "투자기간 길이"
+  ],
+  "mistake_diagnosis": [
+    "formula_gap",
+    "strategy_error",
+    "calculation_error"
+  ],
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-management-006",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "management_general",
+  "applicable_year": 2026,
+  "stem": "포터(Porter)의 본원적 경쟁전략(Generic Strategies)에 해당하지 않는 것은?",
+  "choices": [
+    "원가우위 전략",
+    "차별화 전략",
+    "집중화 전략",
+    "다각화 전략"
+  ],
+  "correct_choice": 3,
+  "explanation": "포터의 본원적 경쟁전략은 ①원가우위(Cost Leadership), ②차별화(Differentiation), ③집중화(Focus, 원가집중·차별화집중)의 3가지. 다각화 전략은 앤소프(Ansoff) 매트릭스의 성장 전략에 해당하며 본원적 경쟁전략과 다른 차원이다.",
+  "concept_tags": [
+    "경영학: 경영전략",
+    "generic_strategy",
+    "porter",
+    "ansoff_matrix"
+  ],
+  "expected_seconds": 50,
+  "difficulty": "easy",
+  "difficulty_score": 1,
+  "bloom_level": "remember",
+  "attractor_traps": [
+    "다각화를 본원적 전략에 포함",
+    "집중화 전략을 누락",
+    "앤소프와 포터 혼동"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

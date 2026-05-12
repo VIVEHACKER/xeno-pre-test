@@ -1,0 +1,34 @@
+{
+  "question_id": "cpa1-eval-corporate_law-006",
+  "exam": "CPA_1",
+  "subject": "corporate_law",
+  "unit": "corporate_law_general",
+  "applicable_year": 2026,
+  "stem": "주식회사 이사의 책임에 관한 설명으로 옳지 않은 것은?",
+  "choices": [
+    "이사는 법령 또는 정관에 위반한 행위로 회사에 손해를 입힌 경우 연대하여 책임을 진다.",
+    "경업금지의무를 위반하여 이익을 얻은 경우 회사는 그 이익을 양도청구할 수 있다.",
+    "이사는 자기거래 시 이사회 승인이 있어도 회사에 대한 손해배상책임에서 면제되지 않는 경우가 있다.",
+    "이사는 회사에 대한 모든 책임을 주주총회 결의로 무조건 면제받을 수 있다."
+  ],
+  "correct_choice": 3,
+  "explanation": "이사의 회사에 대한 책임은 총주주의 동의로 면제 가능하나, 무조건 면제되는 것은 아니다(상법 §400). 또한 자본금 결손이 있는 회사의 이사 책임 등은 면제가 제한되는 사례가 있다. ①②③은 옳다.",
+  "concept_tags": [
+    "기업법: 주주총회/이사회/감사",
+    "director_duty",
+    "self_dealing",
+    "competition_prohibition",
+    "liability_release"
+  ],
+  "expected_seconds": 75,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "evaluate",
+  "attractor_traps": [
+    "총주주 동의 요건을 이사회 결의로 잘못 이해",
+    "경업금지 위반 시 양도청구권 부정",
+    "자기거래는 이사회 승인만으로 모두 면책된다고 판단"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

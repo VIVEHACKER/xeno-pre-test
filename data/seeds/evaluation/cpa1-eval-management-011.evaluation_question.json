@@ -1,0 +1,32 @@
+{
+  "question_id": "cpa1-eval-management-011",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "management_general",
+  "applicable_year": 2026,
+  "stem": "제품수명주기(PLC)의 도입기에서 성장기로 진입할 때 일반적으로 나타나는 현상으로 가장 적절한 것은?",
+  "choices": [
+    "매출 성장률은 높아지고 이익이 본격적으로 발생하기 시작한다.",
+    "경쟁자가 거의 없고 시장 가격이 가장 낮다.",
+    "광고 비용이 최저점에 도달한다.",
+    "제품의 표준화가 완성되고 시장 점유율이 감소한다."
+  ],
+  "correct_choice": 0,
+  "explanation": "성장기는 매출 성장률이 가파르게 상승하고 이익이 본격 발생하는 단계. ②는 도입기 또는 성숙기 가격과 모순(도입기는 가격이 높을 수 있음). ③은 성숙기 이후. ④는 쇠퇴기 특성. 성장기에는 경쟁자 진입이 늘어나고 광고가 활발해진다.",
+  "concept_tags": [
+    "경영학: 마케팅",
+    "product_life_cycle",
+    "growth_stage"
+  ],
+  "expected_seconds": 55,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "evaluate",
+  "attractor_traps": [
+    "도입기와 성장기 특성 혼동",
+    "성숙기 특성을 성장기로 잘못 매핑",
+    "광고비 변화 방향 반대로 답"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

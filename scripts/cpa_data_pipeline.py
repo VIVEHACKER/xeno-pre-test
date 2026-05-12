@@ -806,10 +806,24 @@ def safe_problem_for_solution_map(question: dict) -> bool:
 
 
 def tutorial_id_for_question(question: dict) -> str:
-  if question["subject"] == "accounting":
+  subject = question["subject"]
+  unit = question.get("unit", "")
+  if subject == "accounting":
+    if unit in {"cost_flow", "cost_management", "cvp"}:
+      return "tutorial_cpa1_accounting_cost"
     return "tutorial_cpa1_accounting"
-  if question["subject"] == "tax":
+  if subject == "tax":
     return "tutorial_cpa1_tax"
+  if subject == "business":
+    if unit == "financial_management":
+      return "tutorial_cpa1_business_finance"
+    if unit == "management_general":
+      return "tutorial_cpa1_business_management"
+    return "tutorial_cpa1_business"
+  if subject == "corporate_law":
+    return "tutorial_cpa1_corporate_law"
+  if subject == "economics":
+    return "tutorial_cpa1_economics"
   return ""
 
 
@@ -1105,6 +1119,8 @@ def problem_profile(question: dict) -> dict:
         3: "비영업대금 이자만 따로 떼고 전체 금융소득 합산을 누락했다.",
       },
     }
+  if unit in {"financial_management", "management_general", "economics_general", "corporate_law_general"}:
+    return _generic_subject_profile(unit, question, tags, choices, correct, correct_text)
   return {
     "core": "문제의 핵심 개념",
     "signals": question.get("concept_tags", [])[:4],
@@ -1112,6 +1128,132 @@ def problem_profile(question: dict) -> dict:
     "structure_steps": ["조건표를 만든다.", "방향을 판별한다.", "보기와 비교한다."],
     "trap": "조건 누락 함정",
     "eliminations": {},
+  }
+
+
+_UNIT_PROFILE_DEFAULTS: dict[str, dict] = {
+  "financial_management": {
+    "core_fallback": "재무관리 의사결정의 핵심 공식 적용",
+    "signal_seeds": ["할인율", "현금흐름", "위험과 수익률", "재무비율"],
+    "trap": "할인 시점이나 가중치를 잘못 적용하거나 표면 수익률을 그대로 사용해 위험조정을 빠뜨리는 함정",
+    "direct_template": [
+      "문제에서 요구하는 산출물(NPV·IRR·요구수익률·레버리지·가치평가 등)을 한 단어로 분류한다.",
+      "주어진 현금흐름·위험·자본구조 데이터를 시점별로 정렬한다.",
+      "분류에 맞는 단일 공식을 골라 단위와 부호를 맞춰 대입한다.",
+      "계산 결과 {correct}을(를) 보기 중에서 선택한다.",
+    ],
+    "structure_steps": [
+      "현금흐름과 할인율을 시점-금액 표로 정리한다.",
+      "위험과 자본비용 가정을 한 줄로 명시해 재계산이 가능하도록 둔다.",
+      "단위(원/억/연/월)와 세후·세전 가정을 통일한다.",
+    ],
+    "elim_default": [
+      "할인 시점 또는 잔존가치 처리를 누락한 값이다.",
+      "위험조정 없이 표면 수익률을 그대로 적용한 값이다.",
+      "가중평균자본비용 또는 자본구조 가중치를 잘못 적용한 값이다.",
+    ],
+  },
+  "management_general": {
+    "core_fallback": "경영학 일반의 이론 식별과 비교",
+    "signal_seeds": ["이론명", "주창자", "핵심 명제", "반례"],
+    "trap": "유사 이론(예: 매슬로 vs 허즈버그)을 혼동하거나 X/Y 이론의 인간관을 뒤집어 적용하는 함정",
+    "direct_template": [
+      "보기에 나온 이론·기법을 명시적으로 라벨링한다.",
+      "각 이론의 핵심 명제 한 줄을 옆에 적어 비교 가능하게 만든다.",
+      "문제가 묻는 방향(가장 옳은/옳지 않은)에 따라 명제를 매칭한다.",
+      "조건을 모두 만족하는 보기 {correct}을(를) 고른다.",
+    ],
+    "structure_steps": [
+      "이론 이름·주창자·핵심 명제 3열표를 그린다.",
+      "유사 이론끼리 묶어 차이점을 한 줄로 표시한다.",
+      "정의가 아니라 적용 사례를 묻는지 여부를 먼저 확인한다.",
+    ],
+    "elim_default": [
+      "이론의 핵심 명제를 반대로 적용한 진술이다.",
+      "다른 학파의 주장을 해당 이론으로 잘못 귀속한 진술이다.",
+      "예외 조건을 일반 원칙으로 확장해버린 진술이다.",
+    ],
+  },
+  "economics_general": {
+    "core_fallback": "경제학 일반의 가격·수량·후생 분석",
+    "signal_seeds": ["수요·공급", "탄력성", "한계 분석", "시장 균형"],
+    "trap": "탄력성 부호와 절댓값을 혼동하거나 단기·장기 가정을 뒤바꾸는 함정",
+    "direct_template": [
+      "묻는 값(탄력성·잉여·균형가격·후생변화)을 한 단어로 분류한다.",
+      "공식을 시작점으로 두고 가격·수량·소득 변화를 부호와 함께 정리한다.",
+      "단기/장기, 완전경쟁/독점 등 시장 가정을 한 줄로 명시한다.",
+      "계산 결과 {correct}을(를) 보기와 대조해 선택한다.",
+    ],
+    "structure_steps": [
+      "변수표(가격·수량·소득·비용)를 그리고 변화 전후를 칸으로 나눈다.",
+      "공식을 먼저 적고 데이터를 대입해 부호 오류를 차단한다.",
+      "단위(%·원·단위)와 기간 가정을 통일한다.",
+    ],
+    "elim_default": [
+      "탄력성 부호 또는 절댓값을 반대로 적용한 값이다.",
+      "단기/장기 또는 시장 구조 가정을 혼동한 값이다.",
+      "공식을 다른 단원(잉여 ↔ 탄력성)에서 잘못 가져온 값이다.",
+    ],
+  },
+  "corporate_law_general": {
+    "core_fallback": "상법·기업법의 조문 적용과 예외 판단",
+    "signal_seeds": ["조문 적용", "예외 사유", "상행위", "회사법 원칙"],
+    "trap": "원칙 조항과 예외 조항을 뒤바꾸거나 회사 형태별 차이를 무시하고 일반 원칙을 적용하는 함정",
+    "direct_template": [
+      "문제에서 인용된 사실관계를 조문 단위(상법 제○조)로 분류한다.",
+      "원칙 조항과 예외 조항을 각각 한 줄로 적어 비교한다.",
+      "회사 형태(주식회사·유한회사·합명회사 등)나 상인 분류 차이를 표시한다.",
+      "조문에 부합하는 보기 {correct}을(를) 선택한다.",
+    ],
+    "structure_steps": [
+      "사실관계·조문·결론 3단표를 만든다.",
+      "예외 조항이 적용되는 요건을 별도로 열거한다.",
+      "묻는 방향(옳은/옳지 않은)을 표 상단에 표시해 부호 반전을 막는다.",
+    ],
+    "elim_default": [
+      "원칙 조항을 적용해야 할 사안에 예외 조항을 적용한 진술이다.",
+      "회사 형태 또는 상인 분류 차이를 무시하고 일반 원칙으로 확장한 진술이다.",
+      "조문 요건 일부를 누락하거나 절차적 요건을 실질적 요건과 혼동한 진술이다.",
+    ],
+  },
+}
+
+
+def _generic_subject_profile(
+  unit: str,
+  question: dict,
+  tags: list,
+  choices: list,
+  correct: int,
+  correct_text: str,
+) -> dict:
+  spec = _UNIT_PROFILE_DEFAULTS[unit]
+  korean_tag = next((t for t in tags if ":" in t), None)
+  core = korean_tag or spec["core_fallback"]
+  english_signals = [t for t in tags if ":" not in t]
+  signals = english_signals or spec["signal_seeds"]
+  if len(signals) < 3:
+    signals = signals + [s for s in spec["signal_seeds"] if s not in signals]
+  signals = signals[:5]
+
+  direct_steps = [s.replace("{correct}", correct_text) for s in spec["direct_template"]]
+
+  elim_pool = spec["elim_default"]
+  eliminations: dict[int, str] = {}
+  pool_index = 0
+  for idx in range(len(choices)):
+    if idx == correct:
+      continue
+    eliminations[idx] = elim_pool[pool_index % len(elim_pool)]
+    pool_index += 1
+
+  return {
+    "core": core,
+    "signals": signals,
+    "direct_steps": direct_steps,
+    "structure_steps": spec["structure_steps"],
+    "trap": spec["trap"],
+    "eliminations": eliminations,
   }
 
 

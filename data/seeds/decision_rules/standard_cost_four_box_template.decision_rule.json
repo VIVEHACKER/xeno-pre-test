@@ -1,0 +1,14 @@
+{
+  "rule_key": "standard_cost_four_box_template",
+  "rule_name": "표준원가 차이는 4상자 템플릿부터",
+  "condition_text": "표준원가/차이분석 단원의 직접재료·직접노무·변동제조간접비 차이를 묻는 문제에서 학생이 가격차이와 능률차이를 자주 혼동하거나 부호(유리/불리)를 반대로 답하는 경우",
+  "action_text": "공식 암기 대신 4칸 상자 템플릿을 그린다. 좌측 위 AP×AQ(실제), 좌측 아래 SP×AQ(중간), 우측 SP×SQ(표준). 좌위-좌아 차이 = 가격차이, 좌아-우 차이 = 능률차이. 실제>표준이면 불리(U), 실제<표준이면 유리(F).",
+  "exception_text": "고정제조간접비는 4상자 대신 예산차이/조업도차이 2분법으로 처리한다.",
+  "applicable_stages": ["post_lecture", "objective_entry", "past_exam_rotation"],
+  "applicable_subjects": ["accounting"],
+  "required_risk_tags": ["formula_gap", "sign_confusion"],
+  "source_signal_count": 0,
+  "source_case_ids": [],
+  "confidence": 0.80,
+  "review_status": "machine_draft"
+}

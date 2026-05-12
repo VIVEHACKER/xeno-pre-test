@@ -1,0 +1,32 @@
+{
+  "question_id": "cpa1-eval-corporate_law-001",
+  "exam": "CPA_1",
+  "subject": "corporate_law",
+  "unit": "corporate_law_general",
+  "applicable_year": 2026,
+  "stem": "상법상 상인(商人)의 분류와 관련된 설명으로 옳은 것은?",
+  "choices": [
+    "당연상인은 자기 명의로 상행위를 영업으로 하는 자이다.",
+    "의제상인은 영업의 규모에 무관하게 항상 상인으로 본다.",
+    "소상인은 모든 상법 규정의 적용을 받는다.",
+    "회사는 영리법인이 아니어도 당연상인에 해당한다."
+  ],
+  "correct_choice": 0,
+  "explanation": "상법상 당연상인은 자기 명의로 상행위(기본적 상행위 또는 보조적 상행위)를 영업으로 하는 자(상법 §4). 의제상인은 점포 기타 유사한 설비로 상인적 방법에 의해 영업하는 자 또는 회사 형태로 영업하는 자로, 규모와 형식 요건을 충족해야 함. 소상인은 자본금 1,000만 원 미만의 상인으로 일부 상법 규정 적용에서 제외됨. 회사는 영리법인이며 상법은 회사를 상인으로 의제한다.",
+  "concept_tags": [
+    "기업법: 상법총칙",
+    "merchant_classification",
+    "commercial_general"
+  ],
+  "expected_seconds": 70,
+  "difficulty": "easy",
+  "difficulty_score": 2,
+  "bloom_level": "remember",
+  "attractor_traps": [
+    "소상인이 상법 전체 적용을 받는다고 오해",
+    "의제상인의 요건을 무시",
+    "회사의 영리법인 성격을 부정"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

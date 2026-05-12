@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-economics-009",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "economics_general",
+  "applicable_year": 2026,
+  "stem": "완전경쟁시장의 장기균형에서 개별 기업과 시장에 대한 설명으로 옳지 않은 것은?",
+  "choices": [
+    "개별 기업은 P = MC = 최소 평균비용에서 생산한다.",
+    "개별 기업의 경제적 이윤은 0이다.",
+    "시장가격은 한계비용보다 높게 형성된다.",
+    "기업의 진입과 퇴출이 자유롭다."
+  ],
+  "correct_choice": 2,
+  "explanation": "완전경쟁시장 장기균형 조건: P = MC = AC(최소점), 진입/퇴출 자유로 경제적 이윤은 0. 시장가격은 한계비용과 같으며 한계비용보다 높지 않다. 따라서 ③이 옳지 않다.",
+  "concept_tags": [
+    "경제학: 시장구조",
+    "perfect_competition",
+    "long_run_equilibrium",
+    "zero_economic_profit"
+  ],
+  "expected_seconds": 60,
+  "difficulty": "easy",
+  "difficulty_score": 2,
+  "bloom_level": "remember",
+  "attractor_traps": [
+    "독점시장 특징(P > MC)을 완전경쟁에 잘못 적용",
+    "회계이윤과 경제이윤 혼동",
+    "장기와 단기 균형 조건 혼동"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

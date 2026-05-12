@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-management-013",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "management_general",
+  "applicable_year": 2026,
+  "stem": "어떤 제품의 연간 수요량은 10,000개, 1회 주문비용은 500원, 단위당 연간 재고유지비용은 4원이다. 경제적 주문량(EOQ)은 몇 개인가?",
+  "choices": [
+    "500개",
+    "1,000개",
+    "1,581개",
+    "2,500개"
+  ],
+  "correct_choice": 2,
+  "explanation": "EOQ = √(2DS/H) = √(2 × 10,000 × 500 / 4) = √(10,000,000 / 4) = √2,500,000 ≈ 1,581개. D=연간 수요, S=1회 주문비용, H=단위당 연간 재고유지비.",
+  "concept_tags": [
+    "경영학: 생산/운영관리",
+    "EOQ",
+    "economic_order_quantity",
+    "inventory_management"
+  ],
+  "expected_seconds": 70,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "apply",
+  "attractor_traps": [
+    "공식에서 2를 빠뜨림",
+    "주문비와 재고유지비를 바꿔 대입",
+    "제곱근을 누락"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

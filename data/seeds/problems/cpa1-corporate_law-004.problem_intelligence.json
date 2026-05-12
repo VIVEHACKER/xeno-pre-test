@@ -1,0 +1,71 @@
+{
+  "problem_id": "cpa1-corporate_law-004",
+  "exam": "CPA_1",
+  "subject": "corporate_law",
+  "unit": "corporate_law_general",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "기업법: 합병/분할/조직변경",
+    "merger",
+    "corporate_split",
+    "appraisal_right",
+    "creditor_protection"
+  ],
+  "required_concepts": [
+    {
+      "concept": "합병 절차",
+      "role": "주주총회 특별결의 + 채권자보호 + 등기, 포괄승계",
+      "prerequisite": true
+    },
+    {
+      "concept": "분할 절차",
+      "role": "인적분할·물적분할, 단순분할은 채무 연대책임 원칙",
+      "prerequisite": true
+    },
+    {
+      "concept": "주식매수청구권",
+      "role": "합병·분할 반대주주의 권리",
+      "prerequisite": true
+    },
+    {
+      "concept": "조직변경",
+      "role": "회사 형태 변경, 사원 동의 요건",
+      "prerequisite": false
+    }
+  ],
+  "solving_entry_point": "거래 유형(합병/분할/조직변경)을 분류하고, 결의 요건·채권자보호 절차·반대주주 매수청구권을 한 표에 정리한다.",
+  "solving_steps": [
+    "거래 유형 식별(합병/분할/조직변경/주식교환).",
+    "양 회사의 주총 특별결의 필요 여부 점검.",
+    "채권자보호 절차(이의제출 공고·최고·변제 또는 담보 제공) 점검.",
+    "반대주주의 주식매수청구권 존재 여부와 행사 기한.",
+    "등기·신주발행·합병교부금 등 효과를 점검."
+  ],
+  "trap_patterns": [
+    "흡수합병에서 소멸회사 결의 불필요로 오해",
+    "주식매수청구권 행사 불가로 오해",
+    "분할에서 인적·물적 구분 누락",
+    "포괄승계 원칙을 모르고 채권자 개별 동의 필요로 답"
+  ],
+  "time_strategy": {
+    "target_seconds": 90,
+    "skip_threshold_seconds": 130,
+    "exam_room_rule": "거래 유형 식별 30초 안에 못 하면 표시."
+  },
+  "variant_axes": [
+    "흡수합병 vs 신설합병",
+    "단순분할 vs 분할합병",
+    "주식매수청구권 행사 시점"
+  ],
+  "mistake_diagnosis": [
+    "concept_gap",
+    "memory_decay",
+    "strategy_error"
+  ],
+  "review_status": "ai_draft"
+}

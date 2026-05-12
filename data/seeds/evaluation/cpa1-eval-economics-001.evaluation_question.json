@@ -1,0 +1,32 @@
+{
+  "question_id": "cpa1-eval-economics-001",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "economics_general",
+  "applicable_year": 2026,
+  "stem": "재화 X의 가격이 100원에서 120원으로 상승함에 따라 수요량이 200단위에서 160단위로 감소하였다. 중점법(호 탄력성)을 적용한 X의 수요의 가격탄력성은 얼마인가? (절댓값 기준, 소수 둘째 자리에서 반올림)",
+  "choices": [
+    "0.9",
+    "1.2",
+    "1.5",
+    "2.2"
+  ],
+  "correct_choice": 1,
+  "explanation": "호 탄력성(중점법) = [(Q2-Q1)/((Q1+Q2)/2)] / [(P2-P1)/((P1+P2)/2)]. 수량 변화율 = (160-200)/180 = -0.222 = -22.2%. 가격 변화율 = (120-100)/110 = 0.1818 = 18.2%. 탄력성 절댓값 = 22.2% / 18.2% ≈ 1.22 → 약 1.2. 탄력적(>1).",
+  "concept_tags": [
+    "경제학: 수요/공급/탄력성",
+    "price_elasticity_of_demand",
+    "arc_elasticity"
+  ],
+  "expected_seconds": 80,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "apply",
+  "attractor_traps": [
+    "단순 차이의 비율((40/20)/(20/100)=10)을 사용",
+    "점탄력성 식((ΔQ/Q1)/(ΔP/P1))을 적용한 결과 = (40/200)/(20/100)=1.0",
+    "수량과 가격의 변화율 분자/분모 위치 혼동"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,35 @@
+{
+  "chunk_id": "standard-cost-variance-formulas",
+  "source": {
+    "source_kind": "internal_summary",
+    "title": "표준원가 차이분석 공식 — 가격/수량 2분법",
+    "reference": null
+  },
+  "subject": "accounting",
+  "unit": "cost_management",
+  "topic_tags": [
+    "standard_costing",
+    "variance_analysis",
+    "direct_material_variance",
+    "direct_labor_variance",
+    "variable_overhead_variance",
+    "fixed_overhead_variance"
+  ],
+  "applicable_year": null,
+  "text": "직접재료 가격차이 = (AP - SP) × AQ. 직접재료 수량차이 = (AQ - SQ) × SP. 여기서 AQ는 실제투입수량, SQ는 표준허용수량(실제생산량 × 단위당 표준수량). 직접노무 임률차이 = (실제임률 - 표준임률) × 실제시간. 직접노무 능률차이 = (실제시간 - 표준시간) × 표준임률. 변동제조간접비 소비차이 = (실제 변동OH - 실제시간 × 표준배부율). 변동OH 능률차이 = (실제시간 - 표준시간) × 표준배부율. 고정제조간접비 예산차이 = 실제발생 - 예산. 고정OH 조업도차이 = (기준조업도 - 실제생산량의 표준시간) × 표준배부율. 부호 규칙: 실제 > 표준이면 일반적으로 불리차이(U). 음수면 유리차이(F). 가격차이는 구입시점 또는 사용시점 중 정책에 따라 인식 시점이 달라진다.",
+  "keywords": [
+    "AP",
+    "AQ",
+    "SP",
+    "SQ",
+    "가격차이",
+    "능률차이",
+    "임률차이",
+    "수량차이",
+    "예산차이",
+    "조업도차이",
+    "유리/불리"
+  ],
+  "rights_status": "self_generated",
+  "review_status": "expert_reviewed"
+}

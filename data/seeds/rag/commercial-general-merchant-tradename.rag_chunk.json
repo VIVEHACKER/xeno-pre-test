@@ -1,0 +1,33 @@
+{
+  "chunk_id": "commercial-general-merchant-tradename",
+  "source": {
+    "source_kind": "official_regulation_paraphrase",
+    "title": "상법총칙 — 상인 분류와 상호 제도 요약",
+    "reference": "상법 제4조~제30조"
+  },
+  "subject": "corporate_law",
+  "unit": "corporate_law_general",
+  "topic_tags": [
+    "merchant_classification",
+    "trade_name",
+    "commercial_register",
+    "commercial_act"
+  ],
+  "applicable_year": 2026,
+  "text": "상인 분류: 당연상인은 자기 명의로 상행위(기본적 상행위 또는 보조적 상행위)를 영업으로 하는 자(상법 §4). 의제상인은 점포 기타 유사한 설비로 상인적 방법에 의해 영업하거나 회사 형태로 영업하는 자(§5). 소상인은 자본금 1,000만 원 미만의 상인으로 상호·상업장부·상업등기 등 일부 규정 적용 제외(§9). 상행위: 기본적 상행위(§46), 보조적 상행위(§47), 일방적 상행위(상인-비상인 거래). 상행위에는 상사법정이자율(§54), 상사연대책임(§57) 등 특칙. 상호: 상인이 영업상 자기를 표시하는 명칭. 동일한 영업에는 둘 이상의 상호 사용 금지(§21). 회사의 상호에는 회사 종류 표시 의무(§19). 상호 양도는 영업과 함께 또는 영업폐지 시에 한해 가능(§25), 등기 시 제3자 대항 가능. 상업등기: 일정 사항을 등기해야 하는 의무(§34 이하). 명의대여자 책임: 자기 명의로 영업할 것을 허락한 자는 명의차용자와 연대책임(§24).",
+  "keywords": [
+    "당연상인",
+    "의제상인",
+    "소상인",
+    "기본적 상행위",
+    "보조적 상행위",
+    "상호",
+    "상호 양도",
+    "상업등기",
+    "명의대여자",
+    "상사법정이자율",
+    "상사연대책임"
+  ],
+  "rights_status": "official_paraphrase",
+  "review_status": "expert_reviewed"
+}

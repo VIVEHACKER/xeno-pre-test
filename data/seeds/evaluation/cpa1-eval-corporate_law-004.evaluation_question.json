@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-corporate_law-004",
+  "exam": "CPA_1",
+  "subject": "corporate_law",
+  "unit": "corporate_law_general",
+  "applicable_year": 2026,
+  "stem": "주식회사의 주주총회 권한에 해당하지 않는 것은?",
+  "choices": [
+    "이사·감사의 선임과 해임",
+    "정관 변경",
+    "회사 자산의 처분에 관한 일상적 업무집행 결정",
+    "재무제표의 승인과 이익배당 결정"
+  ],
+  "correct_choice": 2,
+  "explanation": "회사 자산의 처분에 관한 일상적 업무집행은 이사회 또는 대표이사의 권한이다. 주주총회는 회사의 근본적·구조적 사항(이사·감사 선임/해임, 정관 변경, 재무제표 승인, 합병·분할 승인 등)을 결정한다. ①②④는 모두 주주총회 권한.",
+  "concept_tags": [
+    "기업법: 주주총회/이사회/감사",
+    "shareholders_meeting",
+    "board_of_directors",
+    "corporate_governance"
+  ],
+  "expected_seconds": 60,
+  "difficulty": "easy",
+  "difficulty_score": 2,
+  "bloom_level": "evaluate",
+  "attractor_traps": [
+    "주주총회와 이사회 권한 경계 혼동",
+    "이사·감사 선임이 이사회 권한이라고 오해",
+    "재무제표 승인 권한 누락"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

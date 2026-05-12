@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-economics-012",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "economics_general",
+  "applicable_year": 2026,
+  "stem": "IS-LM 모형에서 정부지출이 증가하였을 때 단기 균형의 변화로 옳은 것은? (다른 조건은 일정, 폐쇄경제)",
+  "choices": [
+    "IS 곡선이 우측 이동, 이자율 상승, 국민소득 증가",
+    "IS 곡선이 좌측 이동, 이자율 하락, 국민소득 감소",
+    "LM 곡선이 우측 이동, 이자율 하락, 국민소득 증가",
+    "IS와 LM 모두 이동 없음, 이자율과 국민소득 불변"
+  ],
+  "correct_choice": 0,
+  "explanation": "정부지출 증가 → 총수요 증가 → IS 곡선이 우측 이동. LM은 화폐시장 조건으로 이동 없음. 새 균형에서 국민소득 증가 + 이자율 상승. 단, 이자율 상승은 투자를 일부 감소시켜 구축효과(crowding out)가 발생.",
+  "concept_tags": [
+    "경제학: IS-LM",
+    "is_lm_model",
+    "fiscal_policy",
+    "crowding_out"
+  ],
+  "expected_seconds": 70,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "analyze",
+  "attractor_traps": [
+    "정부지출 증가에 LM 곡선이 이동한다고 가정",
+    "이자율과 국민소득 동시 하락(긴축적 효과로 오해)",
+    "재정정책과 통화정책 효과 혼동"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

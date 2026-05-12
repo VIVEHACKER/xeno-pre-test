@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-corporate_law-005",
+  "exam": "CPA_1",
+  "subject": "corporate_law",
+  "unit": "corporate_law_general",
+  "applicable_year": 2026,
+  "stem": "주식회사 이사회의 결의 요건에 관한 설명으로 옳은 것은? (정관에 다른 정함이 없는 경우)",
+  "choices": [
+    "이사 전원의 출석으로 출석 이사 과반수 찬성",
+    "이사 과반수의 출석으로 출석 이사 과반수 찬성",
+    "이사 과반수의 출석으로 출석 이사 3분의 2 이상 찬성",
+    "발행주식 총수의 과반수에 해당하는 주식을 가진 주주의 출석으로 출석 의결권의 과반수 찬성"
+  ],
+  "correct_choice": 1,
+  "explanation": "이사회 결의 요건(상법 §391): 이사 과반수의 출석과 출석 이사 과반수의 찬성. 정관으로 가중할 수는 있어도 완화할 수는 없다. ④는 주주총회 보통결의 요건이며 이사회와 무관.",
+  "concept_tags": [
+    "기업법: 주주총회/이사회/감사",
+    "board_resolution",
+    "quorum",
+    "voting_requirement"
+  ],
+  "expected_seconds": 60,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "remember",
+  "attractor_traps": [
+    "주주총회 결의 요건과 혼동",
+    "특별결의 요건(2/3)을 이사회에 잘못 적용",
+    "이사 전원 출석 필요로 잘못 암기"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

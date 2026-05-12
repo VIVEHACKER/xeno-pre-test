@@ -1,0 +1,65 @@
+{
+  "problem_id": "cpa1-economics-005",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "economics_general",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "경제학: 국제경제",
+    "exchange_rate",
+    "interest_parity",
+    "balance_of_payments",
+    "purchasing_power_parity"
+  ],
+  "required_concepts": [
+    {
+      "concept": "이자율평형설(UIP/CIP)",
+      "role": "양국 이자율 차이 = 예상 환율 변화율 (UIP) 또는 선물환 프리미엄 (CIP)",
+      "prerequisite": true
+    },
+    {
+      "concept": "구매력평가설(PPP)",
+      "role": "양국 물가 비율로 환율 결정. 상대적 PPP는 인플레이션 차이 = 환율 변화율",
+      "prerequisite": true
+    },
+    {
+      "concept": "국제수지표",
+      "role": "경상수지 + 자본·금융수지 + 오차 = 0",
+      "prerequisite": false
+    }
+  ],
+  "solving_entry_point": "묻는 결과(환율 방향/기대수익률 비교/수지 분류)를 분류하고 해당 이론(UIP/PPP/국제수지)을 선택한다.",
+  "solving_steps": [
+    "UIP: i_KR ≈ i_FOREIGN + 예상 환율 변화율(자국 통화 절하 방향).",
+    "환율 표기 단위 명시(원/달러는 원화 가치의 역수).",
+    "PPP: 환율 변화율 ≈ 자국 인플레이션 - 외국 인플레이션.",
+    "환율 상승 = 원화 약세 = 수출 증가, 수입 감소(시간 차 J-curve 가능).",
+    "국제수지: 경상수지(상품·서비스·소득·이전) + 자본·금융수지의 합."
+  ],
+  "trap_patterns": [
+    "환율 상승을 자국 통화 강세로 잘못 해석",
+    "UIP 식에서 외국 이자율과 자국 이자율 부호 반대 적용",
+    "절대적 PPP와 상대적 PPP 혼동"
+  ],
+  "time_strategy": {
+    "target_seconds": 90,
+    "skip_threshold_seconds": 130,
+    "exam_room_rule": "환율 표기 단위를 30초 안에 명확히 못 하면 표시."
+  },
+  "variant_axes": [
+    "UIP vs CIP",
+    "절대적 PPP vs 상대적 PPP",
+    "고정환율 vs 변동환율 정책 효과"
+  ],
+  "mistake_diagnosis": [
+    "concept_gap",
+    "formula_gap",
+    "calculation_error"
+  ],
+  "review_status": "ai_draft"
+}

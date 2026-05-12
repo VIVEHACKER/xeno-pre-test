@@ -1,0 +1,35 @@
+{
+  "chunk_id": "money-theory-and-exchange-rate",
+  "source": {
+    "source_kind": "internal_summary",
+    "title": "화폐수량설과 환율결정 — UIP·PPP",
+    "reference": null
+  },
+  "subject": "economics",
+  "unit": "economics_general",
+  "topic_tags": [
+    "quantity_theory_of_money",
+    "money_multiplier",
+    "exchange_rate",
+    "interest_parity",
+    "purchasing_power_parity"
+  ],
+  "applicable_year": null,
+  "text": "화폐수량설(피셔식): MV = PY. 변화율 근사: %ΔM + %ΔV = %ΔP + %ΔY. V 일정·Y 일정 가정에서 화폐량 증가율 = 물가상승률. 통화량 = 본원통화 × 통화승수. 통화승수(현금/예금 비율 c, 지급준비율 r) = (c+1)/(c+r). 현금 보유 0·초과준비 0이면 1/r. 환율 표기: 원/달러(원화 가치 = 1/환율). 환율 상승 = 원화 약세 = 수출 경쟁력 강화. 무위험 이자율평형설(UIP): i_KR - i_US ≈ 예상 원/달러 환율 변화율. 유위험(CIP): i_KR - i_US = 선물환 프리미엄. 절대적 PPP: 환율 = P_KR / P_US. 상대적 PPP: %Δ환율 = π_KR - π_US. 단기에는 UIP·PPP 어긋남 → 환율 오버슈팅. 국제수지: 경상수지 + 자본·금융수지 ≈ 0 (외환보유 변동 포함 시).",
+  "keywords": [
+    "화폐수량설",
+    "MV=PY",
+    "통화승수",
+    "본원통화",
+    "환율",
+    "UIP",
+    "CIP",
+    "이자율평형설",
+    "PPP",
+    "구매력평가",
+    "국제수지",
+    "오버슈팅"
+  ],
+  "rights_status": "self_generated",
+  "review_status": "expert_reviewed"
+}

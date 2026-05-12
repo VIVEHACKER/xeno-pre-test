@@ -1,0 +1,64 @@
+{
+  "problem_id": "cpa1-business-002",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "financial_management",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "재무관리: 위험과 수익률",
+    "CAPM",
+    "portfolio_risk",
+    "diversification"
+  ],
+  "required_concepts": [
+    {
+      "concept": "CAPM",
+      "role": "E(R) = Rf + β × (Rm - Rf), 베타로 체계적 위험만 가격결정",
+      "prerequisite": true
+    },
+    {
+      "concept": "포트폴리오 기대수익률",
+      "role": "단순 가중평균. 표준편차나 상관계수와 무관",
+      "prerequisite": true
+    },
+    {
+      "concept": "포트폴리오 표준편차",
+      "role": "√(w₁²σ₁² + w₂²σ₂² + 2w₁w₂σ₁σ₂ρ). 상관계수 -1일 때 위험 최소",
+      "prerequisite": true
+    }
+  ],
+  "solving_entry_point": "묻는 결과(요구수익률/포트폴리오 기대수익률/포트폴리오 위험) 분류 후 해당 공식만 적용한다.",
+  "solving_steps": [
+    "요구수익률은 CAPM 식에 베타·무위험이자율·시장프리미엄을 대입.",
+    "포트폴리오 기대수익률은 비중과 개별 기대수익률의 가중평균.",
+    "포트폴리오 분산은 비중² × 분산 + 교차항(2w₁w₂σ₁σ₂ρ) 합산.",
+    "상관계수 +1이면 단순 가중평균 표준편차, -1이면 위험 감소 효과 최대.",
+    "체계적 위험은 베타, 비체계적 위험은 분산투자로 제거 가능을 구분."
+  ],
+  "trap_patterns": [
+    "CAPM에서 시장프리미엄(Rm-Rf) 대신 시장수익률(Rm) 전체 사용",
+    "포트폴리오 기대수익률에 표준편차/상관계수 반영",
+    "포트폴리오 표준편차를 단순 가중평균으로 계산"
+  ],
+  "time_strategy": {
+    "target_seconds": 80,
+    "skip_threshold_seconds": 120,
+    "exam_room_rule": "CAPM은 50초 안에 끝내고, 분산 계산은 60초 안에 식 세우지 못하면 표시."
+  },
+  "variant_axes": [
+    "단일 자산 CAPM vs 포트폴리오 CAPM",
+    "상관계수 -1/0/+1",
+    "베타가 음수인 경우"
+  ],
+  "mistake_diagnosis": [
+    "formula_gap",
+    "calculation_error",
+    "concept_gap"
+  ],
+  "review_status": "ai_draft"
+}

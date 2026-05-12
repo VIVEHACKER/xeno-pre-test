@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-corporate_law-003",
+  "exam": "CPA_1",
+  "subject": "corporate_law",
+  "unit": "corporate_law_general",
+  "applicable_year": 2026,
+  "stem": "주식회사의 설립에 관한 설명으로 옳지 않은 것은?",
+  "choices": [
+    "발기인은 1인 이상이면 충분하다.",
+    "정관은 공증인의 인증을 받아야 효력이 생긴다.",
+    "발기설립과 모집설립 중 어느 방법이든 선택할 수 있다.",
+    "회사의 성립 시기는 본점 소재지에서 설립등기를 신청한 날이다."
+  ],
+  "correct_choice": 3,
+  "explanation": "주식회사는 본점 소재지에서 설립등기를 함으로써 성립한다(상법 §172). 즉 '설립등기를 신청한 날'이 아니라 '설립등기를 한 날'이 회사 성립일이다. ①②③은 옳다. 발기인은 1인 이상, 정관은 공증인 인증 필요, 발기설립·모집설립 모두 가능.",
+  "concept_tags": [
+    "기업법: 주식회사",
+    "incorporation",
+    "articles_of_association",
+    "registration"
+  ],
+  "expected_seconds": 65,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "remember",
+  "attractor_traps": [
+    "회사 성립일을 신청일로 혼동",
+    "발기인 최소 인원을 2인 이상으로 잘못 암기",
+    "정관 인증 요건 누락"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

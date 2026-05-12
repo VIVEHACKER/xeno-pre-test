@@ -1,0 +1,63 @@
+{
+  "problem_id": "cpa1-accounting-012",
+  "exam": "CPA_1",
+  "subject": "accounting",
+  "unit": "cost_management",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "원가관리회계: 원가흐름",
+    "manufacturing_cost_flow",
+    "cost_of_goods_manufactured",
+    "cost_of_goods_sold"
+  ],
+  "required_concepts": [
+    {
+      "concept": "당기총제조원가",
+      "role": "직접재료비 + 직접노무비 + 제조간접비의 합산",
+      "prerequisite": true
+    },
+    {
+      "concept": "당기제품제조원가",
+      "role": "기초재공품 + 당기총제조원가 - 기말재공품",
+      "prerequisite": true
+    },
+    {
+      "concept": "매출원가",
+      "role": "기초제품 + 당기제품제조원가 - 기말제품",
+      "prerequisite": true
+    }
+  ],
+  "solving_entry_point": "재공품 T계정과 제품 T계정을 머릿속에 그려 두 단계 차감을 분리한다.",
+  "solving_steps": [
+    "직접재료비, 직접노무비, 제조간접비를 합쳐 당기총제조원가를 구한다.",
+    "기초재공품에 당기총제조원가를 더하고 기말재공품을 차감해 당기제품제조원가를 구한다.",
+    "기초제품에 당기제품제조원가를 더하고 기말제품을 차감해 매출원가를 산출한다.",
+    "보기와 비교 시 단위(원/천원)와 부호(증가/감소)를 다시 확인한다."
+  ],
+  "trap_patterns": [
+    "당기총제조원가를 매출원가로 그대로 보기에서 선택",
+    "재공품 재고 변동만 반영하고 제품 재고 변동을 누락",
+    "기말재공품 대신 기말제품을 차감하는 식 혼용"
+  ],
+  "time_strategy": {
+    "target_seconds": 75,
+    "skip_threshold_seconds": 100,
+    "exam_room_rule": "T계정 두 개를 60초 안에 채우지 못하면 다음 문제로 이동하고 2회전에 재진입한다."
+  },
+  "variant_axes": [
+    "직접노무비 vs 직접노무시간 환산 자료 변경",
+    "보조부문 원가 포함 여부",
+    "재공품/제품 기초·기말 자료 누락"
+  ],
+  "mistake_diagnosis": [
+    "concept_gap",
+    "formula_gap",
+    "condition_miss"
+  ],
+  "review_status": "ai_draft"
+}

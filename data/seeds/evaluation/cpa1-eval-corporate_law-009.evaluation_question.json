@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-corporate_law-009",
+  "exam": "CPA_1",
+  "subject": "corporate_law",
+  "unit": "corporate_law_general",
+  "applicable_year": 2026,
+  "stem": "주식회사의 사채(社債) 발행에 관한 설명으로 옳지 않은 것은?",
+  "choices": [
+    "사채 발행은 원칙적으로 이사회 결의로 한다.",
+    "전환사채는 사채권자가 일정한 조건에 따라 주식으로 전환할 수 있는 권리가 부여된 사채이다.",
+    "사채총액은 회사 자본금의 4배를 초과할 수 없다.",
+    "신주인수권부사채는 사채와 신주인수권이 결합된 사채이다."
+  ],
+  "correct_choice": 2,
+  "explanation": "구 상법에는 사채총액 한도 규정(자본금 4배)이 있었으나 2011년 개정 상법에서 폐지되었다. 현행 상법상 사채총액 한도는 없다. ①②④는 옳다.",
+  "concept_tags": [
+    "기업법: 주식/사채/자본금",
+    "bond_issuance",
+    "convertible_bond",
+    "bond_with_warrant"
+  ],
+  "expected_seconds": 70,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "remember",
+  "attractor_traps": [
+    "구 상법 사채총액 한도를 현행으로 잘못 적용",
+    "전환사채와 신주인수권부사채의 차이 혼동",
+    "사채발행을 주주총회 결의로 잘못 이해"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

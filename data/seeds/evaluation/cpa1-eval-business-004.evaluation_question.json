@@ -1,0 +1,32 @@
+{
+  "question_id": "cpa1-eval-business-004",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "financial_management",
+  "applicable_year": 2026,
+  "stem": "오늘부터 매년 말 300,000원씩 4년간 지급되는 정상연금이 있다. 할인율이 연 10%일 때, 이 정상연금의 현재가치는 약 얼마인가? (1.1^4 = 1.4641, 연금현가요소 PVA(10%, 4년) ≈ 3.1699)",
+  "choices": [
+    "950,970원",
+    "1,000,000원",
+    "1,200,000원",
+    "1,300,000원"
+  ],
+  "correct_choice": 0,
+  "explanation": "정상연금 현가 = 연금액 × PVA(10%, 4년) = 300,000 × 3.1699 ≈ 950,970원.",
+  "concept_tags": [
+    "재무관리: 화폐의 시간가치",
+    "ordinary_annuity",
+    "present_value_annuity"
+  ],
+  "expected_seconds": 70,
+  "difficulty": "easy",
+  "difficulty_score": 2,
+  "bloom_level": "apply",
+  "attractor_traps": [
+    "선급연금(annuity due) 공식 적용",
+    "연금현가요소 대신 미래가치요소(FVA) 적용",
+    "단리 단순 합산"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

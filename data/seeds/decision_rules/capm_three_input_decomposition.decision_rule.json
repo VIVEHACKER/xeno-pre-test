@@ -1,0 +1,14 @@
+{
+  "rule_key": "capm_three_input_decomposition",
+  "rule_name": "CAPM은 Rf·β·시장프리미엄 세 입력으로 분해",
+  "condition_text": "재무관리 위험과 수익률 단원에서 CAPM 요구수익률 또는 시장프리미엄 변화의 효과를 묻는 문제에서 학생이 β와 시장수익률 전체(Rm)를 곱하는 실수를 반복하는 상황",
+  "action_text": "CAPM 식을 풀기 전에 무위험이자율(Rf), 베타(β), 시장위험프리미엄(Rm - Rf) 세 칸을 분리해서 적는다. 식은 항상 Rf + β × (Rm - Rf) 한 줄. 베타에 곱하는 것은 시장수익률 전체가 아니라 위험프리미엄임을 시각화한다.",
+  "exception_text": "포트폴리오 기대수익률은 단순 가중평균이므로 CAPM 식을 적용하지 않는다.",
+  "applicable_stages": ["post_lecture", "objective_entry", "past_exam_rotation"],
+  "applicable_subjects": ["business"],
+  "required_risk_tags": ["formula_gap"],
+  "source_signal_count": 0,
+  "source_case_ids": [],
+  "confidence": 0.80,
+  "review_status": "machine_draft"
+}

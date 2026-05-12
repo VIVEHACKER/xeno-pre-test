@@ -1,0 +1,14 @@
+{
+  "rule_key": "management_theory_identification_first",
+  "rule_name": "경영학 문제는 이론·모형 식별이 출발점",
+  "condition_text": "경영학 객관식에서 다양한 이론·모형(Maslow·Herzberg·Porter·BCG·STP·EOQ 등)이 한꺼번에 등장하는 문제, 또는 학생이 비슷한 이름의 모형을 자주 혼동하는 상황",
+  "action_text": "선택지를 풀기 전에 문제에 등장하는 이론·모형명을 식별하고 한 단어로 표시한다(예: 매슬로/X·Y이론/5 Forces/SWOT). 그 다음 해당 모형의 구성요소·단계·축을 한 줄로 메모하고 선택지의 진술을 그 메모와 1대1 대조한다.",
+  "exception_text": "계산 문제(EOQ 등)는 모형 식별 후 바로 공식을 적용한다.",
+  "applicable_stages": ["post_lecture", "objective_entry", "past_exam_rotation"],
+  "applicable_subjects": ["business"],
+  "required_risk_tags": ["concept_gap", "memory_decay"],
+  "source_signal_count": 0,
+  "source_case_ids": [],
+  "confidence": 0.80,
+  "review_status": "machine_draft"
+}

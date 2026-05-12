@@ -1,0 +1,32 @@
+{
+  "question_id": "cpa1-eval-management-012",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "management_general",
+  "applicable_year": 2026,
+  "stem": "마케팅에서 소비자 구매의사결정의 단계 순서로 옳은 것은?",
+  "choices": [
+    "정보탐색 → 문제인식 → 대안평가 → 구매결정 → 구매 후 행동",
+    "문제인식 → 정보탐색 → 대안평가 → 구매결정 → 구매 후 행동",
+    "대안평가 → 정보탐색 → 문제인식 → 구매결정 → 구매 후 행동",
+    "구매결정 → 정보탐색 → 대안평가 → 문제인식 → 구매 후 행동"
+  ],
+  "correct_choice": 1,
+  "explanation": "소비자 구매의사결정 5단계: 문제인식(Problem Recognition) → 정보탐색(Information Search) → 대안평가(Evaluation of Alternatives) → 구매결정(Purchase Decision) → 구매 후 행동(Post-purchase Behavior).",
+  "concept_tags": [
+    "경영학: 마케팅",
+    "consumer_decision_process",
+    "buying_behavior"
+  ],
+  "expected_seconds": 40,
+  "difficulty": "easy",
+  "difficulty_score": 1,
+  "bloom_level": "remember",
+  "attractor_traps": [
+    "문제인식과 정보탐색 순서 혼동",
+    "구매 후 행동을 빠뜨림",
+    "대안평가를 정보탐색 앞으로 배치"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

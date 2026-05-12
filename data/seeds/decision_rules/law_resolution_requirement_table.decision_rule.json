@@ -1,0 +1,14 @@
+{
+  "rule_key": "law_resolution_requirement_table",
+  "rule_name": "결의 요건은 표로 외운다 — 보통/특별/특수",
+  "condition_text": "주주총회 결의 요건(보통결의·특별결의·특수결의)과 이사회 결의 요건을 동시에 묻는 문제, 또는 학생이 결의 요건 정족수와 의결권 비율을 자주 혼용하는 상황",
+  "action_text": "결의 종류 4가지를 카드처럼 외운다: ①주총 보통결의 = 출석 의결권 과반수 + 발행주식 1/4 이상. ②주총 특별결의 = 출석 의결권 2/3 + 발행주식 1/3 이상 (정관변경·합병·분할·자본감소 등). ③주총 특수결의 = 총주주 동의 (이사 책임 면제 등). ④이사회 결의 = 이사 과반수 출석 + 출석 과반수 찬성. 문제마다 사안이 어느 카드에 해당하는지 먼저 표시한 뒤 보기와 대조.",
+  "exception_text": "정관으로 결의 요건을 가중하는 것은 가능하지만 완화하는 것은 원칙적으로 불가능하다는 점을 동시에 기억한다.",
+  "applicable_stages": ["post_lecture", "objective_entry", "past_exam_rotation", "mock_exam"],
+  "applicable_subjects": ["corporate_law"],
+  "required_risk_tags": ["memory_decay", "formula_gap"],
+  "source_signal_count": 0,
+  "source_case_ids": [],
+  "confidence": 0.80,
+  "review_status": "machine_draft"
+}

@@ -1,0 +1,71 @@
+{
+  "problem_id": "cpa1-management-005",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "management_general",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "경영학: 일반경영",
+    "decision_making",
+    "balanced_scorecard",
+    "stakeholder",
+    "corporate_governance"
+  ],
+  "required_concepts": [
+    {
+      "concept": "의사결정 유형",
+      "role": "정형/비정형, 확실성/위험/불확실성, 합리/제한합리/직관",
+      "prerequisite": true
+    },
+    {
+      "concept": "균형성과표(BSC)",
+      "role": "재무·고객·내부프로세스·학습성장 4관점",
+      "prerequisite": true
+    },
+    {
+      "concept": "이해관계자 이론",
+      "role": "주주·종업원·고객·공급자·지역사회 등 다중 이해관계자",
+      "prerequisite": false
+    },
+    {
+      "concept": "기업지배구조",
+      "role": "이사회 구성·외부감사·주주 권리 보호",
+      "prerequisite": false
+    }
+  ],
+  "solving_entry_point": "일반경영 문제는 의사결정 모형·성과측정·지배구조 중 어느 영역인지 분류하고 해당 모형의 구성요소 표를 적용한다.",
+  "solving_steps": [
+    "문제 영역 분류 — 의사결정·BSC·이해관계자·지배구조.",
+    "의사결정 유형은 두 축(정형/비정형, 확실/위험/불확실)으로 표시.",
+    "BSC는 4관점을 빠짐없이 점검.",
+    "이해관계자 이론은 주주만 아닌 다중 이해관계자 관점에서 평가.",
+    "기업지배구조는 이사회 구성·감사·주주 권리 등을 표로 정리."
+  ],
+  "trap_patterns": [
+    "BSC 4관점 중 하나(학습성장 등)를 누락",
+    "이해관계자 이론을 주주 중심으로 한정",
+    "위험과 불확실성 혼동",
+    "지배구조와 경영구조 혼동"
+  ],
+  "time_strategy": {
+    "target_seconds": 60,
+    "skip_threshold_seconds": 90,
+    "exam_room_rule": "영역 식별 20초 안에 못 하면 표시."
+  },
+  "variant_axes": [
+    "정형·비정형 의사결정",
+    "BSC 관점 분류",
+    "이해관계자 vs 주주가치"
+  ],
+  "mistake_diagnosis": [
+    "concept_gap",
+    "memory_decay",
+    "distractor_trap"
+  ],
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,31 @@
+{
+  "chunk_id": "cost-flow-manufacturing",
+  "source": {
+    "source_kind": "internal_summary",
+    "title": "제조원가의 흐름 — 재공품·제품·매출원가 3단계",
+    "reference": null
+  },
+  "subject": "accounting",
+  "unit": "cost_management",
+  "topic_tags": [
+    "cost_flow",
+    "manufacturing_cost",
+    "cost_of_goods_manufactured",
+    "cost_of_goods_sold",
+    "work_in_process"
+  ],
+  "applicable_year": null,
+  "text": "당기총제조원가 = 직접재료비 + 직접노무비 + 제조간접비. 당기제품제조원가 = 기초재공품 + 당기총제조원가 - 기말재공품. 매출원가 = 기초제품 + 당기제품제조원가 - 기말제품. 재공품 T계정과 제품 T계정 두 개를 머릿속에 두고 두 단계 차감을 따로 한다. 직접재료비 = 기초원재료 + 매입 - 기말원재료. 제조간접비는 예정배부일 때 (예정배부율 × 실제배부기준)으로 계산하고, 실제와의 차이는 매출원가 또는 제조원가/재공품/제품에 비례 안분한다.",
+  "keywords": [
+    "당기총제조원가",
+    "당기제품제조원가",
+    "매출원가",
+    "재공품",
+    "기초재고",
+    "기말재고",
+    "직접재료비",
+    "제조간접비 배부차이"
+  ],
+  "rights_status": "self_generated",
+  "review_status": "expert_reviewed"
+}

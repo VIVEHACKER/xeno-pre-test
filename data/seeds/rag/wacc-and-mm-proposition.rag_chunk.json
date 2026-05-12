@@ -1,0 +1,33 @@
+{
+  "chunk_id": "wacc-and-mm-proposition",
+  "source": {
+    "source_kind": "internal_summary",
+    "title": "WACC와 MM 명제 — 자본구조와 기업가치",
+    "reference": null
+  },
+  "subject": "business",
+  "unit": "financial_management",
+  "topic_tags": [
+    "WACC",
+    "MM_proposition",
+    "capital_structure",
+    "cost_of_capital",
+    "tax_shield"
+  ],
+  "applicable_year": null,
+  "text": "WACC = (E/V) × R_e + (D/V) × R_d × (1 - t). E는 자기자본, D는 부채, V = E + D. R_e는 자기자본비용, R_d는 세전 부채비용, t는 법인세율. 부채비용을 (1-t)로 감세하는 이유는 이자비용의 절세효과(tax shield). MM 제1명제(무세금): 완전자본시장에서 기업가치는 자본구조와 무관, V_L = V_U. MM 제2명제(무세금): R_e = R_a + (D/E)(R_a - R_d). 부채비율 증가로 자기자본비용이 선형 증가하고, WACC는 일정. MM 명제(법인세 있음): V_L = V_U + t × D, 부채가 늘수록 절세효과로 기업가치 증가. 단 파산비용·대리비용을 반영한 절충이론에서는 최적 자본구조가 존재. 가중평균자본비용은 신규투자안의 할인율로 흔히 사용되며, 위험이 기업 전체 평균과 다른 사업이면 사업위험에 맞춘 할인율을 별도로 사용한다.",
+  "keywords": [
+    "WACC",
+    "가중평균자본비용",
+    "MM",
+    "Modigliani-Miller",
+    "자본구조",
+    "절세효과",
+    "tax shield",
+    "기업가치",
+    "절충이론",
+    "최적 자본구조"
+  ],
+  "rights_status": "self_generated",
+  "review_status": "expert_reviewed"
+}

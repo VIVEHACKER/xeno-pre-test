@@ -1,0 +1,71 @@
+{
+  "problem_id": "cpa1-corporate_law-005",
+  "exam": "CPA_1",
+  "subject": "corporate_law",
+  "unit": "corporate_law_general",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "기업법: 공인회계사법",
+    "기업법: 외부감사법",
+    "cpa_act",
+    "external_audit_act",
+    "auditor_appointment"
+  ],
+  "required_concepts": [
+    {
+      "concept": "공인회계사 직무 범위",
+      "role": "감사·증명, 회계자문·기장대행, 세무 자문(자격 보유 시)",
+      "prerequisite": true
+    },
+    {
+      "concept": "공인회계사 결격사유",
+      "role": "미성년자·후견인·파산·금고 이상 형 등",
+      "prerequisite": true
+    },
+    {
+      "concept": "외부감사 대상 회사",
+      "role": "직전 사업연도 자산총액·매출액 등 기준. 비상장도 일정 규모 시 대상",
+      "prerequisite": true
+    },
+    {
+      "concept": "감사인 선임 절차",
+      "role": "감사 또는 감사위원회의 승인·제청, 회사·감사인 간 독립성 요건",
+      "prerequisite": false
+    }
+  ],
+  "solving_entry_point": "사안이 공인회계사법(자격·직무·결격)인지 외부감사법(대상·선임·보고)인지 분류한 뒤 해당 법규 조항 표로 정리한다.",
+  "solving_steps": [
+    "법령 분류: 공인회계사법(자격·직무) vs 외부감사법(회사·감사인 의무).",
+    "직무 범위 또는 결격사유 분류 표 작성.",
+    "외부감사 대상 회사의 기준(자산·매출·종업원) 확인.",
+    "감사인 선임 절차와 독립성 요건(겸직·이해관계자 제한) 점검.",
+    "감사보고서 작성·제출 시기·공시 의무 정리."
+  ],
+  "trap_patterns": [
+    "외부감사 대상을 상장회사로만 한정",
+    "감사인 선임을 대표이사 단독 결정으로 오해",
+    "공인회계사 직무에 민·형사 소송 대리 포함 오해",
+    "외국 국적을 결격사유로 잘못 암기"
+  ],
+  "time_strategy": {
+    "target_seconds": 70,
+    "skip_threshold_seconds": 100,
+    "exam_room_rule": "법령 분류 20초 안에 못 하면 표시."
+  },
+  "variant_axes": [
+    "직무 범위 vs 결격사유",
+    "외부감사 대상 회사 기준",
+    "감사인 독립성 요건"
+  ],
+  "mistake_diagnosis": [
+    "concept_gap",
+    "memory_decay",
+    "distractor_trap"
+  ],
+  "review_status": "ai_draft"
+}

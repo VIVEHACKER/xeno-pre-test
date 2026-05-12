@@ -1,0 +1,66 @@
+{
+  "problem_id": "cpa1-business-004",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "financial_management",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "재무관리: 자본구조",
+    "WACC",
+    "MM_proposition",
+    "dividend_policy",
+    "gordon_growth_model"
+  ],
+  "required_concepts": [
+    {
+      "concept": "WACC",
+      "role": "(E/V)Re + (D/V)Rd(1-t), 가중평균자본비용",
+      "prerequisite": true
+    },
+    {
+      "concept": "MM 명제(법인세 무·유)",
+      "role": "무세금: V_L=V_U. 유세금: V_L=V_U+t×D (절세효과)",
+      "prerequisite": true
+    },
+    {
+      "concept": "고든 성장모형",
+      "role": "P = D1/(r-g), g = b × ROE (b: 유보율)",
+      "prerequisite": true
+    }
+  ],
+  "solving_entry_point": "법인세 가정 유무, 자본구조 비중, ROE/배당성향 자료를 분리해 어떤 명제·공식을 쓸지 먼저 결정한다.",
+  "solving_steps": [
+    "WACC 식에 비중·자기자본비용·부채비용·세율 대입(부채비용은 세후로).",
+    "MM 무세금 명제: 기업가치는 자본구조와 무관, Re는 부채비율 증가로 선형 증가.",
+    "MM 유세금 명제: 절세효과 t×D만큼 부채 기업가치 증가.",
+    "고든모형: 유보율 b = 1 - 배당성향, g = b × ROE. P = EPS×배당성향 / (r - g).",
+    "묻는 결과(WACC %, 주식가치 원, 명제 비교)에 맞는 식만 적용."
+  ],
+  "trap_patterns": [
+    "WACC에서 부채비용을 세전으로 사용",
+    "MM 무세금/유세금 명제 혼동",
+    "고든모형에서 D0과 D1을 혼동(D1 = D0×(1+g))",
+    "성장률을 분자로 잘못 위치"
+  ],
+  "time_strategy": {
+    "target_seconds": 100,
+    "skip_threshold_seconds": 140,
+    "exam_room_rule": "WACC는 60초, MM은 50초 안에 결론. 못 내면 표시 후 통과."
+  },
+  "variant_axes": [
+    "법인세 유/무 가정",
+    "배당정책 변경 시 가치 변화",
+    "자기자본비용 변동(부채비율 변경)"
+  ],
+  "mistake_diagnosis": [
+    "concept_gap",
+    "formula_gap",
+    "condition_miss"
+  ],
+  "review_status": "ai_draft"
+}

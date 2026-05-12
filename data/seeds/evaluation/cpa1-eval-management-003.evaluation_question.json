@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-management-003",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "management_general",
+  "applicable_year": 2026,
+  "stem": "조직 구조 유형에 관한 설명으로 옳지 않은 것은?",
+  "choices": [
+    "기능별 조직은 전문화의 이점이 크나 부서 간 협력에 어려움이 있다.",
+    "사업부제 조직은 제품·시장·지역별로 자율성을 부여한다.",
+    "매트릭스 조직은 명령일원화 원칙이 가장 잘 지켜지는 구조이다.",
+    "팀제·네트워크 조직은 환경 변화에 유연하게 대응하기 용이하다."
+  ],
+  "correct_choice": 2,
+  "explanation": "매트릭스 조직은 기능과 프로젝트(또는 제품)의 이중 보고 체계로 인해 명령일원화(unity of command) 원칙이 가장 깨지는 구조이다. 한 구성원이 두 명의 상사(기능 부서장과 프로젝트 매니저)에게 보고하므로 역할 갈등이 빈번하다. ①②④는 옳다.",
+  "concept_tags": [
+    "경영학: 조직설계",
+    "organizational_structure",
+    "matrix_organization",
+    "unity_of_command"
+  ],
+  "expected_seconds": 60,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "evaluate",
+  "attractor_traps": [
+    "기능별 조직의 단점을 잘못 이해",
+    "사업부제와 매트릭스 혼동",
+    "팀제·네트워크의 유연성을 부정"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

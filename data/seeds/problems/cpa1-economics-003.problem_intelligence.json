@@ -1,0 +1,65 @@
+{
+  "problem_id": "cpa1-economics-003",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "economics_general",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "경제학: 시장구조",
+    "monopoly",
+    "perfect_competition",
+    "game_theory",
+    "nash_equilibrium"
+  ],
+  "required_concepts": [
+    {
+      "concept": "MR = MC 이윤극대화 조건",
+      "role": "독점, 과점 모두 적용. 완전경쟁은 MR=P",
+      "prerequisite": true
+    },
+    {
+      "concept": "장기균형 조건(완전경쟁)",
+      "role": "P = MC = AC(최소점), 경제이윤 0",
+      "prerequisite": true
+    },
+    {
+      "concept": "우월전략과 내쉬균형",
+      "role": "상대 선택에 무관하게 더 나은 선택이 우월전략. 내쉬는 일방적 이탈 유인 없음",
+      "prerequisite": true
+    }
+  ],
+  "solving_entry_point": "시장구조(완전경쟁/독점/과점)를 먼저 분류한 뒤 해당 균형 조건을 적용한다.",
+  "solving_steps": [
+    "시장구조 식별: 가격수용자/가격결정자/소수 기업 경쟁.",
+    "독점: TR = P×Q, MR을 Q에 대해 미분 후 MR=MC.",
+    "완전경쟁 단기: P=MC. 장기: P=MC=AC(최소).",
+    "게임이론: 각 플레이어의 우월전략 식별 후 내쉬균형 결정.",
+    "단기 조업중단: P < AVC면 중단. P ≥ AVC면 손실에도 생산 지속."
+  ],
+  "trap_patterns": [
+    "독점에 P=MC 조건 적용(완전경쟁 조건 혼용)",
+    "회계이윤과 경제이윤 혼동",
+    "1회성 죄수의 딜레마와 반복게임 결과 혼동"
+  ],
+  "time_strategy": {
+    "target_seconds": 100,
+    "skip_threshold_seconds": 140,
+    "exam_room_rule": "MR 식 도출이 40초 안에 안 되면 표시 후 통과."
+  },
+  "variant_axes": [
+    "완전경쟁 단기/장기",
+    "독점 vs 완전경쟁 가격·생산량 비교",
+    "1회성 vs 반복 게임"
+  ],
+  "mistake_diagnosis": [
+    "concept_gap",
+    "strategy_error",
+    "formula_gap"
+  ],
+  "review_status": "ai_draft"
+}

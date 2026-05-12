@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-economics-004",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "economics_general",
+  "applicable_year": 2026,
+  "stem": "소비자가 X재와 Y재 두 재화만 소비하며, X재 가격이 하락하였다. 다음 중 옳은 설명은? (단, X재는 정상재이며 다른 조건은 일정)",
+  "choices": [
+    "대체효과로 X 수요량 감소, 소득효과로 X 수요량 감소",
+    "대체효과로 X 수요량 증가, 소득효과로 X 수요량 증가",
+    "대체효과로 X 수요량 감소, 소득효과로 X 수요량 증가",
+    "대체효과로 X 수요량 증가, 소득효과로 X 수요량 감소"
+  ],
+  "correct_choice": 1,
+  "explanation": "X 가격 하락 시: 대체효과는 상대적으로 더 싸진 X로의 수요 증가. 소득효과는 실질구매력 증가로 정상재 X 수요 증가. 두 효과 모두 X 수요량을 증가시키므로 수요량은 명확히 증가한다.",
+  "concept_tags": [
+    "경제학: 소비자이론",
+    "substitution_effect",
+    "income_effect",
+    "normal_good"
+  ],
+  "expected_seconds": 70,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "analyze",
+  "attractor_traps": [
+    "열등재 가정 적용",
+    "기펜재처럼 소득효과가 대체효과보다 크다고 가정",
+    "가격 하락의 방향성 반대로 해석"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

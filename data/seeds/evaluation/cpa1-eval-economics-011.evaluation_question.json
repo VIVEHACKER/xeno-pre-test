@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-economics-011",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "economics_general",
+  "applicable_year": 2026,
+  "stem": "한계소비성향(MPC)이 0.75인 폐쇄경제에서 정부지출이 100 증가하였다. 단순 케인즈 모형 가정 하에서 국민소득(Y)은 얼마나 증가하는가? (조세는 정액세, 변동 없음)",
+  "choices": [
+    "75",
+    "100",
+    "300",
+    "400"
+  ],
+  "correct_choice": 3,
+  "explanation": "정부지출 승수 = 1 / (1 - MPC) = 1 / (1 - 0.75) = 1 / 0.25 = 4. ΔY = 4 × ΔG = 4 × 100 = 400.",
+  "concept_tags": [
+    "경제학: 국민소득/물가/실업",
+    "keynesian_multiplier",
+    "government_spending",
+    "marginal_propensity_to_consume"
+  ],
+  "expected_seconds": 50,
+  "difficulty": "easy",
+  "difficulty_score": 2,
+  "bloom_level": "apply",
+  "attractor_traps": [
+    "MPC를 그대로 곱해 75",
+    "정부지출 자체 100",
+    "조세승수 식 (-MPC/(1-MPC)) 잘못 적용"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

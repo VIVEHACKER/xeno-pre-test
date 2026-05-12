@@ -1,0 +1,41 @@
+{
+  "chunk_id": "strategy-five-forces-swot-bcg",
+  "source": {
+    "source_kind": "internal_summary",
+    "title": "경영전략 — 5 Forces·본원적 전략·SWOT·BCG·앤소프",
+    "reference": null
+  },
+  "subject": "business",
+  "unit": "management_general",
+  "topic_tags": [
+    "porter_five_forces",
+    "generic_strategy",
+    "swot_analysis",
+    "bcg_matrix",
+    "ansoff_matrix"
+  ],
+  "applicable_year": null,
+  "text": "포터 5 Forces(산업 매력도 분석): ①기존 경쟁자 간 경쟁, ②신규 진입자의 위협, ③대체재의 위협, ④구매자의 교섭력, ⑤공급자의 교섭력. 본원적 경쟁전략: 원가우위(저원가 대량 생산), 차별화(독특한 가치), 집중화(특정 시장에서 원가집중 또는 차별화집중). SWOT 4전략 매트릭스: SO(공격, 강점·기회), WO(우회, 약점 보완·기회 활용), ST(다각화, 강점·위협 회피), WT(방어, 약점·위협 최소화). BCG 매트릭스(상대 시장점유율 × 시장성장률): 별(高·高, 투자 지속), 현금젖소(高·低, 자금 유출원), 물음표(低·高, 투자 결정 필요), 개(低·低, 철수 후보). 앤소프 성장 매트릭스(제품 × 시장): 시장침투(기존·기존), 시장개발(기존·신규), 제품개발(신규·기존), 다각화(신규·신규). PEST 분석: 정치·경제·사회·기술 외부환경 요인.",
+  "keywords": [
+    "5 Forces",
+    "포터",
+    "본원적 전략",
+    "원가우위",
+    "차별화",
+    "집중화",
+    "SWOT",
+    "SO",
+    "WO",
+    "ST",
+    "WT",
+    "BCG",
+    "별",
+    "현금젖소",
+    "물음표",
+    "개",
+    "앤소프",
+    "PEST"
+  ],
+  "rights_status": "self_generated",
+  "review_status": "expert_reviewed"
+}

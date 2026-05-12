@@ -1,0 +1,14 @@
+{
+  "rule_key": "macro_shock_direction_trace",
+  "rule_name": "거시 모형은 충격의 방향을 표로 추적",
+  "condition_text": "경제학 거시 단원에서 재정·통화정책 또는 외생적 충격이 단기 균형에 미치는 효과를 묻는 문제, 또는 학생이 정책 도구와 곡선 이동을 잘못 매핑하는 상황",
+  "action_text": "표 첫 행에 정책 도구(G, T, M), 둘째 행에 영향받는 곡선(IS 또는 LM), 셋째 행에 이동 방향(좌/우), 넷째 행에 새 균형의 (Y, r) 변화를 적는다. 구축효과·유동성함정·화폐 중립성 같은 단서 조건을 별도 칸에 메모.",
+  "exception_text": "장기 AS 수직 가정에서는 통화 충격이 물가만 변경하므로 Y에 영향이 없음을 별도로 표시한다.",
+  "applicable_stages": ["objective_entry", "past_exam_rotation", "mock_exam"],
+  "applicable_subjects": ["economics"],
+  "required_risk_tags": ["strategy_error", "concept_gap"],
+  "source_signal_count": 0,
+  "source_case_ids": [],
+  "confidence": 0.78,
+  "review_status": "machine_draft"
+}

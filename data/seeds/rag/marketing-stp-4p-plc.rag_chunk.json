@@ -1,0 +1,40 @@
+{
+  "chunk_id": "marketing-stp-4p-plc",
+  "source": {
+    "source_kind": "internal_summary",
+    "title": "마케팅 — STP·4P·제품수명주기·소비자 의사결정",
+    "reference": null
+  },
+  "subject": "business",
+  "unit": "management_general",
+  "topic_tags": [
+    "stp_strategy",
+    "marketing_mix",
+    "product_life_cycle",
+    "consumer_decision_process",
+    "segmentation"
+  ],
+  "applicable_year": null,
+  "text": "STP 전략: Segmentation(시장세분화, 동질적 집단 식별) → Targeting(표적시장 선정, 매력도 평가 후 진입할 세분시장 결정) → Positioning(포지셔닝, 표적시장에서의 차별적 이미지 설정). 시장세분화 기준: 지리적·인구통계·심리적·행동적. 4P 마케팅 믹스: Product(제품/서비스 자체), Price(가격 책정·할인), Place(유통경로·물류), Promotion(광고·판촉·인적판매·PR). 제품수명주기(PLC): 도입기(매출 낮음·가격 높음·이익 적자·인지도 형성), 성장기(매출 급성장·이익 본격 발생·경쟁자 진입·광고 확대), 성숙기(매출 정체·이익 최대 후 감소·가격 경쟁·차별화), 쇠퇴기(매출 감소·철수 또는 재포지셔닝). 소비자 구매의사결정 5단계: 문제인식 → 정보탐색(내부·외부) → 대안평가 → 구매결정 → 구매 후 행동(만족/인지부조화). 브랜드 자산: Aaker 모델(인지도·연상·지각된 품질·충성도·기타 자산).",
+  "keywords": [
+    "STP",
+    "시장세분화",
+    "표적시장",
+    "포지셔닝",
+    "4P",
+    "Product",
+    "Price",
+    "Place",
+    "Promotion",
+    "제품수명주기",
+    "PLC",
+    "도입기",
+    "성장기",
+    "성숙기",
+    "쇠퇴기",
+    "구매의사결정",
+    "브랜드 자산"
+  ],
+  "rights_status": "self_generated",
+  "review_status": "expert_reviewed"
+}

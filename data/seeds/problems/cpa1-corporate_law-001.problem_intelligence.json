@@ -1,0 +1,64 @@
+{
+  "problem_id": "cpa1-corporate_law-001",
+  "exam": "CPA_1",
+  "subject": "corporate_law",
+  "unit": "corporate_law_general",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "기업법: 상법총칙",
+    "merchant",
+    "trade_name",
+    "commercial_register"
+  ],
+  "required_concepts": [
+    {
+      "concept": "상인 분류(당연상인·의제상인·소상인)",
+      "role": "상법 적용 범위와 의무 결정의 출발점",
+      "prerequisite": true
+    },
+    {
+      "concept": "상호와 등기",
+      "role": "상호 양도·동일성·제3자 대항요건",
+      "prerequisite": true
+    },
+    {
+      "concept": "상행위 분류",
+      "role": "기본적 상행위·보조적 상행위·일방적 상행위",
+      "prerequisite": false
+    }
+  ],
+  "solving_entry_point": "행위자가 상인인지(당연/의제/소상인), 행위가 상행위인지를 표로 분리해 상법 적용 여부를 먼저 결정한다.",
+  "solving_steps": [
+    "행위자의 상인성을 분류한다(당연/의제/소상인).",
+    "행위가 기본적 상행위인지 보조적 상행위인지 분류.",
+    "상호와 등기는 양도성, 동일성, 대항요건 표로 정리.",
+    "소상인은 상법 일부 규정(상호·상업장부·상업등기 등) 적용 제외 확인.",
+    "구체적 사안의 효력은 상행위에 적용되는 특칙(이자율·연대책임 등)을 함께 점검."
+  ],
+  "trap_patterns": [
+    "소상인에게 상법 전 규정 적용으로 오해",
+    "회사를 상인으로 의제하는 점 누락",
+    "상호 양도 불가로 잘못 암기"
+  ],
+  "time_strategy": {
+    "target_seconds": 70,
+    "skip_threshold_seconds": 100,
+    "exam_room_rule": "상인 분류 30초 안에 결정 못하면 표시 후 통과."
+  },
+  "variant_axes": [
+    "당연상인 vs 의제상인",
+    "기본적 vs 보조적 상행위",
+    "상호 양도 시점"
+  ],
+  "mistake_diagnosis": [
+    "concept_gap",
+    "memory_decay",
+    "distractor_trap"
+  ],
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,64 @@
+{
+  "problem_id": "cpa1-business-001",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "financial_management",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "재무관리: 화폐의 시간가치",
+    "present_value",
+    "annuity",
+    "perpetuity"
+  ],
+  "required_concepts": [
+    {
+      "concept": "현재가치(PV)",
+      "role": "미래 현금흐름을 할인율로 같은 시점으로 환원",
+      "prerequisite": true
+    },
+    {
+      "concept": "정상연금/선급연금",
+      "role": "지급시점(말일/초일)에 따라 공식 차이",
+      "prerequisite": true
+    },
+    {
+      "concept": "영구연금/성장영구연금",
+      "role": "고든모형 D/(r-g) — 무한 만기 가정",
+      "prerequisite": false
+    }
+  ],
+  "solving_entry_point": "현금흐름의 발생 시점(0년/1년/매년/영구)과 지급시점(말일/초일/성장)을 표로 분리해 어떤 공식을 쓸지 먼저 결정한다.",
+  "solving_steps": [
+    "모든 현금흐름에 발생 연도 표시(0, 1, 2, ..., ∞).",
+    "단일 PV는 CF / (1+r)^n. 정상연금은 PVA(r, n), 선급연금은 PVA(r, n)×(1+r).",
+    "영구연금은 CF / r, 성장영구연금은 CF₁ / (r - g) (단 r > g).",
+    "할인율의 명목/실질, 연단위/반기복리 등 표시단위를 통일.",
+    "묻는 결과(현재가치/미래가치/기간/할인율)에 맞춰 식을 풀어 미지수 산출."
+  ],
+  "trap_patterns": [
+    "영구연금에서 분모를 (r-g) 대신 (r+g) 사용",
+    "성장률 g가 할인율 r보다 큰 케이스에서 공식 적용 시도",
+    "선급연금/정상연금 구분 누락으로 (1+r) 곱 누락"
+  ],
+  "time_strategy": {
+    "target_seconds": 70,
+    "skip_threshold_seconds": 100,
+    "exam_room_rule": "공식 선택을 30초 안에 못 정하면 표시 후 2회전."
+  },
+  "variant_axes": [
+    "단일 PV vs 연금 vs 영구연금",
+    "정상연금 vs 선급연금",
+    "성장률 유무"
+  ],
+  "mistake_diagnosis": [
+    "formula_gap",
+    "condition_miss",
+    "calculation_error"
+  ],
+  "review_status": "ai_draft"
+}

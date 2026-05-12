@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-economics-006",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "economics_general",
+  "applicable_year": 2026,
+  "stem": "어떤 기업의 단기 총비용함수가 TC = 100 + 4Q + Q²이다. Q=10일 때 평균비용(AC), 평균가변비용(AVC), 한계비용(MC)으로 옳은 조합은?",
+  "choices": [
+    "AC=24, AVC=14, MC=24",
+    "AC=24, AVC=14, MC=14",
+    "AC=14, AVC=24, MC=24",
+    "AC=14, AVC=4, MC=14"
+  ],
+  "correct_choice": 0,
+  "explanation": "TC = FC + VC, FC = 100, VC = 4Q + Q². Q=10에서: TC = 100 + 40 + 100 = 240. AC = TC/Q = 240/10 = 24. AVC = VC/Q = (40+100)/10 = 14. MC = dTC/dQ = 4 + 2Q = 4 + 20 = 24.",
+  "concept_tags": [
+    "경제학: 생산자이론/비용",
+    "marginal_cost",
+    "average_cost",
+    "fixed_variable_cost"
+  ],
+  "expected_seconds": 80,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "apply",
+  "attractor_traps": [
+    "고정비용을 가변비용에 포함",
+    "MC와 AVC를 혼동",
+    "TC를 Q로 나누지 않고 그대로 사용"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-management-014",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "management_general",
+  "applicable_year": 2026,
+  "stem": "적시생산방식(JIT, Just-In-Time)에 관한 설명으로 옳지 않은 것은?",
+  "choices": [
+    "재고를 최소화하여 자본 부담을 줄이는 것이 목표이다.",
+    "공급업체와의 긴밀한 협력과 빈번한 소량 납품이 필요하다.",
+    "수요 예측 실패 시에도 안정적으로 운영되도록 안전재고를 충분히 확보한다.",
+    "생산 흐름의 평준화(균형화)와 품질관리가 매우 중요하다."
+  ],
+  "correct_choice": 2,
+  "explanation": "JIT의 핵심은 재고 최소화이며 안전재고를 두지 않거나 극소화하는 것이 원칙. 안전재고를 충분히 확보한다는 것은 JIT 철학과 정반대(전통적 푸시 방식의 특성). ①②④는 JIT의 핵심 요소.",
+  "concept_tags": [
+    "경영학: 생산/운영관리",
+    "JIT",
+    "lean_production",
+    "inventory_minimization"
+  ],
+  "expected_seconds": 55,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "evaluate",
+  "attractor_traps": [
+    "JIT에서 안전재고 확보를 옳다고 답",
+    "공급업체 협력 중요성 부정",
+    "평준화 필요성 누락"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

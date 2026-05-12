@@ -1,0 +1,64 @@
+{
+  "problem_id": "cpa1-economics-001",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "economics_general",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "경제학: 수요/공급/탄력성",
+    "elasticity",
+    "tax_incidence",
+    "market_equilibrium"
+  ],
+  "required_concepts": [
+    {
+      "concept": "수요·공급 곡선의 이동 vs 곡선 위 이동",
+      "role": "가격 변화는 곡선 위 이동, 조건 변화는 곡선 자체 이동",
+      "prerequisite": true
+    },
+    {
+      "concept": "가격탄력성",
+      "role": "%ΔQ / %ΔP 의 절댓값. 호탄력성과 점탄력성 구분",
+      "prerequisite": true
+    },
+    {
+      "concept": "조세귀착",
+      "role": "탄력성이 작은 쪽이 더 많이 부담",
+      "prerequisite": false
+    }
+  ],
+  "solving_entry_point": "그래프를 먼저 그리고, 이동인지 곡선 위 이동인지를 화살표로 표시한다.",
+  "solving_steps": [
+    "수요·공급 함수를 P-Q 좌표로 정리하고 균형(Qd=Qs)을 표시.",
+    "변화가 가격인지 조건인지 식별해 곡선 위 이동 또는 곡선 이동 결정.",
+    "탄력성은 호탄력성(중점법) 또는 점탄력성 중 문제 지시 따름.",
+    "조세 부과 시 가격(소비자가/생산자가) 분리해서 양쪽 부담 계산.",
+    "최종 결과는 가격, 거래량, 부담의 방향과 크기로 정리."
+  ],
+  "trap_patterns": [
+    "가격 변화로 인한 수요량 변화를 수요곡선 이동으로 오해",
+    "호탄력성과 점탄력성 식 혼용",
+    "탄력성이 큰 쪽이 부담 크다고 잘못 적용"
+  ],
+  "time_strategy": {
+    "target_seconds": 80,
+    "skip_threshold_seconds": 110,
+    "exam_room_rule": "그래프와 이동 화살표를 30초 안에 못 그리면 표시 후 이동."
+  },
+  "variant_axes": [
+    "수요·공급 동시 이동",
+    "정상재 vs 열등재",
+    "종량세 vs 종가세 부과"
+  ],
+  "mistake_diagnosis": [
+    "concept_gap",
+    "formula_gap",
+    "calculation_error"
+  ],
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-economics-007",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "economics_general",
+  "applicable_year": 2026,
+  "stem": "완전경쟁시장의 단기에서 한 기업의 시장가격이 P=10, 평균비용 AC=12, 평균가변비용 AVC=8이라고 하자. 이 기업의 단기 선택은?",
+  "choices": [
+    "생산을 중단한다 (Q=0).",
+    "생산을 계속한다.",
+    "장기적으로 시장에서 퇴출한다.",
+    "이윤이 양수이므로 생산량을 늘린다."
+  ],
+  "correct_choice": 1,
+  "explanation": "단기 조업중단 조건: P < AVC. 본 문제는 P=10 > AVC=8이므로 가변비용은 충당. 고정비용 손실은 어차피 발생하므로 생산을 계속한다. 단, P < AC이므로 손실(이윤 음수)은 발생하며 장기적으로는 퇴출 가능성. 단기 선택은 '생산 지속'.",
+  "concept_tags": [
+    "경제학: 생산자이론/비용",
+    "shutdown_condition",
+    "perfect_competition",
+    "short_run"
+  ],
+  "expected_seconds": 60,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "evaluate",
+  "attractor_traps": [
+    "P < AC만 보고 즉시 조업중단으로 답",
+    "장기 퇴출 결정을 단기 조업중단과 혼동",
+    "이윤 양수로 잘못 판단"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

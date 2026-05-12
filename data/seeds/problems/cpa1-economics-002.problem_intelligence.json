@@ -1,0 +1,69 @@
+{
+  "problem_id": "cpa1-economics-002",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "economics_general",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "경제학: 소비자이론",
+    "utility_maximization",
+    "marginal_rate_of_substitution",
+    "income_substitution_effect"
+  ],
+  "required_concepts": [
+    {
+      "concept": "한계대체율(MRS)",
+      "role": "MUx/MUy, 무차별곡선의 기울기",
+      "prerequisite": true
+    },
+    {
+      "concept": "예산제약",
+      "role": "Px·X + Py·Y = M, 가격선의 기울기 = Px/Py",
+      "prerequisite": true
+    },
+    {
+      "concept": "효용극대화 조건",
+      "role": "MRS = Px/Py",
+      "prerequisite": true
+    },
+    {
+      "concept": "대체효과와 소득효과",
+      "role": "가격 변화 시 두 효과 분해 (Slutsky 분해)",
+      "prerequisite": false
+    }
+  ],
+  "solving_entry_point": "효용함수의 형태(Cobb-Douglas/완전대체/완전보완)로 한계대체율 모양을 결정하고 예산식과 결합한다.",
+  "solving_steps": [
+    "효용함수 형태를 식별하고 MRS = MUx/MUy를 구한다.",
+    "최적조건 MRS = Px/Py를 세운다.",
+    "예산식 Px·X + Py·Y = M에 위 결과를 대입해 X, Y 도출.",
+    "가격 변화 시 신·구 균형을 비교해 대체효과와 소득효과 분리.",
+    "정상재/열등재/기펜재에 따라 소득효과 방향 판정."
+  ],
+  "trap_patterns": [
+    "한계대체율을 Px/Py 대신 Py/Px로 적용",
+    "Cobb-Douglas의 지수와 예산 배분 비율을 혼동",
+    "열등재 가정에서 대체효과 부호를 반대로 적용"
+  ],
+  "time_strategy": {
+    "target_seconds": 100,
+    "skip_threshold_seconds": 140,
+    "exam_room_rule": "MRS 식을 40초 안에 못 세우면 표시 후 통과."
+  },
+  "variant_axes": [
+    "Cobb-Douglas vs 완전대체재 vs 완전보완재",
+    "가격 변화 vs 소득 변화",
+    "정상재/열등재/기펜재"
+  ],
+  "mistake_diagnosis": [
+    "formula_gap",
+    "concept_gap",
+    "calculation_error"
+  ],
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-business-012",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "financial_management",
+  "applicable_year": 2026,
+  "stem": "㈜CF의 자본구조는 자기자본 60%, 부채 40%이다. 자기자본비용 15%, 세전 부채비용 8%, 법인세율 25%이다. ㈜CF의 가중평균자본비용(WACC)은 얼마인가?",
+  "choices": [
+    "9.0%",
+    "11.4%",
+    "12.0%",
+    "13.0%"
+  ],
+  "correct_choice": 1,
+  "explanation": "WACC = (E/V) × Re + (D/V) × Rd × (1 - t) = 0.6 × 15% + 0.4 × 8% × (1 - 0.25) = 9.0% + 0.4 × 6% = 9.0% + 2.4% = 11.4%.",
+  "concept_tags": [
+    "재무관리: 자본구조",
+    "WACC",
+    "cost_of_capital",
+    "tax_shield"
+  ],
+  "expected_seconds": 70,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "apply",
+  "attractor_traps": [
+    "법인세 절세효과(1-t)를 적용하지 않고 세전 부채비용으로 계산",
+    "자기자본만 평균(15% + 8%)/2 = 11.5% 등 단순 평균",
+    "비중을 잘못 적용(자기자본 40%, 부채 60%)"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

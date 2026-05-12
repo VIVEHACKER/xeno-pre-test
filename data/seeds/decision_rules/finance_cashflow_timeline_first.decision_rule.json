@@ -1,0 +1,14 @@
+{
+  "rule_key": "finance_cashflow_timeline_first",
+  "rule_name": "재무관리 문제는 현금흐름 시간표부터",
+  "condition_text": "재무관리 화폐의 시간가치·자본예산 단원의 문제에서 현금흐름이 여러 시점에 분포하거나, 학생이 공식 선택 단계에서 30초 이상 머무는 상황",
+  "action_text": "공식을 외워서 풀기 전에 0년부터 n년까지 시간표를 그린다. 각 시점에 부호(투자 -, 유입 +)와 금액을 표시한 뒤, 패턴(단일/연금/영구/성장영구)을 식별하고 해당 공식만 적용한다.",
+  "exception_text": "옵션·풋콜패리티처럼 시점이 만기 한 점에 집중된 문제는 시간표 대신 패리티 식부터 적는다.",
+  "applicable_stages": ["post_lecture", "objective_entry", "past_exam_rotation"],
+  "applicable_subjects": ["business"],
+  "required_risk_tags": ["formula_confusion", "time_pressure"],
+  "source_signal_count": 0,
+  "source_case_ids": [],
+  "confidence": 0.78,
+  "review_status": "machine_draft"
+}

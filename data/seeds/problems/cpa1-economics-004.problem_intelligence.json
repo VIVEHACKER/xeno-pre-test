@@ -1,0 +1,65 @@
+{
+  "problem_id": "cpa1-economics-004",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "economics_general",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "경제학: IS-LM/AD-AS",
+    "is_lm_model",
+    "fiscal_policy",
+    "monetary_policy",
+    "crowding_out"
+  ],
+  "required_concepts": [
+    {
+      "concept": "IS 곡선",
+      "role": "재화시장 균형. 정부지출·조세·자율투자 변화 시 이동",
+      "prerequisite": true
+    },
+    {
+      "concept": "LM 곡선",
+      "role": "화폐시장 균형. 통화량·물가 변화 시 이동",
+      "prerequisite": true
+    },
+    {
+      "concept": "구축효과",
+      "role": "재정정책이 이자율 상승을 유발해 민간투자를 부분 상쇄",
+      "prerequisite": false
+    }
+  ],
+  "solving_entry_point": "정책 변화가 IS인지 LM인지 분류한 뒤 곡선 이동 방향과 새 균형의 (Y, r) 변화를 그래프로 추적한다.",
+  "solving_steps": [
+    "정책 도구 식별: 재정(G, T) → IS, 통화(M) → LM.",
+    "이동 방향 결정: 확장은 우측, 긴축은 좌측.",
+    "새 균형에서 Y, r의 방향을 그래프로 확인.",
+    "구축효과(재정)와 유동성함정(통화) 등 특수 경우 점검.",
+    "AD-AS 모형으로 확장 시 단기·장기 물가 효과 분석."
+  ],
+  "trap_patterns": [
+    "재정정책이 LM을 이동시킨다고 가정",
+    "구축효과를 무시하고 정부지출 승수 전부 적용",
+    "유동성함정에서 통화정책이 효과 있다고 답"
+  ],
+  "time_strategy": {
+    "target_seconds": 80,
+    "skip_threshold_seconds": 120,
+    "exam_room_rule": "곡선 이동 방향을 30초 안에 결정하지 못하면 표시."
+  },
+  "variant_axes": [
+    "재정정책 vs 통화정책",
+    "단기 vs 장기 AD-AS",
+    "폐쇄경제 vs 개방경제(IS*-LM*)"
+  ],
+  "mistake_diagnosis": [
+    "concept_gap",
+    "strategy_error",
+    "condition_miss"
+  ],
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,64 @@
+{
+  "problem_id": "cpa1-accounting-014",
+  "exam": "CPA_1",
+  "subject": "accounting",
+  "unit": "cost_management",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "원가관리회계: CVP",
+    "break_even_point",
+    "contribution_margin",
+    "margin_of_safety"
+  ],
+  "required_concepts": [
+    {
+      "concept": "단위당 공헌이익",
+      "role": "단위당 판매가 - 단위당 변동원가, BEP 계산의 분모",
+      "prerequisite": true
+    },
+    {
+      "concept": "공헌이익률",
+      "role": "공헌이익 / 매출, 매출액 기준 BEP에 사용",
+      "prerequisite": true
+    },
+    {
+      "concept": "안전한계율",
+      "role": "(현재매출 - BEP매출) / 현재매출, 이익 안정성 지표",
+      "prerequisite": false
+    }
+  ],
+  "solving_entry_point": "묻는 결과가 판매수량인지 매출액인지 안전한계율인지 먼저 분류한 뒤 공식을 고른다.",
+  "solving_steps": [
+    "고정원가, 단위당 판매가, 단위당 변동원가, 매출배합을 표로 정리한다.",
+    "단위당 공헌이익 또는 공헌이익률을 계산한다.",
+    "BEP 판매수량 = 고정원가 / 단위당 공헌이익. BEP 매출액 = 고정원가 / 공헌이익률.",
+    "목표이익 문제는 분자에 (고정원가 + 세전 목표이익)을 사용. 세후 목표이익은 (1-세율)로 나눠 세전으로 환산.",
+    "안전한계율 = (현재매출 - BEP매출) / 현재매출."
+  ],
+  "trap_patterns": [
+    "고정원가를 판매가격으로 나누는 등 분모 혼동",
+    "세후 목표이익을 그대로 분자에 더해 세금 무시",
+    "복수제품에서 매출배합을 무시하고 단순 평균 공헌이익 사용"
+  ],
+  "time_strategy": {
+    "target_seconds": 90,
+    "skip_threshold_seconds": 120,
+    "exam_room_rule": "공식 선택을 30초 안에 못 정하면 표시 후 통과한다."
+  },
+  "variant_axes": [
+    "단일제품 vs 복수제품(매출배합)",
+    "세전 vs 세후 목표이익",
+    "변동원가 또는 고정원가 변경 후 BEP 재계산"
+  ],
+  "mistake_diagnosis": [
+    "formula_gap",
+    "condition_miss",
+    "calculation_error"
+  ],
+  "review_status": "ai_draft"
+}

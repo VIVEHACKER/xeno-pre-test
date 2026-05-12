@@ -1,0 +1,34 @@
+{
+  "chunk_id": "elasticity-formulas",
+  "source": {
+    "source_kind": "internal_summary",
+    "title": "탄력성 공식과 응용 — 가격·소득·교차탄력성",
+    "reference": null
+  },
+  "subject": "economics",
+  "unit": "economics_general",
+  "topic_tags": [
+    "elasticity",
+    "price_elasticity_of_demand",
+    "income_elasticity",
+    "cross_price_elasticity",
+    "tax_incidence"
+  ],
+  "applicable_year": null,
+  "text": "가격탄력성(절댓값): E_p = |%ΔQ / %ΔP|. 점탄력성 = (dQ/dP)(P/Q). 호탄력성(중점법) = [(Q2-Q1)/((Q1+Q2)/2)] / [(P2-P1)/((P1+P2)/2)]. E > 1 탄력적, E = 1 단위탄력, E < 1 비탄력. 완전비탄력 E=0(수직), 완전탄력 E=∞(수평). 소득탄력성 = %ΔQ/%ΔI. >0 정상재, <0 열등재, >1 사치재. 교차탄력성 = %ΔQ_X / %ΔP_Y. >0 대체재, <0 보완재. 조세귀착: 탄력성이 더 작은 쪽이 더 많이 부담. 수요 비탄력 + 공급 탄력 → 소비자 부담 큼. 정부의 총조세수입 = 단위세 × 거래량(거래량 감소 효과는 탄력성에 따라 다름).",
+  "keywords": [
+    "탄력성",
+    "가격탄력성",
+    "소득탄력성",
+    "교차탄력성",
+    "호탄력성",
+    "점탄력성",
+    "조세귀착",
+    "정상재",
+    "열등재",
+    "대체재",
+    "보완재"
+  ],
+  "rights_status": "self_generated",
+  "review_status": "expert_reviewed"
+}

@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-corporate_law-014",
+  "exam": "CPA_1",
+  "subject": "corporate_law",
+  "unit": "corporate_law_general",
+  "applicable_year": 2026,
+  "stem": "주식회사 등의 외부감사에 관한 법률(외부감사법)에 관한 설명으로 옳은 것은?",
+  "choices": [
+    "외부감사 대상 회사는 직전 사업연도 말의 자산총액 또는 매출액 등이 일정 기준 이상인 회사로 정한다.",
+    "외부감사인의 선임은 회사의 대표이사가 단독으로 결정한다.",
+    "감사인은 회사가 원하는 어떠한 회계기준이든 적용해 감사보고서를 작성할 수 있다.",
+    "외부감사 대상 회사는 비상장회사를 모두 제외한다."
+  ],
+  "correct_choice": 0,
+  "explanation": "외부감사법상 외부감사 대상 회사는 직전 사업연도 말 기준 자산총액·매출액·종업원수 등의 일정 기준을 충족하는 주식회사·유한회사 등이다(외부감사법 §4). ②는 틀림 — 감사인 선임은 감사 또는 감사위원회의 승인·제청을 거치는 절차가 있다. ③은 틀림 — 감사인은 K-IFRS 또는 일반기업회계기준에 따라 감사. ④는 틀림 — 비상장회사도 일정 규모 이상이면 외부감사 대상.",
+  "concept_tags": [
+    "기업법: 외부감사법",
+    "external_audit_act",
+    "auditor_appointment",
+    "audit_scope"
+  ],
+  "expected_seconds": 70,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "evaluate",
+  "attractor_traps": [
+    "외부감사 대상을 상장회사로만 한정",
+    "감사인 선임을 대표이사 단독 결정으로 오해",
+    "회계기준 임의 적용 가능으로 오해"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

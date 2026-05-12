@@ -1,0 +1,66 @@
+{
+  "problem_id": "cpa1-business-005",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "financial_management",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "재무관리: 파생상품",
+    "option",
+    "put_call_parity",
+    "hedging",
+    "futures"
+  ],
+  "required_concepts": [
+    {
+      "concept": "유럽형 옵션",
+      "role": "만기에만 행사 가능, 풋콜패리티의 기본 가정",
+      "prerequisite": true
+    },
+    {
+      "concept": "풋콜패리티",
+      "role": "C - P = S - K/(1+r)^T, 무차익기회 조건",
+      "prerequisite": true
+    },
+    {
+      "concept": "헤지전략",
+      "role": "보유 자산의 가격위험을 선물/옵션으로 상쇄",
+      "prerequisite": false
+    }
+  ],
+  "solving_entry_point": "옵션 유형(유럽/미국, 콜/풋), 행사가격, 만기, 무위험이자율, 기초자산 가격을 표로 정리한다.",
+  "solving_steps": [
+    "유럽형 콜과 풋의 풋콜패리티 식: C - P = S - K/(1+r)^T.",
+    "한 변수의 가격을 묻는 경우 다른 변수 대입 후 정리.",
+    "행사가격 K는 만기시점 현금흐름이므로 (1+r)^T로 할인.",
+    "내재가치(intrinsic): 콜 max(S-K, 0), 풋 max(K-S, 0). 시간가치는 옵션가 - 내재가치.",
+    "헤지문제는 노출 포지션과 반대 방향의 파생포지션을 설정."
+  ],
+  "trap_patterns": [
+    "행사가격을 할인하지 않고 그대로 사용",
+    "콜과 풋 가격이 항상 같다고 가정",
+    "미국형/유럽형 가정 혼동(미국형은 풋콜부등식 적용)"
+  ],
+  "time_strategy": {
+    "target_seconds": 100,
+    "skip_threshold_seconds": 140,
+    "exam_room_rule": "풋콜패리티 식을 30초 안에 못 적으면 표시 후 통과."
+  },
+  "variant_axes": [
+    "콜가격 → 풋가격 역산",
+    "행사가격 변경",
+    "유럽형 vs 미국형",
+    "헤지비율 계산"
+  ],
+  "mistake_diagnosis": [
+    "formula_gap",
+    "calculation_error",
+    "distractor_trap"
+  ],
+  "review_status": "ai_draft"
+}

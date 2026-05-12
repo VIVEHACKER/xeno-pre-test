@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-economics-015",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "economics_general",
+  "applicable_year": 2026,
+  "stem": "한국과 미국의 명목이자율이 각각 연 5%, 3%이며, 1년 후 한국 원/달러 환율이 현재보다 1% 상승(원화 절하)할 것으로 예상된다. 무위험 이자율평형설(UIP)이 성립한다면 한국 자산 투자의 기대수익률은 미국 자산 투자보다 몇 %p 더 큰가?",
+  "choices": [
+    "-1%p",
+    "1%p",
+    "2%p",
+    "3%p"
+  ],
+  "correct_choice": 1,
+  "explanation": "UIP: i_KR ≈ i_US + 예상 환율 변화율(원화 기준 원/달러 상승 = 원화 절하 = 한국 통화 약세 예상). 한국 자산 기대수익률(원화 환산) = 5%. 미국 자산 기대수익률(원화 환산) = i_US + 예상 환율 변화율 = 3% + 1% = 4%. 차이 = 5% - 4% = 1%p. (UIP 정확 성립 시 차이는 0이어야 하나, 본 문항은 시장 불균형 상태 가정.)",
+  "concept_tags": [
+    "경제학: 국제경제",
+    "uncovered_interest_parity",
+    "exchange_rate",
+    "expected_return"
+  ],
+  "expected_seconds": 90,
+  "difficulty": "hard",
+  "difficulty_score": 4,
+  "bloom_level": "analyze",
+  "attractor_traps": [
+    "이자율 차이만 비교 (5-3=2%p)",
+    "환율 상승을 원화 강세로 잘못 해석",
+    "UIP 식 부호 반대로 적용"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

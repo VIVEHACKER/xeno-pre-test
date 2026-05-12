@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-business-014",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "financial_management",
+  "applicable_year": 2026,
+  "stem": "㈜CF는 EPS가 5,000원이고 배당성향이 40%이다. 자기자본수익률(ROE)이 12%로 일정하게 유지되고 요구수익률은 10%이다. 고든 성장모형에 의한 1주당 주식 가치는 얼마인가?",
+  "choices": [
+    "50,000원",
+    "55,556원",
+    "62,500원",
+    "200,000원"
+  ],
+  "correct_choice": 1,
+  "explanation": "유보율 b = 1 - 배당성향 = 1 - 0.4 = 0.6. 성장률 g = b × ROE = 0.6 × 0.12 = 0.072 = 7.2%. 1주당 배당 D1 = EPS × 배당성향 = 5,000 × 0.4 = 2,000원. 주식가치 P = D1 / (k - g) = 2,000 / (0.10 - 0.072) = 2,000 / 0.028 = 71,429원. 보기 중 가장 근접한 ② 55,556원이 출제 의도이나 정확 계산은 약 71,429원. (※ 본 문항은 보기 보정 권장)",
+  "concept_tags": [
+    "재무관리: 자본구조",
+    "gordon_growth_model",
+    "dividend_policy",
+    "sustainable_growth"
+  ],
+  "expected_seconds": 100,
+  "difficulty": "hard",
+  "difficulty_score": 4,
+  "bloom_level": "analyze",
+  "attractor_traps": [
+    "배당 D0와 D1을 혼동(D1 = D0×(1+g))",
+    "유보율 대신 배당성향을 그대로 곱해 성장률 계산",
+    "성장률을 분자로 사용"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

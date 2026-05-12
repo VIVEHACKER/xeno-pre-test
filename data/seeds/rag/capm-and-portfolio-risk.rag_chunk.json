@@ -1,0 +1,35 @@
+{
+  "chunk_id": "capm-and-portfolio-risk",
+  "source": {
+    "source_kind": "internal_summary",
+    "title": "CAPM과 포트폴리오 위험 — 베타, 분산효과, 효율적 프런티어",
+    "reference": null
+  },
+  "subject": "business",
+  "unit": "financial_management",
+  "topic_tags": [
+    "CAPM",
+    "beta",
+    "portfolio_risk",
+    "diversification",
+    "systematic_risk",
+    "efficient_frontier"
+  ],
+  "applicable_year": null,
+  "text": "CAPM: E(R_i) = R_f + β_i × (E(R_m) - R_f). 베타 β_i = Cov(R_i, R_m) / Var(R_m) = ρ × σ_i / σ_m. 시장위험프리미엄은 E(R_m) - R_f. 포트폴리오 기대수익률 = Σ w_i × E(R_i). 두 자산 포트폴리오 분산 = w_X² σ_X² + w_Y² σ_Y² + 2 w_X w_Y σ_X σ_Y ρ_XY. 상관계수 ρ = -1이면 분산 효과 극대(이론적으로 위험 0 포트폴리오 구성 가능, 비중 조정 필요). 체계적 위험(시장위험)은 분산투자로 제거 불가능, 비체계적 위험은 분산투자로 제거. CAPM은 체계적 위험(β)만 가격결정. 효율적 프런티어는 동일 위험에서 최대 수익률 또는 동일 수익률에서 최소 위험의 포트폴리오 집합. 자본시장선(CML)은 무위험자산과 시장포트폴리오의 결합선.",
+  "keywords": [
+    "CAPM",
+    "베타",
+    "포트폴리오",
+    "분산",
+    "표준편차",
+    "상관계수",
+    "체계적 위험",
+    "비체계적 위험",
+    "효율적 프런티어",
+    "자본시장선",
+    "CML"
+  ],
+  "rights_status": "self_generated",
+  "review_status": "expert_reviewed"
+}

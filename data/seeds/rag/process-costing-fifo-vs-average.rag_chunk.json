@@ -1,0 +1,30 @@
+{
+  "chunk_id": "process-costing-fifo-vs-average",
+  "source": {
+    "source_kind": "internal_summary",
+    "title": "종합원가계산 — FIFO와 평균법 완성품환산량",
+    "reference": null
+  },
+  "subject": "accounting",
+  "unit": "cost_management",
+  "topic_tags": [
+    "process_costing",
+    "equivalent_units",
+    "weighted_average_method",
+    "fifo_method"
+  ],
+  "applicable_year": null,
+  "text": "평균법 가공원가 완성품환산량 = 완성품 수량 × 100% + 기말재공품 수량 × 기말 완성도. 기초재공품의 완성도는 무시. FIFO 가공원가 완성품환산량 = 기초재공품 수량 × (1 - 기초 완성도) + 당기 착수 후 완성 수량 × 100% + 기말재공품 수량 × 기말 완성도. 당기 착수 후 완성 = 총 완성품 - 기초재공품. 재료가 공정 시작 시점에 전부 투입되는 경우 재료원가 환산량은 (평균법) 완성품 + 기말재공품 환산을 100%로 계산하고, FIFO에서는 기초재공품의 재료투입은 0(이미 투입됨)으로 본다. 단위당 가공원가는 (평균법) 총가공원가/총환산량, (FIFO) 당기 발생 가공원가/당기 환산량.",
+  "keywords": [
+    "완성품환산량",
+    "평균법",
+    "FIFO",
+    "선입선출법",
+    "기초재공품",
+    "기말재공품",
+    "재료투입시점",
+    "가공원가"
+  ],
+  "rights_status": "self_generated",
+  "review_status": "expert_reviewed"
+}

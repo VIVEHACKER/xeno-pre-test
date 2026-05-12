@@ -1,0 +1,32 @@
+{
+  "question_id": "cpa1-eval-corporate_law-002",
+  "exam": "CPA_1",
+  "subject": "corporate_law",
+  "unit": "corporate_law_general",
+  "applicable_year": 2026,
+  "stem": "상법상 상호(商號)에 관한 설명으로 옳지 않은 것은?",
+  "choices": [
+    "상호는 상인이 영업상 자기를 표시하는 명칭이다.",
+    "동일한 영업에 대해 둘 이상의 상호를 사용할 수 없다.",
+    "회사의 상호에는 종류(주식회사, 유한회사 등)를 표시해야 한다.",
+    "한 번 등기된 상호는 양도가 절대로 금지된다."
+  ],
+  "correct_choice": 3,
+  "explanation": "상호는 양도 가능하다. 다만 상호 양도는 영업과 함께 양도하거나 영업폐지 시에 한해 가능하며, 등기를 해야 제3자에 대항할 수 있다(상법 §25). 따라서 ④의 '절대 금지'는 틀린 설명이다. ①②③은 모두 옳다.",
+  "concept_tags": [
+    "기업법: 상법총칙",
+    "trade_name",
+    "commercial_register"
+  ],
+  "expected_seconds": 60,
+  "difficulty": "easy",
+  "difficulty_score": 2,
+  "bloom_level": "remember",
+  "attractor_traps": [
+    "상호 양도 가능성을 부정",
+    "회사의 종류 표시 의무를 모름",
+    "동일 영업·동일 상호 원칙 미숙지"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

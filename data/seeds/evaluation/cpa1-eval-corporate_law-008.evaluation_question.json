@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-corporate_law-008",
+  "exam": "CPA_1",
+  "subject": "corporate_law",
+  "unit": "corporate_law_general",
+  "applicable_year": 2026,
+  "stem": "주식회사의 신주발행과 관련된 설명으로 옳지 않은 것은?",
+  "choices": [
+    "신주는 원칙적으로 이사회 결의로 발행한다.",
+    "주주는 정관에 다른 정함이 없는 한 신주인수권을 가진다.",
+    "신주인수권은 주주명부에 명의개서를 한 주주에게 우선 부여된다.",
+    "제3자 배정은 정관 또는 주주총회 특별결의 없이 자유롭게 가능하다."
+  ],
+  "correct_choice": 3,
+  "explanation": "제3자 배정 신주발행은 주주의 신주인수권을 침해하므로 정관에 근거가 있고 경영상 목적을 달성하기 위한 경우에 한해 가능하며, 일반적으로는 주주총회 특별결의나 정관 규정이 요구된다(상법 §418). ①②③은 옳다.",
+  "concept_tags": [
+    "기업법: 주식/사채/자본금",
+    "new_share_issuance",
+    "preemptive_right",
+    "third_party_allotment"
+  ],
+  "expected_seconds": 70,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "evaluate",
+  "attractor_traps": [
+    "제3자 배정을 자유 결정으로 오해",
+    "신주인수권 양도성을 부정",
+    "이사회 결의 외 추가 절차 누락"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

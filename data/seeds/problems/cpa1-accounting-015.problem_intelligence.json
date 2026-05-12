@@ -1,0 +1,65 @@
+{
+  "problem_id": "cpa1-accounting-015",
+  "exam": "CPA_1",
+  "subject": "accounting",
+  "unit": "cost_management",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "원가관리회계: 표준원가",
+    "standard_costing",
+    "variance_analysis",
+    "direct_material_labor_variance"
+  ],
+  "required_concepts": [
+    {
+      "concept": "표준원가",
+      "role": "사전 설정된 단위당 표준 투입량과 표준가격",
+      "prerequisite": true
+    },
+    {
+      "concept": "가격차이/소비차이",
+      "role": "(AP - SP) × AQ. 실제투입수량에 적용한 가격 차이",
+      "prerequisite": true
+    },
+    {
+      "concept": "능률차이/수량차이",
+      "role": "(AQ - SQ) × SP. 표준가격에 적용한 수량 차이",
+      "prerequisite": true
+    }
+  ],
+  "solving_entry_point": "AP·AQ·SP·SQ 네 값을 표로 적고, 가격차이는 AQ 옆에서, 능률차이는 SP 옆에서 한 칸씩 차이로 계산한다.",
+  "solving_steps": [
+    "실제투입수량(AQ), 실제가격(AP), 표준허용수량(SQ), 표준가격(SP)을 추출한다.",
+    "직접재료 가격차이 = (AP - SP) × AQ. 양수면 불리(U), 음수면 유리(F).",
+    "직접재료 수량차이 = (AQ - SQ) × SP.",
+    "직접노무 임률차이 = (실제임률 - 표준임률) × 실제시간.",
+    "직접노무 능률차이 = (실제시간 - 표준시간) × 표준임률.",
+    "변동제조간접비는 노무시간을 배부기준으로 동일 구조 적용."
+  ],
+  "trap_patterns": [
+    "가격차이와 능률차이의 곱셈 항(AQ vs SP)을 뒤바꿈",
+    "표준허용수량(SQ)을 단순 표준수량(예: 단위당 표준 × 표준 생산량)으로 잘못 계산",
+    "유리/불리 부호 반대로 답"
+  ],
+  "time_strategy": {
+    "target_seconds": 100,
+    "skip_threshold_seconds": 140,
+    "exam_room_rule": "4상자(AP·AQ·SP·SQ)를 60초 안에 못 채우면 표시 후 통과."
+  },
+  "variant_axes": [
+    "직접재료 가격차이 분리 시점(구입 vs 사용)",
+    "변동제조간접비 소비차이 vs 능률차이 분리",
+    "고정제조간접비 예산차이 vs 조업도차이 분리"
+  ],
+  "mistake_diagnosis": [
+    "formula_gap",
+    "calculation_error",
+    "distractor_trap"
+  ],
+  "review_status": "ai_draft"
+}

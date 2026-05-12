@@ -1,0 +1,33 @@
+{
+  "chunk_id": "relevant-cost-decision-making",
+  "source": {
+    "source_kind": "internal_summary",
+    "title": "의사결정 — 관련원가, 매몰원가, 기회비용",
+    "reference": null
+  },
+  "subject": "accounting",
+  "unit": "cost_management",
+  "topic_tags": [
+    "relevant_cost",
+    "sunk_cost",
+    "opportunity_cost",
+    "special_order",
+    "make_or_buy",
+    "product_line_drop"
+  ],
+  "applicable_year": null,
+  "text": "관련원가는 의사결정 대안에 따라 미래에 달라지는 원가다. 매몰원가는 이미 발생해 의사결정에 영향이 없으므로 제외한다. 기회비용은 선택한 대안 때문에 포기한 차선의 순공헌이익이며 비교 시 더한다. 특별주문 수락: 유휴능력이 있으면 변동원가만 관련. 유휴능력이 없으면 기존 판매 손실(기회비용)을 추가. 자가제조 vs 외주(make-or-buy): 자가제조 회피가능원가(변동원가 + 회피가능 고정원가)와 외주 구매가격을 비교. 외주가 더 낮고 유휴능력을 다른 곳에 활용하면 기회수익을 외주의 이익에 가산. 제품라인 폐지: 폐지 시 회피가능 고정원가만 절감. 공통 고정원가는 절감되지 않으므로 비관련.",
+  "keywords": [
+    "관련원가",
+    "매몰원가",
+    "회피가능원가",
+    "기회비용",
+    "특별주문",
+    "자가제조",
+    "외주",
+    "유휴능력",
+    "공헌이익 비교"
+  ],
+  "rights_status": "self_generated",
+  "review_status": "expert_reviewed"
+}

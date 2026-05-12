@@ -1,0 +1,35 @@
+{
+  "chunk_id": "npv-vs-irr-decision",
+  "source": {
+    "source_kind": "internal_summary",
+    "title": "NPV와 IRR — 자본예산 의사결정 기준 비교",
+    "reference": null
+  },
+  "subject": "business",
+  "unit": "financial_management",
+  "topic_tags": [
+    "NPV",
+    "IRR",
+    "capital_budgeting",
+    "payback_period",
+    "decision_rule",
+    "mutually_exclusive"
+  ],
+  "applicable_year": null,
+  "text": "NPV = Σ CF_t / (1+r)^t - 초기투자. 양수면 채택. IRR은 NPV=0을 만드는 할인율. IRR > 자본비용이면 채택. 회수기간법은 누적 명목 CF가 초기투자에 도달하는 시점. 할인회수기간은 누적 할인 CF 사용. 독립적 투자안은 채택 기준 충족하면 모두 채택. 상호배타적 투자안에서 NPV-IRR 충돌이 발생하는 이유: (1) 재투자수익률 가정(NPV는 자본비용, IRR은 자체 IRR로 재투자한다고 가정) (2) 투자 규모 차이 (3) 현금흐름 시점 차이. 상호배타적이면 NPV법이 우월(기업가치 극대화 원칙). 비통상적 현금흐름(부호가 여러 번 바뀜)은 IRR이 복수 또는 없을 수 있어 수정IRR(MIRR) 또는 NPV 사용. 회수기간법은 위험 평가에 보조적 사용. 할인 적용 여부에 따라 명목 회수기간과 할인회수기간을 구분.",
+  "keywords": [
+    "NPV",
+    "IRR",
+    "내부수익률",
+    "순현재가치",
+    "회수기간",
+    "할인회수기간",
+    "자본예산",
+    "상호배타",
+    "독립적",
+    "재투자수익률",
+    "MIRR"
+  ],
+  "rights_status": "self_generated",
+  "review_status": "expert_reviewed"
+}

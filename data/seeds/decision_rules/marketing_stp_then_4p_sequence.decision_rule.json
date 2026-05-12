@@ -1,0 +1,14 @@
+{
+  "rule_key": "marketing_stp_then_4p_sequence",
+  "rule_name": "마케팅은 STP → 4P 순서로 차원을 분리",
+  "condition_text": "마케팅 단원에서 STP 전략과 4P 마케팅 믹스를 혼동하거나, 포지셔닝과 Promotion을 같은 차원으로 답하는 문제",
+  "action_text": "마케팅 문제는 두 차원으로 분리한다: 차원1 = STP(Segmentation·Targeting·Positioning, 전략 결정), 차원2 = 4P(Product·Price·Place·Promotion, 전술 실행). 포지셔닝은 STP의 마지막 단계이지 4P의 일부가 아니다. 보기에서 두 차원이 섞이지 않았는지 점검.",
+  "exception_text": "PLC(제품수명주기)는 4P 전술을 시기별로 조정하는 별도 프레임워크이므로 차원3으로 추가한다.",
+  "applicable_stages": ["post_lecture", "objective_entry", "past_exam_rotation"],
+  "applicable_subjects": ["business"],
+  "required_risk_tags": ["concept_gap", "distractor_trap"],
+  "source_signal_count": 0,
+  "source_case_ids": [],
+  "confidence": 0.76,
+  "review_status": "machine_draft"
+}

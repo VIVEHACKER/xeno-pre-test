@@ -1,0 +1,71 @@
+{
+  "problem_id": "cpa1-accounting-016",
+  "exam": "CPA_1",
+  "subject": "accounting",
+  "unit": "cost_management",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "원가관리회계: 의사결정",
+    "relevant_cost",
+    "special_order",
+    "make_or_buy",
+    "sunk_cost"
+  ],
+  "required_concepts": [
+    {
+      "concept": "관련원가",
+      "role": "의사결정에 따라 미래에 변하는 원가만 비교 대상",
+      "prerequisite": true
+    },
+    {
+      "concept": "회피가능원가",
+      "role": "대안 선택에 따라 더 이상 발생하지 않는 원가",
+      "prerequisite": true
+    },
+    {
+      "concept": "매몰원가",
+      "role": "이미 지출되어 의사결정에 영향을 주지 않는 원가",
+      "prerequisite": true
+    },
+    {
+      "concept": "기회비용",
+      "role": "선택한 대안 때문에 포기한 차선 대안의 순현금흐름",
+      "prerequisite": false
+    }
+  ],
+  "solving_entry_point": "각 항목이 의사결정에 따라 변하는지 표로 분류해 관련/비관련 원가만 비교한다.",
+  "solving_steps": [
+    "두 대안의 증분수익과 증분원가를 한 줄씩 정리한다.",
+    "매몰원가는 두 대안에 동일하게 포함되므로 제외한다.",
+    "기회비용은 포기한 대안의 공헌이익을 더해 비교한다.",
+    "유휴능력 여부에 따라 고정원가 변화 여부를 판단한다.",
+    "증분이익 = 증분수익 - 증분 변동원가 ± 증분 고정원가 ± 기회비용. 부호와 액수로 결론."
+  ],
+  "trap_patterns": [
+    "매몰원가(이미 발생한 R&D 등)를 의사결정에 반영",
+    "유휴능력이 있을 때 고정원가가 추가 발생한다고 가정",
+    "기회비용을 빼야 하는데 더하거나 부호 혼동"
+  ],
+  "time_strategy": {
+    "target_seconds": 110,
+    "skip_threshold_seconds": 150,
+    "exam_room_rule": "관련/비관련 분류를 60초 안에 못 끝내면 표시 후 다음."
+  },
+  "variant_axes": [
+    "특별주문 수락 여부",
+    "부품 자가제조 vs 외주 구매",
+    "제품라인 폐지 여부",
+    "유휴능력 유무 변경"
+  ],
+  "mistake_diagnosis": [
+    "concept_gap",
+    "strategy_error",
+    "distractor_trap"
+  ],
+  "review_status": "ai_draft"
+}

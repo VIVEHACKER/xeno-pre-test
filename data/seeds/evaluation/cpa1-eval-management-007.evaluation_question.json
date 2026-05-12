@@ -1,0 +1,32 @@
+{
+  "question_id": "cpa1-eval-management-007",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "management_general",
+  "applicable_year": 2026,
+  "stem": "BCG 매트릭스의 사업단위 분류에 관한 설명으로 옳은 것은?",
+  "choices": [
+    "별(Star)은 시장점유율이 낮고 시장성장률이 높은 사업이다.",
+    "현금젖소(Cash Cow)는 시장점유율이 높고 시장성장률이 낮은 성숙기 사업이다.",
+    "물음표(Question Mark)는 시장점유율이 높고 시장성장률도 높은 사업이다.",
+    "개(Dog)는 시장점유율이 높고 시장성장률이 낮은 사업이다."
+  ],
+  "correct_choice": 1,
+  "explanation": "BCG 매트릭스의 4분면: 별(상대적 시장점유율 高 + 시장성장률 高), 현금젖소(점유율 高 + 성장률 低, 자금원), 물음표(점유율 低 + 성장률 高, 투자 필요), 개(점유율 低 + 성장률 低, 철수 후보). ②가 정확.",
+  "concept_tags": [
+    "경영학: 경영전략",
+    "bcg_matrix",
+    "portfolio_analysis"
+  ],
+  "expected_seconds": 60,
+  "difficulty": "easy",
+  "difficulty_score": 2,
+  "bloom_level": "remember",
+  "attractor_traps": [
+    "별과 물음표의 점유율을 반대로 답",
+    "현금젖소와 개의 위치 혼동",
+    "두 축(점유율/성장률)을 바꿔 적용"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

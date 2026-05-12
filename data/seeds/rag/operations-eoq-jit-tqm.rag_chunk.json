@@ -1,0 +1,40 @@
+{
+  "chunk_id": "operations-eoq-jit-tqm",
+  "source": {
+    "source_kind": "internal_summary",
+    "title": "생산·운영관리 — EOQ·JIT·TQM·식스시그마·SCM",
+    "reference": null
+  },
+  "subject": "business",
+  "unit": "management_general",
+  "topic_tags": [
+    "EOQ",
+    "JIT",
+    "TQM",
+    "six_sigma",
+    "supply_chain",
+    "lean_production"
+  ],
+  "applicable_year": null,
+  "text": "경제적 주문량(EOQ) = √(2DS/H). D는 연간 수요, S는 1회 주문비용, H는 단위당 연간 재고유지비용. EOQ 가정: 수요 일정, 리드타임 일정, 일괄 도착, 단가 일정. 적시생산(JIT/Just-In-Time): 재고 최소화, 평준화 생산, 칸반(kanban)으로 풀(pull) 방식, 소량 빈번 납품, 공급업체와 긴밀 협력. 린(Lean) 생산: 7대 낭비 제거(과잉생산·대기·운반·과잉가공·재고·동작·불량). 전사적 품질경영(TQM): 전 구성원이 참여하는 품질문화, 고객지향, 지속적 개선(Kaizen), 통계적 품질관리(SPC). 식스시그마: DMAIC 절차(Define→Measure→Analyze→Improve→Control), 결함 100만 기회당 3.4건(σ=6) 목표, Black/Green Belt 전문가 양성. 공급사슬관리(SCM): 공급-생산-유통-고객 흐름 통합, 채찍효과(bullwhip effect) 완화, SCOR 모형(계획·조달·생산·배송·반품). MRP(자재소요계획) vs MRP II: 자재 vs 전사적 자원.",
+  "keywords": [
+    "EOQ",
+    "경제적 주문량",
+    "JIT",
+    "적시생산",
+    "칸반",
+    "린 생산",
+    "7대 낭비",
+    "TQM",
+    "전사적 품질경영",
+    "Kaizen",
+    "식스시그마",
+    "DMAIC",
+    "SPC",
+    "SCM",
+    "채찍효과",
+    "MRP"
+  ],
+  "rights_status": "self_generated",
+  "review_status": "expert_reviewed"
+}

@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-economics-014",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "economics_general",
+  "applicable_year": 2026,
+  "stem": "화폐수량설(MV = PY)에서 통화량(M)이 5% 증가하고 화폐 유통속도(V)는 일정하며 실질 국민소득(Y)이 2% 증가하였다. 물가상승률(P 변화율)은 약 얼마인가?",
+  "choices": [
+    "2%",
+    "3%",
+    "5%",
+    "7%"
+  ],
+  "correct_choice": 1,
+  "explanation": "화폐수량설의 변화율 근사식: %ΔM + %ΔV = %ΔP + %ΔY. V 일정이므로 %ΔV = 0. %ΔP = %ΔM - %ΔY = 5% - 2% = 3%.",
+  "concept_tags": [
+    "경제학: 화폐금융론",
+    "quantity_theory_of_money",
+    "inflation",
+    "money_supply"
+  ],
+  "expected_seconds": 60,
+  "difficulty": "easy",
+  "difficulty_score": 2,
+  "bloom_level": "apply",
+  "attractor_traps": [
+    "통화량 증가율 그대로 5%",
+    "M과 Y를 더해 7%",
+    "Y와 P 부호 혼동"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,14 @@
+{
+  "rule_key": "npv_irr_conflict_resolution",
+  "rule_name": "NPV-IRR 충돌은 NPV로 결론",
+  "condition_text": "재무관리 자본예산 단원에서 NPV와 IRR이 서로 다른 결론을 내는 상호배타적 투자안 비교 문제, 또는 IRR이 큰 안을 무조건 선호하는 실수를 반복하는 상황",
+  "action_text": "투자안이 상호배타적인지 독립적인지 먼저 분류한다. 상호배타적이면 NPV법으로 결론(기업가치 극대화). 독립적이면 두 안 모두 채택 기준 충족 시 모두 채택. IRR이 큰 쪽을 무조건 선택하지 말 것 — 재투자수익률 가정·규모 차이로 왜곡이 발생한다.",
+  "exception_text": "비통상적 현금흐름(부호가 여러 번 바뀜)은 IRR이 여러 개 나오거나 존재하지 않으므로 IRR을 보지 말고 NPV 또는 MIRR을 사용한다.",
+  "applicable_stages": ["objective_entry", "past_exam_rotation", "mock_exam"],
+  "applicable_subjects": ["business"],
+  "required_risk_tags": ["strategy_error"],
+  "source_signal_count": 0,
+  "source_case_ids": [],
+  "confidence": 0.82,
+  "review_status": "machine_draft"
+}

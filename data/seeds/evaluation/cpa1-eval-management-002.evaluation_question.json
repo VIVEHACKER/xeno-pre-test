@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-management-002",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "management_general",
+  "applicable_year": 2026,
+  "stem": "허즈버그(Herzberg)의 2요인이론(동기-위생이론)에 따를 때, 위생요인(불만족 요인)에 해당하지 않는 것은?",
+  "choices": [
+    "회사 정책과 행정",
+    "급여와 작업 조건",
+    "상사와의 관계",
+    "성취감과 책임감"
+  ],
+  "correct_choice": 3,
+  "explanation": "허즈버그 2요인이론에서 위생요인은 급여, 작업 조건, 회사 정책, 대인관계, 감독 등 충족되지 않으면 불만족을 일으키지만 충족되어도 동기부여로 이어지지는 않는 요인. 동기요인은 성취감, 책임감, 인정, 일 자체, 성장·발전 등으로 충족되면 만족과 동기부여를 일으킨다.",
+  "concept_tags": [
+    "경영학: 조직행동",
+    "herzberg",
+    "two_factor_theory",
+    "motivation"
+  ],
+  "expected_seconds": 50,
+  "difficulty": "easy",
+  "difficulty_score": 2,
+  "bloom_level": "remember",
+  "attractor_traps": [
+    "급여를 동기요인으로 잘못 분류",
+    "위생요인과 동기요인의 역할 혼동",
+    "성취감을 위생요인으로 답"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

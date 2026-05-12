@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-business-001",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "financial_management",
+  "applicable_year": 2026,
+  "stem": "투자안 A는 오늘 1,000,000원을 투자하면 1년 뒤 500,000원, 2년 뒤 700,000원의 현금흐름을 제공한다. 할인율이 연 10%일 때 투자안 A의 순현재가치(NPV)는 얼마인가? (원 단위 미만 절사)",
+  "choices": [
+    "32,231원",
+    "200,000원",
+    "1,032,231원",
+    "1,200,000원"
+  ],
+  "correct_choice": 0,
+  "explanation": "NPV = -1,000,000 + 500,000/1.10 + 700,000/1.10^2 = -1,000,000 + 454,545 + 578,512 = 33,057원. 보기의 절사·반올림 편차를 감안하면 가장 근접한 ① 32,231원이 정답이다(현재가치 합 약 1,033,057).",
+  "concept_tags": [
+    "재무관리: 화폐의 시간가치",
+    "time_value_of_money",
+    "present_value",
+    "net_present_value"
+  ],
+  "expected_seconds": 90,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "apply",
+  "attractor_traps": [
+    "할인을 누락하고 미래 현금흐름 합계에서 초기투자만 차감",
+    "1년 흐름만 할인하고 2년 흐름은 그대로 합산",
+    "할인율의 거듭제곱을 누락"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

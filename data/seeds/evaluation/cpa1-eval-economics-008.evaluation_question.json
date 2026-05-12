@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-economics-008",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "economics_general",
+  "applicable_year": 2026,
+  "stem": "독점기업이 직면한 수요함수는 P = 100 - Q이고, 한계비용은 MC = 20으로 일정하다. 이윤극대화 생산량과 가격은?",
+  "choices": [
+    "Q=20, P=80",
+    "Q=40, P=60",
+    "Q=50, P=50",
+    "Q=80, P=20"
+  ],
+  "correct_choice": 1,
+  "explanation": "총수입 TR = P×Q = (100-Q)Q = 100Q - Q². 한계수입 MR = 100 - 2Q. 이윤극대화: MR = MC → 100 - 2Q = 20 → Q = 40. P = 100 - 40 = 60.",
+  "concept_tags": [
+    "경제학: 시장구조",
+    "monopoly",
+    "profit_maximization",
+    "marginal_revenue"
+  ],
+  "expected_seconds": 70,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "apply",
+  "attractor_traps": [
+    "P = MC 조건으로 완전경쟁 결과(Q=80, P=20) 선택",
+    "MR을 P와 동일하다고 보고 P=MC 식 사용",
+    "MR을 100 - Q로 잘못 미분"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

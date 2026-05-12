@@ -1,0 +1,71 @@
+{
+  "problem_id": "cpa1-management-002",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "management_general",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "경영학: 경영전략",
+    "porter_five_forces",
+    "generic_strategy",
+    "swot_analysis",
+    "bcg_matrix"
+  ],
+  "required_concepts": [
+    {
+      "concept": "포터 5 Forces",
+      "role": "산업매력도 분석 — 기존경쟁·신규진입·대체재·구매자·공급자 교섭력",
+      "prerequisite": true
+    },
+    {
+      "concept": "본원적 경쟁전략",
+      "role": "원가우위·차별화·집중화 3가지(또는 4가지로 집중화를 둘로 분리)",
+      "prerequisite": true
+    },
+    {
+      "concept": "SWOT 4전략",
+      "role": "SO(공격)·WO(우회)·ST(다각)·WT(방어)",
+      "prerequisite": true
+    },
+    {
+      "concept": "BCG 매트릭스",
+      "role": "상대시장점유율 × 시장성장률로 별/현금젖소/물음표/개 분류",
+      "prerequisite": false
+    }
+  ],
+  "solving_entry_point": "전략 모형을 먼저 식별하고(5 Forces / 본원적 / SWOT / BCG / 앤소프), 해당 모형의 축과 분면을 표로 그린 뒤 보기와 매칭한다.",
+  "solving_steps": [
+    "모형명 식별과 핵심 구성요소 메모.",
+    "5 Forces는 5가지 요소를 빠짐없이 적용했는지 확인.",
+    "본원적 전략은 원가우위·차별화·집중화 3가지로 분류.",
+    "SWOT 4전략은 내부/외부 + 강점/약점/기회/위협 매트릭스로 매핑.",
+    "BCG는 점유율·성장률 두 축의 4분면으로 분류."
+  ],
+  "trap_patterns": [
+    "5 Forces에 정부 규제·기술 변화 등 외부 요인을 잘못 포함",
+    "본원적 전략에 다각화·차별화집중을 혼동",
+    "SO/WO/ST/WT 매핑 혼동",
+    "BCG 두 축을 반대로 적용"
+  ],
+  "time_strategy": {
+    "target_seconds": 70,
+    "skip_threshold_seconds": 100,
+    "exam_room_rule": "모형 식별 20초 안에 못 하면 표시."
+  },
+  "variant_axes": [
+    "5 Forces 요소 식별",
+    "본원적 전략 vs 성장 전략",
+    "SWOT 4전략 매핑"
+  ],
+  "mistake_diagnosis": [
+    "concept_gap",
+    "memory_decay",
+    "distractor_trap"
+  ],
+  "review_status": "ai_draft"
+}

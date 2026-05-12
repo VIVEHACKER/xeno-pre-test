@@ -1,0 +1,71 @@
+{
+  "problem_id": "cpa1-corporate_law-002",
+  "exam": "CPA_1",
+  "subject": "corporate_law",
+  "unit": "corporate_law_general",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "기업법: 주주총회/이사회/감사",
+    "shareholders_meeting",
+    "board_of_directors",
+    "auditor",
+    "director_duty"
+  ],
+  "required_concepts": [
+    {
+      "concept": "기관 권한 배분",
+      "role": "주주총회는 근본적 결정, 이사회는 업무집행 결정, 대표이사는 대외행위",
+      "prerequisite": true
+    },
+    {
+      "concept": "결의 요건",
+      "role": "주총 보통결의/특별결의/특수결의, 이사회 결의(과반수 출석·과반수 찬성)",
+      "prerequisite": true
+    },
+    {
+      "concept": "이사 의무·책임",
+      "role": "선관주의의무·충실의무·경업금지·자기거래·이사 책임 면제",
+      "prerequisite": true
+    },
+    {
+      "concept": "감사·감사위원회",
+      "role": "업무감사+회계감사, 임기·겸직 제한, 감사위원회 병존 금지",
+      "prerequisite": false
+    }
+  ],
+  "solving_entry_point": "사안의 행위 성격(근본적·업무집행·대외)을 분류해 어느 기관 권한인지 먼저 매핑한다.",
+  "solving_steps": [
+    "행위 성격을 근본적(정관·이사선임·합병)/업무집행(중요자산 처분)/대외(계약) 중 하나로 분류.",
+    "해당 기관(주주총회/이사회/대표이사)의 결의 요건 표를 적는다.",
+    "이사 의무 위반 사안은 의무 종류(경업금지·자기거래·선관)와 효과(손해배상·이익반환)를 매핑.",
+    "감사 관련 사안은 임기·겸직·감사위원회 병존 등 제한을 먼저 확인.",
+    "결의 절차 누락(소집통지·정족수·등기)이 있는지 점검."
+  ],
+  "trap_patterns": [
+    "주주총회와 이사회 권한 경계 혼동",
+    "특별결의 요건과 보통결의 요건 혼용",
+    "감사 임기를 3년 대신 5년으로 잘못 암기",
+    "이사 책임 면제를 이사회 결의로 가능하다고 답"
+  ],
+  "time_strategy": {
+    "target_seconds": 90,
+    "skip_threshold_seconds": 130,
+    "exam_room_rule": "기관 매핑이 40초 안에 안 되면 표시 후 통과."
+  },
+  "variant_axes": [
+    "행위 성격(근본·업무·대외)",
+    "결의 요건(보통·특별·특수)",
+    "이사 의무 종류"
+  ],
+  "mistake_diagnosis": [
+    "concept_gap",
+    "memory_decay",
+    "distractor_trap"
+  ],
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-management-010",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "management_general",
+  "applicable_year": 2026,
+  "stem": "마케팅 믹스(4P)의 구성요소에 해당하지 않는 것은?",
+  "choices": [
+    "제품(Product)",
+    "가격(Price)",
+    "유통(Place)",
+    "포지셔닝(Positioning)"
+  ],
+  "correct_choice": 3,
+  "explanation": "마케팅 믹스 4P: ①제품(Product), ②가격(Price), ③유통(Place), ④촉진(Promotion). 포지셔닝은 STP 전략의 마지막 단계이며 4P와 다른 차원의 개념. 4P는 포지셔닝이 결정된 후 이를 실현하기 위한 구체적 전술이다.",
+  "concept_tags": [
+    "경영학: 마케팅",
+    "marketing_mix",
+    "4p",
+    "promotion"
+  ],
+  "expected_seconds": 45,
+  "difficulty": "easy",
+  "difficulty_score": 1,
+  "bloom_level": "remember",
+  "attractor_traps": [
+    "포지셔닝을 4P에 포함",
+    "촉진을 빠뜨림",
+    "Place와 Promotion 혼동"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

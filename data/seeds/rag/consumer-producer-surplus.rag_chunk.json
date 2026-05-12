@@ -1,0 +1,33 @@
+{
+  "chunk_id": "consumer-producer-surplus",
+  "source": {
+    "source_kind": "internal_summary",
+    "title": "소비자잉여·생산자잉여·후생 — 시장 효율성",
+    "reference": null
+  },
+  "subject": "economics",
+  "unit": "economics_general",
+  "topic_tags": [
+    "consumer_surplus",
+    "producer_surplus",
+    "deadweight_loss",
+    "market_efficiency",
+    "tax_burden"
+  ],
+  "applicable_year": null,
+  "text": "소비자잉여(CS) = 수요곡선과 가격선 사이의 면적. 지불용의 - 실제 지불액. 생산자잉여(PS) = 가격선과 공급곡선 사이의 면적. 수취액 - 최소수용가. 총잉여 = CS + PS. 완전경쟁 시장균형에서 총잉여는 최대화. 가격상한(상한 < 균형가)은 공급 부족과 자중손실 발생. 가격하한(하한 > 균형가)은 초과공급과 자중손실 발생. 종량세 부과 시: 소비자 부담 + 생산자 부담 = 세액. 자중손실(DWL) = (1/2) × Δ거래량 × 세액. 자중손실은 탄력성이 클수록 커짐. 외부효과 존재 시 사적 비용·편익과 사회적 비용·편익이 달라 시장 균형이 사회적 최적과 어긋남(피구세·보조금으로 교정).",
+  "keywords": [
+    "소비자잉여",
+    "생산자잉여",
+    "총잉여",
+    "자중손실",
+    "DWL",
+    "가격상한",
+    "가격하한",
+    "조세",
+    "외부효과",
+    "피구세"
+  ],
+  "rights_status": "self_generated",
+  "review_status": "expert_reviewed"
+}

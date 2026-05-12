@@ -1,0 +1,32 @@
+{
+  "question_id": "cpa1-eval-business-015",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "financial_management",
+  "applicable_year": 2026,
+  "stem": "유럽형 콜옵션과 풋옵션의 행사가격은 모두 100,000원, 만기는 1년이다. 현재 기초자산 가격은 95,000원, 무위험이자율은 연 5%(연속복리 아님). 콜옵션 가격이 8,000원일 때, 풋콜패리티에 의한 풋옵션의 이론가격은 얼마인가?",
+  "choices": [
+    "3,000원",
+    "8,238원",
+    "13,000원",
+    "18,238원"
+  ],
+  "correct_choice": 1,
+  "explanation": "풋콜패리티: C - P = S - K/(1+r). 따라서 P = C - S + K/(1+r) = 8,000 - 95,000 + 100,000/1.05 = 8,000 - 95,000 + 95,238 = 8,238원.",
+  "concept_tags": [
+    "재무관리: 파생상품",
+    "put_call_parity",
+    "european_option"
+  ],
+  "expected_seconds": 90,
+  "difficulty": "hard",
+  "difficulty_score": 4,
+  "bloom_level": "apply",
+  "attractor_traps": [
+    "행사가격을 할인하지 않고 그대로 사용(K 그대로 5,000)",
+    "콜 가격과 풋 가격을 같다고 가정(C = P)",
+    "내재가치(max(K-S, 0))만으로 계산"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

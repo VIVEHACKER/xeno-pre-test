@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-business-007",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "financial_management",
+  "applicable_year": 2026,
+  "stem": "주식 X와 Y에 각각 50%씩 투자한 포트폴리오가 있다. X와 Y의 표준편차는 각각 20%, 10%이고 수익률 상관계수는 -1이다. 이 포트폴리오의 표준편차는?",
+  "choices": [
+    "0%",
+    "5%",
+    "10%",
+    "15%"
+  ],
+  "correct_choice": 1,
+  "explanation": "포트폴리오 분산 = w_X² σ_X² + w_Y² σ_Y² + 2 w_X w_Y σ_X σ_Y ρ = 0.5² × 0.2² + 0.5² × 0.1² + 2 × 0.5 × 0.5 × 0.2 × 0.1 × (-1) = 0.01 + 0.0025 - 0.01 = 0.0025. 표준편차 = √0.0025 = 0.05 = 5%.",
+  "concept_tags": [
+    "재무관리: 위험과 수익률",
+    "portfolio_risk",
+    "correlation",
+    "diversification"
+  ],
+  "expected_seconds": 100,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "analyze",
+  "attractor_traps": [
+    "단순평균(20% + 10%) / 2 = 15%",
+    "상관계수 ρ = -1에서 분산이 0이 된다고 가정(비중 동일이 아닌 경우의 결과)",
+    "상관계수를 +1로 잘못 적용"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

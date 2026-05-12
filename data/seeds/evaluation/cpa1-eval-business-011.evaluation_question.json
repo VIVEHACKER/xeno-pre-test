@@ -1,0 +1,32 @@
+{
+  "question_id": "cpa1-eval-business-011",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "financial_management",
+  "applicable_year": 2026,
+  "stem": "투자안 C는 오늘 500,000원을 투자하면 1년 뒤부터 매년 150,000원의 영구 현금흐름이 발생한다. 자본비용이 12%일 때 회수기간(Payback Period)은 약 몇 년인가?",
+  "choices": [
+    "2.5년",
+    "3.3년",
+    "4.2년",
+    "5.0년"
+  ],
+  "correct_choice": 1,
+  "explanation": "회수기간법은 할인하지 않은 명목 현금흐름 누적이 초기 투자액에 도달하는 시점. 500,000 / 150,000 = 3.33년. (※ 자본비용 12%는 회수기간법에는 사용하지 않고, 할인회수기간법에만 사용한다.)",
+  "concept_tags": [
+    "재무관리: 자본예산",
+    "payback_period",
+    "investment_appraisal"
+  ],
+  "expected_seconds": 55,
+  "difficulty": "easy",
+  "difficulty_score": 2,
+  "bloom_level": "apply",
+  "attractor_traps": [
+    "자본비용으로 할인한 할인회수기간으로 계산",
+    "투자액 / 자본비용으로 계산",
+    "영구 현금흐름 현가(150,000/0.12)와 비교"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

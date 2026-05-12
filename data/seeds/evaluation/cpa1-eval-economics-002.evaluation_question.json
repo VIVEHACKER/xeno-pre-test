@@ -1,0 +1,32 @@
+{
+  "question_id": "cpa1-eval-economics-002",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "economics_general",
+  "applicable_year": 2026,
+  "stem": "재화 Y에 정부가 단위당 일정 금액의 종량세를 부과하였다. 수요는 비탄력적이고 공급은 탄력적이다. 조세의 부담 분담과 거래량 변화에 대한 설명으로 옳은 것은?",
+  "choices": [
+    "소비자가 더 많이 부담하고 거래량은 거의 변하지 않는다.",
+    "생산자가 더 많이 부담하고 거래량은 크게 감소한다.",
+    "조세 부담은 동일하게 분담되고 거래량은 변하지 않는다.",
+    "조세 부담은 생산자가 전부 지고 가격은 변하지 않는다."
+  ],
+  "correct_choice": 0,
+  "explanation": "조세귀착 원칙: 탄력성이 작은(비탄력적인) 쪽이 더 많이 부담한다. 수요가 비탄력이면 소비자가 가격 상승을 회피하기 어려워 더 많이 부담한다. 또한 비탄력적 수요와 탄력적 공급의 결합에서 거래량 감소도 상대적으로 작다.",
+  "concept_tags": [
+    "경제학: 수요/공급/탄력성",
+    "tax_incidence",
+    "elasticity"
+  ],
+  "expected_seconds": 60,
+  "difficulty": "easy",
+  "difficulty_score": 2,
+  "bloom_level": "evaluate",
+  "attractor_traps": [
+    "탄력성이 큰 쪽이 더 부담한다고 답",
+    "법적 납부자와 경제적 부담자를 같다고 가정",
+    "탄력성에 무관하게 항상 균등 분담"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

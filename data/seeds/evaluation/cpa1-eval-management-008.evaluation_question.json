@@ -1,0 +1,32 @@
+{
+  "question_id": "cpa1-eval-management-008",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "management_general",
+  "applicable_year": 2026,
+  "stem": "SWOT 분석을 통한 전략 선택에서 'WO 전략'에 해당하는 것은?",
+  "choices": [
+    "내부 강점을 활용하여 외부 기회를 포착하는 전략",
+    "내부 약점을 보완하여 외부 기회를 활용하는 전략",
+    "내부 강점을 활용하여 외부 위협을 회피하는 전략",
+    "내부 약점을 인정하고 외부 위협을 최소화하는 방어 전략"
+  ],
+  "correct_choice": 1,
+  "explanation": "SWOT 매트릭스 4전략: SO(공격적, 강점·기회 활용), WO(우회·만회, 약점 보완하며 기회 포착), ST(다각화, 강점으로 위협 회피), WT(방어, 약점·위협 최소화). ①은 SO, ③은 ST, ④는 WT.",
+  "concept_tags": [
+    "경영학: 경영전략",
+    "swot_analysis",
+    "strategy_formulation"
+  ],
+  "expected_seconds": 60,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "analyze",
+  "attractor_traps": [
+    "SO와 WO 혼동",
+    "위협과 기회를 반대로 매핑",
+    "공격적 전략을 WO로 답"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

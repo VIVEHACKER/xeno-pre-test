@@ -1,0 +1,14 @@
+{
+  "rule_key": "law_organ_mapping_first",
+  "rule_name": "기업법 문제는 행위 성격 → 기관 매핑 먼저",
+  "condition_text": "기업법 회사법 단원에서 어떤 결정이 적법한지 또는 어느 기관 권한인지 묻는 문제, 또는 학생이 주주총회·이사회·대표이사 권한을 자주 혼동하는 상황",
+  "action_text": "선택지를 풀기 전에 사안의 행위를 (근본적 결정/업무집행 결정/대외 집행) 셋으로 분류한다. 근본적 결정(정관·이사선임·합병·자본 변동) → 주주총회. 업무집행 결정(중요 자산 처분·신주발행·사채발행·대표이사 선임) → 이사회. 대외 집행(계약 체결·소송) → 대표이사. 이 매핑을 선택지 옆에 적은 뒤 옳고 그름을 판단한다.",
+  "exception_text": "감사위원회를 둔 회사의 감사 관련 사안은 별도로 감사위원회 권한 표를 참조한다.",
+  "applicable_stages": ["post_lecture", "objective_entry", "past_exam_rotation"],
+  "applicable_subjects": ["corporate_law"],
+  "required_risk_tags": ["concept_gap", "memory_decay"],
+  "source_signal_count": 0,
+  "source_case_ids": [],
+  "confidence": 0.82,
+  "review_status": "machine_draft"
+}

@@ -1,0 +1,32 @@
+{
+  "question_id": "cpa1-eval-business-009",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "financial_management",
+  "applicable_year": 2026,
+  "stem": "오늘 1,000,000원을 투자하면 1년 뒤 600,000원, 2년 뒤 600,000원이 발생하는 투자안의 내부수익률(IRR)은 다음 중 가장 가까운 것은?",
+  "choices": [
+    "10%",
+    "13%",
+    "20%",
+    "25%"
+  ],
+  "correct_choice": 1,
+  "explanation": "IRR은 NPV=0을 만드는 할인율. 1,000,000 = 600,000/(1+r) + 600,000/(1+r)². r=10%이면 PV = 545,455 + 495,868 = 1,041,322(NPV +41,322). r=13%이면 PV = 530,973 + 470,065 = 1,001,038(NPV ≈ +1,038, 거의 0). r=15%이면 PV = 521,739 + 453,686 = 975,425(NPV -24,575). 따라서 IRR ≈ 13%.",
+  "concept_tags": [
+    "재무관리: 자본예산",
+    "IRR",
+    "discount_rate"
+  ],
+  "expected_seconds": 110,
+  "difficulty": "hard",
+  "difficulty_score": 4,
+  "bloom_level": "analyze",
+  "attractor_traps": [
+    "현금흐름 합계(1,200,000)와 투자액(1,000,000) 비율(20%)을 IRR로 선택",
+    "1년 평균 수익률 계산(60% / 5년 등)",
+    "할인율 무관 단순 비율 사용"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

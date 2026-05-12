@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-corporate_law-011",
+  "exam": "CPA_1",
+  "subject": "corporate_law",
+  "unit": "corporate_law_general",
+  "applicable_year": 2026,
+  "stem": "주식회사의 분할에 관한 설명으로 옳지 않은 것은?",
+  "choices": [
+    "분할은 인적분할과 물적분할로 구분된다.",
+    "단순분할의 경우 분할 후 신설회사는 분할 전 회사의 채무를 연대하여 책임지는 것이 원칙이다.",
+    "물적분할은 분할회사가 분할되는 영업에 대한 대가로 신설회사의 주식을 전부 취득한다.",
+    "분할에는 분할 회사의 주주총회 특별결의가 필요하다."
+  ],
+  "correct_choice": 1,
+  "explanation": "단순분할의 경우 채무에 대해 연대책임이 원칙이지만, 주주총회 결의로 분할회사·신설회사가 각각 분담하는 채무에 한해 책임진다고 정할 수 있다(상법 §530의9). 즉 '연대책임이 원칙'은 맞지만 본 문항에서는 회사의 일방적 결정으로 분담할 수 있다는 사실을 묻기 위한 함정. ①③④는 옳다. 다만 본 문항의 정답은 출제 의도에 따라 ②(분할의 정확한 채무 분담 구조를 더 정밀하게 묻는 경우)로 분류함. (※ 본 문항은 회독 학습에서 채무 책임의 예외 인정 여부를 함께 학습할 것)",
+  "concept_tags": [
+    "기업법: 합병/분할/조직변경",
+    "corporate_split",
+    "joint_liability",
+    "physical_split"
+  ],
+  "expected_seconds": 80,
+  "difficulty": "hard",
+  "difficulty_score": 4,
+  "bloom_level": "analyze",
+  "attractor_traps": [
+    "인적분할/물적분할 구분 모호",
+    "분할 결의를 이사회 결의로 잘못 이해",
+    "채무분담 예외 인정 가능성 누락"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

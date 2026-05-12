@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-management-001",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "management_general",
+  "applicable_year": 2026,
+  "stem": "맥그리거(McGregor)의 X이론과 Y이론에 관한 설명으로 옳은 것은?",
+  "choices": [
+    "X이론은 인간이 본래 일을 좋아하고 책임감이 강하다고 가정한다.",
+    "Y이론은 인간이 통제와 처벌이 있어야만 일한다고 가정한다.",
+    "X이론은 권위적·통제적 관리, Y이론은 참여적·자율적 관리를 시사한다.",
+    "X이론과 Y이론은 동일한 인간관에서 출발하므로 관리 방식이 같다."
+  ],
+  "correct_choice": 2,
+  "explanation": "맥그리거의 X이론은 인간이 본래 일을 싫어하고 책임 회피적이라 통제·처벌이 필요하다는 부정적 인간관(권위적 관리 시사). Y이론은 인간이 본래 일을 좋아하고 자율성·책임감이 있다는 긍정적 인간관(참여적·자율적 관리 시사). ①은 Y이론, ②는 X이론에 해당.",
+  "concept_tags": [
+    "경영학: 조직행동",
+    "mcgregor",
+    "theory_x_y",
+    "motivation"
+  ],
+  "expected_seconds": 55,
+  "difficulty": "easy",
+  "difficulty_score": 2,
+  "bloom_level": "remember",
+  "attractor_traps": [
+    "X와 Y의 가정을 반대로 답",
+    "동일한 인간관으로 잘못 이해",
+    "참여적 관리를 X이론에 잘못 매핑"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

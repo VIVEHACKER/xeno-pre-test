@@ -1,0 +1,38 @@
+{
+  "chunk_id": "share-bond-capital-financing",
+  "source": {
+    "source_kind": "official_regulation_paraphrase",
+    "title": "주식·사채·자본금 — 자금조달과 자본 변동",
+    "reference": "상법 제416조~제530조"
+  },
+  "subject": "corporate_law",
+  "unit": "corporate_law_general",
+  "topic_tags": [
+    "new_share_issuance",
+    "preemptive_right",
+    "third_party_allotment",
+    "bond_issuance",
+    "convertible_bond",
+    "bond_with_warrant",
+    "capital_reduction"
+  ],
+  "applicable_year": 2026,
+  "text": "신주발행: 원칙적으로 이사회 결의(§416). 주주는 정관에 다른 정함이 없는 한 신주인수권 보유(§418①). 제3자 배정은 정관에 근거가 있고 경영상 목적 달성을 위한 경우에 한해 가능, 일반적으로 주주총회 특별결의 요구. 사채발행: 이사회 결의(§469). 2011년 개정 상법으로 사채총액 한도(자본금의 4배) 폐지. 전환사채(§513)는 사채권자가 일정 조건에 따라 주식 전환 가능. 신주인수권부사채(§516의2)는 사채와 신주인수권 결합. 전환사채·신주인수권부사채는 주주의 신주인수권을 침해할 수 있어 발행 조건에 주의. 자본금 감소(§438): 주총 특별결의 필요. 유상감자(주주 환급)는 사외 유출 발생 → 채권자보호 절차(이의제출 공고·최고) 필수(§439). 결손 보전 목적의 무상감자는 사외 유출이 없어 채권자보호 절차 면제 가능. 자본금 증가: 신주발행 또는 전환사채 전환·신주인수권부사채 행사로 가능. 배당: 정기총회 보통결의로 결정, 자본금 결손 보전 후 잔여 이익에서만 배당 가능(자본충실의 원칙).",
+  "keywords": [
+    "신주발행",
+    "신주인수권",
+    "제3자 배정",
+    "사채",
+    "사채총액 한도 폐지",
+    "전환사채",
+    "신주인수권부사채",
+    "BW",
+    "유상감자",
+    "무상감자",
+    "결손 보전",
+    "채권자보호 절차",
+    "자본충실"
+  ],
+  "rights_status": "official_paraphrase",
+  "review_status": "expert_reviewed"
+}

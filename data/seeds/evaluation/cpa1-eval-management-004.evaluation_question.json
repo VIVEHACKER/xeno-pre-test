@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-management-004",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "management_general",
+  "applicable_year": 2026,
+  "stem": "변혁적 리더십(Transformational Leadership)의 구성요소에 해당하지 않는 것은?",
+  "choices": [
+    "이상적 영향력(카리스마)",
+    "영감적 동기부여",
+    "지적 자극",
+    "조건적 보상"
+  ],
+  "correct_choice": 3,
+  "explanation": "변혁적 리더십의 4요소(Bass): ①이상적 영향력(카리스마), ②영감적 동기부여, ③지적 자극, ④개별적 배려. '조건적 보상'은 거래적 리더십(Transactional Leadership)의 핵심 요소이다. 거래적 리더십은 조건적 보상과 예외에 의한 관리를 통해 명확한 성과 교환을 강조한다.",
+  "concept_tags": [
+    "경영학: 조직행동",
+    "transformational_leadership",
+    "transactional_leadership",
+    "bass"
+  ],
+  "expected_seconds": 60,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "remember",
+  "attractor_traps": [
+    "거래적 리더십 요소를 변혁적 리더십으로 혼동",
+    "개별적 배려 누락",
+    "지적 자극과 영감적 동기부여 혼동"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,32 @@
+{
+  "question_id": "cpa1-eval-management-005",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "management_general",
+  "applicable_year": 2026,
+  "stem": "포터(Porter)의 5가지 경쟁 세력(Five Forces) 모형에 포함되지 않는 것은?",
+  "choices": [
+    "기존 경쟁자 간 경쟁",
+    "신규 진입자의 위협",
+    "대체재의 위협",
+    "정부의 규제 강도"
+  ],
+  "correct_choice": 3,
+  "explanation": "포터의 5 Forces: ①기존 경쟁자 간 경쟁, ②신규 진입자의 위협, ③대체재의 위협, ④구매자의 교섭력, ⑤공급자의 교섭력. 정부의 규제 강도는 5 Forces에 직접 포함되지 않으며, PEST 분석 또는 외부 환경 요인으로 별도 다룬다.",
+  "concept_tags": [
+    "경영학: 경영전략",
+    "porter_five_forces",
+    "industry_analysis"
+  ],
+  "expected_seconds": 50,
+  "difficulty": "easy",
+  "difficulty_score": 1,
+  "bloom_level": "remember",
+  "attractor_traps": [
+    "구매자·공급자 교섭력을 빠뜨림",
+    "정부 규제를 5 Forces에 포함",
+    "PEST 요소와 혼동"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

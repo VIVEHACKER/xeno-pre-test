@@ -1,0 +1,65 @@
+{
+  "problem_id": "cpa1-management-001",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "management_general",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "경영학: 조직행동",
+    "motivation_theory",
+    "leadership",
+    "organizational_structure"
+  ],
+  "required_concepts": [
+    {
+      "concept": "동기부여 이론 분류",
+      "role": "내용이론(Maslow·Herzberg·McGregor)과 과정이론(기대·공정성·강화) 구분",
+      "prerequisite": true
+    },
+    {
+      "concept": "리더십 이론",
+      "role": "특성·행동·상황·변혁적·거래적 리더십 구분",
+      "prerequisite": true
+    },
+    {
+      "concept": "조직구조 유형",
+      "role": "기능별·사업부제·매트릭스·팀제·네트워크의 장단점",
+      "prerequisite": false
+    }
+  ],
+  "solving_entry_point": "선택지에 등장한 이론명(Maslow, Herzberg, McGregor, Vroom 등)을 분류한 뒤 해당 이론의 핵심 요소 표와 매칭한다.",
+  "solving_steps": [
+    "문제에서 묻는 이론·모형명을 식별.",
+    "내용이론/과정이론 또는 리더십 유형 분류.",
+    "각 이론의 핵심 구성요소를 한 줄씩 메모.",
+    "선택지의 진술을 해당 이론의 요소·정의와 대조.",
+    "거꾸로 설명된 보기를 함정으로 표시."
+  ],
+  "trap_patterns": [
+    "X이론과 Y이론의 가정을 반대로 답",
+    "위생요인과 동기요인 혼동",
+    "변혁적·거래적 리더십 요소 매핑 실패",
+    "매트릭스 조직의 명령일원화 깨짐 누락"
+  ],
+  "time_strategy": {
+    "target_seconds": 60,
+    "skip_threshold_seconds": 90,
+    "exam_room_rule": "이론명 식별 20초 안에 못 하면 표시."
+  },
+  "variant_axes": [
+    "내용이론 vs 과정이론",
+    "변혁적 vs 거래적 리더십",
+    "조직구조 유형 비교"
+  ],
+  "mistake_diagnosis": [
+    "concept_gap",
+    "memory_decay",
+    "distractor_trap"
+  ],
+  "review_status": "ai_draft"
+}

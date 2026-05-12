@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-economics-005",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "economics_general",
+  "applicable_year": 2026,
+  "stem": "효용함수가 U(X, Y) = X × Y인 소비자가 있다. X의 가격은 1, Y의 가격은 2, 소득은 100이다. 효용극대화 소비점에서 X와 Y의 소비량은?",
+  "choices": [
+    "X=25, Y=25",
+    "X=50, Y=25",
+    "X=40, Y=30",
+    "X=100, Y=0"
+  ],
+  "correct_choice": 1,
+  "explanation": "Cobb-Douglas 효용 U = XY의 한계대체율 MRS = MUx/MUy = Y/X. 최적조건 MRS = Px/Py → Y/X = 1/2 → X = 2Y. 예산식: 1·X + 2·Y = 100 → 2Y + 2Y = 100 → Y = 25, X = 50.",
+  "concept_tags": [
+    "경제학: 소비자이론",
+    "utility_maximization",
+    "cobb_douglas",
+    "marginal_rate_of_substitution"
+  ],
+  "expected_seconds": 100,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "apply",
+  "attractor_traps": [
+    "예산을 균등 분배(소득의 절반씩)",
+    "한계대체율을 Px/Py 대신 Py/Px로 적용",
+    "Y에만 소득 전부 투입"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

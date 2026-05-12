@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-business-005",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "financial_management",
+  "applicable_year": 2026,
+  "stem": "주식 A의 베타는 1.4이다. 무위험이자율은 연 3%, 시장포트폴리오의 기대수익률은 연 9%이다. CAPM에 의한 주식 A의 요구수익률은 얼마인가?",
+  "choices": [
+    "8.4%",
+    "11.4%",
+    "12.6%",
+    "15.6%"
+  ],
+  "correct_choice": 1,
+  "explanation": "CAPM: E(R) = Rf + β × (Rm - Rf) = 3% + 1.4 × (9% - 3%) = 3% + 1.4 × 6% = 3% + 8.4% = 11.4%.",
+  "concept_tags": [
+    "재무관리: 위험과 수익률",
+    "CAPM",
+    "beta",
+    "required_return"
+  ],
+  "expected_seconds": 60,
+  "difficulty": "easy",
+  "difficulty_score": 2,
+  "bloom_level": "apply",
+  "attractor_traps": [
+    "베타 × 시장수익률만 계산해 8.4% 선택",
+    "시장위험프리미엄 대신 시장수익률 전체를 사용",
+    "무위험이자율을 차감 단계에서 누락"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,72 @@
+{
+  "problem_id": "cpa1-management-004",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "management_general",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "경영학: 생산/운영관리",
+    "EOQ",
+    "JIT",
+    "TQM",
+    "six_sigma",
+    "supply_chain"
+  ],
+  "required_concepts": [
+    {
+      "concept": "경제적 주문량(EOQ)",
+      "role": "EOQ = √(2DS/H), 주문비용과 재고유지비용의 균형점",
+      "prerequisite": true
+    },
+    {
+      "concept": "JIT(적시생산)",
+      "role": "재고 최소화·평준화·소량 빈번 납품·풀(pull) 방식",
+      "prerequisite": true
+    },
+    {
+      "concept": "TQM vs 식스시그마",
+      "role": "TQM은 전사적 품질문화, 식스시그마는 DMAIC로 σ 6 수준 결함 최소화",
+      "prerequisite": true
+    },
+    {
+      "concept": "공급사슬관리(SCM)",
+      "role": "공급-생산-유통-고객의 흐름 통합 관리",
+      "prerequisite": false
+    }
+  ],
+  "solving_entry_point": "운영관리 문제는 계산형(EOQ)인지 개념형(JIT·TQM·SCM)인지 분류해 식 또는 개념 표를 적용한다.",
+  "solving_steps": [
+    "문제 유형 분류 — 계산(EOQ·생산능력)인지 개념(JIT·TQM·SCM)인지.",
+    "EOQ는 공식 √(2DS/H)에 D·S·H 대입.",
+    "JIT는 재고 최소화·평준화·소량 납품의 원칙 표로 검증.",
+    "TQM은 전사적 참여, 식스시그마는 통계적 DMAIC 절차로 구분.",
+    "SCM·SCOR 모형은 통합 관점에서 답."
+  ],
+  "trap_patterns": [
+    "EOQ 공식에서 2를 누락",
+    "JIT에서 안전재고 확보를 옳다고 답",
+    "TQM과 식스시그마 범위 혼동",
+    "SCM을 단순 물류로 한정"
+  ],
+  "time_strategy": {
+    "target_seconds": 75,
+    "skip_threshold_seconds": 110,
+    "exam_room_rule": "공식·개념 분류 20초 안에 못 하면 표시."
+  },
+  "variant_axes": [
+    "EOQ 변수 변경(D·S·H)",
+    "JIT vs MRP/푸시 방식",
+    "TQM vs 식스시그마"
+  ],
+  "mistake_diagnosis": [
+    "concept_gap",
+    "formula_gap",
+    "calculation_error"
+  ],
+  "review_status": "ai_draft"
+}

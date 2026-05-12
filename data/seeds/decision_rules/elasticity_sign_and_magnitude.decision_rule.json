@@ -1,0 +1,14 @@
+{
+  "rule_key": "elasticity_sign_and_magnitude",
+  "rule_name": "탄력성은 부호와 크기를 따로 점검",
+  "condition_text": "경제학 미시 단원에서 탄력성 부호(정상/열등재 판별 등)와 크기(탄력/비탄력 판단)를 동시에 묻는 문제, 또는 학생이 조세귀착 방향을 자주 반대로 답하는 상황",
+  "action_text": "탄력성 결과 옆에 두 칸을 그린다: '부호' 칸과 '크기' 칸. 부호로 재화 분류(정상/열등/대체/보완) 결정, 크기(|E|>1, =1, <1)로 탄력 여부 결정. 조세귀착은 '탄력성 작은 쪽이 더 많이 부담' 원칙을 두 곡선 옆에 메모.",
+  "exception_text": "완전탄력 또는 완전비탄력 사례(독점·필수재 가정)는 단순 적용이 어려우므로 그래프로 확인한다.",
+  "applicable_stages": ["post_lecture", "objective_entry", "past_exam_rotation"],
+  "applicable_subjects": ["economics"],
+  "required_risk_tags": ["formula_gap", "concept_gap"],
+  "source_signal_count": 0,
+  "source_case_ids": [],
+  "confidence": 0.76,
+  "review_status": "machine_draft"
+}

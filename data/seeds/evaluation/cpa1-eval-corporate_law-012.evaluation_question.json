@@ -1,0 +1,32 @@
+{
+  "question_id": "cpa1-eval-corporate_law-012",
+  "exam": "CPA_1",
+  "subject": "corporate_law",
+  "unit": "corporate_law_general",
+  "applicable_year": 2026,
+  "stem": "공인회계사법상 공인회계사의 직무에 해당하지 않는 것은?",
+  "choices": [
+    "재무제표 감사 및 증명",
+    "회계 관련 자문 및 기장 대행",
+    "세무 신고 대리",
+    "민사·형사 소송 대리"
+  ],
+  "correct_choice": 3,
+  "explanation": "공인회계사법 §2상 공인회계사의 직무는 재무제표 감사·증명, 회계 자문·기장 대행, 세무 자문 및 세무 대리(세무사 자격 보유 시) 등이다. 민·형사 소송 대리는 변호사의 직무이며 공인회계사의 직무에 포함되지 않는다.",
+  "concept_tags": [
+    "기업법: 공인회계사법",
+    "cpa_act",
+    "scope_of_practice"
+  ],
+  "expected_seconds": 50,
+  "difficulty": "easy",
+  "difficulty_score": 1,
+  "bloom_level": "remember",
+  "attractor_traps": [
+    "세무 대리를 변호사 영역으로 혼동",
+    "감사·증명을 별개 업무로 분리",
+    "기장 대행 가능성 부정"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

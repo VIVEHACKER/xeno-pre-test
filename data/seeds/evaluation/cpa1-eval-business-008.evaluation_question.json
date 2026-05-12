@@ -1,0 +1,32 @@
+{
+  "question_id": "cpa1-eval-business-008",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "financial_management",
+  "applicable_year": 2026,
+  "stem": "투자안 B는 오늘 800,000원을 투자하면 3년간 매년 말 320,000원의 현금흐름이 발생한다. 할인율 10%일 때 투자안 B의 NPV는 약 얼마인가? (PVA(10%, 3년) ≈ 2.4869)",
+  "choices": [
+    "-204,192원",
+    "-160,000원",
+    "0원",
+    "-4,192원"
+  ],
+  "correct_choice": 3,
+  "explanation": "현금유입 현재가치 = 320,000 × 2.4869 = 795,808원. NPV = 795,808 - 800,000 = -4,192원. NPV가 음수이므로 기각.",
+  "concept_tags": [
+    "재무관리: 자본예산",
+    "NPV",
+    "annuity_present_value"
+  ],
+  "expected_seconds": 80,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "apply",
+  "attractor_traps": [
+    "할인하지 않은 명목합계(320,000×3 = 960,000)로 NPV 계산",
+    "초기 투자액을 더해 양수 NPV로 답",
+    "연금현가요소 적용을 빠뜨리고 단일 할인 사용"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

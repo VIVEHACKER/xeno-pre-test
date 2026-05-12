@@ -1,0 +1,33 @@
+{
+  "chunk_id": "time-value-of-money-formulas",
+  "source": {
+    "source_kind": "internal_summary",
+    "title": "화폐의 시간가치 — 현재가치·연금·영구연금 공식",
+    "reference": null
+  },
+  "subject": "business",
+  "unit": "financial_management",
+  "topic_tags": [
+    "time_value_of_money",
+    "present_value",
+    "annuity",
+    "perpetuity",
+    "growing_perpetuity"
+  ],
+  "applicable_year": null,
+  "text": "단일 현재가치 PV = CF / (1+r)^n. 단일 미래가치 FV = CF × (1+r)^n. 정상연금 현재가치 PVA = PMT × [1 - (1+r)^-n] / r. 선급연금은 정상연금 × (1+r). 영구연금 현재가치 = CF / r (단 r > 0). 성장영구연금(고든모형) = CF₁ / (r - g) (단 r > g, CF₁은 1년 뒤 첫 지급액). 단리·복리·연속복리는 적용 시 명시 단위에 따라 환산: 명목 연이율 r을 m기간으로 분할하면 매기 r/m, 거듭제곱은 n×m. 실효이율 EAR = (1 + r/m)^m - 1. 연속복리는 e^(r×t).",
+  "keywords": [
+    "현재가치",
+    "미래가치",
+    "정상연금",
+    "선급연금",
+    "영구연금",
+    "성장영구연금",
+    "고든모형",
+    "PVA",
+    "실효이율",
+    "연속복리"
+  ],
+  "rights_status": "self_generated",
+  "review_status": "expert_reviewed"
+}

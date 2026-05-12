@@ -1,0 +1,37 @@
+{
+  "chunk_id": "corporate-organs-authority-allocation",
+  "source": {
+    "source_kind": "official_regulation_paraphrase",
+    "title": "주식회사 기관 — 주주총회·이사회·감사의 권한 배분",
+    "reference": "상법 제361조~제415조의2"
+  },
+  "subject": "corporate_law",
+  "unit": "corporate_law_general",
+  "topic_tags": [
+    "shareholders_meeting",
+    "board_of_directors",
+    "representative_director",
+    "auditor",
+    "audit_committee",
+    "resolution_requirement"
+  ],
+  "applicable_year": 2026,
+  "text": "주주총회 권한: 정관 변경, 이사·감사 선임·해임, 재무제표 승인, 이익배당 결정, 합병·분할·영업양도 등 회사 구조 변경(§361). 이사회 권한: 회사 업무집행의 중요 사항 결정(중요 자산 처분, 대규모 자금 차입, 지점 설치, 신주발행, 사채발행, 대표이사 선임 등)(§393). 대표이사: 회사 대외 대표·계약 체결, 일상 업무집행(§389). 결의 요건: 주총 보통결의(출석 의결권 과반수 + 발행주식 1/4 이상)(§368), 주총 특별결의(출석 의결권 2/3 + 발행주식 1/3 이상)(§434, 정관변경·합병 등), 주총 특수결의(총주주 동의, 이사 책임 면제 §400). 이사회 결의(이사 과반수 출석 + 출석 과반수 찬성)(§391). 이사 의무: 선관주의의무(§382의3), 충실의무(§382의3), 경업금지(§397), 자기거래 제한(§398, 이사회 승인). 감사: 업무감사+회계감사(§412), 임기는 취임 후 3년 이내 최종 결산기 정기총회 종결 시까지(§410), 이사·집행임원 등 겸직 금지. 감사위원회(§415의2): 일정 규모 이상 회사는 감사 대신 감사위원회 설치 가능, 두면 별도 감사 둘 수 없음.",
+  "keywords": [
+    "주주총회",
+    "이사회",
+    "대표이사",
+    "감사",
+    "감사위원회",
+    "보통결의",
+    "특별결의",
+    "특수결의",
+    "선관주의의무",
+    "충실의무",
+    "경업금지",
+    "자기거래",
+    "이사 책임 면제"
+  ],
+  "rights_status": "official_paraphrase",
+  "review_status": "expert_reviewed"
+}

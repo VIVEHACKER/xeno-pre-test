@@ -1,0 +1,39 @@
+{
+  "chunk_id": "organization-motivation-leadership",
+  "source": {
+    "source_kind": "internal_summary",
+    "title": "조직행동 — 동기부여·리더십·조직구조 요약",
+    "reference": null
+  },
+  "subject": "business",
+  "unit": "management_general",
+  "topic_tags": [
+    "motivation_theory",
+    "leadership",
+    "organizational_structure",
+    "mcgregor",
+    "herzberg",
+    "maslow"
+  ],
+  "applicable_year": null,
+  "text": "동기부여 내용이론: 매슬로 욕구단계(생리·안전·사회·존경·자아실현), 알더퍼 ERG, 허즈버그 2요인(위생요인=급여·작업조건·정책·대인관계, 동기요인=성취·인정·책임·일 자체·성장), 맥그리거 X(부정적 인간관, 통제 필요)·Y(긍정적 인간관, 자율 가능). 과정이론: 브룸 기대이론(기대×수단성×유의성), 아담스 공정성이론, 스키너 강화이론. 리더십: 특성이론(타고난 자질), 행동이론(과업지향·관계지향), 상황이론(피들러 LPC, 허시·블랜차드 SLT, 하우스 경로-목표), 변혁적 리더십 4요소(이상적 영향력·영감적 동기부여·지적 자극·개별적 배려) vs 거래적 리더십(조건적 보상·예외관리). 조직구조: 기능별(전문화↑, 협력↓), 사업부제(자율성↑, 자원중복↑), 매트릭스(이중보고, 명령일원화 깨짐), 팀제·네트워크(유연성↑, 통제↓).",
+  "keywords": [
+    "매슬로",
+    "허즈버그",
+    "맥그리거",
+    "X이론",
+    "Y이론",
+    "위생요인",
+    "동기요인",
+    "브룸",
+    "기대이론",
+    "변혁적 리더십",
+    "거래적 리더십",
+    "기능별 조직",
+    "사업부제",
+    "매트릭스 조직",
+    "팀제"
+  ],
+  "rights_status": "self_generated",
+  "review_status": "expert_reviewed"
+}

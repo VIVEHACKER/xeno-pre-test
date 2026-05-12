@@ -1,0 +1,14 @@
+{
+  "rule_key": "swot_porter_axis_separation",
+  "rule_name": "SWOT·BCG·앤소프는 두 축을 먼저 그리기",
+  "condition_text": "경영전략 단원에서 SWOT 4전략, BCG 매트릭스, 앤소프 매트릭스 등 2×2 모형의 분면을 묻는 문제, 또는 학생이 분면 라벨을 자주 반대로 답하는 상황",
+  "action_text": "모형을 풀기 전에 두 축을 좌표 평면처럼 그린다. SWOT은 내부(강점/약점) × 외부(기회/위협). BCG는 상대시장점유율(高/低) × 시장성장률(高/低). 앤소프는 제품(기존/신규) × 시장(기존/신규). 각 분면에 라벨(SO/WO/ST/WT 또는 별/현금젖소/물음표/개 등)을 적은 뒤 보기와 대조.",
+  "exception_text": "포터 5 Forces는 2×2가 아닌 5요소 모형이므로 별도로 5요소를 나열한 표를 사용한다.",
+  "applicable_stages": ["post_lecture", "objective_entry", "past_exam_rotation"],
+  "applicable_subjects": ["business"],
+  "required_risk_tags": ["memory_decay", "distractor_trap"],
+  "source_signal_count": 0,
+  "source_case_ids": [],
+  "confidence": 0.78,
+  "review_status": "machine_draft"
+}

@@ -1,0 +1,65 @@
+{
+  "problem_id": "cpa1-corporate_law-003",
+  "exam": "CPA_1",
+  "subject": "corporate_law",
+  "unit": "corporate_law_general",
+  "source": {
+    "source_type": "synthetic_seed",
+    "exam_year": null,
+    "rights_status": "internal_draft",
+    "url": null
+  },
+  "concept_tags": [
+    "기업법: 주식/사채/자본금",
+    "share_issuance",
+    "bond_issuance",
+    "preemptive_right",
+    "capital_reduction"
+  ],
+  "required_concepts": [
+    {
+      "concept": "신주발행 절차",
+      "role": "이사회 결의 + 신주인수권 + 제3자 배정 요건",
+      "prerequisite": true
+    },
+    {
+      "concept": "사채발행",
+      "role": "이사회 결의, 사채총액 한도 폐지(2011), 전환사채·신주인수권부사채 특칙",
+      "prerequisite": true
+    },
+    {
+      "concept": "자본금 감소",
+      "role": "유상감자(채권자 보호 필수) vs 무상감자(결손 보전은 절차 면제 가능)",
+      "prerequisite": true
+    }
+  ],
+  "solving_entry_point": "거래 유형(신주/사채/감자)을 식별하고 결의 기관·결의 요건·채권자보호 절차 유무를 표로 정리한다.",
+  "solving_steps": [
+    "거래 유형을 신주발행/사채발행/감자/배당 중 하나로 분류.",
+    "신주발행: 이사회 결의 → 주주의 신주인수권 → 제3자 배정 시 정관·특별결의 요건.",
+    "사채발행: 이사회 결의 + 사채총액 한도 없음. 전환사채·BW는 신주인수권 침해 위험 점검.",
+    "감자: 주총 특별결의 + 채권자보호 절차(유상감자 필수, 결손 보전 무상감자는 면제 가능).",
+    "등기·공시 절차 누락 여부 점검."
+  ],
+  "trap_patterns": [
+    "사채총액 한도(자본금 4배)를 현행으로 잘못 적용",
+    "제3자 배정 신주를 자유 결정으로 오해",
+    "결손 보전 무상감자도 채권자 절차 필요로 답"
+  ],
+  "time_strategy": {
+    "target_seconds": 85,
+    "skip_threshold_seconds": 120,
+    "exam_room_rule": "거래 유형 분류 30초 안에 못 하면 표시."
+  },
+  "variant_axes": [
+    "신주 vs 사채",
+    "전환사채 vs BW",
+    "유상감자 vs 무상감자"
+  ],
+  "mistake_diagnosis": [
+    "concept_gap",
+    "memory_decay",
+    "condition_miss"
+  ],
+  "review_status": "ai_draft"
+}

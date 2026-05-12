@@ -1,0 +1,32 @@
+{
+  "question_id": "cpa1-eval-economics-003",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "economics_general",
+  "applicable_year": 2026,
+  "stem": "어떤 재화 시장에서 수요함수가 Qd = 100 - 2P, 공급함수가 Qs = -20 + 2P이다. 균형가격과 균형거래량은 얼마인가?",
+  "choices": [
+    "P=20, Q=20",
+    "P=30, Q=40",
+    "P=40, Q=20",
+    "P=50, Q=80"
+  ],
+  "correct_choice": 1,
+  "explanation": "균형: Qd = Qs → 100 - 2P = -20 + 2P → 120 = 4P → P = 30. Q = 100 - 2×30 = 40. 균형가격 30, 균형거래량 40.",
+  "concept_tags": [
+    "경제학: 수요/공급/탄력성",
+    "market_equilibrium",
+    "linear_demand_supply"
+  ],
+  "expected_seconds": 50,
+  "difficulty": "easy",
+  "difficulty_score": 1,
+  "bloom_level": "apply",
+  "attractor_traps": [
+    "Qd = Qs 식 정리에서 부호 실수",
+    "P=30 구한 뒤 공급함수로 Q 계산 시 부호 혼동",
+    "수요·공급 함수를 가격에 대해 풀지 않고 수량에 대해 풀이"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

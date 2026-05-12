@@ -1,0 +1,33 @@
+{
+  "question_id": "cpa1-eval-corporate_law-007",
+  "exam": "CPA_1",
+  "subject": "corporate_law",
+  "unit": "corporate_law_general",
+  "applicable_year": 2026,
+  "stem": "주식회사 감사(監事)에 관한 설명으로 옳은 것은?",
+  "choices": [
+    "감사는 이사가 겸직할 수 있다.",
+    "감사는 회계감사뿐 아니라 업무감사도 할 수 있다.",
+    "감사의 임기는 취임 후 5년 이내의 최종 결산기에 관한 정기총회 종결 시까지이다.",
+    "감사위원회를 두는 회사는 별도의 감사도 함께 두어야 한다."
+  ],
+  "correct_choice": 1,
+  "explanation": "상법상 감사는 업무감사권과 회계감사권을 모두 가진다(상법 §412). ①은 틀림 — 감사는 이사·집행임원 등 회사 업무 집행자와 겸직 불가. ③은 틀림 — 감사 임기는 취임 후 3년 이내의 최종 결산기에 관한 정기총회 종결 시까지(상법 §410). ④도 틀림 — 감사위원회를 두는 경우 별도 감사를 둘 수 없다.",
+  "concept_tags": [
+    "기업법: 주주총회/이사회/감사",
+    "auditor",
+    "audit_committee",
+    "term_of_office"
+  ],
+  "expected_seconds": 70,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "remember",
+  "attractor_traps": [
+    "감사 임기를 3년이 아닌 5년으로 암기",
+    "감사위원회와 감사 병존 가능으로 오해",
+    "감사 권한을 회계감사로만 제한"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}
