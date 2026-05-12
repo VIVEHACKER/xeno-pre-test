@@ -1,0 +1,23 @@
+{
+  "term_id": "systematic-risk",
+  "name_ko": "체계적 위험",
+  "name_en": "systematic risk",
+  "aliases": [
+    "시장위험"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "분산투자로 제거되지 않는 위험. 시장 전반의 경기/금리/환율 등 거시 요인에서 발생. 베타로 측정.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "unsystematic-risk",
+      "reason": "체계적 위험은 시장 전반(분산 불가), 비체계적 위험은 개별 기업 고유(분산 가능)"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "2008 금융위기는 모든 주식에 영향 → 체계적 위험",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

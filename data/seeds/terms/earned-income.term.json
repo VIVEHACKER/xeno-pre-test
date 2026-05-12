@@ -1,0 +1,21 @@
+{
+  "term_id": "earned-income",
+  "name_ko": "근로소득",
+  "name_en": "earned income",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "고용관계에서 근로의 대가로 받은 모든 소득. 근로소득공제를 차감해 근로소득금액 산정.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "business-income",
+      "reason": "근로소득은 고용관계 종속적 노동, 사업소득은 독립적 영업 활동"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "월급, 상여, 수당 등이 근로소득",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

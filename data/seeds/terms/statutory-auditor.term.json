@@ -1,0 +1,21 @@
+{
+  "term_id": "statutory-auditor",
+  "name_ko": "감사",
+  "name_en": "statutory auditor",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "이사의 직무 집행을 감독하는 회사의 기관. 주주총회에서 선임되며 회계 및 업무 감사 권한을 가진다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "board-of-directors",
+      "reason": "이사회는 경영 의사결정, 감사는 그 결정과 집행을 감독"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "감사는 회계장부 열람권, 이사회 출석권을 가진다",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

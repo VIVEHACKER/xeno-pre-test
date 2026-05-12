@@ -1,0 +1,23 @@
+{
+  "term_id": "swot-analysis",
+  "name_ko": "SWOT 분석",
+  "name_en": "SWOT analysis",
+  "aliases": [
+    "SWOT"
+  ],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "기업의 강점(Strengths), 약점(Weaknesses), 기회(Opportunities), 위협(Threats)를 정리해 전략 도출에 사용하는 프레임워크.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "porters-five-forces",
+      "reason": "SWOT은 통합 분석, 5 forces는 산업 경쟁 구조에 한정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "삼성전자 — S: 브랜드/R&D, W: 디스플레이 의존, O: AI 시장, T: 중국 경쟁사",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

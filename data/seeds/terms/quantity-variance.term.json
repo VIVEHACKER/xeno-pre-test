@@ -1,0 +1,25 @@
+{
+  "term_id": "quantity-variance",
+  "name_ko": "수량차이",
+  "name_en": "quantity variance",
+  "aliases": [
+    "능률차이"
+  ],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "실제 사용량과 표준 허용량의 차이가 표준 가격에 적용된 차이. 생산부 책임으로 본다.",
+  "formula": "수량차이 = (실제수량 - 표준수량) × 표준가격",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "price-variance",
+      "reason": "수량차이는 생산 능률, 가격차이는 구매 단가 — 책임 부서가 다르다"
+    }
+  ],
+  "prerequisite_terms": [
+    "standard-cost"
+  ],
+  "example": "표준 허용량 100kg, 실제 110kg, 표준가 5,000 → 수량차이 +50,000(불리)",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

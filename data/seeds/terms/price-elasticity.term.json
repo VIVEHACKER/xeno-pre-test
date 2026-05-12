@@ -1,0 +1,23 @@
+{
+  "term_id": "price-elasticity",
+  "name_ko": "가격탄력성",
+  "name_en": "price elasticity of demand",
+  "aliases": [
+    "수요의 가격탄력성"
+  ],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "가격 변화율에 대한 수요량 변화율의 비. 1보다 크면 탄력적, 작으면 비탄력적.",
+  "formula": "ε = |%ΔQ / %ΔP|",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "income-elasticity",
+      "reason": "가격탄력성은 가격에 대한 반응, 소득탄력성은 소득에 대한 반응"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "가격 10% 인상에 수요량 20% 감소 → ε = 2 (탄력적)",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,23 @@
+{
+  "term_id": "defined-benefit-obligation",
+  "name_ko": "확정급여채무",
+  "name_en": "defined benefit obligation",
+  "aliases": [
+    "DBO"
+  ],
+  "subject": "accounting",
+  "unit": "employee_benefits",
+  "definition": "K-IFRS 1019호에 따라 종업원이 제공한 근무용역의 결과로 미래에 지급할 퇴직급여의 현재가치. 보험수리적 가정으로 측정.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "defined-contribution",
+      "reason": "확정급여는 기업이 미래 지급액 책임, 확정기여는 매기 기여금 납부로 책임 종료"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "평균임금 × 근속연수 × 지급률로 추정한 미래 퇴직금의 현재가치",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

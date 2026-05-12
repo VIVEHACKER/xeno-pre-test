@@ -1,0 +1,25 @@
+{
+  "term_id": "beta",
+  "name_ko": "베타",
+  "name_en": "beta",
+  "aliases": [
+    "β"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "주식 수익률이 시장 수익률에 얼마나 민감한지의 척도. β=1은 시장과 동일, β>1은 더 민감, β<0은 역방향.",
+  "formula": "β = Cov(Ri, Rm) / Var(Rm)",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "systematic-risk",
+      "reason": "베타는 체계적 위험의 측정치, 체계적 위험은 분산투자로 제거되지 않는 위험 자체"
+    }
+  ],
+  "prerequisite_terms": [
+    "systematic-risk"
+  ],
+  "example": "베타 1.5 주식은 시장이 10% 오를 때 평균 15% 오름",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

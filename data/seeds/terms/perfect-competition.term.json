@@ -1,0 +1,21 @@
+{
+  "term_id": "perfect-competition",
+  "name_ko": "완전경쟁",
+  "name_en": "perfect competition",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "동질재화, 다수의 공급자/수요자, 자유로운 진입퇴출, 완전정보 가정의 시장. 가격수용자이며 P = MC에서 균형.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "monopoly",
+      "reason": "P = MC(완경) vs MR = MC < P(독점) — 균형 조건이 다르다"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "농산물 시장이 완전경쟁에 가까운 예",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "opportunity-cost",
+  "name_ko": "기회비용",
+  "name_en": "opportunity cost",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "대안을 선택했을 때 포기한 차선 대안의 가치. 회계 장부에는 기록되지 않지만 의사결정 분석에 반영해야 한다.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "sunk-cost",
+      "reason": "기회비용은 포기한 미래 가치, 매몰원가는 회수 불가능한 과거 지출"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "유휴 공장에서 외주받기 결정 시 자체 생산 시의 이익이 기회비용",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,23 @@
+{
+  "term_id": "contribution-margin",
+  "name_ko": "공헌이익",
+  "name_en": "contribution margin",
+  "aliases": [
+    "CM"
+  ],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "매출액에서 변동원가를 차감한 금액. 고정원가 회수 후 이익에 기여하는 부분이다.",
+  "formula": "공헌이익 = 매출액 - 변동원가",
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "margin-of-safety",
+      "reason": "공헌이익은 단위/총액 절대 금액, 안전한계율은 매출액 대비 여유 비율"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "단가 100, 변동원가 60 → 단위당 공헌이익 40",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,23 @@
+{
+  "term_id": "npv",
+  "name_ko": "순현재가치",
+  "name_en": "net present value",
+  "aliases": [
+    "NPV"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "투자안의 모든 현금흐름을 할인율로 할인해 합산한 값. NPV > 0이면 채택.",
+  "formula": "NPV = Σ CFt/(1+r)^t - 초기투자",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "irr",
+      "reason": "NPV는 금액 기준, IRR은 수익률 기준 — 상호배타적 투자안 비교 시 충돌 가능"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "초기 1,000, 매년 300씩 5년 회수, r=10% → NPV ≈ 137",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

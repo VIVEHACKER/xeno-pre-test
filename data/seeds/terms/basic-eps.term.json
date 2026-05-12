@@ -1,0 +1,23 @@
+{
+  "term_id": "basic-eps",
+  "name_ko": "기본주당이익",
+  "name_en": "basic EPS",
+  "aliases": [
+    "기본EPS"
+  ],
+  "subject": "accounting",
+  "unit": "equity",
+  "definition": "당기순이익을 가중평균유통보통주식수로 나눈 값. 우선주배당금을 차감 후 산출.",
+  "formula": "기본EPS = (당기순이익 - 우선주배당) / 가중평균유통보통주식수",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "dilutive-eps",
+      "reason": "기본EPS는 현재 발행주식 기준, 희석EPS는 잠재주식까지 가정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "순이익 100억, 보통주 1억주 → 기본EPS 100원",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

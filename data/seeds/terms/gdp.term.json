@@ -1,0 +1,23 @@
+{
+  "term_id": "gdp",
+  "name_ko": "국내총생산",
+  "name_en": "gross domestic product",
+  "aliases": [
+    "GDP"
+  ],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "일정 기간 한 나라 안에서 생산된 모든 최종 재화/용역의 시장가치 합계. 생산/지출/소득 3가지 접근법.",
+  "formula": "GDP(지출) = C + I + G + (X - M)",
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "money-supply",
+      "reason": "GDP는 실물 생산 지표, 통화량은 화폐 측면 지표"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "2024년 한국 GDP 약 2,400조원",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

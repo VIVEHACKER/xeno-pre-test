@@ -1,0 +1,21 @@
+{
+  "term_id": "trade-off-theory",
+  "name_ko": "상충이론",
+  "name_en": "trade-off theory",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "자본구조 결정에서 부채의 절세효과와 파산비용을 trade-off로 보고 최적 부채비율이 존재한다는 이론. MM의 무관련 명제와 대비된다.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "mm-proposition",
+      "reason": "MM은 자본구조 무관(완전시장), 상충이론은 세금+파산비용 고려 시 최적 부채비율 존재"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "부채가 늘수록 절세효과 + 파산비용 모두 증가 → 한계가 만나는 지점이 최적",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

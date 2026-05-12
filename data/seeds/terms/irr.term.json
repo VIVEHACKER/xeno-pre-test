@@ -1,0 +1,23 @@
+{
+  "term_id": "irr",
+  "name_ko": "내부수익률",
+  "name_en": "internal rate of return",
+  "aliases": [
+    "IRR"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "NPV를 0으로 만드는 할인율. 자본비용보다 크면 채택.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "npv",
+      "reason": "IRR은 비율, NPV는 금액 — 상호배타적 투자안에서는 NPV가 우선"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "초기 1,000, 매년 300씩 5년 → IRR ≈ 15.2%",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

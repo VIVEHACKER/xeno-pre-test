@@ -1,0 +1,23 @@
+{
+  "term_id": "business-income",
+  "name_ko": "사업소득",
+  "name_en": "business income",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "사업에서 발생하는 총수입금액에서 필요경비를 차감한 소득.",
+  "formula": "사업소득금액 = 총수입금액 - 필요경비",
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "earned-income",
+      "reason": "사업소득은 독립 영업, 근로소득은 고용 종속"
+    }
+  ],
+  "prerequisite_terms": [
+    "necessary-expense"
+  ],
+  "example": "음식점 운영, 프리랜서 보수 등이 사업소득",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

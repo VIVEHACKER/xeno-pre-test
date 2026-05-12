@@ -1,0 +1,25 @@
+{
+  "term_id": "ad-as-model",
+  "name_ko": "AD-AS 모형",
+  "name_en": "AD-AS model",
+  "aliases": [
+    "AD-AS"
+  ],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "총수요(AD)와 총공급(AS)의 만남으로 물가와 산출 수준이 결정되는 모형. IS-LM에 노동시장을 추가한 확장.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "is-lm-model",
+      "reason": "AD-AS는 물가까지 포함한 완전 모형, IS-LM은 물가 고정 가정"
+    }
+  ],
+  "prerequisite_terms": [
+    "is-lm-model"
+  ],
+  "example": "공급충격(유가 상승) → AS 좌측 이동 → 물가 상승 + 산출 감소(스태그플레이션)",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

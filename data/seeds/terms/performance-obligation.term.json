@@ -1,0 +1,25 @@
+{
+  "term_id": "performance-obligation",
+  "name_ko": "수행의무",
+  "name_en": "performance obligation",
+  "aliases": [
+    "PO"
+  ],
+  "subject": "accounting",
+  "unit": "revenue",
+  "definition": "계약에서 고객에게 약속한 구별되는 재화나 용역. 각 수행의무에 거래가격이 배분되고 이행 시점에 매출이 인식된다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "contract-asset",
+      "reason": "수행의무 이행 후 미청구한 권리가 계약자산이며 이행 자체는 수행의무"
+    }
+  ],
+  "prerequisite_terms": [
+    "revenue-recognition-5-step"
+  ],
+  "example": "2년 SaaS 계약은 한 시점이 아니라 기간에 걸쳐 수행의무를 이행",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

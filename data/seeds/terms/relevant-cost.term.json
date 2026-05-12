@@ -1,0 +1,21 @@
+{
+  "term_id": "relevant-cost",
+  "name_ko": "관련원가",
+  "name_en": "relevant cost",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "의사결정 대안 간에 차이가 있는 미래의 회피 가능한 원가. 매몰원가와 회피 불가능한 공통원가는 제외한다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "sunk-cost",
+      "reason": "관련원가는 미래 대안 간 차이, 매몰원가는 이미 발생해 의사결정과 무관"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "유휴설비 활용 결정 시 추가 변동원가만 관련원가, 기존 감가상각비는 매몰",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

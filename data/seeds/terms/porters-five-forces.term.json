@@ -1,0 +1,24 @@
+{
+  "term_id": "porters-five-forces",
+  "name_ko": "포터의 5요인 분석",
+  "name_en": "Porter's five forces",
+  "aliases": [
+    "5 forces",
+    "5요인"
+  ],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "산업 매력도를 결정하는 5가지 경쟁요인 — 신규 진입 위협, 대체재 위협, 구매자 교섭력, 공급자 교섭력, 기존 경쟁자 간 경쟁 — 으로 분석하는 프레임워크.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "swot-analysis",
+      "reason": "5 forces는 외부 산업구조 분석, SWOT은 내외부 통합 분석"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "항공산업은 5 forces 모두 강해 평균 수익성이 낮음",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

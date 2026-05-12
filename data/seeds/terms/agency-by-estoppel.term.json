@@ -1,0 +1,23 @@
+{
+  "term_id": "agency-by-estoppel",
+  "name_ko": "표현대리",
+  "name_en": "agency by estoppel",
+  "aliases": [
+    "표시대리"
+  ],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "대리권이 없거나 소멸한 자의 대리행위에 대해 본인이 대리권 외관 작출에 기여했다면 선의·무과실의 제3자에 대해 본인이 책임지는 제도.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "merchant",
+      "reason": "표현대리는 대리권 외관 신뢰 보호 법리, 상인은 영업주체 — 무관 개념"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "해임된 영업부장이 명함으로 계약 → 본인이 회수 안 했다면 표현대리 성립 가능",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

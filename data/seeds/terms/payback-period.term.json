@@ -1,0 +1,21 @@
+{
+  "term_id": "payback-period",
+  "name_ko": "회수기간법",
+  "name_en": "payback period",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "초기 투자액을 회수하는 데 걸리는 기간. 화폐의 시간가치를 무시한다는 한계.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "npv",
+      "reason": "회수기간법은 시간가치 무시, NPV는 시간가치 반영 → 회수기간만으로 의사결정 위험"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "초기 1,000, 매년 400씩 회수 → 회수기간 2.5년",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

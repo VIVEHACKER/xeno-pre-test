@@ -11,5 +11,17 @@ from cpa_first.rag.search import (
     load_chunks,
     retrieve,
 )
+from cpa_first.rag.term_index import Edge, Term, TermIndex, load_edges, load_terms
 
-__all__ = ["RagChunk", "RetrievalHit", "format_context", "load_chunks", "retrieve"]
+__all__ = [
+    "RagChunk",
+    "RetrievalHit",
+    "format_context",
+    "load_chunks",
+    "retrieve",
+    "Term",
+    "Edge",
+    "TermIndex",
+    "load_terms",
+    "load_edges",
+]

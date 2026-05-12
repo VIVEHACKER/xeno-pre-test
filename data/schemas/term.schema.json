@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cpa-first.local/schemas/term.schema.json",
+  "title": "Term",
+  "description": "어렵고 생소하고 중요한 CPA 1차 용어 노드. 정의, 동의어, 혼동되는 짝, 선수 용어를 담아 RAG/문제/튜토리얼과 엣지로 연결된다. 본문은 자체 요약 또는 official_paraphrase만 허용.",
+  "type": "object",
+  "required": [
+    "term_id",
+    "name_ko",
+    "subject",
+    "definition",
+    "difficulty",
+    "rights_status",
+    "review_status"
+  ],
+  "properties": {
+    "term_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$",
+      "description": "kebab-case. 과목별 동음이의는 prefix로 구분 (예: acc-cost, tax-cost)."
+    },
+    "name_ko": {
+      "type": "string",
+      "minLength": 1,
+      "description": "한국어 표기. 매칭의 기본 키."
+    },
+    "name_en": {
+      "type": ["string", "null"],
+      "description": "영문 표기. 없으면 null."
+    },
+    "aliases": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "description": "동의어/약어/대체 표기. 검색 확장에 사용."
+    },
+    "subject": {
+      "type": "string",
+      "description": "cpa_first.subjects 레지스트리와 동기화. 'general'은 과목 무관 용어.",
+      "enum": [
+        "accounting",
+        "tax",
+        "business",
+        "economics",
+        "corporate_law",
+        "management",
+        "finance",
+        "cost_accounting",
+        "general"
+      ]
+    },
+    "unit": {
+      "type": ["string", "null"],
+      "description": "exam_ontology의 단원 키. 모르면 null."
+    },
+    "definition": {
+      "type": "string",
+      "minLength": 1,
+      "description": "1-3 문장. 자체 요약 또는 공식 표현의 paraphrase."
+    },
+    "formula": {
+      "type": ["string", "null"],
+      "description": "공식이 있는 용어만. 평문 텍스트(예: '이자수익 = 기초 장부금액 × 유효이자율'). LaTeX 금지."
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": ["foundational", "intermediate", "advanced"],
+      "description": "foundational=과목 입문, intermediate=평균 응시생 수준, advanced=고득점 변별."
+    },
+    "confusable_with": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["term_id", "reason"],
+        "properties": {
+          "term_id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$",
+            "description": "혼동되는 다른 term_id."
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1,
+            "description": "왜 헷갈리는지 1문장."
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "이 용어와 자주 헷갈리는 짝. 양방향 엣지로 확장됨."
+    },
+    "prerequisite_terms": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*$"
+      },
+      "description": "이 용어를 이해하기 전에 알아야 하는 term_id 목록."
+    },
+    "example": {
+      "type": ["string", "null"],
+      "description": "구체 예시 1개. 없으면 null."
+    },
+    "rights_status": {
+      "type": "string",
+      "enum": ["self_generated", "official_paraphrase"]
+    },
+    "review_status": {
+      "type": "string",
+      "enum": ["ai_draft", "expert_reviewed", "approved", "rejected"]
+    }
+  },
+  "additionalProperties": false
+}

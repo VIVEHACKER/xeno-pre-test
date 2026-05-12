@@ -1,0 +1,23 @@
+{
+  "term_id": "provision",
+  "name_ko": "충당부채",
+  "name_en": "provision",
+  "aliases": [
+    "충당금"
+  ],
+  "subject": "accounting",
+  "unit": "provisions",
+  "definition": "지출 시기 또는 금액이 불확실한 부채. 현재의무 존재 + 자원 유출 가능성 높음 + 신뢰성 있는 추정 가능, 세 요건을 모두 충족할 때 인식한다. 하나라도 빠지면 우발부채로 주석 공시한다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "contingent-liability",
+      "reason": "충당부채는 인식 요건 충족 시 재무상태표에 부채 계상, 우발부채는 주석 공시만 한다"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "제품 보증으로 인한 미래 수리 비용이 과거 실적상 신뢰성 있게 추정되면 충당부채로 인식한다",
+  "rights_status": "official_paraphrase",
+  "review_status": "ai_draft"
+}

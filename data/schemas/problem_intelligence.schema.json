@@ -21,7 +21,20 @@
   "properties": {
     "problem_id": { "type": "string" },
     "exam": { "type": "string", "enum": ["CPA_1"] },
-    "subject": { "type": "string", "enum": ["accounting", "tax"] },
+    "subject": {
+      "type": "string",
+      "description": "cpa_first.subjects 레지스트리와 동기화.",
+      "enum": [
+        "accounting",
+        "tax",
+        "business",
+        "economics",
+        "corporate_law",
+        "management",
+        "finance",
+        "cost_accounting"
+      ]
+    },
     "unit": { "type": "string" },
     "source": {
       "type": "object",

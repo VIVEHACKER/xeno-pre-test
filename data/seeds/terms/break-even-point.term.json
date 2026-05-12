@@ -1,0 +1,25 @@
+{
+  "term_id": "break-even-point",
+  "name_ko": "손익분기점",
+  "name_en": "break-even point",
+  "aliases": [
+    "BEP"
+  ],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "총수익과 총비용이 같아 영업이익이 0이 되는 판매량 또는 매출액.",
+  "formula": "BEP 판매량 = 고정원가 / 단위당 공헌이익",
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "margin-of-safety",
+      "reason": "BEP는 영점, 안전한계는 현재 매출이 BEP에서 얼마나 떨어졌는지"
+    }
+  ],
+  "prerequisite_terms": [
+    "contribution-margin"
+  ],
+  "example": "고정원가 4,000 / 공헌이익 40 = BEP 100개",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

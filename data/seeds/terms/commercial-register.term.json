@@ -1,0 +1,21 @@
+{
+  "term_id": "commercial-register",
+  "name_ko": "상업등기",
+  "name_en": "commercial register",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "상인 또는 회사의 일정 사항을 공시하기 위한 등기. 등기 사항은 선의의 제3자에게 대항 가능.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "trade-name",
+      "reason": "상업등기는 등기 행위 자체, 상호는 등기 대상 중 하나"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "회사 설립 시 본점 소재지의 법원 등기소에 상업등기 신청",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

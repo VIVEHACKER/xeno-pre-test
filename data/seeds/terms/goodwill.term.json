@@ -1,0 +1,23 @@
+{
+  "term_id": "goodwill",
+  "name_ko": "영업권",
+  "name_en": "goodwill",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "business_combination",
+  "definition": "사업결합 시 이전대가와 식별가능 순자산 공정가치의 차액. 상각하지 않고 매년 손상검사를 수행한다.",
+  "formula": "영업권 = 이전대가 - 식별가능 순자산 공정가치 × 지분율",
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "impairment-loss",
+      "reason": "영업권은 상각이 아니라 매년 손상검사로만 평가됨"
+    }
+  ],
+  "prerequisite_terms": [
+    "business-combination"
+  ],
+  "example": "100억에 인수 + 순자산 공정가치 70억 → 영업권 30억",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,23 @@
+{
+  "term_id": "final-return",
+  "name_ko": "확정신고",
+  "name_en": "final tax return",
+  "aliases": [
+    "종합소득세 확정신고"
+  ],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "과세기간 종료 후 다음 해 5월에 종합소득을 확정해 신고/납부하는 절차. 원천징수된 세액은 정산된다.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "withholding-tax",
+      "reason": "원천징수는 사전 분납, 확정신고는 사후 합산 정산"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "프리랜서가 5월에 종합소득세를 확정신고",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

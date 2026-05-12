@@ -1,0 +1,26 @@
+{
+  "term_id": "mm-proposition",
+  "name_ko": "MM 명제",
+  "name_en": "Modigliani-Miller proposition",
+  "aliases": [
+    "MM 정리",
+    "MM 이론"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "Modigliani-Miller의 자본구조 무관련 명제. 완전자본시장 가정 하에 기업가치는 자본구조와 무관하다(명제 I). 명제 II는 자기자본비용이 부채비율에 따라 선형으로 증가함을 보인다.",
+  "formula": "명제 II: Re = Ra + (D/E) × (Ra - Rd)",
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "trade-off-theory",
+      "reason": "MM은 세금/파산비용 무시 가정, 상충이론은 절세효과와 파산비용의 trade-off로 최적 부채비율 존재"
+    }
+  ],
+  "prerequisite_terms": [
+    "wacc"
+  ],
+  "example": "법인세가 도입된 MM 명제에서는 부채 사용이 기업가치를 증가시킨다 (이자비용 절세효과 = D × t)",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

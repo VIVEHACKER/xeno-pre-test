@@ -1,0 +1,23 @@
+{
+  "term_id": "taxable-income",
+  "name_ko": "과세표준",
+  "name_en": "taxable income",
+  "aliases": [
+    "과표"
+  ],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "세율을 곱하기 직전의 세무상 소득. 종합소득금액에서 소득공제를 차감한 값.",
+  "formula": "과세표준 = 종합소득금액 - 소득공제",
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "tax-credit",
+      "reason": "과세표준은 세율 적용 전 금액, 세액공제는 산출된 세액에서 차감"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "종합소득금액 1억 - 소득공제 1천만원 = 과세표준 9천만원",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

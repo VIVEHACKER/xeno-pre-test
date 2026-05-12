@@ -1,0 +1,26 @@
+{
+  "term_id": "cost-of-equity",
+  "name_ko": "자기자본비용",
+  "name_en": "cost of equity",
+  "aliases": [
+    "Re",
+    "ke"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "주주가 요구하는 수익률. CAPM 또는 배당평가모형으로 추정한다.",
+  "formula": "Re = Rf + β × (Rm - Rf)  (CAPM)",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "wacc",
+      "reason": "Re는 주주 요구수익률, WACC는 부채까지 가중평균한 전체 자본비용"
+    }
+  ],
+  "prerequisite_terms": [
+    "capm"
+  ],
+  "example": "Rf 3%, β 1.2, Rm 8% → Re = 3% + 1.2×5% = 9%",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

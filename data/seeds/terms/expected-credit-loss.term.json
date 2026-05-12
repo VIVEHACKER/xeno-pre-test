@@ -1,0 +1,26 @@
+{
+  "term_id": "expected-credit-loss",
+  "name_ko": "기대신용손실",
+  "name_en": "expected credit loss",
+  "aliases": [
+    "ECL",
+    "기대손실"
+  ],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "K-IFRS 1109호 손상 모형. 신용 손실 발생 가능성을 확률 가중해 측정한다. Stage 1(12개월 ECL), Stage 2/3(전체 잔여기간 ECL)로 구분하고 신용위험의 유의적 증가로 단계 전이가 일어난다.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "incurred-loss",
+      "reason": "발생손실 모형은 사건 발생 후 인식, ECL은 사건 발생 전 기대치를 선반영한다"
+    }
+  ],
+  "prerequisite_terms": [
+    "amortized-cost"
+  ],
+  "example": "정상 자산은 12개월 ECL을 인식하다가 신용위험이 유의적으로 증가하면 Stage 2로 전이되어 전체 잔여기간 ECL을 인식",
+  "rights_status": "official_paraphrase",
+  "review_status": "ai_draft"
+}

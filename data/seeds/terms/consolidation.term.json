@@ -1,0 +1,25 @@
+{
+  "term_id": "consolidation",
+  "name_ko": "연결재무제표",
+  "name_en": "consolidation",
+  "aliases": [
+    "연결"
+  ],
+  "subject": "accounting",
+  "unit": "business_combination",
+  "definition": "지배기업과 종속기업을 하나의 경제실체로 보고 자산/부채/손익을 합산해 작성한 재무제표. 내부거래는 제거한다.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "equity-method",
+      "reason": "연결은 100% 합산 후 비지배지분 분리, 지분법은 지분율만큼 한 줄로 반영"
+    }
+  ],
+  "prerequisite_terms": [
+    "equity-method"
+  ],
+  "example": "지분 80%인 종속기업 자산을 100% 합산 + 20% 비지배지분 표시",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

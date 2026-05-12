@@ -1,0 +1,21 @@
+{
+  "term_id": "business-combination",
+  "name_ko": "사업결합",
+  "name_en": "business combination",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "business_combination",
+  "definition": "취득자가 하나 이상의 사업에 대해 지배력을 획득하는 거래. K-IFRS 1103호에 따라 취득법(공정가치 측정 + 영업권 인식)을 적용.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "goodwill",
+      "reason": "사업결합은 거래 자체, 영업권은 그 결과로 발생하는 차액 항목"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "A사가 B사를 인수해 B사 통제권을 획득하면 사업결합",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

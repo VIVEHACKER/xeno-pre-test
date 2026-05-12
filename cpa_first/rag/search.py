@@ -3,6 +3,10 @@
 점수: tag/keyword 가중치 매칭 + 본문 토큰 overlap.
 정렬: 점수 desc, chunk_id asc (결정론).
 필터: subject, unit (옵션). 같은 과목 우선이지만 general은 항상 후보.
+
+선택적 term_index: 쿼리 토큰을 용어 그래프(name_ko/aliases/confusable)로 확장하고,
+chunk가 매칭 term의 defined_in 엣지에 있으면 +0.5 가산한다.
+term_index=None이면 기존 동작과 동일 (Phase 4 이전과 호환).
 """
 
 from __future__ import annotations
@@ -11,7 +15,10 @@ import json
 import re
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any
+from typing import TYPE_CHECKING, Any
+
+if TYPE_CHECKING:
+    from cpa_first.rag.term_index import TermIndex
 
 
 # 토큰화 — 한국어/영문 혼합. 2글자 이상 한글/영숫자 토큰 추출.
@@ -71,14 +78,28 @@ def retrieve(
     unit: str | None = None,
     top_k: int = 3,
     min_score: float = 0.5,
+    term_index: "TermIndex | None" = None,
 ) -> list[RetrievalHit]:
     """query 텍스트로 chunks를 검색. 점수 desc + chunk_id asc 정렬.
 
     필터:
       - subject가 주어지면 동일 subject 또는 general만 후보.
       - unit이 주어지면 부분 매칭 시 가중치 가산.
+
+    term_index가 주어지면:
+      - 쿼리에 등장한 용어의 name_ko/aliases/confusable 표면형을 검색 토큰에 합친다.
+      - 매칭 term의 defined_in 엣지에 있는 chunk에 +0.5 가산.
+      - 없을 때 동작은 이전과 동일 (Phase 4 이전 호출자와 호환).
     """
-    query_tokens = set(_tokenize(query))
+    if term_index is not None:
+        expansions = term_index.expand_query(query)
+        matched_term_ids = term_index.matched_terms(query)
+    else:
+        expansions = set()
+        matched_term_ids = set()
+
+    effective_query = query if not expansions else f"{query} {' '.join(sorted(expansions))}"
+    query_tokens = set(_tokenize(effective_query))
     if not query_tokens:
         return []
 
@@ -86,9 +107,12 @@ def retrieve(
     for chunk in chunks:
         if subject and chunk.subject not in (subject, "general"):
             continue
-        score = _score_chunk(chunk, query_tokens, query, unit)
+        score = _score_chunk(chunk, query_tokens, effective_query, unit)
+        if matched_term_ids and term_index is not None:
+            if term_index.chunk_defined_by(chunk.chunk_id) & matched_term_ids:
+                score += 0.5
         if score >= min_score:
-            candidates.append(RetrievalHit(chunk=chunk, score=score))
+            candidates.append(RetrievalHit(chunk=chunk, score=round(score, 4)))
 
     candidates.sort(key=lambda h: (-h.score, h.chunk.chunk_id))
     return candidates[:top_k]

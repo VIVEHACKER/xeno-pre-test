@@ -1,0 +1,25 @@
+{
+  "term_id": "financial-income-aggregation",
+  "name_ko": "금융소득 종합과세",
+  "name_en": "financial income aggregation",
+  "aliases": [
+    "금융종합과세"
+  ],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "이자/배당 등 금융소득이 연 2,000만원을 초과할 때 초과분을 다른 종합소득과 합산해 누진세율로 과세.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "comprehensive-taxation",
+      "reason": "금융종합과세는 일반 종합과세의 특수 케이스 — 금융소득에 한정된 합산 기준"
+    }
+  ],
+  "prerequisite_terms": [
+    "comprehensive-taxation"
+  ],
+  "example": "이자 3,000만원 발생 시 2,000만원 초과분 1,000만원이 종합과세 대상",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

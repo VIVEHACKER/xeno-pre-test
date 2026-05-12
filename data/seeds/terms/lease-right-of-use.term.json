@@ -1,0 +1,25 @@
+{
+  "term_id": "lease-right-of-use",
+  "name_ko": "사용권자산",
+  "name_en": "right-of-use asset",
+  "aliases": [
+    "ROU"
+  ],
+  "subject": "accounting",
+  "unit": "leases",
+  "definition": "K-IFRS 1116호에 따라 리스이용자가 인식하는 자산. 리스부채 + 선급리스료 + 직접원가 - 인센티브로 측정한다.",
+  "formula": "사용권자산 = 리스부채 + 선급리스료 + 직접원가 - 인센티브",
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "lease-liability",
+      "reason": "동일 거래의 양면 — 사용권자산은 차변, 리스부채는 대변에서 인식"
+    }
+  ],
+  "prerequisite_terms": [
+    "lease-liability"
+  ],
+  "example": "3년 사무실 임차 시 임차료 현가를 사용권자산으로 자본화하고 감가상각",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

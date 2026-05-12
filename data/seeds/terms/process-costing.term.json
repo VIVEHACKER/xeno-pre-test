@@ -1,0 +1,21 @@
+{
+  "term_id": "process-costing",
+  "name_ko": "종합원가계산",
+  "name_en": "process costing",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "연속 공정 또는 대량생산에서 사용하는 원가계산. 공정별 원가를 완성품환산량으로 나눠 단위원가를 산출.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "joint-cost",
+      "reason": "종합원가는 단일 제품의 공정 흐름, 결합원가는 한 공정에서 동시에 나오는 다품종"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "석유 정제 같은 연속 공정에서 1, 2, 3공정별 원가를 환산량으로 안분",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

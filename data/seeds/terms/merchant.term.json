@@ -1,0 +1,21 @@
+{
+  "term_id": "merchant",
+  "name_ko": "상인",
+  "name_en": "merchant",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "자기 명의로 상행위를 영업으로 하는 자(당연상인) 또는 점포 기타 유사 설비로 상인과 같은 방법으로 영업하는 자(의제상인).",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "trade-name",
+      "reason": "상인은 주체, 상호는 그 상인이 영업에 사용하는 명칭"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "음식점 운영자는 의제상인, 도매업자는 당연상인",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

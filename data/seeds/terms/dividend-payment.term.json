@@ -1,0 +1,23 @@
+{
+  "term_id": "dividend-payment",
+  "name_ko": "이익배당",
+  "name_en": "dividend",
+  "aliases": [
+    "배당"
+  ],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "회사가 영업 이익에서 주주에게 지급하는 분배. 배당가능이익 한도 내에서, 주주총회 결의로 결정.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "preemptive-right",
+      "reason": "배당은 이익 분배(현금/주식 흐름), 신주인수권은 신주 우선 매입 권리"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "현금배당 외 주식배당 가능 — 자본전입의 한 형태",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

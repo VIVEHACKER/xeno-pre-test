@@ -1,0 +1,21 @@
+{
+  "term_id": "capital-gains",
+  "name_ko": "양도소득",
+  "name_en": "capital gains",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "부동산, 주식 등 자산의 양도로 발생하는 소득. 종합소득과 분리되어 양도소득세로 별도 과세.",
+  "formula": "양도차익 = 양도가액 - 취득가액 - 필요경비",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "business-income",
+      "reason": "양도소득은 자산 처분 1회성, 사업소득은 사업 활동의 반복 소득"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "아파트 5억에 사서 7억에 매도 → 양도차익 2억",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

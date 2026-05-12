@@ -1,0 +1,23 @@
+{
+  "term_id": "revenue-recognition-5-step",
+  "name_ko": "수익인식 5단계",
+  "name_en": "5-step revenue model",
+  "aliases": [
+    "5단계 모형"
+  ],
+  "subject": "accounting",
+  "unit": "revenue",
+  "definition": "K-IFRS 1115호의 수익인식 절차. 계약 식별 → 수행의무 식별 → 거래가격 산정 → 거래가격 배분 → 수행의무 이행 시점에 인식.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "performance-obligation",
+      "reason": "5단계 중 2단계가 수행의무 식별이며 한 계약에 여러 수행의무가 있을 수 있다"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "휴대폰 + 통신서비스 묶음 판매는 2개 수행의무로 분리해 각각 인식",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

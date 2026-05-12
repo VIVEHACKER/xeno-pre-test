@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cpa-first.local/schemas/term_edge.schema.json",
+  "title": "TermEdge",
+  "description": "용어 노드와 RAG 청크/문제/튜토리얼/다른 용어 사이의 엣지. data/seeds/term_graph/edges.jsonl 의 한 라인에 해당. 빌더 스크립트가 결정론적으로 생성하므로 손편집 안 함.",
+  "type": "object",
+  "required": [
+    "from_term",
+    "to_kind",
+    "to_id",
+    "relation",
+    "weight"
+  ],
+  "properties": {
+    "from_term": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$",
+      "description": "엣지의 출발점 term_id."
+    },
+    "to_kind": {
+      "type": "string",
+      "enum": ["rag_chunk", "problem", "tutorial", "term"],
+      "description": "엣지가 가리키는 엔티티의 종류."
+    },
+    "to_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "to_kind에 따른 식별자. rag_chunk→chunk_id, problem→problem_id, tutorial→tutorial 키, term→term_id."
+    },
+    "relation": {
+      "type": "string",
+      "enum": [
+        "defined_in",
+        "tested_in",
+        "explained_in",
+        "confusable_with",
+        "prerequisite_of"
+      ],
+      "description": "엣지의 의미. defined_in=용어가 정의된 RAG 청크, tested_in=용어가 필요한 문제, explained_in=용어를 설명한 튜토리얼, confusable_with=헷갈리는 짝(term↔term), prerequisite_of=선수↔후행."
+    },
+    "weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 5,
+      "description": "엣지 강도. 빌더 규칙: keywords 정확 일치=2.0, 본문 등장=1.0, 부분 일치=0.5."
+    },
+    "evidence": {
+      "type": ["string", "null"],
+      "description": "엣지 생성 근거. 예: 'matched in keywords', 'required_concepts[0]', 'tutorial body'."
+    }
+  },
+  "additionalProperties": false
+}

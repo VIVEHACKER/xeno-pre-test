@@ -1,0 +1,21 @@
+{
+  "term_id": "contract-asset",
+  "name_ko": "계약자산",
+  "name_en": "contract asset",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "revenue",
+  "definition": "기업이 수행을 완료했지만 청구 권리가 무조건적이지 않은 자산. 시간이 지나면 매출채권으로 전환된다.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "contract-liability",
+      "reason": "계약자산은 수행은 했지만 청구 전, 계약부채는 청구는 했지만 수행 전(선수금 성격)"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "장기 건설계약에서 단계 진행률로 인식한 매출 중 미청구분",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

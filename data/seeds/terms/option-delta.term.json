@@ -1,0 +1,23 @@
+{
+  "term_id": "option-delta",
+  "name_ko": "옵션 델타",
+  "name_en": "option delta",
+  "aliases": [
+    "델타"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "기초자산 가격 1단위 변화에 대한 옵션 가격의 변화량. 콜옵션은 0~1, 풋옵션은 -1~0의 값을 가진다. 헤지비율로 사용된다.",
+  "formula": "델타 = 옵션가격 변화 / 기초자산가격 변화",
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "option-gamma",
+      "reason": "델타는 기초자산 가격 변화에 대한 1차 민감도, 감마는 델타 자체의 변화율(2차 민감도)"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "콜옵션 델타가 0.6이면 기초자산이 100원 오를 때 옵션가격은 60원 오른다. 헤지에는 콜 매도 1단위당 기초자산 0.6단위 매수",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

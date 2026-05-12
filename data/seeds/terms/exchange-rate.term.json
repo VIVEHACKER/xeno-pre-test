@@ -1,0 +1,21 @@
+{
+  "term_id": "exchange-rate",
+  "name_ko": "환율",
+  "name_en": "exchange rate",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "자국 통화와 외국 통화의 교환비율. 명목환율과 실질환율(상대 물가 반영) 구분.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "money-supply",
+      "reason": "환율은 대외 가격, 통화량은 국내 화폐 총량 — 통화 정책으로 환율 영향"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "1USD = 1,300원이면 명목환율 1,300원/달러",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

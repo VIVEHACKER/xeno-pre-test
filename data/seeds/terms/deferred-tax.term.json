@@ -1,0 +1,26 @@
+{
+  "term_id": "deferred-tax",
+  "name_ko": "이연법인세",
+  "name_en": "deferred tax",
+  "aliases": [
+    "이연법인세자산",
+    "이연법인세부채",
+    "DTA",
+    "DTL"
+  ],
+  "subject": "accounting",
+  "unit": "income_tax_accounting",
+  "definition": "회계상 장부금액과 세무상 자산/부채 가액의 일시적 차이에서 발생하는 미래 세효과. 가산 일시적 차이는 이연법인세부채, 차감 일시적 차이는 이연법인세자산을 발생시킨다.",
+  "formula": "이연법인세 = 일시적 차이 × 미래 실현 시점의 평균 세율",
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "current-tax",
+      "reason": "당기법인세는 당기 과세소득 기준, 이연법인세는 미래 차이 해소 시점 기준이라 인식 시점과 금액 산정이 다르다"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "감가상각 차이로 회계상 잔액이 세무상보다 작으면 차감 일시적 차이가 발생해 이연법인세자산이 인식된다",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "simplified-vat-payer",
+  "name_ko": "간이과세자",
+  "name_en": "simplified VAT payer",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "연 매출 1억400만원 미만 영세사업자에게 적용되는 간편 과세. 업종별 부가가치율로 세액을 산출하고 세금계산서 발급 의무가 다르다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "input-vat",
+      "reason": "간이과세자는 매입세액공제가 제한적 — 정상 일반과세자와 다름"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "음식점 연매출 8천만원 사업자는 간이과세자로 신고 가능",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

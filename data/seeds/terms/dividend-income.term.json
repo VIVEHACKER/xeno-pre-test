@@ -1,0 +1,21 @@
+{
+  "term_id": "dividend-income",
+  "name_ko": "배당소득",
+  "name_en": "dividend income",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "법인이 주주에게 분배한 이익 또는 잉여금. 14% 원천징수, 금융소득 종합과세 시 gross-up 적용.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "interest-income",
+      "reason": "배당소득은 자기자본 대가(주주), 이자소득은 타인자본 대가(채권자)"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "상장주식 배당 100만원은 14% 원천징수 후 종합과세 시 gross-up",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

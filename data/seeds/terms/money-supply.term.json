@@ -1,0 +1,24 @@
+{
+  "term_id": "money-supply",
+  "name_ko": "통화량",
+  "name_en": "money supply",
+  "aliases": [
+    "M1",
+    "M2"
+  ],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "한 경제 내 화폐 총량. M1(현금+요구불예금), M2(M1+저축성예금) 등 정의에 따라 범위가 다르다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "monetary-policy",
+      "reason": "통화량은 결과, 통화정책은 통화량/이자율을 조절하는 수단"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "중앙은행이 국채 매입 → 본원통화 증가 → M1, M2 확대",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

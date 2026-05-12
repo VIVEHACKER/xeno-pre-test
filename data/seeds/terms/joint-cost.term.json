@@ -1,0 +1,23 @@
+{
+  "term_id": "joint-cost",
+  "name_ko": "결합원가",
+  "name_en": "joint cost",
+  "aliases": [
+    "연산품원가"
+  ],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "하나의 공정에서 동시에 둘 이상의 연산품이 생산될 때, 분리점 이전까지 공통으로 발생한 원가. 분리점 이후 발생하는 추가가공원가(분리원가)와 구분된다.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "separable-cost",
+      "reason": "결합원가는 분리점 이전 공통 발생분, 분리원가는 분리점 이후 제품별 추적 가능분"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "원유 정제에서 휘발유와 경유가 동시에 나올 때 분리점 진입 전까지의 원가가 결합원가",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

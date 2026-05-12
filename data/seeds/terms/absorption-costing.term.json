@@ -1,0 +1,23 @@
+{
+  "term_id": "absorption-costing",
+  "name_ko": "전부원가계산",
+  "name_en": "absorption costing",
+  "aliases": [
+    "흡수원가계산"
+  ],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "변동제조원가와 고정제조원가를 모두 제품원가에 포함시키는 방법. 외부재무보고용 GAAP 표준.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "variable-costing",
+      "reason": "전부원가는 GAAP 기준 외부보고용, 변동원가는 내부 의사결정용"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "고정제조원가 30이 단위당 3씩 제품에 배부되어 재고 평가에 반영",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

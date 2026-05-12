@@ -1,0 +1,25 @@
+{
+  "term_id": "gordon-growth-model",
+  "name_ko": "고든 성장모형",
+  "name_en": "Gordon growth model",
+  "aliases": [
+    "일정성장모형"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "배당이 일정 성장률 g로 영구 증가한다고 가정한 주식 가치평가 모형.",
+  "formula": "P = D1 / (r - g)",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "dividend-discount-model",
+      "reason": "고든은 DDM의 특수 형태 — 성장률이 일정해야 적용 가능"
+    }
+  ],
+  "prerequisite_terms": [
+    "dividend-discount-model"
+  ],
+  "example": "D1=1,000, r=10%, g=4% → P = 1,000/(0.10-0.04) ≈ 16,667",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

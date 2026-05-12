@@ -10,6 +10,8 @@ import hashlib
 import json
 from pathlib import Path
 
+from cpa_first.subjects import matches_rule_subject, primary_subject
+
 
 # risk_score 산출용 임계값. PRD §4.6의 누적 항목을 자동화 가능한 신호로 옮긴 것.
 FAIL_RISK_ACCURACY = 0.40
@@ -42,15 +44,7 @@ def _matches_subjects(rule: dict, user_state: dict) -> bool:
     if not rule_subjects:
         return True
     user_subjects = _user_subjects(user_state)
-    for rs in rule_subjects:
-        if rs == "general":
-            return True
-        if rs == "accounting_tax":
-            if "accounting" in user_subjects and "tax" in user_subjects:
-                return True
-        elif rs in user_subjects:
-            return True
-    return False
+    return any(matches_rule_subject(rs, user_subjects) for rs in rule_subjects)
 
 
 def _matches_risk_tags(rule: dict, user_state: dict) -> bool:
@@ -71,13 +65,7 @@ def _matches(rule: dict, user_state: dict) -> bool:
 
 def _task_subject(rule: dict, user_state: dict) -> str:
     rule_subjects = rule.get("applicable_subjects") or []
-    user_subjects = _user_subjects(user_state)
-    matched = [s for s in rule_subjects if s in user_subjects]
-    if matched == ["accounting"]:
-        return "accounting"
-    if matched == ["tax"]:
-        return "tax"
-    return "mixed"
+    return primary_subject(rule_subjects, _user_subjects(user_state))
 
 
 def _estimated_minutes(rule: dict) -> int:

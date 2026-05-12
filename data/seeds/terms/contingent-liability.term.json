@@ -1,0 +1,21 @@
+{
+  "term_id": "contingent-liability",
+  "name_ko": "우발부채",
+  "name_en": "contingent liability",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "provisions",
+  "definition": "과거 사건의 결과로 잠재적 의무가 있지만 불확실하거나 신뢰성 있는 추정이 어려워 부채로 인식하지 않고 주석에 공시하는 부채.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "provision",
+      "reason": "충당부채는 인식 요건 충족 시 재무상태표 계상, 우발부채는 주석 공시만"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "진행 중인 소송에서 패소 시 배상 가능성이 있지만 금액 추정이 어려운 경우",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

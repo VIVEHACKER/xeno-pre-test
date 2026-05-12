@@ -1,0 +1,21 @@
+{
+  "term_id": "withholding-tax",
+  "name_ko": "원천징수",
+  "name_en": "withholding tax",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "소득 지급자가 일정 비율을 미리 떼어 세무서에 납부하는 제도. 분리과세로 종결되는 경우와 종합과세 정산으로 가는 경우가 있다.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "separate-taxation",
+      "reason": "원천징수는 절차, 분리과세는 그 결과 종결 여부 — 모든 원천징수가 분리과세는 아니다"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "강의료 100만원에서 3.3% 원천징수 → 33,000원 세금 차감",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

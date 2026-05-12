@@ -1,0 +1,21 @@
+{
+  "term_id": "monopoly",
+  "name_ko": "독점",
+  "name_en": "monopoly",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "단일 공급자가 시장 전체를 지배하는 구조. 가격설정자(price maker)이며 MR = MC에서 이윤극대화.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "perfect-competition",
+      "reason": "독점은 가격설정자, 완전경쟁은 가격수용자 — 정반대"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "과거 한국전력의 전력 시장은 자연독점",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

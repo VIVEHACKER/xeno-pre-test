@@ -1,0 +1,21 @@
+{
+  "term_id": "necessary-expense",
+  "name_ko": "필요경비",
+  "name_en": "necessary expense",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "소득세법상 사업/기타 소득의 총수입금액에서 차감하는 비용. 해당 소득을 얻기 위해 직접 지출했거나 통상 발생하는 비용으로 한정된다.",
+  "formula": "사업소득금액 = 총수입금액 - 필요경비",
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "deductible-expense",
+      "reason": "필요경비는 소득세법 용어(개인사업자), 손금은 법인세법 용어로 인정 범위와 한도가 다르다"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "프리랜서가 업무용 노트북을 구입했다면 사업과 직접 관련된 부분이 필요경비로 차감된다",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

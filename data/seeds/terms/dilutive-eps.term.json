@@ -1,0 +1,24 @@
+{
+  "term_id": "dilutive-eps",
+  "name_ko": "희석주당이익",
+  "name_en": "diluted EPS",
+  "aliases": [
+    "희석EPS",
+    "diluted earnings per share"
+  ],
+  "subject": "accounting",
+  "unit": "equity",
+  "definition": "모든 잠재적 보통주가 발행되었다고 가정해 산출한 EPS. 기본주당이익보다 항상 작거나 같으며 차이만큼 희석 위험을 나타낸다.",
+  "formula": "희석EPS = (당기순이익 + 잠재주식 조정) / (가중평균유통주식수 + 잠재주식수)",
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "basic-eps",
+      "reason": "기본EPS는 현재 유통주식만, 희석EPS는 전환사채/스톡옵션 등 잠재주식 포함"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "전환사채 행사 시 발행될 주식까지 분모에 포함해 산출",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

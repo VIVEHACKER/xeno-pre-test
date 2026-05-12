@@ -33,7 +33,20 @@
         "type": "object",
         "required": ["subject", "accuracy", "time_overrun_rate", "risk_tags"],
         "properties": {
-          "subject": { "type": "string", "enum": ["accounting", "tax"] },
+          "subject": {
+            "type": "string",
+            "description": "cpa_first.subjects 레지스트리와 동기화.",
+            "enum": [
+              "accounting",
+              "tax",
+              "business",
+              "economics",
+              "corporate_law",
+              "management",
+              "finance",
+              "cost_accounting"
+            ]
+          },
           "accuracy": { "type": "number", "minimum": 0, "maximum": 1 },
           "time_overrun_rate": { "type": "number", "minimum": 0, "maximum": 1 },
           "risk_tags": {

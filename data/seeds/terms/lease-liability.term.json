@@ -1,0 +1,21 @@
+{
+  "term_id": "lease-liability",
+  "name_ko": "리스부채",
+  "name_en": "lease liability",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "leases",
+  "definition": "잔여 리스료를 내재이자율(또는 증분차입이자율)로 할인한 현재가치. 매기 이자비용이 가산되고 지급 시 감소한다.",
+  "formula": "리스부채 = Σ (리스료 / (1 + r)^n)",
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "lease-right-of-use",
+      "reason": "리스부채는 채무, 사용권자산은 자산. 측정 시점에서 동일하지만 이후 추적 경로가 다르다"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "연 1,000만원 3년 리스를 5% 할인 → 약 2,723만원이 최초 리스부채",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

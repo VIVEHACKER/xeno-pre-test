@@ -1,0 +1,21 @@
+{
+  "term_id": "tax-credit",
+  "name_ko": "세액공제",
+  "name_en": "tax credit",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "산출세액에서 직접 차감하는 항목. 자녀세액공제, 의료비세액공제 등. 소득공제(과세표준 차감)와 다르다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "taxable-income",
+      "reason": "세액공제는 세액에서 차감, 소득공제는 과세표준에서 차감 → 절감 효과가 다르다"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "자녀세액공제 15만원/명은 산출세액에서 직접 차감",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

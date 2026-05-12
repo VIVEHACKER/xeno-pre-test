@@ -1,0 +1,21 @@
+{
+  "term_id": "non-deductible-expense",
+  "name_ko": "손금불산입",
+  "name_en": "non-deductible expense",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "회계상 비용이지만 세무상 손금으로 인정되지 않는 항목. 접대비 한도 초과, 벌과금, 업무무관경비 등.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "deductible-expense",
+      "reason": "손금산입은 세무상 인정, 손금불산입은 회계상 비용이라도 세무 부인"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "법인이 낸 교통 범칙금은 손금불산입",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

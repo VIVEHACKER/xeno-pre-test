@@ -1,0 +1,293 @@
+{"evidence": "전부원가는 GAAP 기준 외부보고용, 변동원가는 내부 의사결정용", "from_term": "absorption-costing", "relation": "confusable_with", "to_id": "variable-costing", "to_kind": "term", "weight": 1.0}
+{"evidence": "표준원가는 예정 원가의 기준값, ABC는 간접원가 배부 방법론이라 분석 층위가 다르다", "from_term": "activity-based-cost", "relation": "confusable_with", "to_id": "standard-cost", "to_kind": "term", "weight": 1.0}
+{"evidence": "실제원가는 사후 측정, 표준원가는 사전 설정이라 차이 분석의 출발점이 된다", "from_term": "actual-cost", "relation": "confusable_with", "to_id": "standard-cost", "to_kind": "term", "weight": 1.0}
+{"evidence": "concept_tags partial: AD-AS", "from_term": "ad-as-model", "relation": "tested_in", "to_id": "cpa1-economics-004", "to_kind": "problem", "weight": 1.0}
+{"evidence": "keyword match: AD-AS", "from_term": "ad-as-model", "relation": "defined_in", "to_id": "is-lm-ad-as-model", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "AD-AS는 물가까지 포함한 완전 모형, IS-LM은 물가 고정 가정", "from_term": "ad-as-model", "relation": "confusable_with", "to_id": "is-lm-model", "to_kind": "term", "weight": 1.0}
+{"evidence": "tutorial body: AD-AS", "from_term": "ad-as-model", "relation": "explained_in", "to_id": "tutorial_cpa1_economics_macro", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "표현대리는 대리권 외관 신뢰 보호 법리, 상인은 영업주체 — 무관 개념", "from_term": "agency-by-estoppel", "relation": "confusable_with", "to_id": "merchant", "to_kind": "term", "weight": 1.0}
+{"evidence": "required_concepts: 상각후원가", "from_term": "amortized-cost", "relation": "tested_in", "to_id": "cpa1-accounting-002", "to_kind": "problem", "weight": 2.0}
+{"evidence": "keyword match: 상각후원가", "from_term": "amortized-cost", "relation": "defined_in", "to_id": "kifrs-1109-amortized-cost", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "amortized-cost required before expected-credit-loss", "from_term": "amortized-cost", "relation": "prerequisite_of", "to_id": "expected-credit-loss", "to_kind": "term", "weight": 1.0}
+{"evidence": "측정 기준이 달라 평가손익 인식 위치(당기손익 vs 기타포괄손익)가 갈린다", "from_term": "amortized-cost", "relation": "confusable_with", "to_id": "fair-value", "to_kind": "term", "weight": 1.0}
+{"evidence": "기본EPS는 현재 발행주식 기준, 희석EPS는 잠재주식까지 가정", "from_term": "basic-eps", "relation": "confusable_with", "to_id": "dilutive-eps", "to_kind": "term", "weight": 1.0}
+{"evidence": "keyword match: 베타", "from_term": "beta", "relation": "defined_in", "to_id": "capm-and-portfolio-risk", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "베타는 체계적 위험의 측정치, 체계적 위험은 분산투자로 제거되지 않는 위험 자체", "from_term": "beta", "relation": "confusable_with", "to_id": "systematic-risk", "to_kind": "term", "weight": 1.0}
+{"evidence": "concept_tags partial: 이사회", "from_term": "board-of-directors", "relation": "tested_in", "to_id": "cpa1-corporate_law-002", "to_kind": "problem", "weight": 1.0}
+{"evidence": "keyword match: 이사회", "from_term": "board-of-directors", "relation": "defined_in", "to_id": "corporate-organs-authority-allocation", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "body match: 이사회", "from_term": "board-of-directors", "relation": "defined_in", "to_id": "share-bond-capital-financing", "to_kind": "rag_chunk", "weight": 1.0}
+{"evidence": "이사회는 업무집행기관, 주주총회는 회사 최고 의사결정기관(소유자 회의)", "from_term": "board-of-directors", "relation": "confusable_with", "to_id": "shareholders-meeting", "to_kind": "term", "weight": 1.0}
+{"evidence": "이사회는 경영 의사결정, 감사는 그 결정과 집행을 감독", "from_term": "board-of-directors", "relation": "confusable_with", "to_id": "statutory-auditor", "to_kind": "term", "weight": 1.0}
+{"evidence": "tutorial body: 이사회", "from_term": "board-of-directors", "relation": "explained_in", "to_id": "tutorial_cpa1_corporate_law", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "keyword match: BEP", "from_term": "break-even-point", "relation": "defined_in", "to_id": "cvp-margin-of-safety", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "CVP는 분석 프레임 전체, 손익분기점은 CVP의 한 결과값", "from_term": "break-even-point", "relation": "confusable_with", "to_id": "cvp-analysis", "to_kind": "term", "weight": 1.0}
+{"evidence": "BEP는 영점, 안전한계는 현재 매출이 BEP에서 얼마나 떨어졌는지", "from_term": "break-even-point", "relation": "confusable_with", "to_id": "margin-of-safety", "to_kind": "term", "weight": 1.0}
+{"evidence": "tutorial body: 손익분기점", "from_term": "break-even-point", "relation": "explained_in", "to_id": "tutorial_cpa1_accounting_cost", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "tutorial body: 손익분기점", "from_term": "break-even-point", "relation": "explained_in", "to_id": "tutorial_cpa2_cost_accounting", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "사업결합은 거래 자체, 영업권은 그 결과로 발생하는 차액 항목", "from_term": "business-combination", "relation": "confusable_with", "to_id": "goodwill", "to_kind": "term", "weight": 1.0}
+{"evidence": "business-combination required before goodwill", "from_term": "business-combination", "relation": "prerequisite_of", "to_id": "goodwill", "to_kind": "term", "weight": 1.0}
+{"evidence": "양도소득은 자산 처분 1회성, 사업소득은 사업 활동의 반복 소득", "from_term": "business-income", "relation": "confusable_with", "to_id": "capital-gains", "to_kind": "term", "weight": 1.0}
+{"evidence": "사업소득은 독립 영업, 근로소득은 고용 종속", "from_term": "business-income", "relation": "confusable_with", "to_id": "earned-income", "to_kind": "term", "weight": 1.0}
+{"evidence": "concept_tags partial: 양도소득", "from_term": "capital-gains", "relation": "tested_in", "to_id": "cpa1-tax-006", "to_kind": "problem", "weight": 1.0}
+{"evidence": "양도소득은 자산 처분 1회성, 사업소득은 사업 활동의 반복 소득", "from_term": "capital-gains", "relation": "confusable_with", "to_id": "business-income", "to_kind": "term", "weight": 1.0}
+{"evidence": "required_concepts: CAPM", "from_term": "capm", "relation": "tested_in", "to_id": "cpa1-business-002", "to_kind": "problem", "weight": 2.0}
+{"evidence": "keyword match: CAPM", "from_term": "capm", "relation": "defined_in", "to_id": "capm-and-portfolio-risk", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "capm required before cost-of-equity", "from_term": "capm", "relation": "prerequisite_of", "to_id": "cost-of-equity", "to_kind": "term", "weight": 1.0}
+{"evidence": "CAPM은 개별 주식의 자기자본비용 추정, WACC는 기업 전체 자본비용 가중평균", "from_term": "capm", "relation": "confusable_with", "to_id": "wacc", "to_kind": "term", "weight": 1.0}
+{"evidence": "keyword match: 상업등기", "from_term": "commercial-register", "relation": "defined_in", "to_id": "commercial-general-merchant-tradename", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "상업등기는 등기 행위 자체, 상호는 등기 대상 중 하나", "from_term": "commercial-register", "relation": "confusable_with", "to_id": "trade-name", "to_kind": "term", "weight": 1.0}
+{"evidence": "body match: 종합과세", "from_term": "comprehensive-taxation", "relation": "defined_in", "to_id": "income-tax-financial-income", "to_kind": "rag_chunk", "weight": 1.0}
+{"evidence": "금융종합과세는 일반 종합과세의 특수 케이스 — 금융소득에 한정된 합산 기준", "from_term": "comprehensive-taxation", "relation": "confusable_with", "to_id": "financial-income-aggregation", "to_kind": "term", "weight": 1.0}
+{"evidence": "comprehensive-taxation required before financial-income-aggregation", "from_term": "comprehensive-taxation", "relation": "prerequisite_of", "to_id": "financial-income-aggregation", "to_kind": "term", "weight": 1.0}
+{"evidence": "분리과세는 다른 소득과 합산 없이 원천징수 세율로 종결, 종합과세는 합산해 누진율 적용", "from_term": "comprehensive-taxation", "relation": "confusable_with", "to_id": "separate-taxation", "to_kind": "term", "weight": 1.0}
+{"evidence": "concept_tags partial: 연결재무제표", "from_term": "consolidation", "relation": "tested_in", "to_id": "cpa1-accounting-010", "to_kind": "problem", "weight": 1.0}
+{"evidence": "body match: 연결재무제표", "from_term": "consolidation", "relation": "defined_in", "to_id": "cpa-act-and-external-audit-act", "to_kind": "rag_chunk", "weight": 1.0}
+{"evidence": "연결은 100% 합산 후 비지배지분 분리, 지분법은 지분율만큼 한 줄로 반영", "from_term": "consolidation", "relation": "confusable_with", "to_id": "equity-method", "to_kind": "term", "weight": 1.0}
+{"evidence": "tutorial body: 연결", "from_term": "consolidation", "relation": "explained_in", "to_id": "tutorial_cpa1_business_finance", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "tutorial body: 연결", "from_term": "consolidation", "relation": "explained_in", "to_id": "tutorial_cpa1_corporate_law", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "tutorial body: 연결", "from_term": "consolidation", "relation": "explained_in", "to_id": "tutorial_cpa2_audit", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "tutorial body: 연결재무제표", "from_term": "consolidation", "relation": "explained_in", "to_id": "tutorial_cpa2_financial_accounting", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "tutorial body: 연결", "from_term": "consolidation", "relation": "explained_in", "to_id": "tutorial_cpa2_tax", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "tutorial body: 연결", "from_term": "consolidation", "relation": "explained_in", "to_id": "tutorial_cta1_tax_intro", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "tutorial body: 연결", "from_term": "consolidation", "relation": "explained_in", "to_id": "tutorial_cta2_accounting_part1", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "tutorial body: 연결", "from_term": "consolidation", "relation": "explained_in", "to_id": "tutorial_cta2_tax_law_part1", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "keyword match: 소비자잉여", "from_term": "consumer-surplus", "relation": "defined_in", "to_id": "consumer-producer-surplus", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "소비자잉여는 수요곡선과 가격선 사이, 생산자잉여는 가격선과 공급곡선 사이", "from_term": "consumer-surplus", "relation": "confusable_with", "to_id": "producer-surplus", "to_kind": "term", "weight": 1.0}
+{"evidence": "충당부채는 인식 요건 충족 시 재무상태표 계상, 우발부채는 주석 공시만", "from_term": "contingent-liability", "relation": "confusable_with", "to_id": "provision", "to_kind": "term", "weight": 1.0}
+{"evidence": "계약자산은 수행은 했지만 청구 전, 계약부채는 청구는 했지만 수행 전(선수금 성격)", "from_term": "contract-asset", "relation": "confusable_with", "to_id": "contract-liability", "to_kind": "term", "weight": 1.0}
+{"evidence": "수행의무 이행 후 미청구한 권리가 계약자산이며 이행 자체는 수행의무", "from_term": "contract-asset", "relation": "confusable_with", "to_id": "performance-obligation", "to_kind": "term", "weight": 1.0}
+{"evidence": "계약자산은 수행은 했지만 청구 전, 계약부채는 청구는 했지만 수행 전(선수금 성격)", "from_term": "contract-liability", "relation": "confusable_with", "to_id": "contract-asset", "to_kind": "term", "weight": 1.0}
+{"evidence": "keyword match: 공헌이익", "from_term": "contribution-margin", "relation": "defined_in", "to_id": "cvp-margin-of-safety", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "body match: 공헌이익", "from_term": "contribution-margin", "relation": "defined_in", "to_id": "relevant-cost-decision-making", "to_kind": "rag_chunk", "weight": 1.0}
+{"evidence": "contribution-margin required before break-even-point", "from_term": "contribution-margin", "relation": "prerequisite_of", "to_id": "break-even-point", "to_kind": "term", "weight": 1.0}
+{"evidence": "contribution-margin required before cvp-analysis", "from_term": "contribution-margin", "relation": "prerequisite_of", "to_id": "cvp-analysis", "to_kind": "term", "weight": 1.0}
+{"evidence": "공헌이익은 단위/총액 절대 금액, 안전한계율은 매출액 대비 여유 비율", "from_term": "contribution-margin", "relation": "confusable_with", "to_id": "margin-of-safety", "to_kind": "term", "weight": 1.0}
+{"evidence": "tutorial body: 공헌이익", "from_term": "contribution-margin", "relation": "explained_in", "to_id": "tutorial_cpa1_accounting_cost", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "tutorial body: 공헌이익", "from_term": "contribution-margin", "relation": "explained_in", "to_id": "tutorial_cpa2_cost_accounting", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "concept_tags partial: 합병", "from_term": "corporate-reorganization", "relation": "tested_in", "to_id": "cpa1-corporate_law-004", "to_kind": "problem", "weight": 1.0}
+{"evidence": "body match: 합병", "from_term": "corporate-reorganization", "relation": "defined_in", "to_id": "corporate-organs-authority-allocation", "to_kind": "rag_chunk", "weight": 1.0}
+{"evidence": "body match: 분할", "from_term": "corporate-reorganization", "relation": "defined_in", "to_id": "time-value-of-money-formulas", "to_kind": "rag_chunk", "weight": 1.0}
+{"evidence": "합병/분할은 절차이며 주주총회 특별결의가 필수 단계 중 하나", "from_term": "corporate-reorganization", "relation": "confusable_with", "to_id": "shareholders-meeting", "to_kind": "term", "weight": 1.0}
+{"evidence": "tutorial body: 합병", "from_term": "corporate-reorganization", "relation": "explained_in", "to_id": "tutorial_cpa1_corporate_law", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "tutorial body: 합병", "from_term": "corporate-reorganization", "relation": "explained_in", "to_id": "tutorial_cpa1_corporate_law_reorganization", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "body match: 자기자본비용", "from_term": "cost-of-equity", "relation": "defined_in", "to_id": "wacc-and-mm-proposition", "to_kind": "rag_chunk", "weight": 1.0}
+{"evidence": "Re는 주주 요구수익률, WACC는 부채까지 가중평균한 전체 자본비용", "from_term": "cost-of-equity", "relation": "confusable_with", "to_id": "wacc", "to_kind": "term", "weight": 1.0}
+{"evidence": "당기법인세는 당기 과세소득 기준, 이연법인세는 미래 차이 해소 시점 기준이라 인식 시점과 금액 산정이 다르다", "from_term": "current-tax", "relation": "confusable_with", "to_id": "deferred-tax", "to_kind": "term", "weight": 1.0}
+{"evidence": "CVP는 분석 프레임 전체, 손익분기점은 CVP의 한 결과값", "from_term": "cvp-analysis", "relation": "confusable_with", "to_id": "break-even-point", "to_kind": "term", "weight": 1.0}
+{"evidence": "concept_tags partial: 손금", "from_term": "deductible-expense", "relation": "tested_in", "to_id": "cpa1-tax-001", "to_kind": "problem", "weight": 1.0}
+{"evidence": "concept_tags partial: 손금", "from_term": "deductible-expense", "relation": "tested_in", "to_id": "cpa1-tax-004", "to_kind": "problem", "weight": 1.0}
+{"evidence": "concept_tags partial: 손금", "from_term": "deductible-expense", "relation": "tested_in", "to_id": "cpa1-tax-009", "to_kind": "problem", "weight": 1.0}
+{"evidence": "손금은 법인세법, 필요경비는 소득세법 용어 — 인정 범위와 한도가 다르다", "from_term": "deductible-expense", "relation": "confusable_with", "to_id": "necessary-expense", "to_kind": "term", "weight": 1.0}
+{"evidence": "손금산입은 세무상 인정, 손금불산입은 회계상 비용이라도 세무 부인", "from_term": "deductible-expense", "relation": "confusable_with", "to_id": "non-deductible-expense", "to_kind": "term", "weight": 1.0}
+{"evidence": "tutorial body: 손금", "from_term": "deductible-expense", "relation": "explained_in", "to_id": "tutorial_cpa1_tax", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "tutorial body: 손금", "from_term": "deductible-expense", "relation": "explained_in", "to_id": "tutorial_cpa2_tax", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "tutorial body: 손금", "from_term": "deductible-expense", "relation": "explained_in", "to_id": "tutorial_cta2_accounting_part2", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "일반 매입세액은 실제 부담분, 의제매입세액은 실제 부담 없는 면세 매입을 의제로 인정한 것", "from_term": "deemed-input-vat", "relation": "confusable_with", "to_id": "input-vat", "to_kind": "term", "weight": 1.0}
+{"evidence": "당기법인세는 당기 과세소득 기준, 이연법인세는 미래 차이 해소 시점 기준이라 인식 시점과 금액 산정이 다르다", "from_term": "deferred-tax", "relation": "confusable_with", "to_id": "current-tax", "to_kind": "term", "weight": 1.0}
+{"evidence": "확정급여는 기업이 미래 지급액 책임, 확정기여는 매기 기여금 납부로 책임 종료", "from_term": "defined-benefit-obligation", "relation": "confusable_with", "to_id": "defined-contribution", "to_kind": "term", "weight": 1.0}
+{"evidence": "확정급여는 기업이 미래 지급액 책임, 확정기여는 매기 기여금 납부로 책임 종료", "from_term": "defined-contribution", "relation": "confusable_with", "to_id": "defined-benefit-obligation", "to_kind": "term", "weight": 1.0}
+{"evidence": "기본EPS는 현재 발행주식 기준, 희석EPS는 잠재주식까지 가정", "from_term": "dilutive-eps", "relation": "confusable_with", "to_id": "basic-eps", "to_kind": "term", "weight": 1.0}
+{"evidence": "주식기준보상은 측정/인식 이슈, 희석주당이익은 결과 지표 산출 이슈", "from_term": "dilutive-eps", "relation": "confusable_with", "to_id": "share-based-payment", "to_kind": "term", "weight": 1.0}
+{"evidence": "DDM은 일반 모형, 고든 성장모형은 일정 성장률 g 가정한 특수 형태", "from_term": "dividend-discount-model", "relation": "confusable_with", "to_id": "gordon-growth-model", "to_kind": "term", "weight": 1.0}
+{"evidence": "dividend-discount-model required before gordon-growth-model", "from_term": "dividend-discount-model", "relation": "prerequisite_of", "to_id": "gordon-growth-model", "to_kind": "term", "weight": 1.0}
+{"evidence": "body match: 배당소득", "from_term": "dividend-income", "relation": "defined_in", "to_id": "income-tax-financial-income", "to_kind": "rag_chunk", "weight": 1.0}
+{"evidence": "배당소득은 자기자본 대가(주주), 이자소득은 타인자본 대가(채권자)", "from_term": "dividend-income", "relation": "confusable_with", "to_id": "interest-income", "to_kind": "term", "weight": 1.0}
+{"evidence": "body match: 이익배당", "from_term": "dividend-payment", "relation": "defined_in", "to_id": "corporate-organs-authority-allocation", "to_kind": "rag_chunk", "weight": 1.0}
+{"evidence": "body match: 배당", "from_term": "dividend-payment", "relation": "defined_in", "to_id": "income-tax-financial-income", "to_kind": "rag_chunk", "weight": 1.0}
+{"evidence": "body match: 배당", "from_term": "dividend-payment", "relation": "defined_in", "to_id": "share-bond-capital-financing", "to_kind": "rag_chunk", "weight": 1.0}
+{"evidence": "배당은 이익 분배(현금/주식 흐름), 신주인수권은 신주 우선 매입 권리", "from_term": "dividend-payment", "relation": "confusable_with", "to_id": "preemptive-right", "to_kind": "term", "weight": 1.0}
+{"evidence": "맥콜리 듀레이션은 기간, 수정 듀레이션은 그 값을 (1+r)로 나눠 가격 변화율 직접 산출", "from_term": "duration", "relation": "confusable_with", "to_id": "modified-duration", "to_kind": "term", "weight": 1.0}
+{"evidence": "duration required before modified-duration", "from_term": "duration", "relation": "prerequisite_of", "to_id": "modified-duration", "to_kind": "term", "weight": 1.0}
+{"evidence": "사업소득은 독립 영업, 근로소득은 고용 종속", "from_term": "earned-income", "relation": "confusable_with", "to_id": "business-income", "to_kind": "term", "weight": 1.0}
+{"evidence": "keyword match: 유효이자율", "from_term": "effective-interest-rate", "relation": "defined_in", "to_id": "kifrs-1109-amortized-cost", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "effective-interest-rate required before amortized-cost", "from_term": "effective-interest-rate", "relation": "prerequisite_of", "to_id": "amortized-cost", "to_kind": "term", "weight": 1.0}
+{"evidence": "액면이자율은 현금 수취 기준, 유효이자율은 회수원가 기준이라 이자수익 크기가 달라진다", "from_term": "effective-interest-rate", "relation": "confusable_with", "to_id": "nominal-interest-rate", "to_kind": "term", "weight": 1.0}
+{"evidence": "연결은 100% 합산 후 비지배지분 분리, 지분법은 지분율만큼 한 줄로 반영", "from_term": "equity-method", "relation": "confusable_with", "to_id": "consolidation", "to_kind": "term", "weight": 1.0}
+{"evidence": "equity-method required before consolidation", "from_term": "equity-method", "relation": "prerequisite_of", "to_id": "consolidation", "to_kind": "term", "weight": 1.0}
+{"evidence": "required_concepts: 완성품환산량", "from_term": "equivalent-units", "relation": "tested_in", "to_id": "cpa1-accounting-013", "to_kind": "problem", "weight": 2.0}
+{"evidence": "keyword match: 완성품환산량", "from_term": "equivalent-units", "relation": "defined_in", "to_id": "process-costing-fifo-vs-average", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "환산량은 종합원가계산에서 사용하는 단위 측정 수단", "from_term": "equivalent-units", "relation": "confusable_with", "to_id": "process-costing", "to_kind": "term", "weight": 1.0}
+{"evidence": "keyword match: 환율", "from_term": "exchange-rate", "relation": "defined_in", "to_id": "money-theory-and-exchange-rate", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "환율은 대외 가격, 통화량은 국내 화폐 총량 — 통화 정책으로 환율 영향", "from_term": "exchange-rate", "relation": "confusable_with", "to_id": "money-supply", "to_kind": "term", "weight": 1.0}
+{"evidence": "keyword match: 기대신용손실", "from_term": "expected-credit-loss", "relation": "defined_in", "to_id": "kifrs-1109-amortized-cost", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "발생손실 모형은 사건 발생 후 인식, ECL은 사건 발생 전 기대치를 선반영한다", "from_term": "expected-credit-loss", "relation": "confusable_with", "to_id": "incurred-loss", "to_kind": "term", "weight": 1.0}
+{"evidence": "body match: FV", "from_term": "fair-value", "relation": "defined_in", "to_id": "time-value-of-money-formulas", "to_kind": "rag_chunk", "weight": 1.0}
+{"evidence": "측정 기준이 달라 평가손익 인식 위치(당기손익 vs 기타포괄손익)가 갈린다", "from_term": "fair-value", "relation": "confusable_with", "to_id": "amortized-cost", "to_kind": "term", "weight": 1.0}
+{"evidence": "원천징수는 사전 분납, 확정신고는 사후 합산 정산", "from_term": "final-return", "relation": "confusable_with", "to_id": "withholding-tax", "to_kind": "term", "weight": 1.0}
+{"evidence": "keyword match: 금융소득 종합과세", "from_term": "financial-income-aggregation", "relation": "defined_in", "to_id": "income-tax-financial-income", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "금융종합과세는 일반 종합과세의 특수 케이스 — 금융소득에 한정된 합산 기준", "from_term": "financial-income-aggregation", "relation": "confusable_with", "to_id": "comprehensive-taxation", "to_kind": "term", "weight": 1.0}
+{"evidence": "GDP는 실물 생산 지표, 통화량은 화폐 측면 지표", "from_term": "gdp", "relation": "confusable_with", "to_id": "money-supply", "to_kind": "term", "weight": 1.0}
+{"evidence": "사업결합은 거래 자체, 영업권은 그 결과로 발생하는 차액 항목", "from_term": "goodwill", "relation": "confusable_with", "to_id": "business-combination", "to_kind": "term", "weight": 1.0}
+{"evidence": "영업권은 상각이 아니라 매년 손상검사로만 평가됨", "from_term": "goodwill", "relation": "confusable_with", "to_id": "impairment-loss", "to_kind": "term", "weight": 1.0}
+{"evidence": "required_concepts: 고든 성장모형", "from_term": "gordon-growth-model", "relation": "tested_in", "to_id": "cpa1-business-004", "to_kind": "problem", "weight": 2.0}
+{"evidence": "DDM은 일반 모형, 고든 성장모형은 일정 성장률 g 가정한 특수 형태", "from_term": "gordon-growth-model", "relation": "confusable_with", "to_id": "dividend-discount-model", "to_kind": "term", "weight": 1.0}
+{"evidence": "required_concepts: 손상차손", "from_term": "impairment-loss", "relation": "tested_in", "to_id": "cpa1-accounting-002", "to_kind": "problem", "weight": 2.0}
+{"evidence": "keyword match: 손상차손", "from_term": "impairment-loss", "relation": "defined_in", "to_id": "kifrs-1109-amortized-cost", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "영업권은 상각이 아니라 매년 손상검사로만 평가됨", "from_term": "impairment-loss", "relation": "confusable_with", "to_id": "goodwill", "to_kind": "term", "weight": 1.0}
+{"evidence": "손상차손은 당기손익(역방향), 재평가잉여금은 기타포괄손익(상방)", "from_term": "impairment-loss", "relation": "confusable_with", "to_id": "revaluation-surplus", "to_kind": "term", "weight": 1.0}
+{"evidence": "대체효과+소득효과 = 전체 가격효과 (슬러츠키 분해)", "from_term": "income-effect", "relation": "confusable_with", "to_id": "substitution-effect", "to_kind": "term", "weight": 1.0}
+{"evidence": "keyword match: 소득탄력성", "from_term": "income-elasticity", "relation": "defined_in", "to_id": "elasticity-formulas", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "독립변수가 소득(η) vs 가격(ε) — 측정 대상이 다르다", "from_term": "income-elasticity", "relation": "confusable_with", "to_id": "price-elasticity", "to_kind": "term", "weight": 1.0}
+{"evidence": "발생손실 모형은 사건 발생 후 인식, ECL은 사건 발생 전 기대치를 선반영한다", "from_term": "incurred-loss", "relation": "confusable_with", "to_id": "expected-credit-loss", "to_kind": "term", "weight": 1.0}
+{"evidence": "body match: 매입세액", "from_term": "input-vat", "relation": "defined_in", "to_id": "vat-exemption-list", "to_kind": "rag_chunk", "weight": 1.0}
+{"evidence": "일반 매입세액은 실제 부담분, 의제매입세액은 실제 부담 없는 면세 매입을 의제로 인정한 것", "from_term": "input-vat", "relation": "confusable_with", "to_id": "deemed-input-vat", "to_kind": "term", "weight": 1.0}
+{"evidence": "간이과세자는 매입세액공제가 제한적 — 정상 일반과세자와 다름", "from_term": "input-vat", "relation": "confusable_with", "to_id": "simplified-vat-payer", "to_kind": "term", "weight": 1.0}
+{"evidence": "body match: 이자소득", "from_term": "interest-income", "relation": "defined_in", "to_id": "income-tax-financial-income", "to_kind": "rag_chunk", "weight": 1.0}
+{"evidence": "배당소득은 자기자본 대가(주주), 이자소득은 타인자본 대가(채권자)", "from_term": "interest-income", "relation": "confusable_with", "to_id": "dividend-income", "to_kind": "term", "weight": 1.0}
+{"evidence": "concept_tags partial: IRR", "from_term": "irr", "relation": "tested_in", "to_id": "cpa1-business-003", "to_kind": "problem", "weight": 1.0}
+{"evidence": "keyword match: 내부수익률", "from_term": "irr", "relation": "defined_in", "to_id": "npv-vs-irr-decision", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "IRR은 비율, NPV는 금액 — 상호배타적 투자안에서는 NPV가 우선", "from_term": "irr", "relation": "confusable_with", "to_id": "npv", "to_kind": "term", "weight": 1.0}
+{"evidence": "tutorial body: IRR", "from_term": "irr", "relation": "explained_in", "to_id": "tutorial_cpa1_business_finance", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "concept_tags partial: IS-LM", "from_term": "is-lm-model", "relation": "tested_in", "to_id": "cpa1-economics-004", "to_kind": "problem", "weight": 1.0}
+{"evidence": "keyword match: IS-LM", "from_term": "is-lm-model", "relation": "defined_in", "to_id": "is-lm-ad-as-model", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "AD-AS는 물가까지 포함한 완전 모형, IS-LM은 물가 고정 가정", "from_term": "is-lm-model", "relation": "confusable_with", "to_id": "ad-as-model", "to_kind": "term", "weight": 1.0}
+{"evidence": "is-lm-model required before ad-as-model", "from_term": "is-lm-model", "relation": "prerequisite_of", "to_id": "ad-as-model", "to_kind": "term", "weight": 1.0}
+{"evidence": "tutorial body: IS-LM", "from_term": "is-lm-model", "relation": "explained_in", "to_id": "tutorial_cpa1_economics_macro", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "종합원가는 단일 제품의 공정 흐름, 결합원가는 한 공정에서 동시에 나오는 다품종", "from_term": "joint-cost", "relation": "confusable_with", "to_id": "process-costing", "to_kind": "term", "weight": 1.0}
+{"evidence": "결합원가는 분리점 이전 공통 발생분, 분리원가는 분리점 이후 제품별 추적 가능분", "from_term": "joint-cost", "relation": "confusable_with", "to_id": "separable-cost", "to_kind": "term", "weight": 1.0}
+{"evidence": "리스부채는 채무, 사용권자산은 자산. 측정 시점에서 동일하지만 이후 추적 경로가 다르다", "from_term": "lease-liability", "relation": "confusable_with", "to_id": "lease-right-of-use", "to_kind": "term", "weight": 1.0}
+{"evidence": "lease-liability required before lease-right-of-use", "from_term": "lease-liability", "relation": "prerequisite_of", "to_id": "lease-right-of-use", "to_kind": "term", "weight": 1.0}
+{"evidence": "리스부채는 채무, 사용권자산은 자산. 측정 시점에서 동일하지만 이후 추적 경로가 다르다", "from_term": "lease-right-of-use", "relation": "confusable_with", "to_id": "lease-liability", "to_kind": "term", "weight": 1.0}
+{"evidence": "required_concepts: 안전한계율", "from_term": "margin-of-safety", "relation": "tested_in", "to_id": "cpa1-accounting-014", "to_kind": "problem", "weight": 2.0}
+{"evidence": "keyword match: 안전한계율", "from_term": "margin-of-safety", "relation": "defined_in", "to_id": "cvp-margin-of-safety", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "BEP는 영점, 안전한계는 현재 매출이 BEP에서 얼마나 떨어졌는지", "from_term": "margin-of-safety", "relation": "confusable_with", "to_id": "break-even-point", "to_kind": "term", "weight": 1.0}
+{"evidence": "공헌이익은 단위/총액 절대 금액, 안전한계율은 매출액 대비 여유 비율", "from_term": "margin-of-safety", "relation": "confusable_with", "to_id": "contribution-margin", "to_kind": "term", "weight": 1.0}
+{"evidence": "body match: 상인", "from_term": "merchant", "relation": "defined_in", "to_id": "commercial-general-merchant-tradename", "to_kind": "rag_chunk", "weight": 1.0}
+{"evidence": "표현대리는 대리권 외관 신뢰 보호 법리, 상인은 영업주체 — 무관 개념", "from_term": "merchant", "relation": "confusable_with", "to_id": "agency-by-estoppel", "to_kind": "term", "weight": 1.0}
+{"evidence": "상인은 주체, 상호는 그 상인이 영업에 사용하는 명칭", "from_term": "merchant", "relation": "confusable_with", "to_id": "trade-name", "to_kind": "term", "weight": 1.0}
+{"evidence": "merchant required before trade-name", "from_term": "merchant", "relation": "prerequisite_of", "to_id": "trade-name", "to_kind": "term", "weight": 1.0}
+{"evidence": "tutorial body: 상인", "from_term": "merchant", "relation": "explained_in", "to_id": "tutorial_cta2_tax_law_part2", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "body match: MM 명제", "from_term": "mm-proposition", "relation": "defined_in", "to_id": "wacc-and-mm-proposition", "to_kind": "rag_chunk", "weight": 1.0}
+{"evidence": "MM은 세금/파산비용 무시 가정, 상충이론은 절세효과와 파산비용의 trade-off로 최적 부채비율 존재", "from_term": "mm-proposition", "relation": "confusable_with", "to_id": "trade-off-theory", "to_kind": "term", "weight": 1.0}
+{"evidence": "맥콜리 듀레이션은 기간, 수정 듀레이션은 그 값을 (1+r)로 나눠 가격 변화율 직접 산출", "from_term": "modified-duration", "relation": "confusable_with", "to_id": "duration", "to_kind": "term", "weight": 1.0}
+{"evidence": "통화량은 결과, 통화정책은 통화량/이자율을 조절하는 수단", "from_term": "monetary-policy", "relation": "confusable_with", "to_id": "money-supply", "to_kind": "term", "weight": 1.0}
+{"evidence": "body match: 통화량", "from_term": "money-supply", "relation": "defined_in", "to_id": "is-lm-ad-as-model", "to_kind": "rag_chunk", "weight": 1.0}
+{"evidence": "body match: 통화량", "from_term": "money-supply", "relation": "defined_in", "to_id": "money-theory-and-exchange-rate", "to_kind": "rag_chunk", "weight": 1.0}
+{"evidence": "환율은 대외 가격, 통화량은 국내 화폐 총량 — 통화 정책으로 환율 영향", "from_term": "money-supply", "relation": "confusable_with", "to_id": "exchange-rate", "to_kind": "term", "weight": 1.0}
+{"evidence": "GDP는 실물 생산 지표, 통화량은 화폐 측면 지표", "from_term": "money-supply", "relation": "confusable_with", "to_id": "gdp", "to_kind": "term", "weight": 1.0}
+{"evidence": "통화량은 결과, 통화정책은 통화량/이자율을 조절하는 수단", "from_term": "money-supply", "relation": "confusable_with", "to_id": "monetary-policy", "to_kind": "term", "weight": 1.0}
+{"evidence": "tutorial body: 통화량", "from_term": "money-supply", "relation": "explained_in", "to_id": "tutorial_cpa1_economics_macro", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "독점은 가격설정자, 완전경쟁은 가격수용자 — 정반대", "from_term": "monopoly", "relation": "confusable_with", "to_id": "perfect-competition", "to_kind": "term", "weight": 1.0}
+{"evidence": "necessary-expense required before business-income", "from_term": "necessary-expense", "relation": "prerequisite_of", "to_id": "business-income", "to_kind": "term", "weight": 1.0}
+{"evidence": "손금은 법인세법, 필요경비는 소득세법 용어 — 인정 범위와 한도가 다르다", "from_term": "necessary-expense", "relation": "confusable_with", "to_id": "deductible-expense", "to_kind": "term", "weight": 1.0}
+{"evidence": "액면이자율은 현금 수취 기준, 유효이자율은 회수원가 기준이라 이자수익 크기가 달라진다", "from_term": "nominal-interest-rate", "relation": "confusable_with", "to_id": "effective-interest-rate", "to_kind": "term", "weight": 1.0}
+{"evidence": "손금산입은 세무상 인정, 손금불산입은 회계상 비용이라도 세무 부인", "from_term": "non-deductible-expense", "relation": "confusable_with", "to_id": "deductible-expense", "to_kind": "term", "weight": 1.0}
+{"evidence": "tutorial body: 손금불산입", "from_term": "non-deductible-expense", "relation": "explained_in", "to_id": "tutorial_cpa1_tax", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "tutorial body: 손금불산입", "from_term": "non-deductible-expense", "relation": "explained_in", "to_id": "tutorial_cpa2_tax", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "tutorial body: 손금불산입", "from_term": "non-deductible-expense", "relation": "explained_in", "to_id": "tutorial_cta2_accounting_part2", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "concept_tags partial: NPV", "from_term": "npv", "relation": "tested_in", "to_id": "cpa1-business-003", "to_kind": "problem", "weight": 1.0}
+{"evidence": "keyword match: 순현재가치", "from_term": "npv", "relation": "defined_in", "to_id": "npv-vs-irr-decision", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "IRR은 비율, NPV는 금액 — 상호배타적 투자안에서는 NPV가 우선", "from_term": "npv", "relation": "confusable_with", "to_id": "irr", "to_kind": "term", "weight": 1.0}
+{"evidence": "회수기간법은 시간가치 무시, NPV는 시간가치 반영 → 회수기간만으로 의사결정 위험", "from_term": "npv", "relation": "confusable_with", "to_id": "payback-period", "to_kind": "term", "weight": 1.0}
+{"evidence": "tutorial body: NPV", "from_term": "npv", "relation": "explained_in", "to_id": "tutorial_cpa1_business_finance", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "tutorial body: 순현재가치", "from_term": "npv", "relation": "explained_in", "to_id": "tutorial_cpa2_financial_management", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "required_concepts: 기회비용", "from_term": "opportunity-cost", "relation": "tested_in", "to_id": "cpa1-accounting-016", "to_kind": "problem", "weight": 2.0}
+{"evidence": "keyword match: 기회비용", "from_term": "opportunity-cost", "relation": "defined_in", "to_id": "relevant-cost-decision-making", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "기회비용은 포기한 미래 가치, 매몰원가는 회수 불가능한 과거 지출", "from_term": "opportunity-cost", "relation": "confusable_with", "to_id": "sunk-cost", "to_kind": "term", "weight": 1.0}
+{"evidence": "델타는 기초자산 가격 변화에 대한 1차 민감도, 감마는 델타 자체의 변화율(2차 민감도)", "from_term": "option-delta", "relation": "confusable_with", "to_id": "option-gamma", "to_kind": "term", "weight": 1.0}
+{"evidence": "option-delta required before option-gamma", "from_term": "option-delta", "relation": "prerequisite_of", "to_id": "option-gamma", "to_kind": "term", "weight": 1.0}
+{"evidence": "델타는 기초자산 가격 변화에 대한 1차 민감도, 감마는 델타 자체의 변화율(2차 민감도)", "from_term": "option-gamma", "relation": "confusable_with", "to_id": "option-delta", "to_kind": "term", "weight": 1.0}
+{"evidence": "required_concepts: 회수기간법", "from_term": "payback-period", "relation": "tested_in", "to_id": "cpa1-business-003", "to_kind": "problem", "weight": 2.0}
+{"evidence": "body match: 회수기간법", "from_term": "payback-period", "relation": "defined_in", "to_id": "npv-vs-irr-decision", "to_kind": "rag_chunk", "weight": 1.0}
+{"evidence": "회수기간법은 시간가치 무시, NPV는 시간가치 반영 → 회수기간만으로 의사결정 위험", "from_term": "payback-period", "relation": "confusable_with", "to_id": "npv", "to_kind": "term", "weight": 1.0}
+{"evidence": "tutorial body: 회수기간법", "from_term": "payback-period", "relation": "explained_in", "to_id": "tutorial_cpa1_business_finance", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "body match: 완전경쟁", "from_term": "perfect-competition", "relation": "defined_in", "to_id": "consumer-producer-surplus", "to_kind": "rag_chunk", "weight": 1.0}
+{"evidence": "독점은 가격설정자, 완전경쟁은 가격수용자 — 정반대", "from_term": "perfect-competition", "relation": "confusable_with", "to_id": "monopoly", "to_kind": "term", "weight": 1.0}
+{"evidence": "keyword match: 수행의무", "from_term": "performance-obligation", "relation": "defined_in", "to_id": "kifrs-1115-revenue", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "수행의무 이행 후 미청구한 권리가 계약자산이며 이행 자체는 수행의무", "from_term": "performance-obligation", "relation": "confusable_with", "to_id": "contract-asset", "to_kind": "term", "weight": 1.0}
+{"evidence": "5단계 중 2단계가 수행의무 식별이며 한 계약에 여러 수행의무가 있을 수 있다", "from_term": "performance-obligation", "relation": "confusable_with", "to_id": "revenue-recognition-5-step", "to_kind": "term", "weight": 1.0}
+{"evidence": "5 forces는 외부 산업구조 분석, SWOT은 내외부 통합 분석", "from_term": "porters-five-forces", "relation": "confusable_with", "to_id": "swot-analysis", "to_kind": "term", "weight": 1.0}
+{"evidence": "가치사슬은 기업 내부 활동 분석, 5 forces는 산업 외부 구조 분석", "from_term": "porters-five-forces", "relation": "confusable_with", "to_id": "value-chain", "to_kind": "term", "weight": 1.0}
+{"evidence": "keyword match: 신주인수권", "from_term": "preemptive-right", "relation": "defined_in", "to_id": "share-bond-capital-financing", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "배당은 이익 분배(현금/주식 흐름), 신주인수권은 신주 우선 매입 권리", "from_term": "preemptive-right", "relation": "confusable_with", "to_id": "dividend-payment", "to_kind": "term", "weight": 1.0}
+{"evidence": "required_concepts: 가격탄력성", "from_term": "price-elasticity", "relation": "tested_in", "to_id": "cpa1-economics-001", "to_kind": "problem", "weight": 2.0}
+{"evidence": "keyword match: 가격탄력성", "from_term": "price-elasticity", "relation": "defined_in", "to_id": "elasticity-formulas", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "독립변수가 소득(η) vs 가격(ε) — 측정 대상이 다르다", "from_term": "price-elasticity", "relation": "confusable_with", "to_id": "income-elasticity", "to_kind": "term", "weight": 1.0}
+{"evidence": "keyword match: 가격차이", "from_term": "price-variance", "relation": "defined_in", "to_id": "standard-cost-variance-formulas", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "가격차이는 구매 단가 이슈, 수량차이는 사용량(능률) 이슈", "from_term": "price-variance", "relation": "confusable_with", "to_id": "quantity-variance", "to_kind": "term", "weight": 1.0}
+{"evidence": "tutorial body: 가격차이", "from_term": "price-variance", "relation": "explained_in", "to_id": "tutorial_cpa1_accounting_cost", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "환산량은 종합원가계산에서 사용하는 단위 측정 수단", "from_term": "process-costing", "relation": "confusable_with", "to_id": "equivalent-units", "to_kind": "term", "weight": 1.0}
+{"evidence": "process-costing required before equivalent-units", "from_term": "process-costing", "relation": "prerequisite_of", "to_id": "equivalent-units", "to_kind": "term", "weight": 1.0}
+{"evidence": "종합원가는 단일 제품의 공정 흐름, 결합원가는 한 공정에서 동시에 나오는 다품종", "from_term": "process-costing", "relation": "confusable_with", "to_id": "joint-cost", "to_kind": "term", "weight": 1.0}
+{"evidence": "keyword match: 생산자잉여", "from_term": "producer-surplus", "relation": "defined_in", "to_id": "consumer-producer-surplus", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "소비자잉여는 수요곡선과 가격선 사이, 생산자잉여는 가격선과 공급곡선 사이", "from_term": "producer-surplus", "relation": "confusable_with", "to_id": "consumer-surplus", "to_kind": "term", "weight": 1.0}
+{"evidence": "충당부채는 인식 요건 충족 시 재무상태표 계상, 우발부채는 주석 공시만", "from_term": "provision", "relation": "confusable_with", "to_id": "contingent-liability", "to_kind": "term", "weight": 1.0}
+{"evidence": "tutorial body: 충당금", "from_term": "provision", "relation": "explained_in", "to_id": "tutorial_cpa2_audit", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "keyword match: 수량차이", "from_term": "quantity-variance", "relation": "defined_in", "to_id": "standard-cost-variance-formulas", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "가격차이는 구매 단가 이슈, 수량차이는 사용량(능률) 이슈", "from_term": "quantity-variance", "relation": "confusable_with", "to_id": "price-variance", "to_kind": "term", "weight": 1.0}
+{"evidence": "tutorial body: 능률차이", "from_term": "quantity-variance", "relation": "explained_in", "to_id": "tutorial_cpa1_accounting_cost", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "required_concepts: 관련원가", "from_term": "relevant-cost", "relation": "tested_in", "to_id": "cpa1-accounting-016", "to_kind": "problem", "weight": 2.0}
+{"evidence": "keyword match: 관련원가", "from_term": "relevant-cost", "relation": "defined_in", "to_id": "relevant-cost-decision-making", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "관련원가는 미래 대안 간 차이, 매몰원가는 이미 발생해 의사결정과 무관", "from_term": "relevant-cost", "relation": "confusable_with", "to_id": "sunk-cost", "to_kind": "term", "weight": 1.0}
+{"evidence": "손상차손은 당기손익(역방향), 재평가잉여금은 기타포괄손익(상방)", "from_term": "revaluation-surplus", "relation": "confusable_with", "to_id": "impairment-loss", "to_kind": "term", "weight": 1.0}
+{"evidence": "keyword match: 수익인식 5단계", "from_term": "revenue-recognition-5-step", "relation": "defined_in", "to_id": "kifrs-1115-revenue", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "5단계 중 2단계가 수행의무 식별이며 한 계약에 여러 수행의무가 있을 수 있다", "from_term": "revenue-recognition-5-step", "relation": "confusable_with", "to_id": "performance-obligation", "to_kind": "term", "weight": 1.0}
+{"evidence": "revenue-recognition-5-step required before performance-obligation", "from_term": "revenue-recognition-5-step", "relation": "prerequisite_of", "to_id": "performance-obligation", "to_kind": "term", "weight": 1.0}
+{"evidence": "결합원가는 분리점 이전 공통 발생분, 분리원가는 분리점 이후 제품별 추적 가능분", "from_term": "separable-cost", "relation": "confusable_with", "to_id": "joint-cost", "to_kind": "term", "weight": 1.0}
+{"evidence": "keyword match: 분리과세", "from_term": "separate-taxation", "relation": "defined_in", "to_id": "income-tax-financial-income", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "분리과세는 다른 소득과 합산 없이 원천징수 세율로 종결, 종합과세는 합산해 누진율 적용", "from_term": "separate-taxation", "relation": "confusable_with", "to_id": "comprehensive-taxation", "to_kind": "term", "weight": 1.0}
+{"evidence": "원천징수는 절차, 분리과세는 그 결과 종결 여부 — 모든 원천징수가 분리과세는 아니다", "from_term": "separate-taxation", "relation": "confusable_with", "to_id": "withholding-tax", "to_kind": "term", "weight": 1.0}
+{"evidence": "주식기준보상은 측정/인식 이슈, 희석주당이익은 결과 지표 산출 이슈", "from_term": "share-based-payment", "relation": "confusable_with", "to_id": "dilutive-eps", "to_kind": "term", "weight": 1.0}
+{"evidence": "concept_tags partial: 주주총회", "from_term": "shareholders-meeting", "relation": "tested_in", "to_id": "cpa1-corporate_law-002", "to_kind": "problem", "weight": 1.0}
+{"evidence": "keyword match: 주주총회", "from_term": "shareholders-meeting", "relation": "defined_in", "to_id": "corporate-organs-authority-allocation", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "body match: 주주총회", "from_term": "shareholders-meeting", "relation": "defined_in", "to_id": "share-bond-capital-financing", "to_kind": "rag_chunk", "weight": 1.0}
+{"evidence": "이사회는 업무집행기관, 주주총회는 회사 최고 의사결정기관(소유자 회의)", "from_term": "shareholders-meeting", "relation": "confusable_with", "to_id": "board-of-directors", "to_kind": "term", "weight": 1.0}
+{"evidence": "합병/분할은 절차이며 주주총회 특별결의가 필수 단계 중 하나", "from_term": "shareholders-meeting", "relation": "confusable_with", "to_id": "corporate-reorganization", "to_kind": "term", "weight": 1.0}
+{"evidence": "tutorial body: 주주총회", "from_term": "shareholders-meeting", "relation": "explained_in", "to_id": "tutorial_cpa1_corporate_law", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "tutorial body: 주주총회", "from_term": "shareholders-meeting", "relation": "explained_in", "to_id": "tutorial_cpa1_corporate_law_reorganization", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "간이과세자는 매입세액공제가 제한적 — 정상 일반과세자와 다름", "from_term": "simplified-vat-payer", "relation": "confusable_with", "to_id": "input-vat", "to_kind": "term", "weight": 1.0}
+{"evidence": "required_concepts: 표준원가", "from_term": "standard-cost", "relation": "tested_in", "to_id": "cpa1-accounting-015", "to_kind": "problem", "weight": 2.0}
+{"evidence": "표준원가는 예정 원가의 기준값, ABC는 간접원가 배부 방법론이라 분석 층위가 다르다", "from_term": "standard-cost", "relation": "confusable_with", "to_id": "activity-based-cost", "to_kind": "term", "weight": 1.0}
+{"evidence": "실제원가는 사후 측정, 표준원가는 사전 설정이라 차이 분석의 출발점이 된다", "from_term": "standard-cost", "relation": "confusable_with", "to_id": "actual-cost", "to_kind": "term", "weight": 1.0}
+{"evidence": "standard-cost required before price-variance", "from_term": "standard-cost", "relation": "prerequisite_of", "to_id": "price-variance", "to_kind": "term", "weight": 1.0}
+{"evidence": "standard-cost required before quantity-variance", "from_term": "standard-cost", "relation": "prerequisite_of", "to_id": "quantity-variance", "to_kind": "term", "weight": 1.0}
+{"evidence": "tutorial body: 표준원가", "from_term": "standard-cost", "relation": "explained_in", "to_id": "tutorial_cpa1_accounting_cost", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "concept_tags partial: 감사", "from_term": "statutory-auditor", "relation": "tested_in", "to_id": "cpa1-corporate_law-002", "to_kind": "problem", "weight": 1.0}
+{"evidence": "concept_tags partial: 감사", "from_term": "statutory-auditor", "relation": "tested_in", "to_id": "cpa1-corporate_law-005", "to_kind": "problem", "weight": 1.0}
+{"evidence": "keyword match: 감사", "from_term": "statutory-auditor", "relation": "defined_in", "to_id": "corporate-organs-authority-allocation", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "body match: 감사", "from_term": "statutory-auditor", "relation": "defined_in", "to_id": "cpa-act-and-external-audit-act", "to_kind": "rag_chunk", "weight": 1.0}
+{"evidence": "이사회는 경영 의사결정, 감사는 그 결정과 집행을 감독", "from_term": "statutory-auditor", "relation": "confusable_with", "to_id": "board-of-directors", "to_kind": "term", "weight": 1.0}
+{"evidence": "tutorial body: 감사", "from_term": "statutory-auditor", "relation": "explained_in", "to_id": "tutorial_cpa2_audit", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "대체효과+소득효과 = 전체 가격효과 (슬러츠키 분해)", "from_term": "substitution-effect", "relation": "confusable_with", "to_id": "income-effect", "to_kind": "term", "weight": 1.0}
+{"evidence": "required_concepts: 매몰원가", "from_term": "sunk-cost", "relation": "tested_in", "to_id": "cpa1-accounting-016", "to_kind": "problem", "weight": 2.0}
+{"evidence": "keyword match: 매몰원가", "from_term": "sunk-cost", "relation": "defined_in", "to_id": "relevant-cost-decision-making", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "기회비용은 포기한 미래 가치, 매몰원가는 회수 불가능한 과거 지출", "from_term": "sunk-cost", "relation": "confusable_with", "to_id": "opportunity-cost", "to_kind": "term", "weight": 1.0}
+{"evidence": "관련원가는 미래 대안 간 차이, 매몰원가는 이미 발생해 의사결정과 무관", "from_term": "sunk-cost", "relation": "confusable_with", "to_id": "relevant-cost", "to_kind": "term", "weight": 1.0}
+{"evidence": "keyword match: SWOT", "from_term": "swot-analysis", "relation": "defined_in", "to_id": "strategy-five-forces-swot-bcg", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "5 forces는 외부 산업구조 분석, SWOT은 내외부 통합 분석", "from_term": "swot-analysis", "relation": "confusable_with", "to_id": "porters-five-forces", "to_kind": "term", "weight": 1.0}
+{"evidence": "tutorial body: SWOT", "from_term": "swot-analysis", "relation": "explained_in", "to_id": "tutorial_cpa1_business_management", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "keyword match: 체계적 위험", "from_term": "systematic-risk", "relation": "defined_in", "to_id": "capm-and-portfolio-risk", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "베타는 체계적 위험의 측정치, 체계적 위험은 분산투자로 제거되지 않는 위험 자체", "from_term": "systematic-risk", "relation": "confusable_with", "to_id": "beta", "to_kind": "term", "weight": 1.0}
+{"evidence": "systematic-risk required before beta", "from_term": "systematic-risk", "relation": "prerequisite_of", "to_id": "beta", "to_kind": "term", "weight": 1.0}
+{"evidence": "체계적 위험은 시장 전반(분산 불가), 비체계적 위험은 개별 기업 고유(분산 가능)", "from_term": "systematic-risk", "relation": "confusable_with", "to_id": "unsystematic-risk", "to_kind": "term", "weight": 1.0}
+{"evidence": "세액공제는 세액에서 차감, 소득공제는 과세표준에서 차감 → 절감 효과가 다르다", "from_term": "tax-credit", "relation": "confusable_with", "to_id": "taxable-income", "to_kind": "term", "weight": 1.0}
+{"evidence": "세액공제는 세액에서 차감, 소득공제는 과세표준에서 차감 → 절감 효과가 다르다", "from_term": "taxable-income", "relation": "confusable_with", "to_id": "tax-credit", "to_kind": "term", "weight": 1.0}
+{"evidence": "tutorial body: 과세표준", "from_term": "taxable-income", "relation": "explained_in", "to_id": "tutorial_cta1_tax_intro", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "tutorial body: 과세표준", "from_term": "taxable-income", "relation": "explained_in", "to_id": "tutorial_cta2_accounting_part2", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "tutorial body: 과세표준", "from_term": "taxable-income", "relation": "explained_in", "to_id": "tutorial_cta2_tax_law_part2", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "keyword match: 상호", "from_term": "trade-name", "relation": "defined_in", "to_id": "commercial-general-merchant-tradename", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "body match: 상호", "from_term": "trade-name", "relation": "defined_in", "to_id": "npv-vs-irr-decision", "to_kind": "rag_chunk", "weight": 1.0}
+{"evidence": "상업등기는 등기 행위 자체, 상호는 등기 대상 중 하나", "from_term": "trade-name", "relation": "confusable_with", "to_id": "commercial-register", "to_kind": "term", "weight": 1.0}
+{"evidence": "상인은 주체, 상호는 그 상인이 영업에 사용하는 명칭", "from_term": "trade-name", "relation": "confusable_with", "to_id": "merchant", "to_kind": "term", "weight": 1.0}
+{"evidence": "tutorial body: 상호", "from_term": "trade-name", "relation": "explained_in", "to_id": "tutorial_cpa1_business_finance", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "MM은 세금/파산비용 무시 가정, 상충이론은 절세효과와 파산비용의 trade-off로 최적 부채비율 존재", "from_term": "trade-off-theory", "relation": "confusable_with", "to_id": "mm-proposition", "to_kind": "term", "weight": 1.0}
+{"evidence": "keyword match: 비체계적 위험", "from_term": "unsystematic-risk", "relation": "defined_in", "to_id": "capm-and-portfolio-risk", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "체계적 위험은 시장 전반(분산 불가), 비체계적 위험은 개별 기업 고유(분산 가능)", "from_term": "unsystematic-risk", "relation": "confusable_with", "to_id": "systematic-risk", "to_kind": "term", "weight": 1.0}
+{"evidence": "tutorial body: 고유위험", "from_term": "unsystematic-risk", "relation": "explained_in", "to_id": "tutorial_cpa2_audit", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "가치사슬은 기업 내부 활동 분석, 5 forces는 산업 외부 구조 분석", "from_term": "value-chain", "relation": "confusable_with", "to_id": "porters-five-forces", "to_kind": "term", "weight": 1.0}
+{"evidence": "전부원가는 GAAP 기준 외부보고용, 변동원가는 내부 의사결정용", "from_term": "variable-costing", "relation": "confusable_with", "to_id": "absorption-costing", "to_kind": "term", "weight": 1.0}
+{"evidence": "keyword match: 면세", "from_term": "vat-exemption", "relation": "defined_in", "to_id": "vat-exemption-list", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "면세는 매입세액 공제 불가(불완전면세), 영세율은 매입세액 환급 가능", "from_term": "vat-exemption", "relation": "confusable_with", "to_id": "zero-rated-vat", "to_kind": "term", "weight": 1.0}
+{"evidence": "tutorial body: 면세", "from_term": "vat-exemption", "relation": "explained_in", "to_id": "tutorial_cta2_tax_law_part2", "to_kind": "tutorial", "weight": 1.0}
+{"evidence": "required_concepts: WACC", "from_term": "wacc", "relation": "tested_in", "to_id": "cpa1-business-004", "to_kind": "problem", "weight": 2.0}
+{"evidence": "keyword match: 가중평균자본비용", "from_term": "wacc", "relation": "defined_in", "to_id": "wacc-and-mm-proposition", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "CAPM은 개별 주식의 자기자본비용 추정, WACC는 기업 전체 자본비용 가중평균", "from_term": "wacc", "relation": "confusable_with", "to_id": "capm", "to_kind": "term", "weight": 1.0}
+{"evidence": "Re는 주주 요구수익률, WACC는 부채까지 가중평균한 전체 자본비용", "from_term": "wacc", "relation": "confusable_with", "to_id": "cost-of-equity", "to_kind": "term", "weight": 1.0}
+{"evidence": "wacc required before mm-proposition", "from_term": "wacc", "relation": "prerequisite_of", "to_id": "mm-proposition", "to_kind": "term", "weight": 1.0}
+{"evidence": "concept_tags partial: 원천징수", "from_term": "withholding-tax", "relation": "tested_in", "to_id": "cpa1-tax-008", "to_kind": "problem", "weight": 1.0}
+{"evidence": "keyword match: 원천징수", "from_term": "withholding-tax", "relation": "defined_in", "to_id": "income-tax-financial-income", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "원천징수는 사전 분납, 확정신고는 사후 합산 정산", "from_term": "withholding-tax", "relation": "confusable_with", "to_id": "final-return", "to_kind": "term", "weight": 1.0}
+{"evidence": "원천징수는 절차, 분리과세는 그 결과 종결 여부 — 모든 원천징수가 분리과세는 아니다", "from_term": "withholding-tax", "relation": "confusable_with", "to_id": "separate-taxation", "to_kind": "term", "weight": 1.0}
+{"evidence": "keyword match: 영세율", "from_term": "zero-rated-vat", "relation": "defined_in", "to_id": "vat-exemption-list", "to_kind": "rag_chunk", "weight": 2.0}
+{"evidence": "면세는 매입세액 공제 불가(불완전면세), 영세율은 매입세액 환급 가능", "from_term": "zero-rated-vat", "relation": "confusable_with", "to_id": "vat-exemption", "to_kind": "term", "weight": 1.0}
+{"evidence": "tutorial body: 영세율", "from_term": "zero-rated-vat", "relation": "explained_in", "to_id": "tutorial_cta2_tax_law_part2", "to_kind": "tutorial", "weight": 1.0}

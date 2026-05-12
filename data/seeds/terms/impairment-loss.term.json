@@ -1,0 +1,21 @@
+{
+  "term_id": "impairment-loss",
+  "name_ko": "손상차손",
+  "name_en": "impairment loss",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "자산의 회수가능액이 장부금액보다 낮을 때 인식하는 차손. 회수가능액은 순공정가치와 사용가치 중 큰 값.",
+  "formula": "손상차손 = 장부금액 - max(순공정가치, 사용가치)",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "revaluation-surplus",
+      "reason": "손상차손은 당기손익(역방향), 재평가잉여금은 기타포괄손익(상방)"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "장부 1억, 회수가능액 7천만원 → 손상차손 3천만원",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "sunk-cost",
+  "name_ko": "매몰원가",
+  "name_en": "sunk cost",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "이미 발생해 회수할 수 없는 원가. 미래 의사결정에 영향을 주어서는 안 된다.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "relevant-cost",
+      "reason": "매몰원가는 무시해야 할 원가, 관련원가는 의사결정에서 비교해야 할 원가"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "개발이 끝난 R&D 비용 5억은 출시/중단 결정에서 매몰원가",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

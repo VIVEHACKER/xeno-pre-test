@@ -1,0 +1,23 @@
+{
+  "term_id": "dividend-discount-model",
+  "name_ko": "배당평가모형",
+  "name_en": "dividend discount model",
+  "aliases": [
+    "DDM"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "주식의 가치를 미래 배당의 현재가치 합으로 보는 모형. 고든 성장모형이 단순 형태.",
+  "formula": "P = Σ Dt / (1+r)^t",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "gordon-growth-model",
+      "reason": "DDM은 일반 모형, 고든 성장모형은 일정 성장률 g 가정한 특수 형태"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "매년 1,000원 영구 배당, r=10% → 주가 = 10,000원",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

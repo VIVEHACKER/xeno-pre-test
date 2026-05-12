@@ -1,0 +1,24 @@
+{
+  "term_id": "activity-based-cost",
+  "name_ko": "활동기준원가",
+  "name_en": "activity-based costing",
+  "aliases": [
+    "ABC",
+    "활동기준원가계산"
+  ],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "제조간접원가를 활동 단위로 묶고, 각 활동의 원가동인(cost driver)에 따라 제품에 배부하는 원가계산 방식. 전통적 조업도 기준 배부의 왜곡을 줄인다.",
+  "formula": "제품 배부 = Σ (활동별 원가 ÷ 활동별 원가동인 총량) × 제품의 원가동인 소비량",
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "standard-cost",
+      "reason": "표준원가는 예정 원가의 기준값, ABC는 간접원가 배부 방법론이라 분석 층위가 다르다"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "기계가동시간이 아닌 '주문 처리 횟수'를 동인으로 사용해 소량다품종 제품의 원가를 더 정확히 배부",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

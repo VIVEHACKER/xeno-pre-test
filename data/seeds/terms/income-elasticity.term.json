@@ -1,0 +1,21 @@
+{
+  "term_id": "income-elasticity",
+  "name_ko": "소득탄력성",
+  "name_en": "income elasticity",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "소득 변화율에 대한 수요량 변화율의 비. 양수면 정상재, 음수면 열등재.",
+  "formula": "η = %ΔQ / %ΔI",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "price-elasticity",
+      "reason": "독립변수가 소득(η) vs 가격(ε) — 측정 대상이 다르다"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "소득 10% 증가에 외식 20% 증가 → η = 2 (사치재)",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

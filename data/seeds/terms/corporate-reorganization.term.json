@@ -1,0 +1,25 @@
+{
+  "term_id": "corporate-reorganization",
+  "name_ko": "회사 분할·합병",
+  "name_en": "merger and division",
+  "aliases": [
+    "M&A",
+    "합병",
+    "분할"
+  ],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "둘 이상의 회사가 하나로 합쳐지거나(합병), 한 회사가 둘 이상으로 나뉘는(분할) 조직 재편 절차. 채권자 보호와 주주 보호 절차가 핵심.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "shareholders-meeting",
+      "reason": "합병/분할은 절차이며 주주총회 특별결의가 필수 단계 중 하나"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "A주식회사가 B주식회사를 흡수합병하면 B는 청산 없이 소멸",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

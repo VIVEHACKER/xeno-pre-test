@@ -1,0 +1,25 @@
+{
+  "term_id": "option-gamma",
+  "name_ko": "옵션 감마",
+  "name_en": "option gamma",
+  "aliases": [
+    "Γ"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "델타의 기초자산 가격에 대한 변화율. 옵션 가격의 2차 민감도이며 ATM 옵션에서 가장 크다.",
+  "formula": "감마 = ∂(델타) / ∂(기초자산가격)",
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "option-delta",
+      "reason": "델타는 1차 변화율, 감마는 그 변화율의 변화율"
+    }
+  ],
+  "prerequisite_terms": [
+    "option-delta"
+  ],
+  "example": "ATM 콜옵션은 기초자산 변동 시 델타 변화가 가장 커서 감마가 최대",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

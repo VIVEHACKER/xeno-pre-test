@@ -25,6 +25,7 @@ from cpa_first.engine import (
     load_problem_solution_maps,
     prescribe,
 )
+from cpa_first.subjects import all_subject_ids
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -42,6 +43,9 @@ REVIEWABLE_REF_TYPES = {"decision_rule", "problem_intelligence"}
 REVIEW_STATUSES_RULE = {"machine_draft", "machine_extracted", "human_reviewed", "approved", "rejected"}
 REVIEW_STATUSES_PROBLEM = {"ai_draft", "expert_reviewed", "approved", "rejected"}
 
+# 등록된 과목 id 합집합으로 동적 패턴 생성. 새 과목 추가 시 subjects.py만 수정.
+_SUBJECT_PATTERN = "^(" + "|".join(all_subject_ids()) + ")$"
+
 
 class ConceptMastery(BaseModel):
     concept: str
@@ -49,7 +53,7 @@ class ConceptMastery(BaseModel):
 
 
 class SubjectStateIn(BaseModel):
-    subject: str = Field(pattern="^(accounting|tax)$")
+    subject: str = Field(pattern=_SUBJECT_PATTERN)
     accuracy: float = Field(ge=0, le=1)
     time_overrun_rate: float = Field(ge=0, le=1)
     risk_tags: list[str] = Field(default_factory=list)

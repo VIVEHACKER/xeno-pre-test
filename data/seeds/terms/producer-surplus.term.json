@@ -1,0 +1,21 @@
+{
+  "term_id": "producer-surplus",
+  "name_ko": "생산자잉여",
+  "name_en": "producer surplus",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "생산자가 받은 가격과 받을 의향이 있던 최저가격(한계비용)의 차이. 시장가격 아래, 공급곡선 위 영역.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "consumer-surplus",
+      "reason": "위치가 반대 — 수요/공급 곡선 기준선 차이"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "원가 5,000원짜리를 7,000원에 팔았다면 생산자잉여 2,000원",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

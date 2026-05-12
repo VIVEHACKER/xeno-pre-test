@@ -1,0 +1,23 @@
+{
+  "term_id": "vat-exemption",
+  "name_ko": "면세",
+  "name_en": "VAT exemption",
+  "aliases": [
+    "부가가치세 면세"
+  ],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "기초생필품, 의료/교육 등에 부가가치세를 부과하지 않는 제도. 영세율과 달리 매입세액은 공제되지 않는다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "zero-rated-vat",
+      "reason": "면세는 매입세액 공제 불가(불완전면세), 영세율은 매입세액 환급 가능"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "병원 진료비는 면세 → 매출 부가세 0이지만 진료 장비 매입세액도 공제 불가",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,23 @@
+{
+  "term_id": "fair-value",
+  "name_ko": "공정가치",
+  "name_en": "fair value",
+  "aliases": [
+    "FV"
+  ],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "자발적 거래에서 자산을 매도하거나 부채를 이전할 때 받거나 지급하는 가격. 시장가치가 1순위(Level 1), 관찰 가능한 입력이 2순위(Level 2), 모델 추정이 3순위(Level 3).",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "amortized-cost",
+      "reason": "측정 기준이 달라 평가손익 위치(당기손익 vs 기타포괄손익)가 갈린다"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "상장주식은 종가(Level 1)로, 비상장채권은 동종 거래(Level 2)로 측정",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

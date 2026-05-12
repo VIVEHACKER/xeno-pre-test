@@ -1,0 +1,21 @@
+{
+  "term_id": "zero-rated-vat",
+  "name_ko": "영세율",
+  "name_en": "zero-rated VAT",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "수출 등에 0% 세율을 적용하는 제도. 매출세액은 0이지만 매입세액은 환급받을 수 있다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "vat-exemption",
+      "reason": "영세율은 매입세액 환급 가능(완전면세), 면세는 매입세액 공제 불가(불완전면세)"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "수출재 1억 매출 → 매출세액 0, 그에 대응하는 매입세액은 환급",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

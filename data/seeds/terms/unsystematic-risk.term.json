@@ -1,0 +1,23 @@
+{
+  "term_id": "unsystematic-risk",
+  "name_ko": "비체계적 위험",
+  "name_en": "unsystematic risk",
+  "aliases": [
+    "고유위험"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "개별 기업이나 산업에 국한된 위험. 분산투자로 제거 가능. CAPM에서 보상받지 못한다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "systematic-risk",
+      "reason": "비체계적은 분산 가능 → 보상 없음, 체계적은 분산 불가 → 시장 프리미엄 보상"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "특정 회사의 CEO 사망 같은 사건은 비체계적 위험",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

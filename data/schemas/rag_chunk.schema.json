@@ -37,7 +37,18 @@
     },
     "subject": {
       "type": "string",
-      "enum": ["accounting", "tax", "general"]
+      "description": "cpa_first.subjects 레지스트리와 동기화. 'general'은 과목 무관 자료.",
+      "enum": [
+        "accounting",
+        "tax",
+        "business",
+        "economics",
+        "corporate_law",
+        "management",
+        "finance",
+        "cost_accounting",
+        "general"
+      ]
     },
     "unit": { "type": ["string", "null"] },
     "topic_tags": {

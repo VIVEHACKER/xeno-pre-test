@@ -1,0 +1,21 @@
+{
+  "term_id": "value-chain",
+  "name_ko": "가치사슬",
+  "name_en": "value chain",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "기업이 가치를 창출하는 활동을 본원활동(생산/물류/판매/서비스)과 지원활동(인사/R&D/구매/인프라)로 분해한 프레임워크.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "porters-five-forces",
+      "reason": "가치사슬은 기업 내부 활동 분석, 5 forces는 산업 외부 구조 분석"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "유통기업은 물류 활동이 핵심 가치원천 → 그 활동에 자원 집중",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

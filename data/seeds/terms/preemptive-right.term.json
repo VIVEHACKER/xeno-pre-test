@@ -1,0 +1,21 @@
+{
+  "term_id": "preemptive-right",
+  "name_ko": "신주인수권",
+  "name_en": "preemptive right",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "기존 주주가 회사가 발행하는 신주를 자신의 지분 비율대로 우선 인수할 권리. 정관으로 제한 가능.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "dividend-payment",
+      "reason": "신주인수권은 자본 측면 권리, 배당은 이익 분배 측면 권리"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "지분 10% 주주는 신주 1,000주 발행 시 100주 우선 인수권",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,23 @@
+{
+  "term_id": "price-variance",
+  "name_ko": "가격차이",
+  "name_en": "price variance",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "실제 가격과 표준 가격의 차이가 실제 수량에 적용된 차이. 구매부 책임으로 본다.",
+  "formula": "가격차이 = (실제가격 - 표준가격) × 실제수량",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "quantity-variance",
+      "reason": "가격차이는 구매 단가 이슈, 수량차이는 사용량(능률) 이슈"
+    }
+  ],
+  "prerequisite_terms": [
+    "standard-cost"
+  ],
+  "example": "표준 5,000원/kg, 실제 4,800원/kg, 실제 사용 110kg → 가격차이 -22,000(유리)",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,23 @@
+{
+  "term_id": "deemed-input-vat",
+  "name_ko": "의제매입세액",
+  "name_en": "deemed input VAT",
+  "aliases": [
+    "의제매입세액공제"
+  ],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "부가가치세 면세 농수산물 등을 구입해 과세재화의 원재료로 사용한 경우, 실제 부담하지 않은 매입세액을 일정 의제율로 인정해 매출세액에서 공제하는 제도.",
+  "formula": "의제매입세액 = 면세 농수산물 매입가액 × 업종별 의제율",
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "input-vat",
+      "reason": "일반 매입세액은 실제 부담분, 의제매입세액은 실제 부담 없는 면세 매입을 의제로 인정한 것"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "음식점업이 면세 농산물을 매입해 음식으로 판매하면 매입가의 일정 비율을 매출세액에서 공제 가능",
+  "rights_status": "official_paraphrase",
+  "review_status": "ai_draft"
+}

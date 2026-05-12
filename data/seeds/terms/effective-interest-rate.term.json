@@ -1,0 +1,24 @@
+{
+  "term_id": "effective-interest-rate",
+  "name_ko": "유효이자율",
+  "name_en": "effective interest rate",
+  "aliases": [
+    "유효이자율법",
+    "EIR"
+  ],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "금융상품의 미래 현금흐름 추정치를 최초 인식 시점 장부금액과 일치시키는 할인율. 이자수익/이자비용 인식의 기준이 되며 액면이자율과 다를 수 있다.",
+  "formula": "이자수익 = 기초 장부금액 × 유효이자율",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "nominal-interest-rate",
+      "reason": "액면이자율은 현금 수취 기준, 유효이자율은 회수원가 기준이라 이자수익 크기가 달라진다"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "액면이자율 5%로 발행된 사채를 시장이 할인 평가해 발행가가 떨어지면 유효이자율은 5%보다 높아진다",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

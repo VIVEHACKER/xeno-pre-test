@@ -1,0 +1,23 @@
+{
+  "term_id": "variable-costing",
+  "name_ko": "변동원가계산",
+  "name_en": "variable costing",
+  "aliases": [
+    "직접원가계산"
+  ],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "제품원가에 변동제조원가만 포함하고 고정제조원가는 기간비용으로 처리하는 방법. 의사결정과 CVP 분석에 유리.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "absorption-costing",
+      "reason": "변동원가는 고정제조원가를 기간비용으로, 전부원가는 제품원가로 → 기말재고 평가와 순이익이 달라짐"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "변동제조원가 50, 고정제조원가 30 → 변동원가계산에서는 제품원가 50만 인식",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

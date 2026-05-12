@@ -1,0 +1,23 @@
+{
+  "term_id": "share-based-payment",
+  "name_ko": "주식기준보상",
+  "name_en": "share-based payment",
+  "aliases": [
+    "SBP"
+  ],
+  "subject": "accounting",
+  "unit": "equity",
+  "definition": "기업이 재화/용역의 대가로 자기지분상품 또는 그 가치 기반 현금을 지급하는 거래. 부여일 공정가치로 측정하고 가득기간에 안분.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "dilutive-eps",
+      "reason": "주식기준보상은 측정/인식 이슈, 희석주당이익은 결과 지표 산출 이슈"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "임직원 스톡옵션 1,000주를 부여일 공정가치 1만원으로 측정 → 가득기간에 인건비 인식",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

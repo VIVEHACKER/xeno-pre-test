@@ -1,0 +1,25 @@
+{
+  "term_id": "equivalent-units",
+  "name_ko": "완성품환산량",
+  "name_en": "equivalent units of production",
+  "aliases": [
+    "EUP"
+  ],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "기말재공품의 완성도를 반영한 완성품 단위 수. 평균법과 선입선출법(FIFO)의 산출 결과가 다르다.",
+  "formula": "EUP = 완성품 수 + 기말재공품 수 × 완성도",
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "process-costing",
+      "reason": "환산량은 종합원가계산에서 사용하는 단위 측정 수단"
+    }
+  ],
+  "prerequisite_terms": [
+    "process-costing"
+  ],
+  "example": "완성품 800개 + 기말재공품 200개(완성도 50%) → EUP 900개",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

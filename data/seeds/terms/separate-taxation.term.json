@@ -1,0 +1,23 @@
+{
+  "term_id": "separate-taxation",
+  "name_ko": "분리과세",
+  "name_en": "separate taxation",
+  "aliases": [
+    "분리과세소득"
+  ],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "특정 소득을 다른 소득과 합산하지 않고 원천징수 세율로 과세를 종결하는 방식. 신고/합산 의무가 없다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "comprehensive-taxation",
+      "reason": "종합과세는 합산 후 누진율, 분리과세는 원천징수 세율로 종결되어 신고 의무 자체가 다르다"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "복권 당첨금은 일정 금액 이하는 분리과세로 원천징수만으로 과세가 끝난다",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

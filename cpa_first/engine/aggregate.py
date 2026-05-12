@@ -13,6 +13,8 @@ from __future__ import annotations
 
 from typing import Any
 
+from cpa_first.subjects import is_known_subject
+
 
 def _problems_by_id(problems: list[dict]) -> dict[str, dict]:
     return {p["problem_id"]: p for p in problems}
@@ -69,12 +71,12 @@ def aggregate_user_state(
     """누적 로그 + 환경 컨텍스트 → user_state.schema.json 호환 dict."""
     pbi = _problems_by_id(problems)
 
-    # 과목별 분리
+    # 과목별 분리. 등록된 과목만 누적 (알 수 없는 과목은 무시).
     by_subject: dict[str, list[dict]] = {}
     for log in logs:
         problem = pbi.get(log["problem_id"])
         subject = problem.get("subject") if problem else None
-        if subject in {"accounting", "tax"}:
+        if subject and is_known_subject(subject):
             by_subject.setdefault(subject, []).append(log)
 
     subject_states: list[dict[str, Any]] = []

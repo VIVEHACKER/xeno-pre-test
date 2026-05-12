@@ -1,0 +1,23 @@
+{
+  "term_id": "standard-cost",
+  "name_ko": "표준원가",
+  "name_en": "standard cost",
+  "aliases": [
+    "표준원가계산"
+  ],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "사전에 정한 단위당 표준 가격과 표준 수량을 기준으로 원가를 계산하는 방식. 실제원가와의 차이는 가격차이/수량차이/효율차이 등으로 분해해 통제 정보로 활용한다.",
+  "formula": "표준원가 = 표준 수량 × 표준 가격",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "actual-cost",
+      "reason": "실제원가는 사후 측정, 표준원가는 사전 설정이라 차이 분석의 출발점이 된다"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "직접재료비 표준이 단위당 2kg × 5,000원인데 실제 2.2kg × 4,800원으로 발생하면 수량차이와 가격차이로 분해",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

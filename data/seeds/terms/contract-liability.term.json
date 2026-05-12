@@ -1,0 +1,21 @@
+{
+  "term_id": "contract-liability",
+  "name_ko": "계약부채",
+  "name_en": "contract liability",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "revenue",
+  "definition": "대가를 받았거나 받기로 한 시점이 수행보다 앞설 때 인식하는 부채. 수행이 완료되면 매출로 대체된다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "contract-asset",
+      "reason": "방향이 정반대 — 계약부채는 받은 돈이 매출 전이라 부채로 잡힘"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "2년 SaaS 선결제 1,200만원은 매출 시점 도래 전까지 계약부채",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

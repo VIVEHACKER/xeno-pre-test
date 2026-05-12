@@ -1,0 +1,25 @@
+{
+  "term_id": "modified-duration",
+  "name_ko": "수정 듀레이션",
+  "name_en": "modified duration",
+  "aliases": [
+    "MD"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "이자율 1%p 변동 시 채권 가격이 몇 % 변하는지를 보여주는 지표. 듀레이션을 (1+r)로 나눈 값.",
+  "formula": "MD = Duration / (1 + r)",
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "duration",
+      "reason": "수정 듀레이션은 가격 변화율(%), 듀레이션은 시간(년)"
+    }
+  ],
+  "prerequisite_terms": [
+    "duration"
+  ],
+  "example": "MD=4.5, 금리 1%p 상승 → 채권 가격 약 4.5% 하락",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

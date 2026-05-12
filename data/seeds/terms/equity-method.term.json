@@ -1,0 +1,21 @@
+{
+  "term_id": "equity-method",
+  "name_ko": "지분법",
+  "name_en": "equity method",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "business_combination",
+  "definition": "중대한 영향력(통상 지분 20~50%)이 있는 관계기업에 적용. 취득원가에서 출발해 피투자기업 순이익의 지분만큼 가산, 배당 시 차감.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "consolidation",
+      "reason": "지분법은 한 줄 표시(투자주식), 연결은 자산/부채를 줄별로 통합"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "40% 지분 보유 회사의 순이익 100억 → 40억을 지분법이익으로 인식",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

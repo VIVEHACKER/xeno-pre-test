@@ -1,0 +1,23 @@
+{
+  "term_id": "is-lm-model",
+  "name_ko": "IS-LM 모형",
+  "name_en": "IS-LM model",
+  "aliases": [
+    "IS-LM"
+  ],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "실물시장 균형(IS)과 화폐시장 균형(LM)을 동시에 충족하는 이자율-소득 결합을 분석하는 단기 거시 모형.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "ad-as-model",
+      "reason": "IS-LM은 단기 이자율-소득 평면, AD-AS는 물가-소득 평면"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "확장적 재정정책(G↑) → IS 우측 이동 → 균형 소득 증가, 이자율 상승",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

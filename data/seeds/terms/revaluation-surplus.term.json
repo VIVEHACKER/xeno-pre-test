@@ -1,0 +1,21 @@
+{
+  "term_id": "revaluation-surplus",
+  "name_ko": "재평가잉여금",
+  "name_en": "revaluation surplus",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "equity",
+  "definition": "유형자산 등을 재평가모형으로 측정해 장부금액이 증가한 부분을 기타포괄손익으로 인식한 자본 항목.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "impairment-loss",
+      "reason": "재평가잉여금은 상방 평가(자본), 손상차손은 하방 평가(당기손익) — 반대 방향"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "공장 장부 5억을 7억으로 재평가 시 2억이 기타포괄손익 → 재평가잉여금",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

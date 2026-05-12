@@ -1,0 +1,23 @@
+{
+  "term_id": "trade-name",
+  "name_ko": "상호",
+  "name_en": "trade name",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "상인이 영업상 자기를 표시하기 위해 사용하는 명칭. 등기로 보호 가능하고 부정 사용 시 사용폐지청구권이 발생.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "merchant",
+      "reason": "상인은 사람/법인, 상호는 그가 영업에 쓰는 명칭"
+    }
+  ],
+  "prerequisite_terms": [
+    "merchant"
+  ],
+  "example": "'주식회사 홍길동상회' 같은 명칭이 상호",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

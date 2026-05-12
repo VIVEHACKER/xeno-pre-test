@@ -1,0 +1,23 @@
+{
+  "term_id": "comprehensive-taxation",
+  "name_ko": "종합과세",
+  "name_en": "comprehensive taxation",
+  "aliases": [
+    "종합소득과세"
+  ],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "이자/배당/사업/근로/연금/기타 소득을 합산해 누진세율로 과세하는 방식. 금융소득 종합과세 기준금액(2천만원) 초과분이 대표적이다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "separate-taxation",
+      "reason": "분리과세는 다른 소득과 합산 없이 원천징수 세율로 종결, 종합과세는 합산해 누진율 적용"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "금융소득이 연 2천만원을 초과하면 초과분이 다른 종합소득과 합산되어 누진세율로 과세된다",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

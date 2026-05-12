@@ -1,0 +1,25 @@
+{
+  "term_id": "cvp-analysis",
+  "name_ko": "CVP 분석",
+  "name_en": "cost-volume-profit analysis",
+  "aliases": [
+    "원가조업도이익분석"
+  ],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "원가, 조업도, 이익의 관계를 분석해 손익분기점과 목표이익 달성 조업도를 산출하는 기법.",
+  "formula": "영업이익 = (단가 - 단위당 변동원가) × 판매량 - 고정원가",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "break-even-point",
+      "reason": "CVP는 분석 프레임 전체, 손익분기점은 CVP의 한 결과값"
+    }
+  ],
+  "prerequisite_terms": [
+    "contribution-margin"
+  ],
+  "example": "단가 100, 변동원가 60, 고정원가 4,000만원 → BEP = 100,000개",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

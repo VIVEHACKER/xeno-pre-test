@@ -1,0 +1,21 @@
+{
+  "term_id": "income-effect",
+  "name_ko": "소득효과",
+  "name_en": "income effect",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "가격 변동이 실질소득을 변화시켜 수요량이 바뀌는 효과. 정상재는 양(+), 열등재는 음(-).",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "substitution-effect",
+      "reason": "대체효과+소득효과 = 전체 가격효과 (슬러츠키 분해)"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "쌀 가격 하락으로 실질소득 증가 → 다른 재화 구매력 증가",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

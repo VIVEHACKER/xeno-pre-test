@@ -290,11 +290,11 @@ function buildDailyPrescription(payload, rx = null) {
   const hours = payload.available_hours_per_day;
   const problemMinutes = Math.max(45, Math.min(120, Math.round(hours * 60 * 0.32)));
   const reviewMinutes = Math.max(15, Math.min(60, Math.round(hours * 60 * 0.14)));
-  const topUnit = problems[0] ? `${SUBJECT_LABEL[problems[0].subject] ?? problems[0].subject} ${unitLabel(problems[0].unit)}` : profile.focus;
+  const topUnit = problems[0] ? `${SUBJECT_LABEL[displaySubjectKey(problems[0])] ?? problems[0].subject} ${unitLabel(problems[0].unit)}` : profile.focus;
   const otherUnits = problemSolutionMaps
     .filter((problem) => problem.subject !== weakState.subject)
     .slice(0, 2)
-    .map((problem) => `${SUBJECT_LABEL[problem.subject] ?? problem.subject} ${unitLabel(problem.unit)}`);
+    .map((problem) => `${SUBJECT_LABEL[displaySubjectKey(problem)] ?? problem.subject} ${unitLabel(problem.unit)}`);
   const deferItems = uniqueItems([
     profile.defer,
     weakState.time_overrun_rate >= 0.35 ? "시간을 넘긴 문제를 끝까지 붙잡기" : "채점 없는 문제 양치기",
@@ -343,7 +343,7 @@ function renderDailyPrescription(payload, rx = null) {
           const analysis = problem.question_analysis || {};
           return `
             <button class="today-problem-card" type="button" data-problem-id="${escapeAttr(problem.question_id)}">
-              <span>${index + 1} · ${escapeHtml(SUBJECT_LABEL[problem.subject] ?? problem.subject)}</span>
+              <span>${index + 1} · ${escapeHtml(SUBJECT_LABEL[displaySubjectKey(problem)] ?? problem.subject)}</span>
               <strong>${escapeHtml(unitLabel(problem.unit))}</strong>
               <small>${escapeHtml(analysis.asked_output || problem.question_id)}</small>
               <p>${escapeHtml(analysis.examiner_intent || problem.explanation || "개념 선택과 보기 판별을 확인합니다.")}</p>
@@ -729,17 +729,41 @@ let attemptStartedAt = 0;
 let attemptTimer = null;
 let latestAttemptDiagnosis = null;
 
-function filteredProblemMaps() {
-  const subject = $("#problemSubjectFilter").value;
-  return problemSolutionMaps.filter((item) => subject === "all" || item.subject === subject);
+// 데이터상 subject="business"는 재무관리(financial_management)와 경영학(management_general)을
+// 함께 담고 있어 UI에서는 단원 기반으로 두 chip으로 분리한다. 키는 SUBJECT_LABEL과 매칭.
+function displaySubjectKey(item) {
+  if (!item) return "mixed";
+  if (item.subject === "business") {
+    return item.unit === "financial_management" ? "finance" : "business";
+  }
+  return item.subject;
 }
 
+function filteredProblemMaps() {
+  const subject = $("#problemSubjectFilter").value;
+  return problemSolutionMaps.filter((item) => subject === "all" || displaySubjectKey(item) === subject);
+}
+
+// 등록 순서대로 chip을 보장하기 위한 표시 순서. SUBJECT_LABEL의 key와 일치해야 한다.
+const PROBLEM_FILTER_ORDER = [
+  "accounting",
+  "tax",
+  "finance",
+  "business",
+  "economics",
+  "corporate_law",
+  "management",
+  "cost_accounting",
+];
+
 function renderProblemFilters() {
-  const subjects = new Map();
-  problemSolutionMaps.forEach((item) => subjects.set(item.subject, SUBJECT_LABEL[item.subject] ?? item.subject));
+  const present = new Set(problemSolutionMaps.map(displaySubjectKey));
+  const ordered = PROBLEM_FILTER_ORDER.filter((key) => present.has(key));
+  // 등록 순서 외에 등장한 미지의 키도 후미에 붙여 누락 방지.
+  Array.from(present).forEach((key) => { if (!ordered.includes(key)) ordered.push(key); });
   $("#problemSubjectFilter").innerHTML = [
     `<option value="all">전체</option>`,
-    ...Array.from(subjects, ([value, label]) => `<option value="${escapeAttr(value)}">${escapeHtml(label)}</option>`),
+    ...ordered.map((value) => `<option value="${escapeAttr(value)}">${escapeHtml(SUBJECT_LABEL[value] ?? value)}</option>`),
   ].join("");
   renderProblemOptions();
 }
@@ -1081,7 +1105,7 @@ function renderSelectedProblemMap() {
   }
 
   $("#problemSolutionSummary").textContent = `${problemSolutionMaps.length}개 문제 · ${problemSolutionMaps.reduce((sum, problem) => sum + problem.solution_paths.length, 0)}개 풀이`;
-  $("#problemMeta").textContent = `${SUBJECT_LABEL[item.subject] ?? item.subject} · ${item.unit} · ${item.applicable_year ?? "연도 미지정"}`;
+  $("#problemMeta").textContent = `${SUBJECT_LABEL[displaySubjectKey(item)] ?? item.subject} · ${item.unit} · ${item.applicable_year ?? "연도 미지정"}`;
   $("#problemTitle").textContent = item.question_id;
   $("#problemStem").textContent = item.stem;
   $("#problemConceptTags").innerHTML = item.concept_tags

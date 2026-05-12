@@ -1,0 +1,23 @@
+{
+  "term_id": "capm",
+  "name_ko": "자본자산가격결정모형",
+  "name_en": "CAPM",
+  "aliases": [
+    "CAPM"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "기대수익률을 무위험수익률 + 시장위험프리미엄 × 베타로 설명하는 모형. 체계적 위험만 보상받는다는 가정.",
+  "formula": "E(Ri) = Rf + βi × (E(Rm) - Rf)",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "wacc",
+      "reason": "CAPM은 개별 주식의 자기자본비용 추정, WACC는 기업 전체 자본비용 가중평균"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "시장 베타 1.0인 대표지수 ETF의 기대수익률은 시장 전체 평균과 같음",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

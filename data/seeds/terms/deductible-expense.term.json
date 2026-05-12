@@ -1,0 +1,23 @@
+{
+  "term_id": "deductible-expense",
+  "name_ko": "손금",
+  "name_en": "deductible expense",
+  "aliases": [
+    "손금산입"
+  ],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "법인세법상 익금에서 차감하는 비용. 사업 관련성과 통상성 요건을 충족해야 손금으로 인정.",
+  "formula": "법인세 과세표준 = 익금 - 손금",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "necessary-expense",
+      "reason": "손금은 법인세법, 필요경비는 소득세법 용어 — 인정 범위와 한도가 다르다"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "법인 차량 유류비는 업무 사용분만 손금",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

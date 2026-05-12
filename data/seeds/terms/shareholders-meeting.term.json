@@ -1,0 +1,23 @@
+{
+  "term_id": "shareholders-meeting",
+  "name_ko": "주주총회",
+  "name_en": "shareholders meeting",
+  "aliases": [
+    "주총"
+  ],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "주식회사의 최고 의사결정기관. 정관 변경, 이사 선임, 재무제표 승인 등 회사 근본 사항을 결의한다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "board-of-directors",
+      "reason": "주총은 소유자(주주)의 회의, 이사회는 경영진의 회의"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "정기 주주총회는 매년 결산 후 3개월 이내 개최",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

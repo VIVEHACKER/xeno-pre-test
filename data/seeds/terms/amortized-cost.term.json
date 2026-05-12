@@ -1,0 +1,26 @@
+{
+  "term_id": "amortized-cost",
+  "name_ko": "상각후원가",
+  "name_en": "amortized cost",
+  "aliases": [
+    "상각원가",
+    "AC"
+  ],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "금융자산의 측정 기준 중 하나로, 취득원가에서 유효이자율법으로 상각한 후의 장부금액. 만기 시 액면금액과 일치한다. 회수 목적 보유 + SPPI 조건 충족 시 적용한다.",
+  "formula": "기말 장부금액 = 기초 장부금액 + 유효이자수익 - 액면이자 수취액",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "fair-value",
+      "reason": "측정 기준이 달라 평가손익 인식 위치(당기손익 vs 기타포괄손익)가 갈린다"
+    }
+  ],
+  "prerequisite_terms": [
+    "effective-interest-rate"
+  ],
+  "example": "액면 100만, 표면이자 5%, 유효이자율 6%, 만기 3년 사채를 상각후원가로 측정",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

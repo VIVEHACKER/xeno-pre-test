@@ -1,0 +1,21 @@
+{
+  "term_id": "board-of-directors",
+  "name_ko": "이사회",
+  "name_en": "board of directors",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "이사 전원으로 구성되는 회사의 중요 의사결정 기관. 이사 선임/해임 외 업무집행 결정, 대표이사 선임 등 권한 보유.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "shareholders-meeting",
+      "reason": "이사회는 업무집행기관, 주주총회는 회사 최고 의사결정기관(소유자 회의)"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "이사회는 사채 발행, 신주발행, 대표이사 선임 등을 결정",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

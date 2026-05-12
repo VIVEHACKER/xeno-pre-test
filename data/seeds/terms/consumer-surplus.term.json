@@ -1,0 +1,21 @@
+{
+  "term_id": "consumer-surplus",
+  "name_ko": "소비자잉여",
+  "name_en": "consumer surplus",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "소비자가 지불할 의향이 있는 최대가격과 실제 지불가격의 차이. 수요곡선 아래, 시장가격 위 영역.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "producer-surplus",
+      "reason": "소비자잉여는 수요곡선과 가격선 사이, 생산자잉여는 가격선과 공급곡선 사이"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "10,000원까지 낼 의향이 있었는데 7,000원에 샀다면 소비자잉여 3,000원",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -42,10 +42,21 @@
     },
     "applicable_subjects": {
       "type": "array",
-      "description": "이 규칙이 적용 가능한 과목 목록.",
+      "description": "이 규칙이 적용 가능한 과목 목록. cpa_first.subjects 레지스트리와 동기화. 그룹 id(예: accounting_tax)와 와일드카드 'general' 포함.",
       "items": {
         "type": "string",
-        "enum": ["accounting", "tax", "accounting_tax", "general"]
+        "enum": [
+          "accounting",
+          "tax",
+          "business",
+          "economics",
+          "corporate_law",
+          "management",
+          "finance",
+          "cost_accounting",
+          "accounting_tax",
+          "general"
+        ]
       }
     },
     "required_risk_tags": {
