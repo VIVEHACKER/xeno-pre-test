@@ -1,0 +1,21 @@
+{
+  "term_id": "deflation",
+  "name_ko": "디플레이션",
+  "name_en": "deflation",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "물가 수준이 지속적으로 하락하는 현상. 경기 침체와 동반되면 위험.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "inflation",
+      "reason": "디플레이션은 하락, 디스인플레이션은 상승률 둔화"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "debt-securities-classification",
+  "name_ko": "채무증권 분류",
+  "name_en": "debt securities classification",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "K-IFRS 1109호에서 채무상품 금융자산을 보유 목적·SPPI 조건에 따라 AC/FVOCI/FVPL로 분류하는 체계.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "sppi-test",
+      "reason": "분류 체계는 결과, SPPI는 분류 판단의 한 축(현금흐름 특성)"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

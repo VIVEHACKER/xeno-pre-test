@@ -1,0 +1,21 @@
+{
+  "term_id": "transactional-leadership",
+  "name_ko": "거래적 리더십",
+  "name_en": "transactional leadership",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "성과 달성에 대한 보상과 미달성 처벌의 거래 관계로 부하를 동기부여.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "transformational-leadership",
+      "reason": "거래적은 단기 성과 거래, 변혁적은 장기 가치 변화"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

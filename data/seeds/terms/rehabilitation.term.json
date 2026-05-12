@@ -1,0 +1,21 @@
+{
+  "term_id": "rehabilitation",
+  "name_ko": "회생절차",
+  "name_en": "rehabilitation procedure",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "재정적 어려움에 빠진 회사를 회생시키기 위한 법원 주관 절차. 채무 조정과 영업 계속이 핵심.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "bankruptcy",
+      "reason": "회생은 재건 목적, 파산은 청산 목적"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

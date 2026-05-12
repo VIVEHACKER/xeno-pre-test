@@ -1,0 +1,21 @@
+{
+  "term_id": "share-capital",
+  "name_ko": "자본금",
+  "name_en": "share capital",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "equity",
+  "definition": "발행한 주식의 액면가액 합계. 회사 설립 또는 증자 시 증가하며 감자로 감소.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "share-premium",
+      "reason": "자본금은 액면가액 부분, 주식발행초과금은 액면 초과 발행분"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

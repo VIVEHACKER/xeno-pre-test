@@ -1,0 +1,21 @@
+{
+  "term_id": "merger-tax-treatment",
+  "name_ko": "합병 세제",
+  "name_en": "merger tax treatment",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "적격합병 시 양도손익을 이연, 부적격합병 시 즉시 과세. 회사 재편 시 핵심 검토 항목.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "corporate-reorganization",
+      "reason": "합병 세제는 세무 처리, 합병/분할은 거래 자체"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

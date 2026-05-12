@@ -1,0 +1,21 @@
+{
+  "term_id": "dissolution",
+  "name_ko": "회사 해산",
+  "name_en": "company dissolution",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "회사의 법인격이 소멸하기 시작하는 사유 발생. 청산 절차로 이어진다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "liquidation",
+      "reason": "해산은 시작, 청산은 절차 진행"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

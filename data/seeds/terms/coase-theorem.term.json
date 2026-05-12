@@ -1,0 +1,21 @@
+{
+  "term_id": "coase-theorem",
+  "name_ko": "코즈의 정리",
+  "name_en": "Coase theorem",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "거래비용이 0이고 재산권이 명확하면 외부효과는 협상으로 효율적 해결이 가능하다는 정리.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "externality",
+      "reason": "코즈 정리는 외부효과의 해결책, 외부효과는 문제 자체"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

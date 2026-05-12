@@ -1,0 +1,21 @@
+{
+  "term_id": "derivative",
+  "name_ko": "파생상품",
+  "name_en": "derivative",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "기초변수 변동에 따라 가치가 변하고, 최초 순투자액이 작거나 없으며, 미래 결제되는 금융상품. 원칙적으로 FVPL 측정.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "embedded-derivative",
+      "reason": "파생상품은 독립 계약, 내재파생상품은 다른 계약 안에 포함"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

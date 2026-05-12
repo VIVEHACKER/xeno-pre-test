@@ -1,0 +1,21 @@
+{
+  "term_id": "class-shares",
+  "name_ko": "종류주식",
+  "name_en": "class shares",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "이익배당, 의결권, 상환, 전환 등 권리 내용이 다른 주식. 우선주/상환주/전환주 등.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "preferred-stock",
+      "reason": "종류주식은 일반 개념, 우선주는 그 한 유형"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

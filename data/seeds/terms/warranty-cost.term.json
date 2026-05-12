@@ -1,0 +1,21 @@
+{
+  "term_id": "warranty-cost",
+  "name_ko": "제품보증비",
+  "name_en": "warranty cost",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "revenue",
+  "definition": "판매한 제품에 대한 보증 의무로 인해 인식하는 비용. 통상 충당부채로 계상.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "provision",
+      "reason": "제품보증비는 비용, 충당부채는 그에 대응하는 부채"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "change-in-accounting-estimate",
+  "name_ko": "회계추정 변경",
+  "name_en": "change in accounting estimate",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "추정의 기초 정보 변경으로 회계추정을 바꾸는 것. 전진적으로 적용한다.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "change-in-accounting-policy",
+      "reason": "추정 변경은 전진, 정책 변경은 소급"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "commercial-sale",
+  "name_ko": "상사매매",
+  "name_en": "commercial sale",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "상인 간 매매에서 적용되는 특별 규정. 매수인의 검사·통지 의무 등.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "ordinary-sale",
+      "reason": "상사매매는 상인 간, 일반매매는 민사"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

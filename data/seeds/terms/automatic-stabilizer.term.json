@@ -1,0 +1,21 @@
+{
+  "term_id": "automatic-stabilizer",
+  "name_ko": "자동안정장치",
+  "name_en": "automatic stabilizer",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "경기 변동에 따라 자동으로 작동하는 재정 메커니즘. 누진세, 실업급여 등.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "fiscal-policy",
+      "reason": "자동안정장치는 자동, 재정정책은 재량적"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

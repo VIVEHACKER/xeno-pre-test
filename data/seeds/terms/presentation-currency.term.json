@@ -1,0 +1,21 @@
+{
+  "term_id": "presentation-currency",
+  "name_ko": "표시통화",
+  "name_en": "presentation currency",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "재무제표를 표시하는 통화. 기능통화와 다를 수 있으며 환산 절차가 필요하다.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "functional-currency",
+      "reason": "표시통화는 보고 통화, 기능통화는 영업 통화"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

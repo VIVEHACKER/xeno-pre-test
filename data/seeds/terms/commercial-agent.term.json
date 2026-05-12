@@ -1,0 +1,21 @@
+{
+  "term_id": "commercial-agent",
+  "name_ko": "상사대리",
+  "name_en": "commercial agency",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "상인의 영업 일정 부분을 대리하는 관계. 본인-대리인 책임이 민법과 다른 면이 있다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "agency-by-estoppel",
+      "reason": "상사대리는 정식 대리, 표현대리는 외관 신뢰 보호"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

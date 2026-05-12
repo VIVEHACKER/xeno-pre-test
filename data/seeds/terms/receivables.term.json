@@ -1,0 +1,21 @@
+{
+  "term_id": "receivables",
+  "name_ko": "매출채권",
+  "name_en": "trade receivables",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "재화 판매 또는 용역 제공의 대가로 받을 권리. 손상은 단순화된 ECL 모형으로 측정한다.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "contract-asset",
+      "reason": "매출채권은 청구 권리가 무조건적, 계약자산은 수행은 했으나 청구 권리가 조건부"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "public-offering-establishment",
+  "name_ko": "모집설립",
+  "name_en": "public offering establishment",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "발기인이 일부 주식을 인수하고 나머지는 외부에서 모집하는 설립 방식.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "promotion-establishment",
+      "reason": "모집설립은 외부 모집 포함, 발기설립은 발기인만"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

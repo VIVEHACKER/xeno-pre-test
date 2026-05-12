@@ -1,0 +1,21 @@
+{
+  "term_id": "hedge-accounting",
+  "name_ko": "위험회피회계",
+  "name_en": "hedge accounting",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "위험회피 도구와 위험회피 대상의 손익을 같은 기간에 인식하기 위한 특수회계. 적용 요건 충족 시 선택.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "fair-value-hedge",
+      "reason": "위험회피회계는 우산 개념, 공정가치/현금흐름 위험회피는 세부 유형"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

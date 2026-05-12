@@ -1,0 +1,21 @@
+{
+  "term_id": "rights-issue",
+  "name_ko": "유상증자",
+  "name_en": "rights issue",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "현금 납입을 받고 신주를 발행하는 자본 조달 방식.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "bonus-issue",
+      "reason": "유상증자는 현금 납입, 무상증자는 잉여금 자본전입"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

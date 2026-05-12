@@ -1,0 +1,21 @@
+{
+  "term_id": "direct-labor",
+  "name_ko": "직접노무비",
+  "name_en": "direct labor",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "특정 제품 생산에 직접 투입된 노무비. 원가 추적이 가능한 인건비.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "indirect-cost",
+      "reason": "직접노무비는 추적 가능, 간접노무비는 배부 필요"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

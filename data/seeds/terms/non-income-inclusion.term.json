@@ -1,0 +1,21 @@
+{
+  "term_id": "non-income-inclusion",
+  "name_ko": "익금불산입",
+  "name_en": "non-income inclusion",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "회계상 수익이지만 세무상 익금에서 제외하는 조정. 자본거래 등.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "income-inclusion",
+      "reason": "익금불산입은 익금에서 제외, 익금산입은 추가"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

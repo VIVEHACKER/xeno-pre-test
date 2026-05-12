@@ -1,0 +1,21 @@
+{
+  "term_id": "agricultural-produce",
+  "name_ko": "수확물",
+  "name_en": "agricultural produce",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "생물자산에서 수확된 산물. 수확 시점의 공정가치로 측정 후 재고자산으로 재분류된다.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "biological-asset",
+      "reason": "수확물은 분리된 산출물, 생물자산은 분리 전 살아있는 상태"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "dormant-partnership",
+  "name_ko": "익명조합",
+  "name_en": "dormant partnership",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "익명조합원이 영업자에게 출자하고 영업자가 자기 명의로 영업하며 이익을 분배하는 관계.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "anonymous-association",
+      "reason": "익명조합은 출자 + 분배, 합명회사는 법인 형태"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

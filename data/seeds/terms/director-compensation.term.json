@@ -1,0 +1,21 @@
+{
+  "term_id": "director-compensation",
+  "name_ko": "이사의 보수",
+  "name_en": "director compensation",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "이사가 받는 보수. 정관 또는 주주총회 결의로 정한다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "director-appointment",
+      "reason": "이사 보수는 대가, 선임은 신분 결정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

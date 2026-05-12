@@ -1,0 +1,21 @@
+{
+  "term_id": "futures-contract",
+  "name_ko": "선물계약",
+  "name_en": "futures contract",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "거래소 표준 계약으로 미래에 정해진 가격으로 매매를 약정한 파생상품. 일일정산과 증거금 제도.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "forward-contract",
+      "reason": "선물은 거래소 + 일일정산, 선도는 장외 + 만기일 정산"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

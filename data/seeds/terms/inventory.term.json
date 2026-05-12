@@ -1,0 +1,21 @@
+{
+  "term_id": "inventory",
+  "name_ko": "재고자산",
+  "name_en": "inventory",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "정상적 영업과정에서 판매하기 위해 보유하거나 생산 중인 자산. 취득원가와 순실현가능가치 중 낮은 값으로 측정.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "inventory-write-down",
+      "reason": "재고자산은 자산 자체, 평가손실은 감액 인식 절차"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

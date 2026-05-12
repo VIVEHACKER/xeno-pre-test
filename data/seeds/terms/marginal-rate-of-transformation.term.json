@@ -1,0 +1,23 @@
+{
+  "term_id": "marginal-rate-of-transformation",
+  "name_ko": "한계변환율",
+  "name_en": "marginal rate of transformation",
+  "aliases": [
+    "MRT"
+  ],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "한 재화 생산을 1단위 늘릴 때 포기해야 하는 다른 재화 생산량. 생산가능곡선 기울기.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "marginal-rate-of-substitution",
+      "reason": "MRT는 생산, MRS는 소비"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

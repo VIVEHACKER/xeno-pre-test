@@ -1,0 +1,21 @@
+{
+  "term_id": "government-spending-multiplier",
+  "name_ko": "정부지출 승수",
+  "name_en": "government spending multiplier",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "정부지출 1단위 증가가 GDP를 얼마나 늘리는지의 배수.",
+  "formula": "승수 = 1 / (1 - 한계소비성향)",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "tax-multiplier",
+      "reason": "정부지출 승수와 세금 승수는 부호와 크기가 다름"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

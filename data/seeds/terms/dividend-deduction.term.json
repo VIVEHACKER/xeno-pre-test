@@ -1,0 +1,21 @@
+{
+  "term_id": "dividend-deduction",
+  "name_ko": "수입배당금 익금불산입",
+  "name_en": "dividend deduction",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "법인이 다른 법인으로부터 받은 배당금 일부를 익금에서 제외하는 제도. 이중과세 완화.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "non-income-inclusion",
+      "reason": "수입배당금 익금불산입은 특정 사유, 익금불산입은 일반 개념"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

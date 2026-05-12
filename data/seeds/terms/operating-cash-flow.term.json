@@ -1,0 +1,21 @@
+{
+  "term_id": "operating-cash-flow",
+  "name_ko": "영업현금흐름",
+  "name_en": "operating cash flow",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "기업의 본업에서 발생한 현금 유출입. 직접법과 간접법으로 산출.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "free-cash-flow",
+      "reason": "영업현금흐름은 본업 단계, FCF는 자본지출 차감 후 잔여"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

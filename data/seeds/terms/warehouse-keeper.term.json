@@ -1,0 +1,21 @@
+{
+  "term_id": "warehouse-keeper",
+  "name_ko": "창고업자",
+  "name_en": "warehouse keeper",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "타인을 위해 물건을 보관하는 영업을 하는 자.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "carrier",
+      "reason": "창고업은 보관 영업, 운송은 이동 영업"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

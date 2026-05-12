@@ -1,0 +1,21 @@
+{
+  "term_id": "foreign-exchange-market",
+  "name_ko": "외환시장",
+  "name_en": "foreign exchange market",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "외환이 거래되는 시장. 환율이 결정되는 장.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "exchange-rate",
+      "reason": "외환시장은 장소, 환율은 그 시장의 가격"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

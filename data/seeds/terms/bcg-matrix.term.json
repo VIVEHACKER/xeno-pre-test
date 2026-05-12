@@ -1,0 +1,21 @@
+{
+  "term_id": "bcg-matrix",
+  "name_ko": "BCG 매트릭스",
+  "name_en": "BCG matrix",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "시장 성장률과 상대적 시장점유율로 사업단위를 Star/Cash Cow/Question/Dog으로 분류.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "product-life-cycle",
+      "reason": "BCG는 사업 포트폴리오, PLC는 단일 제품 단계"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

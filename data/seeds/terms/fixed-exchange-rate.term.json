@@ -1,0 +1,21 @@
+{
+  "term_id": "fixed-exchange-rate",
+  "name_ko": "고정환율제도",
+  "name_en": "fixed exchange rate",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "정부나 중앙은행이 환율을 일정 수준으로 고정시키는 제도.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "floating-exchange-rate",
+      "reason": "고정환율은 안정 + 자율성 제약, 변동은 변동 + 자율성"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

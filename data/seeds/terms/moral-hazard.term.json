@@ -1,0 +1,21 @@
+{
+  "term_id": "moral-hazard",
+  "name_ko": "도덕적 해이",
+  "name_en": "moral hazard",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "거래 후 숨은 행동으로 위험을 키우는 현상. 보험 가입 후 위험 회피 노력 감소 등.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "adverse-selection",
+      "reason": "도덕적 해이는 거래 후 행동, 역선택은 거래 전 자기선택"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

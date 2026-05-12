@@ -1,0 +1,21 @@
+{
+  "term_id": "share-buyback",
+  "name_ko": "자사주매입",
+  "name_en": "share buyback",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "equity",
+  "definition": "회사가 자기 발행 주식을 시장에서 다시 사들이는 거래. 결과로 자기주식이 발생한다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "treasury-stock",
+      "reason": "자사주매입은 거래(동사), 자기주식은 결과(명사)"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

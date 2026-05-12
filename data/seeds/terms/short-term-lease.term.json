@@ -1,0 +1,21 @@
+{
+  "term_id": "short-term-lease",
+  "name_ko": "단기리스",
+  "name_en": "short-term lease",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "leases",
+  "definition": "리스기간 12개월 이하 리스. 리스이용자가 사용권자산/리스부채 인식 면제 선택 가능.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "finance-lease",
+      "reason": "단기리스는 12개월 이하 면제 가능, 금융리스는 기간/조건과 무관한 분류"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

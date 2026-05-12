@@ -1,0 +1,21 @@
+{
+  "term_id": "ifrs-vs-kgaap",
+  "name_ko": "K-IFRS vs 일반기업회계기준",
+  "name_en": "K-IFRS vs K-GAAP",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "상장기업은 K-IFRS 의무 적용, 비상장 중소기업은 일반기업회계기준 적용 가능. 둘은 측정/공시에서 차이가 있다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "amortized-cost",
+      "reason": "K-IFRS와 K-GAAP은 기준 체계 자체, 상각후원가는 두 체계 모두에서 사용되는 측정기준"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

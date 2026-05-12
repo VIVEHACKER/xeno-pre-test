@@ -1,0 +1,21 @@
+{
+  "term_id": "financial-leverage",
+  "name_ko": "재무레버리지",
+  "name_en": "financial leverage",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "고정금융비용(이자) 비중으로 인해 영업이익 변동이 EPS에 증폭되는 정도.",
+  "formula": "DFL = 영업이익 / (영업이익 - 이자)",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "operating-leverage",
+      "reason": "재무레버리지는 이자 영향, 영업레버리지는 고정영업비 영향"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

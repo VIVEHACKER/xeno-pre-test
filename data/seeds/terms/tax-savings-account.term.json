@@ -1,0 +1,21 @@
+{
+  "term_id": "tax-savings-account",
+  "name_ko": "절세 금융상품",
+  "name_en": "tax-saving financial product",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "ISA, 연금저축 등 일정 요건 충족 시 비과세/저율분리과세 혜택이 부여되는 상품군.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "separate-taxation",
+      "reason": "절세 금융상품은 비과세 혜택, 분리과세는 세율 체계"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

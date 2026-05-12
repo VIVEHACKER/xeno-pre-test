@@ -1,0 +1,21 @@
+{
+  "term_id": "market-portfolio",
+  "name_ko": "시장포트폴리오",
+  "name_en": "market portfolio",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "시가총액 가중 평균으로 모든 위험자산을 포함한 포트폴리오. CAPM에서 베타 1의 기준.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "efficient-frontier",
+      "reason": "시장포트폴리오는 한 점, 효율적 프론티어는 위험-수익 효율 곡선"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

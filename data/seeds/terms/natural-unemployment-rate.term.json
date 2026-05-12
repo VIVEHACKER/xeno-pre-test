@@ -1,0 +1,21 @@
+{
+  "term_id": "natural-unemployment-rate",
+  "name_ko": "자연실업률",
+  "name_en": "natural rate of unemployment",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "물가 압력 없이 유지될 수 있는 장기 균형 실업률. 마찰적 + 구조적 실업.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "unemployment-rate",
+      "reason": "자연실업률은 균형, 실업률은 현재값"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

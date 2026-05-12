@@ -1,0 +1,21 @@
+{
+  "term_id": "education-expense-credit",
+  "name_ko": "교육비 세액공제",
+  "name_en": "education expense tax credit",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "본인/부양가족의 교육비 일부를 산출세액에서 차감하는 세액공제. 한도가 있다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "medical-expense-credit",
+      "reason": "교육비/의료비 모두 특별세액공제이지만 한도와 대상이 다름"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

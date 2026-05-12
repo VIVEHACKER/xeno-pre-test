@@ -1,0 +1,21 @@
+{
+  "term_id": "time-value",
+  "name_ko": "시간가치(옵션)",
+  "name_en": "option time value",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "옵션 프리미엄에서 내재가치를 뺀 나머지. 만기까지 가치 변동 가능성을 반영.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "intrinsic-value",
+      "reason": "시간가치는 추가 가능성, 내재가치는 현재 행사 시 가치"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

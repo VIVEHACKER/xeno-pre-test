@@ -1,0 +1,21 @@
+{
+  "term_id": "credit-card-sales-slip",
+  "name_ko": "신용카드매출전표",
+  "name_en": "credit card sales slip",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "신용카드 결제 시 발행되는 거래 증빙. 일정 요건 충족 시 매입세액공제 인정.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "tax-invoice",
+      "reason": "신용카드매출전표는 카드결제 증빙, 세금계산서는 일반 공식 증빙"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

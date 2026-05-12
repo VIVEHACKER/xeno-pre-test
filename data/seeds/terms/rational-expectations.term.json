@@ -1,0 +1,21 @@
+{
+  "term_id": "rational-expectations",
+  "name_ko": "합리적 기대",
+  "name_en": "rational expectations",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "경제주체가 가능한 모든 정보를 활용해 체계적으로 오류를 범하지 않는 기대 형성.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "adaptive-expectations",
+      "reason": "합리적 기대는 정보 활용, 적응적 기대는 과거 추세 외삽"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "debenture",
+  "name_ko": "사채(상법)",
+  "name_en": "debenture",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "주식회사가 채권자에게 발행하는 채무증권. 일반사채, 전환사채, 신주인수권부사채 등.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "convertible-bond",
+      "reason": "사채는 채무증권 총칭, 전환사채는 그 한 종류"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

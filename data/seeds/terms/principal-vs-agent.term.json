@@ -1,0 +1,21 @@
+{
+  "term_id": "principal-vs-agent",
+  "name_ko": "본인 vs 대리인",
+  "name_en": "principal vs agent",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "revenue",
+  "definition": "재화/용역 통제 여부에 따라 본인(총액 매출)이냐 대리인(순액 매출)이냐를 판단하는 기준.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "consignment-sale",
+      "reason": "본인/대리인 판단은 매출 표시 방법, 위탁판매는 본인/대리인 판단의 한 케이스"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "ev-ebitda",
+  "name_ko": "EV/EBITDA",
+  "name_en": "enterprise value to EBITDA",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "기업가치를 영업현금흐름 근사치(EBITDA)로 나눈 비율. 자본구조와 무관한 비교 가능.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "per",
+      "reason": "EV/EBITDA는 자본구조 중립, PER는 자기자본 기준"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

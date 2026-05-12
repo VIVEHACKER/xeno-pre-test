@@ -1,0 +1,21 @@
+{
+  "term_id": "capital-reduction",
+  "name_ko": "감자",
+  "name_en": "capital reduction",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "회사 자본금을 감소시키는 행위. 결손보전 등 목적. 채권자보호 절차 필요.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "share-cancellation",
+      "reason": "감자는 자본금 변동 총칭, 주식 소각은 그 한 방법"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "transfer-income-tax",
+  "name_ko": "양도소득세",
+  "name_en": "transfer income tax",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "부동산, 주식, 분양권 등의 양도로 발생한 소득에 대해 부과되는 별도 과세 체계.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "capital-gains",
+      "reason": "양도소득세는 세금 자체, 양도소득은 과세 대상 소득"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

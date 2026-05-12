@@ -1,0 +1,21 @@
+{
+  "term_id": "price-discrimination",
+  "name_ko": "가격차별",
+  "name_en": "price discrimination",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "동일 상품을 고객별/시점별 다른 가격으로 판매. 1차/2차/3차로 구분.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "monopoly",
+      "reason": "가격차별은 독점/독점적경쟁에서 가능한 전략"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

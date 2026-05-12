@@ -1,0 +1,21 @@
+{
+  "term_id": "adverse-selection",
+  "name_ko": "역선택",
+  "name_en": "adverse selection",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "거래 전 숨겨진 특성 때문에 위험도 높은 자가 자기 선택해 시장에 남는 현상. 중고차 시장 등.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "moral-hazard",
+      "reason": "역선택은 거래 전(숨은 특성), 도덕적 해이는 거래 후(숨은 행동)"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

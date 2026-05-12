@@ -1,0 +1,24 @@
+{
+  "term_id": "pbr",
+  "name_ko": "주가순자산비율",
+  "name_en": "price-to-book ratio",
+  "aliases": [
+    "PBR",
+    "P/B"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "주가를 주당순자산으로 나눈 비율. 청산가치 대비 시장가치.",
+  "formula": "PBR = 주가 / BPS",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "per",
+      "reason": "PBR는 자본 기준, PER는 이익 기준"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,24 @@
+{
+  "term_id": "per",
+  "name_ko": "주가수익비율",
+  "name_en": "price-to-earnings ratio",
+  "aliases": [
+    "PER",
+    "P/E"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "주가를 주당순이익으로 나눈 비율. 시장이 이익에 매기는 배수.",
+  "formula": "PER = 주가 / EPS",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "pbr",
+      "reason": "PER는 이익 기준 배수, PBR는 순자산 기준 배수"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

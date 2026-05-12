@@ -1,0 +1,21 @@
+{
+  "term_id": "inflation",
+  "name_ko": "인플레이션",
+  "name_en": "inflation",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "물가 수준이 지속적으로 상승하는 현상.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "deflation",
+      "reason": "인플레이션은 물가 상승, 디플레이션은 하락"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

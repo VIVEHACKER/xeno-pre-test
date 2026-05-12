@@ -1,0 +1,21 @@
+{
+  "term_id": "capital-account",
+  "name_ko": "자본수지",
+  "name_en": "capital account",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "자본 자산의 이전과 비생산·비금융자산 매매를 기록하는 국제수지 항목.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "current-account",
+      "reason": "자본수지는 금융 자본 이동, 경상수지는 재화·서비스"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

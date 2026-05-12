@@ -1,0 +1,21 @@
+{
+  "term_id": "medical-expense-credit",
+  "name_ko": "의료비 세액공제",
+  "name_en": "medical expense tax credit",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "총급여의 3%를 초과한 의료비 일부를 산출세액에서 차감하는 세액공제.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "tax-credit",
+      "reason": "의료비 세액공제는 특정 항목, 세액공제는 일반 개념"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

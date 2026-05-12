@@ -1,0 +1,21 @@
+{
+  "term_id": "foreign-company",
+  "name_ko": "외국회사",
+  "name_en": "foreign company",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "외국법에 따라 설립된 회사. 국내 영업소 설치 시 등기 의무.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "commercial-register",
+      "reason": "외국회사는 주체, 상업등기는 절차"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

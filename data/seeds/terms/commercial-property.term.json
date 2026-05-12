@@ -1,0 +1,21 @@
+{
+  "term_id": "commercial-property",
+  "name_ko": "영업 양도",
+  "name_en": "transfer of business",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "영업의 일체(자산, 부채, 영업권 등)를 일괄 양도하는 거래. 양수인은 양도인의 채무를 인수.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "corporate-reorganization",
+      "reason": "영업 양도는 자산 이전, 합병은 법인 자체 결합"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "nash-equilibrium",
+  "name_ko": "내쉬균형",
+  "name_en": "Nash equilibrium",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "모든 참여자가 다른 사람의 전략을 주어진 것으로 보고 자신의 전략을 바꿀 유인이 없는 상태.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "prisoners-dilemma",
+      "reason": "내쉬균형은 일반 균형 정의, 죄수의 딜레마는 그 한 예"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

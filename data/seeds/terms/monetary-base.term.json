@@ -1,0 +1,21 @@
+{
+  "term_id": "monetary-base",
+  "name_ko": "본원통화",
+  "name_en": "monetary base",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "현금과 은행의 중앙은행 예치금 합계. 신용창출의 출발점.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "money-supply",
+      "reason": "본원통화는 중앙은행이 직접 통제, 통화량은 은행의 신용창출 결과"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "bertrand-model",
+  "name_ko": "베르트랑 모형",
+  "name_en": "Bertrand model",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "과점기업이 가격을 동시에 결정하는 게임. 동질재라면 가격이 한계비용까지 떨어짐.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "cournot-model",
+      "reason": "베르트랑은 가격 경쟁, 쿠르노는 산출량 경쟁"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

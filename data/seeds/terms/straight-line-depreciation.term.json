@@ -1,0 +1,21 @@
+{
+  "term_id": "straight-line-depreciation",
+  "name_ko": "정액법",
+  "name_en": "straight-line depreciation",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "내용연수 동안 매기 동일한 금액을 감가상각비로 인식하는 방법.",
+  "formula": "감가상각비 = (취득원가 - 잔존가치) / 내용연수",
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "declining-balance-depreciation",
+      "reason": "정액법은 매기 일정, 정률법은 초기 가속 상각"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

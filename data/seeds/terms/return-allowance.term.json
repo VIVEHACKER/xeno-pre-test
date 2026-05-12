@@ -1,0 +1,21 @@
+{
+  "term_id": "return-allowance",
+  "name_ko": "환불충당부채",
+  "name_en": "refund liability",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "revenue",
+  "definition": "고객 반품 권리로 인해 매출이 줄어들 가능성에 대비해 인식하는 부채. 매출 인식 시점에 추정 반품률로 측정.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "provision",
+      "reason": "환불충당부채는 매출 관련, 일반 충당부채는 비용/소송 등"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

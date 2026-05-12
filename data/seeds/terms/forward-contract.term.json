@@ -1,0 +1,21 @@
+{
+  "term_id": "forward-contract",
+  "name_ko": "선도계약",
+  "name_en": "forward contract",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "미래 특정 시점에 정해진 가격으로 매매를 약정한 장외 파생상품.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "futures-contract",
+      "reason": "선도는 장외, 선물은 거래소 표준화"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

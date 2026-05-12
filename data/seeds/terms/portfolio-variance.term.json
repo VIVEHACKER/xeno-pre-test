@@ -1,0 +1,21 @@
+{
+  "term_id": "portfolio-variance",
+  "name_ko": "포트폴리오 분산",
+  "name_en": "portfolio variance",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "포트폴리오 전체 위험의 분산. 개별자산 분산과 상관관계의 함수.",
+  "formula": "σ_p² = Σ wi²σi² + 2Σ wiwj·Cov(i,j)",
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "systematic-risk",
+      "reason": "포트폴리오 분산은 총위험, 체계적 위험은 분산 불가능한 부분"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

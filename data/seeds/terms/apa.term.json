@@ -1,0 +1,23 @@
+{
+  "term_id": "apa",
+  "name_ko": "사전승인약정",
+  "name_en": "advance pricing agreement",
+  "aliases": [
+    "APA"
+  ],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "이전가격 산정 방법을 사전에 세무당국과 합의하는 제도. 추후 분쟁 예방.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "transfer-pricing",
+      "reason": "APA는 사전 합의, 이전가격은 거래 자체"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

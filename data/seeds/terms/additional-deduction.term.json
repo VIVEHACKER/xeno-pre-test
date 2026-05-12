@@ -1,0 +1,21 @@
+{
+  "term_id": "additional-deduction",
+  "name_ko": "추가공제",
+  "name_en": "additional deduction",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "경로우대, 장애인, 부녀자, 한부모 등 사유에 해당하는 부양가족에 대한 추가 인적공제.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "basic-deduction",
+      "reason": "추가공제는 사유별 가산, 기본공제는 일률 150만원"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "share-transfer",
+  "name_ko": "주식 양도",
+  "name_en": "share transfer",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "주주가 자신의 주식을 다른 자에게 이전하는 행위. 원칙적 자유, 정관으로 제한 가능.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "name-on-book-transfer",
+      "reason": "주식 양도는 거래, 명의개서는 명부 변경 절차"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

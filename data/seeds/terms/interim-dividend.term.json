@@ -1,0 +1,21 @@
+{
+  "term_id": "interim-dividend",
+  "name_ko": "중간배당",
+  "name_en": "interim dividend",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "사업연도 중 1회 한도로 정관에 따라 이사회 결의로 실시할 수 있는 배당.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "dividend-payment",
+      "reason": "중간배당은 1회/년 + 이사회 결의, 일반배당은 주총 결의"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,23 @@
+{
+  "term_id": "sml",
+  "name_ko": "증권시장선",
+  "name_en": "security market line",
+  "aliases": [
+    "SML"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "CAPM에서 베타와 기대수익률의 관계 직선. 개별 자산의 적정 수익률을 보여준다.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "cml",
+      "reason": "SML은 베타-수익률, CML은 총위험-수익률"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

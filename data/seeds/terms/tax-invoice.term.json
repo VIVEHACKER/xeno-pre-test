@@ -1,0 +1,21 @@
+{
+  "term_id": "tax-invoice",
+  "name_ko": "세금계산서",
+  "name_en": "tax invoice",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "사업자가 부가가치세 거래에서 발행하는 공식 증빙. 매입세액공제의 필수 요건.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "receipt",
+      "reason": "세금계산서는 사업자 간, 영수증은 최종 소비자 대상"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

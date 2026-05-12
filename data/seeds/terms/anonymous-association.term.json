@@ -1,0 +1,21 @@
+{
+  "term_id": "anonymous-association",
+  "name_ko": "익명조합과 합자조합",
+  "name_en": "anonymous and limited partnership",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "익명조합은 익명 출자 + 영업자 운영, 합자조합은 무한책임 + 유한책임 조합원 결합 형태.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "dormant-partnership",
+      "reason": "익명조합/합자조합 모두 비법인 조합, 합자회사는 회사 형태"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

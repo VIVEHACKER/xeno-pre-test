@@ -1,0 +1,21 @@
+{
+  "term_id": "focus-strategy",
+  "name_ko": "집중화 전략",
+  "name_en": "focus strategy",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "특정 세분시장에 자원을 집중해 차별화 또는 원가우위를 달성.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "differentiation",
+      "reason": "집중화는 좁은 시장, 차별화는 전체 시장 대상"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

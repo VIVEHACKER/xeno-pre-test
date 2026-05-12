@@ -1,0 +1,21 @@
+{
+  "term_id": "anti-tax-haven",
+  "name_ko": "조세피난처 세제",
+  "name_en": "anti-tax haven rules",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "조세피난처에 설립된 자회사의 유보소득을 본사 소득에 합산해 과세하는 CFC 규정.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "transfer-pricing",
+      "reason": "조세피난처 세제는 자회사 유보소득, 이전가격은 거래가격 조정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

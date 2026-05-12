@@ -1,0 +1,21 @@
+{
+  "term_id": "early-refund",
+  "name_ko": "조기환급",
+  "name_en": "early VAT refund",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "수출, 설비투자, 영세율 적용 등 특정 사유로 부가세 환급을 일반보다 빠르게 받는 제도.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "vat-refund",
+      "reason": "조기환급은 가속 환급, 일반환급은 정기 환급"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

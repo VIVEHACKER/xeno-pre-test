@@ -1,0 +1,21 @@
+{
+  "term_id": "capital-expenditure",
+  "name_ko": "자본적 지출",
+  "name_en": "capital expenditure",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "자산의 가치 증가나 내용연수 연장을 가져오는 지출. 자산의 장부금액에 가산되어 감가상각 대상이 된다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "revenue-expenditure",
+      "reason": "자본적 지출은 자산화, 수익적 지출은 즉시 비용"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

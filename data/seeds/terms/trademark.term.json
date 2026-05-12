@@ -1,0 +1,21 @@
+{
+  "term_id": "trademark",
+  "name_ko": "상표",
+  "name_en": "trademark",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "상품을 표시하기 위해 사용하는 표지. 상표법으로 보호되며 상호와 구분.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "trade-name",
+      "reason": "상표는 상품 표시, 상호는 영업주체 표시"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

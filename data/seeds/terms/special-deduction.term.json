@@ -1,0 +1,21 @@
+{
+  "term_id": "special-deduction",
+  "name_ko": "특별소득공제",
+  "name_en": "special income deduction",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "보험료/주택자금/기부금/근로소득공제 등 특정 사유로 종합소득금액에서 차감하는 공제.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "basic-deduction",
+      "reason": "특별공제는 항목별 사유, 기본공제는 인적 일률"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

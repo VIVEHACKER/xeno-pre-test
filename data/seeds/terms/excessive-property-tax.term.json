@@ -1,0 +1,21 @@
+{
+  "term_id": "excessive-property-tax",
+  "name_ko": "종합부동산세",
+  "name_en": "comprehensive real estate tax",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "일정 기준 초과 부동산 보유자에게 누진 부과되는 보유세. 재산세와 별개.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "transfer-income-tax",
+      "reason": "종부세는 보유 단계, 양도세는 처분 단계"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

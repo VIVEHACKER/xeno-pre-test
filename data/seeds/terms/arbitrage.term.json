@@ -1,0 +1,21 @@
+{
+  "term_id": "arbitrage",
+  "name_ko": "차익거래",
+  "name_en": "arbitrage",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "위험 없이 무비용으로 이익을 얻는 거래. 효율적 시장에서는 즉시 소멸된다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "efficient-market-hypothesis",
+      "reason": "차익거래 부재는 EMH의 강한 형태 결과"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

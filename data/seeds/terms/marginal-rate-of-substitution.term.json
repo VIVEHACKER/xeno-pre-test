@@ -1,0 +1,23 @@
+{
+  "term_id": "marginal-rate-of-substitution",
+  "name_ko": "한계대체율",
+  "name_en": "marginal rate of substitution",
+  "aliases": [
+    "MRS"
+  ],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "한 재화를 1단위 더 얻기 위해 포기할 수 있는 다른 재화의 양. 무차별곡선의 기울기 절댓값.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "marginal-rate-of-transformation",
+      "reason": "MRS는 소비자 선호 기울기, MRT는 생산 가능성 곡선 기울기"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

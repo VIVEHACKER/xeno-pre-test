@@ -1,0 +1,21 @@
+{
+  "term_id": "ppe",
+  "name_ko": "유형자산",
+  "name_en": "property plant and equipment",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "재화 생산이나 용역 제공 또는 임대 목적으로 1년 초과 보유하는 물리적 자산. 토지/건물/기계장치/차량운반구 등.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "investment-property",
+      "reason": "유형자산은 자체 사용 목적, 투자부동산은 시세차익/임대수익 목적"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

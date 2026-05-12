@@ -1,0 +1,21 @@
+{
+  "term_id": "bird-in-hand",
+  "name_ko": "수중의 새 이론",
+  "name_en": "bird-in-the-hand theory",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "투자자가 미래 자본이득보다 현재의 확실한 배당을 선호한다는 이론. 고배당주가 선호됨을 시사.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "mm-proposition",
+      "reason": "MM은 배당 무관 가정, 수중의 새 이론은 배당이 가치에 영향"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

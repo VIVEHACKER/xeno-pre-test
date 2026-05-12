@@ -1,0 +1,21 @@
+{
+  "term_id": "liquidation",
+  "name_ko": "청산",
+  "name_en": "liquidation",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "해산 후 재산 정리, 채무 변제, 잔여재산 분배까지의 절차.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "dissolution",
+      "reason": "청산은 절차, 해산은 그 진입 사유"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

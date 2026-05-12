@@ -1,0 +1,21 @@
+{
+  "term_id": "marginal-utility",
+  "name_ko": "한계효용",
+  "name_en": "marginal utility",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "재화 1단위 추가 소비로 얻는 효용의 증분.",
+  "formula": "MU = ∂U / ∂Q",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "diminishing-marginal-utility",
+      "reason": "한계효용은 측정값, 한계효용체감은 일반적 성질"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

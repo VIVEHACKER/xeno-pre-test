@@ -1,0 +1,21 @@
+{
+  "term_id": "entertainment-limit",
+  "name_ko": "접대비 한도",
+  "name_en": "entertainment expense limit",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "접대비 손금산입 한도. 기본금액 + 수입금액 기준 한도 합산. 초과분은 손금불산입.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "deductible-expense",
+      "reason": "접대비 한도는 손금 한정 사유, 손금은 일반 인정 비용"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

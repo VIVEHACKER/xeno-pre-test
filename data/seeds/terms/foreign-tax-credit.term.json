@@ -1,0 +1,21 @@
+{
+  "term_id": "foreign-tax-credit",
+  "name_ko": "외국납부세액공제",
+  "name_en": "foreign tax credit",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "해외에서 납부한 세금을 국내 산출세액에서 공제하는 제도. 한도가 있다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "tax-credit",
+      "reason": "외국납부세액공제는 국제이중과세 방지, 일반 세액공제는 정책 목적"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

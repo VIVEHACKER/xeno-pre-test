@@ -1,0 +1,21 @@
+{
+  "term_id": "residual-claim",
+  "name_ko": "잔여재산분배청구권",
+  "name_en": "residual claim",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "회사 청산 시 부채를 모두 갚고 남은 재산을 주주가 지분 비율로 분배받을 권리.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "dividend-payment",
+      "reason": "잔여재산분배는 청산 시점, 이익배당은 정상 영업 중"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "retirement-allowance-tax",
+  "name_ko": "퇴직급여충당금(세무)",
+  "name_en": "retirement allowance (tax)",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "퇴직급여 지급에 대비한 충당금. 한도 내 손금산입.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "defined-benefit-obligation",
+      "reason": "세무상 퇴직급여충당금은 손금 인정, 회계상 DBO는 추정 측정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

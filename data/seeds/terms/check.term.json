@@ -1,0 +1,21 @@
+{
+  "term_id": "check",
+  "name_ko": "수표",
+  "name_en": "check",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "발행인이 은행에 일정 금액을 수취인에게 지급할 것을 위탁하는 유가증권. 어음과 다른 별도 법제.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "bill-of-exchange",
+      "reason": "수표는 은행 지급 + 일람불, 환어음은 일반 지급인 + 만기 가능"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

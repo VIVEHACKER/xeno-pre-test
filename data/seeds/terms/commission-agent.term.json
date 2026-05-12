@@ -1,0 +1,21 @@
+{
+  "term_id": "commission-agent",
+  "name_ko": "위탁매매업",
+  "name_en": "commission agency",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "자기 명의로 타인의 계산으로 물건 매매를 영업으로 하는 자. 자기 책임으로 거래.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "commercial-agent",
+      "reason": "위탁매매업은 자기 명의 + 타인 계산, 상사대리는 본인 명의"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

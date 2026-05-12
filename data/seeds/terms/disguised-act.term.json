@@ -1,0 +1,21 @@
+{
+  "term_id": "disguised-act",
+  "name_ko": "부당행위계산 부인",
+  "name_en": "denial of disguised act",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "특수관계자와의 거래로 세부담을 부당히 감소시킨 경우 정상 거래로 의제해 과세하는 제도.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "related-party",
+      "reason": "부당행위계산 부인은 세무상 부인 제도, 특수관계자는 그 대상"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

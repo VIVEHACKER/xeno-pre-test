@@ -1,0 +1,23 @@
+{
+  "term_id": "other-comprehensive-income",
+  "name_ko": "기타포괄손익",
+  "name_en": "other comprehensive income",
+  "aliases": [
+    "OCI"
+  ],
+  "subject": "accounting",
+  "unit": "equity",
+  "definition": "당기순이익에 포함되지 않고 자본으로 직접 인식되는 손익. 재평가잉여금, FVOCI 평가손익 등.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "profit-or-loss",
+      "reason": "OCI는 자본 변동, 당기손익은 P/L 반영"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

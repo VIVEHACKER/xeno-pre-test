@@ -1,0 +1,21 @@
+{
+  "term_id": "crowding-out",
+  "name_ko": "구축효과",
+  "name_en": "crowding-out",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "정부지출 증가로 이자율이 올라 민간투자가 감소하는 효과.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "government-spending-multiplier",
+      "reason": "구축효과는 승수 효과를 약화시키는 요인"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

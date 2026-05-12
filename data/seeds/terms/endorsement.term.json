@@ -1,0 +1,21 @@
+{
+  "term_id": "endorsement",
+  "name_ko": "배서",
+  "name_en": "endorsement",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "유가증권의 권리를 양도하기 위해 증서 뒤면에 기명·날인 또는 서명하는 행위.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "acceptance",
+      "reason": "배서는 양도, 인수는 지급 확약"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

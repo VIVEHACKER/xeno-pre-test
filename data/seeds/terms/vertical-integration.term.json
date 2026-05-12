@@ -1,0 +1,21 @@
+{
+  "term_id": "vertical-integration",
+  "name_ko": "수직적 통합",
+  "name_en": "vertical integration",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "원재료 공급(전방) 또는 유통(후방) 단계를 자체 운영하는 통합 전략.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "horizontal-integration",
+      "reason": "수직적은 가치사슬 상하, 수평적은 동일 단계 확장"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

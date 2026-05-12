@@ -1,0 +1,21 @@
+{
+  "term_id": "benchmarking",
+  "name_ko": "벤치마킹",
+  "name_en": "benchmarking",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "업계 우수 기업의 프로세스/성과를 비교 학습해 개선 목표로 활용하는 기법.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "balanced-scorecard",
+      "reason": "벤치마킹은 외부 비교, BSC는 내부 측정 체계"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

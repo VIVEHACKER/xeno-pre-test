@@ -1,0 +1,21 @@
+{
+  "term_id": "corporate-tax-rate",
+  "name_ko": "법인세율",
+  "name_en": "corporate tax rate",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "과세표준 구간별로 9%/19%/21%/24% 등이 적용되는 법인세 세율 체계.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "global-progressive-rate",
+      "reason": "법인세율은 법인 적용, 종합소득세율은 개인 적용"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

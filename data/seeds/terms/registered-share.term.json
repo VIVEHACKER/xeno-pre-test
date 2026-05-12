@@ -1,0 +1,21 @@
+{
+  "term_id": "registered-share",
+  "name_ko": "기명주식",
+  "name_en": "registered share",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "주주명부에 주주 이름이 기재되는 주식. 한국 상법상 원칙적 형태.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "bearer-share",
+      "reason": "기명주식은 명의 등록, 무기명주식은 익명"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

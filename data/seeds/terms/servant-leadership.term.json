@@ -1,0 +1,21 @@
+{
+  "term_id": "servant-leadership",
+  "name_ko": "서번트 리더십",
+  "name_en": "servant leadership",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "리더가 구성원의 성장과 행복을 우선시하는 봉사 지향적 리더십.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "transformational-leadership",
+      "reason": "서번트는 봉사 중심, 변혁적은 비전 중심"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

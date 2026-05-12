@@ -1,0 +1,21 @@
+{
+  "term_id": "electronic-tax-invoice",
+  "name_ko": "전자세금계산서",
+  "name_en": "electronic tax invoice",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "전자적 방법으로 발급하는 세금계산서. 법인사업자와 일정 매출 이상 개인사업자 의무.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "tax-invoice",
+      "reason": "전자/일반 세금계산서 모두 같은 효력이지만 발급 방식이 다름"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

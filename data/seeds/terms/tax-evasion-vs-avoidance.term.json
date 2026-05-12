@@ -1,0 +1,21 @@
+{
+  "term_id": "tax-evasion-vs-avoidance",
+  "name_ko": "조세회피 vs 조세포탈",
+  "name_en": "tax avoidance vs evasion",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "조세회피는 합법적 절세 노력, 조세포탈은 사기 기타 부정행위로 세금을 면탈하는 불법.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "penalty-tax",
+      "reason": "조세포탈은 불법 + 형사처벌, 조세회피는 적법한 세무 계획"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "unemployment-rate",
+  "name_ko": "실업률",
+  "name_en": "unemployment rate",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "경제활동인구 중 실업자 비율.",
+  "formula": "실업률 = 실업자 / 경제활동인구",
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "natural-unemployment-rate",
+      "reason": "실업률은 측정값, 자연실업률은 장기 균형값"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

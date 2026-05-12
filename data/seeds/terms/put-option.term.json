@@ -1,0 +1,21 @@
+{
+  "term_id": "put-option",
+  "name_ko": "풋옵션",
+  "name_en": "put option",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "기초자산을 정해진 행사가격에 팔 수 있는 권리.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "call-option",
+      "reason": "풋은 매도 권리, 콜은 매수 권리"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

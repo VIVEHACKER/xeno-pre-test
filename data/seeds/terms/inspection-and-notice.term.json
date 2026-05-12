@@ -1,0 +1,21 @@
+{
+  "term_id": "inspection-and-notice",
+  "name_ko": "검사·통지의무",
+  "name_en": "duty of inspection and notice",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "상사매매에서 매수인은 인도받은 물건을 지체 없이 검사하고 하자 발견 시 통지해야 한다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "commercial-sale",
+      "reason": "검사·통지의무는 매수인 의무, 상사매매는 그 의무가 적용되는 거래"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "merger-synergy",
+  "name_ko": "합병시너지",
+  "name_en": "merger synergy",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "합병으로 결합된 기업가치가 단순 합보다 큰 차이. 영업/재무/세무 시너지로 구분.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "corporate-reorganization",
+      "reason": "합병시너지는 결과, 합병/분할은 거래 자체"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

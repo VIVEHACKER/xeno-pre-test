@@ -1,0 +1,21 @@
+{
+  "term_id": "pension-income",
+  "name_ko": "연금소득",
+  "name_en": "pension income",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "공적연금, 사적연금 등 정기적으로 수령하는 연금. 연금소득공제 후 종합과세 또는 분리과세.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "earned-income",
+      "reason": "연금소득은 퇴직 후 정기 수령, 근로소득은 재직 중 노동 대가"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

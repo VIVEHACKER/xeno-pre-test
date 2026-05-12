@@ -1,0 +1,21 @@
+{
+  "term_id": "efficient-frontier",
+  "name_ko": "효율적 프론티어",
+  "name_en": "efficient frontier",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "주어진 위험에서 기대수익률을 최대화한 포트폴리오들의 집합. 마코위츠 분산투자 이론의 핵심.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "cml",
+      "reason": "효율적 프론티어는 위험자산만, CML은 무위험자산 결합 후 직선"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

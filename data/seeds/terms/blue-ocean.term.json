@@ -1,0 +1,21 @@
+{
+  "term_id": "blue-ocean",
+  "name_ko": "블루오션 전략",
+  "name_en": "blue ocean strategy",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "경쟁이 없는 새로운 시장 공간을 창출해 가치 혁신과 비용 절감을 동시 추구하는 전략.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "porters-five-forces",
+      "reason": "블루오션은 경쟁 회피, 5 forces는 경쟁 분석"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

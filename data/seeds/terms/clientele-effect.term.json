@@ -1,0 +1,21 @@
+{
+  "term_id": "clientele-effect",
+  "name_ko": "고객효과",
+  "name_en": "clientele effect",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "투자자 유형(세금, 선호)에 따라 특정 배당정책을 가진 기업이 선호된다는 효과.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "bird-in-hand",
+      "reason": "고객효과는 투자자 그룹 분화, 수중의 새 이론은 일반적 선호"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

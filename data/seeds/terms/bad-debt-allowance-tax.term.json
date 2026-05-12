@@ -1,0 +1,21 @@
+{
+  "term_id": "bad-debt-allowance-tax",
+  "name_ko": "대손충당금(세무)",
+  "name_en": "bad debt allowance (tax)",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "법인세법상 매출채권 등의 손상에 대비해 손금산입 가능한 충당금 한도.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "provision",
+      "reason": "세무상 대손충당금은 손금 한도 규제, 회계상 충당부채는 인식 기준"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

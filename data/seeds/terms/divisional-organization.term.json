@@ -1,0 +1,21 @@
+{
+  "term_id": "divisional-organization",
+  "name_ko": "사업부제 조직",
+  "name_en": "divisional organization",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "제품/지역/고객별로 자율적인 사업단위를 구성한 분권적 조직.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "functional-organization",
+      "reason": "사업부제는 자율 단위, 기능별은 중앙집중"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

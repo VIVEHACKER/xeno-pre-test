@@ -1,0 +1,21 @@
+{
+  "term_id": "direct-allocation-method",
+  "name_ko": "직접배부법",
+  "name_en": "direct allocation method",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "보조부문 원가를 보조부문 간 용역 수수 무시하고 제조부문에만 배부하는 가장 단순한 방법.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "step-method",
+      "reason": "직접배부법은 보조→제조만, 단계배부법은 보조→일부 보조→제조"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

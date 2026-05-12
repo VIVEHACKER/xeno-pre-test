@@ -1,0 +1,21 @@
+{
+  "term_id": "ramsey-pricing",
+  "name_ko": "램지 가격설정",
+  "name_en": "Ramsey pricing",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "독점기업이 사회 후생을 극대화하면서 적자를 면할 수 있도록 가격탄력성에 반비례해 마진을 매기는 규칙.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "price-discrimination",
+      "reason": "램지 가격은 규제 도구, 가격차별은 이윤 극대화 도구"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

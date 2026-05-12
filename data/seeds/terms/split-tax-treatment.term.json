@@ -1,0 +1,21 @@
+{
+  "term_id": "split-tax-treatment",
+  "name_ko": "분할 세제",
+  "name_en": "division tax treatment",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "적격분할 시 양도손익 이연, 부적격분할 시 즉시 과세. 인적분할/물적분할 구분.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "merger-tax-treatment",
+      "reason": "분할/합병 세제는 각각 다른 적격요건"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

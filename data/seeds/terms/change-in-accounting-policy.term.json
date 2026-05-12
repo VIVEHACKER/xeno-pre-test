@@ -1,0 +1,21 @@
+{
+  "term_id": "change-in-accounting-policy",
+  "name_ko": "회계정책 변경",
+  "name_en": "change in accounting policy",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "회계기준 변경 등으로 회계정책을 바꾸는 것. 원칙적으로 소급 적용한다.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "change-in-accounting-estimate",
+      "reason": "정책 변경은 소급, 추정 변경은 전진"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

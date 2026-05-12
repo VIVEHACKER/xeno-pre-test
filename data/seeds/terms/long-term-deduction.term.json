@@ -1,0 +1,21 @@
+{
+  "term_id": "long-term-deduction",
+  "name_ko": "장기보유특별공제",
+  "name_en": "long-term holding deduction",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "3년 이상 보유한 부동산 양도 시 양도차익의 일정 비율을 공제하는 제도.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "one-house-one-household",
+      "reason": "장기보유공제는 차익 감면, 1세대1주택은 비과세 자체"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

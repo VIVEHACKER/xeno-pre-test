@@ -1,0 +1,21 @@
+{
+  "term_id": "controlling-shareholder-loyalty",
+  "name_ko": "지배주주의 충실의무",
+  "name_en": "controlling shareholder fiduciary duty",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "지배주주가 회사와 다른 주주에 대해 부담하는 의무. 부당한 사적 이익 추구 금지.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "controlling-shareholder",
+      "reason": "충실의무는 의무 자체, 지배주주는 그 의무 주체"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

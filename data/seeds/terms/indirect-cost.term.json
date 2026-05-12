@@ -1,0 +1,21 @@
+{
+  "term_id": "indirect-cost",
+  "name_ko": "간접비",
+  "name_en": "indirect cost",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "특정 원가대상에 직접 추적할 수 없어 배부가 필요한 원가.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "manufacturing-overhead",
+      "reason": "간접비는 일반 개념, 제조간접비는 제조에 한정된 간접비"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

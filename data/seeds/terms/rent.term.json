@@ -1,0 +1,21 @@
+{
+  "term_id": "rent",
+  "name_ko": "지대",
+  "name_en": "rent",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "공급이 고정된 생산요소(토지 등)에 지급되는 대가. 잉여로 해석.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "profit",
+      "reason": "지대는 고정공급 요소 보수, 이윤은 기업가의 잔여 수익"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

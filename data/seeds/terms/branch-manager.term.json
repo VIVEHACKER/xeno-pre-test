@@ -1,0 +1,21 @@
+{
+  "term_id": "branch-manager",
+  "name_ko": "지배인",
+  "name_en": "branch manager",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "본점 또는 지점의 영업을 포괄적으로 대리할 권한을 가진 상업사용인.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "commercial-employee",
+      "reason": "지배인은 포괄대리권 보유, 일반 상업사용인은 제한적"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

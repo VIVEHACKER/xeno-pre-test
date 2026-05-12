@@ -1,0 +1,23 @@
+{
+  "term_id": "commercial-paper",
+  "name_ko": "기업어음",
+  "name_en": "commercial paper",
+  "aliases": [
+    "CP"
+  ],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "단기 자금 조달 목적의 무담보 약속어음. 만기 1년 이내가 일반적이며 할인 발행.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "convertible-bond",
+      "reason": "CP는 단기 무담보, CB는 장기 전환 옵션 포함"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

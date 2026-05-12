@@ -1,0 +1,21 @@
+{
+  "term_id": "limited-partnership",
+  "name_ko": "합자회사",
+  "name_en": "limited partnership",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "무한책임사원과 유한책임사원으로 구성된 회사.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "ordinary-partnership",
+      "reason": "합자는 책임 혼합, 합명은 모두 무한책임"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

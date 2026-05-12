@@ -1,0 +1,21 @@
+{
+  "term_id": "limited-liability-co-llp",
+  "name_ko": "유한책임회사",
+  "name_en": "LLP",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "출자자 모두 유한책임이면서 내부 자율을 폭넓게 허용한 회사 형태. 2011년 도입.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "limited-liability-company",
+      "reason": "유한책임회사는 자율 강화, 유한회사는 전통 형태"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

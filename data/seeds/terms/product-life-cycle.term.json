@@ -1,0 +1,23 @@
+{
+  "term_id": "product-life-cycle",
+  "name_ko": "제품수명주기",
+  "name_en": "product life cycle",
+  "aliases": [
+    "PLC"
+  ],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "도입기 → 성장기 → 성숙기 → 쇠퇴기로 이어지는 제품의 시장 단계.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "bcg-matrix",
+      "reason": "PLC는 시간축 분석, BCG는 한 시점의 사업 포지셔닝"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "voluntary-reserve",
+  "name_ko": "임의적립금",
+  "name_en": "voluntary reserve",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "equity",
+  "definition": "정관이나 주주총회 결의로 임의 적립한 이익잉여금 일부. 사용목적이 정해진 경우와 사용제한이 없는 경우 구분.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "legal-reserve",
+      "reason": "임의적립금은 자율 적립, 이익준비금은 법정 강제"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

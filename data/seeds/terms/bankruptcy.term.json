@@ -1,0 +1,21 @@
+{
+  "term_id": "bankruptcy",
+  "name_ko": "파산",
+  "name_en": "bankruptcy",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "채무자가 채무를 변제할 수 없는 상태로 법원이 선고하는 절차. 회생절차와 구분.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "rehabilitation",
+      "reason": "파산은 청산형, 회생은 재건형"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

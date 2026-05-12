@@ -1,0 +1,21 @@
+{
+  "term_id": "lean-management",
+  "name_ko": "린 경영",
+  "name_en": "lean management",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "낭비(Muda)를 줄이고 가치를 최대화하는 경영 철학. 도요타 생산방식에서 발전.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "just-in-time",
+      "reason": "린은 철학 전체, JIT는 재고 관리 기법"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

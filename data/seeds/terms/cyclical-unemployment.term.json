@@ -1,0 +1,21 @@
+{
+  "term_id": "cyclical-unemployment",
+  "name_ko": "경기적 실업",
+  "name_en": "cyclical unemployment",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "경기 침체로 수요 부족이 발생해 일어나는 실업. 경기 회복으로 줄어듦.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "natural-unemployment-rate",
+      "reason": "경기적 실업은 단기 변동, 자연실업률은 장기 균형"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

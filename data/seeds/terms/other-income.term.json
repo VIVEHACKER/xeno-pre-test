@@ -1,0 +1,21 @@
+{
+  "term_id": "other-income",
+  "name_ko": "기타소득",
+  "name_en": "other income",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "상금, 강연료, 원고료 등 일시적·우발적 소득. 60% 또는 80% 필요경비 인정 후 22%로 원천징수.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "business-income",
+      "reason": "기타소득은 일시적, 사업소득은 반복적"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

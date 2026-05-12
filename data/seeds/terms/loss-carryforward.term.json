@@ -1,0 +1,21 @@
+{
+  "term_id": "loss-carryforward",
+  "name_ko": "이월결손금",
+  "name_en": "loss carryforward",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "당기 결손금을 이후 사업연도 소득에서 공제할 수 있도록 이월하는 제도. 보통 15년간 가능.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "loss-carryback",
+      "reason": "이월결손금은 미래 공제, 결손금 소급공제는 과거 환급"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "reserve-ratio",
+  "name_ko": "지급준비율",
+  "name_en": "reserve ratio",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "은행이 예금 중 일정 비율을 중앙은행에 적립해야 하는 비율. 통화공급 조절 수단.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "money-multiplier",
+      "reason": "지급준비율은 정책 변수, 통화승수는 그 결과"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

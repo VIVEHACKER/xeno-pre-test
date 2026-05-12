@@ -1,0 +1,21 @@
+{
+  "term_id": "squeeze-out",
+  "name_ko": "지배주주의 매도청구권",
+  "name_en": "squeeze-out",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "95% 이상 보유 지배주주가 잔여 주주의 주식을 강제 매수할 수 있는 권리.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "controlling-shareholder",
+      "reason": "매도청구권은 지배주주의 권리, 지배주주는 그 보유자"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

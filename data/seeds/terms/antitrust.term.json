@@ -1,0 +1,21 @@
+{
+  "term_id": "antitrust",
+  "name_ko": "공정거래법",
+  "name_en": "antitrust",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "독과점 행위와 불공정 거래를 규제하는 법 체계. 시장 효율성 확보.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "monopoly",
+      "reason": "공정거래법은 규제 수단, 독점은 규제 대상"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

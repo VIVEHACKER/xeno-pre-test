@@ -1,0 +1,21 @@
+{
+  "term_id": "bond-with-warrant-issue",
+  "name_ko": "신주인수권부사채 발행",
+  "name_en": "bond with warrant issue",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "신주인수권이 부여된 사채 발행. 사채와 인수권을 분리할 수 있다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "convertible-bond-issue",
+      "reason": "BW는 신주인수권만, CB는 사채 자체 전환"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

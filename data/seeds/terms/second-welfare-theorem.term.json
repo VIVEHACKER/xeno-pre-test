@@ -1,0 +1,21 @@
+{
+  "term_id": "second-welfare-theorem",
+  "name_ko": "후생경제학 제2정리",
+  "name_en": "second welfare theorem",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "적절한 초기 자원 재분배 후 시장에 맡기면 어떤 파레토 최적이든 달성 가능하다는 정리.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "first-welfare-theorem",
+      "reason": "제2정리는 분배 후 시장 정당화, 제1정리는 시장 자체 효율성"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

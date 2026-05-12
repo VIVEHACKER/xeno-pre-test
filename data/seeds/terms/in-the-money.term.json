@@ -1,0 +1,23 @@
+{
+  "term_id": "in-the-money",
+  "name_ko": "내가격",
+  "name_en": "in the money",
+  "aliases": [
+    "ITM"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "내재가치가 양인 옵션 상태.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "out-of-the-money",
+      "reason": "ITM은 내재가치>0, OTM은 내재가치=0"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

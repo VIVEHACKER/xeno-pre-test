@@ -1,0 +1,21 @@
+{
+  "term_id": "random-walk",
+  "name_ko": "랜덤워크",
+  "name_en": "random walk",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "주가 변동이 과거 변동과 독립적이라는 가설. EMH 약형의 통계적 표현.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "efficient-market-hypothesis",
+      "reason": "랜덤워크는 통계적 성질, EMH는 그 배경 이론"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

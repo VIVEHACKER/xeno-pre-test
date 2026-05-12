@@ -1,0 +1,21 @@
+{
+  "term_id": "ordinary-resolution",
+  "name_ko": "보통결의",
+  "name_en": "ordinary resolution",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "주주총회에서 출석 의결권 과반수와 발행주식수의 1/4 이상으로 가결되는 결의.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "special-resolution",
+      "reason": "보통결의는 단순 다수, 특별결의는 가중 다수"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

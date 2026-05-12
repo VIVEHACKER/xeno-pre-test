@@ -1,0 +1,21 @@
+{
+  "term_id": "public-good",
+  "name_ko": "공공재",
+  "name_en": "public good",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "비배제성과 비경합성을 가진 재화. 국방, 가로등 등. 시장이 효율적으로 공급하지 못함.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "externality",
+      "reason": "공공재는 비배제+비경합, 외부효과는 시장 외 영향"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "stagflation",
+  "name_ko": "스태그플레이션",
+  "name_en": "stagflation",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "경기 침체와 인플레이션이 동시에 발생하는 현상. 공급 충격이 원인.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "inflation",
+      "reason": "스태그플레이션은 인플레이션 + 침체, 일반 인플레이션은 호황과 결합"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

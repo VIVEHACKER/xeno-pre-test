@@ -1,0 +1,23 @@
+{
+  "term_id": "out-of-the-money",
+  "name_ko": "외가격",
+  "name_en": "out of the money",
+  "aliases": [
+    "OTM"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "내재가치가 0인 옵션 상태. 시간가치만 존재.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "in-the-money",
+      "reason": "OTM은 즉시 행사 가치 없음, ITM은 있음"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

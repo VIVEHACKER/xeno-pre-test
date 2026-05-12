@@ -1,0 +1,21 @@
+{
+  "term_id": "donation-limit",
+  "name_ko": "기부금 한도",
+  "name_en": "donation limit",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "법정/지정 기부금 손금산입 한도. 종류별로 소득금액의 일정 비율로 제한.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "entertainment-limit",
+      "reason": "기부금/접대비 모두 한도 있는 손금이지만 한도 산식이 다름"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

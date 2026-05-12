@@ -1,0 +1,23 @@
+{
+  "term_id": "balanced-scorecard",
+  "name_ko": "균형성과표",
+  "name_en": "balanced scorecard",
+  "aliases": [
+    "BSC"
+  ],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "재무/고객/내부프로세스/학습성장 4관점의 성과지표로 전략을 측정·관리하는 도구.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "kpi",
+      "reason": "BSC는 다관점 프레임워크, KPI는 측정 지표 자체"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

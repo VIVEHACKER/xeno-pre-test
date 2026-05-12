@@ -1,0 +1,21 @@
+{
+  "term_id": "name-on-book-transfer",
+  "name_ko": "명의개서",
+  "name_en": "transfer on shareholders book",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "주식 양도 후 회사 명부에 양수인을 기재하는 절차. 회사 대항 요건.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "share-transfer",
+      "reason": "명의개서는 절차, 주식 양도는 실체 거래"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

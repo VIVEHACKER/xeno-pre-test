@@ -1,0 +1,21 @@
+{
+  "term_id": "phillips-curve",
+  "name_ko": "필립스 곡선",
+  "name_en": "Phillips curve",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "인플레이션율과 실업률의 역의 관계를 보여주는 곡선. 단기에는 우하향.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "natural-unemployment-rate",
+      "reason": "필립스 곡선은 인플레-실업 관계, 자연실업률은 그 수직선 위치"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

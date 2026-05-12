@@ -1,0 +1,21 @@
+{
+  "term_id": "fvoci-financial-asset",
+  "name_ko": "기타포괄손익공정가치측정 금융자산",
+  "name_en": "FVOCI financial asset",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "공정가치로 측정하되 평가손익을 기타포괄손익으로 인식하는 금융자산. 채무상품과 지분상품 분류 기준이 다르다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "fvpl-financial-asset",
+      "reason": "FVOCI는 평가손익을 기타포괄손익(자본)으로, FVPL은 당기손익으로"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

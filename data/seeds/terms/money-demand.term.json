@@ -1,0 +1,21 @@
+{
+  "term_id": "money-demand",
+  "name_ko": "화폐수요",
+  "name_en": "money demand",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "거래/예비/투기 동기로 화폐를 보유하려는 수요. 케인즈가 체계화.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "money-supply",
+      "reason": "화폐수요는 수요 측, 통화공급은 공급 측"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

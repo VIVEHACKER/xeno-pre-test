@@ -1,0 +1,23 @@
+{
+  "term_id": "tqm",
+  "name_ko": "전사적 품질경영",
+  "name_en": "total quality management",
+  "aliases": [
+    "TQM"
+  ],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "조직 전체가 고객만족을 위해 지속적 품질 개선에 참여하는 경영 철학.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "six-sigma",
+      "reason": "TQM은 문화적 접근, 식스시그마는 통계적 도구"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

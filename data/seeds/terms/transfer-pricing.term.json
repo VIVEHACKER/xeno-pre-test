@@ -1,0 +1,21 @@
+{
+  "term_id": "transfer-pricing",
+  "name_ko": "이전가격",
+  "name_en": "transfer pricing",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "특수관계 외국법인과의 거래 가격이 정상가격과 다를 경우 세무당국이 조정할 수 있는 제도.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "disguised-act",
+      "reason": "이전가격은 국제 거래 가격 조정, 부당행위계산 부인은 국내 특수관계 거래 조정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

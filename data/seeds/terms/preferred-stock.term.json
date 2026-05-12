@@ -1,0 +1,21 @@
+{
+  "term_id": "preferred-stock",
+  "name_ko": "우선주",
+  "name_en": "preferred stock",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "이익배당이나 잔여재산분배에서 보통주보다 우선하는 주식. 의결권 제한이 일반적.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "common-stock",
+      "reason": "우선주는 우선 분배 + 의결권 제한, 보통주는 표준"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

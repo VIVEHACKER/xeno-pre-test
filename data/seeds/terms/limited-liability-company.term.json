@@ -1,0 +1,23 @@
+{
+  "term_id": "limited-liability-company",
+  "name_ko": "유한회사",
+  "name_en": "limited liability company",
+  "aliases": [
+    "LLC"
+  ],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "사원 전원이 출자액 한도로 책임지는 인적·물적 절충 회사. 폐쇄적 운영.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "stock-company",
+      "reason": "유한회사는 폐쇄적 운영, 주식회사는 공개 가능"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

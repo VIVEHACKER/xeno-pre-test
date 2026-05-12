@@ -1,0 +1,21 @@
+{
+  "term_id": "special-zone-vat",
+  "name_ko": "면세재화",
+  "name_en": "exempt goods",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "주식, 채권 등 자본거래 또는 의료/교육/주택 임대 등 기초생활 관련 재화·용역의 면세 대상.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "vat-exemption",
+      "reason": "면세재화는 대상 목록, 면세는 적용 결과"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "output-vat",
+  "name_ko": "매출세액",
+  "name_en": "output VAT",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "사업자가 재화/용역을 공급할 때 거래 상대방에게 거래징수한 부가가치세.",
+  "formula": "매출세액 = 공급가액 × 10%",
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "input-vat",
+      "reason": "매출세액은 받은 세금, 매입세액은 부담한 세금"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

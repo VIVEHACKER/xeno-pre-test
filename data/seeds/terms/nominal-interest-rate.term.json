@@ -1,0 +1,21 @@
+{
+  "term_id": "nominal-interest-rate",
+  "name_ko": "액면이자율",
+  "name_en": "nominal interest rate",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "현금 수취액 기준의 이자율. 사채의 표면이자율과 같은 의미로 쓰인다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "effective-interest-rate",
+      "reason": "액면이자율은 표면값, 유효이자율은 시장이 평가한 실질 수익률"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

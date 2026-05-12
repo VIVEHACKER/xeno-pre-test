@@ -1,0 +1,21 @@
+{
+  "term_id": "current-account",
+  "name_ko": "경상수지",
+  "name_en": "current account",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "재화·서비스·소득·이전 거래의 수지. 국제수지표의 한 항목.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "capital-account",
+      "reason": "경상수지는 실물 거래, 자본수지는 금융 거래"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

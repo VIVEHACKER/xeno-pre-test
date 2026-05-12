@@ -1,0 +1,21 @@
+{
+  "term_id": "bond-at-par",
+  "name_ko": "액면발행",
+  "name_en": "bond at par",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "사채를 액면금액과 동일한 금액으로 발행하는 것. 발행시 시장이자율과 액면이자율이 같다.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "bond-discount",
+      "reason": "액면발행은 표면=시장이자율, 할인발행은 표면<시장이자율"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

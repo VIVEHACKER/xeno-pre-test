@@ -1,0 +1,21 @@
+{
+  "term_id": "standard-deduction",
+  "name_ko": "표준세액공제",
+  "name_en": "standard tax credit",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "특별세액공제 항목을 신청하지 않는 근로자에게 13만원을 일률 공제하는 제도.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "special-deduction",
+      "reason": "표준세액공제는 일률, 특별소득공제는 항목별"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

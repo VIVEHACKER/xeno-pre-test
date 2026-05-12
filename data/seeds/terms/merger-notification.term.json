@@ -1,0 +1,21 @@
+{
+  "term_id": "merger-notification",
+  "name_ko": "기업결합 신고",
+  "name_en": "merger notification",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "일정 규모 이상의 기업결합 시 공정거래위원회에 사전·사후 신고해야 하는 의무.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "fair-trade-act",
+      "reason": "기업결합 신고는 절차, 공정거래법은 그 근거 법"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

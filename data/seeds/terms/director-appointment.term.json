@@ -1,0 +1,21 @@
+{
+  "term_id": "director-appointment",
+  "name_ko": "이사 선임",
+  "name_en": "director appointment",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "주주총회 보통결의로 이사를 선임하는 행위. 임기는 3년 이내.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "director-dismissal",
+      "reason": "이사 선임은 보통결의, 해임은 특별결의"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

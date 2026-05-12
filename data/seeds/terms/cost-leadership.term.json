@@ -1,0 +1,21 @@
+{
+  "term_id": "cost-leadership",
+  "name_ko": "원가우위 전략",
+  "name_en": "cost leadership strategy",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "산업 내 최저원가 달성을 통해 경쟁우위를 확보하는 전략.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "differentiation",
+      "reason": "원가우위는 가격경쟁, 차별화는 가치경쟁"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

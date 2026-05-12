@@ -1,0 +1,21 @@
+{
+  "term_id": "non-current-held-for-sale",
+  "name_ko": "매각예정비유동자산",
+  "name_en": "non-current asset held for sale",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "1년 내 매각이 거의 확실한 비유동자산. 장부금액과 순공정가치 중 낮은 값으로 측정하고 감가상각 중단.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "ppe",
+      "reason": "매각예정으로 재분류되면 감가상각 중단되고 평가 기준이 바뀜"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

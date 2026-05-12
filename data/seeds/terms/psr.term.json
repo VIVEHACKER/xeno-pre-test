@@ -1,0 +1,23 @@
+{
+  "term_id": "psr",
+  "name_ko": "주가매출액비율",
+  "name_en": "price-to-sales ratio",
+  "aliases": [
+    "PSR"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "주가를 주당매출액으로 나눈 비율. 적자 기업 평가에 유용.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "per",
+      "reason": "PSR는 매출 기준, PER는 이익 기준"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

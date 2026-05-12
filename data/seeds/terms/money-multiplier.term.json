@@ -1,0 +1,21 @@
+{
+  "term_id": "money-multiplier",
+  "name_ko": "통화승수",
+  "name_en": "money multiplier",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "본원통화 1단위 증가가 통화량을 얼마나 늘리는지의 배수.",
+  "formula": "m = 1 / 지급준비율",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "monetary-base",
+      "reason": "통화승수는 배수, 본원통화는 그 배수가 적용되는 기초"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

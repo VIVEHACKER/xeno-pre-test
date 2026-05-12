@@ -1,0 +1,21 @@
+{
+  "term_id": "asymmetric-information",
+  "name_ko": "정보의 비대칭",
+  "name_en": "asymmetric information",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "거래 당사자 간 정보 보유량 차이로 발생하는 시장 실패. 역선택과 도덕적 해이 야기.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "adverse-selection",
+      "reason": "정보 비대칭은 원인, 역선택/도덕적 해이는 결과"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

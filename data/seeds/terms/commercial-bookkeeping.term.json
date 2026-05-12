@@ -1,0 +1,21 @@
+{
+  "term_id": "commercial-bookkeeping",
+  "name_ko": "상업장부",
+  "name_en": "commercial bookkeeping",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "상인이 영업과 재산 상태를 명백히 하기 위해 작성·보존해야 하는 장부. 회계장부와 대차대조표 포함.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "commercial-register",
+      "reason": "상업장부는 회계 기록, 상업등기는 공시 등기"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

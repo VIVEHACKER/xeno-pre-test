@@ -1,0 +1,21 @@
+{
+  "term_id": "director-self-dealing",
+  "name_ko": "이사의 자기거래",
+  "name_en": "director self-dealing",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "이사가 회사와 직접 또는 제3자를 통해 거래하는 행위. 이사회 승인 필요.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "director-liability",
+      "reason": "자기거래는 거래 행위, 이사 책임은 위반 시 책임"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "development-cost",
+  "name_ko": "개발비",
+  "name_en": "development cost",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "개발 단계에서 발생한 지출 중 6가지 자본화 요건을 모두 충족할 때 무형자산으로 인식하는 항목. 연구 단계 지출은 비용 처리.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "research-cost",
+      "reason": "개발비는 자본화 가능, 연구비는 무조건 비용"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

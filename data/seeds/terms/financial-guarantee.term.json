@@ -1,0 +1,21 @@
+{
+  "term_id": "financial-guarantee",
+  "name_ko": "금융보증계약",
+  "name_en": "financial guarantee contract",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "특정 채무자가 채무를 이행하지 못할 때 보유자에게 손실을 보상하기로 한 계약. 최초 인식 시 공정가치로 측정.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "provision",
+      "reason": "금융보증은 계약상 의무, 충당부채는 현재의무 + 추정 가능 시 인식"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

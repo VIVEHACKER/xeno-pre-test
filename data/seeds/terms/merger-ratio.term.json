@@ -1,0 +1,21 @@
+{
+  "term_id": "merger-ratio",
+  "name_ko": "합병비율",
+  "name_en": "merger ratio",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "합병 시 피합병회사 주주에게 발행할 신주 수를 결정하는 비율. 양사 주가 또는 가치에 근거.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "merger-synergy",
+      "reason": "합병비율은 주식 배분, 합병시너지는 가치 증대"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

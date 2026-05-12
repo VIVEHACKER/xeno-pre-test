@@ -1,0 +1,21 @@
+{
+  "term_id": "short-swing-profit",
+  "name_ko": "단기매매차익 반환",
+  "name_en": "short-swing profit",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "내부자가 6개월 내 매수·매도(또는 매도·매수)로 얻은 차익은 회사에 반환해야 하는 의무.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "insider-trading",
+      "reason": "단기매매차익 반환은 객관적 책임, 내부자거래는 부정 정보 이용"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

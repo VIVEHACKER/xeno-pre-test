@@ -1,0 +1,21 @@
+{
+  "term_id": "business-cycle",
+  "name_ko": "경기변동",
+  "name_en": "business cycle",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "경제 활동이 호황과 불황 사이를 주기적으로 반복하는 현상.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "inflation",
+      "reason": "경기변동은 산출 변동, 인플레이션은 물가 변동"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

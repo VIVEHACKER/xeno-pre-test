@@ -1,0 +1,21 @@
+{
+  "term_id": "heckscher-ohlin",
+  "name_ko": "헥셔-올린 정리",
+  "name_en": "Heckscher-Ohlin theorem",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "국가가 풍부한 부존자원을 집약적으로 사용하는 재화를 수출한다는 무역 이론.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "comparative-advantage",
+      "reason": "헥셔-올린은 부존자원 기반, 비교우위는 기술 기반"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,23 @@
+{
+  "term_id": "ytm",
+  "name_ko": "만기수익률",
+  "name_en": "yield to maturity",
+  "aliases": [
+    "YTM"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "채권을 만기까지 보유했을 때 얻을 수 있는 평균 수익률. 시장가격을 미래 현금흐름의 현재가치와 일치시키는 할인율.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "coupon-rate",
+      "reason": "YTM은 시장 평가, 표면이자율은 발행 시 명시"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

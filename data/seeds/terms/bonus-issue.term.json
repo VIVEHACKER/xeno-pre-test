@@ -1,0 +1,21 @@
+{
+  "term_id": "bonus-issue",
+  "name_ko": "무상증자",
+  "name_en": "bonus issue",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "이익잉여금 등 잉여금을 자본금으로 전입해 주식을 무상으로 신주발행하는 것.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "share-split",
+      "reason": "무상증자는 자본금 증가, 주식분할은 액면가 감소만"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

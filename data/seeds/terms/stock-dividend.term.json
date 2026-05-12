@@ -1,0 +1,21 @@
+{
+  "term_id": "stock-dividend",
+  "name_ko": "주식배당",
+  "name_en": "stock dividend",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "이익배당을 현금이 아닌 신주로 지급하는 방식. 자본전입 효과.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "dividend-payment",
+      "reason": "주식배당은 자본전입, 현금배당은 사외유출"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

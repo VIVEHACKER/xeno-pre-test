@@ -1,0 +1,21 @@
+{
+  "term_id": "listing-special-rules",
+  "name_ko": "상장회사 특례",
+  "name_en": "listed company special rules",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "상장회사에 한해 적용되는 사외이사 비율, 집중투표제, 감사위원회 등 추가 규제.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "audit-committee",
+      "reason": "상장회사 특례는 규제 묶음, 감사위원회는 그 중 하나"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

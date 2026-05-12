@@ -1,0 +1,23 @@
+{
+  "term_id": "wto",
+  "name_ko": "세계무역기구",
+  "name_en": "World Trade Organization",
+  "aliases": [
+    "WTO"
+  ],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "다자간 무역 규범 운영과 분쟁 해결을 담당하는 국제기구. GATT 후속.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "free-trade-agreement",
+      "reason": "WTO는 다자간, FTA는 양자/지역 협정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

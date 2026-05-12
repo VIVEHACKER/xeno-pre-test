@@ -1,0 +1,21 @@
+{
+  "term_id": "conversion-cost",
+  "name_ko": "가공원가",
+  "name_en": "conversion cost",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "직접재료비를 제외한 직접노무비와 제조간접비의 합. 종합원가계산에서 완성품환산량 산출의 기초.",
+  "formula": "가공원가 = 직접노무비 + 제조간접비",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "direct-labor",
+      "reason": "가공원가는 노무+간접의 합, 직접노무비는 그 한 구성요소"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

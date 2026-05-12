@@ -1,0 +1,21 @@
+{
+  "term_id": "treynor-ratio",
+  "name_ko": "트레이너지수",
+  "name_en": "Treynor ratio",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "초과수익을 베타로 나눈 비율. 체계적 위험 기준 성과 지표.",
+  "formula": "Treynor = (Rp - Rf) / βp",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "sharpe-ratio",
+      "reason": "트레이너는 베타 분모, 샤프는 표준편차 분모"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "sharpe-ratio",
+  "name_ko": "샤프지수",
+  "name_en": "Sharpe ratio",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "초과수익을 총위험(표준편차)으로 나눈 비율. 포트폴리오 위험 조정 성과 지표.",
+  "formula": "Sharpe = (Rp - Rf) / σp",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "treynor-ratio",
+      "reason": "샤프는 총위험 분모, 트레이너는 체계적 위험(베타) 분모"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

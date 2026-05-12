@@ -1,0 +1,21 @@
+{
+  "term_id": "commercial-lien",
+  "name_ko": "상사유치권",
+  "name_en": "commercial lien",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "상인 간 영업 관련 거래에서 채권 확보를 위해 점유 목적물을 유치할 수 있는 권리. 민사유치권보다 요건 완화.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "commercial-act-general",
+      "reason": "상사유치권은 권리, 상행위는 그 권리가 발생하는 거래"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

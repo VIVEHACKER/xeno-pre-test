@@ -1,0 +1,21 @@
+{
+  "term_id": "deadweight-loss",
+  "name_ko": "사중손실",
+  "name_en": "deadweight loss",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "시장 비효율성으로 소비자/생산자 잉여 합이 줄어든 손실. 세금/독점/가격통제 등이 원인.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "consumer-surplus",
+      "reason": "사중손실은 손실 부분, 소비자잉여는 후생의 한 측면"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "vat-grouping",
+  "name_ko": "사업자단위과세",
+  "name_en": "VAT business unit taxation",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "복수의 사업장을 가진 사업자가 주된 사업장에서 일괄 신고·납부하는 제도.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "general-vat-payer",
+      "reason": "사업자단위과세는 신고 단위 통합, 일반과세자는 적용 체계"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

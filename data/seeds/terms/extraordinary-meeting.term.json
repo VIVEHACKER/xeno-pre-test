@@ -1,0 +1,21 @@
+{
+  "term_id": "extraordinary-meeting",
+  "name_ko": "임시주주총회",
+  "name_en": "extraordinary shareholders meeting",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "정기총회 외에 필요에 따라 소집되는 주주총회. 일정 지분 보유 주주가 소집을 청구 가능.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "shareholders-meeting",
+      "reason": "임시주총은 비정기, 정기주총은 결산 후 정기"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

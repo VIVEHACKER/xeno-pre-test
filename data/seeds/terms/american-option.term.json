@@ -1,0 +1,21 @@
+{
+  "term_id": "american-option",
+  "name_ko": "미국식 옵션",
+  "name_en": "American option",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "만기 전 언제든 행사할 수 있는 옵션.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "european-option",
+      "reason": "미국식은 언제든, 유럽식은 만기에만"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

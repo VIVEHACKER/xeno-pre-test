@@ -1,0 +1,21 @@
+{
+  "term_id": "commercial-trust",
+  "name_ko": "신탁",
+  "name_en": "commercial trust",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "위탁자가 재산을 수탁자에게 이전하고 수익자를 위해 관리/처분하게 하는 법률관계.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "dormant-partnership",
+      "reason": "신탁은 재산 이전 + 관리, 익명조합은 출자 + 분배"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

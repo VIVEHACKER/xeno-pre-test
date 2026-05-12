@@ -1,0 +1,21 @@
+{
+  "term_id": "commercial-limitation-period",
+  "name_ko": "상사 소멸시효",
+  "name_en": "commercial prescription",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "상행위로 인한 채권은 5년의 단기 소멸시효가 적용된다(상법 제64조).",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "commercial-act-general",
+      "reason": "상사 소멸시효는 상행위 채권에 한정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

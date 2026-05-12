@@ -1,0 +1,21 @@
+{
+  "term_id": "investment-property",
+  "name_ko": "투자부동산",
+  "name_en": "investment property",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "임대수익이나 시세차익을 얻을 목적으로 보유하는 부동산. 원가모형 또는 공정가치모형 선택.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "ppe",
+      "reason": "투자부동산은 임대/시세차익 목적, 유형자산은 자체 영업 사용 목적"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

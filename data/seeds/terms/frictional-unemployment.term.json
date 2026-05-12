@@ -1,0 +1,21 @@
+{
+  "term_id": "frictional-unemployment",
+  "name_ko": "마찰적 실업",
+  "name_en": "frictional unemployment",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "구직과 일자리 매칭 과정에서 자연 발생하는 단기 실업.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "structural-unemployment",
+      "reason": "마찰적은 단기 매칭 비용, 구조적은 산업 변화로 인한 장기"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "rent-seeking",
+  "name_ko": "지대추구 행위",
+  "name_en": "rent-seeking",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "생산적 활동 없이 정부의 보호나 특권을 얻으려는 자원 낭비 행위.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "rent",
+      "reason": "지대추구는 활동, 지대는 그로 인한 수익"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

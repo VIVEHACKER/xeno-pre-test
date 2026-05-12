@@ -1,0 +1,21 @@
+{
+  "term_id": "actuarial-gain-loss",
+  "name_ko": "보험수리적손익",
+  "name_en": "actuarial gain/loss",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "employee_benefits",
+  "definition": "확정급여채무 측정 가정 변화로 발생한 손익. 기타포괄손익으로 인식하고 재분류되지 않는다.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "defined-benefit-obligation",
+      "reason": "보험수리적손익은 DBO 측정 변동, DBO는 부채 자체"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

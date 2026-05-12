@@ -1,0 +1,21 @@
+{
+  "term_id": "simplified-tax-invoice",
+  "name_ko": "영수증(간이영수증)",
+  "name_en": "simplified tax invoice",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "최종 소비자에게 발급하는 간이 증빙. 매입세액공제 권리가 제한적.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "tax-invoice",
+      "reason": "영수증은 소비자 대상, 세금계산서는 사업자 간 공식 증빙"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

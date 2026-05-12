@@ -1,0 +1,21 @@
+{
+  "term_id": "installment-sale",
+  "name_ko": "할부판매",
+  "name_en": "installment sale",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "revenue",
+  "definition": "재화 인도 후 대금을 분할 회수하는 판매 형태. 수익은 인도 시점에 인식, 매출채권의 현재가치로 측정.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "consignment-sale",
+      "reason": "할부판매는 회수조건, 위탁판매는 판매주체"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

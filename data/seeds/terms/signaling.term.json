@@ -1,0 +1,21 @@
+{
+  "term_id": "signaling",
+  "name_ko": "신호 발송",
+  "name_en": "signaling",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "정보를 가진 측이 자신의 우월성을 비용 있는 행동으로 보여주는 행위. 학위 취득 등.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "screening",
+      "reason": "신호는 우월측 자발 발신, 스크리닝은 열위측 능동 분류"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

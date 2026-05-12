@@ -1,0 +1,21 @@
+{
+  "term_id": "herzberg-two-factor",
+  "name_ko": "허즈버그 2요인이론",
+  "name_en": "Herzberg's two-factor theory",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "동기요인(성취/인정)과 위생요인(보수/근무환경)을 분리. 위생요인은 불만 제거만, 동기는 만족 증대.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "maslow-hierarchy",
+      "reason": "허즈버그는 만족/불만족 분리, 매슬로는 단일 욕구 위계"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

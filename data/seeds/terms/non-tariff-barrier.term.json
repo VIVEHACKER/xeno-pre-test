@@ -1,0 +1,21 @@
+{
+  "term_id": "non-tariff-barrier",
+  "name_ko": "비관세장벽",
+  "name_en": "non-tariff barrier",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "관세 외 방법(쿼터, 기술 규제, 보조금 등)으로 수입을 제한하는 정책.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "tariff",
+      "reason": "비관세장벽은 비가격 규제, 관세는 가격 부담"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

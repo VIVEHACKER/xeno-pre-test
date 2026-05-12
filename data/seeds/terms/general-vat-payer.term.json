@@ -1,0 +1,21 @@
+{
+  "term_id": "general-vat-payer",
+  "name_ko": "일반과세자",
+  "name_en": "general VAT payer",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "연 매출 1억400만원 이상 사업자. 세금계산서 발급 의무와 일반 매입세액공제 적용.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "simplified-vat-payer",
+      "reason": "일반과세자는 표준 체계, 간이과세자는 간편 적용"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "oligopoly",
+  "name_ko": "과점",
+  "name_en": "oligopoly",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "소수의 기업이 시장을 지배하는 구조. 상호 의존성과 전략적 행동이 특징.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "monopolistic-competition",
+      "reason": "과점은 소수 기업, 독점적 경쟁은 다수 기업"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

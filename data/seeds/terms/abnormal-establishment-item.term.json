@@ -1,0 +1,21 @@
+{
+  "term_id": "abnormal-establishment-item",
+  "name_ko": "변태설립사항",
+  "name_en": "abnormal establishment items",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "현물출자, 재산인수, 발기인 보수 등 일반 설립과 다른 사항. 정관 기재 + 검사인 조사.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "articles-of-incorporation",
+      "reason": "변태설립사항은 정관의 특수 기재, 정관은 일반 자치규범"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

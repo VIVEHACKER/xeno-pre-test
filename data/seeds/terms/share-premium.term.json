@@ -1,0 +1,21 @@
+{
+  "term_id": "share-premium",
+  "name_ko": "주식발행초과금",
+  "name_en": "share premium",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "equity",
+  "definition": "주식을 액면가액보다 높은 가액으로 발행할 때 그 초과분. 자본잉여금에 속한다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "share-capital",
+      "reason": "주식발행초과금은 액면 초과분, 자본금은 액면가액 자체"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

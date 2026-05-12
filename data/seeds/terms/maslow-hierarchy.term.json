@@ -1,0 +1,21 @@
+{
+  "term_id": "maslow-hierarchy",
+  "name_ko": "매슬로 욕구위계",
+  "name_en": "Maslow's hierarchy",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "생리적 → 안전 → 사회적 → 존중 → 자아실현의 5단계 욕구 위계 이론.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "herzberg-two-factor",
+      "reason": "매슬로는 위계적 욕구, 허즈버그는 동기-위생 2요인"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

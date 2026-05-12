@@ -1,0 +1,21 @@
+{
+  "term_id": "tax-base-adjustment",
+  "name_ko": "세무조정",
+  "name_en": "tax base adjustment",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "회계상 당기순이익에서 세무상 과세소득으로 전환하기 위한 익금산입/손금산입 등 조정.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "taxable-income",
+      "reason": "세무조정은 절차, 과세표준은 결과"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

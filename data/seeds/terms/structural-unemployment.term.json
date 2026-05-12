@@ -1,0 +1,21 @@
+{
+  "term_id": "structural-unemployment",
+  "name_ko": "구조적 실업",
+  "name_en": "structural unemployment",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "산업 구조 변화로 노동자 기술과 수요 기술 불일치로 발생하는 장기 실업.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "frictional-unemployment",
+      "reason": "구조적은 산업 변화, 마찰적은 일시 매칭"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

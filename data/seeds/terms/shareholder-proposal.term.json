@@ -1,0 +1,21 @@
+{
+  "term_id": "shareholder-proposal",
+  "name_ko": "주주제안권",
+  "name_en": "shareholder proposal right",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "일정 지분 이상 보유 주주가 주주총회 의안을 제안할 수 있는 권리.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "cumulative-voting",
+      "reason": "주주제안권은 의안 제안, 집중투표제는 이사 선임 방식"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

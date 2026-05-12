@@ -1,0 +1,21 @@
+{
+  "term_id": "share-listing",
+  "name_ko": "주식 상장",
+  "name_en": "share listing",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "주식을 거래소 시장에 등록해 공개 거래되도록 하는 절차. 상장요건 충족 필요.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "listing-special-rules",
+      "reason": "상장은 절차, 상장회사 특례는 상장 후 적용 규제"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

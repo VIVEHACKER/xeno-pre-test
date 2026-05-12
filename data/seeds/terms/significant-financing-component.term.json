@@ -1,0 +1,21 @@
+{
+  "term_id": "significant-financing-component",
+  "name_ko": "유의적 금융요소",
+  "name_en": "significant financing component",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "revenue",
+  "definition": "계약대금 수령 시기와 재화 인도 시기 차이가 1년을 초과해 사실상 자금 제공 요소가 포함된 거래. 이자수익을 별도 인식.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "installment-sale",
+      "reason": "유의적 금융요소는 시점 차이가 1년 초과한 케이스 일반, 할부판매는 그 한 예"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

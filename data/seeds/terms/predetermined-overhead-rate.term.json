@@ -1,0 +1,21 @@
+{
+  "term_id": "predetermined-overhead-rate",
+  "name_ko": "예정배부율",
+  "name_en": "predetermined overhead rate",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "기초 추정 제조간접비를 기준조업도로 나눈 비율. 정상원가계산에서 사용.",
+  "formula": "예정배부율 = 추정 제조간접비 / 추정 기준조업도",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "normal-costing",
+      "reason": "예정배부율은 비율, 정상원가는 그 비율을 사용하는 방법"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

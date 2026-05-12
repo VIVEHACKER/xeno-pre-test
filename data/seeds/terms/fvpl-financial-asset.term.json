@@ -1,0 +1,21 @@
+{
+  "term_id": "fvpl-financial-asset",
+  "name_ko": "당기손익공정가치측정 금융자산",
+  "name_en": "FVPL financial asset",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "공정가치로 측정하고 평가손익을 당기손익으로 인식하는 금융자산. 단기매매 목적 또는 SPPI 미충족 자산이 분류된다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "amortized-cost",
+      "reason": "FVPL은 평가손익을 당기손익으로, AC는 평가하지 않고 상각만"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

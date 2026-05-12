@@ -1,0 +1,21 @@
+{
+  "term_id": "adaptive-expectations",
+  "name_ko": "적응적 기대",
+  "name_en": "adaptive expectations",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "과거 관측치에 가중치를 두어 점진적으로 조정하는 기대 형성. 합리적 기대의 대안.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "rational-expectations",
+      "reason": "적응적은 과거 기반, 합리적은 정보 종합"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

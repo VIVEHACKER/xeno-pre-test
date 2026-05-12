@@ -1,0 +1,21 @@
+{
+  "term_id": "floating-exchange-rate",
+  "name_ko": "변동환율제도",
+  "name_en": "floating exchange rate",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "외환시장 수요·공급에 의해 환율이 자유롭게 결정되는 제도.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "fixed-exchange-rate",
+      "reason": "변동환율은 시장 결정, 고정환율은 정부 고정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

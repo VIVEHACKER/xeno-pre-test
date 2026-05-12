@@ -1,0 +1,21 @@
+{
+  "term_id": "non-deductible-input-vat",
+  "name_ko": "매입세액불공제",
+  "name_en": "non-deductible input VAT",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "사업과 직접 관련 없는 매입, 접대비 등 일정 사유로 매입세액 공제가 인정되지 않는 경우.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "input-vat",
+      "reason": "불공제는 공제 인정 안 됨, 매입세액공제는 인정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

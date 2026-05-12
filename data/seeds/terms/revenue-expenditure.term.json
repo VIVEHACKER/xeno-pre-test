@@ -1,0 +1,21 @@
+{
+  "term_id": "revenue-expenditure",
+  "name_ko": "수익적 지출",
+  "name_en": "revenue expenditure",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "자산의 정상적 기능 유지를 위한 지출. 발생 시점에 비용으로 처리한다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "capital-expenditure",
+      "reason": "수익적 지출은 즉시 비용, 자본적 지출은 자산 추가"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

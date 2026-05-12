@@ -1,0 +1,21 @@
+{
+  "term_id": "stable-dividend",
+  "name_ko": "안정배당정책",
+  "name_en": "stable dividend policy",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "이익 변동과 무관하게 일정 수준의 배당을 지속하려는 정책.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "residual-dividend",
+      "reason": "안정배당은 평탄화, 잔여배당은 투자 후 잔여만"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

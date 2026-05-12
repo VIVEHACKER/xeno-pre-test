@@ -1,0 +1,21 @@
+{
+  "term_id": "real-option",
+  "name_ko": "실물옵션",
+  "name_en": "real option",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "실물 투자 의사결정에 옵션 평가 기법을 적용한 분석. 확장/연기/포기 옵션 등.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "call-option",
+      "reason": "실물옵션은 실물 투자에 옵션 가치 적용, 콜옵션은 금융 파생상품"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

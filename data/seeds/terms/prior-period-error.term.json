@@ -1,0 +1,21 @@
+{
+  "term_id": "prior-period-error",
+  "name_ko": "전기오류수정",
+  "name_en": "prior period error correction",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "중대한 전기 회계오류를 발견 시 소급해 재무제표를 재작성하는 절차.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "change-in-accounting-policy",
+      "reason": "오류수정과 정책변경 모두 소급이지만, 사유가 다름(오류 vs 기준 변경)"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

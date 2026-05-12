@@ -1,0 +1,23 @@
+{
+  "term_id": "free-trade-agreement",
+  "name_ko": "자유무역협정",
+  "name_en": "free trade agreement",
+  "aliases": [
+    "FTA"
+  ],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "체결국 간 관세와 무역장벽을 제거하거나 완화하는 협정.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "tariff",
+      "reason": "FTA는 관세 철폐 협정, 관세는 그 대상 정책"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

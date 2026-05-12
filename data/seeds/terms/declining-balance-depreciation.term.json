@@ -1,0 +1,21 @@
+{
+  "term_id": "declining-balance-depreciation",
+  "name_ko": "정률법",
+  "name_en": "declining-balance depreciation",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "기초 장부금액에 일정 상각률을 곱해 감가상각비를 산출하는 방법. 초기 부담이 크고 후기로 갈수록 감소.",
+  "formula": "감가상각비 = 기초 장부금액 × 상각률",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "straight-line-depreciation",
+      "reason": "정률법은 가속상각, 정액법은 균등상각"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "comparative-advantage",
+  "name_ko": "비교우위",
+  "name_en": "comparative advantage",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "기회비용이 더 낮은 재화 생산에 특화하는 것이 양국에 유리하다는 무역 이론.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "absolute-advantage",
+      "reason": "비교우위는 기회비용 기준, 절대우위는 절대 생산성 기준"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

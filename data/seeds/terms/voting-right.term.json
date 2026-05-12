@@ -1,0 +1,21 @@
+{
+  "term_id": "voting-right",
+  "name_ko": "의결권",
+  "name_en": "voting right",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "주주총회에서 행사하는 결의권. 보통주는 1주 1의결권 원칙.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "right-of-shareholder-meeting",
+      "reason": "의결권은 한 권리, 주주 권한은 그 모음"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

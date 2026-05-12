@@ -1,0 +1,21 @@
+{
+  "term_id": "solow-growth-model",
+  "name_ko": "솔로우 성장모형",
+  "name_en": "Solow growth model",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "자본축적과 기술진보로 1인당 산출 증가를 설명하는 신고전파 성장모형.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "endogenous-growth",
+      "reason": "솔로우는 외생적 기술진보, 내생적 성장은 R&D 등 내생화"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

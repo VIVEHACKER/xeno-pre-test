@@ -1,0 +1,21 @@
+{
+  "term_id": "consignment-sale",
+  "name_ko": "위탁판매",
+  "name_en": "consignment sale",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "revenue",
+  "definition": "수탁자가 위탁자의 재화를 보관·판매하고 수수료를 받는 거래. 위탁자는 수탁자의 판매 시점에 매출 인식.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "installment-sale",
+      "reason": "위탁판매는 제3자 판매, 할부판매는 분할 회수 조건"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

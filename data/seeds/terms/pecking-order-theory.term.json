@@ -1,0 +1,21 @@
+{
+  "term_id": "pecking-order-theory",
+  "name_ko": "자본조달 순위이론",
+  "name_en": "pecking order theory",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "기업이 내부유보 → 부채 → 신주발행 순으로 자금 조달을 선호한다는 이론.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "trade-off-theory",
+      "reason": "순위이론은 정보비대칭 기반, 상충이론은 절세-파산비용 trade-off"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

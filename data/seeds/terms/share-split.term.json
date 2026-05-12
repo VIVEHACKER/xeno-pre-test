@@ -1,0 +1,21 @@
+{
+  "term_id": "share-split",
+  "name_ko": "주식분할",
+  "name_en": "stock split",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "1주를 여러 주로 쪼개 발행주식수를 늘리고 액면가를 낮추는 행위. 자본금 총액 불변.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "bonus-issue",
+      "reason": "주식분할은 액면가 감소, 무상증자는 자본금 증가"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

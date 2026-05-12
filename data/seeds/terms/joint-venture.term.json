@@ -1,0 +1,21 @@
+{
+  "term_id": "joint-venture",
+  "name_ko": "공동기업",
+  "name_en": "joint venture",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "business_combination",
+  "definition": "두 당사자 이상이 공동 지배하면서 순자산에 대한 권리를 보유하는 약정. 지분법 적용.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "equity-method",
+      "reason": "공동기업은 대상, 지분법은 적용 방법"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

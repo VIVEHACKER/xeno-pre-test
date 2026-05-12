@@ -1,0 +1,21 @@
+{
+  "term_id": "income-inclusion",
+  "name_ko": "익금산입",
+  "name_en": "income inclusion",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "회계상 수익이 아니지만 세무상 익금에 포함시키는 조정.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "non-income-inclusion",
+      "reason": "익금산입은 더하기, 익금불산입은 빼기"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

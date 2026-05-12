@@ -1,0 +1,23 @@
+{
+  "term_id": "convertible-bond",
+  "name_ko": "전환사채",
+  "name_en": "convertible bond",
+  "aliases": [
+    "CB"
+  ],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "보유자가 일정 기간 내에 발행회사 주식으로 전환할 수 있는 권리가 부여된 사채. 부채요소와 자본요소로 분리 인식.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "bond-with-warrant",
+      "reason": "전환사채는 사채 자체가 주식으로 전환, 신주인수권부사채는 사채는 남고 신주 인수권만 행사"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "bill-of-exchange",
+  "name_ko": "환어음",
+  "name_en": "bill of exchange",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "발행인이 제3자(지급인)에게 일정 금액을 수취인에게 지급할 것을 명령하는 어음.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "promissory-note",
+      "reason": "환어음은 제3자 지급 명령, 약속어음은 자기 지급 약속"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

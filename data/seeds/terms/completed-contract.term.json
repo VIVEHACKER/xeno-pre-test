@@ -1,0 +1,21 @@
+{
+  "term_id": "completed-contract",
+  "name_ko": "완성기준",
+  "name_en": "completed-contract method",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "revenue",
+  "definition": "계약 완료 시점에 매출을 일괄 인식하는 방법. K-IFRS 1115호에서는 일반적으로 인정되지 않는다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "percentage-of-completion",
+      "reason": "완성기준은 일시 인식, 진행기준은 기간 안분"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

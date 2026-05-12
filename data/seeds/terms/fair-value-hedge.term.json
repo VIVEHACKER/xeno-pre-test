@@ -1,0 +1,21 @@
+{
+  "term_id": "fair-value-hedge",
+  "name_ko": "공정가치위험회피",
+  "name_en": "fair value hedge",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "공정가치 변동 위험을 회피하기 위한 위험회피. 회피대상과 도구의 평가손익을 모두 당기손익에 인식.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "cash-flow-hedge",
+      "reason": "공정가치 위험회피는 P/L 즉시 인식, 현금흐름 위험회피는 OCI 후 재분류"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

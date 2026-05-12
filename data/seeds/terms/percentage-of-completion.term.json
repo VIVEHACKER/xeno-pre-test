@@ -1,0 +1,21 @@
+{
+  "term_id": "percentage-of-completion",
+  "name_ko": "진행기준",
+  "name_en": "percentage of completion method",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "revenue",
+  "definition": "장기 계약 등에서 수행 진행률에 따라 매출과 원가를 비례 인식하는 방법.",
+  "formula": "진행률 = 누적 발생원가 / 추정 총원가",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "completed-contract",
+      "reason": "진행기준은 기간 안분, 완성기준은 완성 시 한꺼번에"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

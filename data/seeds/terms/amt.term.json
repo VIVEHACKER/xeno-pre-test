@@ -1,0 +1,23 @@
+{
+  "term_id": "amt",
+  "name_ko": "최저한세",
+  "name_en": "alternative minimum tax",
+  "aliases": [
+    "AMT"
+  ],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "각종 감면 후에도 최소한 부담해야 하는 세액. 산출세액에 최저한세율을 적용한 금액이 한도.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "corporate-tax-rate",
+      "reason": "최저한세는 감면 후 최소 부담, 법인세율은 기본 적용 세율"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

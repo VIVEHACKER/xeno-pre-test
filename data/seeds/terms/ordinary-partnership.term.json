@@ -1,0 +1,21 @@
+{
+  "term_id": "ordinary-partnership",
+  "name_ko": "합명회사",
+  "name_en": "ordinary partnership",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "사원 전원이 회사 채무에 무한 연대 책임을 지는 인적 회사. 사원 간 신뢰 기반.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "limited-partnership",
+      "reason": "합명은 모두 무한책임, 합자는 무한+유한 혼합"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

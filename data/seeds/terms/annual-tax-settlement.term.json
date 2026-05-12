@@ -1,0 +1,21 @@
+{
+  "term_id": "annual-tax-settlement",
+  "name_ko": "연말정산",
+  "name_en": "year-end tax settlement",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "근로소득자에 대해 매월 원천징수한 세액과 연간 산출세액의 차이를 정산하는 절차.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "final-return",
+      "reason": "연말정산은 근로소득자 자동, 확정신고는 5월 사업소득 등"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "global-progressive-rate",
+  "name_ko": "종합소득세율",
+  "name_en": "global progressive tax rate",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "과세표준 구간별 6%~45%로 적용되는 누진세율 체계.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "separate-rate",
+      "reason": "종합세율은 누진, 분리과세 세율은 일정 비율"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

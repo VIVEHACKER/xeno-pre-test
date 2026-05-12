@@ -1,0 +1,21 @@
+{
+  "term_id": "pareto-optimum",
+  "name_ko": "파레토 최적",
+  "name_en": "Pareto optimum",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "누군가의 효용을 늘리려면 다른 누군가의 효용을 줄여야 하는 자원배분 상태. 효율의 기본 정의.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "market-equilibrium",
+      "reason": "파레토 최적은 효율 개념, 시장균형은 수요·공급 결과"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

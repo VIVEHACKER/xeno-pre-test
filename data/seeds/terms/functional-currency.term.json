@@ -1,0 +1,21 @@
+{
+  "term_id": "functional-currency",
+  "name_ko": "기능통화",
+  "name_en": "functional currency",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "기업의 주된 영업환경에서 사용하는 통화. 외화환산의 기준이 된다.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "presentation-currency",
+      "reason": "기능통화는 영업환경 기준, 표시통화는 재무제표 작성 통화"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

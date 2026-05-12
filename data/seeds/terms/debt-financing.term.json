@@ -1,0 +1,21 @@
+{
+  "term_id": "debt-financing",
+  "name_ko": "타인자본 조달",
+  "name_en": "debt financing",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "사채 발행, 차입금 등으로 자금을 조달하는 방식. 이자비용은 손금/필요경비 인정.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "equity-financing",
+      "reason": "타인자본은 이자비용으로 절세효과, 자기자본은 배당으로 무절세"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

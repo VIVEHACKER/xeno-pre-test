@@ -1,0 +1,21 @@
+{
+  "term_id": "transformational-leadership",
+  "name_ko": "변혁적 리더십",
+  "name_en": "transformational leadership",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "비전 제시와 영감으로 부하의 가치관 변화와 잠재력 발휘를 이끄는 리더십.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "transactional-leadership",
+      "reason": "변혁적은 가치관 변화 중심, 거래적은 보상-처벌 기반"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

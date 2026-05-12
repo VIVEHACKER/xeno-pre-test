@@ -1,0 +1,21 @@
+{
+  "term_id": "profit-maximization",
+  "name_ko": "이윤극대화",
+  "name_en": "profit maximization",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "기업이 추구하는 목표. 한계수입(MR)과 한계비용(MC)이 같은 산출 수준에서 달성.",
+  "formula": "MR = MC",
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "cost-minimization",
+      "reason": "이윤극대화는 산출 결정, 비용극소화는 동일 산출의 투입 조합 결정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

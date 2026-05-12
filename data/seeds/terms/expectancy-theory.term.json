@@ -1,0 +1,21 @@
+{
+  "term_id": "expectancy-theory",
+  "name_ko": "기대이론",
+  "name_en": "expectancy theory",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "동기 = 기대(노력→성과) × 수단(성과→보상) × 유의성(보상의 가치). 브룸이 제안.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "equity-theory",
+      "reason": "기대이론은 보상 기대값 계산, 공정성이론은 타인 대비 비교"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "bond-discount",
+  "name_ko": "할인발행",
+  "name_en": "bond at discount",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "사채를 액면금액보다 낮은 금액으로 발행하는 것. 시장이자율이 액면이자율보다 높을 때 발생.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "bond-premium",
+      "reason": "할인발행은 표면<시장, 할증발행은 표면>시장"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

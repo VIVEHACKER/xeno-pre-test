@@ -1,0 +1,23 @@
+{
+  "term_id": "ppp",
+  "name_ko": "구매력평가설",
+  "name_en": "purchasing power parity",
+  "aliases": [
+    "PPP"
+  ],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "양국의 환율은 양국 물가수준의 비율로 결정된다는 환율 결정이론.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "interest-rate-parity",
+      "reason": "PPP는 물가 기반, 이자율평가는 금리 기반"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

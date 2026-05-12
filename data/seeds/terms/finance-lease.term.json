@@ -1,0 +1,21 @@
+{
+  "term_id": "finance-lease",
+  "name_ko": "금융리스",
+  "name_en": "finance lease",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "leases",
+  "definition": "리스자산의 위험과 보상의 대부분이 리스이용자에게 이전된 리스. 리스제공자는 리스채권 인식.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "operating-lease",
+      "reason": "금융리스는 위험/보상 이전, 운용리스는 미이전"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

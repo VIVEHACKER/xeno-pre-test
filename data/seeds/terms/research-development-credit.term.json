@@ -1,0 +1,21 @@
+{
+  "term_id": "research-development-credit",
+  "name_ko": "R&D 세액공제",
+  "name_en": "R&D tax credit",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "연구·인력개발비에 대한 일정 비율의 세액공제. 신성장동력 R&D는 추가 우대.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "tax-credit",
+      "reason": "R&D 세액공제는 정책 인센티브, 일반 세액공제는 광의"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

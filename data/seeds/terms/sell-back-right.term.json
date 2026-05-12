@@ -1,0 +1,21 @@
+{
+  "term_id": "sell-back-right",
+  "name_ko": "주주의 매수청구권",
+  "name_en": "shareholder appraisal right",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "합병/분할 등 중대 결의에 반대한 주주가 자신의 주식을 공정한 가격에 매수해 달라고 청구할 권리.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "squeeze-out",
+      "reason": "매수청구권은 반대 주주 권리, 매도청구권은 지배주주 권리"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "job-order-costing",
+  "name_ko": "개별원가계산",
+  "name_en": "job-order costing",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "주문/작업별로 원가를 집계하는 방식. 다품종 소량 생산이나 수주 생산에 적합.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "process-costing",
+      "reason": "개별원가는 주문 단위 집계, 종합원가는 공정 단위 흐름"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

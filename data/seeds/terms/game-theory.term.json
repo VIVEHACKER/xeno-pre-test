@@ -1,0 +1,21 @@
+{
+  "term_id": "game-theory",
+  "name_ko": "게임이론",
+  "name_en": "game theory",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "상호 의존적 의사결정 상황에서 전략적 행동을 분석하는 도구. 내쉬, 쿠르노, 죄수의 딜레마 등.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "nash-equilibrium",
+      "reason": "게임이론은 분석 도구 전체, 내쉬균형은 그 핵심 개념"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

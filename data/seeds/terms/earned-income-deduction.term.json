@@ -1,0 +1,21 @@
+{
+  "term_id": "earned-income-deduction",
+  "name_ko": "근로소득공제",
+  "name_en": "earned income deduction",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "근로소득에서 일정 비율을 자동 차감해 근로소득금액을 산정하는 공제.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "basic-deduction",
+      "reason": "근로소득공제는 소득 자체에서, 기본공제는 종합소득금액에서"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

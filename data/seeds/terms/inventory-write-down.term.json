@@ -1,0 +1,21 @@
+{
+  "term_id": "inventory-write-down",
+  "name_ko": "재고자산평가손실",
+  "name_en": "inventory write-down",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "재고자산의 순실현가능가치가 장부금액보다 낮을 때 인식하는 차손. 이후 가치 회복 시 환입 가능.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "impairment-loss",
+      "reason": "재고자산평가손실은 재고에 한정, 손상차손은 비유동자산(유형/무형)에 적용"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

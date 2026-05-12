@@ -1,0 +1,21 @@
+{
+  "term_id": "tax-treaty",
+  "name_ko": "조세조약",
+  "name_en": "tax treaty",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "이중과세 방지와 탈세 방지를 위해 양국 간 체결하는 협정. 원천징수 세율 우대 등 효과.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "foreign-tax-credit",
+      "reason": "조세조약은 협정 체계, 외국납부세액공제는 국내법상 이중과세 방지"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

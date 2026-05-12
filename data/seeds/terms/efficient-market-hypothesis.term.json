@@ -1,0 +1,23 @@
+{
+  "term_id": "efficient-market-hypothesis",
+  "name_ko": "효율적 시장 가설",
+  "name_en": "efficient market hypothesis",
+  "aliases": [
+    "EMH"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "시장 가격이 이용 가능한 정보를 모두 반영한다는 가설. 약형/준강형/강형으로 구분.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "random-walk",
+      "reason": "EMH는 효율성에 대한 이론, 랜덤워크는 그 결과로 나타나는 가격 행태"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

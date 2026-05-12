@@ -1,0 +1,21 @@
+{
+  "term_id": "articles-of-incorporation",
+  "name_ko": "정관",
+  "name_en": "articles of incorporation",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "회사 조직과 활동의 기본 규칙을 정한 자치 규범. 절대적·상대적·임의적 기재사항.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "commercial-register",
+      "reason": "정관은 회사 내부 규범, 상업등기는 외부 공시"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

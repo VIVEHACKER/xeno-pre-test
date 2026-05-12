@@ -1,0 +1,21 @@
+{
+  "term_id": "special-resolution",
+  "name_ko": "특별결의",
+  "name_en": "special resolution",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "주주총회에서 출석 의결권 2/3 이상과 발행주식수 1/3 이상으로 가결되는 가중 결의. 정관 변경, 합병 등.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "ordinary-resolution",
+      "reason": "특별결의는 가중요건, 보통결의는 일반요건"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

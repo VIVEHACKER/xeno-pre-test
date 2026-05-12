@@ -1,0 +1,21 @@
+{
+  "term_id": "externality",
+  "name_ko": "외부효과",
+  "name_en": "externality",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "시장가격에 반영되지 않은 거래 당사자 외 영향. 긍정적/부정적으로 구분.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "public-good",
+      "reason": "외부효과는 시장 실패 한 형태, 공공재는 또 다른 시장 실패 형태"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "trading-securities",
+  "name_ko": "단기매매금융자산",
+  "name_en": "trading securities",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "단기 차익 목적으로 보유하는 금융자산. FVPL로 분류되어 평가손익이 당기손익에 반영된다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "fvpl-financial-asset",
+      "reason": "단기매매금융자산은 FVPL의 한 종류로 분류 사유가 단기차익 목적"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

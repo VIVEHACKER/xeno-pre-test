@@ -1,0 +1,21 @@
+{
+  "term_id": "housing-fund-deduction",
+  "name_ko": "주택자금 공제",
+  "name_en": "housing fund deduction",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "주택청약저축, 주택임차차입금 원리금 상환 등에 대한 소득공제.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "special-deduction",
+      "reason": "주택자금공제는 특별소득공제의 한 종류"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

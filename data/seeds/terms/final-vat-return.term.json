@@ -1,0 +1,21 @@
+{
+  "term_id": "final-vat-return",
+  "name_ko": "확정신고(VAT)",
+  "name_en": "final VAT return",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "반기(1월·7월) 말 부가가치세 과세기간의 최종 신고·납부 절차.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "preliminary-return",
+      "reason": "확정신고는 반기 마감, 예정신고는 분기 중간"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

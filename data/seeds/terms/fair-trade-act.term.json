@@ -1,0 +1,21 @@
+{
+  "term_id": "fair-trade-act",
+  "name_ko": "공정거래법",
+  "name_en": "fair trade act",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "독과점/불공정거래 행위/대규모기업집단 등을 규제하는 법. 회사법과 별개의 행정 규제 체계.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "antitrust",
+      "reason": "공정거래법은 한국법, antitrust는 일반 개념"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

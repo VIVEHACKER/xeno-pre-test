@@ -1,0 +1,21 @@
+{
+  "term_id": "diminishing-marginal-utility",
+  "name_ko": "한계효용체감의 법칙",
+  "name_en": "law of diminishing marginal utility",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "소비량이 증가할수록 추가 단위의 효용이 점차 감소한다는 법칙.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "marginal-utility",
+      "reason": "체감의 법칙은 변화 방향, 한계효용은 그 측정값"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "promissory-note",
+  "name_ko": "약속어음",
+  "name_en": "promissory note",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "발행인이 자기 채무로서 일정 금액을 지급하기로 약속하는 어음.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "bill-of-exchange",
+      "reason": "약속어음은 자기 지급 약속, 환어음은 제3자에게 지급 명령"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

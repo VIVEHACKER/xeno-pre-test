@@ -1,0 +1,21 @@
+{
+  "term_id": "intangible-asset",
+  "name_ko": "무형자산",
+  "name_en": "intangible asset",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "물리적 실체가 없으나 식별 가능하고 통제 가능하며 미래 경제적 효익이 기대되는 비화폐성 자산. 영업권은 별도.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "goodwill",
+      "reason": "무형자산은 식별 가능, 영업권은 식별 불가능한 잔여 가치"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

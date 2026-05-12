@@ -1,0 +1,21 @@
+{
+  "term_id": "black-scholes",
+  "name_ko": "블랙숄즈 모형",
+  "name_en": "Black-Scholes model",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "유럽형 옵션 가격을 정규분포 가정에서 산출하는 폐쇄형 공식.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "put-call-parity",
+      "reason": "블랙숄즈는 모델 가정 필요, 풋콜패리티는 모델 무관 항등식"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

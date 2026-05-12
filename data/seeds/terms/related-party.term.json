@@ -1,0 +1,21 @@
+{
+  "term_id": "related-party",
+  "name_ko": "특수관계자",
+  "name_en": "related party",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "재무·영업 의사결정에 영향을 미치거나 받는 자. 거래 내용을 주석에 공시해야 한다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "business-combination",
+      "reason": "특수관계자는 관계 자체, 사업결합은 그 관계로부터 발생할 수 있는 거래 중 하나"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

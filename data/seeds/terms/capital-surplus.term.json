@@ -1,0 +1,21 @@
+{
+  "term_id": "capital-surplus",
+  "name_ko": "자본잉여금",
+  "name_en": "capital surplus",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "equity",
+  "definition": "주식발행초과금, 감자차익, 자기주식처분이익 등 자본거래에서 발생한 잉여금. 결손보전 외에는 처분 제한.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "retained-earnings",
+      "reason": "자본잉여금은 자본거래, 이익잉여금은 손익거래에서 발생"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

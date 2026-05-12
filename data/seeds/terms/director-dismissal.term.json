@@ -1,0 +1,21 @@
+{
+  "term_id": "director-dismissal",
+  "name_ko": "이사 해임",
+  "name_en": "director dismissal",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "주주총회 특별결의로 이사를 해임. 정당한 이유 없이 해임 시 손해배상 책임.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "director-appointment",
+      "reason": "해임은 특별결의 + 손해배상 가능, 선임은 보통결의"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

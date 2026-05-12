@@ -1,0 +1,21 @@
+{
+  "term_id": "subsequent-event",
+  "name_ko": "후속사건",
+  "name_en": "subsequent event",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "보고기간 말 이후 재무제표 발행승인일까지 발생한 사건. 수정을 요하는 사건과 수정을 요하지 않는 사건으로 구분.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "prior-period-error",
+      "reason": "후속사건은 보고기간 말 이후 사건, 전기오류수정은 과거 오류 수정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

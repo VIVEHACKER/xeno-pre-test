@@ -1,0 +1,23 @@
+{
+  "term_id": "marginal-rate-of-technical-substitution",
+  "name_ko": "한계기술대체율",
+  "name_en": "marginal rate of technical substitution",
+  "aliases": [
+    "MRTS"
+  ],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "동일 산출량을 유지하면서 한 투입요소를 1단위 더 늘릴 때 줄일 수 있는 다른 요소의 양.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "marginal-rate-of-substitution",
+      "reason": "MRTS는 생산 등량곡선 기울기, MRS는 소비 무차별곡선 기울기"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "research-cost",
+  "name_ko": "연구비",
+  "name_en": "research cost",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "새로운 과학적·기술적 지식을 얻기 위한 탐구 단계의 지출. 자본화 불가능, 발생 시 비용 처리.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "development-cost",
+      "reason": "연구비는 자본화 불가, 개발비는 요건 충족 시 자본화"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

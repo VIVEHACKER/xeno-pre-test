@@ -1,0 +1,21 @@
+{
+  "term_id": "budget-line",
+  "name_ko": "예산선",
+  "name_en": "budget line",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "주어진 소득과 가격으로 살 수 있는 재화 조합의 경계. 우하향 직선.",
+  "formula": "P1·Q1 + P2·Q2 = M",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "indifference-curve",
+      "reason": "예산선은 가용 제약, 무차별곡선은 선호 표현"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

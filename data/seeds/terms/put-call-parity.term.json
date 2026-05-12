@@ -1,0 +1,21 @@
+{
+  "term_id": "put-call-parity",
+  "name_ko": "풋콜패리티",
+  "name_en": "put-call parity",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "동일 기초자산/만기/행사가의 콜과 풋 옵션 가격 관계식. 차익거래 부재 조건에서 성립.",
+  "formula": "C - P = S - K/(1+r)^T",
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "black-scholes",
+      "reason": "풋콜패리티는 항등식, 블랙숄즈는 가격 모델"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

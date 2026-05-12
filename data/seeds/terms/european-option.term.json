@@ -1,0 +1,21 @@
+{
+  "term_id": "european-option",
+  "name_ko": "유럽식 옵션",
+  "name_en": "European option",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "만기일에만 행사할 수 있는 옵션. 블랙숄즈 모형의 표준 가정.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "american-option",
+      "reason": "유럽식은 만기에만, 미국식은 언제든"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

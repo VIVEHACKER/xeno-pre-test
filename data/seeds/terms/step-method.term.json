@@ -1,0 +1,21 @@
+{
+  "term_id": "step-method",
+  "name_ko": "단계배부법",
+  "name_en": "step allocation method",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "보조부문 원가를 일정 순서로 다른 보조부문에 일부 배부 후 제조부문에 배부. 단방향 흐름.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "reciprocal-method",
+      "reason": "단계배부는 단방향, 상호배부는 양방향(연립방정식)"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

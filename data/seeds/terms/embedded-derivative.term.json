@@ -1,0 +1,21 @@
+{
+  "term_id": "embedded-derivative",
+  "name_ko": "내재파생상품",
+  "name_en": "embedded derivative",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "주계약 안에 포함된 파생상품 요소. 일정 요건 충족 시 주계약과 분리해 별도 평가.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "derivative",
+      "reason": "내재파생은 주계약 일부, 파생상품은 독립 계약"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

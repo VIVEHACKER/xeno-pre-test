@@ -1,0 +1,21 @@
+{
+  "term_id": "plan-assets",
+  "name_ko": "사외적립자산",
+  "name_en": "plan assets",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "employee_benefits",
+  "definition": "확정급여제도를 위해 외부에 적립한 자산. 확정급여채무를 차감해 순부채/순자산을 산출.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "defined-benefit-obligation",
+      "reason": "사외적립자산은 자산 측, DBO는 부채 측"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

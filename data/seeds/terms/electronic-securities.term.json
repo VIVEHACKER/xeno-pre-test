@@ -1,0 +1,21 @@
+{
+  "term_id": "electronic-securities",
+  "name_ko": "전자증권",
+  "name_en": "electronic securities",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "실물 증서 없이 전자 등록으로 권리 이전·관리되는 증권 제도. 2019년 시행.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "registered-share",
+      "reason": "전자증권은 전자 등록, 기명주식은 명부 등록(실물 가능)"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

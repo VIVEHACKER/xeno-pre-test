@@ -1,0 +1,21 @@
+{
+  "term_id": "endogenous-growth",
+  "name_ko": "내생적 성장이론",
+  "name_en": "endogenous growth theory",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "지식 축적, 인적자본, R&D 등 모형 내부 요인으로 장기 성장률을 설명하는 이론.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "solow-growth-model",
+      "reason": "내생적 성장은 기술 내생화, 솔로우는 외생"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

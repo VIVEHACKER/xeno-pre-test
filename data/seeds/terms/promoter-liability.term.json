@@ -1,0 +1,21 @@
+{
+  "term_id": "promoter-liability",
+  "name_ko": "발기인의 책임",
+  "name_en": "promoter liability",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "회사 설립 시 발기인이 부담하는 자본충실 의무 + 출자 부실에 대한 인수담보책임 등.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "abnormal-establishment-item",
+      "reason": "발기인 책임은 인적 책임, 변태설립은 객관적 사항"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

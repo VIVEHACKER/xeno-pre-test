@@ -1,0 +1,21 @@
+{
+  "term_id": "keynesian-economics",
+  "name_ko": "케인즈 경제학",
+  "name_en": "Keynesian economics",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "총수요 부족이 경기 침체의 원인이며 적극적 재정·통화 정책이 필요하다는 학파.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "classical-economics",
+      "reason": "케인즈는 수요 중시, 고전학파는 공급 중시"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

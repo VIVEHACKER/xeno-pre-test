@@ -1,0 +1,21 @@
+{
+  "term_id": "stock-company",
+  "name_ko": "주식회사",
+  "name_en": "stock corporation",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "자본을 주식으로 분할하고 주주는 출자액 한도로 책임지는 물적 회사. CPA 1차의 주요 대상.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "limited-liability-company",
+      "reason": "주식회사는 자본 분할 + 양도성, 유한회사는 폐쇄적"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

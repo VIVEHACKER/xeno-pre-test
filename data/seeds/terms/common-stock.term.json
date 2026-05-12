@@ -1,0 +1,21 @@
+{
+  "term_id": "common-stock",
+  "name_ko": "보통주",
+  "name_en": "common stock",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "표준적 주식. 이익배당과 의결권에서 우선/제한이 없다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "preferred-stock",
+      "reason": "보통주는 표준, 우선주는 분배 우선 + 의결권 제한"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

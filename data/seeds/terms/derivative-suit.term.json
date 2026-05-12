@@ -1,0 +1,21 @@
+{
+  "term_id": "derivative-suit",
+  "name_ko": "주주대표소송",
+  "name_en": "derivative suit",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "이사 등의 위법 행위로 회사가 손해를 입었을 때 주주가 회사를 대표해 제기하는 소송.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "right-of-shareholder-meeting",
+      "reason": "주주대표소송은 권리 행사 수단, 주주 권한은 그 권리 모음"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

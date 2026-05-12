@@ -1,0 +1,21 @@
+{
+  "term_id": "loss-carryback",
+  "name_ko": "결손금 소급공제",
+  "name_en": "loss carryback",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "중소기업이 결손금을 직전 사업연도 소득에 적용해 이미 납부한 세액을 환급받는 제도.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "loss-carryforward",
+      "reason": "소급공제는 환급, 이월공제는 미래 차감"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

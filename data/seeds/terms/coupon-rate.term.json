@@ -1,0 +1,21 @@
+{
+  "term_id": "coupon-rate",
+  "name_ko": "표면이자율",
+  "name_en": "coupon rate",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "사채의 액면금액에 대해 매기 지급하는 이자율. 발행 시 정해지며 변하지 않는다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "ytm",
+      "reason": "표면이자율은 액면 기준 고정, YTM은 시장가 기준 변동"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

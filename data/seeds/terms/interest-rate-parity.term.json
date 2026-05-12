@@ -1,0 +1,21 @@
+{
+  "term_id": "interest-rate-parity",
+  "name_ko": "이자율평가",
+  "name_en": "interest rate parity",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "양국 금리 차이가 환율의 기대 변동률과 같아진다는 환율 결정이론.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "ppp",
+      "reason": "이자율평가는 단기 금융 흐름, PPP는 장기 무역 흐름"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

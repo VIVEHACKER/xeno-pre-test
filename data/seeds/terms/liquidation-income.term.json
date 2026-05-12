@@ -1,0 +1,21 @@
+{
+  "term_id": "liquidation-income",
+  "name_ko": "청산소득",
+  "name_en": "liquidation income",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "법인 청산 시 잔여재산가액과 자기자본의 차액으로 산출되는 별도 과세소득.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "capital-gains",
+      "reason": "청산소득은 법인 청산, 양도소득은 자산 처분"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

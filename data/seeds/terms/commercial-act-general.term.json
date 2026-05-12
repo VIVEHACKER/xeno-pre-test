@@ -1,0 +1,21 @@
+{
+  "term_id": "commercial-act-general",
+  "name_ko": "당연상행위",
+  "name_en": "absolute commercial act",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "상법 제46조에서 열거한 영업 행위. 행위 자체로 상행위로 인정된다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "auxiliary-commercial-act",
+      "reason": "당연상행위는 영업 본체, 보조적 상행위는 영업을 돕는 행위"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

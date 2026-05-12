@@ -1,0 +1,21 @@
+{
+  "term_id": "just-in-time",
+  "name_ko": "JIT",
+  "name_en": "just-in-time",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "필요한 때 필요한 만큼만 생산해 재고를 최소화하는 시스템. 도요타 생산방식의 핵심.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "lean-management",
+      "reason": "JIT는 재고 관점, 린은 낭비 전반의 제거 철학"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "perpetual-bond",
+  "name_ko": "영구사채",
+  "name_en": "perpetual bond",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "만기가 없고 이자만 지급하는 사채. K-IFRS 분류상 자본 또는 부채로 갈라질 수 있다.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "bond-at-par",
+      "reason": "영구사채는 만기 없음, 일반사채는 만기 존재"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

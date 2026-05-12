@@ -1,0 +1,21 @@
+{
+  "term_id": "variable-consideration",
+  "name_ko": "변동대가",
+  "name_en": "variable consideration",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "revenue",
+  "definition": "할인, 리베이트, 환불, 인센티브 등으로 거래가격이 변동되는 부분. 기대값 또는 가장 가능성 높은 값으로 추정.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "performance-obligation",
+      "reason": "변동대가는 거래가격 산정 이슈, 수행의무는 인식 단위 이슈"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "manufacturing-overhead",
+  "name_ko": "제조간접비",
+  "name_en": "manufacturing overhead",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "직접재료비/직접노무비를 제외한 모든 제조원가. 배부 기준이 필요하다.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "direct-labor",
+      "reason": "제조간접비는 배부 대상, 직접노무비는 직접 추적"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

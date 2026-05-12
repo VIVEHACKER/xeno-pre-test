@@ -1,0 +1,21 @@
+{
+  "term_id": "biological-asset",
+  "name_ko": "생물자산",
+  "name_en": "biological asset",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "살아있는 동물 또는 식물. K-IFRS 1041호에 따라 원칙적으로 매 보고기간말 공정가치(- 매각부대원가)로 측정.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "agricultural-produce",
+      "reason": "생물자산은 살아있는 동식물, 농림어업 수확물은 분리된 시점의 산출물"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

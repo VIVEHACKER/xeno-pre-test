@@ -1,0 +1,21 @@
+{
+  "term_id": "indifference-curve",
+  "name_ko": "무차별곡선",
+  "name_en": "indifference curve",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "동일한 효용을 주는 재화 조합을 연결한 곡선. 일반적으로 원점에 볼록.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "budget-line",
+      "reason": "무차별곡선은 선호, 예산선은 제약"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

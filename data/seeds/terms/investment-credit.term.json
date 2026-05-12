@@ -1,0 +1,21 @@
+{
+  "term_id": "investment-credit",
+  "name_ko": "투자세액공제",
+  "name_en": "investment tax credit",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "특정 자산(생산설비, 안전시설 등) 투자에 대해 일정 비율을 세액에서 공제.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "research-development-credit",
+      "reason": "투자세액공제는 자본투자, R&D 세액공제는 인력/연구비"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

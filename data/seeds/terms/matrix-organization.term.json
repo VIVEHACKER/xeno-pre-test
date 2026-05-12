@@ -1,0 +1,21 @@
+{
+  "term_id": "matrix-organization",
+  "name_ko": "매트릭스 조직",
+  "name_en": "matrix organization",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "기능별과 제품(또는 프로젝트)별 보고체계를 동시에 갖는 이중 권한 구조의 조직.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "functional-organization",
+      "reason": "매트릭스는 이중 보고, 기능별 조직은 단일 보고"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

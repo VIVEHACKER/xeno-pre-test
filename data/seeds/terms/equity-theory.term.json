@@ -1,0 +1,21 @@
+{
+  "term_id": "equity-theory",
+  "name_ko": "공정성이론",
+  "name_en": "equity theory",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "자신의 노력-보상 비율을 타인과 비교해 형평성을 인식하고 행동을 조정한다는 이론.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "expectancy-theory",
+      "reason": "공정성은 비교 기반, 기대이론은 기대값 기반"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

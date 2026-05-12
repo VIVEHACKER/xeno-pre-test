@@ -1,0 +1,21 @@
+{
+  "term_id": "share-transfer-comprehensive",
+  "name_ko": "주식의 포괄적 이전",
+  "name_en": "share transfer",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "기존 회사 주주가 새로 설립되는 모회사에 주식을 일괄 이전해 지주회사 구조를 만드는 거래.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "share-exchange",
+      "reason": "주식이전은 새 모회사 설립, 주식교환은 기존 회사 간"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

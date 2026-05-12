@@ -1,0 +1,21 @@
+{
+  "term_id": "director-competition-prohibition",
+  "name_ko": "이사의 경업금지의무",
+  "name_en": "director non-compete duty",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "이사가 회사의 영업부류에 속한 거래를 하거나 동종 다른 회사 임원이 되려면 이사회 승인 필요.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "director-self-dealing",
+      "reason": "경업금지는 동종 영업, 자기거래는 회사와의 직접 거래"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

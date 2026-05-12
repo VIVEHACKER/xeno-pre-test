@@ -1,0 +1,21 @@
+{
+  "term_id": "debenture-issue",
+  "name_ko": "사채 발행",
+  "name_en": "debenture issue",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "주식회사가 사채를 발행하는 절차. 이사회 결의로 가능, 일정 한도 내.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "debenture",
+      "reason": "사채 발행은 행위, 사채는 결과 증권"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

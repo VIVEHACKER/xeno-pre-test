@@ -1,0 +1,21 @@
+{
+  "term_id": "cumulative-voting",
+  "name_ko": "집중투표제",
+  "name_en": "cumulative voting",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "2명 이상의 이사를 동시에 선임할 때 1주당 의결권을 한 후보에 집중 가능한 제도.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "voting-right",
+      "reason": "집중투표제는 의결권 행사 방식, 의결권은 권리 자체"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

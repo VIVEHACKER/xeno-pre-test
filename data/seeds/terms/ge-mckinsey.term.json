@@ -1,0 +1,21 @@
+{
+  "term_id": "ge-mckinsey",
+  "name_ko": "GE-McKinsey 매트릭스",
+  "name_en": "GE-McKinsey matrix",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "산업 매력도와 사업 강점으로 9칸 매트릭스에 사업을 배치. BCG보다 다차원.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "bcg-matrix",
+      "reason": "GE-McKinsey는 9칸 다차원, BCG는 4칸 단순화"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

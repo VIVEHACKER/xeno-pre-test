@@ -1,0 +1,21 @@
+{
+  "term_id": "delivery-of-securities",
+  "name_ko": "주식 양도방식",
+  "name_en": "share delivery",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "주권 발행 회사는 주권 교부로, 주권 미발행 회사는 의사표시로 주식이 양도된다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "name-on-book-transfer",
+      "reason": "주권 교부는 권리 이전, 명의개서는 회사 대항 요건"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

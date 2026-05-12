@@ -1,0 +1,21 @@
+{
+  "term_id": "audit-committee",
+  "name_ko": "감사위원회",
+  "name_en": "audit committee",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "이사회 내 3인 이상의 위원으로 구성된 감사 기능 기관. 일정 규모 상장회사는 설치 의무.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "statutory-auditor",
+      "reason": "감사위원회는 위원회 형태, 감사는 단독 기관"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -115,12 +115,12 @@ def test_expand_query_includes_in_seed_confusable(index):
 
 
 def test_expand_query_skips_out_of_seed_confusable(index):
-    """nominal-interest-rate(시드 외)는 effective-interest-rate의 confusable이지만 확장에 안 들어옴."""
-    expanded = index.expand_query("유효이자율로 계산한다")
-    assert "유효이자율" in expanded  # 본인 표면형은 들어옴
-    # nominal-interest-rate는 시드에 없으므로 표면형도 알 수 없음
-    assert "액면이자율" not in expanded
-    assert "nominal-interest-rate" not in expanded
+    """current-tax(시드 외)는 deferred-tax의 confusable이지만 확장에 안 들어옴."""
+    expanded = index.expand_query("이연법인세 인식")
+    assert "이연법인세" in expanded  # 본인 표면형은 들어옴
+    # current-tax는 시드에 없으므로 표면형도 알 수 없음
+    assert "당기법인세" not in expanded
+    assert "current-tax" not in expanded
 
 
 def test_expand_query_empty_for_unrelated(index):
@@ -185,8 +185,8 @@ def test_term_index_expansion_finds_chunk_via_alias(chunks, index):
 
 def test_term_index_irrelevant_query_unchanged(chunks, index):
     """쿼리에 어떤 term도 매칭되지 않으면 점수 변화 없음."""
-    # 시드 102개 중 어느 것의 name_ko/aliases도 포함하지 않는 비CPA 쿼리
-    query = "재고자산 회전율 분석"
+    # 시드 어느 것의 name_ko/aliases도 포함하지 않는 비CPA 쿼리
+    query = "점심 메뉴 결정"
     assert index.matched_terms(query) == set(), "테스트 전제: 어떤 term도 매치되면 안 됨"
     a = retrieve(query, chunks, subject="accounting", top_k=5)
     b = retrieve(query, chunks, subject="accounting", top_k=5, term_index=index)

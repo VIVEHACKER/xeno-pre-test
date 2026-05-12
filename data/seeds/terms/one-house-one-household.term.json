@@ -1,0 +1,21 @@
+{
+  "term_id": "one-house-one-household",
+  "name_ko": "1세대 1주택 비과세",
+  "name_en": "one-house-one-household exemption",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "1세대가 1주택을 2년 이상 보유(조정대상지역은 2년 거주)하고 양도가액 12억원 이하면 양도세 비과세.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "long-term-deduction",
+      "reason": "1세대1주택은 비과세 조건, 장기보유특별공제는 양도차익 자체 감면"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

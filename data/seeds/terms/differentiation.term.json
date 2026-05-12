@@ -1,0 +1,21 @@
+{
+  "term_id": "differentiation",
+  "name_ko": "차별화 전략",
+  "name_en": "differentiation strategy",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "제품/서비스의 독특한 가치를 강조해 고가 프리미엄을 받는 전략. 포터의 3대 본원전략 중 하나.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "cost-leadership",
+      "reason": "차별화는 독특함, 원가우위는 저원가"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

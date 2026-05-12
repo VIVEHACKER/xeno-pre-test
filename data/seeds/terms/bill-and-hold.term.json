@@ -1,0 +1,21 @@
+{
+  "term_id": "bill-and-hold",
+  "name_ko": "미인도 청구판매",
+  "name_en": "bill-and-hold arrangement",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "revenue",
+  "definition": "고객이 대금을 지급하고 소유권을 가지지만 인도는 나중에 받기로 한 거래. 일정 요건 충족 시 매출 인식 가능.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "contract-asset",
+      "reason": "미인도 청구는 인도 지연 케이스, 계약자산은 청구 미발생 케이스"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

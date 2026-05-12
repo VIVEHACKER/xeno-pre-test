@@ -1,0 +1,21 @@
+{
+  "term_id": "equity-financing",
+  "name_ko": "자기자본 조달",
+  "name_en": "equity financing",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "주식 발행이나 이익유보로 자금을 조달하는 방식.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "debt-financing",
+      "reason": "자기자본은 주주 자금, 타인자본은 채권자 자금"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

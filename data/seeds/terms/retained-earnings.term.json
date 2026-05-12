@@ -1,0 +1,21 @@
+{
+  "term_id": "retained-earnings",
+  "name_ko": "이익잉여금",
+  "name_en": "retained earnings",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "equity",
+  "definition": "당기순이익 중 배당이나 적립으로 처분되지 않고 사내에 누적된 이익.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "capital-surplus",
+      "reason": "이익잉여금은 이익에서 발생, 자본잉여금은 자본거래에서 발생"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

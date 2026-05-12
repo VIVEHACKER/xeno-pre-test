@@ -1,0 +1,21 @@
+{
+  "term_id": "normal-costing",
+  "name_ko": "정상원가계산",
+  "name_en": "normal costing",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "직접재료비/직접노무비는 실제, 제조간접비는 예정배부율로 적용하는 방식.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "standard-cost",
+      "reason": "정상원가는 간접비만 예정, 표준원가는 모든 원가요소를 사전 표준"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

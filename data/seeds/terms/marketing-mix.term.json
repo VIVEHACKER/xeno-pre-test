@@ -1,0 +1,23 @@
+{
+  "term_id": "marketing-mix",
+  "name_ko": "마케팅 믹스",
+  "name_en": "marketing mix",
+  "aliases": [
+    "4P"
+  ],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "Product, Price, Place, Promotion의 4P로 구성된 마케팅 실행 도구 조합.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "stp-marketing",
+      "reason": "4P는 실행 변수, STP는 전략 수립"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

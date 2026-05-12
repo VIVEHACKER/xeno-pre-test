@@ -1,0 +1,21 @@
+{
+  "term_id": "securities-issuance-disclosure",
+  "name_ko": "증권 발행 공시",
+  "name_en": "securities issuance disclosure",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "공모로 증권을 발행할 때 자본시장법상 증권신고서 등의 공시 의무.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "listing-special-rules",
+      "reason": "발행 공시는 자본시장법, 상장 특례는 상법"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "production-function",
+  "name_ko": "생산함수",
+  "name_en": "production function",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "투입요소 양과 산출량의 기술적 관계.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "marginal-product",
+      "reason": "생산함수는 전체 관계, 한계생산물은 변화율"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

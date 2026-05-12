@@ -1,0 +1,21 @@
+{
+  "term_id": "right-of-shareholder-meeting",
+  "name_ko": "주주의 권한",
+  "name_en": "shareholder rights",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "이익배당청구권, 잔여재산분배청구권, 의결권 등 주주가 보유하는 권리의 총체.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "board-of-directors",
+      "reason": "주주 권한은 소유자 권리, 이사회는 경영진의 의사결정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

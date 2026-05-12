@@ -1,0 +1,21 @@
+{
+  "term_id": "carrier",
+  "name_ko": "운송인",
+  "name_en": "carrier",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "물건 또는 사람을 운반하는 영업을 하는 자. 운송계약상 책임에 대한 특별 규정.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "warehouse-keeper",
+      "reason": "운송인은 이동, 창고업자는 보관"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

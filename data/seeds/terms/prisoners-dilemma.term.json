@@ -1,0 +1,21 @@
+{
+  "term_id": "prisoners-dilemma",
+  "name_ko": "죄수의 딜레마",
+  "name_en": "prisoner's dilemma",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "협력 시 모두 이익이지만 개별 합리성으로는 배신이 우월전략인 게임이론의 대표 사례.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "nash-equilibrium",
+      "reason": "죄수의 딜레마는 게임 예시, 내쉬균형은 일반 균형 개념"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "swap",
+  "name_ko": "스왑",
+  "name_en": "swap",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "두 당사자가 일정 기간 현금흐름을 교환하기로 약정하는 파생상품. 이자율 스왑, 통화 스왑 등.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "forward-contract",
+      "reason": "스왑은 연속 교환, 선도는 단일 시점 교환"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

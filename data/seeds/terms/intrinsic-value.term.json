@@ -1,0 +1,21 @@
+{
+  "term_id": "intrinsic-value",
+  "name_ko": "내재가치",
+  "name_en": "intrinsic value",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "옵션이 즉시 행사될 때의 가치. 콜은 max(S-K, 0), 풋은 max(K-S, 0).",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "time-value",
+      "reason": "내재가치는 즉시 행사 가치, 시간가치는 만기까지 남은 가치 변동 잠재력"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

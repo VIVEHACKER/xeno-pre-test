@@ -1,0 +1,21 @@
+{
+  "term_id": "combined-leverage",
+  "name_ko": "결합레버리지",
+  "name_en": "combined leverage",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "영업레버리지와 재무레버리지를 곱한 값. 매출 변동이 EPS에 미치는 총 증폭효과.",
+  "formula": "DCL = DOL × DFL",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "operating-leverage",
+      "reason": "결합은 곱, 영업/재무는 그 구성요소"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "promotion-establishment",
+  "name_ko": "발기설립",
+  "name_en": "promotion establishment",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "발기인이 발행 주식 전부를 인수해 회사를 설립하는 방식.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "public-offering-establishment",
+      "reason": "발기설립은 발기인 인수, 모집설립은 외부 모집"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

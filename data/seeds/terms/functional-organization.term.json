@@ -1,0 +1,21 @@
+{
+  "term_id": "functional-organization",
+  "name_ko": "기능별 조직",
+  "name_en": "functional organization",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "마케팅/생산/재무 등 기능별로 부서를 묶은 전통적 조직 구조.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "matrix-organization",
+      "reason": "기능별은 전문성 강조, 매트릭스는 협업 강조"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

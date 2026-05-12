@@ -1,0 +1,21 @@
+{
+  "term_id": "preliminary-return",
+  "name_ko": "예정신고",
+  "name_en": "preliminary VAT return",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "분기마다 매출/매입을 신고·납부하는 절차. 1·3분기는 예정, 2·4분기는 확정.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "final-vat-return",
+      "reason": "예정신고는 1·3분기, 확정신고는 2·4분기"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

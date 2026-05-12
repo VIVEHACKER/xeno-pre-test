@@ -1,0 +1,21 @@
+{
+  "term_id": "controlling-shareholder",
+  "name_ko": "지배주주",
+  "name_en": "controlling shareholder",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "회사 의사결정에 사실상 지배력을 행사할 수 있는 주주. 일반적으로 30% 이상 보유 또는 사실상 지배.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "non-controlling-interest",
+      "reason": "지배주주는 지배측, 비지배지분은 그 외 주주"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

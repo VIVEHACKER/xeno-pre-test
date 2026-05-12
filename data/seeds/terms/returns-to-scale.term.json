@@ -1,0 +1,21 @@
+{
+  "term_id": "returns-to-scale",
+  "name_ko": "규모에 대한 수익",
+  "name_en": "returns to scale",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "모든 투입요소를 동일 비율 증가시킬 때 산출 증가율. 증가/감소/일정 3유형.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "economies-of-scale",
+      "reason": "규모수익은 모든 투입 동일 증가, 규모의 경제는 평균비용 감소"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

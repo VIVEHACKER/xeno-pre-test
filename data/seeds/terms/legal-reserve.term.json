@@ -1,0 +1,21 @@
+{
+  "term_id": "legal-reserve",
+  "name_ko": "이익준비금",
+  "name_en": "legal reserve",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "equity",
+  "definition": "상법상 매 결산기 금전배당의 10% 이상을 자본금의 50%에 달할 때까지 적립해야 하는 법정적립금.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "voluntary-reserve",
+      "reason": "이익준비금은 상법상 강제, 임의적립금은 정관/주총 결의로 임의 적립"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

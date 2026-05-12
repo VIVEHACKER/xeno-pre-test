@@ -1,0 +1,21 @@
+{
+  "term_id": "bearer-share",
+  "name_ko": "무기명주식",
+  "name_en": "bearer share",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "주권 소지자가 주주로 인정되는 주식. 한국에서는 2014년 폐지.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "registered-share",
+      "reason": "무기명은 소지자 권리, 기명은 명부 등록"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,23 @@
+{
+  "term_id": "non-controlling-interest",
+  "name_ko": "비지배지분",
+  "name_en": "non-controlling interest",
+  "aliases": [
+    "NCI"
+  ],
+  "subject": "accounting",
+  "unit": "business_combination",
+  "definition": "지배기업 외의 주주가 종속기업에 보유한 지분. 연결재무제표 자본 항목에 별도 표시.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "consolidation",
+      "reason": "비지배지분은 항목, 연결재무제표는 그 항목을 표시하는 보고체계"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

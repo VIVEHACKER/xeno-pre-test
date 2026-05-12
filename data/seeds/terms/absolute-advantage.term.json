@@ -1,0 +1,21 @@
+{
+  "term_id": "absolute-advantage",
+  "name_ko": "절대우위",
+  "name_en": "absolute advantage",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "동일 자원으로 더 많이 생산할 수 있는 능력. 아담 스미스가 제안.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "comparative-advantage",
+      "reason": "절대우위는 생산성 절대치, 비교우위는 기회비용"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

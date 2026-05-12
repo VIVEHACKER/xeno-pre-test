@@ -1,0 +1,21 @@
+{
+  "term_id": "cash-flow-hedge",
+  "name_ko": "현금흐름위험회피",
+  "name_en": "cash flow hedge",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "미래 현금흐름 변동 위험을 회피. 도구 손익 중 효과적인 부분은 OCI로, 비효과적인 부분은 당기손익으로.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "fair-value-hedge",
+      "reason": "현금흐름 위험회피는 OCI 경유, 공정가치 위험회피는 즉시 P/L"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

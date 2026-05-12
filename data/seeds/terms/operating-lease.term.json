@@ -1,0 +1,21 @@
+{
+  "term_id": "operating-lease",
+  "name_ko": "운용리스",
+  "name_en": "operating lease",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "leases",
+  "definition": "K-IFRS 1116 시행 이후 리스이용자 입장에서는 사용권자산/리스부채 인식 원칙이 같지만, 리스제공자에게는 기존 분류 의미가 남아있는 리스 유형.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "finance-lease",
+      "reason": "운용리스는 위험·보상 미이전, 금융리스는 위험·보상 이전"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

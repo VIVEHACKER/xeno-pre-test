@@ -1,0 +1,21 @@
+{
+  "term_id": "acceptance",
+  "name_ko": "인수",
+  "name_en": "acceptance",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "환어음의 지급인이 지급 의무를 부담하기로 약속하는 행위.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "endorsement",
+      "reason": "인수는 지급 약속, 배서는 권리 양도"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

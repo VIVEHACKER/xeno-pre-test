@@ -1,0 +1,21 @@
+{
+  "term_id": "sppi-test",
+  "name_ko": "SPPI 요건",
+  "name_en": "SPPI test",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "원금과 이자만으로 구성된 현금흐름(Solely Payments of Principal and Interest)인지 평가하는 기준. AC/FVOCI 분류의 필수 조건.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "amortized-cost",
+      "reason": "SPPI는 분류 요건, AC는 분류 후 측정 방법"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

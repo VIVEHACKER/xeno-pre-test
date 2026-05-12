@@ -1,0 +1,21 @@
+{
+  "term_id": "capm-vs-apt",
+  "name_ko": "CAPM vs APT",
+  "name_en": "CAPM vs APT",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "CAPM은 시장 베타 단일 요인, APT(차익가격결정이론)는 여러 거시 요인으로 수익률을 설명.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "capm",
+      "reason": "APT는 다요인 모델, CAPM은 단일요인(시장베타) 모델"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

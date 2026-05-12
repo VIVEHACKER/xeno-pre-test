@@ -1,0 +1,21 @@
+{
+  "term_id": "capital-and-reserve-adjustment",
+  "name_ko": "자본금과 적립금 조정명세서",
+  "name_en": "capital and reserve adjustment",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "법인의 누적 세무조정 잔액을 관리하는 별표. 세무상 자기자본 변동을 추적.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "tax-base-adjustment",
+      "reason": "조정명세서는 누적 잔액 관리, 세무조정은 당기 조정 행위"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

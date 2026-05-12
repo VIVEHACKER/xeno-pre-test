@@ -1,0 +1,21 @@
+{
+  "term_id": "vat-refund",
+  "name_ko": "환급",
+  "name_en": "VAT refund",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "매입세액이 매출세액을 초과해 사업자가 부담한 세금을 돌려받는 절차.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "early-refund",
+      "reason": "일반환급은 정기 신고 후, 조기환급은 특정 사유로 가속"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

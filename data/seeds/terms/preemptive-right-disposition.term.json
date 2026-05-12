@@ -1,0 +1,21 @@
+{
+  "term_id": "preemptive-right-disposition",
+  "name_ko": "신주인수권 처분",
+  "name_en": "preemptive right disposition",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "주주가 신주인수권을 행사하지 않고 양도하거나 포기하는 행위.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "preemptive-right",
+      "reason": "처분은 양도/포기 행위, 신주인수권은 권리 자체"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

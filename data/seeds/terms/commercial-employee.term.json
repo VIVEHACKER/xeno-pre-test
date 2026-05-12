@@ -1,0 +1,21 @@
+{
+  "term_id": "commercial-employee",
+  "name_ko": "상업사용인",
+  "name_en": "commercial employee",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "상인을 위해 영업에 관한 재판상·재판외 모든 행위를 할 수 있는 사용인. 지배인이 대표적.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "commercial-agent",
+      "reason": "상업사용인은 사용 관계, 상사대리는 대리 관계"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

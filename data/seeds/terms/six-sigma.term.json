@@ -1,0 +1,21 @@
+{
+  "term_id": "six-sigma",
+  "name_ko": "식스시그마",
+  "name_en": "six sigma",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "결함을 100만 개 중 3.4개 이하로 줄이는 품질 관리 방법론. DMAIC 사이클 사용.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "tqm",
+      "reason": "식스시그마는 통계 기반, TQM은 전사 품질 문화"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

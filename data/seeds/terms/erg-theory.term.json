@@ -1,0 +1,21 @@
+{
+  "term_id": "erg-theory",
+  "name_ko": "ERG 이론",
+  "name_en": "ERG theory",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "매슬로 5단계를 존재(E)/관계(R)/성장(G) 3단계로 재구성하고 좌절-퇴행 가능성 인정.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "maslow-hierarchy",
+      "reason": "ERG는 3단계 + 퇴행 허용, 매슬로는 5단계 일방향 진행"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

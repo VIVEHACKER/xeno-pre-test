@@ -1,0 +1,21 @@
+{
+  "term_id": "share-cancellation",
+  "name_ko": "주식 소각",
+  "name_en": "share cancellation",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "회사가 보유한 자기주식을 절차에 따라 소멸시키는 행위. 자본금 감소 효과.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "treasury-shares-law",
+      "reason": "주식 소각은 소멸, 자기주식 취득은 보유 단계"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

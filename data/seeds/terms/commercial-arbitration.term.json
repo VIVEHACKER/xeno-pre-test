@@ -1,0 +1,21 @@
+{
+  "term_id": "commercial-arbitration",
+  "name_ko": "상사중재",
+  "name_en": "commercial arbitration",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "상사 분쟁을 법원이 아닌 중재인에게 맡겨 해결하는 절차. 신속성과 비공개가 장점.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "commercial-limitation-period",
+      "reason": "상사중재는 분쟁 해결, 소멸시효는 권리 행사 기한"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

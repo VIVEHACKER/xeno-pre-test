@@ -1,0 +1,21 @@
+{
+  "term_id": "bad-debt-vat-credit",
+  "name_ko": "대손세액공제",
+  "name_en": "bad debt VAT credit",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "이미 매출세액으로 신고·납부한 거래의 매출채권이 대손 확정되면 그 부가가치세를 매출세액에서 차감.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "output-vat",
+      "reason": "대손세액공제는 매출세액 사후 조정, 매출세액은 본 거래 세금"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

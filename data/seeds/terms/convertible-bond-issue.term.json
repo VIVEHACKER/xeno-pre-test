@@ -1,0 +1,21 @@
+{
+  "term_id": "convertible-bond-issue",
+  "name_ko": "전환사채 발행",
+  "name_en": "convertible bond issue",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "주식 전환권이 부여된 사채 발행. 정관 또는 이사회 결의로 발행 가능.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "bond-with-warrant-issue",
+      "reason": "CB 발행은 전환권, BW 발행은 신주인수권"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "thin-capitalization",
+  "name_ko": "과소자본세제",
+  "name_en": "thin capitalization",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "특수관계 외국법인으로부터 과다 차입 시 일정 비율 초과 이자비용을 손금불산입하는 제도.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "transfer-pricing",
+      "reason": "과소자본세제는 자본구조 규제, 이전가격은 거래가격 규제"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "modigliani-miller-with-tax",
+  "name_ko": "MM 명제(법인세 포함)",
+  "name_en": "MM with corporate tax",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "법인세가 있을 때 이자비용 절세효과로 부채 사용이 기업가치를 증가시킨다는 MM의 수정 명제.",
+  "formula": "V_L = V_U + t × D",
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "mm-proposition",
+      "reason": "세금 포함 MM은 부채 사용 권장, 무세 MM은 자본구조 무관"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

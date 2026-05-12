@@ -1,0 +1,21 @@
+{
+  "term_id": "agency-cost",
+  "name_ko": "대리비용",
+  "name_en": "agency cost",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "주주와 경영자, 채권자와 주주 사이의 이해상충에서 발생하는 비용.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "mm-proposition",
+      "reason": "대리비용은 자본구조 결정 요인, MM은 그 요인을 무시한 가정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

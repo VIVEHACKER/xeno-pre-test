@@ -1,0 +1,23 @@
+{
+  "term_id": "free-cash-flow",
+  "name_ko": "잉여현금흐름",
+  "name_en": "free cash flow",
+  "aliases": [
+    "FCF"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "영업현금흐름에서 자본적 지출을 차감한 후 주주와 채권자에게 분배 가능한 현금.",
+  "formula": "FCF = 영업CF - CapEx",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "operating-cash-flow",
+      "reason": "FCF는 분배 가능, 영업CF는 그 직전 단계"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "donation-credit",
+  "name_ko": "기부금 세액공제",
+  "name_en": "donation tax credit",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "법정/지정 기부금에 대해 일정 비율을 세액에서 공제. 한도 초과분은 이월 가능.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "medical-expense-credit",
+      "reason": "기부금/의료비 모두 특별공제군이지만 한도 계산식이 다름"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "share-exchange",
+  "name_ko": "주식의 포괄적 교환",
+  "name_en": "share exchange",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "한 회사가 다른 회사의 모든 주식을 자기 주식으로 교환해 100% 자회사로 만드는 거래.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "share-transfer-comprehensive",
+      "reason": "주식교환은 기존 회사 간, 주식이전은 새 모회사 설립"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

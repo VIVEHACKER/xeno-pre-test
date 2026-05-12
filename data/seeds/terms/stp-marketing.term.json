@@ -1,0 +1,21 @@
+{
+  "term_id": "stp-marketing",
+  "name_ko": "STP 전략",
+  "name_en": "STP strategy",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "Segmentation(시장 세분화) → Targeting(목표 시장 선정) → Positioning(포지셔닝)의 마케팅 전략 프레임.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "marketing-mix",
+      "reason": "STP는 시장 분석/선정, 4P는 실행 도구"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

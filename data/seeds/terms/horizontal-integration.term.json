@@ -1,0 +1,21 @@
+{
+  "term_id": "horizontal-integration",
+  "name_ko": "수평적 통합",
+  "name_en": "horizontal integration",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "동일 사업 단계의 경쟁사 인수나 합병을 통한 확장.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "vertical-integration",
+      "reason": "수평적은 동일 단계 합치기, 수직적은 상하 단계로 확장"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

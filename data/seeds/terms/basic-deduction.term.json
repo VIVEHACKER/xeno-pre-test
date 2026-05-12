@@ -1,0 +1,21 @@
+{
+  "term_id": "basic-deduction",
+  "name_ko": "기본공제",
+  "name_en": "basic deduction",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "본인 및 부양가족 1인당 연 150만원을 종합소득금액에서 공제하는 인적공제.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "additional-deduction",
+      "reason": "기본공제는 모두에게, 추가공제는 경로/장애 등 사유 충족 시"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

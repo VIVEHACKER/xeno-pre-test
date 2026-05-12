@@ -1,0 +1,21 @@
+{
+  "term_id": "outside-director",
+  "name_ko": "사외이사",
+  "name_en": "outside director",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "회사의 상무에 종사하지 않으면서 회사 경영을 객관적으로 감독하는 이사. 상장회사 일정 비율 이상 의무.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "board-of-directors",
+      "reason": "사외이사는 이사회의 한 유형, 이사회는 전체 기관"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

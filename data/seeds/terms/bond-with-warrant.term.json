@@ -1,0 +1,23 @@
+{
+  "term_id": "bond-with-warrant",
+  "name_ko": "신주인수권부사채",
+  "name_en": "bond with warrant",
+  "aliases": [
+    "BW"
+  ],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "사채에 신주인수권이 함께 부여된 사채. 인수권 행사 후에도 사채는 그대로 존속.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "convertible-bond",
+      "reason": "BW는 신주인수권만 분리 행사, CB는 사채 자체가 주식으로 전환"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

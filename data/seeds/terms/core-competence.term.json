@@ -1,0 +1,21 @@
+{
+  "term_id": "core-competence",
+  "name_ko": "핵심역량",
+  "name_en": "core competence",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "경쟁사가 모방하기 어렵고 다양한 사업으로 확장 가능한 기업의 고유 능력.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "value-chain",
+      "reason": "핵심역량은 능력, 가치사슬은 그 능력이 발현되는 활동"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

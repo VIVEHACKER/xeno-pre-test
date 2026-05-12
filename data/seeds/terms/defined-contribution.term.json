@@ -1,0 +1,23 @@
+{
+  "term_id": "defined-contribution",
+  "name_ko": "확정기여형 퇴직급여",
+  "name_en": "defined contribution plan",
+  "aliases": [
+    "DC"
+  ],
+  "subject": "accounting",
+  "unit": "employee_benefits",
+  "definition": "기업이 매기 기여금만 납부하면 책임이 종료되는 제도. 미래 지급액 위험은 종업원이 부담.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "defined-benefit-obligation",
+      "reason": "DC는 매기 기여금 납부로 종결, DB는 미래 지급액에 대한 책임"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}
