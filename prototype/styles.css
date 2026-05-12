@@ -199,12 +199,224 @@ h3 {
   font-weight: 800;
 }
 
+.diagnosis-input-stack {
+  display: grid;
+  gap: 12px;
+  border: 1px solid #d7e4dd;
+  border-radius: 8px;
+  background: #f8fbf7;
+  padding: 14px;
+  margin-bottom: 18px;
+}
+
+.diagnosis-input-stack .control-strip {
+  margin-bottom: 0;
+}
+
 .view {
   display: none;
 }
 
 .view.active {
   display: block;
+}
+
+.daily-command {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 18px;
+  align-items: stretch;
+  border: 1px solid #bfd8cf;
+  background: #f9fcf8;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 22px;
+  margin-bottom: 14px;
+}
+
+.daily-command-main h2 {
+  font-size: 28px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.daily-command-main p {
+  max-width: 880px;
+  color: var(--muted);
+  line-height: 1.55;
+  margin-bottom: 0;
+}
+
+.daily-command-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.daily-command-meta span {
+  border: 1px solid #c9ddd5;
+  border-radius: 999px;
+  background: #edf7f3;
+  color: var(--teal);
+  padding: 7px 10px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.daily-command-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  border-left: 1px solid var(--line);
+  padding-left: 18px;
+}
+
+.daily-command-side span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.daily-command-side strong {
+  display: block;
+  line-height: 1.45;
+}
+
+.daily-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.daily-panel {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+
+.today-problem-list,
+.concept-action-list {
+  display: grid;
+  gap: 10px;
+}
+
+.today-problem-card {
+  width: 100%;
+  border: 1px solid #d7e4dd;
+  border-radius: 8px;
+  background: #fbfcfa;
+  color: var(--ink);
+  cursor: pointer;
+  padding: 12px;
+  text-align: left;
+  transition:
+    border-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.today-problem-card:hover {
+  border-color: var(--teal);
+  transform: translateY(-1px);
+}
+
+.today-problem-card span,
+.concept-action-list span {
+  display: inline-block;
+  color: var(--teal);
+  font-size: 11px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.today-problem-card strong,
+.concept-action-list strong {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.today-problem-card small {
+  display: block;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.today-problem-card p,
+.concept-action-list p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.concept-action-list article {
+  border-left: 3px solid #84bdb2;
+  background: #fbfcfa;
+  padding: 10px 12px;
+}
+
+.defer-list,
+.rotation-list {
+  display: grid;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.defer-list li {
+  border: 1px solid #efd6ad;
+  border-radius: 8px;
+  background: #fff8ec;
+  color: #7a4b00;
+  padding: 10px 12px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.rotation-list {
+  counter-reset: rotation-step;
+}
+
+.rotation-list li {
+  position: relative;
+  border: 1px solid #d7e4dd;
+  border-radius: 8px;
+  background: #fbfcfa;
+  color: var(--muted);
+  line-height: 1.45;
+  padding: 10px 12px 10px 42px;
+}
+
+.rotation-list li::before {
+  counter-increment: rotation-step;
+  content: counter(rotation-step);
+  position: absolute;
+  left: 12px;
+  top: 10px;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #f8fbf8;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.daily-empty {
+  border: 1px dashed #bcd6ce;
+  border-radius: 8px;
+  background: #f7faf6;
+  color: var(--muted);
+  padding: 14px;
 }
 
 .metric-grid {
@@ -1134,6 +1346,8 @@ h3 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
+  .daily-command,
+  .daily-grid,
   .control-strip,
   .metric-grid,
   .two-column,
@@ -1163,6 +1377,13 @@ h3 {
   .topbar {
     flex-direction: column;
   }
+
+  .daily-command-side {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding-left: 0;
+    padding-top: 16px;
+  }
 }
 
 @media (max-width: 620px) {
@@ -1176,6 +1397,14 @@ h3 {
 
   h1 {
     font-size: 26px;
+  }
+
+  .daily-command {
+    padding: 16px;
+  }
+
+  .daily-command-main h2 {
+    font-size: 23px;
   }
 
   .panel-header {

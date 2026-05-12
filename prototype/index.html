@@ -18,7 +18,7 @@
           </div>
         </div>
         <nav class="nav-list" aria-label="주요 화면">
-          <button class="nav-item active" data-view="dashboard">전략 대시보드</button>
+          <button class="nav-item active" data-view="dashboard">오늘의 처방</button>
           <button class="nav-item" data-view="tutorials">과목 튜토리얼</button>
           <button class="nav-item" data-view="problem">문제 훈련</button>
           <button class="nav-item" data-view="stories">맞춤 코치</button>
@@ -31,7 +31,7 @@
         <header class="topbar">
           <div>
             <p class="eyebrow">CPA 1차 A-scope</p>
-            <h1>오늘의 합격 전략</h1>
+            <h1>오늘의 처방</h1>
           </div>
           <div class="exam-badge">
             <span>대상</span>
@@ -39,62 +39,56 @@
           </div>
         </header>
 
-        <section class="control-strip" aria-label="진단 입력">
-          <label>
-            시험까지
-            <input id="monthsInput" type="number" value="6" min="1" max="24" />
-            <span>개월</span>
-          </label>
-          <label>
-            회계 정답률
-            <input id="accountingInput" type="range" value="52" min="20" max="90" />
-            <output id="accountingOutput">52%</output>
-          </label>
-          <label>
-            세법 정답률
-            <input id="taxInput" type="range" value="46" min="20" max="90" />
-            <output id="taxOutput">46%</output>
-          </label>
-          <label>
-            하루 공부
-            <input id="hoursInput" type="number" value="7" min="1" max="16" />
-            <span>시간</span>
-          </label>
-        </section>
-
-        <section class="control-strip" aria-label="추가 진단 입력">
-          <label>
-            단계
-            <select id="stageInput">
-              <option value="post_lecture">기본강의 이후</option>
-              <option value="objective_entry" selected>객관식 진입</option>
-              <option value="past_exam_rotation">기출 회독</option>
-              <option value="mock_exam">모의고사</option>
-              <option value="final">파이널</option>
-            </select>
-          </label>
-          <label>
-            회계 시간초과
-            <input id="acctTimeInput" type="range" value="30" min="0" max="80" />
-            <output id="acctTimeOutput">30%</output>
-          </label>
-          <label>
-            세법 시간초과
-            <input id="taxTimeInput" type="range" value="15" min="0" max="80" />
-            <output id="taxTimeOutput">15%</output>
-          </label>
-        </section>
-
-        <section class="control-strip risk-tags" aria-label="리스크 태그">
-          <span class="strip-label">리스크 태그</span>
-          <label><input type="checkbox" data-tag="time_pressure" checked /> 시간 압박</label>
-          <label><input type="checkbox" data-tag="memory_decay" /> 휘발</label>
-          <label><input type="checkbox" data-tag="concept_gap" /> 개념 공백</label>
-          <label><input type="checkbox" data-tag="objective_entry_delay" checked /> 객관식 진입 지연</label>
-          <label><input type="checkbox" data-tag="rotation_confusion" /> 회독 혼동</label>
-        </section>
-
         <section class="view active" id="dashboard">
+          <section class="daily-command" aria-label="오늘의 처방">
+            <div class="daily-command-main">
+              <p class="eyebrow">Auto Prescription</p>
+              <h2 id="dailyCommandTitle">오늘 할 일을 계산하는 중</h2>
+              <p id="dailyCommandReason">현재 수준과 문제 풀이맵을 결합해 오늘의 실행 순서를 자동으로 만듭니다.</p>
+              <div class="daily-command-meta">
+                <span id="dailyStudyBudget">학습 예산 계산 중</span>
+                <span id="dailyRiskMode">운영 모드 판정 중</span>
+                <span id="dailyWeakSubject">약점 과목 판정 중</span>
+              </div>
+            </div>
+            <aside class="daily-command-side">
+              <span>검증 기준</span>
+              <strong id="dailyVerification">오늘 풀이 로그와 오답 원인 태그를 남깁니다.</strong>
+              <button class="primary-action" data-jump-view="problem" type="button">오늘 문제로 이동</button>
+            </aside>
+          </section>
+
+          <section class="daily-grid" aria-label="오늘의 실행 큐">
+            <article class="daily-panel">
+              <div class="panel-header">
+                <h2>오늘 풀 문제</h2>
+                <span id="todayProblemSummary">풀이맵 로딩 중</span>
+              </div>
+              <div class="today-problem-list" id="todayProblemList"></div>
+            </article>
+            <article class="daily-panel">
+              <div class="panel-header">
+                <h2>복습 개념</h2>
+                <span>풀이 전 5분 확인</span>
+              </div>
+              <div class="concept-action-list" id="todayConceptList"></div>
+            </article>
+            <article class="daily-panel">
+              <div class="panel-header">
+                <h2>오늘 버릴 단원</h2>
+                <span>회전율 방어</span>
+              </div>
+              <ul class="defer-list" id="todayDeferList"></ul>
+            </article>
+            <article class="daily-panel">
+              <div class="panel-header">
+                <h2>회독 전략</h2>
+                <span id="todayRotationMode">자동 조정</span>
+              </div>
+              <ol class="rotation-list" id="todayRotationList"></ol>
+            </article>
+          </section>
+
           <div class="metric-grid">
             <article class="metric">
               <span>합격 리스크</span>
@@ -356,6 +350,62 @@
             <div class="panel-header">
               <h2>레벨 진단</h2>
               <span>입력보다 행동 로그를 우선해서 판단합니다</span>
+            </div>
+            <div class="diagnosis-input-stack" aria-label="진단 입력">
+              <section class="control-strip">
+                <label>
+                  시험까지
+                  <input id="monthsInput" type="number" value="6" min="1" max="24" />
+                  <span>개월</span>
+                </label>
+                <label>
+                  회계 정답률
+                  <input id="accountingInput" type="range" value="52" min="20" max="90" />
+                  <output id="accountingOutput">52%</output>
+                </label>
+                <label>
+                  세법 정답률
+                  <input id="taxInput" type="range" value="46" min="20" max="90" />
+                  <output id="taxOutput">46%</output>
+                </label>
+                <label>
+                  하루 공부
+                  <input id="hoursInput" type="number" value="7" min="1" max="16" />
+                  <span>시간</span>
+                </label>
+              </section>
+
+              <section class="control-strip">
+                <label>
+                  단계
+                  <select id="stageInput">
+                    <option value="post_lecture">기본강의 이후</option>
+                    <option value="objective_entry" selected>객관식 진입</option>
+                    <option value="past_exam_rotation">기출 회독</option>
+                    <option value="mock_exam">모의고사</option>
+                    <option value="final">파이널</option>
+                  </select>
+                </label>
+                <label>
+                  회계 시간초과
+                  <input id="acctTimeInput" type="range" value="30" min="0" max="80" />
+                  <output id="acctTimeOutput">30%</output>
+                </label>
+                <label>
+                  세법 시간초과
+                  <input id="taxTimeInput" type="range" value="15" min="0" max="80" />
+                  <output id="taxTimeOutput">15%</output>
+                </label>
+              </section>
+
+              <section class="control-strip risk-tags">
+                <span class="strip-label">리스크 태그</span>
+                <label><input type="checkbox" data-tag="time_pressure" checked /> 시간 압박</label>
+                <label><input type="checkbox" data-tag="memory_decay" /> 휘발</label>
+                <label><input type="checkbox" data-tag="concept_gap" /> 개념 공백</label>
+                <label><input type="checkbox" data-tag="objective_entry_delay" checked /> 객관식 진입 지연</label>
+                <label><input type="checkbox" data-tag="rotation_confusion" /> 회독 혼동</label>
+              </section>
             </div>
             <div class="level-diagnosis-grid">
               <article>

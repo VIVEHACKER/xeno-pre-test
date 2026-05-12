@@ -108,7 +108,18 @@ function renderPriority(rx) {
     .join("");
 }
 
-const SUBJECT_LABEL = { accounting: "회계", tax: "세법", mixed: "혼합" };
+// SUBJECT_LABEL: 백엔드 cpa_first/subjects.py의 SUBJECTS와 동기화. 새 과목 추가 시 양쪽 갱신.
+const SUBJECT_LABEL = {
+  accounting: "회계",
+  tax: "세법",
+  business: "경영학",
+  economics: "경제원론",
+  corporate_law: "기업법",
+  management: "경영",
+  finance: "재무관리",
+  cost_accounting: "원가관리",
+  mixed: "혼합",
+};
 
 function renderTasks(rx) {
   $("#planSummary").textContent = `${rx.daily_tasks.length}개 처방`;
@@ -190,6 +201,179 @@ function classifyLearner(payload) {
   };
 }
 
+const UNIT_LABEL = {
+  financial_assets: "금융자산",
+  inventory: "재고자산",
+  cost_management: "CVP/원가관리",
+  tangible_assets: "유형자산",
+  revenue_recognition: "수익인식",
+  liabilities: "충당부채",
+  cash_flow: "현금흐름표",
+  equity: "자본",
+  vat: "부가가치세",
+  income_tax: "소득세",
+  corporate_tax: "법인세",
+  national_tax_basic_act: "국세기본법",
+};
+
+function unitLabel(unit) {
+  return UNIT_LABEL[unit] ?? String(unit ?? "").replaceAll("_", " ");
+}
+
+function weaknessScore(state) {
+  return state.accuracy - state.time_overrun_rate * 0.35;
+}
+
+function weakestSubjectState(payload) {
+  return payload.subject_states.reduce((weakest, state) =>
+    weaknessScore(state) < weaknessScore(weakest) ? state : weakest,
+  );
+}
+
+function normalizeSearchText(value) {
+  return String(value ?? "")
+    .toLowerCase()
+    .replace(/[^0-9a-z가-힣]/g, "");
+}
+
+function conceptMatchScore(problem, concepts) {
+  const source = normalizeSearchText(
+    [
+      problem.unit,
+      problem.question_analysis?.asked_output,
+      problem.question_analysis?.examiner_intent,
+      ...(problem.concept_tags || []),
+    ].join(" "),
+  );
+  return concepts.reduce((score, concept) => {
+    const normalized = normalizeSearchText(concept);
+    if (!normalized) return score;
+    if (source.includes(normalized)) return score + 16;
+    const tokens = String(concept)
+      .split(/[:\s,/_-]+/)
+      .map(normalizeSearchText)
+      .filter((token) => token.length >= 3);
+    return score + tokens.filter((token) => source.includes(token)).length * 5;
+  }, 0);
+}
+
+function scoreProblemForToday(problem, weakSubject, concepts, payload) {
+  const weakState = payload.subject_states.find((state) => state.subject === weakSubject);
+  const overrun = weakState?.time_overrun_rate ?? 0;
+  let score = 0;
+  if (problem.subject === weakSubject) score += 40;
+  if (problem.review_status === "expert_reviewed") score += 8;
+  if (problem.rights_status === "synthetic_seed") score += 4;
+  score += conceptMatchScore(problem, concepts);
+  if (overrun >= 0.35 && problem.question_analysis?.question_type === "calculation") score += 7;
+  if (payload.current_stage === "objective_entry" && problem.solution_paths?.length >= 3) score += 6;
+  return score;
+}
+
+function selectTodayProblems(payload, concepts) {
+  const weakSubject = weakestSubjectState(payload).subject;
+  return [...problemSolutionMaps]
+    .sort((a, b) => scoreProblemForToday(b, weakSubject, concepts, payload) - scoreProblemForToday(a, weakSubject, concepts, payload))
+    .slice(0, 3);
+}
+
+function uniqueItems(items) {
+  return Array.from(new Set(items.filter(Boolean)));
+}
+
+function buildDailyPrescription(payload, rx = null) {
+  const profile = classifyLearner(payload);
+  const weakState = weakestSubjectState(payload);
+  const weakLabel = SUBJECT_LABEL[weakState.subject] ?? weakState.subject;
+  const concepts = uniqueItems([...(rx?.concepts_to_review || []), profile.focus]).slice(0, 4);
+  const problems = selectTodayProblems(payload, concepts);
+  const hours = payload.available_hours_per_day;
+  const problemMinutes = Math.max(45, Math.min(120, Math.round(hours * 60 * 0.32)));
+  const reviewMinutes = Math.max(15, Math.min(60, Math.round(hours * 60 * 0.14)));
+  const topUnit = problems[0] ? `${SUBJECT_LABEL[problems[0].subject] ?? problems[0].subject} ${unitLabel(problems[0].unit)}` : profile.focus;
+  const otherUnits = problemSolutionMaps
+    .filter((problem) => problem.subject !== weakState.subject)
+    .slice(0, 2)
+    .map((problem) => `${SUBJECT_LABEL[problem.subject] ?? problem.subject} ${unitLabel(problem.unit)}`);
+  const deferItems = uniqueItems([
+    profile.defer,
+    weakState.time_overrun_rate >= 0.35 ? "시간을 넘긴 문제를 끝까지 붙잡기" : "채점 없는 문제 양치기",
+    ...otherUnits,
+    payload.days_until_exam <= 45 ? "새로운 범위 확장" : "고난도 실전 모의고사",
+  ]).slice(0, 4);
+  const firstProblem = problems[0];
+  const firstIntent = firstProblem?.question_analysis?.examiner_intent || "조건 신호를 보고 먼저 적용할 개념 체계를 고르는지 확인합니다.";
+
+  return {
+    title: `${weakLabel}부터 ${profile.mode} 모드로 시작`,
+    reason: `${profile.reason} 오늘은 ${topUnit}을 먼저 풀고, 출제 의도와 오답 유인을 해설보다 먼저 확인합니다.`,
+    budget: `${hours}시간 중 문제 ${problemMinutes}분 · 복습 ${reviewMinutes}분 우선 배정`,
+    riskMode: `${profile.level} · ${profile.mode}`,
+    weakSubject: `${weakLabel} 정답률 ${Math.round(weakState.accuracy * 100)}% · 시간초과 ${Math.round(weakState.time_overrun_rate * 100)}%`,
+    verification: rx?.weekly_goal?.verification_metric || "오늘 문제별 선택지 제거 근거와 오답 원인 태그를 남깁니다.",
+    problems,
+    concepts,
+    deferItems,
+    rotationMode: `${STAGE_LABEL[payload.current_stage] ?? payload.current_stage} 기준`,
+    rotation: [
+      `${concepts[0] || profile.focus}을 5분 안에 말로 설명하고 바로 문제로 확인합니다.`,
+      `${problemMinutes}분 동안 오늘 문제 ${Math.max(1, problems.length || 3)}개를 제한 시간으로 풉니다.`,
+      firstIntent,
+      "채점 후 정답 해설보다 질문 요구, 본문 신호, 오답 유인을 먼저 표시합니다.",
+      "틀린 문제는 개념 공백, 계산 순서, 시간 압박 중 하나로 태그를 남기고 다음 처방에 반영합니다.",
+    ],
+  };
+}
+
+function renderDailyPrescription(payload, rx = null) {
+  const prescription = buildDailyPrescription(payload, rx);
+  latestTodayProblemIds = prescription.problems.map((problem) => problem.question_id);
+  $("#dailyCommandTitle").textContent = prescription.title;
+  $("#dailyCommandReason").textContent = prescription.reason;
+  $("#dailyStudyBudget").textContent = prescription.budget;
+  $("#dailyRiskMode").textContent = prescription.riskMode;
+  $("#dailyWeakSubject").textContent = prescription.weakSubject;
+  $("#dailyVerification").textContent = prescription.verification;
+  $("#todayProblemSummary").textContent = prescription.problems.length ? `${prescription.problems.length}개 문제` : "풀이맵 로딩 중";
+  $("#todayRotationMode").textContent = prescription.rotationMode;
+
+  $("#todayProblemList").innerHTML = prescription.problems.length
+    ? prescription.problems
+        .map((problem, index) => {
+          const analysis = problem.question_analysis || {};
+          return `
+            <button class="today-problem-card" type="button" data-problem-id="${escapeAttr(problem.question_id)}">
+              <span>${index + 1} · ${escapeHtml(SUBJECT_LABEL[problem.subject] ?? problem.subject)}</span>
+              <strong>${escapeHtml(unitLabel(problem.unit))}</strong>
+              <small>${escapeHtml(analysis.asked_output || problem.question_id)}</small>
+              <p>${escapeHtml(analysis.examiner_intent || problem.explanation || "개념 선택과 보기 판별을 확인합니다.")}</p>
+            </button>
+          `;
+        })
+        .join("")
+    : `<div class="daily-empty">풀이맵이 로딩되면 오늘 풀 문제를 자동으로 채웁니다.</div>`;
+
+  $("#todayConceptList").innerHTML = prescription.concepts
+    .map(
+      (concept, index) => `
+        <article>
+          <span>${index + 1}</span>
+          <strong>${escapeHtml(concept)}</strong>
+          <p>풀이 전에 정의, 적용 조건, 대표 함정 1개를 말로 확인합니다.</p>
+        </article>
+      `,
+    )
+    .join("");
+
+  $("#todayDeferList").innerHTML = prescription.deferItems
+    .map((item) => `<li>${escapeHtml(item)}</li>`)
+    .join("");
+
+  $("#todayRotationList").innerHTML = prescription.rotation
+    .map((item) => `<li>${escapeHtml(item)}</li>`)
+    .join("");
+}
+
 function renderCoachFromState(payload, rx = null) {
   const profile = classifyLearner(payload);
   const tasks = rx?.daily_tasks || [];
@@ -260,6 +444,7 @@ async function loadEvidenceDetail(refType, refId) {
 }
 
 function render(rx) {
+  renderDailyPrescription(buildPayload(), rx);
   renderMetrics(rx);
   renderPriority(rx);
   renderTasks(rx);
@@ -269,16 +454,20 @@ function render(rx) {
 
 let inflight = null;
 let diagnoseTimer = null;
+let latestPrescription = null;
+let latestTodayProblemIds = [];
 
 async function triggerDiagnose() {
   const payload = buildPayload();
-  renderCoachFromState(payload);
+  renderCoachFromState(payload, latestPrescription);
+  renderDailyPrescription(payload, latestPrescription);
   if (inflight) inflight.aborted = true;
   const ticket = { aborted: false };
   inflight = ticket;
   try {
     const body = await postDiagnose(payload);
     if (ticket.aborted) return;
+    latestPrescription = body.prescription;
     render(body.prescription);
     $("#apiStatus").textContent = "처방 엔진 연결됨";
   } catch (err) {
@@ -288,7 +477,9 @@ async function triggerDiagnose() {
 
 function scheduleDiagnose() {
   updateSliderOutputs();
-  renderCoachFromState(buildPayload());
+  const payload = buildPayload();
+  renderCoachFromState(payload, latestPrescription);
+  renderDailyPrescription(payload, latestPrescription);
   if (diagnoseTimer) clearTimeout(diagnoseTimer);
   diagnoseTimer = setTimeout(triggerDiagnose, 300);
 }
@@ -309,12 +500,23 @@ function escapeAttr(s) {
 
 // ----- 이벤트 -----
 
+function activateView(viewId) {
+  const view = $(`#${viewId}`);
+  if (!view) return;
+  $$(".nav-item").forEach((item) => item.classList.toggle("active", item.dataset.view === viewId));
+  $$(".view").forEach((item) => item.classList.toggle("active", item.id === viewId));
+}
+
 $$(".nav-item").forEach((button) => {
+  button.addEventListener("click", () => activateView(button.dataset.view));
+});
+
+$$("[data-jump-view]").forEach((button) => {
   button.addEventListener("click", () => {
-    $$(".nav-item").forEach((item) => item.classList.remove("active"));
-    $$(".view").forEach((view) => view.classList.remove("active"));
-    button.classList.add("active");
-    $(`#${button.dataset.view}`).classList.add("active");
+    if (button.dataset.jumpView === "problem" && latestTodayProblemIds[0]) {
+      openProblemMap(latestTodayProblemIds[0]);
+    }
+    activateView(button.dataset.jumpView);
   });
 });
 
@@ -558,6 +760,12 @@ function renderProblemOptions() {
     )
     .join("");
   renderSelectedProblemMap();
+}
+
+function openProblemMap(problemId) {
+  selectedProblemId = problemId;
+  $("#problemSubjectFilter").value = "all";
+  renderProblemOptions();
 }
 
 function problemPathByType(item, pathType) {
@@ -918,11 +1126,19 @@ async function loadProblemSolutionMaps() {
     const data = await response.json();
     problemSolutionMaps = data.problem_solution_maps || [];
     renderProblemFilters();
+    renderDailyPrescription(buildPayload(), latestPrescription);
   } catch (err) {
     $("#problemSolutionSummary").textContent = `문제 풀이맵 로딩 실패: ${err.message}`;
     renderSelectedProblemMap();
   }
 }
+
+$("#todayProblemList").addEventListener("click", (event) => {
+  const button = event.target.closest("[data-problem-id]");
+  if (!button) return;
+  openProblemMap(button.dataset.problemId);
+  activateView("problem");
+});
 
 $("#problemSubjectFilter").addEventListener("change", () => {
   selectedProblemId = null;
@@ -1045,6 +1261,7 @@ async function healthCheck() {
 
 updateSliderOutputs();
 renderCoachFromState(buildPayload());
+renderDailyPrescription(buildPayload());
 renderWeek();
 loadDataManifest();
 loadSubjectTutorials();
