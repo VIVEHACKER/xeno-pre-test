@@ -72,9 +72,9 @@ def test_subject_tutorials_cover_all_ontology_subjects_with_solution_paths(tmp_p
         tmp_path / "subject_tutorials.json",
     )
 
-    assert result["subject_tutorials"] == 18
-    assert result["tutorial_steps"] == 108
-    assert result["solution_concept_links"] == 1296
+    assert result["subject_tutorials"] == 23
+    assert result["tutorial_steps"] == 138
+    assert result["solution_concept_links"] == 1656
 
     missing = conn.execute(
         """

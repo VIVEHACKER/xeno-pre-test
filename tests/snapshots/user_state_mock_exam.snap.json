@@ -1,12 +1,13 @@
 {
-  "prescription_id": "rx-seed-user-mock-exam-ec9faad353f2544a",
+  "prescription_id": "rx-seed-user-mock-exam-60193949f4e12ff6",
   "user_id": "seed-user-mock-exam",
   "generated_at": "2026-05-11T04:00:00+00:00",
   "diagnosis": {
-    "summary": "단계 mock_exam에서 매칭된 신호: 강제 통과 훈련, 회계학 2회전 풀이 드릴, 오답 원인 분류 일일 블록, 기출 회독 목적 분리, 연결재무제표 후반 진입, 모의고사 실전 시간표 시뮬레이션, 모의고사 후 복구 프로토콜, 회계/세법 핵심축 집중, 주간 회독 점검, 시간 집착 방지. 잔여 60일, 리스크 점수 20/100.",
+    "summary": "단계 mock_exam에서 매칭된 신호: CVP 문제는 묻는 단위부터 분류, 강제 통과 훈련, 회계학 2회전 풀이 드릴, 오답 원인 분류 일일 블록, 기출 회독 목적 분리, 연결재무제표 후반 진입, 모의고사 실전 시간표 시뮬레이션, 모의고사 후 복구 프로토콜, 회계/세법 핵심축 집중, 주간 회독 점검, 시간 집착 방지. 잔여 60일, 리스크 점수 20/100.",
     "risk_level": "low",
     "risk_drivers": [
       "다수 규칙 동시 발동",
+      "CVP 문제는 묻는 단위부터 분류",
       "강제 통과 훈련",
       "회계학 2회전 풀이 드릴",
       "오답 원인 분류 일일 블록",
@@ -22,10 +23,15 @@
     ]
   },
   "weekly_goal": {
-    "goal_text": "회계학 50문항 풀이 시 1문제 목표 시간의 80%가 지나면 즉시 표시 후 통과하는 드릴을 매일 1세트 수행한다. 통과한 문제만 별도 회상 큐로 보낸다.",
-    "verification_metric": "주간 처방 수행률 80% 이상, 매칭 규칙 anti_perfectionism_pass_drill 관련 약점 지표 측정"
+    "goal_text": "문제를 풀기 전에 묻는 결과를 (판매수량/매출액/안전한계율/이익변화/세후이익) 다섯 카테고리 중 하나로 분류하고 해당 공식 하나만 쓴다. 분류 = (1)수량→고정원가÷단위공헌이익 (2)매출액→고정원가÷공헌이익률 (3)안전한계→(현재-BEP)÷현재 (4)이익변화→매출변화×DOL (5)세후→세전을 (1-세율)로 나눠 분자 보정.",
+    "verification_metric": "주간 처방 수행률 80% 이상, 매칭 규칙 cvp_formula_classification_first 관련 약점 지표 측정"
   },
   "daily_tasks": [
+    {
+      "task_text": "문제를 풀기 전에 묻는 결과를 (판매수량/매출액/안전한계율/이익변화/세후이익) 다섯 카테고리 중 하나로 분류하고 해당 공식 하나만 쓴다. 분류 = (1)수량→고정원가÷단위공헌이익 (2)매출액→고정원가÷공헌이익률 (3)안전한계→(현재-BEP)÷현재 (4)이익변화→매출변화×DOL (5)세후→세전을 (1-세율)로 나눠 분자 보정.",
+      "subject": "accounting",
+      "estimated_minutes": 30
+    },
     {
       "task_text": "회계학 50문항 풀이 시 1문제 목표 시간의 80%가 지나면 즉시 표시 후 통과하는 드릴을 매일 1세트 수행한다. 통과한 문제만 별도 회상 큐로 보낸다.",
       "subject": "accounting",
@@ -85,6 +91,7 @@
   "problems_to_solve": [],
   "problems_to_skip": [],
   "triggered_rule_keys": [
+    "cvp_formula_classification_first",
     "anti_perfectionism_pass_drill",
     "accounting_two_pass_drill",
     "mistake_root_cause_block",
@@ -101,6 +108,11 @@
       "ref_type": "user_state",
       "ref_id": "seed-user-mock-exam",
       "note": "stage=mock_exam, days_until_exam=60"
+    },
+    {
+      "ref_type": "decision_rule",
+      "ref_id": "cvp_formula_classification_first",
+      "note": "CVP 문제는 묻는 단위부터 분류"
     },
     {
       "ref_type": "decision_rule",
