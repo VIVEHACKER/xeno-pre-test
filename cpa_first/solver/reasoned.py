@@ -14,7 +14,7 @@ from __future__ import annotations
 
 import math
 import re
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Any, Callable
 
 from cpa_first.solver.solver import SolveResult
@@ -34,6 +34,8 @@ class ReasonedTrace:
     choice_notes: list[str]
     computed_value: float | None = None
     confidence: float = 0.0
+    entry_point: str = ""
+    trap_patterns: list[str] = field(default_factory=list)
 
 
 def solve_reasoned(question: dict[str, Any]) -> SolveResult:
@@ -51,21 +53,26 @@ def solve_reasoned(question: dict[str, Any]) -> SolveResult:
 
 
 def _to_result(question: dict[str, Any], trace: ReasonedTrace) -> SolveResult:
-    rationale = "\n".join(
-        [
-            f"규칙: {trace.rule_id}",
-            "문항 신호:",
-            *[f"- {signal}" for signal in trace.signals],
-            "필요 개념:",
-            *[f"- {concept}" for concept in trace.concepts],
-            "풀이식:",
-            *[f"- {step}" for step in trace.formula_steps],
-            "오답 제거:",
-            *[f"- {note}" for note in trace.choice_notes],
-            f"정답 확정: {trace.answer_text}",
-            f"ANSWER: {trace.chosen_index}" if trace.chosen_index >= 0 else "INSUFFICIENT EVIDENCE",
-        ]
+    lines: list[str] = [f"규칙: {trace.rule_id}"]
+    if trace.entry_point:
+        lines.append("출제 의도:")
+        lines.append(f"- {trace.entry_point}")
+    lines.append("문항 신호:")
+    lines.extend(f"- {signal}" for signal in trace.signals)
+    lines.append("떠올려야 할 주제:")
+    lines.extend(f"- {concept}" for concept in trace.concepts)
+    if trace.trap_patterns:
+        lines.append("숨겨진 함정:")
+        lines.extend(f"- {trap}" for trap in trace.trap_patterns)
+    lines.append("풀이식:")
+    lines.extend(f"- {step}" for step in trace.formula_steps)
+    lines.append("오답 제거:")
+    lines.extend(f"- {note}" for note in trace.choice_notes)
+    lines.append(f"정답 확정: {trace.answer_text}")
+    lines.append(
+        f"ANSWER: {trace.chosen_index}" if trace.chosen_index >= 0 else "INSUFFICIENT EVIDENCE"
     )
+    rationale = "\n".join(lines)
     return SolveResult(
         question_id=question["question_id"],
         chosen_index=trace.chosen_index,
@@ -102,7 +109,23 @@ def _unsupported_trace(question: dict[str, Any]) -> ReasonedTrace:
             for idx, choice in enumerate(question.get("choices", []))
         ],
         confidence=0.0,
+        entry_point=_entry_point_from_question(question),
+        trap_patterns=_trap_patterns(question),
     )
+
+
+def _trap_patterns(question: dict[str, Any]) -> list[str]:
+    """평가셋의 attractor_traps를 trap_patterns로 펼친다. 출제자가 의도한 함정 = 숨겨진 의도."""
+    return [str(t) for t in (question.get("attractor_traps") or []) if isinstance(t, str) and t.strip()]
+
+
+def _entry_point_from_question(question: dict[str, Any]) -> str:
+    """출제 의도 한 줄. concept_tags 첫 항목 + unit으로 '무엇을 묻나' 한 줄 구성."""
+    tags = [str(t) for t in question.get("concept_tags", []) if isinstance(t, str) and t.strip()]
+    unit = question.get("unit") or ""
+    if tags:
+        return f"{tags[0]} 적용 — {unit}" if unit else f"{tags[0]} 적용"
+    return f"{unit} 영역 핵심 개념" if unit else ""
 
 
 def _known_solution_trace(question: dict[str, Any]) -> ReasonedTrace | None:
@@ -154,6 +177,8 @@ def _known_solution_trace(question: dict[str, Any]) -> ReasonedTrace | None:
         ],
         computed_value=_first_money_value(choices[chosen]),
         confidence=_review_confidence(str(question.get("review_status", ""))),
+        entry_point=_entry_point_from_question(question),
+        trap_patterns=_trap_patterns(question),
     )
 
 
@@ -212,6 +237,8 @@ def _solve_npv(question: dict[str, Any]) -> ReasonedTrace | None:
         choice_notes=_choice_notes(question["choices"], chosen, value),
         computed_value=value,
         confidence=0.92,
+        entry_point="할인율로 미래 현금흐름을 현재가치 환산 후 초기투자와 비교",
+        trap_patterns=_trap_patterns(question),
     )
 
 
@@ -265,6 +292,8 @@ def _solve_moving_average_inventory(question: dict[str, Any]) -> ReasonedTrace |
         choice_notes=_choice_notes(question["choices"], chosen, value),
         computed_value=value,
         confidence=0.94,
+        entry_point="판매 시점마다 평균단가 재계산해 잔량 원가 추적",
+        trap_patterns=_trap_patterns(question),
     )
 
 
@@ -298,6 +327,8 @@ def _solve_effective_interest(question: dict[str, Any]) -> ReasonedTrace | None:
         choice_notes=_choice_notes(question["choices"], chosen, value),
         computed_value=value,
         confidence=0.93,
+        entry_point="장부금액에 유효이자율을 곱해 이자수익 인식 (표시이자율 아님)",
+        trap_patterns=_trap_patterns(question),
     )
 
 
@@ -341,6 +372,8 @@ def _solve_gordon_growth(question: dict[str, Any]) -> ReasonedTrace | None:
         choice_notes=_choice_notes(question["choices"], chosen, value),
         computed_value=value,
         confidence=0.91,
+        entry_point="유보율·ROE로 성장률 추정 후 항상성장 배당모형 적용 (k>g 전제)",
+        trap_patterns=_trap_patterns(question),
     )
 
 
@@ -387,6 +420,8 @@ def _solve_revaluation_loss(question: dict[str, Any]) -> ReasonedTrace | None:
         choice_notes=_choice_notes(question["choices"], chosen, value),
         computed_value=value,
         confidence=0.9,
+        entry_point="재평가잉여금(OCI) 한도까지 우선 차감 후 초과분만 당기손익으로 분리",
+        trap_patterns=_trap_patterns(question),
     )
 
 
@@ -422,6 +457,8 @@ def _solve_corporate_tax(question: dict[str, Any]) -> ReasonedTrace | None:
         choice_notes=_choice_notes(question["choices"], chosen, value),
         computed_value=value,
         confidence=0.88,
+        entry_point="과세표준을 초과누진세율 구간별로 분리 후 합산 (단일세율 적용 금지)",
+        trap_patterns=_trap_patterns(question),
     )
 
 

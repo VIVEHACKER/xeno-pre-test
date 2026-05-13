@@ -135,7 +135,7 @@ def test_reasoned_solver_solves_npv_without_answer_key_leakage():
     assert result.chosen_index == 2
     assert result.mode == "reasoned"
     assert "문항 신호" in result.rationale
-    assert "필요 개념" in result.rationale
+    assert "떠올려야 할 주제" in result.rationale
     assert "풀이식" in result.rationale
     assert "오답 제거" in result.rationale
     assert "ANSWER: 2" in result.rationale
