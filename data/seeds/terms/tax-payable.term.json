@@ -1,0 +1,21 @@
+{
+  "term_id": "tax-payable",
+  "name_ko": "자진납부세액",
+  "name_en": "tax payable",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "원천징수세액과 중간예납을 차감한 후 납세자가 자진해 납부할 세액.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "refund-amount",
+      "reason": "자진납부는 양수 차액, 환급은 음수 차액"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

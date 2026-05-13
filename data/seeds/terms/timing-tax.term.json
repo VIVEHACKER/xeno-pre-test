@@ -1,0 +1,21 @@
+{
+  "term_id": "timing-tax",
+  "name_ko": "귀속시기",
+  "name_en": "timing of attribution",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "소득을 어느 사업연도에 인식할지 결정하는 세무 규정.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "timing-attribute",
+      "reason": "귀속시기는 시점, 귀속자는 누구"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "comprehensive-vs-classification",
+  "name_ko": "종합과세 vs 분류과세",
+  "name_en": "comprehensive vs classified taxation",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "종합과세는 합산 누진율, 분류과세는 양도/퇴직 등 별도 체계로 과세하는 분류.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "classification-taxation",
+      "reason": "비교 개념, 분류과세는 그 한 축"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

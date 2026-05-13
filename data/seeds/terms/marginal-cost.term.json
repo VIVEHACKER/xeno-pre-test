@@ -1,0 +1,23 @@
+{
+  "term_id": "marginal-cost",
+  "name_ko": "한계비용",
+  "name_en": "marginal cost",
+  "aliases": [
+    "MC"
+  ],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "산출량 1단위 추가 시 총비용 증가분.",
+  "formula": "MC = ΔTC / ΔQ",
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "average-cost",
+      "reason": "한계비용은 변화분, 평균비용은 평균"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

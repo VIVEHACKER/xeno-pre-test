@@ -1,0 +1,21 @@
+{
+  "term_id": "director-monitoring-duty",
+  "name_ko": "이사의 감시의무",
+  "name_en": "director duty to monitor",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "다른 이사 및 임원의 업무 집행을 감시할 의무. 사외이사에게 특히 강조.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "director-care-duty",
+      "reason": "감시의무는 선관주의의무의 구체적 발현"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

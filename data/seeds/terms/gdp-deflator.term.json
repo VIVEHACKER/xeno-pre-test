@@ -1,0 +1,21 @@
+{
+  "term_id": "gdp-deflator",
+  "name_ko": "GDP 디플레이터",
+  "name_en": "GDP deflator",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "명목GDP를 실질GDP로 나눈 값 × 100. 광범위한 물가 지수.",
+  "formula": "GDP 디플레이터 = (명목GDP / 실질GDP) × 100",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "cpi",
+      "reason": "GDP 디플레이터는 모든 재화, CPI는 소비재 한정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

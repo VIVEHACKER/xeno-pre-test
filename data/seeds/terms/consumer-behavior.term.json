@@ -1,0 +1,21 @@
+{
+  "term_id": "consumer-behavior",
+  "name_ko": "소비자 행동",
+  "name_en": "consumer behavior",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "소비자가 제품/서비스를 인식·평가·구매·사용·처분하는 일련의 의사결정 과정.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "brand-equity",
+      "reason": "소비자행동은 과정, 브랜드자산은 결과 자산"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

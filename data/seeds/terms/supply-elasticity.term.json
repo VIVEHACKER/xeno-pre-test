@@ -1,0 +1,21 @@
+{
+  "term_id": "supply-elasticity",
+  "name_ko": "공급탄력성",
+  "name_en": "supply elasticity",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "가격 변화율에 대한 공급량 변화율 비.",
+  "formula": "η = %ΔQs / %ΔP",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "price-elasticity",
+      "reason": "공급탄력성은 공급 측, 가격탄력성은 수요 측"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

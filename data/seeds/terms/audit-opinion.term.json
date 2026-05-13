@@ -1,0 +1,21 @@
+{
+  "term_id": "audit-opinion",
+  "name_ko": "감사의견",
+  "name_en": "audit opinion",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "audit",
+  "definition": "감사 결과 재무제표가 적정한지에 대한 감사인의 결론. 적정/한정/부적정/의견거절.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "audit-report",
+      "reason": "감사의견은 결론, 감사보고서는 그 의견을 담은 문서"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

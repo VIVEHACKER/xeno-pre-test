@@ -1,0 +1,21 @@
+{
+  "term_id": "independence-cpa",
+  "name_ko": "독립성(회계감사)",
+  "name_en": "auditor independence",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "audit",
+  "definition": "감사인이 피감회사로부터 경제적·인적 독립을 유지해야 한다는 원칙. 신뢰성의 기초.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "external-audit",
+      "reason": "독립성은 자질 원칙, 외부감사는 행위 자체"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

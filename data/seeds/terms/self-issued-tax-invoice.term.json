@@ -1,0 +1,21 @@
+{
+  "term_id": "self-issued-tax-invoice",
+  "name_ko": "매입자발행 세금계산서",
+  "name_en": "self-issued tax invoice",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "공급자가 발급하지 않은 경우 매입자가 발행해 매입세액 공제를 받는 제도.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "tax-invoice",
+      "reason": "매입자 발행은 예외, 일반 세금계산서는 공급자 발행"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

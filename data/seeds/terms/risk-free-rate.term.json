@@ -1,0 +1,23 @@
+{
+  "term_id": "risk-free-rate",
+  "name_ko": "무위험수익률",
+  "name_en": "risk-free rate",
+  "aliases": [
+    "Rf"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "위험 없는 자산에서 얻을 수 있는 수익률. 국채 수익률을 근사값으로 사용.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "risk-premium",
+      "reason": "무위험수익률은 기준, 위험프리미엄은 추가 보상"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

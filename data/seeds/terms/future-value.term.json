@@ -1,0 +1,23 @@
+{
+  "term_id": "future-value",
+  "name_ko": "미래가치",
+  "name_en": "future value",
+  "aliases": [
+    "FV"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "현재 금액에 이자를 적용해 미래에 얻을 수 있는 가치.",
+  "formula": "FV = PV × (1+r)^n",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "present-value",
+      "reason": "FV는 미래, PV는 현재"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

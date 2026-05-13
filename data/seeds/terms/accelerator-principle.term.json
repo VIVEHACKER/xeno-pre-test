@@ -1,0 +1,21 @@
+{
+  "term_id": "accelerator-principle",
+  "name_ko": "가속도원리",
+  "name_en": "accelerator principle",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "산출 변화율이 자본스톡(투자) 수준을 결정한다는 투자 이론.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "multiplier-accelerator",
+      "reason": "가속도원리는 투자 결정, 승수-가속도는 결합 모형"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

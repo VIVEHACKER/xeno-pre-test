@@ -1,0 +1,21 @@
+{
+  "term_id": "perfect-substitutes",
+  "name_ko": "완전대체재",
+  "name_en": "perfect substitutes",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "두 재화의 효용함수가 직선형(U = aX + bY)이고 한 재화가 다른 재화를 일정 비율로 완전히 대체할 수 있는 경우.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "perfect-complements",
+      "reason": "완전대체는 한쪽만 소비도 OK, 완전보완은 둘 다 일정 비율 필요"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

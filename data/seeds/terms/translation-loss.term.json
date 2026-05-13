@@ -1,0 +1,21 @@
+{
+  "term_id": "translation-loss",
+  "name_ko": "외화환산손실",
+  "name_en": "foreign currency translation loss",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "화폐성 항목 환산 시 발생한 손실. 당기손익으로 인식.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "cumulative-translation-adjustment",
+      "reason": "환산손실은 당기손익, CTA는 기타포괄손익 누적"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

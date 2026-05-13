@@ -1,0 +1,21 @@
+{
+  "term_id": "mixed-tax-payer",
+  "name_ko": "혼합과세자",
+  "name_en": "mixed tax payer",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "과세사업과 면세사업을 함께 영위하는 사업자. 매입세액 안분 처리 필요.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "non-deductible-input-vat",
+      "reason": "혼합과세자는 사업자 유형, 매입세액불공제는 그 결과"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

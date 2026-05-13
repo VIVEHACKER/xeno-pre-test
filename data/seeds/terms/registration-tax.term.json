@@ -1,0 +1,16 @@
+{
+  "term_id": "registration-tax",
+  "name_ko": "등록면허세",
+  "name_en": "registration license tax",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "공부에 등기/등록하거나 면허를 받을 때 부과되는 지방세.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "shareholder-list",
+  "name_ko": "주주명부",
+  "name_en": "shareholders list",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "회사가 작성·비치하는 주주의 성명, 주소, 보유 주식 수를 기재한 장부. 회사 대항 요건.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "name-on-book-transfer",
+      "reason": "주주명부는 장부, 명의개서는 명부 변경 행위"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "small-business-merger",
+  "name_ko": "소규모합병",
+  "name_en": "small business merger",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "존속회사가 신주발행 규모가 발행주식의 10% 이하인 합병. 주총 결의 생략 가능.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "simple-merger",
+      "reason": "소규모합병은 규모, 간이합병은 지분 기준"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

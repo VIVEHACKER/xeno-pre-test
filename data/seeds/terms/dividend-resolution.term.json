@@ -1,0 +1,21 @@
+{
+  "term_id": "dividend-resolution",
+  "name_ko": "배당 결의",
+  "name_en": "dividend resolution",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "주주총회가 배당 종류, 금액, 시기를 결정하는 결의.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "profit-distribution",
+      "reason": "배당결의는 배당 결정, 이익처분은 전체 배분"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

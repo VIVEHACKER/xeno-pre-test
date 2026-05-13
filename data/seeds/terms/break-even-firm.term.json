@@ -1,0 +1,21 @@
+{
+  "term_id": "break-even-firm",
+  "name_ko": "기업 손익분기점",
+  "name_en": "firm break-even point",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "장기에 평균비용을 정확히 회수하는 산출 또는 가격 수준.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "shutdown-point",
+      "reason": "손익분기는 장기 AC, 조업중단은 단기 AVC"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

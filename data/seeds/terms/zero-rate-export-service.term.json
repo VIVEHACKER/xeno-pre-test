@@ -1,0 +1,21 @@
+{
+  "term_id": "zero-rate-export-service",
+  "name_ko": "용역 수출 영세율",
+  "name_en": "zero-rated export service",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "비거주자에게 제공한 일정 요건의 용역에 영세율을 적용하는 제도.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "zero-rated-vat",
+      "reason": "용역 수출 영세율은 용역 한정, 영세율은 광의"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

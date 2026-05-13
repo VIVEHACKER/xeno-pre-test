@@ -1,0 +1,23 @@
+{
+  "term_id": "cost-plus-method",
+  "name_ko": "원가가산법",
+  "name_en": "cost plus method",
+  "aliases": [
+    "CPM"
+  ],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "제조원가에 적정 마진을 가산해 정상가격을 산정하는 이전가격 방법.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "resale-price-method",
+      "reason": "CPM은 원가 기준, RPM은 재판매 가격 기준"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

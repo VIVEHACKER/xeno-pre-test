@@ -1,0 +1,21 @@
+{
+  "term_id": "cross-price-elasticity",
+  "name_ko": "교차탄력성",
+  "name_en": "cross-price elasticity",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "한 재화 가격 변화율에 대한 다른 재화 수요량 변화율 비. 부호로 보완/대체 판별.",
+  "formula": "ε = %ΔQa / %ΔPb",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "price-elasticity",
+      "reason": "교차탄력성은 다른 재화 가격, 가격탄력성은 자기 가격"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "realization-principle-tax",
+  "name_ko": "실현주의(세무)",
+  "name_en": "realization principle (tax)",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "소득은 실제 거래로 실현된 시점에 인식한다는 세무 원칙.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "accrual-basis",
+      "reason": "세무 실현주의와 회계 발생주의는 시점 인식이 다름"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

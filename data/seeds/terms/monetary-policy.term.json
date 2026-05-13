@@ -1,0 +1,21 @@
+{
+  "term_id": "monetary-policy",
+  "name_ko": "통화정책",
+  "name_en": "monetary policy",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "중앙은행이 통화량이나 금리를 조절해 경제를 안정시키는 정책.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "fiscal-policy",
+      "reason": "통화정책은 중앙은행 도구, 재정정책은 정부 도구"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

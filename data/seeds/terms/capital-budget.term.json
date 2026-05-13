@@ -1,0 +1,21 @@
+{
+  "term_id": "capital-budget",
+  "name_ko": "자본예산",
+  "name_en": "capital budget",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "장기 투자 결정과 자금 조달 계획을 다루는 예산.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "operating-budget",
+      "reason": "자본예산은 장기 투자, 운영예산은 단기 운영"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

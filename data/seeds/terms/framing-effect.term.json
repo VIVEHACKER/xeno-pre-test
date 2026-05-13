@@ -1,0 +1,21 @@
+{
+  "term_id": "framing-effect",
+  "name_ko": "프레이밍 효과",
+  "name_en": "framing effect",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "같은 정보라도 어떻게 제시(framing)되느냐에 따라 의사결정이 달라지는 효과.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "anchoring-effect",
+      "reason": "프레이밍은 표현 방식 영향, 앵커링은 첫 정보의 기준 효과"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

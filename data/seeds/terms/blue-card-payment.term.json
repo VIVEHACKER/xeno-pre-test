@@ -1,0 +1,21 @@
+{
+  "term_id": "blue-card-payment",
+  "name_ko": "블루카드",
+  "name_en": "blue card",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "직불카드/현금카드 결제로 부가세 적용을 위한 결제 수단.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "credit-card-sales-slip",
+      "reason": "블루카드는 직불, 신용카드매출전표는 신용"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

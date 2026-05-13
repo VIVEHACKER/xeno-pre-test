@@ -1,0 +1,16 @@
+{
+  "term_id": "fishing-income",
+  "name_ko": "어업소득",
+  "name_en": "fishing income",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "어업/양식업에서 발생한 소득. 농업소득과 함께 농림어업 분류.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "risk-premium",
+  "name_ko": "위험프리미엄",
+  "name_en": "risk premium",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "위험자산이 무위험자산 대비 요구하는 초과수익률.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "risk-free-rate",
+      "reason": "위험프리미엄은 가산, 무위험수익률은 기준"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

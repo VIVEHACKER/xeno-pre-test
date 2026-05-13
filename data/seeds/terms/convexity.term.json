@@ -1,0 +1,21 @@
+{
+  "term_id": "convexity",
+  "name_ko": "볼록성",
+  "name_en": "convexity",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "채권 가격과 금리 관계의 2차 도함수. 듀레이션의 한계를 보완.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "duration",
+      "reason": "볼록성은 2차, 듀레이션은 1차 민감도"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

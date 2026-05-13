@@ -1,0 +1,21 @@
+{
+  "term_id": "casual-fee",
+  "name_ko": "사례금",
+  "name_en": "casual fee",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "특정 행위의 사례로 받는 금품. 기타소득에 포함.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "other-income",
+      "reason": "사례금은 기타소득의 한 종류"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,16 @@
+{
+  "term_id": "advance-gift",
+  "name_ko": "사전증여",
+  "name_en": "advance gift",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "상속 개시 전 일정 기간 내(통상 10년) 이루어진 증여. 상속재산에 합산 과세.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

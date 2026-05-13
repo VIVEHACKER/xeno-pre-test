@@ -1,0 +1,21 @@
+{
+  "term_id": "revenue-time-passage",
+  "name_ko": "기간경과 수익",
+  "name_en": "revenue over time",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "revenue",
+  "definition": "수행의무가 기간에 걸쳐 이행되는 경우 진행률에 따라 매기 인식하는 수익. 임대료, 이자수익 등.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "revenue-license",
+      "reason": "기간경과 수익은 인식 방식, 라이선스 수익은 거래 종류"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "fifo-eup",
+  "name_ko": "선입선출법 완성품환산량",
+  "name_en": "FIFO EUP",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "기초재공품 완성분과 당기 착수분을 분리해 산출하는 완성품환산량 산출법.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "weighted-average-eup",
+      "reason": "FIFO는 기초/당기 분리, 가증평균은 통합"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

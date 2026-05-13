@@ -1,0 +1,21 @@
+{
+  "term_id": "penetration-pricing",
+  "name_ko": "침투가격",
+  "name_en": "penetration pricing",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "초기 저가로 진입해 시장 점유율을 빠르게 확보하는 전략.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "price-skimming",
+      "reason": "침투가격은 저가, 스키밍은 고가"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

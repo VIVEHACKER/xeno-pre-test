@@ -1,0 +1,21 @@
+{
+  "term_id": "director-resignation",
+  "name_ko": "이사의 사임",
+  "name_en": "director resignation",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "이사가 임기 도중 자신의 의사로 그 직을 그만두는 것.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "director-dismissal",
+      "reason": "사임은 본인 의사, 해임은 회사 의사"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "zero-beta-portfolio",
+  "name_ko": "제로베타 포트폴리오",
+  "name_en": "zero-beta portfolio",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "시장과 무관(베타=0)한 포트폴리오. 무위험자산이 없을 때 그 대용으로 사용.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "risk-free-rate",
+      "reason": "제로베타 포트폴리오는 시장 무관, 무위험수익률은 위험 자체 없음"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

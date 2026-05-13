@@ -1,0 +1,23 @@
+{
+  "term_id": "open-market-operation",
+  "name_ko": "공개시장운영",
+  "name_en": "open market operation",
+  "aliases": [
+    "OMO"
+  ],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "중앙은행이 시장에서 국공채를 매매해 본원통화를 조절하는 통화정책 도구.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "discount-rate",
+      "reason": "OMO는 시장 거래, 할인율은 중앙은행 대출 금리"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

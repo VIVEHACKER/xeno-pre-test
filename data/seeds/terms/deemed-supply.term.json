@@ -1,0 +1,21 @@
+{
+  "term_id": "deemed-supply",
+  "name_ko": "재화의 공급 의제",
+  "name_en": "deemed supply",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "실제 공급이 아니지만 자가공급, 폐업 시 잔존재화 등 특정 사유로 공급으로 의제하는 거래.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "supply-of-goods",
+      "reason": "공급 의제는 의제 거래, 실제 공급은 실거래"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

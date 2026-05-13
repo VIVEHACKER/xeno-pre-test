@@ -1,0 +1,21 @@
+{
+  "term_id": "supply-of-goods",
+  "name_ko": "재화의 공급",
+  "name_en": "supply of goods",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "사업자가 재화의 소유권을 이전하는 거래. 부가가치세 과세 대상.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "supply-of-service",
+      "reason": "재화 공급은 물건, 용역 공급은 서비스"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

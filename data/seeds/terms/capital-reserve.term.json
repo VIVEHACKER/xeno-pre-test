@@ -1,0 +1,21 @@
+{
+  "term_id": "capital-reserve",
+  "name_ko": "자본준비금",
+  "name_en": "capital reserve",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "주식발행초과금 등 자본거래에서 발생한 잉여금. 상법상 결손보전 외 처분 제한.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "earnings-reserve",
+      "reason": "자본준비금은 자본거래, 이익준비금은 이익에서 적립"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

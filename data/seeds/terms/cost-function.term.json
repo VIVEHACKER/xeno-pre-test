@@ -1,0 +1,21 @@
+{
+  "term_id": "cost-function",
+  "name_ko": "비용함수",
+  "name_en": "cost function",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "주어진 산출량을 생산하는 데 필요한 최소 비용을 나타낸 함수.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "production-function",
+      "reason": "비용함수는 비용 측, 생산함수는 산출 측"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

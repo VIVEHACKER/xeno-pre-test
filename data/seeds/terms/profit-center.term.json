@@ -1,0 +1,21 @@
+{
+  "term_id": "profit-center",
+  "name_ko": "이익센터",
+  "name_en": "profit center",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "수익과 비용 모두 책임지는 책임센터.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "cost-center",
+      "reason": "이익센터는 수익+비용, 원가센터는 비용만"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

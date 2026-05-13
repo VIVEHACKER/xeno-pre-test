@@ -1,0 +1,21 @@
+{
+  "term_id": "solvency",
+  "name_ko": "지급능력",
+  "name_en": "solvency",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "장기적으로 채무를 변제할 수 있는 능력. 부채비율, 자기자본비율 등으로 측정.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "current-ratio",
+      "reason": "지급능력은 장기, 유동비율은 단기"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

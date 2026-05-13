@@ -1,0 +1,21 @@
+{
+  "term_id": "comprehensive-income-deduction",
+  "name_ko": "종합소득공제",
+  "name_en": "comprehensive income deduction",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "종합소득금액에서 차감하는 인적공제, 연금보험료공제, 특별소득공제 등의 합.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "basic-deduction",
+      "reason": "종합소득공제는 광의, 기본공제는 그 한 항목"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

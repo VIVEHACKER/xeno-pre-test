@@ -1,0 +1,21 @@
+{
+  "term_id": "net-profit",
+  "name_ko": "당기순이익",
+  "name_en": "net profit",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "법인세까지 모두 차감한 후의 최종 이익.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "operating-profit",
+      "reason": "당기순이익은 최종, 영업이익은 영업 단계"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

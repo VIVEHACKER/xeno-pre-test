@@ -1,0 +1,21 @@
+{
+  "term_id": "market-segmentation-theory",
+  "name_ko": "시장분할 이론",
+  "name_en": "market segmentation theory",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "단기/장기 채권시장이 분리되어 각각 수급으로 금리가 결정된다는 이론.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "liquidity-premium-theory",
+      "reason": "시장분할은 분리 시장 가정, 유동성프리미엄은 단일 시장 + 가산"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

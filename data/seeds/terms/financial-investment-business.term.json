@@ -1,0 +1,21 @@
+{
+  "term_id": "financial-investment-business",
+  "name_ko": "금융투자업",
+  "name_en": "financial investment business",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "투자매매/투자중개/집합투자/투자자문/투자일임/신탁 등 자본시장법상 6대 업종.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "capital-markets-act",
+      "reason": "금융투자업은 업종, 자본시장법은 그 근거 법"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

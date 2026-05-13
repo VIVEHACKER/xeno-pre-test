@@ -1,0 +1,21 @@
+{
+  "term_id": "additional-payment",
+  "name_ko": "추가납부",
+  "name_en": "additional payment",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "이미 납부한 세액이 산출 세액에 미달할 때 부족분을 추가 납부하는 것.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "refund-amount",
+      "reason": "추가납부는 부족분 납부, 환급은 초과분 반환"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

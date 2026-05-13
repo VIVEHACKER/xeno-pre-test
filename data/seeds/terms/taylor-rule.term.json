@@ -1,0 +1,21 @@
+{
+  "term_id": "taylor-rule",
+  "name_ko": "테일러 준칙",
+  "name_en": "Taylor rule",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "정책금리를 인플레이션 갭과 산출갭의 함수로 설정하는 정책 룰.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "inflation-targeting",
+      "reason": "테일러 준칙은 산식, 물가안정목표는 정책 틀"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

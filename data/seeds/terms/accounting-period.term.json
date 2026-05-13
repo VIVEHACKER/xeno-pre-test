@@ -1,0 +1,21 @@
+{
+  "term_id": "accounting-period",
+  "name_ko": "회계연도",
+  "name_en": "accounting period",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "회사가 영업 결과를 결산하는 기간. 1년 이내로 정관에서 정한다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "business-year",
+      "reason": "회계연도는 회계 기간, 사업연도는 세무상 동의어로 쓰임"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

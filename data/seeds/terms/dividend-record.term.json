@@ -1,0 +1,21 @@
+{
+  "term_id": "dividend-record",
+  "name_ko": "배당기준일",
+  "name_en": "dividend record date",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "배당받을 권리를 확정하기 위해 정하는 일자.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "record-date",
+      "reason": "배당기준일은 배당 한정, 일반 기준일은 광의"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

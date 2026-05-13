@@ -1,0 +1,21 @@
+{
+  "term_id": "classification-taxation",
+  "name_ko": "분류과세",
+  "name_en": "classified taxation",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "양도소득세, 퇴직소득세처럼 다른 소득과 합산하지 않고 별도 체계로 과세하는 방식.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "separate-taxation",
+      "reason": "분류과세는 별도 체계, 분리과세는 원천징수 종결"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

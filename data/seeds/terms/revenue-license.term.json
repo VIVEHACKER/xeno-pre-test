@@ -1,0 +1,21 @@
+{
+  "term_id": "revenue-license",
+  "name_ko": "라이선스 수익",
+  "name_en": "license revenue",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "revenue",
+  "definition": "지적재산권 사용을 허락하고 받는 대가. 권리 종류에 따라 한 시점 또는 기간에 걸쳐 인식.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "revenue-royalty",
+      "reason": "라이선스는 사용 허락, 로열티는 사용량 기반 대가"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

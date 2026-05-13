@@ -1,0 +1,21 @@
+{
+  "term_id": "director-care-duty",
+  "name_ko": "이사의 선관주의의무",
+  "name_en": "director duty of care",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "이사가 통상적 주의력을 다해 직무를 수행할 의무. 위반 시 손해배상 책임.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "director-loyalty-duty",
+      "reason": "선관주의의무는 주의 수준, 충실의무는 이익 충돌"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

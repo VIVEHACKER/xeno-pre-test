@@ -1,0 +1,21 @@
+{
+  "term_id": "price-bundling",
+  "name_ko": "가격 묶음",
+  "name_en": "price bundling",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "여러 제품을 묶어 단일 가격에 판매하는 전략. 가격차별 효과.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "price-discrimination",
+      "reason": "번들링은 묶음 판매, 가격차별은 동일 상품 다른 가격"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

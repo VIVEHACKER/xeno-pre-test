@@ -1,0 +1,23 @@
+{
+  "term_id": "fcff",
+  "name_ko": "기업잉여현금흐름",
+  "name_en": "free cash flow to firm",
+  "aliases": [
+    "FCFF"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "기업이 채권자와 주주에게 분배할 수 있는 총 현금흐름.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "fcfe",
+      "reason": "FCFF는 채권자 + 주주, FCFE는 주주만"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

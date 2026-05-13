@@ -1,0 +1,21 @@
+{
+  "term_id": "interim-director",
+  "name_ko": "임시이사",
+  "name_en": "interim director",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "이사 결원이 발생하면 새 이사 선임 전까지 직무를 수행할 자. 법원이 선임.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "provisional-director",
+      "reason": "임시이사는 법원 선임, 가이사는 임시 대행"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,23 @@
+{
+  "term_id": "integrated-marketing-communication",
+  "name_ko": "통합마케팅커뮤니케이션",
+  "name_en": "integrated marketing communication",
+  "aliases": [
+    "IMC"
+  ],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "광고/판촉/PR/직접마케팅 등 모든 커뮤니케이션을 일관된 메시지로 통합 운영하는 전략.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "brand-equity",
+      "reason": "IMC는 커뮤니케이션 통합, 브랜드자산은 그 결과 가치"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

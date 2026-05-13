@@ -1,0 +1,21 @@
+{
+  "term_id": "semi-strong-form-efficiency",
+  "name_ko": "준강형 효율적 시장",
+  "name_en": "semi-strong-form efficiency",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "공개된 모든 정보가 가격에 반영되어 있어 기본적 분석으로도 초과수익이 불가능한 시장 가설.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "strong-form-efficiency",
+      "reason": "준강형은 공개정보, 강형은 내부정보까지"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

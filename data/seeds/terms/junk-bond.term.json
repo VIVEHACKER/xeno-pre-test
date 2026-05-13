@@ -1,0 +1,23 @@
+{
+  "term_id": "junk-bond",
+  "name_ko": "정크본드",
+  "name_en": "junk bond",
+  "aliases": [
+    "하이일드본드"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "투자등급 미만(BB 이하)의 고위험 고수익 회사채. 하이일드 본드.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "credit-spread",
+      "reason": "정크본드는 등급, 신용스프레드는 가격 차이"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

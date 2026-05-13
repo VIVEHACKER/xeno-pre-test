@@ -1,0 +1,23 @@
+{
+  "term_id": "roic",
+  "name_ko": "투하자본이익률",
+  "name_en": "return on invested capital",
+  "aliases": [
+    "ROIC"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "세후영업이익을 투하자본으로 나눈 비율. 자본 효율성 지표.",
+  "formula": "ROIC = NOPAT / 투하자본",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "wacc",
+      "reason": "ROIC > WACC면 가치 창출"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

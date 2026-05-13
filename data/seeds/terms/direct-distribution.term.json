@@ -1,0 +1,21 @@
+{
+  "term_id": "direct-distribution",
+  "name_ko": "직접유통",
+  "name_en": "direct distribution",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "생산자가 중간상 없이 소비자에게 직접 판매하는 형태.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "indirect-distribution",
+      "reason": "직접은 중간상 없음, 간접은 도매/소매 경유"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

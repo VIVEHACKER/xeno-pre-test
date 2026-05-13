@@ -1,0 +1,21 @@
+{
+  "term_id": "territorial-tax",
+  "name_ko": "속지주의",
+  "name_en": "territorial tax",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "소득 발생 국가가 과세권을 갖는 원칙.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "world-wide-tax",
+      "reason": "속지주의는 발생지, 전세계 과세는 거주지"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

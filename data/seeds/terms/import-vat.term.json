@@ -1,0 +1,21 @@
+{
+  "term_id": "import-vat",
+  "name_ko": "수입부가세",
+  "name_en": "import VAT",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "재화를 수입할 때 세관에서 부과하는 부가가치세. 세관 신고 + 납부.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "output-vat",
+      "reason": "수입부가세는 수입 단계, 매출세액은 국내 거래"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

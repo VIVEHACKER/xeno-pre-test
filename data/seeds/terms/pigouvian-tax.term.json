@@ -1,0 +1,21 @@
+{
+  "term_id": "pigouvian-tax",
+  "name_ko": "피구세",
+  "name_en": "Pigouvian tax",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "외부불경제 활동에 부과해 사회적 비용을 내부화하는 세금.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "subsidy",
+      "reason": "피구세는 부정적 외부효과 교정, 보조금은 긍정적 외부효과 장려"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "broker-business",
+  "name_ko": "중개업",
+  "name_en": "brokerage business",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "타인 간 상행위 중개를 영업으로 하는 업종.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "agent-business",
+      "reason": "중개업은 거래 성사 도움, 대리업은 본인 명의 대리"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "cfc-rules",
+  "name_ko": "특정외국법인 규정",
+  "name_en": "CFC rules",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "Controlled Foreign Corporation 규정. 일정 요건 외국 자회사의 유보소득을 본국 소득에 합산.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "tax-haven-rules",
+      "reason": "CFC와 조세피난처 세제는 동의어로 쓰임"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

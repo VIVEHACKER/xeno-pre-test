@@ -1,0 +1,21 @@
+{
+  "term_id": "normal-profit",
+  "name_ko": "정상이윤",
+  "name_en": "normal profit",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "경제적 이윤이 0일 때의 회계적 이윤. 자본의 기회비용을 충당하는 수준.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "economic-profit",
+      "reason": "정상이윤은 경제이윤 0 상태, 경제 이윤은 그 이상"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

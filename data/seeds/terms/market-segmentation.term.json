@@ -1,0 +1,21 @@
+{
+  "term_id": "market-segmentation",
+  "name_ko": "시장세분화",
+  "name_en": "market segmentation",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "전체 시장을 동질적 욕구를 가진 하위 집단으로 나누는 것. STP의 첫 단계.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "positioning",
+      "reason": "시장세분화는 분할, 포지셔닝은 표적 시장 내 위치 잡기"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

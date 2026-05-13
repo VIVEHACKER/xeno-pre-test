@@ -1,0 +1,21 @@
+{
+  "term_id": "real-estate-rental-income",
+  "name_ko": "부동산 임대소득",
+  "name_en": "real estate rental income",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "부동산 임대에서 발생한 사업소득. 일정 요건 시 분리과세 가능.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "business-income",
+      "reason": "임대소득은 사업소득의 한 종류"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

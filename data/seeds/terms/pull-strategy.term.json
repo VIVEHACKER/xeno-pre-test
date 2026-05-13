@@ -1,0 +1,21 @@
+{
+  "term_id": "pull-strategy",
+  "name_ko": "풀 전략",
+  "name_en": "pull strategy",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "광고로 소비자 수요를 자극해 유통상이 제품을 들여놓도록 하는 전략.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "push-strategy",
+      "reason": "풀은 소비자가 요구, 푸시는 중간상이 밀어냄"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

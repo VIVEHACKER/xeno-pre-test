@@ -1,0 +1,21 @@
+{
+  "term_id": "okuns-law",
+  "name_ko": "오쿤의 법칙",
+  "name_en": "Okun's law",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "실업률 1%p 상승 시 GDP가 약 2~3% 감소한다는 경험적 관계.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "phillips-curve",
+      "reason": "오쿤은 실업-GDP, 필립스는 실업-인플레이션"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "recruitment",
+  "name_ko": "모집",
+  "name_en": "recruitment",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "공석에 적합한 후보자를 끌어들이는 활동. 내부 모집 + 외부 모집.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "selection",
+      "reason": "모집은 끌어오기, 선발은 골라내기"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

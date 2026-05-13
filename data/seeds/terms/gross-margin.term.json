@@ -1,0 +1,21 @@
+{
+  "term_id": "gross-margin",
+  "name_ko": "매출총이익률",
+  "name_en": "gross margin",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "매출총이익을 매출액으로 나눈 비율. 핵심 수익성 지표.",
+  "formula": "매출총이익률 = 매출총이익 / 매출액",
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "operating-profit-margin",
+      "reason": "매출총이익률은 영업 외 비용 전, 영업이익률은 영업비용 후"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

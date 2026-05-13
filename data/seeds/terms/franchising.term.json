@@ -1,0 +1,21 @@
+{
+  "term_id": "franchising",
+  "name_ko": "프랜차이징",
+  "name_en": "franchising",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "본사가 가맹점에 영업 시스템 패키지(브랜드 + 절차 + 지원)를 제공하고 로열티를 받는 방식.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "licensing-business",
+      "reason": "프랜차이징은 시스템 패키지, 라이선싱은 단순 권리"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

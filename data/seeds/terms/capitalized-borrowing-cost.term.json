@@ -1,0 +1,21 @@
+{
+  "term_id": "capitalized-borrowing-cost",
+  "name_ko": "차입원가 자본화",
+  "name_en": "capitalization of borrowing costs",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "적격자산 취득·건설 기간 동안 발생한 차입원가를 비용이 아니라 자산 원가에 포함시키는 처리.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "revenue-expenditure",
+      "reason": "차입원가 자본화는 이자비용을 자산화, 수익적 지출은 즉시 비용"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

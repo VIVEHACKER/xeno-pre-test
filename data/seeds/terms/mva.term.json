@@ -1,0 +1,23 @@
+{
+  "term_id": "mva",
+  "name_ko": "시장부가가치",
+  "name_en": "market value added",
+  "aliases": [
+    "MVA"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "기업의 시장가치와 투입자본의 차이. 주주가치 창출의 절대지표.",
+  "formula": "MVA = 시장가치 - 투입자본",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "eva",
+      "reason": "MVA는 누적 가치, EVA는 기간 잔여이익"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

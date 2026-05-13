@@ -1,0 +1,21 @@
+{
+  "term_id": "tax-multiplier",
+  "name_ko": "조세승수",
+  "name_en": "tax multiplier",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "세금 1단위 변화가 GDP를 얼마나 변화시키는지의 배수. 정부지출 승수보다 작다.",
+  "formula": "조세승수 = -MPC / (1 - MPC)",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "government-spending-multiplier",
+      "reason": "조세승수는 음의 배수, 정부지출 승수는 양의 배수"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

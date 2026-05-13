@@ -1,0 +1,21 @@
+{
+  "term_id": "agent-business",
+  "name_ko": "대리업",
+  "name_en": "agency business",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "타인 명의로 거래를 영업으로 하는 업종. 대리상.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "commission-agent",
+      "reason": "대리업은 본인 명의, 위탁매매업은 자기 명의 + 타인 계산"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

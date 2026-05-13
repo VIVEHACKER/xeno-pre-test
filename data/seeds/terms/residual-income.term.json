@@ -1,0 +1,21 @@
+{
+  "term_id": "residual-income",
+  "name_ko": "잔여이익",
+  "name_en": "residual income",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "영업이익에서 자본비용(투자자산 × 최저요구수익률)을 차감한 금액. ROI의 한계를 보완.",
+  "formula": "RI = 영업이익 - 투자자산 × 최저요구수익률",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "roi-divisional",
+      "reason": "잔여이익은 절대금액 + 자본비용 반영, ROI는 단순 비율"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

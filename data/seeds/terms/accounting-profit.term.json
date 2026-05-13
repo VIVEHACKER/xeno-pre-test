@@ -1,0 +1,21 @@
+{
+  "term_id": "accounting-profit",
+  "name_ko": "회계적 이윤",
+  "name_en": "accounting profit",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "총수익에서 명시적 비용만 차감한 이윤. 재무회계상 이익.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "economic-profit",
+      "reason": "회계 이윤은 명시적, 경제 이윤은 암묵적 + 명시적"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

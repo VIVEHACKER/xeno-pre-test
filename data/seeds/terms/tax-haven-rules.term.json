@@ -1,0 +1,21 @@
+{
+  "term_id": "tax-haven-rules",
+  "name_ko": "조세피난처 세제",
+  "name_en": "tax haven rules",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "조세피난처 자회사를 통한 조세 회피를 막기 위한 CFC 규정.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "anti-tax-haven",
+      "reason": "두 용어는 동일 개념"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

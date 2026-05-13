@@ -1,0 +1,21 @@
+{
+  "term_id": "agency-theory",
+  "name_ko": "대리이론",
+  "name_en": "agency theory",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "주인(주주)과 대리인(경영자) 간 이해상충과 정보비대칭으로 발생하는 문제를 분석하는 이론.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "stakeholder-theory",
+      "reason": "대리이론은 주인-대리인 갈등, 이해관계자 이론은 다자 균형"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

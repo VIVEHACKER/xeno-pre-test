@@ -1,0 +1,21 @@
+{
+  "term_id": "internal-audit",
+  "name_ko": "내부감사",
+  "name_en": "internal audit",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "audit",
+  "definition": "회사 내부 부서가 업무 적정성과 내부통제를 검증하는 활동.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "external-audit",
+      "reason": "내부감사는 회사 소속, 외부감사는 독립 회계사"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

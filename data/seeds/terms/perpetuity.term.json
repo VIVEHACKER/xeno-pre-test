@@ -1,0 +1,21 @@
+{
+  "term_id": "perpetuity",
+  "name_ko": "영구연금",
+  "name_en": "perpetuity",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "영구히 발생하는 동일 금액 현금흐름의 현재가치.",
+  "formula": "PV = C / r",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "annuity",
+      "reason": "영구연금은 무한, 연금은 유한"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

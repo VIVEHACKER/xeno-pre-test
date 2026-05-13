@@ -1,0 +1,21 @@
+{
+  "term_id": "balanced-budget-multiplier",
+  "name_ko": "균형예산 승수",
+  "name_en": "balanced budget multiplier",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "정부지출과 세금을 같은 크기로 늘릴 때 GDP 증가 배수. 케인즈 모형에서 1.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "tax-multiplier",
+      "reason": "균형예산은 동시 증가, 조세승수는 세금만"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,23 @@
+{
+  "term_id": "investment-banking",
+  "name_ko": "투자은행",
+  "name_en": "investment banking",
+  "aliases": [
+    "IB"
+  ],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "기업의 자금조달, 인수합병, 자문 등을 수행하는 금융기관. 한국에서는 IB 업무로 다룸.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "investment-trader",
+      "reason": "IB는 통칭 업무, 투자매매업자는 법적 분류"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

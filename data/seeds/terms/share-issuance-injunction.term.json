@@ -1,0 +1,21 @@
+{
+  "term_id": "share-issuance-injunction",
+  "name_ko": "신주발행 유지청구",
+  "name_en": "share issuance injunction",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "주주가 위법한 신주발행을 사전에 막기 위해 회사에 발행 중지를 청구하는 권리.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "share-issuance-cancellation",
+      "reason": "유지청구는 사전 차단, 무효 소송은 사후 무효"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

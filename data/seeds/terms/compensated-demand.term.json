@@ -1,0 +1,21 @@
+{
+  "term_id": "compensated-demand",
+  "name_ko": "보상수요",
+  "name_en": "compensated demand",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "효용을 일정하게 유지하면서 가격 변화 시 수요량 변화. 힉스 수요와 동의어.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "hicksian-demand",
+      "reason": "보상수요 = 힉스 수요 (효용 보상)"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

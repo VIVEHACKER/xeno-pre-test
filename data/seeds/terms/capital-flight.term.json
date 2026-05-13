@@ -1,0 +1,21 @@
+{
+  "term_id": "capital-flight",
+  "name_ko": "자본도피",
+  "name_en": "capital flight",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "경제/정치 불안 등으로 자본이 급격히 해외로 유출되는 현상.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "sovereign-default",
+      "reason": "자본도피는 자본 유출, 국가부도는 채무 불이행"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

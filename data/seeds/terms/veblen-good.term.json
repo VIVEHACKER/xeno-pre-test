@@ -1,0 +1,21 @@
+{
+  "term_id": "veblen-good",
+  "name_ko": "베블런재",
+  "name_en": "Veblen good",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "가격이 높을수록 과시 효용 때문에 수요가 증가하는 사치재. 명품 등.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "luxury-good",
+      "reason": "베블런재는 과시 동기, 사치재는 소득탄력성만 높음"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

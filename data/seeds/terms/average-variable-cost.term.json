@@ -1,0 +1,21 @@
+{
+  "term_id": "average-variable-cost",
+  "name_ko": "평균가변비",
+  "name_en": "average variable cost",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "총가변비용을 산출량으로 나눈 값. U자 형태가 일반적.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "average-fixed-cost",
+      "reason": "평균가변비는 U자형, 평균고정비는 감소 곡선"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

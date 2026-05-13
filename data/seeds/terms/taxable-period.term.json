@@ -1,0 +1,21 @@
+{
+  "term_id": "taxable-period",
+  "name_ko": "과세기간",
+  "name_en": "taxable period",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "부가가치세 신고·납부의 기준 기간. 6개월(반기)이 표준.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "preliminary-return",
+      "reason": "과세기간은 기간, 예정/확정신고는 그 안의 절차"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

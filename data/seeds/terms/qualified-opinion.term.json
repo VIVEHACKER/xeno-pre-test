@@ -1,0 +1,21 @@
+{
+  "term_id": "qualified-opinion",
+  "name_ko": "한정의견",
+  "name_en": "qualified opinion",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "audit",
+  "definition": "특정 사항을 제외하고는 적정하다고 보는 감사의견.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "unqualified-opinion",
+      "reason": "한정의견은 부분 제한, 적정의견은 무조건"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

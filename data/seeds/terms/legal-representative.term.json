@@ -1,0 +1,21 @@
+{
+  "term_id": "legal-representative",
+  "name_ko": "법정대표자",
+  "name_en": "legal representative",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "법령에 따라 회사를 대표하는 자. 주식회사는 대표이사, 합명회사는 사원 등.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "chief-executive-officer",
+      "reason": "법정대표자는 일반 개념, 대표이사는 주식회사 형태"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "personal-deduction",
+  "name_ko": "인적공제",
+  "name_en": "personal deduction",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "본인/배우자/부양가족에 대해 적용되는 종합소득공제. 기본공제 + 추가공제.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "basic-deduction",
+      "reason": "인적공제는 광의, 기본공제는 그 핵심 한 항목"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

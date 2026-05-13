@@ -1,0 +1,21 @@
+{
+  "term_id": "spousal-inheritance-deduction",
+  "name_ko": "배우자 상속공제",
+  "name_en": "spousal inheritance deduction",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "배우자에게 상속되는 재산에 적용되는 공제. 최대 30억원 한도.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "inheritance-deduction",
+      "reason": "배우자 상속공제는 인적 공제, 일반 상속공제는 광의"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

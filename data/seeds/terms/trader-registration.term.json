@@ -1,0 +1,21 @@
+{
+  "term_id": "trader-registration",
+  "name_ko": "사업자등록",
+  "name_en": "business registration",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "사업 개시 시 사업자번호를 받기 위해 세무서에 신고하는 절차. 부가세 납세자 식별 기초.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "trader-cancellation",
+      "reason": "등록은 시작, 폐업은 종료"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "licensing-agreement",
+  "name_ko": "라이선스 계약",
+  "name_en": "licensing agreement",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "지적재산권 사용권을 부여하는 계약. 로열티 지급 조건 포함.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "licensing-business",
+      "reason": "라이선스 계약은 계약 문서, 라이선싱은 진출 형태"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

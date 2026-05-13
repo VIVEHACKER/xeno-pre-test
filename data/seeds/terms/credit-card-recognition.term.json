@@ -1,0 +1,21 @@
+{
+  "term_id": "credit-card-recognition",
+  "name_ko": "신용카드 매출 인정",
+  "name_en": "credit card sales recognition",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "신용카드 매출 발생 시 매출세액으로 인정되고 발급 의무가 부여되는 부가세 처리.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "credit-card-sales-slip",
+      "reason": "인정은 처리 결과, 매출전표는 증빙"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

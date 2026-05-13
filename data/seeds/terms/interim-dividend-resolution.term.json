@@ -1,0 +1,21 @@
+{
+  "term_id": "interim-dividend-resolution",
+  "name_ko": "중간배당 결의",
+  "name_en": "interim dividend resolution",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "사업연도 중 1회 한도로 이사회가 결정하는 배당. 정관 근거 필요.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "interim-dividend",
+      "reason": "결의는 절차, 중간배당은 배당의 종류"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "selection",
+  "name_ko": "선발",
+  "name_en": "selection",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "지원자 중 가장 적합한 후보자를 채용하는 의사결정 과정. 면접/시험 등.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "recruitment",
+      "reason": "선발은 결정, 모집은 모으기"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

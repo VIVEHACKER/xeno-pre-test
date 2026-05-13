@@ -1,0 +1,21 @@
+{
+  "term_id": "cost-center",
+  "name_ko": "원가센터",
+  "name_en": "cost center",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "비용만 통제 책임을 지는 책임센터.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "profit-center",
+      "reason": "원가센터는 비용 책임, 이익센터는 수익+비용"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

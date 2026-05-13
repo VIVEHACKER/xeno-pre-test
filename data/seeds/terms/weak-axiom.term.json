@@ -1,0 +1,21 @@
+{
+  "term_id": "weak-axiom",
+  "name_ko": "약공리(현시선호)",
+  "name_en": "weak axiom of revealed preference",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "A가 B보다 선택되었다면 같은 상황에서 B가 A보다 선택될 수 없다는 일관성 공리.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "strong-axiom",
+      "reason": "약공리는 직접 비교, 강공리는 전이성까지"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

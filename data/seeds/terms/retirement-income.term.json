@@ -1,0 +1,21 @@
+{
+  "term_id": "retirement-income",
+  "name_ko": "퇴직소득",
+  "name_en": "retirement income",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "근로 종결 시 받는 퇴직금. 별도 과세체계로 분류과세.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "earned-income",
+      "reason": "퇴직소득은 퇴직 시점, 근로소득은 재직 중"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

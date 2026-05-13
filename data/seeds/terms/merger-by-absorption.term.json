@@ -1,0 +1,21 @@
+{
+  "term_id": "merger-by-absorption",
+  "name_ko": "흡수합병",
+  "name_en": "merger by absorption",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "한 회사가 다른 회사를 흡수하고 흡수된 회사는 소멸하는 합병.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "merger-by-incorporation",
+      "reason": "흡수는 존속회사 있음, 신설합병은 모두 소멸 후 새 회사"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

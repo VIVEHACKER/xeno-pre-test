@@ -1,0 +1,21 @@
+{
+  "term_id": "tax-incidence",
+  "name_ko": "조세귀착",
+  "name_en": "tax incidence",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "세금 부담이 실제로 누구에게 돌아가는지의 분석. 탄력성에 따라 분담 비율 달라짐.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "pigouvian-tax",
+      "reason": "조세귀착은 부담 분포, 피구세는 외부효과 교정 세금"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "simple-interest",
+  "name_ko": "단리",
+  "name_en": "simple interest",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "원금에 대해서만 이자를 계산하는 방식.",
+  "formula": "FV = PV × (1 + r×n)",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "compound-interest",
+      "reason": "단리는 원금만, 복리는 누적"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

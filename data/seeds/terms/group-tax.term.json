@@ -1,0 +1,21 @@
+{
+  "term_id": "group-tax",
+  "name_ko": "연결납세제도",
+  "name_en": "group taxation",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "지배회사와 종속회사가 하나의 과세 단위로 신고하는 제도. 그룹 내 손익 통산 가능.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "consolidated-tax-return",
+      "reason": "연결납세제도 vs 연결과세 (거의 동의)"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

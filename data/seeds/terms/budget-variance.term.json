@@ -1,0 +1,21 @@
+{
+  "term_id": "budget-variance",
+  "name_ko": "예산차이",
+  "name_en": "budget variance",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "실제 결과와 예산의 차이. 유리/불리 차이로 구분.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "flexible-budget",
+      "reason": "예산차이는 결과, 변동예산은 비교 기준"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

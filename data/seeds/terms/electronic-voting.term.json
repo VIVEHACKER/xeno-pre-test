@@ -1,0 +1,21 @@
+{
+  "term_id": "electronic-voting",
+  "name_ko": "전자투표",
+  "name_en": "electronic voting",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "전자적 방법으로 의결권을 행사하는 제도. 상장회사는 일정 요건에서 의무.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "written-resolution",
+      "reason": "전자투표는 온라인 행사, 서면결의는 종이"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

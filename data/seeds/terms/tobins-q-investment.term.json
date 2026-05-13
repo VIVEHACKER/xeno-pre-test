@@ -1,0 +1,21 @@
+{
+  "term_id": "tobins-q-investment",
+  "name_ko": "토빈 Q 투자이론",
+  "name_en": "Tobin's Q investment",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "기업이 시장가치 / 대체원가 > 1일 때 투자를 늘린다는 이론.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "tobins-q",
+      "reason": "투자이론 측면과 가치평가 측면의 같은 토빈 Q"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

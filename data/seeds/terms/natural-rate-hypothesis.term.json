@@ -1,0 +1,21 @@
+{
+  "term_id": "natural-rate-hypothesis",
+  "name_ko": "자연실업률 가설",
+  "name_en": "natural rate hypothesis",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "장기적으로 실업률은 자연실업률 수준으로 수렴해 인플레이션-실업 trade-off가 사라진다는 가설.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "natural-unemployment-rate",
+      "reason": "가설은 명제, 자연실업률은 수치"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

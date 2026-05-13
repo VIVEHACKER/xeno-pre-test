@@ -1,0 +1,21 @@
+{
+  "term_id": "summary-summons",
+  "name_ko": "주총 소집청구권",
+  "name_en": "shareholders meeting convening request",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "3% 이상 보유 주주가 임시주총 소집을 청구할 수 있는 권리.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "extraordinary-meeting",
+      "reason": "소집청구는 권리, 임시주총은 그 결과 회의"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

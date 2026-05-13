@@ -1,0 +1,23 @@
+{
+  "term_id": "crm",
+  "name_ko": "고객관계관리",
+  "name_en": "customer relationship management",
+  "aliases": [
+    "CRM"
+  ],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "고객 데이터를 활용해 장기적 관계를 구축·유지하는 경영 활동.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "consumer-behavior",
+      "reason": "CRM은 관계 관리, 소비자행동은 의사결정 분석"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

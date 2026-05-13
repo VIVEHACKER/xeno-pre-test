@@ -1,0 +1,21 @@
+{
+  "term_id": "quorum-shareholders-meeting",
+  "name_ko": "주총 정족수",
+  "name_en": "shareholders meeting quorum",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "주주총회 결의에 필요한 출석 의결권 비율. 보통결의/특별결의에 따라 다름.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "ordinary-resolution",
+      "reason": "정족수는 수치 요건, 결의는 의사결정 행위"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

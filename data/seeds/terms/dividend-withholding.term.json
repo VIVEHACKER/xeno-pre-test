@@ -1,0 +1,21 @@
+{
+  "term_id": "dividend-withholding",
+  "name_ko": "배당원천징수",
+  "name_en": "dividend withholding",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "법인이 주주에게 배당금 지급 시 일정 비율을 원천징수해 납부하는 의무.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "withholding-tax",
+      "reason": "배당원천징수는 배당 한정, 원천징수는 일반"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

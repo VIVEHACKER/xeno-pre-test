@@ -1,0 +1,21 @@
+{
+  "term_id": "mediator",
+  "name_ko": "중개업자",
+  "name_en": "mediator",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "타인 간 상행위의 중개를 영업으로 하는 자. 자기 명의로 거래하지 않는다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "broker-business",
+      "reason": "중개업자는 사람, 중개업은 업종 자체"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

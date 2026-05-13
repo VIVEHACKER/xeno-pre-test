@@ -1,0 +1,21 @@
+{
+  "term_id": "organizational-culture",
+  "name_ko": "조직문화",
+  "name_en": "organizational culture",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "조직 구성원이 공유하는 가치, 신념, 행동 양식의 총체.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "organizational-development",
+      "reason": "조직문화는 현재 상태, 조직개발은 변화 추진"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

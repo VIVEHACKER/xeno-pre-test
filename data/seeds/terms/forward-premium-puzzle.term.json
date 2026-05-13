@@ -1,0 +1,21 @@
+{
+  "term_id": "forward-premium-puzzle",
+  "name_ko": "선물프리미엄 퍼즐",
+  "name_en": "forward premium puzzle",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "UIP가 실증적으로 거의 성립하지 않는다는 관찰. 선물환 프리미엄이 환율 변화를 예측하지 못함.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "uncovered-interest-parity",
+      "reason": "퍼즐은 UIP 실증 실패"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

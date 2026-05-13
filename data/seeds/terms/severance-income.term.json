@@ -1,0 +1,21 @@
+{
+  "term_id": "severance-income",
+  "name_ko": "퇴직급여",
+  "name_en": "severance income",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "근로자가 퇴직 시 받는 퇴직금 또는 퇴직위로금.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "retirement-income",
+      "reason": "퇴직급여와 퇴직소득은 실무상 거의 같은 의미"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

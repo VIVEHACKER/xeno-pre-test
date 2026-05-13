@@ -1,0 +1,21 @@
+{
+  "term_id": "nullification-of-resolution",
+  "name_ko": "결의 무효",
+  "name_en": "nullification of resolution",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "결의 내용이 법령에 위반하는 경우의 하자. 누구든 언제든 무효 주장 가능.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "cancellation-of-resolution",
+      "reason": "무효는 내용 위반, 취소는 절차 하자"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "proxy-voting",
+  "name_ko": "의결권 위임",
+  "name_en": "proxy voting",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "주주가 다른 사람에게 의결권 행사를 대리하게 하는 것. 위임장 필요.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "written-resolution",
+      "reason": "위임은 대리 행사, 서면결의는 본인 서면 행사"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

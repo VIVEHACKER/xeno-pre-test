@@ -1,0 +1,21 @@
+{
+  "term_id": "earnings-stripping",
+  "name_ko": "어닝스 스트리핑",
+  "name_en": "earnings stripping",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "특수관계자 차입금 이자비용이 EBITDA의 일정 비율을 초과하면 손금산입을 제한하는 제도.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "thin-capitalization",
+      "reason": "어닝스 스트리핑은 EBITDA 비율 룰, 과소자본세제는 자본 비율 룰"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

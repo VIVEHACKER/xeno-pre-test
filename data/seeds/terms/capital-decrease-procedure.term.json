@@ -1,0 +1,21 @@
+{
+  "term_id": "capital-decrease-procedure",
+  "name_ko": "감자 절차",
+  "name_en": "capital reduction procedure",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "자본금 감소를 위한 주총 특별결의 + 채권자보호공고 + 등기 절차.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "capital-increase",
+      "reason": "감자 절차는 감소 실행, 증자는 증가 실행"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

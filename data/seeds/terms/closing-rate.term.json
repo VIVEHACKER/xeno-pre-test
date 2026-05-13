@@ -1,0 +1,21 @@
+{
+  "term_id": "closing-rate",
+  "name_ko": "마감환율",
+  "name_en": "closing rate",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "보고기간 말 현물환율. 화폐성 항목 재측정에 사용.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "average-exchange-rate",
+      "reason": "마감환율은 시점, 평균환율은 기간 평균"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

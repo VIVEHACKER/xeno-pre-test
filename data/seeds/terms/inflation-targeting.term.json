@@ -1,0 +1,21 @@
+{
+  "term_id": "inflation-targeting",
+  "name_ko": "물가안정목표제",
+  "name_en": "inflation targeting",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "중앙은행이 일정 인플레이션 목표(예 2%)를 공시하고 그에 맞춰 통화정책을 운영하는 체계.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "taylor-rule",
+      "reason": "물가안정목표는 목표 자체, 테일러 준칙은 운영 룰"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

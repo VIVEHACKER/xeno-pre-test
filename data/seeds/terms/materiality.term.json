@@ -1,0 +1,21 @@
+{
+  "term_id": "materiality",
+  "name_ko": "중요성",
+  "name_en": "materiality",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "정보가 의사결정에 영향을 미칠 수 있을 만큼 큰지에 대한 판단 기준.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "material-weakness",
+      "reason": "중요성은 일반 개념, 중요한 취약점은 내부통제 평가 용어"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

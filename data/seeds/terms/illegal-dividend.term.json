@@ -1,0 +1,21 @@
+{
+  "term_id": "illegal-dividend",
+  "name_ko": "위법배당",
+  "name_en": "illegal dividend",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "배당가능이익을 초과하거나 절차 위반으로 행해진 배당. 이사 손해배상 책임 발생.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "dividend-resolution",
+      "reason": "위법배당은 사유, 배당결의는 정상 절차"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

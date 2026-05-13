@@ -1,0 +1,21 @@
+{
+  "term_id": "life-cycle-hypothesis",
+  "name_ko": "생애주기가설",
+  "name_en": "life-cycle hypothesis",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "사람들이 일생 동안 소비를 평탄화하기 위해 청년기 차입 + 중장년 저축 + 노년 소비를 한다는 모디글리아니의 가설.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "permanent-income-hypothesis",
+      "reason": "생애주기는 연령 단계 분배, 항상소득은 평균 기준"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

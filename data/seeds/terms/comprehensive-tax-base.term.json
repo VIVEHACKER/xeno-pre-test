@@ -1,0 +1,21 @@
+{
+  "term_id": "comprehensive-tax-base",
+  "name_ko": "종합소득과세표준",
+  "name_en": "comprehensive tax base",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "종합소득금액에서 종합소득공제를 차감한 최종 과세표준.",
+  "formula": "과세표준 = 종합소득금액 - 종합소득공제",
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "taxable-income",
+      "reason": "종합소득과세표준은 종합 한정, 과세표준은 광의"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

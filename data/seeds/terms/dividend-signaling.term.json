@@ -1,0 +1,21 @@
+{
+  "term_id": "dividend-signaling",
+  "name_ko": "배당의 신호 효과",
+  "name_en": "dividend signaling",
+  "aliases": ["배당 시그널링"],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "경영자가 미래 수익 전망에 대한 정보를 배당 정책으로 시장에 전달한다는 이론. 배당 인상은 호재, 삭감은 악재 시그널로 해석.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "dividend-irrelevance",
+      "reason": "신호 효과는 정보비대칭 하에서 배당이 가치에 영향, MM 배당 무관성은 완전시장 하에서 배당이 가치와 무관"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": "수년간 일정 배당을 하던 회사가 갑자기 배당을 50% 인상하면 시장은 미래 이익 전망 개선의 시그널로 받아들여 주가 상승",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

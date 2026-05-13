@@ -1,0 +1,23 @@
+{
+  "term_id": "quantitative-easing",
+  "name_ko": "양적완화",
+  "name_en": "quantitative easing",
+  "aliases": [
+    "QE"
+  ],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "중앙은행이 국채/MBS 등을 매입해 유동성을 직접 공급하는 비전통적 통화정책.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "open-market-operation",
+      "reason": "QE는 대규모 비전통, 공개시장운영은 일상적 도구"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

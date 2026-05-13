@@ -1,0 +1,21 @@
+{
+  "term_id": "growing-perpetuity",
+  "name_ko": "성장영구연금",
+  "name_en": "growing perpetuity",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "일정 성장률로 영구히 증가하는 현금흐름의 현재가치.",
+  "formula": "PV = C1 / (r - g)",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "gordon-growth-model",
+      "reason": "성장영구연금은 일반 개념, 고든 성장모형은 주식 적용"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

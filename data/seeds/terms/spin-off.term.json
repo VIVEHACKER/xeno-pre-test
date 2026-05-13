@@ -1,0 +1,21 @@
+{
+  "term_id": "spin-off",
+  "name_ko": "인적분할",
+  "name_en": "spin-off",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "분할 후 주식이 기존 주주에게 직접 배정되는 분할 방식.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "split-off",
+      "reason": "인적분할은 주주 직접, 물적분할은 분할법인 자체에 배정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

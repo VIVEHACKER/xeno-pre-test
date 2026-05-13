@@ -1,0 +1,21 @@
+{
+  "term_id": "wholesale-merchant",
+  "name_ko": "도매업자",
+  "name_en": "wholesale merchant",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "재화를 대량으로 매입해 소매업자나 다른 도매업자에게 판매하는 사업자.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "retail-merchant",
+      "reason": "도매는 사업자 간, 소매는 최종 소비자"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

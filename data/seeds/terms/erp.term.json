@@ -1,0 +1,23 @@
+{
+  "term_id": "erp",
+  "name_ko": "전사적자원관리",
+  "name_en": "enterprise resource planning",
+  "aliases": [
+    "ERP"
+  ],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "기업 전반의 자원과 프로세스를 통합 관리하는 IT 시스템.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "business-information-system",
+      "reason": "ERP는 통합 자원관리 시스템, MIS는 광의의 경영정보시스템"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

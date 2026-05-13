@@ -1,0 +1,21 @@
+{
+  "term_id": "payback-discounted",
+  "name_ko": "할인회수기간법",
+  "name_en": "discounted payback period",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "현금흐름을 할인해 초기 투자액을 회수하는 데 걸리는 기간. 일반 회수기간법의 한계 보완.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "payback-period",
+      "reason": "할인회수기간은 시간가치 반영, 회수기간법은 무시"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

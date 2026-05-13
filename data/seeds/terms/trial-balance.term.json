@@ -1,0 +1,21 @@
+{
+  "term_id": "trial-balance",
+  "name_ko": "시산표",
+  "name_en": "trial balance",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "총계정원장 각 계정의 잔액을 모은 표. 차변과 대변 합계 일치 검증에 사용.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "closing-entry",
+      "reason": "시산표는 잔액 집계, 마감분개는 손익 계정 마감"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

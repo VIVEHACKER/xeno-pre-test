@@ -1,0 +1,21 @@
+{
+  "term_id": "disclaimer-opinion",
+  "name_ko": "의견거절",
+  "name_en": "disclaimer of opinion",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "audit",
+  "definition": "감사범위 제한 등으로 의견을 표명할 수 없다는 감사인의 입장.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "adverse-opinion",
+      "reason": "의견거절은 판단 불가, 부적정의견은 위반 확인"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

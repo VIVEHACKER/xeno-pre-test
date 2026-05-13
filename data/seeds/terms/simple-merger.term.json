@@ -1,0 +1,21 @@
+{
+  "term_id": "simple-merger",
+  "name_ko": "간이합병",
+  "name_en": "simplified merger",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "합병의 한 당사회사가 다른 당사회사의 발행주식 90% 이상을 보유한 경우 적용되는 간이 절차.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "small-business-merger",
+      "reason": "간이합병은 지분요건, 소규모합병은 발행규모요건"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

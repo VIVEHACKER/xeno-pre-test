@@ -1,0 +1,21 @@
+{
+  "term_id": "recognition-tax",
+  "name_ko": "소득인식",
+  "name_en": "recognition (tax)",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "소득을 어느 시점에, 누구에게 귀속시킬지를 결정하는 세무 절차.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "timing-tax",
+      "reason": "소득인식은 광의, 귀속시기는 그 한 측면"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

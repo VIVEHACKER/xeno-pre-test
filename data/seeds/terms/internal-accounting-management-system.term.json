@@ -1,0 +1,21 @@
+{
+  "term_id": "internal-accounting-management-system",
+  "name_ko": "내부회계관리제도",
+  "name_en": "internal accounting control system",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "audit",
+  "definition": "재무보고 신뢰성을 위해 설계·운영하는 회계 관련 내부통제 시스템. 외감법 적용 대상.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "internal-control",
+      "reason": "내부회계관리제도는 회계 한정, 내부통제는 광의"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

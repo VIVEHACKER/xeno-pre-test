@@ -1,0 +1,23 @@
+{
+  "term_id": "external-audit-act",
+  "name_ko": "주식회사 등의 외부감사에 관한 법률",
+  "name_en": "External Audit Act",
+  "aliases": [
+    "외감법"
+  ],
+  "subject": "accounting",
+  "unit": "audit",
+  "definition": "일정 규모 이상의 회사에 외부감사를 의무화하는 법. 흔히 외감법으로 줄여 부른다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "cpa-act",
+      "reason": "외감법은 외부감사 의무, 공인회계사법은 회계사 자격/직무"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

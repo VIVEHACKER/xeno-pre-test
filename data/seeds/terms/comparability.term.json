@@ -1,0 +1,21 @@
+{
+  "term_id": "comparability",
+  "name_ko": "비교가능성",
+  "name_en": "comparability",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "회계정보가 기간 간/기업 간 비교 가능해야 한다는 질적특성.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "materiality",
+      "reason": "비교가능성은 질적특성, 중요성은 인식 임계값"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

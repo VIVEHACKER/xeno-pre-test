@@ -1,0 +1,21 @@
+{
+  "term_id": "b2c-vat",
+  "name_ko": "B2C 부가세",
+  "name_en": "B2C VAT",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "사업자가 최종 소비자에게 직접 판매할 때의 부가세 처리. 세금계산서 대신 영수증.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "general-vat-payer",
+      "reason": "B2C는 거래 상대 분류, 일반과세자는 사업자 분류"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

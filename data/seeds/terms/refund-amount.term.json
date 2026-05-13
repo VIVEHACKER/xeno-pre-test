@@ -1,0 +1,21 @@
+{
+  "term_id": "refund-amount",
+  "name_ko": "환급세액",
+  "name_en": "refund amount",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "이미 원천징수/중간예납한 세액이 산출 세액을 초과할 때 환급받는 금액.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "additional-payment",
+      "reason": "환급은 초과분, 추가납부는 부족분"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

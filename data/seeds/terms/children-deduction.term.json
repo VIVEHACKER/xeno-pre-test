@@ -1,0 +1,16 @@
+{
+  "term_id": "children-deduction",
+  "name_ko": "자녀세액공제",
+  "name_en": "children tax credit",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "기본공제 대상 자녀에 대해 산출세액에서 직접 공제하는 세액공제. 자녀 수에 따라 차등.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

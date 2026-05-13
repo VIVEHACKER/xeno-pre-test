@@ -1,0 +1,21 @@
+{
+  "term_id": "monetary-item",
+  "name_ko": "화폐성 항목",
+  "name_en": "monetary item",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "확정 가능한 금액의 화폐 단위로 수취/지급되는 자산/부채. 매기 마감환율로 재측정.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "non-monetary-item",
+      "reason": "화폐성은 환산 대상, 비화폐성은 역사적 환율 유지"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

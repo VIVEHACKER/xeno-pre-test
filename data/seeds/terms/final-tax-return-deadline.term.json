@@ -1,0 +1,21 @@
+{
+  "term_id": "final-tax-return-deadline",
+  "name_ko": "확정신고 기한",
+  "name_en": "final tax return deadline",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "종합소득세 확정신고 기한은 다음 해 5월 31일까지.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "final-return",
+      "reason": "기한은 시점, 확정신고는 절차"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

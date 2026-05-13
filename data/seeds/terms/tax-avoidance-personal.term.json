@@ -1,0 +1,21 @@
+{
+  "term_id": "tax-avoidance-personal",
+  "name_ko": "개인 절세전략",
+  "name_en": "personal tax avoidance",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "적법한 범위에서 세금 부담을 최소화하는 계획. 절세 금융상품 활용, 공제 극대화 등.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "tax-evasion-vs-avoidance",
+      "reason": "개인 절세는 적법, 조세포탈은 불법"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "liquidity-premium-theory",
+  "name_ko": "유동성프리미엄 이론",
+  "name_en": "liquidity premium theory",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "장기금리는 단기금리 기대값에 유동성프리미엄을 더해 결정된다는 이론.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "expectations-hypothesis",
+      "reason": "유동성프리미엄은 가산항 추가, 기대가설은 단순 기대값"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

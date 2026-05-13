@@ -1,0 +1,16 @@
+{
+  "term_id": "gift-deduction",
+  "name_ko": "증여재산공제",
+  "name_en": "gift deduction",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "증여세 산정 시 친족 관계에 따라 일정 금액을 차감하는 공제.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

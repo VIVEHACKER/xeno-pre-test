@@ -1,0 +1,21 @@
+{
+  "term_id": "hicksian-demand",
+  "name_ko": "힉스 수요",
+  "name_en": "Hicksian demand",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "효용 일정 가정에서 가격이 변할 때의 수요 함수. 대체효과만 반영.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "marshallian-demand",
+      "reason": "힉스는 효용 고정, 마샬은 소득 고정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "share-issuance",
+  "name_ko": "신주발행",
+  "name_en": "share issuance",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "회사가 새로운 주식을 발행해 자본을 증가시키는 절차. 이사회 결의 + 주주 신주인수권 통지.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "share-payment",
+      "reason": "신주발행은 행위, 주금 납입은 그 결과 자금 유입"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

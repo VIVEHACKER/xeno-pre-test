@@ -1,0 +1,21 @@
+{
+  "term_id": "small-business-vat-exemption",
+  "name_ko": "영세사업자 면세",
+  "name_en": "small business VAT exemption",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "연 매출 일정 금액 미만 사업자에게 적용되는 부가세 면제.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "vat-exemption",
+      "reason": "영세사업자 면세는 규모 기준, 일반 면세는 품목 기준"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

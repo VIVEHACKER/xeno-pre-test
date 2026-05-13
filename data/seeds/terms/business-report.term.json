@@ -1,0 +1,21 @@
+{
+  "term_id": "business-report",
+  "name_ko": "영업보고서",
+  "name_en": "business report",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "이사가 주주총회에 제출하는 영업 활동 보고서. 회사 운영 현황 공시.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "financial-statement-approval",
+      "reason": "영업보고서는 영업 보고, 재무제표 승인은 회계 승인"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

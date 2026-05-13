@@ -1,0 +1,21 @@
+{
+  "term_id": "global-business-strategy",
+  "name_ko": "글로벌 경영전략",
+  "name_en": "global business strategy",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "다국적으로 사업을 운영하는 기업의 통합 vs 현지화 전략 선택과 실행.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "localization-vs-standardization",
+      "reason": "글로벌 전략은 광의, 현지화/표준화는 그 한 축"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

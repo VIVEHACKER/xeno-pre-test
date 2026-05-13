@@ -1,0 +1,21 @@
+{
+  "term_id": "innkeeper",
+  "name_ko": "숙박업",
+  "name_en": "innkeeper business",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "공중에게 시설을 제공해 숙박을 제공하는 영업. 임치 책임 규정 있음.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "warehouse-keeper",
+      "reason": "숙박업은 일시 머무름, 창고업은 보관"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

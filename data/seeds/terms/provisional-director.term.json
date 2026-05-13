@@ -1,0 +1,21 @@
+{
+  "term_id": "provisional-director",
+  "name_ko": "가이사",
+  "name_en": "provisional director",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "특수한 사정으로 임시 이사 직무를 수행하는 자. 법원이 선임.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "interim-director",
+      "reason": "실무에서 가이사는 임시이사와 사실상 같은 의미로 쓰이기도"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

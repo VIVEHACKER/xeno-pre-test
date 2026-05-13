@@ -1,0 +1,16 @@
+{
+  "term_id": "local-tax-act",
+  "name_ko": "지방세법",
+  "name_en": "Local Tax Act",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "취득세, 등록세, 재산세 등 지방세 부과·징수를 규율하는 법.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "operating-efficiency",
+  "name_ko": "영업효율",
+  "name_en": "operating efficiency",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "투입 대비 산출의 효율성. 회전율과 영업이익률 등으로 측정.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "solvency",
+      "reason": "영업효율은 활동성, 지급능력은 안정성"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

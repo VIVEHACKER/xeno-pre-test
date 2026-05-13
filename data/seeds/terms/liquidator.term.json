@@ -1,0 +1,21 @@
+{
+  "term_id": "liquidator",
+  "name_ko": "청산인",
+  "name_en": "liquidator",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "해산한 회사의 청산 업무를 수행하는 자. 주총이나 법원이 선임.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "liquidation",
+      "reason": "청산인은 사람, 청산은 절차"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

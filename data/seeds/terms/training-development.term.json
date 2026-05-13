@@ -1,0 +1,21 @@
+{
+  "term_id": "training-development",
+  "name_ko": "교육훈련",
+  "name_en": "training and development",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "종업원의 직무 능력과 잠재력 향상을 위한 교육·훈련 활동.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "job-analysis",
+      "reason": "교육훈련은 능력 향상, 직무분석은 요구 능력 도출"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "receivable-turnover",
+  "name_ko": "매출채권회전율",
+  "name_en": "receivable turnover",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "매출액을 평균 매출채권으로 나눈 비율. 채권 회수 속도 지표.",
+  "formula": "매출채권회전율 = 매출액 / 평균 매출채권",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "inventory-turnover",
+      "reason": "매출채권은 회수, 재고는 판매 속도"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

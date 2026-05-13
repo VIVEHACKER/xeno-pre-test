@@ -1,0 +1,21 @@
+{
+  "term_id": "strong-form-efficiency",
+  "name_ko": "강형 효율적 시장",
+  "name_en": "strong-form efficiency",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "내부정보까지 가격에 반영되어 누구도 초과수익을 낼 수 없는 시장 가설. 현실적으로 성립 어려움.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "semi-strong-form-efficiency",
+      "reason": "강형은 사적 정보까지, 준강형은 공개 정보까지"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "executive-officer",
+  "name_ko": "집행임원",
+  "name_en": "executive officer",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "이사회로부터 회사의 업무 집행을 위임받은 임원. 집행임원 설치회사는 별도 체계.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "chief-executive-officer",
+      "reason": "집행임원은 위임 받은 자, 대표이사는 회사 대표권자"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

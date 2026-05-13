@@ -1,0 +1,21 @@
+{
+  "term_id": "external-audit",
+  "name_ko": "외부감사",
+  "name_en": "external audit",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "audit",
+  "definition": "독립적 회계법인이 기업의 재무제표가 적정한지 검증하는 절차. 외감법으로 의무 규정.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "internal-audit",
+      "reason": "외부감사는 독립 회계사, 내부감사는 회사 내부"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

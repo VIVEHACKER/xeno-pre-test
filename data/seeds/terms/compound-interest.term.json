@@ -1,0 +1,21 @@
+{
+  "term_id": "compound-interest",
+  "name_ko": "복리",
+  "name_en": "compound interest",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "이자에 이자가 다시 붙는 이자 계산 방식.",
+  "formula": "FV = PV × (1+r)^n",
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "simple-interest",
+      "reason": "복리는 이자에 이자, 단리는 원금에만"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

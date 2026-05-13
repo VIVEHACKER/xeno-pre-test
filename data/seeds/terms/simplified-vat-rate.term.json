@@ -1,0 +1,21 @@
+{
+  "term_id": "simplified-vat-rate",
+  "name_ko": "간이과세 부가율",
+  "name_en": "simplified VAT rate",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "간이과세자에게 적용되는 업종별 부가가치율. 매출세액 산정의 기초.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "simplified-vat-payer",
+      "reason": "부가율은 비율, 간이과세자는 적용 대상"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

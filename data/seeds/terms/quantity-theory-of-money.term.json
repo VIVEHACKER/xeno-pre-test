@@ -1,0 +1,21 @@
+{
+  "term_id": "quantity-theory-of-money",
+  "name_ko": "화폐수량설",
+  "name_en": "quantity theory of money",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "M × V = P × Y. 화폐량과 물가의 비례 관계를 주장한 고전학파 이론.",
+  "formula": "MV = PY",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "velocity-of-money",
+      "reason": "화폐수량설은 이론, 화폐유통속도는 그 핵심 변수"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

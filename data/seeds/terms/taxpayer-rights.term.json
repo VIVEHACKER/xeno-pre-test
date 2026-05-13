@@ -1,0 +1,16 @@
+{
+  "term_id": "taxpayer-rights",
+  "name_ko": "납세자 권리",
+  "name_en": "taxpayer rights",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "세무조사 시 변호인 동석 권리, 자료제출 거부권 등 납세자에게 보장되는 권리.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

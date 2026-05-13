@@ -1,0 +1,21 @@
+{
+  "term_id": "covered-interest-parity",
+  "name_ko": "커버된 이자율평가",
+  "name_en": "covered interest parity",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "선물환율을 이용해 환위험을 헤지한 두 국가 자산의 수익률이 같다는 무차익 조건.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "uncovered-interest-parity",
+      "reason": "커버는 선물환 헤지, 무커버는 기대환율 사용"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

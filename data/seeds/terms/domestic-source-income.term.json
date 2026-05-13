@@ -1,0 +1,21 @@
+{
+  "term_id": "domestic-source-income",
+  "name_ko": "국내원천소득",
+  "name_en": "domestic source income",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "발생 원천이 한국에 있는 소득. 비거주자도 과세 대상.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "foreign-source-income",
+      "reason": "국내원천은 한국 원천, 국외원천은 해외 원천"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

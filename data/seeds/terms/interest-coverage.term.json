@@ -1,0 +1,21 @@
+{
+  "term_id": "interest-coverage",
+  "name_ko": "이자보상비율",
+  "name_en": "interest coverage ratio",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "영업이익을 이자비용으로 나눈 비율. 이자 지급 능력 지표.",
+  "formula": "이자보상비율 = 영업이익 / 이자비용",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "debt-to-equity",
+      "reason": "이자보상비율은 이자 지급 능력, 부채비율은 자본구조"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

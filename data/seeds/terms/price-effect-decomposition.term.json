@@ -1,0 +1,21 @@
+{
+  "term_id": "price-effect-decomposition",
+  "name_ko": "가격효과 분해",
+  "name_en": "price effect decomposition",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "가격 변화의 효과를 대체효과와 소득효과로 분해하는 분석. 슬러츠키 분해.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "substitution-effect",
+      "reason": "분해는 절차, 대체효과는 그 한 구성"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

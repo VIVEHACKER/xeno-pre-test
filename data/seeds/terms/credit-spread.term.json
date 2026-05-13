@@ -1,0 +1,21 @@
+{
+  "term_id": "credit-spread",
+  "name_ko": "신용스프레드",
+  "name_en": "credit spread",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "회사채 수익률과 동일 만기 국채 수익률의 차이. 신용위험 프리미엄.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "credit-risk",
+      "reason": "신용스프레드는 측정값, 신용 위험은 개념"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

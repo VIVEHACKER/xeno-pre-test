@@ -1,0 +1,21 @@
+{
+  "term_id": "forwarding-business",
+  "name_ko": "운송주선업",
+  "name_en": "forwarding business",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "자기 명의로 운송계약을 체결해 위탁자의 화물을 운송시키는 영업.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "carrier",
+      "reason": "운송주선업은 주선, 운송업은 직접 운송"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

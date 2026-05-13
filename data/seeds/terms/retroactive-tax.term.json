@@ -1,0 +1,21 @@
+{
+  "term_id": "retroactive-tax",
+  "name_ko": "소급과세",
+  "name_en": "retroactive taxation",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "과거 사실관계에 대해 새로운 세법을 소급 적용해 과세하는 것. 원칙적으로 금지.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "tax-rate-change",
+      "reason": "소급과세는 과거 적용, 세율 변동은 미래 적용"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

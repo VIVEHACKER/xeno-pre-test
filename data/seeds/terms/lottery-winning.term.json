@@ -1,0 +1,21 @@
+{
+  "term_id": "lottery-winning",
+  "name_ko": "복권 당첨금",
+  "name_en": "lottery winnings",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "복권 당첨으로 받는 금품. 기타소득으로 분리과세.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "separate-taxation",
+      "reason": "복권 당첨금은 분리과세 대표 케이스"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

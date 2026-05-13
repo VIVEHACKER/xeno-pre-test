@@ -1,0 +1,21 @@
+{
+  "term_id": "job-analysis",
+  "name_ko": "직무분석",
+  "name_en": "job analysis",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "특정 직무의 내용, 요구 능력, 책임 범위를 체계적으로 조사하는 활동.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "job-evaluation",
+      "reason": "직무분석은 정보 수집, 직무평가는 그 정보 기반 가치 산정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

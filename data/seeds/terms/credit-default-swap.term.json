@@ -1,0 +1,23 @@
+{
+  "term_id": "credit-default-swap",
+  "name_ko": "신용부도스왑",
+  "name_en": "credit default swap",
+  "aliases": [
+    "CDS"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "특정 채무자의 신용 사건 발생 시 손실을 보전받는 보험 성격 파생상품.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "swap",
+      "reason": "CDS는 신용위험 헤지, 일반 스왑은 이자율/통화 교환"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

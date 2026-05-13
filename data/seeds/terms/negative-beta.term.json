@@ -1,0 +1,21 @@
+{
+  "term_id": "negative-beta",
+  "name_ko": "음의 베타",
+  "name_en": "negative beta",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "시장과 반대 방향으로 움직이는 자산의 베타. 헤지 수단으로 사용 가능.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "beta",
+      "reason": "음의 베타는 부호, 베타는 일반 측정치"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

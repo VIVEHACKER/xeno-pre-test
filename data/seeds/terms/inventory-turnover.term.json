@@ -1,0 +1,21 @@
+{
+  "term_id": "inventory-turnover",
+  "name_ko": "재고자산회전율",
+  "name_en": "inventory turnover",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "매출원가를 평균재고로 나눈 비율. 재고 회전 속도 지표.",
+  "formula": "재고회전율 = 매출원가 / 평균재고",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "receivable-turnover",
+      "reason": "재고회전율은 재고, 매출채권회전율은 채권"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

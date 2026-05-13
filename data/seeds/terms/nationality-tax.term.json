@@ -1,0 +1,21 @@
+{
+  "term_id": "nationality-tax",
+  "name_ko": "속인주의",
+  "name_en": "nationality-based tax",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "납세자의 국적이나 거주지를 기준으로 과세권을 결정하는 원칙.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "territorial-tax",
+      "reason": "속인주의는 사람 기준, 속지주의는 발생지 기준"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

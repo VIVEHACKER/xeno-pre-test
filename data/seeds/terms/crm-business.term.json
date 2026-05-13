@@ -1,0 +1,21 @@
+{
+  "term_id": "crm-business",
+  "name_ko": "고객관계관리(경영)",
+  "name_en": "CRM (business)",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "고객 데이터와 상호작용을 관리해 충성도와 가치를 높이는 시스템/전략.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "crm",
+      "reason": "동일 약어이지만 맥락이 마케팅 도구 측면"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

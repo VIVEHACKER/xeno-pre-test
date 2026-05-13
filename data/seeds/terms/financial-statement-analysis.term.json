@@ -1,0 +1,21 @@
+{
+  "term_id": "financial-statement-analysis",
+  "name_ko": "재무제표 분석",
+  "name_en": "financial statement analysis",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "재무비율과 추세 분석으로 기업의 수익성/안정성/성장성을 평가하는 활동.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "dupont-analysis",
+      "reason": "재무제표 분석은 광의 활동, 듀퐁분석은 ROE 분해 도구"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

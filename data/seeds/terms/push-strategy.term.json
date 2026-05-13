@@ -1,0 +1,21 @@
+{
+  "term_id": "push-strategy",
+  "name_ko": "푸시 전략",
+  "name_en": "push strategy",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "유통경로를 통해 소비자에게 제품을 밀어내는 마케팅 전략. 중간상 인센티브 위주.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "pull-strategy",
+      "reason": "푸시는 유통경로 밀어내기, 풀은 소비자가 끌어당기게"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

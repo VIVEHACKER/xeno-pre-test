@@ -1,0 +1,21 @@
+{
+  "term_id": "real-defense",
+  "name_ko": "물적항변",
+  "name_en": "real defense",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "어음 자체에서 발생한 항변. 누구에게나 주장 가능. 위조/변조 등.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "personal-defense",
+      "reason": "물적항변은 어음 자체 사유, 인적항변은 당사자 관계"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

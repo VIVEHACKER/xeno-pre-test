@@ -1,0 +1,21 @@
+{
+  "term_id": "trust-business",
+  "name_ko": "신탁업",
+  "name_en": "trust business",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "위탁자로부터 재산을 위탁받아 수익자를 위해 관리/운용하는 영업.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "collective-investment-scheme",
+      "reason": "신탁업은 신탁관계, 집합투자는 펀드"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

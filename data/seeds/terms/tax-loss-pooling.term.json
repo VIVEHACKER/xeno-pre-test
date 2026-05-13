@@ -1,0 +1,21 @@
+{
+  "term_id": "tax-loss-pooling",
+  "name_ko": "결손금 통산",
+  "name_en": "loss pooling (group)",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "연결납세 제도에서 그룹 내 결손금을 흑자 법인 소득과 통산하는 절차.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "loss-carryforward",
+      "reason": "결손금 통산은 그룹 내, 이월결손금은 시간"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

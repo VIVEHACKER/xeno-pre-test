@@ -1,0 +1,21 @@
+{
+  "term_id": "esg-management",
+  "name_ko": "ESG 경영",
+  "name_en": "ESG management",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "환경(Environment), 사회(Social), 지배구조(Governance)를 평가 기준으로 경영을 운영하는 패러다임.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "corporate-social-responsibility",
+      "reason": "ESG는 측정 + 투자 의사결정 기준, CSR은 책임 활동"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

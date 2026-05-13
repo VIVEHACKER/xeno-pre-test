@@ -1,0 +1,21 @@
+{
+  "term_id": "material-weakness",
+  "name_ko": "중요한 취약점",
+  "name_en": "material weakness",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "audit",
+  "definition": "내부통제 결함 중 재무제표에 중요한 영향을 미칠 가능성이 합리적인 것.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "audit-opinion",
+      "reason": "중요한 취약점은 내부통제 평가, 감사의견은 재무제표 평가"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "potential-gdp",
+  "name_ko": "잠재GDP",
+  "name_en": "potential GDP",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "완전고용 상태에서 달성 가능한 GDP 수준. 자연실업률 상태.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "output-gap",
+      "reason": "잠재GDP는 최대, 산출갭은 잠재와 실제의 차이"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

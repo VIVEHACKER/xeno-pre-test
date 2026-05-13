@@ -1,0 +1,21 @@
+{
+  "term_id": "tax-rate-change",
+  "name_ko": "세율 변동",
+  "name_en": "tax rate change",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "법인세율이 변경되는 경우 이연법인세 자산/부채를 재측정해야 한다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "deferred-tax",
+      "reason": "세율 변동은 사건, 이연법인세는 영향 대상"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

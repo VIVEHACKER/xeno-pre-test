@@ -1,0 +1,23 @@
+{
+  "term_id": "asset-backed-securities",
+  "name_ko": "자산담보부증권",
+  "name_en": "asset-backed securities",
+  "aliases": [
+    "ABS"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "다양한 자산(채권, 카드매출, 리스 등) 풀을 기초로 발행하는 유동화증권.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "mortgage-backed-securities",
+      "reason": "ABS는 광의, MBS는 주택담보 특정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

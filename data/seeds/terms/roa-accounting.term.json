@@ -1,0 +1,23 @@
+{
+  "term_id": "roa-accounting",
+  "name_ko": "자산수익률",
+  "name_en": "return on assets",
+  "aliases": [
+    "ROA"
+  ],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "당기순이익을 총자산으로 나눈 비율. 자산을 얼마나 효율적으로 활용했는지.",
+  "formula": "ROA = 당기순이익 / 총자산",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "roe-accounting",
+      "reason": "ROA는 총자산 기준, ROE는 자기자본 기준"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

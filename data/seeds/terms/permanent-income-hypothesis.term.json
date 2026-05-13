@@ -1,0 +1,21 @@
+{
+  "term_id": "permanent-income-hypothesis",
+  "name_ko": "항상소득가설",
+  "name_en": "permanent income hypothesis",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "소비는 현재 소득보다는 항상소득(장기 평균 소득)에 의해 결정된다는 프리드먼의 가설.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "life-cycle-hypothesis",
+      "reason": "항상소득은 평균 소득, 생애주기는 일생 분배"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

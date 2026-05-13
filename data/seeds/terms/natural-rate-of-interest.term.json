@@ -1,0 +1,21 @@
+{
+  "term_id": "natural-rate-of-interest",
+  "name_ko": "자연이자율",
+  "name_en": "natural rate of interest",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "완전고용 산출 수준을 유지하는 이론적 이자율. 통화정책의 중립 기준.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "natural-unemployment-rate",
+      "reason": "자연이자율은 금리, 자연실업률은 실업률"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

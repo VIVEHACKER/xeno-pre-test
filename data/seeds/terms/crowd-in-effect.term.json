@@ -1,0 +1,21 @@
+{
+  "term_id": "crowd-in-effect",
+  "name_ko": "구축효과의 반대",
+  "name_en": "crowding-in",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "정부지출이 민간투자를 유발해 오히려 늘리는 효과. 구축효과의 반대.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "crowding-out",
+      "reason": "구축은 감소, 유인은 증가"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

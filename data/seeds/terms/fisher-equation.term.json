@@ -1,0 +1,21 @@
+{
+  "term_id": "fisher-equation",
+  "name_ko": "피셔 방정식",
+  "name_en": "Fisher equation",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "명목이자율 = 실질이자율 + 기대인플레이션율(근사식)의 관계식.",
+  "formula": "(1+i) = (1+r)(1+π)",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "real-rate",
+      "reason": "피셔방정식은 관계식, 실질이자율은 그 한 항"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "performance-appraisal",
+  "name_ko": "성과평가",
+  "name_en": "performance appraisal",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "종업원의 업무 성과를 체계적으로 측정·평가하는 활동.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "compensation-system",
+      "reason": "성과평가는 측정, 보상체계는 그에 기반한 대가 결정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

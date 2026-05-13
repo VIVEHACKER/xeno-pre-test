@@ -1,0 +1,21 @@
+{
+  "term_id": "director-meeting-quorum",
+  "name_ko": "이사회 정족수",
+  "name_en": "board meeting quorum",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "이사회 결의를 위해 필요한 출석 이사 수. 원칙적으로 이사 과반수.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "board-resolution",
+      "reason": "정족수는 수치 요건, 결의는 결과"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

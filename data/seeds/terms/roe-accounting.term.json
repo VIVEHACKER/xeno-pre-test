@@ -1,0 +1,23 @@
+{
+  "term_id": "roe-accounting",
+  "name_ko": "자기자본순이익률",
+  "name_en": "return on equity",
+  "aliases": [
+    "ROE"
+  ],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "당기순이익을 자기자본으로 나눈 비율. 주주 입장의 수익률.",
+  "formula": "ROE = 당기순이익 / 자기자본",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "roa-accounting",
+      "reason": "ROE는 주주 관점, ROA는 자산 관점"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

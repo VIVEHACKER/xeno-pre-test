@@ -1,0 +1,21 @@
+{
+  "term_id": "multiplier-accelerator",
+  "name_ko": "승수-가속도 모형",
+  "name_en": "multiplier-accelerator",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "재정 승수와 투자 가속도원리를 결합해 경기변동을 설명하는 모형.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "accelerator-principle",
+      "reason": "결합 모형 vs 단일 원리"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

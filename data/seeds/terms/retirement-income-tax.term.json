@@ -1,0 +1,21 @@
+{
+  "term_id": "retirement-income-tax",
+  "name_ko": "퇴직소득세",
+  "name_en": "retirement income tax",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "퇴직소득에 적용되는 별도 세금 체계. 근속연수공제 + 환산급여 + 누진세율 단계.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "retirement-income",
+      "reason": "퇴직소득세는 세금, 퇴직소득은 과세 대상"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

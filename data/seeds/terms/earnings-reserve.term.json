@@ -1,0 +1,21 @@
+{
+  "term_id": "earnings-reserve",
+  "name_ko": "이익준비금",
+  "name_en": "earnings reserve",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "매기 배당의 10% 이상을 자본금의 50%까지 적립해야 하는 법정 준비금.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "legal-reserve",
+      "reason": "이익준비금과 법정준비금은 같은 개념 (이익준비금이 정식)"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "financial-statement-approval",
+  "name_ko": "재무제표 승인",
+  "name_en": "financial statement approval",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "정기 주주총회에서 재무제표를 승인하는 결의. 이사 책임 면제 효과.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "business-report",
+      "reason": "재무제표 승인은 회계 보고 승인, 영업보고서는 영업 활동 보고"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

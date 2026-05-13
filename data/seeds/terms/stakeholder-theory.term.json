@@ -1,0 +1,21 @@
+{
+  "term_id": "stakeholder-theory",
+  "name_ko": "이해관계자 이론",
+  "name_en": "stakeholder theory",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "기업은 주주뿐 아니라 모든 이해관계자의 이익을 균형 있게 고려해야 한다는 경영 이론.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "agency-theory",
+      "reason": "이해관계자 이론은 다자 이익, 대리이론은 주주-경영자 갈등"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

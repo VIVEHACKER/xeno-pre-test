@@ -1,0 +1,21 @@
+{
+  "term_id": "weighted-average-eup",
+  "name_ko": "가중평균법 완성품환산량",
+  "name_en": "weighted average EUP",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "기초재공품과 당기 투입을 구분하지 않고 평균해 산출하는 완성품환산량 산출법.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "fifo-eup",
+      "reason": "가증평균은 기초 + 당기 평균, FIFO는 기초 완성과 당기 분리"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

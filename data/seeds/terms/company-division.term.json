@@ -1,0 +1,21 @@
+{
+  "term_id": "company-division",
+  "name_ko": "회사 분할",
+  "name_en": "company division",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "하나의 회사가 둘 이상의 회사로 나뉘는 거래. 인적분할 + 물적분할.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "company-merger",
+      "reason": "분할은 분리, 합병은 결합"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

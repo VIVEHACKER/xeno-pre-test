@@ -1,0 +1,23 @@
+{
+  "term_id": "comparable-uncontrolled-price",
+  "name_ko": "비교가능 제3자 가격법",
+  "name_en": "comparable uncontrolled price method",
+  "aliases": [
+    "CUP"
+  ],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "동종 거래의 비교 가능한 제3자 거래 가격을 정상가격으로 적용하는 방법.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "resale-price-method",
+      "reason": "CUP는 거래가 비교, RPM은 재판매 가격 차감"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

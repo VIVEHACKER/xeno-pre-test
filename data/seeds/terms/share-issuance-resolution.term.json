@@ -1,0 +1,21 @@
+{
+  "term_id": "share-issuance-resolution",
+  "name_ko": "신주발행 결의",
+  "name_en": "share issuance resolution",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "이사회 또는 주총이 신주발행을 결정하는 의사결정. 정관에 정함이 있으면 이사회.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "share-issuance",
+      "reason": "결의는 의사결정, 발행은 실행"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

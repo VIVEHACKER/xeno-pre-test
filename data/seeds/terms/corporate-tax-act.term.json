@@ -1,0 +1,21 @@
+{
+  "term_id": "corporate-tax-act",
+  "name_ko": "법인세법",
+  "name_en": "Corporate Tax Act",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "법인의 소득에 대한 과세를 규율하는 한국 세법.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "income-tax-act",
+      "reason": "법인세법은 법인, 소득세법은 개인"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "collective-investment-scheme",
+  "name_ko": "집합투자",
+  "name_en": "collective investment scheme",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "2인 이상으로부터 모은 자금을 운용해 그 결과를 투자자에게 배분하는 사업. 펀드.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "trust-business",
+      "reason": "집합투자는 펀드 형태, 신탁은 신탁관계"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "licensing-business",
+  "name_ko": "라이선싱(경영)",
+  "name_en": "licensing (business)",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "기술/브랜드/특허 사용권을 외국 기업에 부여하고 로열티를 받는 진출 방식.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "franchising",
+      "reason": "라이선싱은 권리 부여, 프랜차이징은 영업 시스템 패키지 제공"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

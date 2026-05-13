@@ -1,0 +1,21 @@
+{
+  "term_id": "carryforward-loss-period",
+  "name_ko": "이월결손금 공제기간",
+  "name_en": "loss carryforward period",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "결손금을 미래 사업연도에 이월해 공제할 수 있는 기간. 한국은 15년.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "loss-carryforward",
+      "reason": "기간은 한도, 이월결손금은 대상"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

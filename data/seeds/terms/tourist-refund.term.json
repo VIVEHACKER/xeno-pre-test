@@ -1,0 +1,21 @@
+{
+  "term_id": "tourist-refund",
+  "name_ko": "외국인 부가세 환급",
+  "name_en": "tourist VAT refund",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "외국인이 출국 시 한국에서 구매한 일정 금액 이상 재화의 부가세를 환급해주는 제도.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "vat-refund",
+      "reason": "외국인 환급은 관광 한정, 일반 환급은 모든 사업자"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

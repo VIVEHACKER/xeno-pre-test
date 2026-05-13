@@ -1,0 +1,21 @@
+{
+  "term_id": "foreign-operation",
+  "name_ko": "해외사업장",
+  "name_en": "foreign operation",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "보고기업의 외국에 위치한 종속기업/관계기업/공동약정/지점.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "functional-currency",
+      "reason": "해외사업장은 실체, 기능통화는 그 실체의 영업 통화"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

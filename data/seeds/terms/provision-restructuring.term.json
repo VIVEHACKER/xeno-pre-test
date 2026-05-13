@@ -1,0 +1,21 @@
+{
+  "term_id": "provision-restructuring",
+  "name_ko": "구조조정충당부채",
+  "name_en": "restructuring provision",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "provisions",
+  "definition": "구조조정 계획을 공식 발표해 정당한 기대를 형성한 경우 인식하는 충당부채.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "provision",
+      "reason": "구조조정충당부채는 특정 사유 충당부채, 충당부채는 일반"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

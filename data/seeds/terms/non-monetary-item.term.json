@@ -1,0 +1,21 @@
+{
+  "term_id": "non-monetary-item",
+  "name_ko": "비화폐성 항목",
+  "name_en": "non-monetary item",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "재고/유형자산 등 확정 화폐액으로 표현되지 않는 자산/부채. 거래일 환율 또는 공정가치일 환율로 평가.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "monetary-item",
+      "reason": "비화폐성은 환산 대상 아님, 화폐성은 매기 환산"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

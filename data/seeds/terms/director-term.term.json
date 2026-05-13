@@ -1,0 +1,21 @@
+{
+  "term_id": "director-term",
+  "name_ko": "이사의 임기",
+  "name_en": "director term",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "주식회사 이사의 임기는 3년 이내. 정관으로 단축 가능, 연장 불가.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "director-appointment",
+      "reason": "임기는 기간, 선임은 신분 결정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

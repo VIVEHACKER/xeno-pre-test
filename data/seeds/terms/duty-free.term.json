@@ -1,0 +1,21 @@
+{
+  "term_id": "duty-free",
+  "name_ko": "면세점",
+  "name_en": "duty-free shop",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "출국 외국인 등에게 부가세/관세 면세 상품을 판매하는 점포.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "vat-exemption",
+      "reason": "면세점은 특수 영업, 부가세 면세는 일반"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

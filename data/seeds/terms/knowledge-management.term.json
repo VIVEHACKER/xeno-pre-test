@@ -1,0 +1,23 @@
+{
+  "term_id": "knowledge-management",
+  "name_ko": "지식경영",
+  "name_en": "knowledge management",
+  "aliases": [
+    "KM"
+  ],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "조직 내 지식을 창출·축적·공유·활용하는 경영 활동.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "learning-organization",
+      "reason": "지식경영은 관리 활동, 학습조직은 그 결과 형태"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

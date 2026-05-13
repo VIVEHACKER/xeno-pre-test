@@ -1,0 +1,21 @@
+{
+  "term_id": "cash-conversion-cycle",
+  "name_ko": "현금전환주기",
+  "name_en": "cash conversion cycle",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "재고 매입에서 현금 회수까지 걸리는 기간. 운전자본 효율 지표.",
+  "formula": "CCC = 재고일수 + 매출채권일수 - 매입채무일수",
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "receivable-turnover",
+      "reason": "CCC는 운전자본 전체 주기, 회전율은 개별 항목"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "franchise-agreement",
+  "name_ko": "가맹계약",
+  "name_en": "franchise agreement",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "본부와 가맹점이 영업 표지/시스템 사용권과 로열티를 약정한 계약. 가맹사업법 적용.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "franchising",
+      "reason": "가맹계약은 계약 문서, 프랜차이징은 영업 형태"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

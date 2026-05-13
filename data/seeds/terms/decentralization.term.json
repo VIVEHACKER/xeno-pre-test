@@ -1,0 +1,21 @@
+{
+  "term_id": "decentralization",
+  "name_ko": "분권화",
+  "name_en": "decentralization",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "의사결정 권한을 하위 단위에 위임하는 조직 형태. 책임회계와 짝.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "responsibility-accounting",
+      "reason": "분권화는 권한 위임, 책임회계는 그 결과 측정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

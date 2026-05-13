@@ -1,0 +1,21 @@
+{
+  "term_id": "tangency-portfolio",
+  "name_ko": "접점 포트폴리오",
+  "name_en": "tangency portfolio",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "CML이 효율적 프론티어에 접하는 점의 위험 포트폴리오. 시장포트폴리오와 일치.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "market-portfolio",
+      "reason": "접점 포트폴리오는 이론적 위치, 시장포트폴리오는 그 구성"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

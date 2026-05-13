@@ -1,0 +1,21 @@
+{
+  "term_id": "liquidity-trap",
+  "name_ko": "유동성 함정",
+  "name_en": "liquidity trap",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "이자율이 매우 낮아 통화공급을 늘려도 추가 화폐를 모두 보유하려고 해 통화정책이 무력해지는 상태.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "zero-lower-bound",
+      "reason": "유동성 함정은 결과 상태, 제로금리하한은 도구 한계"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

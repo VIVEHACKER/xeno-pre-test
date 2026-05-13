@@ -1,0 +1,21 @@
+{
+  "term_id": "ordinary-sale",
+  "name_ko": "일반매매",
+  "name_en": "ordinary sale",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "민법상 매매 규정만 적용되는 일반 매매. 상사매매와 구분.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "commercial-sale",
+      "reason": "일반매매는 민사, 상사매매는 상인 간"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

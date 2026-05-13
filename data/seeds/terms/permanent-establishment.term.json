@@ -1,0 +1,23 @@
+{
+  "term_id": "permanent-establishment",
+  "name_ko": "고정사업장",
+  "name_en": "permanent establishment",
+  "aliases": [
+    "PE"
+  ],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "외국 법인이 한국에 영업 활동을 행하는 일정한 장소. 한국 과세권 발생 기준.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "branch-tax",
+      "reason": "PE는 개념, 지점세는 PE에 부과되는 세금"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

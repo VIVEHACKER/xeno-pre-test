@@ -1,0 +1,21 @@
+{
+  "term_id": "cancellation-of-resolution",
+  "name_ko": "결의 취소",
+  "name_en": "cancellation of resolution",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "소집/결의 방법에 절차적 하자가 있는 경우 결의일부터 2개월 이내에 청구하는 소송.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "nullification-of-resolution",
+      "reason": "취소는 절차 하자, 무효는 내용 위반"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

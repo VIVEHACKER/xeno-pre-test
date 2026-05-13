@@ -1,0 +1,21 @@
+{
+  "term_id": "trader-cancellation",
+  "name_ko": "사업자등록 폐업",
+  "name_en": "business deregistration",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "사업을 종료할 때 사업자등록을 말소하는 절차.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "trader-suspension",
+      "reason": "폐업은 종결, 휴업은 일시 중단"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "average-exchange-rate",
+  "name_ko": "평균환율",
+  "name_en": "average exchange rate",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "보고기간의 평균 환율. 손익 환산에 흔히 사용.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "closing-rate",
+      "reason": "평균환율은 기간, 마감환율은 시점"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

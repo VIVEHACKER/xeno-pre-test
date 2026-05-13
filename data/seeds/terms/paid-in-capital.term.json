@@ -1,0 +1,21 @@
+{
+  "term_id": "paid-in-capital",
+  "name_ko": "납입자본",
+  "name_en": "paid-in capital",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "주주가 회사에 실제로 납입한 자본. 자본금 + 주식발행초과금.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "share-capital",
+      "reason": "납입자본은 광의, 자본금은 액면가액 부분"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

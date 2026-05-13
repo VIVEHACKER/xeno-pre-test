@@ -1,0 +1,21 @@
+{
+  "term_id": "government-grant",
+  "name_ko": "정부보조금",
+  "name_en": "government grant",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "정부로부터 자원 이전을 받은 것. 자산관련 보조금은 자산 차감 또는 이연수익으로, 수익관련 보조금은 손익으로 인식.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "impairment-reversal",
+      "reason": "정부보조금은 외부 자금 유입, 환입은 내부 평가 회복"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

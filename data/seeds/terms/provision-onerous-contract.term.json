@@ -1,0 +1,21 @@
+{
+  "term_id": "provision-onerous-contract",
+  "name_ko": "손실부담계약 충당부채",
+  "name_en": "onerous contract provision",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "provisions",
+  "definition": "회피 불가능한 의무의 원가가 기대 효익을 초과하는 계약에 대해 인식하는 충당부채.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "provision",
+      "reason": "손실부담계약은 특정 사유, 일반 충당부채는 광의"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

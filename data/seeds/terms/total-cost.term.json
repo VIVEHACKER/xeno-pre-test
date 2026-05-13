@@ -1,0 +1,21 @@
+{
+  "term_id": "total-cost",
+  "name_ko": "총비용",
+  "name_en": "total cost",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "고정비용 + 가변비용. 모든 생산 비용의 합.",
+  "formula": "TC = FC + VC",
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "average-cost",
+      "reason": "총비용은 합계, 평균비용은 산출량 단위당"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

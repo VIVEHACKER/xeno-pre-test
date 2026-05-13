@@ -1,0 +1,21 @@
+{
+  "term_id": "ai-and-business",
+  "name_ko": "인공지능과 경영",
+  "name_en": "AI in business",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "기업이 인공지능 기술을 의사결정/운영/고객경험 개선에 활용하는 패러다임. 챗봇, 예측분석, RPA 등.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "business-information-system",
+      "reason": "AI 경영은 신기술 활용, MIS는 일반 정보 시스템"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

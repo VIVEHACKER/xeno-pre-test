@@ -1,0 +1,21 @@
+{
+  "term_id": "reserves",
+  "name_ko": "준비금",
+  "name_en": "reserves",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "법령이나 정관에 따라 회사가 적립하는 자본 항목. 자본준비금 + 이익준비금 + 임의준비금.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "capital-reserve",
+      "reason": "준비금은 광의, 자본준비금은 그 한 종류"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

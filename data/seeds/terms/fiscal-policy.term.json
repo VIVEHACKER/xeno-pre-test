@@ -1,0 +1,21 @@
+{
+  "term_id": "fiscal-policy",
+  "name_ko": "재정정책",
+  "name_en": "fiscal policy",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "정부가 세금과 지출을 조절해 경제를 안정시키는 정책.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "monetary-policy",
+      "reason": "재정정책은 정부지출/세금, 통화정책은 통화량/금리"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

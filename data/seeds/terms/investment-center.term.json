@@ -1,0 +1,21 @@
+{
+  "term_id": "investment-center",
+  "name_ko": "투자센터",
+  "name_en": "investment center",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "수익, 비용, 투자(자산)까지 모두 통제 책임을 지는 책임센터. ROI로 평가.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "profit-center",
+      "reason": "투자센터는 자산까지, 이익센터는 손익만"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

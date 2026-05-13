@@ -1,0 +1,21 @@
+{
+  "term_id": "dependent-deduction",
+  "name_ko": "부양가족공제",
+  "name_en": "dependent deduction",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "부양가족 1인당 150만원을 종합소득금액에서 공제하는 인적공제.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "basic-deduction",
+      "reason": "부양가족공제는 기본공제의 부양가족 적용분"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

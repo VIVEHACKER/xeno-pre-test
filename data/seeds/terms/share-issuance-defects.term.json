@@ -1,0 +1,21 @@
+{
+  "term_id": "share-issuance-defects",
+  "name_ko": "신주발행의 하자",
+  "name_en": "share issuance defects",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "신주발행 절차나 내용의 하자. 신주발행 무효 또는 발행유지청구의 사유.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "illegal-share-issuance",
+      "reason": "신주발행의 하자는 광의 사유, 위법한 신주발행은 그 일부"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

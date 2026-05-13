@@ -1,0 +1,21 @@
+{
+  "term_id": "arc-elasticity",
+  "name_ko": "호탄력성",
+  "name_en": "arc elasticity",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "두 점 사이의 평균 가격과 평균 수량을 기준으로 계산한 탄력성.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "point-elasticity",
+      "reason": "호탄력성은 두 점 평균, 점탄력성은 한 점 기울기"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

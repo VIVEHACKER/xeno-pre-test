@@ -1,0 +1,21 @@
+{
+  "term_id": "operating-budget",
+  "name_ko": "운영예산",
+  "name_en": "operating budget",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "한 회계연도의 수익/비용/이익 계획을 수치로 표현한 예산.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "capital-budget",
+      "reason": "운영예산은 일상 운영, 자본예산은 장기 투자"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

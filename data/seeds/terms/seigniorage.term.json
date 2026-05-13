@@ -1,0 +1,21 @@
+{
+  "term_id": "seigniorage",
+  "name_ko": "시뇨리지",
+  "name_en": "seigniorage",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "정부가 화폐를 발행해 얻는 이익. 발권차익.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "quantitative-easing",
+      "reason": "시뇨리지는 발권 이익, QE는 자산 매입 통화 공급"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

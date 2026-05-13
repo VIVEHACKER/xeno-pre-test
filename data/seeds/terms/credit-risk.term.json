@@ -1,0 +1,21 @@
+{
+  "term_id": "credit-risk",
+  "name_ko": "신용 위험",
+  "name_en": "credit risk",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "거래상대방의 채무불이행으로 발생할 수 있는 손실 위험.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "liquidity-risk",
+      "reason": "신용 위험은 불이행, 유동성 위험은 변환 비용"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

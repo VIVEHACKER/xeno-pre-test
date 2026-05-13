@@ -1,0 +1,21 @@
+{
+  "term_id": "timeliness",
+  "name_ko": "적시성",
+  "name_en": "timeliness",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "의사결정에 영향을 미칠 수 있는 시점에 정보를 이용 가능하게 한다는 질적특성.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "relevance",
+      "reason": "적시성은 시점, 목적적합성은 내용"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

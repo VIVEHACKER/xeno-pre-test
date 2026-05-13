@@ -1,0 +1,21 @@
+{
+  "term_id": "closing-entry",
+  "name_ko": "마감분개",
+  "name_en": "closing entry",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "기말에 손익 계정을 집합손익으로 이체하고 영구계정을 정리하는 분개.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "trial-balance",
+      "reason": "마감분개는 행위, 시산표는 검증 도구"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

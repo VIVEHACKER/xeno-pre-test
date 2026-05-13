@@ -1,0 +1,21 @@
+{
+  "term_id": "capital-increase",
+  "name_ko": "증자",
+  "name_en": "capital increase",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "회사 자본금을 증가시키는 행위. 신주발행 또는 자본전입.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "capital-decrease-procedure",
+      "reason": "증자는 자본금 증가, 감자는 감소"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

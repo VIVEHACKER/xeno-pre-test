@@ -1,0 +1,21 @@
+{
+  "term_id": "installment-receivable",
+  "name_ko": "할부매출채권",
+  "name_en": "installment receivable",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "revenue",
+  "definition": "할부판매로 발생한 매출채권. 유의적 금융요소가 있으면 현재가치로 측정.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "receivables",
+      "reason": "할부매출채권은 분할회수형, 매출채권은 일반"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

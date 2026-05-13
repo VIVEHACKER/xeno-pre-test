@@ -1,0 +1,21 @@
+{
+  "term_id": "business-judgment-rule",
+  "name_ko": "경영판단의 원칙",
+  "name_en": "business judgment rule",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "이사가 합리적 절차로 신중히 판단한 결정에 대해 결과가 잘못되어도 책임을 묻지 않는 법리.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "director-care-duty",
+      "reason": "경영판단의 원칙은 면책 법리, 선관주의의무는 행위 기준"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

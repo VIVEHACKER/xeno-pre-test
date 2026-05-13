@@ -1,0 +1,21 @@
+{
+  "term_id": "income-tax-act",
+  "name_ko": "소득세법",
+  "name_en": "Income Tax Act",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "개인의 소득에 대한 과세를 규율하는 한국 세법.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "corporate-tax-act",
+      "reason": "소득세법은 개인, 법인세법은 법인"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

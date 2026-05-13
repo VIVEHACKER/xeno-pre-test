@@ -1,0 +1,21 @@
+{
+  "term_id": "tradable-permit",
+  "name_ko": "배출권거래제",
+  "name_en": "tradable permit",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "오염 배출 허용량을 시장에서 거래하게 해 효율적으로 감축하도록 하는 제도. 코즈 정리 응용.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "pigouvian-tax",
+      "reason": "배출권거래제는 수량 규제 + 거래, 피구세는 가격 규제"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

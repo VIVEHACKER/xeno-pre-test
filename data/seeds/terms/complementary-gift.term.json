@@ -1,0 +1,21 @@
+{
+  "term_id": "complementary-gift",
+  "name_ko": "보완증여",
+  "name_en": "complementary gift",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "상속개시 후 일정 기간 내 사전증여가 있던 경우 합산해 과세하는 제도.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "advance-gift",
+      "reason": "보완증여와 사전증여는 합산 관계"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

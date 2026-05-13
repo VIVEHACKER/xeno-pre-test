@@ -1,0 +1,21 @@
+{
+  "term_id": "roi-divisional",
+  "name_ko": "사업부 ROI",
+  "name_en": "divisional ROI",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "투자센터의 영업이익을 투자자산으로 나눈 비율. 사업부 성과 평가의 핵심 지표.",
+  "formula": "ROI = 영업이익 / 투자자산",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "residual-income",
+      "reason": "ROI는 비율, 잔여이익은 절대금액"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

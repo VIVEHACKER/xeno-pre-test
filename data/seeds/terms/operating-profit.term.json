@@ -1,0 +1,21 @@
+{
+  "term_id": "operating-profit",
+  "name_ko": "영업이익",
+  "name_en": "operating profit",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "매출액에서 매출원가와 판매관리비를 차감한 본업 이익.",
+  "formula": "영업이익 = 매출총이익 - 판관비",
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "net-profit",
+      "reason": "영업이익은 본업, 당기순이익은 영업외 + 세금까지 반영"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

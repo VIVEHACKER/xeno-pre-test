@@ -1,0 +1,21 @@
+{
+  "term_id": "acquisition-tax",
+  "name_ko": "취득세",
+  "name_en": "acquisition tax",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "부동산 등 일정 자산을 취득할 때 부과되는 지방세.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "registration-tax",
+      "reason": "취득세는 취득 사실, 등록세는 등기/등록 행위"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

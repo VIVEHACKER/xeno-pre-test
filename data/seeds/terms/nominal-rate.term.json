@@ -1,0 +1,21 @@
+{
+  "term_id": "nominal-rate",
+  "name_ko": "명목이자율",
+  "name_en": "nominal interest rate (finance)",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "표면 그대로 표시된 이자율. 인플레이션을 차감하지 않은 값.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "real-rate",
+      "reason": "명목은 표면, 실질은 인플레 차감"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

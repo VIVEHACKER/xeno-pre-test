@@ -1,0 +1,23 @@
+{
+  "term_id": "transactional-net-margin",
+  "name_ko": "거래순이익률법",
+  "name_en": "transactional net margin method",
+  "aliases": [
+    "TNMM"
+  ],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "전체 영업이익률(순이익률)을 비교 가능한 거래와 비교해 정상가격을 산정하는 방법.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "cost-plus-method",
+      "reason": "TNMM은 순이익률, CPM은 원가 마진"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

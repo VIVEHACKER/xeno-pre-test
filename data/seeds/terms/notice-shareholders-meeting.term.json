@@ -1,0 +1,21 @@
+{
+  "term_id": "notice-shareholders-meeting",
+  "name_ko": "주총 소집통지",
+  "name_en": "shareholders meeting notice",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "주주총회 개최 2주 전까지 의안 등을 기재해 주주에게 보내는 통지.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "summary-summons",
+      "reason": "소집통지는 회사가 발신, 소집청구는 주주가 요구"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

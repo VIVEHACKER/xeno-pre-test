@@ -1,0 +1,21 @@
+{
+  "term_id": "foreign-source-income",
+  "name_ko": "국외원천소득",
+  "name_en": "foreign source income",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "발생 원천이 외국에 있는 소득. 거주자는 합산 과세, 외국납부세액공제 가능.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "domestic-source-income",
+      "reason": "국외원천은 해외 원천, 국내원천은 한국 원천"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

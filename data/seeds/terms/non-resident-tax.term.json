@@ -1,0 +1,21 @@
+{
+  "term_id": "non-resident-tax",
+  "name_ko": "비거주자",
+  "name_en": "non-resident",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "거주자가 아닌 자. 국내 원천소득에 대해서만 한국에서 과세.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "resident-tax",
+      "reason": "비거주자는 국내원천 한정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

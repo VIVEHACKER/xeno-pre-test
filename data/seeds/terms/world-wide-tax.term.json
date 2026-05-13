@@ -1,0 +1,21 @@
+{
+  "term_id": "world-wide-tax",
+  "name_ko": "전세계소득 과세",
+  "name_en": "worldwide taxation",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "거주자의 모든 소득(국내 + 국외)에 대해 자국이 과세하는 원칙.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "territorial-tax",
+      "reason": "전세계 과세는 거주지주의, 속지주의는 원천지주의"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

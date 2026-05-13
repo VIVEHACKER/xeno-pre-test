@@ -1,0 +1,23 @@
+{
+  "term_id": "tpm",
+  "name_ko": "전사적 생산보전",
+  "name_en": "total productive maintenance",
+  "aliases": [
+    "TPM"
+  ],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "전 직원이 참여해 설비의 종합 효율을 극대화하는 보전 활동.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "tqm",
+      "reason": "TPM은 설비 보전, TQM은 품질 관리"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "investment-function",
+  "name_ko": "투자함수",
+  "name_en": "investment function",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "투자를 이자율과 산출의 함수로 표현한 식.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "consumption-function",
+      "reason": "투자함수는 기업 투자, 소비함수는 가계 소비"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

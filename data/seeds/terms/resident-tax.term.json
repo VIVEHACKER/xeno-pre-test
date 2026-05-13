@@ -1,0 +1,21 @@
+{
+  "term_id": "resident-tax",
+  "name_ko": "거주자",
+  "name_en": "resident",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "1년 이상 한국에 주소를 둔 자. 전세계 소득에 대해 한국에서 과세.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "non-resident-tax",
+      "reason": "거주자는 전세계, 비거주자는 국내원천만"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

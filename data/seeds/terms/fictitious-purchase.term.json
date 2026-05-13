@@ -1,0 +1,16 @@
+{
+  "term_id": "fictitious-purchase",
+  "name_ko": "가공 매입",
+  "name_en": "fictitious purchase",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "실제 발생하지 않은 매입을 신고하는 행위. 매입세액 부정공제와 손금 부정 인정.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

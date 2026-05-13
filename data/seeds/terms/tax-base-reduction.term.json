@@ -1,0 +1,21 @@
+{
+  "term_id": "tax-base-reduction",
+  "name_ko": "소득공제 적용",
+  "name_en": "tax base reduction",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "종합소득금액에서 인적공제 등을 차감해 과세표준을 줄이는 절차.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "tax-credit",
+      "reason": "소득공제는 과세표준 축소, 세액공제는 세액 축소"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

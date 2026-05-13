@@ -1,0 +1,21 @@
+{
+  "term_id": "current-ratio",
+  "name_ko": "유동비율",
+  "name_en": "current ratio",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "유동자산을 유동부채로 나눈 비율. 단기 지급능력 지표. 200% 이상이 일반적 양호.",
+  "formula": "유동비율 = 유동자산 / 유동부채",
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "quick-ratio",
+      "reason": "유동비율은 재고 포함, 당좌비율은 재고 제외"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

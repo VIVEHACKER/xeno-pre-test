@@ -1,0 +1,23 @@
+{
+  "term_id": "capital-allocation-line",
+  "name_ko": "자본배분선",
+  "name_en": "capital allocation line",
+  "aliases": [
+    "CAL"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "무위험자산과 위험자산 포트폴리오를 결합한 투자 기회 직선.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "cml",
+      "reason": "CAL은 임의 위험 포트폴리오, CML은 시장포트폴리오 결합"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

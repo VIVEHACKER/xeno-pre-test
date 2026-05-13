@@ -1,0 +1,21 @@
+{
+  "term_id": "forestry-income",
+  "name_ko": "임업소득",
+  "name_en": "forestry income",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "임업에서 발생한 사업소득. 일정 요건 시 비과세 또는 감면.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "agricultural-income",
+      "reason": "임업소득과 농업소득은 농림어업 소득의 일부"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

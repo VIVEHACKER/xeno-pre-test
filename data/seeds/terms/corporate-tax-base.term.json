@@ -1,0 +1,21 @@
+{
+  "term_id": "corporate-tax-base",
+  "name_ko": "과세표준(법인)",
+  "name_en": "corporate tax base",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "법인세 산출의 기초가 되는 과세표준. 각 사업연도 소득금액 - 이월결손금 - 비과세 - 소득공제.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "comprehensive-tax-base",
+      "reason": "법인 과세표준 vs 개인 종합소득과세표준"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

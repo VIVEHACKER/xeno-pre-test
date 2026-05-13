@@ -1,0 +1,21 @@
+{
+  "term_id": "notes-to-financial-statements",
+  "name_ko": "주석",
+  "name_en": "notes to financial statements",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "재무제표 본문에 표시되지 않은 세부 정보를 설명하는 부분. 회계정책, 세부 내역 등.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "statement-of-financial-position",
+      "reason": "주석은 부가 설명, 본문은 숫자"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

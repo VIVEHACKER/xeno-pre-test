@@ -1,0 +1,21 @@
+{
+  "term_id": "minimum-variance-portfolio",
+  "name_ko": "최소분산 포트폴리오",
+  "name_en": "minimum variance portfolio",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "효율적 프론티어에서 위험이 가장 작은 포트폴리오.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "efficient-frontier",
+      "reason": "최소분산은 한 점, 효율적 프론티어는 곡선"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "real-rate",
+  "name_ko": "실질이자율",
+  "name_en": "real interest rate",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "명목이자율에서 인플레이션율을 제외한 이자율. 구매력 기준 수익률.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "nominal-rate",
+      "reason": "실질은 인플레 차감, 명목은 표면"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

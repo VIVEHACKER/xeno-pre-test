@@ -1,0 +1,21 @@
+{
+  "term_id": "nominal-gdp",
+  "name_ko": "명목GDP",
+  "name_en": "nominal GDP",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "당해 시장가격으로 평가한 GDP. 인플레이션 효과 포함.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "real-gdp",
+      "reason": "명목GDP는 당해 가격, 실질GDP는 기준연도 가격"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

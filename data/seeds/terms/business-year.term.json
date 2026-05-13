@@ -1,0 +1,21 @@
+{
+  "term_id": "business-year",
+  "name_ko": "사업연도",
+  "name_en": "business year",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "법인세 과세 기간. 1년 이내로 정관에 정함. 회계연도와 거의 동의어.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "accounting-period",
+      "reason": "사업연도(세무) ≈ 회계연도(회계)"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

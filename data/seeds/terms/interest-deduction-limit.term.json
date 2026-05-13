@@ -1,0 +1,21 @@
+{
+  "term_id": "interest-deduction-limit",
+  "name_ko": "이자비용 손금 한도",
+  "name_en": "interest deduction limit",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "법인의 이자비용 손금산입에 일정 한도를 두는 제도. 과소자본세제, 어닝스 스트리핑 등.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "earnings-stripping",
+      "reason": "한도는 일반, 어닝스 스트리핑은 특정 룰"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

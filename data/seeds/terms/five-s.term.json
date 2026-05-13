@@ -1,0 +1,21 @@
+{
+  "term_id": "five-s",
+  "name_ko": "5S 활동",
+  "name_en": "5S",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "정리/정돈/청소/청결/습관화의 5단계로 직장 환경을 체계화하는 활동.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "lean-management",
+      "reason": "5S는 일본식 작업장 관리, 린 경영은 광의의 낭비 제거"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

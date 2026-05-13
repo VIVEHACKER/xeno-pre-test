@@ -1,0 +1,21 @@
+{
+  "term_id": "discretionary-management",
+  "name_ko": "투자일임업",
+  "name_en": "discretionary investment management",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "투자자로부터 투자 결정 권한을 위임받아 운용하는 영업.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "investment-advisor",
+      "reason": "일임은 위임 운용, 자문은 조언만"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

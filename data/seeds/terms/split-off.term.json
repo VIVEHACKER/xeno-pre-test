@@ -1,0 +1,21 @@
+{
+  "term_id": "split-off",
+  "name_ko": "물적분할",
+  "name_en": "split-off",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "분할 후 주식이 분할되는 회사 자체에 배정되어 100% 자회사가 되는 분할 방식.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "spin-off",
+      "reason": "물적분할은 자회사화, 인적분할은 주주 분배"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

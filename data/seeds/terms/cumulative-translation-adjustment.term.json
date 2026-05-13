@@ -1,0 +1,23 @@
+{
+  "term_id": "cumulative-translation-adjustment",
+  "name_ko": "해외사업환산차이",
+  "name_en": "cumulative translation adjustment",
+  "aliases": [
+    "CTA"
+  ],
+  "subject": "accounting",
+  "unit": "equity",
+  "definition": "해외사업장의 재무제표를 표시통화로 환산할 때 발생하는 차액. 기타포괄손익으로 누적.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "other-comprehensive-income",
+      "reason": "CTA는 환산 차이의 한 종류, OCI는 광의의 기타포괄손익"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

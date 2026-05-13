@@ -1,0 +1,21 @@
+{
+  "term_id": "discount-rate",
+  "name_ko": "재할인율",
+  "name_en": "discount rate",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "중앙은행이 시중은행에 대출할 때 적용하는 금리. 통화정책 도구.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "open-market-operation",
+      "reason": "재할인율은 중앙은행 대출, OMO는 시장 거래"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

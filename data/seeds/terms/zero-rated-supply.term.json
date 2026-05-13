@@ -1,0 +1,21 @@
+{
+  "term_id": "zero-rated-supply",
+  "name_ko": "영세율 적용대상",
+  "name_en": "zero-rated supply",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "영세율이 적용되는 거래의 종류. 수출, 외화 획득 용역, 일부 국제 운송 등.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "zero-rated-vat",
+      "reason": "대상은 목록, 영세율은 세율 자체"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

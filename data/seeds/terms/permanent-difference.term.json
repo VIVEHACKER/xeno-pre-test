@@ -1,0 +1,16 @@
+{
+  "term_id": "permanent-difference",
+  "name_ko": "영구적 차이",
+  "name_en": "permanent difference",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "회계와 세무 차이 중 미래에도 해소되지 않는 항목. 비과세 수익, 비공제 비용 등.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

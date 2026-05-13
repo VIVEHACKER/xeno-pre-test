@@ -1,0 +1,21 @@
+{
+  "term_id": "presumed-gift",
+  "name_ko": "추정증여",
+  "name_en": "presumed gift",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "재산을 무상이전한 사실이 추정되는 경우 증여로 의제해 과세하는 제도.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "advance-gift",
+      "reason": "추정증여는 사실 추정, 사전증여는 사전 행위"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

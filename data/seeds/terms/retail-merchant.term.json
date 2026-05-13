@@ -1,0 +1,21 @@
+{
+  "term_id": "retail-merchant",
+  "name_ko": "소매업자",
+  "name_en": "retail merchant",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "재화를 최종 소비자에게 판매하는 사업자.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "wholesale-merchant",
+      "reason": "소매는 소비자, 도매는 사업자"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

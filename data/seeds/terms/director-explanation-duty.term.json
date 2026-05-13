@@ -1,0 +1,21 @@
+{
+  "term_id": "director-explanation-duty",
+  "name_ko": "이사의 보고의무",
+  "name_en": "director duty to report",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "이사가 회사에 손해를 미칠 우려가 있는 사실을 발견한 즉시 감사에게 보고할 의무.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "director-monitoring-duty",
+      "reason": "보고의무는 발견 후 신고, 감시의무는 발견 자체"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

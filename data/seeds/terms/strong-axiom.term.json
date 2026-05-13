@@ -1,0 +1,21 @@
+{
+  "term_id": "strong-axiom",
+  "name_ko": "강공리(현시선호)",
+  "name_en": "strong axiom of revealed preference",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "현시선호의 전이성까지 요구하는 공리. 효용함수 존재의 조건.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "weak-axiom",
+      "reason": "강공리는 전이성, 약공리는 직접 비교"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

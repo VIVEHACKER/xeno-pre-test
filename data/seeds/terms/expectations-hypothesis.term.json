@@ -1,0 +1,21 @@
+{
+  "term_id": "expectations-hypothesis",
+  "name_ko": "기대가설(이자율)",
+  "name_en": "expectations hypothesis",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "장기금리는 미래 단기금리의 기대값으로 결정된다는 가설.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "liquidity-premium-theory",
+      "reason": "기대가설은 단기금리 기대, 유동성프리미엄은 추가 보상"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

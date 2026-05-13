@@ -1,0 +1,21 @@
+{
+  "term_id": "output-gap",
+  "name_ko": "산출갭",
+  "name_en": "output gap",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "실제GDP와 잠재GDP의 차이. 양수면 과열, 음수면 침체.",
+  "formula": "산출갭 = (실제GDP - 잠재GDP) / 잠재GDP",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "potential-gdp",
+      "reason": "산출갭은 차이, 잠재GDP는 기준"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

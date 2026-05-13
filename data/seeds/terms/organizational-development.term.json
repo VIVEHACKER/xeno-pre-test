@@ -1,0 +1,23 @@
+{
+  "term_id": "organizational-development",
+  "name_ko": "조직개발",
+  "name_en": "organizational development",
+  "aliases": [
+    "OD"
+  ],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "조직의 효과성과 건전성을 높이기 위한 계획적 변화 활동.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "organizational-culture",
+      "reason": "조직개발은 변화 활동, 조직문화는 그 결과 상태"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "herd-behavior",
+  "name_ko": "군집행동",
+  "name_en": "herd behavior",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "개인이 자신의 정보 대신 다수의 행동을 따라 결정하는 현상. 자산시장 거품과 연관.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "behavioral-economics",
+      "reason": "군집행동은 현상, 행동경제학은 그를 다루는 분야"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

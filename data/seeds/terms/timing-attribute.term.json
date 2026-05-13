@@ -1,0 +1,21 @@
+{
+  "term_id": "timing-attribute",
+  "name_ko": "귀속자",
+  "name_en": "attribution to person",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "소득을 누구에게 귀속시킬지 결정하는 세무 규정.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "timing-tax",
+      "reason": "귀속자는 인적 귀속, 귀속시기는 시간적 귀속"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

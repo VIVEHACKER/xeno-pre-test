@@ -1,0 +1,21 @@
+{
+  "term_id": "classical-dichotomy",
+  "name_ko": "고전적 이분법",
+  "name_en": "classical dichotomy",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "실질 변수는 실물 부문이, 명목 변수는 화폐 부문이 결정한다는 고전학파 분리 명제.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "neutrality-of-money",
+      "reason": "이분법은 분리 명제, 중립성은 그 결과"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

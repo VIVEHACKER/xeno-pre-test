@@ -1,0 +1,21 @@
+{
+  "term_id": "bond-pricing",
+  "name_ko": "채권가격 결정",
+  "name_en": "bond pricing",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "채권가격은 미래 현금흐름을 만기수익률로 할인한 현재가치.",
+  "formula": "P = Σ C/(1+y)^t + F/(1+y)^n",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "ytm",
+      "reason": "채권가격은 결과, YTM은 그 가격을 만드는 할인율"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

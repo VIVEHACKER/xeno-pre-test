@@ -1,0 +1,21 @@
+{
+  "term_id": "portfolio-diversification",
+  "name_ko": "포트폴리오 분산투자",
+  "name_en": "portfolio diversification",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "다양한 자산을 결합해 비체계적 위험을 줄이는 투자 전략.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "unsystematic-risk",
+      "reason": "분산투자는 행위, 비체계적 위험은 그 대상"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "dutch-disease",
+  "name_ko": "네덜란드병",
+  "name_en": "Dutch disease",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "특정 산업(예: 자원)의 호황이 통화 강세를 일으켜 다른 제조업이 위축되는 현상.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "exchange-rate",
+      "reason": "네덜란드병은 부작용, 환율은 그 매개"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "cpa-act-corporate",
+  "name_ko": "공인회계사법(회사법 관점)",
+  "name_en": "CPA Act (corporate)",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "공인회계사의 자격과 직무 범위를 규정한 법률. 회사 외부감사인의 근거.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "cpa-act",
+      "reason": "회계 관점/회사법 관점 동일 법률"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

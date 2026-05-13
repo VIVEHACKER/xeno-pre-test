@@ -1,0 +1,21 @@
+{
+  "term_id": "material-disclosure",
+  "name_ko": "수시공시",
+  "name_en": "material disclosure",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "중요 사건 발생 시 거래소 규정에 따라 즉시 공시해야 하는 제도.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "fair-disclosure",
+      "reason": "수시공시는 사건 즉시, 공정공시는 정보 형평성"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

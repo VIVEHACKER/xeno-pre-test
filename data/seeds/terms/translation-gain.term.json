@@ -1,0 +1,21 @@
+{
+  "term_id": "translation-gain",
+  "name_ko": "외화환산이익",
+  "name_en": "foreign currency translation gain",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "화폐성 항목 환산 시 발생한 이익. 당기손익으로 인식.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "translation-loss",
+      "reason": "이익/손실은 부호만 다름"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

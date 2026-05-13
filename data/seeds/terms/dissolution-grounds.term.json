@@ -1,0 +1,21 @@
+{
+  "term_id": "dissolution-grounds",
+  "name_ko": "해산사유",
+  "name_en": "grounds for dissolution",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "회사가 해산하는 법정 사유. 존립기간 만료, 합병, 해산결의, 파산선고 등.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "dissolution",
+      "reason": "해산사유는 원인, 해산은 결과"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

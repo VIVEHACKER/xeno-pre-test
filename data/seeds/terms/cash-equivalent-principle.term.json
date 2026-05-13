@@ -1,0 +1,21 @@
+{
+  "term_id": "cash-equivalent-principle",
+  "name_ko": "현금주의(세무)",
+  "name_en": "cash basis (tax)",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "현금 수령 시점에 소득을 인식하는 세무 방식. 소규모 사업자에 적용.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "cash-basis",
+      "reason": "세무 현금주의와 회계 현금주의는 적용 범위가 다름"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

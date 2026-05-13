@@ -1,0 +1,21 @@
+{
+  "term_id": "investment-advisor",
+  "name_ko": "투자자문업자",
+  "name_en": "investment advisor",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "투자 의사결정에 관한 자문을 영업으로 하는 자. 직접 매매는 하지 않음.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "discretionary-management",
+      "reason": "자문은 조언, 일임은 위임받아 매매"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

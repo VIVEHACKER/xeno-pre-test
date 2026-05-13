@@ -1,0 +1,21 @@
+{
+  "term_id": "real-gdp",
+  "name_ko": "실질GDP",
+  "name_en": "real GDP",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "기준연도 가격으로 평가한 GDP. 인플레이션 효과 제거.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "nominal-gdp",
+      "reason": "실질GDP는 가격 고정, 명목GDP는 당해 가격"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

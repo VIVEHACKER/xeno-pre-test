@@ -1,0 +1,21 @@
+{
+  "term_id": "underwriting",
+  "name_ko": "인수",
+  "name_en": "underwriting",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "증권 발행 시 발행인을 대신해 증권을 인수해 일반에 매출하는 업무.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "investment-banking",
+      "reason": "인수는 IB의 핵심 업무 중 하나"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

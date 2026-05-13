@@ -1,0 +1,21 @@
+{
+  "term_id": "national-tax-act",
+  "name_ko": "국세기본법",
+  "name_en": "National Tax Basic Act",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "국세 부과·징수·구제 등의 일반 절차를 규율하는 기본법.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "local-tax-act",
+      "reason": "국세기본법은 국세, 지방세법은 지방세"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

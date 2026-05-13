@@ -1,0 +1,21 @@
+{
+  "term_id": "resolution-defect",
+  "name_ko": "결의 하자",
+  "name_en": "resolution defect",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "주총 결의에 절차적/내용적 흠이 있는 상태. 결의취소/결의무효/결의부존재로 구분.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "notice-defect",
+      "reason": "결의 하자는 광의, 통지 하자는 그 한 사유"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

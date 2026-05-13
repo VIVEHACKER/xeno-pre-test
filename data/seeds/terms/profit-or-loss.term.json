@@ -1,0 +1,21 @@
+{
+  "term_id": "profit-or-loss",
+  "name_ko": "당기손익",
+  "name_en": "profit or loss",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "포괄손익 중 기타포괄손익에 해당하지 않는 부분. 당기순이익 계산의 기초.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "other-comprehensive-income",
+      "reason": "당기손익은 P/L, 기타포괄손익은 OCI"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

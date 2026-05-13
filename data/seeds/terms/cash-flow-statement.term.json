@@ -1,0 +1,21 @@
+{
+  "term_id": "cash-flow-statement",
+  "name_ko": "현금흐름표",
+  "name_en": "statement of cash flows",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "기간 중 현금의 변동을 영업/투자/재무 활동으로 구분해 보여주는 재무제표.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "statement-of-financial-position",
+      "reason": "현금흐름표는 현금 기준, 재무상태표는 발생주의 자산/부채"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

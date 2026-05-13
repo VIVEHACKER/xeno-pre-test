@@ -1,0 +1,21 @@
+{
+  "term_id": "shutdown-point",
+  "name_ko": "조업중단점",
+  "name_en": "shutdown point",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "단기에 평균가변비용을 충당하지 못해 생산을 중단해야 하는 가격점.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "break-even-firm",
+      "reason": "조업중단점은 단기 AVC 최저, 손익분기는 장기 AC 최저"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

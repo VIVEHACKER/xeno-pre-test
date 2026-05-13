@@ -1,0 +1,21 @@
+{
+  "term_id": "net-profit-margin",
+  "name_ko": "당기순이익률",
+  "name_en": "net profit margin",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "당기순이익을 매출액으로 나눈 비율.",
+  "formula": "당기순이익률 = 당기순이익 / 매출액",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "operating-profit-margin",
+      "reason": "당기순이익률은 최종, 영업이익률은 본업"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

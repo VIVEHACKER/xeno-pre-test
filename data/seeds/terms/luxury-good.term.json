@@ -1,0 +1,21 @@
+{
+  "term_id": "luxury-good",
+  "name_ko": "사치재",
+  "name_en": "luxury good",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "소득탄력성이 1보다 큰 정상재. 소득이 늘면 비율 이상으로 수요 증가.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "normal-good",
+      "reason": "사치재는 소득탄력성 > 1, 정상재는 광의"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

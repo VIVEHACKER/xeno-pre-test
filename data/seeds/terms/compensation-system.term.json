@@ -1,0 +1,21 @@
+{
+  "term_id": "compensation-system",
+  "name_ko": "보상체계",
+  "name_en": "compensation system",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "급여, 인센티브, 복리후생 등으로 종업원에게 지급하는 보상의 전체 구조.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "performance-appraisal",
+      "reason": "보상체계는 지급 구조, 성과평가는 입력 측정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

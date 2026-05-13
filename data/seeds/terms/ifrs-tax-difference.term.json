@@ -1,0 +1,21 @@
+{
+  "term_id": "ifrs-tax-difference",
+  "name_ko": "회계-세무 차이",
+  "name_en": "IFRS-tax difference",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "K-IFRS상 인식과 세무상 인식이 다른 경우 발생하는 차이. 일시적 차이 + 영구적 차이.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "temporary-difference",
+      "reason": "광의의 차이는 일시적 + 영구적 모두 포함"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

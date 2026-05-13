@@ -1,0 +1,21 @@
+{
+  "term_id": "vat-on-import-asset",
+  "name_ko": "수입재화 부가세",
+  "name_en": "VAT on import asset",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "수입하는 재화에 부과되는 부가세. 수입 시 세관에서 납부.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "import-vat",
+      "reason": "수입재화 부가세와 수입부가세는 동일 개념"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

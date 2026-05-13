@@ -1,0 +1,21 @@
+{
+  "term_id": "installment-tax-payment",
+  "name_ko": "분납",
+  "name_en": "tax installment payment",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "납부할 세액이 일정 금액 초과 시 일정 기간 내 분할 납부 허용. 일반적으로 2회.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "tax-payable",
+      "reason": "분납은 시기, 자진납부는 금액 자체"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

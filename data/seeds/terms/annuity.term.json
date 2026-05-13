@@ -1,0 +1,21 @@
+{
+  "term_id": "annuity",
+  "name_ko": "연금",
+  "name_en": "annuity",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "일정 기간 동안 정기적으로 발생하는 동일 금액의 현금흐름.",
+  "formula": "PV = C × [1 - (1+r)^-n] / r",
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "perpetuity",
+      "reason": "연금은 유한기간, 영구연금은 무한기간"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

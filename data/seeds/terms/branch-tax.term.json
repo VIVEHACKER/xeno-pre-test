@@ -1,0 +1,16 @@
+{
+  "term_id": "branch-tax",
+  "name_ko": "지점세",
+  "name_en": "branch tax",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "외국법인의 한국 지점이 본점으로 이익을 송금할 때 추가로 부과되는 세금.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

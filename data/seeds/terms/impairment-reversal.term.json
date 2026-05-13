@@ -1,0 +1,21 @@
+{
+  "term_id": "impairment-reversal",
+  "name_ko": "손상차손환입",
+  "name_en": "reversal of impairment",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "이전에 인식한 손상차손의 사유가 사라지거나 감소했을 때 환입하는 거래. 영업권은 환입 금지.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "impairment-loss",
+      "reason": "환입은 회복, 손상차손은 감액"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

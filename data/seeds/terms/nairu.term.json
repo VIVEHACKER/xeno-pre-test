@@ -1,0 +1,21 @@
+{
+  "term_id": "nairu",
+  "name_ko": "NAIRU",
+  "name_en": "non-accelerating inflation rate of unemployment",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "인플레이션을 가속시키지 않는 실업률. 자연실업률 개념과 거의 동의어로 쓰임.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "natural-unemployment-rate",
+      "reason": "NAIRU는 명시적 인플레 무관 정의, 자연실업률은 마찰+구조 정의"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

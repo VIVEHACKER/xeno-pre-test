@@ -1,0 +1,21 @@
+{
+  "term_id": "market-risk-premium",
+  "name_ko": "시장위험프리미엄",
+  "name_en": "market risk premium",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "시장포트폴리오 기대수익률에서 무위험수익률을 뺀 값. CAPM의 핵심 입력.",
+  "formula": "MRP = E(Rm) - Rf",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "risk-premium",
+      "reason": "시장 위험프리미엄은 시장 평균, 일반 위험프리미엄은 자산별"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

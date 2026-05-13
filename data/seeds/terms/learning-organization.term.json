@@ -1,0 +1,21 @@
+{
+  "term_id": "learning-organization",
+  "name_ko": "학습조직",
+  "name_en": "learning organization",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "구성원의 지속적 학습과 조직 차원의 학습을 통해 변화에 적응하는 조직.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "knowledge-management",
+      "reason": "학습조직은 문화/구조, 지식경영은 도구/시스템"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

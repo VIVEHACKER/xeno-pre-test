@@ -1,0 +1,21 @@
+{
+  "term_id": "tax-accounting-vs-financial",
+  "name_ko": "세무회계 vs 재무회계",
+  "name_en": "tax vs financial accounting",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "재무회계의 당기순이익과 세무회계의 과세소득은 인식 기준 차이로 다를 수 있다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "tax-base-adjustment",
+      "reason": "둘의 차이를 메우는 절차가 세무조정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

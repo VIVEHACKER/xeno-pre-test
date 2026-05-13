@@ -1,0 +1,21 @@
+{
+  "term_id": "conservatism",
+  "name_ko": "보수주의",
+  "name_en": "conservatism",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "불확실성 하에서 자산/수익은 과대평가하지 않고 부채/비용은 과소평가하지 않는 회계 입장.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "matching-principle",
+      "reason": "보수주의는 신중함, 수익비용대응은 시점 매칭"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

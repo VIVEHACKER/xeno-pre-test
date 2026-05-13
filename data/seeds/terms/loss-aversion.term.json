@@ -1,0 +1,21 @@
+{
+  "term_id": "loss-aversion",
+  "name_ko": "손실회피",
+  "name_en": "loss aversion",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "같은 크기의 이득보다 손실을 더 크게 느끼는 심리 경향.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "prospect-theory",
+      "reason": "손실회피는 현상, 전망이론은 그를 모형화"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

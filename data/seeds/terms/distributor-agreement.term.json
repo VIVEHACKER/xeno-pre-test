@@ -1,0 +1,21 @@
+{
+  "term_id": "distributor-agreement",
+  "name_ko": "특약점 계약",
+  "name_en": "distributor agreement",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "특정 지역의 독점 또는 우선 판매권을 약정한 계약.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "franchise-agreement",
+      "reason": "특약점은 판매권 부여, 가맹은 시스템 패키지"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

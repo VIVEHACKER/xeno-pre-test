@@ -1,0 +1,21 @@
+{
+  "term_id": "director-loyalty-duty",
+  "name_ko": "이사의 충실의무",
+  "name_en": "director duty of loyalty",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "이사가 회사 이익을 최우선시하고 사적 이익을 도모하지 않을 의무.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "director-care-duty",
+      "reason": "충실의무는 이해관계, 선관주의의무는 주의 정도"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

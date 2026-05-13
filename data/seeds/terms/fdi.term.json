@@ -1,0 +1,23 @@
+{
+  "term_id": "fdi",
+  "name_ko": "해외직접투자",
+  "name_en": "foreign direct investment",
+  "aliases": [
+    "FDI"
+  ],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "외국에 자회사를 설립하거나 지분을 인수해 경영권을 확보하는 투자.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "licensing-business",
+      "reason": "FDI는 직접 진출, 라이선싱은 권리 양도"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "zero-lower-bound",
+  "name_ko": "제로금리하한",
+  "name_en": "zero lower bound",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "명목금리를 0% 아래로 내릴 수 없다는 통화정책의 한계.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "liquidity-trap",
+      "reason": "제로금리하한은 도구 한계, 유동성 함정은 그 결과"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "audit-evidence",
+  "name_ko": "감사증거",
+  "name_en": "audit evidence",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "audit",
+  "definition": "감사인이 감사의견의 기초로 삼는 증거. 충분성과 적합성 요건이 있다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "audit-procedure",
+      "reason": "감사증거는 결과, 감사절차는 수집 방법"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "statement-of-changes-in-equity",
+  "name_ko": "자본변동표",
+  "name_en": "statement of changes in equity",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "equity",
+  "definition": "기간 동안 자본의 각 항목 변동을 보여주는 재무제표.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "comprehensive-income-statement",
+      "reason": "자본변동표는 자본 항목, 포괄손익계산서는 손익 항목"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

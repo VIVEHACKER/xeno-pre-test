@@ -1,0 +1,21 @@
+{
+  "term_id": "written-resolution",
+  "name_ko": "서면결의",
+  "name_en": "written resolution",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "주주총회를 열지 않고 주주 전원의 서면 동의로 의안을 결의하는 방식.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "electronic-voting",
+      "reason": "서면결의는 종이, 전자투표는 온라인"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

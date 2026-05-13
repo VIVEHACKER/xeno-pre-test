@@ -1,0 +1,21 @@
+{
+  "term_id": "illegal-share-issuance",
+  "name_ko": "위법한 신주발행",
+  "name_en": "illegal share issuance",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "법령/정관을 위반한 신주발행. 무효 사유가 되며 발행무효 소송 대상.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "share-issuance-cancellation",
+      "reason": "위법한 신주발행은 사유, 신주발행 무효 소송은 그 구제 수단"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,18 @@
+{
+  "term_id": "resale-price-method",
+  "name_ko": "재판매가격법",
+  "name_en": "resale price method",
+  "aliases": [
+    "RPM"
+  ],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "특수관계자에게 매입한 재화를 제3자에게 재판매한 가격에서 적정 마진을 차감해 정상가격을 산정하는 방법.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

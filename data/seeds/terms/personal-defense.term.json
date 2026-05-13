@@ -1,0 +1,21 @@
+{
+  "term_id": "personal-defense",
+  "name_ko": "인적항변",
+  "name_en": "personal defense",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "특정 당사자 사이에만 주장할 수 있는 항변. 선의 제3자에게는 대항 불가.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "real-defense",
+      "reason": "인적항변은 당사자 한정, 물적항변은 누구에게나"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

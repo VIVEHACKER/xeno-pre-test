@@ -1,0 +1,21 @@
+{
+  "term_id": "understandability",
+  "name_ko": "이해가능성",
+  "name_en": "understandability",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "정보 이용자가 합리적 지식 수준에서 이해할 수 있도록 표시해야 한다는 질적특성.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "comparability",
+      "reason": "이해가능성은 표시 방식, 비교가능성은 기간/기업 간 일관성"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

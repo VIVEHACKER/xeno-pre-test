@@ -1,0 +1,21 @@
+{
+  "term_id": "acceptance-defense",
+  "name_ko": "인수거절",
+  "name_en": "refusal of acceptance",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "환어음의 지급인이 인수를 거절하는 행위. 상환청구권 발생.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "acceptance",
+      "reason": "인수거절은 거절 행위, 인수는 수락 행위"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

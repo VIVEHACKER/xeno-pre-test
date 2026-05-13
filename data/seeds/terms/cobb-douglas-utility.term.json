@@ -1,0 +1,21 @@
+{
+  "term_id": "cobb-douglas-utility",
+  "name_ko": "콥-더글라스 효용함수",
+  "name_en": "Cobb-Douglas utility",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "U = X^a × Y^b 형태의 효용함수. 수요는 소득의 일정 비율로 표현.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "utility-function",
+      "reason": "콥-더글라스는 한 함수 형태, 효용함수는 일반 개념"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

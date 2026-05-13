@@ -1,0 +1,21 @@
+{
+  "term_id": "notice-defect",
+  "name_ko": "소집통지 하자",
+  "name_en": "notice defect",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "소집통지 기한/내용/방법의 하자. 결의 취소 사유.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "resolution-defect",
+      "reason": "통지 하자는 사전 절차, 결의 하자는 결의 자체"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

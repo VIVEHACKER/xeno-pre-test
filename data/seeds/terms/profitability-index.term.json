@@ -1,0 +1,23 @@
+{
+  "term_id": "profitability-index",
+  "name_ko": "수익성지수",
+  "name_en": "profitability index",
+  "aliases": [
+    "PI"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "투자안의 미래 현금흐름 현재가치를 초기투자로 나눈 비율. PI > 1이면 채택.",
+  "formula": "PI = PV(미래CF) / 초기투자",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "npv",
+      "reason": "PI는 비율 지표, NPV는 금액 지표"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

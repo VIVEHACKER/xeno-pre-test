@@ -1,0 +1,21 @@
+{
+  "term_id": "quick-ratio",
+  "name_ko": "당좌비율",
+  "name_en": "quick ratio",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "당좌자산을 유동부채로 나눈 비율. 재고를 뺀 좀 더 보수적인 유동성 지표.",
+  "formula": "당좌비율 = (유동자산 - 재고) / 유동부채",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "current-ratio",
+      "reason": "당좌비율은 재고 제외, 유동비율은 포함"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

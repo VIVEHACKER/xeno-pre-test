@@ -1,0 +1,21 @@
+{
+  "term_id": "temporary-difference",
+  "name_ko": "일시적 차이",
+  "name_en": "temporary difference",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "회계와 세무 인식 시점 차이로 미래에 해소되는 차이. 이연법인세 발생.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "permanent-difference",
+      "reason": "일시적은 미래에 해소, 영구적은 영영 해소 안 됨"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

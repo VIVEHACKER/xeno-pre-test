@@ -1,0 +1,21 @@
+{
+  "term_id": "debt-to-equity",
+  "name_ko": "부채비율",
+  "name_en": "debt-to-equity ratio",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "총부채를 자기자본으로 나눈 비율. 재무 안정성 지표.",
+  "formula": "부채비율 = 총부채 / 자기자본",
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "financial-leverage",
+      "reason": "부채비율은 정태 지표, 재무레버리지는 동태 변동 비율"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

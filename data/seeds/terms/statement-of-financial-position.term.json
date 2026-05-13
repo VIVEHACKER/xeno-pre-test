@@ -1,0 +1,21 @@
+{
+  "term_id": "statement-of-financial-position",
+  "name_ko": "재무상태표",
+  "name_en": "statement of financial position",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "특정 시점의 자산/부채/자본을 보여주는 재무제표. 과거 명칭은 대차대조표.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "comprehensive-income-statement",
+      "reason": "재무상태표는 스톡(시점), 손익계산서는 플로(기간)"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

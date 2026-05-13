@@ -1,0 +1,21 @@
+{
+  "term_id": "faithful-representation",
+  "name_ko": "충실한 표현",
+  "name_en": "faithful representation",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "정보가 표시하고자 하는 경제 현상을 완전하고 중립적이며 오류 없이 나타낸다는 질적특성.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "relevance",
+      "reason": "충실한 표현은 정확성, 목적적합성은 유용성"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

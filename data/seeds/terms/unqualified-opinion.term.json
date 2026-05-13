@@ -1,0 +1,21 @@
+{
+  "term_id": "unqualified-opinion",
+  "name_ko": "적정의견",
+  "name_en": "unqualified opinion",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "audit",
+  "definition": "재무제표가 회계기준에 따라 적정하게 표시되었다는 감사의견.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "qualified-opinion",
+      "reason": "적정의견은 무조건, 한정의견은 일부 제한"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

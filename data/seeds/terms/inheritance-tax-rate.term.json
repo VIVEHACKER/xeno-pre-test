@@ -1,0 +1,21 @@
+{
+  "term_id": "inheritance-tax-rate",
+  "name_ko": "상속세율",
+  "name_en": "inheritance tax rate",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "상속세 과세표준 구간별로 10%~50% 누진세율이 적용된다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "inheritance-tax",
+      "reason": "세율은 적용 비율, 세금은 그 결과"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

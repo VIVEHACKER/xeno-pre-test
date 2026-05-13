@@ -1,0 +1,21 @@
+{
+  "term_id": "lagrange-method",
+  "name_ko": "라그랑주 방법",
+  "name_en": "Lagrange method",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "제약조건 하 최적화 문제를 푸는 수학적 기법. 라그랑주 승수를 도입.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "envelope-theorem",
+      "reason": "라그랑주는 해 도출 방법, 포락선 정리는 해의 성질"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

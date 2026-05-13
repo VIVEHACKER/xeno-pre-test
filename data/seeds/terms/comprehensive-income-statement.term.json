@@ -1,0 +1,21 @@
+{
+  "term_id": "comprehensive-income-statement",
+  "name_ko": "포괄손익계산서",
+  "name_en": "statement of comprehensive income",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "일정 기간의 수익과 비용으로 산출된 당기순이익에 기타포괄손익까지 합한 보고서.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "statement-of-financial-position",
+      "reason": "포괄손익계산서는 플로, 재무상태표는 스톡"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

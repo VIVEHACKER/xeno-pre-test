@@ -1,0 +1,21 @@
+{
+  "term_id": "child-allowance-credit",
+  "name_ko": "자녀장려세제",
+  "name_en": "child allowance credit",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "EITC 수급자 중 부양 자녀가 있는 경우 추가로 지급하는 환급형 세액공제.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "earned-income-tax-credit",
+      "reason": "자녀장려는 EITC 자녀 가산, EITC는 본세제"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

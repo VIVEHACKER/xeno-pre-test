@@ -1,0 +1,21 @@
+{
+  "term_id": "preferred-allocation",
+  "name_ko": "구주주 우선배정",
+  "name_en": "preemptive allocation to existing shareholders",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "기존 주주에게 신주를 우선 배정하는 발행 방식. 일반 원칙.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "third-party-allocation",
+      "reason": "구주주 우선은 기존 보호, 제3자 배정은 외부 영입"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

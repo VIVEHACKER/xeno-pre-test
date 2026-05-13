@@ -1,0 +1,21 @@
+{
+  "term_id": "director-vacancy",
+  "name_ko": "이사의 결원",
+  "name_en": "director vacancy",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "이사 수가 법정/정관 수에 미달한 상태. 즉시 보충하거나 임시이사를 선임.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "director-resignation",
+      "reason": "결원은 상태, 사임은 원인 행위 중 하나"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "duration-immunization",
+  "name_ko": "듀레이션 면역화",
+  "name_en": "duration immunization",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "포트폴리오 듀레이션과 투자기간을 일치시켜 금리 변동 위험을 상쇄하는 전략.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "duration",
+      "reason": "면역화는 위험관리 전략, 듀레이션은 측정값"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

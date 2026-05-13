@@ -1,0 +1,21 @@
+{
+  "term_id": "price-skimming",
+  "name_ko": "스키밍 가격",
+  "name_en": "price skimming",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "신제품 도입 초기에 고가로 출시해 가격에 둔감한 소비자에게서 큰 마진을 확보하는 전략.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "penetration-pricing",
+      "reason": "스키밍은 고가 진입, 침투가격은 저가 진입"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

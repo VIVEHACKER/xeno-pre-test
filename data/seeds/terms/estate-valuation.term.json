@@ -1,0 +1,21 @@
+{
+  "term_id": "estate-valuation",
+  "name_ko": "상속재산 평가",
+  "name_en": "estate valuation",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "상속개시일 현재 상속재산을 시가로 평가하는 절차. 시가가 불분명하면 보충적 평가.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "inheritance-deduction",
+      "reason": "평가는 측정, 공제는 차감"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

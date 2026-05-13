@@ -1,0 +1,21 @@
+{
+  "term_id": "liquidity-risk",
+  "name_ko": "유동성 위험",
+  "name_en": "liquidity risk",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "자산을 적정 가격에 빠르게 현금화하지 못해 발생하는 위험.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "credit-risk",
+      "reason": "유동성 위험은 변환 어려움, 신용 위험은 채무불이행"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

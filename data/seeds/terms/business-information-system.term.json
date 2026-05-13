@@ -1,0 +1,23 @@
+{
+  "term_id": "business-information-system",
+  "name_ko": "경영정보시스템",
+  "name_en": "management information system",
+  "aliases": [
+    "MIS"
+  ],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "경영 의사결정에 필요한 정보를 수집·처리·제공하는 IT 시스템.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "erp",
+      "reason": "MIS는 정보 제공, ERP는 자원 통합 관리"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

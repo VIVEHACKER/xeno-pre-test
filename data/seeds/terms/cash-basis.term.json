@@ -1,0 +1,21 @@
+{
+  "term_id": "cash-basis",
+  "name_ko": "현금주의",
+  "name_en": "cash basis",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "현금 수취/지급 시점에 수익/비용을 인식하는 회계 방식. K-IFRS는 인정하지 않음.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "accrual-basis",
+      "reason": "현금주의는 단순, 발생주의는 정확한 손익 측정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

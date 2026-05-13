@@ -1,0 +1,21 @@
+{
+  "term_id": "consumer-equilibrium",
+  "name_ko": "소비자균형",
+  "name_en": "consumer equilibrium",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "예산 제약 하에서 효용이 극대화되는 소비조합. MRS = 가격비.",
+  "formula": "MU1/P1 = MU2/P2",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "marginal-rate-of-substitution",
+      "reason": "소비자균형은 결과 상태, MRS는 그 조건의 한 변수"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

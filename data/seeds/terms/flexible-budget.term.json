@@ -1,0 +1,21 @@
+{
+  "term_id": "flexible-budget",
+  "name_ko": "변동예산",
+  "name_en": "flexible budget",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "실제 조업도에 맞춰 비용 계획을 재계산한 예산. 차이분석의 기준.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "static-budget",
+      "reason": "변동예산은 조업도 연동, 고정예산은 사전 고정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

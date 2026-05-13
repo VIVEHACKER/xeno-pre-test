@@ -1,0 +1,21 @@
+{
+  "term_id": "positioning",
+  "name_ko": "포지셔닝",
+  "name_en": "positioning",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "소비자 마음속에서 제품이 차지할 자리를 결정하는 활동. STP의 마지막 단계.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "market-segmentation",
+      "reason": "포지셔닝은 마음의 위치, 시장세분화는 시장 분할"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

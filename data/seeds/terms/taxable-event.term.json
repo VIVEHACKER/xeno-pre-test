@@ -1,0 +1,21 @@
+{
+  "term_id": "taxable-event",
+  "name_ko": "과세사건",
+  "name_en": "taxable event",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "과세권이 발생하는 거래나 사건. 매출 발생, 자산 처분 등.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "accrual-recognition-tax",
+      "reason": "과세사건은 발생 사건, 귀속 사업연도는 인식 시점"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

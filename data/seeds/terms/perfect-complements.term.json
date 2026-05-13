@@ -1,0 +1,21 @@
+{
+  "term_id": "perfect-complements",
+  "name_ko": "완전보완재",
+  "name_en": "perfect complements",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "두 재화가 일정 비율로 함께 소비되어야 하는 경우. 효용함수는 min(X, Y) 형태.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "perfect-substitutes",
+      "reason": "완전보완은 묶음 필요, 완전대체는 한쪽만 OK"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

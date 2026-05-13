@@ -1,0 +1,23 @@
+{
+  "term_id": "mbo",
+  "name_ko": "목표관리",
+  "name_en": "management by objectives",
+  "aliases": [
+    "MBO"
+  ],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "상하 합의로 목표를 설정하고 결과로 평가하는 관리 기법.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "performance-appraisal",
+      "reason": "MBO는 목표 설정 방식, 성과평가는 그 결과 측정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

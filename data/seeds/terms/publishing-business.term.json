@@ -1,0 +1,21 @@
+{
+  "term_id": "publishing-business",
+  "name_ko": "출판업",
+  "name_en": "publishing business",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "도서/신문/잡지 등을 출판해 판매하는 영업.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "wholesale-merchant",
+      "reason": "출판업은 특정 영업, 도매업은 일반 영업"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

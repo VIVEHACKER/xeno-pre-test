@@ -1,0 +1,21 @@
+{
+  "term_id": "internal-control",
+  "name_ko": "내부통제",
+  "name_en": "internal control",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "audit",
+  "definition": "기업이 자산을 보호하고 신뢰성 있는 정보를 만들기 위해 운영하는 일련의 통제 활동.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "internal-accounting-management-system",
+      "reason": "내부통제는 전반, 내부회계관리제도는 회계 영역 특정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "bill-defense",
+  "name_ko": "어음항변",
+  "name_en": "bill defense",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "어음의 지급을 거절하기 위해 제출할 수 있는 항변. 인적항변과 물적항변.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "personal-defense",
+      "reason": "어음항변은 광의, 인적항변은 그 한 유형"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

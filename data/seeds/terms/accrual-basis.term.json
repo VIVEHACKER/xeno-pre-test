@@ -1,0 +1,21 @@
+{
+  "term_id": "accrual-basis",
+  "name_ko": "발생주의",
+  "name_en": "accrual basis",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "현금 이동과 무관하게 거래 발생 시점에 수익과 비용을 인식하는 회계 원칙.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "cash-basis",
+      "reason": "발생주의는 사건 시점, 현금주의는 현금 이동 시점"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

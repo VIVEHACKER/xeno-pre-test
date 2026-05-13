@@ -1,0 +1,21 @@
+{
+  "term_id": "operating-profit-margin",
+  "name_ko": "영업이익률",
+  "name_en": "operating profit margin",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "영업이익을 매출액으로 나눈 비율.",
+  "formula": "영업이익률 = 영업이익 / 매출액",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "gross-margin",
+      "reason": "영업이익률은 판관비 후, 매출총이익률은 매출원가만 차감"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

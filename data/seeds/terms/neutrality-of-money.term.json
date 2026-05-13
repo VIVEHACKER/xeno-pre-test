@@ -1,0 +1,21 @@
+{
+  "term_id": "neutrality-of-money",
+  "name_ko": "화폐의 중립성",
+  "name_en": "neutrality of money",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "화폐량 변화가 장기적으로 명목 변수만 바꾸고 실질 변수에는 영향을 미치지 않는다는 명제.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "classical-dichotomy",
+      "reason": "중립성은 실질 변수 무영향, 고전적 이분법은 명목/실질 분리"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

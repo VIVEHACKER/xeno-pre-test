@@ -1,0 +1,23 @@
+{
+  "term_id": "cpi",
+  "name_ko": "소비자물가지수",
+  "name_en": "consumer price index",
+  "aliases": [
+    "CPI"
+  ],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "대표 소비재 가격 변동을 추적하는 지수. 인플레이션의 일반 측정 지표.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "ppi",
+      "reason": "CPI는 소비자 단계, PPI는 생산자 단계"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

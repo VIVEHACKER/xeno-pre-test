@@ -1,0 +1,16 @@
+{
+  "term_id": "trader-suspension",
+  "name_ko": "휴업",
+  "name_en": "business suspension",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "사업을 일시적으로 중단하는 신고. 부가세 신고 의무 일부 유지.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

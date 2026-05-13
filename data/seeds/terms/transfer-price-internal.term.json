@@ -1,0 +1,21 @@
+{
+  "term_id": "transfer-price-internal",
+  "name_ko": "내부이전가격",
+  "name_en": "internal transfer pricing",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "사업부 간 재화/용역 거래에 사용되는 가격. 시장가격/원가가산/협상가격 등 방식이 있다.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "transfer-pricing",
+      "reason": "내부이전가격은 사업부 간, 이전가격(세무)은 국제 특수관계 거래"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

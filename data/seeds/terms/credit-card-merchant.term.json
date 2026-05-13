@@ -1,0 +1,21 @@
+{
+  "term_id": "credit-card-merchant",
+  "name_ko": "신용카드 가맹점",
+  "name_en": "credit card merchant",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "신용카드사와 가맹계약을 체결해 카드 결제를 받는 사업자.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "franchise-agreement",
+      "reason": "신용카드 가맹은 결제 계약, 가맹계약은 영업 시스템"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

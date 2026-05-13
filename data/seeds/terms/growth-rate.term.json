@@ -1,0 +1,21 @@
+{
+  "term_id": "growth-rate",
+  "name_ko": "경제성장률",
+  "name_en": "economic growth rate",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "실질GDP의 전년 대비 증가율.",
+  "formula": "성장률 = (실질GDP_t / 실질GDP_{t-1}) - 1",
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "potential-gdp",
+      "reason": "성장률은 실적, 잠재GDP는 최대 가능치"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

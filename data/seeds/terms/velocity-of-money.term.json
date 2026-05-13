@@ -1,0 +1,21 @@
+{
+  "term_id": "velocity-of-money",
+  "name_ko": "화폐유통속도",
+  "name_en": "velocity of money",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "통화량이 한 해 동안 평균 몇 번 거래에 사용되는지를 나타내는 지표.",
+  "formula": "V = PY / M",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "quantity-theory-of-money",
+      "reason": "유통속도는 변수, 화폐수량설은 이를 포함한 이론"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

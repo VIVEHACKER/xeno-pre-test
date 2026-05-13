@@ -1,0 +1,21 @@
+{
+  "term_id": "non-existence-of-resolution",
+  "name_ko": "결의 부존재",
+  "name_en": "non-existence of resolution",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "결의를 한 것으로 평가할 수 없을 정도로 중대한 하자가 있는 경우. 처음부터 효력 없음.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "nullification-of-resolution",
+      "reason": "부존재는 결의 자체 부정, 무효는 결의는 있으나 효력 없음"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

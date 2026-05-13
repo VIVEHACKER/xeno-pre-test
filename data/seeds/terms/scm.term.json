@@ -1,0 +1,23 @@
+{
+  "term_id": "scm",
+  "name_ko": "공급사슬관리",
+  "name_en": "supply chain management",
+  "aliases": [
+    "SCM"
+  ],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "공급자에서 소비자까지의 흐름을 효율화하는 관리 활동.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "just-in-time",
+      "reason": "SCM은 공급망 전체, JIT는 재고/생산 시점 한정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

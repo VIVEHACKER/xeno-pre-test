@@ -1,0 +1,21 @@
+{
+  "term_id": "change-management",
+  "name_ko": "변화관리",
+  "name_en": "change management",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "조직 변화를 계획·실행·정착시키는 일련의 관리 활동. Lewin의 해빙-변화-재동결.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "organizational-development",
+      "reason": "변화관리는 변화 절차 관리, OD는 광의의 개발"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

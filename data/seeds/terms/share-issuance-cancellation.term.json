@@ -1,0 +1,21 @@
+{
+  "term_id": "share-issuance-cancellation",
+  "name_ko": "신주발행 무효 소송",
+  "name_en": "share issuance nullification suit",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "이미 발행된 신주의 효력을 무효로 만들기 위한 소송. 6개월 내 제기.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "share-issuance-injunction",
+      "reason": "무효 소송은 사후 무효화, 유지청구는 사전 차단"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,25 @@
+{
+  "term_id": "dividend-irrelevance",
+  "name_ko": "배당 무관성 정리",
+  "name_en": "dividend irrelevance",
+  "aliases": ["MM 배당 무관성", "MM 배당정책 무관성"],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "완전자본시장 가정 하에서 기업의 배당정책은 기업가치와 무관하다는 Modigliani-Miller의 명제. 투자자는 자가 배당으로 원하는 배당 수준을 만들 수 있다.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "dividend-signaling",
+      "reason": "MM 배당 무관성은 완전시장 가정으로 가치 무관, 배당 신호 효과는 정보비대칭 가정으로 가치에 영향"
+    },
+    {
+      "term_id": "mm-proposition",
+      "reason": "MM 명제는 자본구조 무관성이 핵심, MM 배당 무관성은 배당정책 무관성으로 같은 가정에서 도출된 별개의 결론"
+    }
+  ],
+  "prerequisite_terms": ["mm-proposition"],
+  "example": "투자자가 배당을 원하면 주식 일부를 매각해 자가 배당을 만들 수 있으므로, 기업의 배당 결정은 무관하다는 논리",
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

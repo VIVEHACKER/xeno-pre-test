@@ -1,0 +1,21 @@
+{
+  "term_id": "cash-receipt",
+  "name_ko": "현금영수증",
+  "name_en": "cash receipt",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "현금 결제 시 발행하는 영수증. 일정 업종은 발급 의무 + 세금계산서 대용 효력.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "simplified-tax-invoice",
+      "reason": "현금영수증은 현금, 영수증은 광의"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

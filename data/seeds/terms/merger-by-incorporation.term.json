@@ -1,0 +1,21 @@
+{
+  "term_id": "merger-by-incorporation",
+  "name_ko": "신설합병",
+  "name_en": "merger by incorporation",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "합병 당사회사가 모두 소멸하고 새로 설립되는 회사로 통합되는 합병.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "merger-by-absorption",
+      "reason": "신설합병은 새 회사 설립, 흡수합병은 존속회사 유지"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

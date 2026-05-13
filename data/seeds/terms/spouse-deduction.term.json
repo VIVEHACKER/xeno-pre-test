@@ -1,0 +1,21 @@
+{
+  "term_id": "spouse-deduction",
+  "name_ko": "배우자공제",
+  "name_en": "spouse deduction",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "배우자가 연 소득 100만원 이하인 경우 적용되는 기본공제.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "dependent-deduction",
+      "reason": "배우자공제와 부양가족공제 모두 기본공제 적용"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

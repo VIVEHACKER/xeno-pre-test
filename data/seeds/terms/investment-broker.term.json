@@ -1,0 +1,21 @@
+{
+  "term_id": "investment-broker",
+  "name_ko": "투자중개업자",
+  "name_en": "investment broker",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "타인 계산으로 금융투자상품을 매도/매수 중개/주선하는 자.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "investment-trader",
+      "reason": "투자중개업자는 타인 계산, 투자매매업자는 자기 계산"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

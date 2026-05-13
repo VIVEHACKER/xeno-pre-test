@@ -1,0 +1,21 @@
+{
+  "term_id": "cpa-act",
+  "name_ko": "공인회계사법",
+  "name_en": "Certified Public Accountant Act",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "audit",
+  "definition": "공인회계사의 자격, 권한, 의무, 징계 등을 규정한 법.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "external-audit-act",
+      "reason": "공인회계사법은 직업 규제, 외감법은 감사 의무"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

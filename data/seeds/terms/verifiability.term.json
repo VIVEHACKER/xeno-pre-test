@@ -1,0 +1,21 @@
+{
+  "term_id": "verifiability",
+  "name_ko": "검증가능성",
+  "name_en": "verifiability",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "독립된 관찰자들이 같은 결론에 합리적으로 도달할 수 있다는 회계정보 질적특성.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "faithful-representation",
+      "reason": "검증가능성은 외부 확인, 충실한 표현은 사실성"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

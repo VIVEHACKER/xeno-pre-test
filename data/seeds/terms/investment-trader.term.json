@@ -1,0 +1,21 @@
+{
+  "term_id": "investment-trader",
+  "name_ko": "투자매매업자",
+  "name_en": "investment trader",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "자기 계산으로 금융투자상품을 매도/매수하거나 발행/인수하는 자.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "investment-broker",
+      "reason": "투자매매업자는 자기 계산, 투자중개업자는 타인 계산"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

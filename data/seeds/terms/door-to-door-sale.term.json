@@ -1,0 +1,21 @@
+{
+  "term_id": "door-to-door-sale",
+  "name_ko": "방문판매",
+  "name_en": "door-to-door sale",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "사업자가 소비자 거주지 등을 방문해 판매하는 거래. 방문판매법으로 소비자 보호.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "installment-sale-law",
+      "reason": "방문판매와 할부거래는 각각 다른 특별법"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

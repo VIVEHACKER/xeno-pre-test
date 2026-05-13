@@ -1,0 +1,21 @@
+{
+  "term_id": "board-meeting",
+  "name_ko": "이사회 회의",
+  "name_en": "board meeting",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "이사회의 의사결정을 위한 회의. 정족수와 의결 요건이 정해져 있다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "board-resolution",
+      "reason": "이사회 회의는 모임, 결의는 의사결정 결과"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

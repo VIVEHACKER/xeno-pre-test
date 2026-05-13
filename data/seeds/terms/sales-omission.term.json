@@ -1,0 +1,21 @@
+{
+  "term_id": "sales-omission",
+  "name_ko": "매출 누락",
+  "name_en": "sales omission",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "vat",
+  "definition": "실제 매출을 신고에서 빠뜨리는 행위. 가산세 + 형사처벌 가능.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "fictitious-purchase",
+      "reason": "매출 누락은 수익 은닉, 가공매입은 비용 부풀리기"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

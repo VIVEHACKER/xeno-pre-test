@@ -1,0 +1,21 @@
+{
+  "term_id": "mundell-fleming",
+  "name_ko": "먼델-플레밍 모형",
+  "name_en": "Mundell-Fleming model",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "개방경제에서 IS-LM을 확장한 모형. 환율제도와 자본 이동성에 따라 정책 효과가 달라짐.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "is-lm-model",
+      "reason": "먼델-플레밍은 개방 IS-LM, IS-LM은 폐쇄경제"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

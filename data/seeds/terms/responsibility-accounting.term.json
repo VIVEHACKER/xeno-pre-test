@@ -1,0 +1,21 @@
+{
+  "term_id": "responsibility-accounting",
+  "name_ko": "책임회계",
+  "name_en": "responsibility accounting",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "cost_management",
+  "definition": "각 책임센터별로 통제 가능한 수익과 원가를 분리해 보고하는 관리회계 시스템.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "decentralization",
+      "reason": "책임회계는 측정 체계, 분권화는 권한 구조"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

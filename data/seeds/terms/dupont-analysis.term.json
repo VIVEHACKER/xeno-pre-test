@@ -1,0 +1,21 @@
+{
+  "term_id": "dupont-analysis",
+  "name_ko": "듀퐁분석",
+  "name_en": "DuPont analysis",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "ROE를 순이익률 × 총자산회전율 × 재무레버리지로 분해해 수익성 원천을 파악하는 분석.",
+  "formula": "ROE = (순이익/매출) × (매출/자산) × (자산/자본)",
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "roe-business",
+      "reason": "듀퐁분석은 ROE 분해, ROE는 단일 비율"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

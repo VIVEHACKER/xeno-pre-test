@@ -1,0 +1,16 @@
+{
+  "term_id": "consolidated-tax-return",
+  "name_ko": "연결과세",
+  "name_en": "consolidated tax return",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "연결납세 적용 법인이 통합 신고서를 제출하는 절차.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "sovereign-default",
+  "name_ko": "국가부도",
+  "name_en": "sovereign default",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "정부가 국채 등 채무를 약속한 대로 갚지 못하는 상태.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "capital-flight",
+      "reason": "국가부도는 채무 불이행, 자본도피는 자본 유출"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

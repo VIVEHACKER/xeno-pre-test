@@ -1,0 +1,23 @@
+{
+  "term_id": "present-value",
+  "name_ko": "현재가치",
+  "name_en": "present value",
+  "aliases": [
+    "PV"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "미래 현금흐름을 할인율로 할인해 산출한 현 시점의 가치.",
+  "formula": null,
+  "difficulty": "foundational",
+  "confusable_with": [
+    {
+      "term_id": "future-value",
+      "reason": "PV는 현재시점, FV는 미래시점"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

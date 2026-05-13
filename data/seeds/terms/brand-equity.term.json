@@ -1,0 +1,21 @@
+{
+  "term_id": "brand-equity",
+  "name_ko": "브랜드 자산",
+  "name_en": "brand equity",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "브랜드 자체가 가지는 부가가치. 인지도, 충성도, 연상 등으로 측정.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "consumer-behavior",
+      "reason": "브랜드자산은 결과 가치, 소비자행동은 그 형성 과정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

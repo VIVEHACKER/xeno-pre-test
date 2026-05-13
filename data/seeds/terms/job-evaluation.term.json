@@ -1,0 +1,21 @@
+{
+  "term_id": "job-evaluation",
+  "name_ko": "직무평가",
+  "name_en": "job evaluation",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "직무 간 상대적 가치를 결정하는 활동. 임금 체계의 기초.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "job-analysis",
+      "reason": "직무평가는 가치 비교, 직무분석은 직무 자체 분석"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

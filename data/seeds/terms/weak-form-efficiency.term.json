@@ -1,0 +1,21 @@
+{
+  "term_id": "weak-form-efficiency",
+  "name_ko": "약형 효율적 시장",
+  "name_en": "weak-form efficiency",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "과거 가격 정보가 현재 가격에 모두 반영되어 있어 기술적 분석으로 초과수익이 불가능한 시장 가설.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "semi-strong-form-efficiency",
+      "reason": "약형은 과거가격만, 준강형은 공개정보 전체"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

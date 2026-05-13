@@ -1,0 +1,21 @@
+{
+  "term_id": "yield-curve",
+  "name_ko": "수익률곡선",
+  "name_en": "yield curve",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "만기별 채권 수익률을 연결한 곡선. 정상/평탄/역전 형태로 나뉜다.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "term-structure",
+      "reason": "수익률곡선은 시각화, 기간구조는 이론적 관계"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

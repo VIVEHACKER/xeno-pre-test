@@ -1,0 +1,21 @@
+{
+  "term_id": "distribution-channel",
+  "name_ko": "유통경로",
+  "name_en": "distribution channel",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "생산자에서 소비자에게 제품이 전달되는 일련의 중간상 조직.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "direct-distribution",
+      "reason": "유통경로는 구조 전반, 직접유통은 그 형태 중 하나"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

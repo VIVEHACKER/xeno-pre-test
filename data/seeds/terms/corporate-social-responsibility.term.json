@@ -1,0 +1,23 @@
+{
+  "term_id": "corporate-social-responsibility",
+  "name_ko": "기업의 사회적 책임",
+  "name_en": "corporate social responsibility",
+  "aliases": [
+    "CSR"
+  ],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "기업이 이윤 추구 외에 사회·환경·이해관계자에 대한 책임을 자발적으로 수행하는 활동.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "esg-management",
+      "reason": "CSR은 광의 책임, ESG는 측정/투자 관점"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

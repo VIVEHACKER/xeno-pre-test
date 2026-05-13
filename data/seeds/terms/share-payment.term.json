@@ -1,0 +1,21 @@
+{
+  "term_id": "share-payment",
+  "name_ko": "주금 납입",
+  "name_en": "share payment",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "신주 인수자가 주식 대금을 회사에 납입하는 행위. 자본금 증가의 조건.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "share-issuance",
+      "reason": "주금 납입은 자금 유입, 신주발행은 발행 절차"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

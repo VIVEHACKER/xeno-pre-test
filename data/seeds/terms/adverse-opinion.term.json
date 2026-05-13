@@ -1,0 +1,21 @@
+{
+  "term_id": "adverse-opinion",
+  "name_ko": "부적정의견",
+  "name_en": "adverse opinion",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "audit",
+  "definition": "재무제표가 회계기준에 위반되어 적정하지 않다고 결론짓는 감사의견.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "disclaimer-opinion",
+      "reason": "부적정의견은 위반 확인, 의견거절은 판단 불가"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

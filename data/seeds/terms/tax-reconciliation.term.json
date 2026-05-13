@@ -1,0 +1,21 @@
+{
+  "term_id": "tax-reconciliation",
+  "name_ko": "세무조정 명세서",
+  "name_en": "tax reconciliation schedule",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "재무회계 당기순이익에서 세무 과세소득으로 가는 익금/손금 조정을 정리한 별지 서식.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "tax-base-adjustment",
+      "reason": "명세서는 문서, 세무조정은 절차"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,23 @@
+{
+  "term_id": "fcfe",
+  "name_ko": "주주잉여현금흐름",
+  "name_en": "free cash flow to equity",
+  "aliases": [
+    "FCFE"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "주주에게 분배 가능한 현금흐름. 부채 상환 후 남는 현금.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "fcff",
+      "reason": "FCFE는 주주만, FCFF는 채권자 + 주주"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

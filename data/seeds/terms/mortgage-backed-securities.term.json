@@ -1,0 +1,23 @@
+{
+  "term_id": "mortgage-backed-securities",
+  "name_ko": "주택저당증권",
+  "name_en": "mortgage-backed securities",
+  "aliases": [
+    "MBS"
+  ],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "주택담보대출 풀의 현금흐름을 기초로 발행하는 자산유동화증권.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "asset-backed-securities",
+      "reason": "MBS는 주택담보, ABS는 일반 자산 담보"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

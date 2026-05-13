@@ -1,0 +1,16 @@
+{
+  "term_id": "transfer-pricing-method",
+  "name_ko": "이전가격 산정방법",
+  "name_en": "transfer pricing method",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "정상가격 산정에 사용되는 방법. CUP, RPM, CPM, TNMM 등.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "share-cancellation-procedure",
+  "name_ko": "주식 소각 절차",
+  "name_en": "share cancellation procedure",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "이사회 결의와 채권자 보호 절차를 거쳐 주식을 소각하는 일련의 과정.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "share-cancellation",
+      "reason": "절차는 실행 과정, 소각은 결과 행위"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

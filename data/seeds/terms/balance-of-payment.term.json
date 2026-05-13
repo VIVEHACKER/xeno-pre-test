@@ -1,0 +1,23 @@
+{
+  "term_id": "balance-of-payment",
+  "name_ko": "국제수지",
+  "name_en": "balance of payments",
+  "aliases": [
+    "BoP"
+  ],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "한 나라의 모든 대외 거래를 기록한 통계. 경상수지 + 자본수지로 구성.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "current-account",
+      "reason": "국제수지는 광의, 경상수지는 그 한 항목"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

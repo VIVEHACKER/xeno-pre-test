@@ -1,0 +1,21 @@
+{
+  "term_id": "callable-bond",
+  "name_ko": "수의상환사채",
+  "name_en": "callable bond",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "발행자가 만기 전 약정 가격에 상환 가능한 사채. 발행자 옵션이 있어 수익률이 더 높다.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "puttable-bond",
+      "reason": "수의상환은 발행자 권리, 풋어블은 보유자 권리"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "company-merger",
+  "name_ko": "회사 합병",
+  "name_en": "company merger",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "둘 이상 회사가 하나의 법인으로 합쳐지는 거래. 흡수합병 + 신설합병.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "company-division",
+      "reason": "합병은 결합, 분할은 분리"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

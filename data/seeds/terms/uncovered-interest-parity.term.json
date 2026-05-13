@@ -1,0 +1,21 @@
+{
+  "term_id": "uncovered-interest-parity",
+  "name_ko": "커버되지 않은 이자율평가",
+  "name_en": "uncovered interest parity",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "환위험을 헤지하지 않고 기대환율 변동을 반영해 양국 금리가 같아진다는 가정.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "covered-interest-parity",
+      "reason": "UIP는 기대 환율, CIP는 선물 환율"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

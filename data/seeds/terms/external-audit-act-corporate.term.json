@@ -1,0 +1,21 @@
+{
+  "term_id": "external-audit-act-corporate",
+  "name_ko": "외감법(회사법 관점)",
+  "name_en": "External Audit Act (corporate)",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "주식회사의 외부감사 의무와 감사인 선임 절차 등을 규율하는 법률.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "external-audit-act",
+      "reason": "회계 관점/회사법 관점 동일 법률을 다른 각도로"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "ricardian-equivalence",
+  "name_ko": "리카도-바로 등가",
+  "name_en": "Ricardian-Barro equivalence",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "정부의 재정 조달 방식(세금 vs 차입)이 가계 행동에 무관하다는 명제. 리카도 등가의 현대화.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "ricardo-equivalence",
+      "reason": "리카도-바로 등가는 동일 명제 현대 버전"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

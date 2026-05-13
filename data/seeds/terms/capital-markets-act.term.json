@@ -1,0 +1,23 @@
+{
+  "term_id": "capital-markets-act",
+  "name_ko": "자본시장법",
+  "name_en": "Capital Markets Act",
+  "aliases": [
+    "자본시장과 금융투자업에 관한 법률"
+  ],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "금융투자상품, 금융투자업, 자본시장 인프라 등을 종합 규율하는 법률. 자통법의 후속.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "financial-investment-business",
+      "reason": "자본시장법은 법률, 금융투자업은 그 규율 대상 업종"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

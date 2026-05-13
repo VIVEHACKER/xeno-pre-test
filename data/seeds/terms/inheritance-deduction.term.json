@@ -1,0 +1,21 @@
+{
+  "term_id": "inheritance-deduction",
+  "name_ko": "상속공제",
+  "name_en": "inheritance deduction",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "income_tax",
+  "definition": "상속재산에서 차감되는 공제. 일괄공제, 배우자공제, 기초공제 등.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "gift-deduction",
+      "reason": "상속공제는 상속세, 증여공제는 증여세"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

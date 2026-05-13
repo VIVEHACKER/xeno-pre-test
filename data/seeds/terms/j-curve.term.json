@@ -1,0 +1,21 @@
+{
+  "term_id": "j-curve",
+  "name_ko": "J-커브 효과",
+  "name_en": "J-curve effect",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "환율이 평가절하된 직후 무역수지가 일시 악화되었다가 시간이 지나며 개선되는 J자 패턴.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "trade-balance",
+      "reason": "J-커브는 시점 패턴, 무역수지는 측정값"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

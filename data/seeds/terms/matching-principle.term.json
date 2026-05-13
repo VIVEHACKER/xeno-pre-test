@@ -1,0 +1,21 @@
+{
+  "term_id": "matching-principle",
+  "name_ko": "수익비용대응 원칙",
+  "name_en": "matching principle",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "financial_assets",
+  "definition": "특정 수익을 발생시킨 비용을 같은 기간에 대응시켜 인식해야 한다는 원칙.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "accrual-basis",
+      "reason": "수익비용대응은 매칭 원칙, 발생주의는 시점 기준"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

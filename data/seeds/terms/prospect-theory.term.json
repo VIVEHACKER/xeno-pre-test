@@ -1,0 +1,21 @@
+{
+  "term_id": "prospect-theory",
+  "name_ko": "전망이론",
+  "name_en": "prospect theory",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "이득보다 손실에 민감하게 반응한다는 비대칭적 가치함수를 가정한 의사결정 이론. 카너먼-트버스키.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "loss-aversion",
+      "reason": "전망이론은 모형, 손실회피는 그 핵심 현상"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

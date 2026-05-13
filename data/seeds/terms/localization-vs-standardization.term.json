@@ -1,0 +1,21 @@
+{
+  "term_id": "localization-vs-standardization",
+  "name_ko": "현지화 vs 표준화",
+  "name_en": "localization vs standardization",
+  "aliases": [],
+  "subject": "business",
+  "unit": "management_strategy",
+  "definition": "국제경영의 전략적 양극. 현지 적응 강조 vs 본사 정책의 전세계 일관성.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "global-business-strategy",
+      "reason": "현지화/표준화는 trade-off, 글로벌 전략은 광의 결정"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

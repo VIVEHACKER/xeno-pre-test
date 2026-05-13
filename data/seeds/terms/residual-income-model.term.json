@@ -1,0 +1,21 @@
+{
+  "term_id": "residual-income-model",
+  "name_ko": "잔여이익 모형",
+  "name_en": "residual income valuation model",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "기업가치를 장부가치와 미래 잔여이익(초과이익)의 현재가치 합으로 본 가치평가 모형.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "dividend-discount-model",
+      "reason": "잔여이익 모형은 회계이익 기반, DDM은 배당 기반"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

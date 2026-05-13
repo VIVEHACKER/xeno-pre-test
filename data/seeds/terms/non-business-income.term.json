@@ -1,0 +1,16 @@
+{
+  "term_id": "non-business-income",
+  "name_ko": "비수익사업소득",
+  "name_en": "non-business income",
+  "aliases": [],
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "definition": "비영리법인의 고유목적 사업에서 발생한 소득. 일정 요건 시 비과세.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

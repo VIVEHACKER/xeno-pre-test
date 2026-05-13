@@ -1,0 +1,21 @@
+{
+  "term_id": "ricardo-equivalence",
+  "name_ko": "리카도 등가",
+  "name_en": "Ricardian equivalence",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "정부가 세금이든 국채든 자금을 조달해도 가계 소비에 미치는 효과는 같다는 가설. 가계가 합리적이고 미래 세금을 예측한다고 가정.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "permanent-income-hypothesis",
+      "reason": "리카도 등가는 정부 재정 무관성, 항상소득가설은 소비자 행동"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

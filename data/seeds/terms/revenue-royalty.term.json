@@ -1,0 +1,21 @@
+{
+  "term_id": "revenue-royalty",
+  "name_ko": "로열티 수익",
+  "name_en": "royalty revenue",
+  "aliases": [],
+  "subject": "accounting",
+  "unit": "revenue",
+  "definition": "지적재산권 사용량/판매량에 비례해 수령하는 수익. 후속 매출이 발생한 기간에 인식.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "revenue-license",
+      "reason": "로열티는 사용량 비례, 라이선스는 사용권 자체 대가"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

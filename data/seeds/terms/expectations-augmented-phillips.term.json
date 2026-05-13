@@ -1,0 +1,21 @@
+{
+  "term_id": "expectations-augmented-phillips",
+  "name_ko": "기대형성 필립스곡선",
+  "name_en": "expectations-augmented Phillips curve",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "기대 인플레이션을 명시적으로 반영한 필립스곡선. 장기에는 수직.",
+  "formula": null,
+  "difficulty": "advanced",
+  "confusable_with": [
+    {
+      "term_id": "phillips-curve",
+      "reason": "기대형성 필립스는 확장형, 기본 필립스는 단순형"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,21 @@
+{
+  "term_id": "installment-sale-law",
+  "name_ko": "할부거래법",
+  "name_en": "Installment Trade Act",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "commercial_general",
+  "definition": "할부거래에서 소비자 보호를 위한 청약철회권 등을 규정한 법률.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "installment-sale",
+      "reason": "할부거래법은 법률, 할부판매는 거래 형태"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

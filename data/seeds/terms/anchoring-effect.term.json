@@ -1,0 +1,21 @@
+{
+  "term_id": "anchoring-effect",
+  "name_ko": "앵커링 효과",
+  "name_en": "anchoring effect",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "처음 제시된 정보가 이후 판단의 기준이 되어 그 영향을 받는 인지 편향.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "heuristic-bias",
+      "reason": "앵커링은 휴리스틱 편향의 한 유형"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

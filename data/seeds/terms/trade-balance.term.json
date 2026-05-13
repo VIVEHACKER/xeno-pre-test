@@ -1,0 +1,21 @@
+{
+  "term_id": "trade-balance",
+  "name_ko": "무역수지",
+  "name_en": "trade balance",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "macro_economics",
+  "definition": "수출과 수입의 차이. 경상수지의 가장 큰 구성 요소.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "current-account",
+      "reason": "무역수지는 재화만, 경상수지는 서비스/소득까지"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

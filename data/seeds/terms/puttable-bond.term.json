@@ -1,0 +1,21 @@
+{
+  "term_id": "puttable-bond",
+  "name_ko": "상환청구권 사채",
+  "name_en": "puttable bond",
+  "aliases": [],
+  "subject": "business",
+  "unit": "financial_management",
+  "definition": "보유자가 만기 전 약정 가격에 상환 청구할 수 있는 사채.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "callable-bond",
+      "reason": "풋어블은 보유자 권리, 콜어블은 발행자 권리"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

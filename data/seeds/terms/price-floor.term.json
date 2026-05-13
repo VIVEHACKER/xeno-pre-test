@@ -1,0 +1,21 @@
+{
+  "term_id": "price-floor",
+  "name_ko": "가격하한",
+  "name_en": "price floor",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "정부가 시장 균형가격보다 높게 정한 가격 하한. 초과공급(잉여) 유발.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "price-ceiling",
+      "reason": "가격하한은 잉여 유발, 가격상한은 부족 유발"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

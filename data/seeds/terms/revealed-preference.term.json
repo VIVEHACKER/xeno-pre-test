@@ -1,0 +1,21 @@
+{
+  "term_id": "revealed-preference",
+  "name_ko": "현시선호",
+  "name_en": "revealed preference",
+  "aliases": [],
+  "subject": "economics",
+  "unit": "micro_economics",
+  "definition": "실제 선택 행동에서 소비자의 선호를 추론하는 접근법. 사무엘슨.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "weak-axiom",
+      "reason": "현시선호는 광의 접근, 약공리는 그 핵심 공리"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}

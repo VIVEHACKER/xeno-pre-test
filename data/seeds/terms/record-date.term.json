@@ -1,0 +1,21 @@
+{
+  "term_id": "record-date",
+  "name_ko": "기준일",
+  "name_en": "record date",
+  "aliases": [],
+  "subject": "corporate_law",
+  "unit": "company_law",
+  "definition": "권리 행사 주주를 확정하기 위해 정한 일자. 그 날 주주명부에 기재된 자가 권리자.",
+  "formula": null,
+  "difficulty": "intermediate",
+  "confusable_with": [
+    {
+      "term_id": "shareholder-list-closure",
+      "reason": "기준일은 한 시점, 명부폐쇄는 기간 정지"
+    }
+  ],
+  "prerequisite_terms": [],
+  "example": null,
+  "rights_status": "self_generated",
+  "review_status": "ai_draft"
+}
