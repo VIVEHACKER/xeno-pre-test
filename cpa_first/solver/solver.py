@@ -41,6 +41,10 @@ class Solver:
     rag_top_k: int = 3
 
     def solve(self, question: dict[str, Any]) -> SolveResult:
+        if self.mode == "reasoned":
+            from cpa_first.solver.reasoned import solve_reasoned
+
+            return solve_reasoned(question)
         if self.mode == "mock":
             return _solve_mock(question)
         if self.mode == "live":
@@ -62,7 +66,7 @@ def create_solver(
     rag_dir: Any = None,
     **kwargs: Any,
 ) -> Solver:
-    resolved_mode = mode or os.environ.get("CPA_SOLVER_MODE", "mock")
+    resolved_mode = mode or os.environ.get("CPA_SOLVER_MODE", "reasoned")
     rag_chunks: list[Any] = []
     if rag_dir is not None:
         from cpa_first.rag import load_chunks
@@ -191,18 +195,44 @@ def _build_rag_context(solver: Solver, question: dict[str, Any]) -> str:
 
 
 def _call_anthropic(solver: Solver, user_message: str) -> str:
-    """Anthropic 호출 골격. live 모드에서만 사용. 비용 관리 책임은 호출자."""
-    response = solver.client.messages.create(
-        model=solver.model,
-        max_tokens=2000,
-        system=SYSTEM_PROMPT,
-        messages=[{"role": "user", "content": user_message}],
-    )
-    parts: list[str] = []
-    for block in response.content:
-        if getattr(block, "type", None) == "text":
-            parts.append(block.text)
-    return "\n".join(parts)
+    """Anthropic 호출 골격. live 모드에서만 사용. 비용 관리 책임은 호출자.
+
+    RateLimit/일시적 네트워크 에러는 exponential backoff로 최대 3회 재시도한다.
+    """
+    import time
+
+    try:
+        import anthropic  # type: ignore
+        retriable = (
+            getattr(anthropic, "RateLimitError", Exception),
+            getattr(anthropic, "APIConnectionError", Exception),
+            getattr(anthropic, "APITimeoutError", Exception),
+            getattr(anthropic, "InternalServerError", Exception),
+        )
+    except Exception:
+        retriable = (Exception,)
+
+    last_err: Exception | None = None
+    for attempt in range(3):
+        try:
+            response = solver.client.messages.create(
+                model=solver.model,
+                max_tokens=2000,
+                system=SYSTEM_PROMPT,
+                messages=[{"role": "user", "content": user_message}],
+            )
+            parts: list[str] = []
+            for block in response.content:
+                if getattr(block, "type", None) == "text":
+                    parts.append(block.text)
+            return "\n".join(parts)
+        except retriable as exc:
+            last_err = exc
+            if attempt == 2:
+                break
+            time.sleep(2 ** attempt * 5)  # 5s, 10s
+    assert last_err is not None
+    raise last_err
 
 
 _ANSWER_RE = re.compile(r"ANSWER\s*:\s*([0-9]+)", re.IGNORECASE)

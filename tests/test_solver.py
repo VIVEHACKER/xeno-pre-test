@@ -108,6 +108,119 @@ def test_mock_solver_within_choice_range():
         assert 0 <= result.chosen_index < len(q["choices"])
 
 
+def test_create_solver_defaults_to_reasoned():
+    solver = create_solver()
+
+    assert solver.mode == "reasoned"
+
+
+def test_reasoned_solver_solves_npv_without_answer_key_leakage():
+    question = {
+        **QUESTION,
+        "question_id": "reasoned-npv",
+        "subject": "business",
+        "unit": "financial_management",
+        "stem": (
+            "투자안 A는 오늘 1,000,000원을 투자하면 1년 뒤 500,000원, "
+            "2년 뒤 700,000원의 현금흐름을 제공한다. 할인율이 연 10%일 때 "
+            "투자안 A의 순현재가치(NPV)는 얼마인가? (원 단위 미만 절사)"
+        ),
+        "choices": ["200,000원", "1,033,057원", "33,057원", "1,200,000원"],
+        "correct_choice": 0,
+        "correct_answer": "200,000원",
+    }
+
+    result = Solver(mode="reasoned").solve(question)
+
+    assert result.chosen_index == 2
+    assert result.mode == "reasoned"
+    assert "문항 신호" in result.rationale
+    assert "필요 개념" in result.rationale
+    assert "풀이식" in result.rationale
+    assert "오답 제거" in result.rationale
+    assert "ANSWER: 2" in result.rationale
+
+
+def test_reasoned_solver_solves_moving_average_inventory():
+    question = {
+        **QUESTION,
+        "question_id": "reasoned-moving-average",
+        "subject": "accounting",
+        "unit": "inventory",
+        "stem": (
+            "㈜CF의 20X1년 재고자산 자료는 다음과 같다. 기초재고 100개(@1,000), "
+            "1차 매입 200개(@1,200), 2차 매입 100개(@1,400), 기말재고 수량 150개. "
+            "회사가 이동평균법을 사용하고 있고 1차 매입 후 250개를 판매한 다음 "
+            "2차 매입이 이루어졌다면, 기말재고 금액은 얼마인가?"
+        ),
+        "choices": ["180,000원", "190,000원", "196,667원", "210,000원"],
+    }
+
+    result = Solver(mode="reasoned").solve(question)
+
+    assert result.chosen_index == 2
+    assert "이동평균법" in result.rationale
+    assert "196,667" in result.rationale
+
+
+def test_reasoned_solver_solves_corporate_tax_progressive_rate():
+    question = {
+        **QUESTION,
+        "question_id": "reasoned-corporate-tax",
+        "subject": "tax",
+        "unit": "corporate_tax",
+        "stem": (
+            "㈜한강의 다음 자료를 이용하여 산출세액을 계산하면? "
+            "각사업연도소득금액 350,000,000원, 비과세소득 10,000,000원, "
+            "이월결손금(2020년 발생, 일반결손금) 45,000,000원, 소득공제 5,000,000원이 있다. "
+            "2026년 법인세율은 과세표준 2억원 이하 9%, "
+            "2억원 초과 200억원 이하 19%, 200억원 초과 3,000억원 이하 21%, "
+            "3,000억원 초과 24%이다."
+        ),
+        "choices": [
+            "33,650,000원",
+            "34,150,000원",
+            "35,100,000원",
+            "36,100,000원",
+            "37,050,000원",
+        ],
+    }
+
+    result = Solver(mode="reasoned").solve(question)
+
+    assert result.chosen_index == 2
+    assert "과세표준" in result.rationale
+    assert "35,100,000" in result.rationale
+
+
+def test_reasoned_solver_uses_known_solution_bank_for_unsupported_concepts():
+    question = {
+        **QUESTION,
+        "question_id": "reasoned-known-law",
+        "subject": "tax",
+        "unit": "local_tax_etc",
+        "stem": "지방세기본법상 부과제척기간에 관한 설명으로 옳지 않은 것은?",
+        "choices": [
+            "사기나 부정행위가 있으면 10년이다.",
+            "무신고의 경우 7년이다.",
+            "일반적인 경우 부과제척기간은 7년이다.",
+            "기간이 끝난 날 후에는 부과할 수 없는 것이 원칙이다.",
+        ],
+        "correct_choice": 2,
+        "correct_answer": "일반적인 경우 부과제척기간은 7년이다.",
+        "concept_tags": ["지방세기본법", "부과제척기간"],
+        "explanation": "일반적인 경우 지방세 부과제척기간은 5년이므로 7년이라는 설명이 옳지 않다.",
+        "review_status": "ai_draft_verified",
+    }
+
+    result = Solver(mode="reasoned").solve(question)
+
+    assert result.chosen_index == 2
+    assert "known_solution_bank" in result.rationale
+    assert "검수 풀이 데이터" in result.rationale
+    assert "ANSWER: 2" in result.rationale
+
+
 def test_stub_solver_always_picks_first():
     solver = Solver(mode="stub")
     result = solver.solve(QUESTION)
