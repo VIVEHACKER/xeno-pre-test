@@ -17,8 +17,15 @@
     "review_status"
   ],
   "properties": {
-    "question_id": { "type": "string" },
-    "exam": { "type": "string", "enum": ["CPA_1"] },
+    "question_id": {
+      "type": "string"
+    },
+    "exam": {
+      "type": "string",
+      "enum": [
+        "CPA_1"
+      ]
+    },
     "subject": {
       "type": "string",
       "description": "cpa_first.subjects 레지스트리와 동기화.",
@@ -33,9 +40,14 @@
         "cost_accounting"
       ]
     },
-    "unit": { "type": "string" },
+    "unit": {
+      "type": "string"
+    },
     "applicable_year": {
-      "type": ["integer", "null"],
+      "type": [
+        "integer",
+        "null"
+      ],
       "description": "세법은 적용연도 필수 (개정 분기). 회계는 K-IFRS 적용연도."
     },
     "stem": {
@@ -46,7 +58,9 @@
       "type": "array",
       "minItems": 4,
       "maxItems": 5,
-      "items": { "type": "string" }
+      "items": {
+        "type": "string"
+      }
     },
     "correct_choice": {
       "type": "integer",
@@ -63,31 +77,51 @@
     },
     "concept_tags": {
       "type": "array",
-      "items": { "type": "string" }
+      "items": {
+        "type": "string"
+      }
     },
     "expected_seconds": {
-      "type": ["integer", "null"],
+      "type": [
+        "integer",
+        "null"
+      ],
       "description": "예상 풀이 시간 (벤치마크 기록용)."
     },
     "difficulty": {
       "type": "string",
-      "enum": ["easy", "mid", "hard"],
+      "enum": [
+        "easy",
+        "mid",
+        "hard"
+      ],
       "description": "3단계 난이도 카테고리. easy=단일식, mid=2-3단계, hard=다단계+매력적 오답."
     },
     "difficulty_score": {
-      "type": ["integer", "null"],
+      "type": [
+        "integer",
+        "null"
+      ],
       "minimum": 1,
       "maximum": 5,
       "description": "1=trivial, 5=함정+다단계. easy=1-2, mid=3, hard=4-5."
     },
     "bloom_level": {
       "type": "string",
-      "enum": ["remember", "understand", "apply", "analyze", "evaluate"],
+      "enum": [
+        "remember",
+        "understand",
+        "apply",
+        "analyze",
+        "evaluate"
+      ],
       "description": "Bloom 인지단계. CPA 1차 객관식은 보통 understand~analyze."
     },
     "attractor_traps": {
       "type": "array",
-      "items": { "type": "string" },
+      "items": {
+        "type": "string"
+      },
       "description": "문항이 노린 매력적 오답 종류 (검증 라운드에서 채움)."
     },
     "rights_status": {
@@ -109,6 +143,15 @@
         "approved",
         "rejected"
       ]
+    },
+    "flagged_questionable": {
+      "type": "boolean",
+      "default": false,
+      "description": "평가셋 자체 품질(정답키·보기 일관성 등) 이슈로 채점에서 제외할지 여부. 기본 false."
+    },
+    "questionable_reason": {
+      "type": "string",
+      "description": "flagged_questionable=true일 때 사유. 외부 검토자가 우선 확인할 단서."
     }
   },
   "additionalProperties": false

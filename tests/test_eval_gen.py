@@ -136,6 +136,54 @@ def test_validate_bad_json_returns_reject():
     assert "parse" in r.issues[0].lower() or "json" in r.issues[0].lower()
 
 
+def test_validate_cross_check_passes_when_model_picks_key():
+    """검토위원이 approve + 풀이 모델이 correct_choice와 같은 보기를 골랐을 때."""
+    review_invoke = lambda system, user: json.dumps(
+        {"verdict": "approve", "issues": [], "attractor_traps": []}
+    )
+
+    def cc_invoke(system, user):
+        # correct_choice=2와 일치하도록 응답
+        return "1회전 풀이.\n2회전 점검.\nANSWER: 2"
+
+    q = {
+        "question_id": "x",
+        "subject": "tax",
+        "unit": "corporate_tax",
+        "stem": "임의",
+        "choices": ["a", "b", "c", "d"],
+        "correct_choice": 2,
+    }
+    r = validate_question(q, review_invoke, cross_check=True, cross_check_invoke=cc_invoke)
+    assert r.verdict == "approve"
+    assert r.cross_check_passed is True
+    assert r.cross_check_chosen == 2
+
+
+def test_validate_cross_check_fails_when_model_disagrees():
+    """검토위원은 approve였지만 풀이 모델이 다른 보기를 골랐을 때."""
+    review_invoke = lambda system, user: json.dumps(
+        {"verdict": "approve", "issues": [], "attractor_traps": []}
+    )
+
+    def cc_invoke(system, user):
+        # correct_choice=0인데 모델은 2를 고름 → cross_check_failed
+        return "ANSWER: 2"
+
+    q = {
+        "question_id": "x",
+        "subject": "tax",
+        "unit": "corporate_tax",
+        "stem": "임의",
+        "choices": ["a", "b", "c", "d"],
+        "correct_choice": 0,
+    }
+    r = validate_question(q, review_invoke, cross_check=True, cross_check_invoke=cc_invoke)
+    assert r.cross_check_passed is False
+    assert r.cross_check_chosen == 2
+    assert any("cross_check_failed" in iss for iss in r.issues)
+
+
 # ----- writer -----
 
 
