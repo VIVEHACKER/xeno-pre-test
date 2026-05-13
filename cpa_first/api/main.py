@@ -25,14 +25,19 @@ from cpa_first.engine import (
     load_problem_solution_maps,
     prescribe,
 )
+from cpa_first.rag import TermIndex, load_chunks
 from cpa_first.subjects import all_subject_ids
 
 
 ROOT = Path(__file__).resolve().parents[2]
 RULES_DIR = ROOT / "data" / "seeds" / "decision_rules"
 PROBLEMS_DIR = ROOT / "data" / "seeds" / "problems"
+TERMS_DIR = ROOT / "data" / "seeds" / "terms"
+EDGES_PATH = ROOT / "data" / "seeds" / "term_graph" / "edges.jsonl"
+RAG_DIR = ROOT / "data" / "seeds" / "rag"
 PROTOTYPE_DIR = ROOT / "prototype"
 PROBLEM_MAPS_PATH = PROTOTYPE_DIR / "problem_solution_maps.json"
+TUTORIALS_PATH = ROOT / "data" / "seeds" / "subject_tutorials.json"
 RUNTIME_DIR = ROOT / "data" / "runtime"
 ACTIVE_USER_STATE_PATH = RUNTIME_DIR / "active_user_state.json"
 ACTIVE_PRESCRIPTION_PATH = RUNTIME_DIR / "active_prescription.json"
@@ -161,11 +166,41 @@ def _load_active() -> tuple[dict, dict] | None:
     return us, rx
 
 
+def _load_terms_full(terms_dir: Path) -> dict[str, dict]:
+    """data/seeds/terms/*.term.json 전부를 raw JSON으로 로드. 키는 term_id."""
+    out: dict[str, dict] = {}
+    for path in sorted(terms_dir.glob("*.term.json")):
+        with path.open("r", encoding="utf-8") as f:
+            data = json.load(f)
+        out[data["term_id"]] = data
+    return out
+
+
+def _load_tutorials_meta(tutorials_path: Path) -> dict[str, dict]:
+    """튜토리얼 메타 데이터 (id → title, subject)."""
+    if not tutorials_path.exists():
+        return {}
+    with tutorials_path.open("r", encoding="utf-8") as f:
+        data = json.load(f)
+    return {
+        t["tutorial_id"]: {
+            "tutorial_id": t["tutorial_id"],
+            "title": t.get("title", ""),
+            "subject_name": t.get("subject_name", ""),
+        }
+        for t in data.get("tutorials", [])
+    }
+
+
 def create_app(
     *,
     rules_dir: Path = RULES_DIR,
     problems_dir: Path = PROBLEMS_DIR,
     problem_maps_path: Path = PROBLEM_MAPS_PATH,
+    terms_dir: Path = TERMS_DIR,
+    edges_path: Path = EDGES_PATH,
+    rag_dir: Path = RAG_DIR,
+    tutorials_path: Path = TUTORIALS_PATH,
 ) -> FastAPI:
     """앱 팩토리. 테스트에서는 별도 디렉터리를 주입할 수 있다."""
     app = FastAPI(title="CPA First", version="0.1.0")
@@ -193,6 +228,18 @@ def create_app(
     }
     rules_by_key = {r["rule_key"]: r for r in rules}
 
+    # 용어 지식 그래프 데이터
+    terms_full = _load_terms_full(terms_dir) if terms_dir.exists() else {}
+    term_index = (
+        TermIndex.from_paths(terms_dir, edges_path)
+        if terms_dir.exists() and edges_path.exists()
+        else TermIndex(terms=[], edges=[])
+    )
+    chunks_by_id = {
+        c.chunk_id: c for c in (load_chunks(rag_dir) if rag_dir.exists() else [])
+    }
+    tutorials_meta = _load_tutorials_meta(tutorials_path)
+
     @app.get("/health")
     def health() -> dict[str, Any]:
         return {
@@ -200,6 +247,112 @@ def create_app(
             "decision_rules": len(rules),
             "problems": len(problems),
             "problem_solution_maps": len(problem_solution_maps),
+            "terms": len(terms_full),
+            "term_edges": len(term_index.edges),
+        }
+
+    # ----- 용어 지식 그래프 -----
+
+    @app.get("/terms/search")
+    def search_terms(q: str = "", limit: int = 20) -> dict[str, Any]:
+        """name_ko/aliases substring 매칭. 빈 q는 빈 결과."""
+        query = q.strip()
+        if not query:
+            return {"query": q, "results": []}
+        matches: list[dict] = []
+        for term in terms_full.values():
+            forms = [term["name_ko"], *(term.get("aliases") or [])]
+            if any(query in f for f in forms if len(f) >= 1):
+                matches.append({
+                    "term_id": term["term_id"],
+                    "name_ko": term["name_ko"],
+                    "name_en": term.get("name_en"),
+                    "subject": term["subject"],
+                    "unit": term.get("unit"),
+                    "difficulty": term["difficulty"],
+                })
+        matches.sort(key=lambda m: (
+            0 if m["name_ko"].startswith(query) else 1,
+            m["term_id"],
+        ))
+        return {"query": q, "results": matches[: max(1, limit)]}
+
+    def _resolve_term_brief(term_id: str) -> dict[str, Any] | None:
+        """다른 term을 참조할 때 사용하는 간략 형태."""
+        term = terms_full.get(term_id)
+        if term is None:
+            return {"term_id": term_id, "name_ko": None, "in_seed": False}
+        return {
+            "term_id": term_id,
+            "name_ko": term["name_ko"],
+            "subject": term["subject"],
+            "in_seed": True,
+        }
+
+    @app.get("/terms/{term_id}")
+    def get_term(term_id: str) -> dict[str, Any]:
+        term = terms_full.get(term_id)
+        if term is None:
+            raise HTTPException(status_code=404, detail=f"term not found: {term_id}")
+
+        # 엣지 → 관련 entity 수집
+        related_chunks: list[dict] = []
+        related_problems: list[dict] = []
+        related_tutorials: list[dict] = []
+        confusable_resolved: list[dict] = []
+        prerequisite_resolved: list[dict] = []
+
+        for edge in term_index.edges:
+            if edge.from_term != term_id:
+                continue
+            if edge.to_kind == "rag_chunk" and edge.relation == "defined_in":
+                chunk = chunks_by_id.get(edge.to_id)
+                if chunk is not None:
+                    related_chunks.append({
+                        "chunk_id": chunk.chunk_id,
+                        "title": chunk.title,
+                        "subject": chunk.subject,
+                        "weight": edge.weight,
+                    })
+            elif edge.to_kind == "problem" and edge.relation == "tested_in":
+                problem = problems_by_id.get(edge.to_id)
+                if problem is not None:
+                    related_problems.append({
+                        "problem_id": problem["problem_id"],
+                        "subject": problem["subject"],
+                        "unit": problem.get("unit"),
+                        "weight": edge.weight,
+                    })
+            elif edge.to_kind == "tutorial" and edge.relation == "explained_in":
+                tut = tutorials_meta.get(edge.to_id)
+                if tut is not None:
+                    related_tutorials.append({**tut, "weight": edge.weight})
+            elif edge.to_kind == "term" and edge.relation == "confusable_with":
+                brief = _resolve_term_brief(edge.to_id)
+                if brief:
+                    confusable_resolved.append({**brief, "reason": edge.evidence if hasattr(edge, "evidence") else None})
+
+        # confusable의 reason은 term의 confusable_with에서 직접 가져오는 게 정확
+        confusable_resolved = []
+        for pair in term.get("confusable_with") or []:
+            brief = _resolve_term_brief(pair["term_id"])
+            if brief:
+                confusable_resolved.append({**brief, "reason": pair["reason"]})
+
+        for pre_id in term.get("prerequisite_terms") or []:
+            brief = _resolve_term_brief(pre_id)
+            if brief:
+                prerequisite_resolved.append(brief)
+
+        return {
+            "term": term,
+            "related": {
+                "chunks": sorted(related_chunks, key=lambda c: (-c["weight"], c["chunk_id"])),
+                "problems": sorted(related_problems, key=lambda p: (-p["weight"], p["problem_id"])),
+                "tutorials": sorted(related_tutorials, key=lambda t: (-t["weight"], t["tutorial_id"])),
+                "confusable_terms": confusable_resolved,
+                "prerequisite_terms": prerequisite_resolved,
+            },
         }
 
     @app.post("/diagnose", response_model=DiagnoseResponse)
