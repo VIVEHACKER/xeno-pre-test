@@ -70,7 +70,7 @@ ignore = ["E501", "B008"]  # B008: FastAPI Depends()를 기본값에 두는 관�
 python_version = "3.12"
 ignore_missing_imports = true
 # 신규 모듈만 엄격 타입체크. 레거시는 점진 적용.
-files = ["cpa_first/config.py", "cpa_first/logging_config.py", "cpa_first/db", "cpa_first/auth"]
+files = ["cpa_first/config.py", "cpa_first/logging_config.py", "cpa_first/db", "cpa_first/auth", "cpa_first/llm.py"]
 check_untyped_defs = true
 warn_unused_ignores = true
 

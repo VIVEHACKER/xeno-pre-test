@@ -13,9 +13,9 @@ import hashlib
 import json
 import os
 import re
+from collections.abc import Callable
 from dataclasses import dataclass, field
-from typing import Any, Callable
-
+from typing import Any
 
 DEFAULT_MODEL = "claude-opus-4-7"
 
@@ -64,6 +64,7 @@ def create_solver(
     mode: str | None = None,
     *,
     rag_dir: Any = None,
+    backend: str | None = None,
     **kwargs: Any,
 ) -> Solver:
     resolved_mode = mode or os.environ.get("CPA_SOLVER_MODE", "reasoned")
@@ -74,11 +75,33 @@ def create_solver(
         rag_chunks = load_chunks(rag_dir)
 
     if resolved_mode == "live":
+        # 백엔드 우선순위: 주입 invoke > backend 인자/CPA_LLM_BACKEND env > anthropic(기본).
+        if kwargs.get("invoke") is not None:
+            return Solver(
+                mode="live",
+                model=kwargs.get("model", DEFAULT_MODEL),
+                invoke=kwargs["invoke"],
+                rag_chunks=rag_chunks,
+                rag_top_k=kwargs.get("rag_top_k", 3),
+            )
+        chosen_backend = backend or os.environ.get("CPA_LLM_BACKEND")
+        if chosen_backend and chosen_backend.lower() != "anthropic":
+            from cpa_first.llm import make_invoke
+
+            model = kwargs.get("model") or os.environ.get("CPA_LLM_MODEL")
+            return Solver(
+                mode="live",
+                model=f"{chosen_backend.lower()}:{model or 'default'}",
+                invoke=make_invoke(chosen_backend, model=model),
+                rag_chunks=rag_chunks,
+                rag_top_k=kwargs.get("rag_top_k", 3),
+            )
         try:
             import anthropic  # type: ignore
         except ImportError as exc:
             raise RuntimeError(
-                "live 모드는 anthropic 패키지가 필요합니다: pip install anthropic"
+                "live 모드(anthropic)는 anthropic 패키지가 필요합니다. "
+                "키 없이 쓰려면 backend='codex' 또는 CPA_LLM_BACKEND=codex|ollama 사용."
             ) from exc
         client = anthropic.Anthropic()
         return Solver(
@@ -105,8 +128,8 @@ def _solve_mock(question: dict[str, Any]) -> SolveResult:
         question_id=question["question_id"],
         chosen_index=chosen,
         rationale=(
-            f"[MOCK] question_id 해시 기반 선택. 실제 추론 없음. "
-            f"운영에서는 CPA_SOLVER_MODE=live 로 전환."
+            "[MOCK] question_id 해시 기반 선택. 실제 추론 없음. "
+            "운영에서는 CPA_SOLVER_MODE=live 로 전환."
         ),
         mode="mock",
     )
@@ -143,9 +166,7 @@ USER_TEMPLATE = """과목: {subject}
 
 
 def _solve_live(question: dict[str, Any], solver: Solver) -> SolveResult:
-    choices_block = "\n".join(
-        f"{i}. {choice}" for i, choice in enumerate(question["choices"])
-    )
+    choices_block = "\n".join(f"{i}. {choice}" for i, choice in enumerate(question["choices"]))
     year = question.get("applicable_year")
     year_line = f"적용연도: {year}" if year else "적용연도: 미지정"
 
@@ -203,6 +224,7 @@ def _call_anthropic(solver: Solver, user_message: str) -> str:
 
     try:
         import anthropic  # type: ignore
+
         retriable = (
             getattr(anthropic, "RateLimitError", Exception),
             getattr(anthropic, "APIConnectionError", Exception),
@@ -230,7 +252,7 @@ def _call_anthropic(solver: Solver, user_message: str) -> str:
             last_err = exc
             if attempt == 2:
                 break
-            time.sleep(2 ** attempt * 5)  # 5s, 10s
+            time.sleep(2**attempt * 5)  # 5s, 10s
     assert last_err is not None
     raise last_err
 

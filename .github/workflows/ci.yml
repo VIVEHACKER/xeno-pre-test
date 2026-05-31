@@ -44,6 +44,8 @@ jobs:
           ruff check \
             cpa_first/config.py \
             cpa_first/logging_config.py \
+            cpa_first/ratelimit.py \
+            cpa_first/llm.py \
             cpa_first/db \
             cpa_first/auth
 

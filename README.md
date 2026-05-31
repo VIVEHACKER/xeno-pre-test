@@ -111,10 +111,35 @@ CI/CD는 `.github/workflows/ci.yml`(lint·typecheck·pytest·커버리지·alemb
 
 ```bash
 python -m cpa_first.cli.validate "data/sample/*.json" "data/seeds/**/*.json"
-pytest -q                     # 236 tests
-ruff check cpa_first/db cpa_first/auth cpa_first/config.py
+pytest -q                     # 248 tests
+ruff check cpa_first/config.py cpa_first/logging_config.py cpa_first/ratelimit.py cpa_first/llm.py cpa_first/db cpa_first/auth
 mypy                          # 신규 모듈 타입체크
 ```
+
+## AI 풀이 / 문제 생성 (키 없이)
+
+문제풀이·문항생성은 `invoke(system, user) -> str` 콜백을 통해 LLM 백엔드에 연결된다
+(`cpa_first/llm.py`). **Anthropic 키 없이** codex CLI나 로컬 ollama로 동작한다:
+
+```bash
+# 결정론(LLM 무관, 6개 공식 유형만 실제 추론):
+python -m cpa_first.benchmark.runner --mode reasoned
+
+# codex CLI 백엔드 (codex 자체 인증 사용, 키 불필요. 한 문항당 수십 초 → 배치/오프라인용):
+python -m cpa_first.benchmark.runner --backend codex --eval-dir data/seeds/evaluation
+
+# 로컬 ollama 백엔드 (완전 오프라인):
+CPA_OLLAMA_MODEL=qwen2.5:32b python -m cpa_first.benchmark.runner --backend ollama
+
+# anthropic (저지연 per-request 운영용, ANTHROPIC_API_KEY 필요):
+python -m cpa_first.benchmark.runner --backend anthropic
+```
+
+환경변수: `CPA_LLM_BACKEND`(codex|ollama|anthropic), `CPA_LLM_MODEL`, `CPA_OLLAMA_HOST/MODEL`.
+서버 solver도 `CPA_SOLVER_MODE=live` + `CPA_LLM_BACKEND`로 동일하게 백엔드를 고른다.
+
+> 참고: codex/ollama 백엔드는 호출당 수십 초로 **배치·오프라인(벤치마크·문항생성·검수)** 에 적합하다.
+> 저지연 per-request API 서빙에는 anthropic 백엔드(키)나 호스팅 모델을 권장.
 
 ## 초기 제품 정의
 
