@@ -1,0 +1,43 @@
+# 로컬 개발 — Postgres + 앱. 프로덕션은 PaaS 관리형 Postgres 사용.
+#   docker compose up db        # Postgres만 (로컬 개발 시 앱은 .venv로 실행)
+#   docker compose up --build   # 앱 + DB 전체 (P5 Dockerfile 필요)
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: cpa
+      POSTGRES_PASSWORD: cpa
+      POSTGRES_DB: cpa
+    ports:
+      - "5432:5432"
+    volumes:
+      - cpa_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cpa -d cpa"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      ENVIRONMENT: dev
+      DATABASE_URL: postgresql+psycopg://cpa:cpa@db:5432/cpa
+      JWT_SECRET: dev-only-compose-secret-not-for-prod-32chars
+      CORS_ORIGINS: "http://localhost:8000"
+      COOKIE_SECURE: "false"
+      LOG_JSON: "false"
+      PORT: "8000"
+    ports:
+      - "8000:8000"
+    # 마이그레이션 후 기동. 엔트리포인트가 alembic upgrade head 실행.
+    command: ["./scripts/docker-entrypoint.sh"]
+
+volumes:
+  cpa_pgdata:

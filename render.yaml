@@ -1,0 +1,65 @@
+# Render Blueprint — https://render.com/docs/blueprint-spec
+# Deploy with: connect this repo in the Render dashboard, or `render blueprint launch`.
+#
+# Shape:
+#   - one Docker web service (built from ./Dockerfile)
+#   - one managed Postgres database
+#   - DATABASE_URL wired from the database; JWT_SECRET auto-generated
+#
+# Migrations: the Docker entrypoint runs `alembic upgrade head` on boot when
+# DATABASE_URL is Postgres (see scripts/docker-entrypoint.sh). Render also
+# supports a preDeployCommand for an explicit release phase — provided below
+# (commented) if you prefer migrations to run as a separate pre-deploy step.
+
+databases:
+  - name: cpa-first-db
+    databaseName: cpa
+    user: cpa
+    plan: basic-256mb            # adjust to your needs (free tier sunset on Render)
+    postgresMajorVersion: "16"
+
+services:
+  - type: web
+    name: cpa-first
+    runtime: docker
+    plan: starter
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /readyz      # 200 when DB reachable, 503 otherwise
+    autoDeploy: true
+
+    # By default the container entrypoint runs `alembic upgrade head` on boot
+    # (and normalizes the Postgres driver scheme to postgresql+psycopg).
+    # For multi-instance plans, prefer a single release-phase migration:
+    # uncomment preDeployCommand AND set RUN_MIGRATIONS_ON_BOOT=0 below so web
+    # instances don't race on alembic_version.
+    # preDeployCommand: alembic upgrade head
+
+    envVars:
+      - key: ENVIRONMENT
+        value: prod
+      - key: DATABASE_URL
+        fromDatabase:
+          name: cpa-first-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true       # Render generates a strong value (>=32 chars)
+      - key: CORS_ORIGINS
+        # Same-origin static frontend is served by FastAPI, so the app's own
+        # public URL is the allowlisted origin. Replace with your real domain(s).
+        sync: false
+      - key: PORT
+        value: "8000"
+      - key: WEB_CONCURRENCY
+        value: "2"
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: LOG_JSON
+        value: "true"
+      # If you enable preDeployCommand above, also set this to "0" so web
+      # instances skip on-boot migrations (avoids concurrent alembic races):
+      # - key: RUN_MIGRATIONS_ON_BOOT
+      #   value: "0"
+      # Optional observability (extra is installed in the image):
+      - key: SENTRY_DSN
+        sync: false

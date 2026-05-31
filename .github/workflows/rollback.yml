@@ -1,0 +1,104 @@
+name: Rollback
+
+# Manual rollback: redeploy a previously-built, known-good image by its commit
+# SHA. The image must already exist in GHCR (it is pushed by ci.yml's deploy
+# job on every push to main, tagged ghcr.io/<repo>:<sha>).
+#
+# Usage (GitHub UI):
+#   Actions -> Rollback -> Run workflow -> enter the target image SHA.
+# Usage (gh CLI):
+#   gh workflow run rollback.yml -f image_sha=<full-or-prefix-sha>
+#
+# What it does:
+#   1. Verifies the requested image tag exists in GHCR (fails fast otherwise).
+#   2. Re-tags it as :latest so the PaaS picks up the rolled-back build.
+#   3. Triggers the same Render deploy hook (or Fly, commented) used by CI.
+#
+# NOTE: Migrations are NOT rolled back here. Schema rollbacks are intentionally
+# manual (`alembic downgrade <rev>`) because down-migrations can drop data.
+# This workflow only rolls back the application image.
+
+on:
+  workflow_dispatch:
+    inputs:
+      image_sha:
+        description: "Commit SHA of the GHCR image to redeploy (full or unique prefix)"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  packages: write
+
+env:
+  REGISTRY: ghcr.io
+
+jobs:
+  rollback:
+    name: Redeploy image by SHA
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Resolve target image
+        id: target
+        run: |
+          IMAGE="${REGISTRY}/${{ github.repository }}:${{ github.event.inputs.image_sha }}"
+          echo "Target image: ${IMAGE}"
+          # Fail fast if the tag does not exist in the registry.
+          if ! docker manifest inspect "${IMAGE}" > /dev/null 2>&1; then
+            echo "::error::Image ${IMAGE} not found in GHCR. Provide a SHA that was previously pushed by CI."
+            exit 1
+          fi
+          echo "image=${IMAGE}" >> "$GITHUB_OUTPUT"
+
+      - name: Re-tag target image as :latest
+        run: |
+          SRC="${{ steps.target.outputs.image }}"
+          DST="${REGISTRY}/${{ github.repository }}:latest"
+          docker pull "${SRC}"
+          docker tag "${SRC}" "${DST}"
+          docker push "${DST}"
+          echo "Re-tagged ${SRC} -> ${DST}"
+
+      # --- PaaS redeploy: Render -----------------------------------------------
+      # Render pulls ghcr.io/<repo>:latest (now pointing at the rolled-back SHA)
+      # and runs `alembic upgrade head` on boot via the container entrypoint.
+      - name: Trigger Render redeploy
+        if: env.RENDER_DEPLOY_HOOK != ''
+        env:
+          RENDER_DEPLOY_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK }}
+        run: |
+          echo "Triggering Render deploy hook for rolled-back image..."
+          curl --fail --silent --show-error --request POST "$RENDER_DEPLOY_HOOK"
+
+      # --- PaaS redeploy: Fly.io (alternative) ---------------------------------
+      # Uncomment to roll back on Fly.io instead. Deploys the exact SHA image.
+      #
+      # - name: Set up flyctl
+      #   if: env.FLY_API_TOKEN != ''
+      #   uses: superfly/flyctl-actions/setup-flyctl@master
+      #
+      # - name: Fly redeploy (pinned image)
+      #   if: env.FLY_API_TOKEN != ''
+      #   env:
+      #     FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+      #   run: |
+      #     flyctl deploy \
+      #       --image ${{ steps.target.outputs.image }} \
+      #       --remote-only
+
+      - name: Summary
+        run: |
+          {
+            echo "### Rollback triggered"
+            echo ""
+            echo "- Image: \`${{ steps.target.outputs.image }}\`"
+            echo "- Re-tagged as: \`${REGISTRY}/${{ github.repository }}:latest\`"
+            echo "- PaaS deploy hook fired (if configured)."
+          } >> "$GITHUB_STEP_SUMMARY"

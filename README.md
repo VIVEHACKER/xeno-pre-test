@@ -29,54 +29,91 @@ CPA 1차 회계학/세법개론을 시작점으로 하는 합격 운영체계 �
 - [샘플 문제 지능 데이터](data/sample/cpa_problem_intelligence.example.json)
 - [정적 MVP 프로토타입](prototype/index.html)
 
-## 프로토타입 실행
+## 아키텍처 (v0.2 — 다중 사용자 · Postgres · 인증)
 
-### 처방 엔진 + 동적 대시보드 (권장)
+`cpa_first` 패키지는 FastAPI 백엔드 + 정적 프론트엔드를 함께 서빙한다. 사용자별 런타임 상태
+(진단/처방/오답로그/응시진단)는 **Postgres**에 저장되고, 신원은 **JWT access 토큰(15분) +
+HttpOnly refresh 쿠키(7일)**에서만 도출된다(요청 바디에 `user_id` 없음 → IDOR 차단).
+지식베이스(decision rules / problems / terms / edges / rag)는 **번들 읽기전용**으로 시작 시
+메모리에 로드된다. 자세한 전환 설계는 [`docs/specs/2026-05-31-production-deployment-plan.md`](docs/specs/2026-05-31-production-deployment-plan.md) 참조.
 
-`cpa_first` 패키지(M1~M3 결과)는 FastAPI 백엔드와 정적 프론트엔드를 함께 서빙합니다.
+## 로컬 개발
 
-처음 한 번 의존성 설치:
+처음 한 번 의존성 설치 (Python 3.12):
 
-```powershell
-python -m pip install -e ".[dev]"
+```bash
+python3.12 -m venv .venv && . .venv/bin/activate
+pip install -e ".[dev]"
+cp .env.example .env   # 기본값은 로컬 SQLite + dev 설정 (DB 불필요)
 ```
 
-서버 실행:
+서버 실행 (기본 SQLite, 마이그레이션 불필요):
 
-```powershell
+```bash
 python -m cpa_first.api.main --host 127.0.0.1 --port 8000
-# 또는 console script
-cpa-serve --port 8000
+# 또는: cpa-serve --port 8000
 ```
 
-`http://127.0.0.1:8000`으로 접속하면 진단 입력이 바로 처방 엔진에 연결되고, 처방 카드 아래
-"처방 근거" 패널의 각 항목을 클릭하면 의사결정 규칙/문제 지능/사용자 상태 원본을 그대로
-조회할 수 있습니다.
+Postgres로 개발하려면:
 
-엔드포인트:
-
-- `POST /diagnose` — 사용자 상태 입력 → 처방 산출
-- `GET /prescription` — 마지막 진단 처방 재조회
-- `GET /problems/{problem_id}` — 문제 지능 카드
-- `GET /evidence/{ref_type}/{ref_id}` — 근거 추적 (decision_rule / problem_intelligence / user_state)
-- `POST /attempts/diagnose` — 선택 보기와 풀이 시간을 풀이맵으로 진단하고 누적
-- `GET /attempts` — 누적 응시 진단 로그 조회
-
-### 정적 모드 (백엔드 없이)
-
-```powershell
-cd "C:\Users\gidc111\all of me\prototype"
-python -m http.server 4173
+```bash
+docker compose up -d db   # 로컬 Postgres
+export DATABASE_URL="postgresql+psycopg://cpa:cpa@localhost:5432/cpa"
+alembic upgrade head      # 스키마 생성
+python -m cpa_first.api.main --port 8000
 ```
 
-`http://localhost:4173` 접속. 이 모드에서는 백엔드 기록은 남지 않지만,
-파이프라인이 만든 `data_manifest.json`, `subject_tutorials.json`, `problem_solution_maps.json`과 로컬 응시 진단 미리보기는 동작합니다.
+`http://127.0.0.1:8000` 접속 → 로그인/회원가입 후 진단 대시보드. 인증 흐름: 가입 시 access
+토큰(메모리) + refresh 쿠키 발급, 401이면 프론트가 자동으로 `/auth/refresh` 후 재시도.
+
+주요 엔드포인트:
+
+- 인증: `POST /auth/register`, `/auth/login`(5/분 제한), `/auth/refresh`, `/auth/logout`, `GET /auth/me`
+- 진단: `POST /diagnose`, `GET /prescription`, `POST /user-state/refresh` *(인증 필요)*
+- 로그/응시: `POST/GET/DELETE /logs`, `POST /attempts/diagnose`, `GET/DELETE /attempts` *(인증 필요)*
+- 지식그래프(공개): `GET /terms/search`, `GET /terms/{id}`, `GET /problems/{id}`, `GET /evidence/{ref_type}/{id}`
+- 검수(admin): `POST /review/{ref_type}/{ref_id}` → `review_overrides` 테이블에 기록(시드 불변)
+- 운영: `GET /livez`(liveness), `GET /readyz`(DB 포함 readiness), `GET /metrics`(Prometheus)
+
+## 환경 변수
+
+`.env.example` 참조. 핵심:
+
+| 변수 | 설명 |
+|---|---|
+| `ENVIRONMENT` | `dev` / `staging` / `prod` / `test` (prod는 부팅 시 필수값 검증) |
+| `DATABASE_URL` | `postgresql+psycopg://...` (bare `postgres://`도 자동 정규화). dev 기본은 SQLite |
+| `JWT_SECRET` | prod 필수, ≥32자 랜덤 |
+| `CORS_ORIGINS` | 콤마 구분 허용목록 (prod에서 `*` 금지). same-origin이면 비움 |
+| `COOKIE_SECURE` / `COOKIE_SAMESITE` | refresh 쿠키 플래그 (prod `true`/`strict`) |
+| `RATE_LIMIT_LOGIN` / `RATE_LIMIT_DEFAULT` | slowapi 한도 (기본 5/분, 100/분) |
+| `LOG_JSON`, `SENTRY_DSN`, `METRICS_ENABLED` | 관측성 |
+
+## 프로덕션 배포 (Docker → 관리형 PaaS)
+
+이미지 빌드/실행:
+
+```bash
+docker compose up --build    # 앱 + Postgres. 엔트리포인트가 alembic upgrade head 후 gunicorn 기동
+```
+
+관리형 PaaS:
+
+- **Render**: `render.yaml` 블루프린트 (Docker 웹서비스 + 관리형 Postgres, healthCheck `/readyz`, 마이그레이션은 release/엔트리포인트).
+- **Fly.io**: `fly.toml` (`[deploy].release_command = "alembic upgrade head"`, health `/readyz`). `flyctl postgres attach`로 DB 연결 후 `fly secrets set JWT_SECRET=...`.
+- **Railway**: 동일 `Dockerfile` 사용 (Postgres 애드온 + 환경변수).
+
+컨테이너는 non-root로 실행되고 코드/시드는 읽기전용, `data/runtime`만 쓰기 가능하다.
+CI/CD는 `.github/workflows/ci.yml`(lint·typecheck·pytest·커버리지·alembic up/down·docker build·GHCR push·배포)와
+`rollback.yml`(이미지 SHA 재배포)로 구성.
 
 ## 검증
 
-```powershell
+```bash
 python -m cpa_first.cli.validate "data/sample/*.json" "data/seeds/**/*.json"
-python -m pytest tests/
+pytest -q                     # 236 tests
+ruff check cpa_first/db cpa_first/auth cpa_first/config.py
+mypy                          # 신규 모듈 타입체크
 ```
 
 ## 초기 제품 정의

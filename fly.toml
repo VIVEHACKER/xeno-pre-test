@@ -1,0 +1,61 @@
+# Fly.io app configuration — https://fly.io/docs/reference/configuration/
+#
+# First-time setup (run from this directory):
+#   1. fly launch --no-deploy            # creates the app + this app name binding
+#   2. fly postgres create               # provision a managed Postgres cluster
+#   3. fly postgres attach <cluster>     # sets DATABASE_URL secret on the app
+#   4. fly secrets set JWT_SECRET="$(openssl rand -hex 32)"
+#   5. fly secrets set CORS_ORIGINS="https://<your-app>.fly.dev"
+#   6. fly secrets set COOKIE_SECURE=true LOG_JSON=true
+#   7. fly deploy
+#
+# Driver note: `fly postgres attach` sets DATABASE_URL as
+#   postgres://USER:PASS@HOST:5432/DB
+# The app uses psycopg v3 (psycopg[binary]); SQLAlchemy needs the
+# `postgresql+psycopg://` scheme. The container entrypoint normalizes the
+# scheme automatically at boot. The [deploy].release_command below ALSO
+# normalizes it inline (it runs outside the entrypoint), so no manual override
+# is required. If you prefer to be explicit you can still set:
+#   fly secrets set DATABASE_URL="postgresql+psycopg://USER:PASS@HOST:5432/DB"
+#
+# Postgres + all secrets are attached via flyctl (above); they are NOT stored
+# in this file. Only non-secret env lives in [env].
+
+app = "cpa-first"
+primary_region = "iad"   # change to your closest region (e.g. nrt for Seoul-adjacent)
+
+[build]
+  dockerfile = "Dockerfile"
+
+[deploy]
+  # Run migrations exactly once per release, before new machines take traffic.
+  # Runs outside the entrypoint, so normalize the psycopg v3 scheme inline.
+  release_command = "/bin/sh -c 'export DATABASE_URL=$(echo \"$DATABASE_URL\" | sed -E \"s#^postgres(ql)?(\\+psycopg2)?://#postgresql+psycopg://#\"); alembic upgrade head'"
+
+[env]
+  ENVIRONMENT = "prod"
+  PORT = "8000"
+  WEB_CONCURRENCY = "2"
+  LOG_JSON = "true"
+  COOKIE_SECURE = "true"
+  # Migrations run in the release phase above (once, pre-traffic), so web
+  # machines skip on-boot migration to avoid concurrent alembic_version races.
+  RUN_MIGRATIONS_ON_BOOT = "0"
+
+[http_service]
+  internal_port = 8000
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 1
+
+  [[http_service.checks]]
+    interval = "15s"
+    timeout = "5s"
+    grace_period = "20s"
+    method = "GET"
+    path = "/readyz"          # 200 when DB reachable, 503 otherwise
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "512mb"

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="app-shell">
+    <div class="app-shell" id="appShell" hidden>
       <aside class="sidebar">
         <div class="brand">
           <div class="brand-mark">CF</div>
@@ -40,6 +40,10 @@
             <div class="status-bar is-loading" id="statusBar" role="status" aria-live="polite">
               <span class="status-dot"></span>
               <span id="statusText">엔진 연결 확인 중…</span>
+            </div>
+            <div class="topbar-user" id="topbarUser" hidden>
+              <span class="topbar-user-email" id="topbarUserEmail"></span>
+              <button class="btn btn--sm btn--ghost" type="button" id="logoutBtn">로그아웃</button>
             </div>
           </div>
         </header>
@@ -453,6 +457,36 @@
     </div>
 
     <div class="toast-container" id="toastContainer" role="region" aria-label="알림"></div>
+
+    <div class="auth-gate" id="authGate" hidden>
+      <div class="auth-card" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+        <div class="auth-brand">
+          <div class="brand-mark">CF</div>
+          <div>
+            <strong>CPA First</strong>
+            <span>전략 엔진</span>
+          </div>
+        </div>
+        <h2 id="authTitle">로그인</h2>
+        <p class="auth-subtitle" id="authSubtitle">계정으로 로그인해 처방을 이어가세요.</p>
+        <form id="authForm" novalidate>
+          <label class="auth-field">
+            이메일
+            <input id="authEmail" type="email" autocomplete="email" required placeholder="you@example.com" />
+          </label>
+          <label class="auth-field">
+            비밀번호
+            <input id="authPassword" type="password" autocomplete="current-password" required minlength="8" placeholder="********" />
+          </label>
+          <p class="auth-error" id="authError" role="alert" hidden></p>
+          <button class="primary-action auth-submit" id="authSubmit" type="submit">로그인</button>
+        </form>
+        <p class="auth-toggle">
+          <span id="authTogglePrompt">계정이 없으신가요?</span>
+          <button class="auth-toggle-btn" type="button" id="authToggleBtn">회원가입</button>
+        </p>
+      </div>
+    </div>
 
     <script src="app.js"></script>
   </body>
