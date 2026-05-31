@@ -141,6 +141,22 @@ python -m cpa_first.benchmark.runner --backend anthropic
 > 참고: codex/ollama 백엔드는 호출당 수십 초로 **배치·오프라인(벤치마크·문항생성·검수)** 에 적합하다.
 > 저지연 per-request API 서빙에는 anthropic 백엔드(키)나 호스팅 모델을 권장.
 
+### 실전 기출로 재측정 (데이터는 직접 준비)
+
+현재 평가셋(`data/seeds/evaluation/`)은 LLM이 생성한 문항이라 LLM 풀이엔 in-distribution
+(낙관적)이다. **실제 기출** 정답률을 보려면 기출을 `evaluation_question` 스키마로 만들어
+별도 디렉터리에 넣고 같은 명령으로 돌린다 (코드 변경 불필요):
+
+```bash
+# 1) 기출을 data/seeds/past_exam/*.evaluation_question.json 로 작성 (스키마 검증)
+python -m cpa_first.cli.validate "data/seeds/past_exam/*.evaluation_question.json"
+# 2) 키 없이 codex로 채점
+python -m cpa_first.benchmark.runner --backend codex --eval-dir data/seeds/past_exam
+```
+
+> 기출 데이터 자체는 저작권·정확성 문제로 리포에 포함하지 않는다. 보유한 기출/정답을
+> 스키마에 맞춰 넣으면 보수적(실전 기준) 정답률이 산출된다.
+
 ## 초기 제품 정의
 
 > CPA 1차 회계학/세법개론 수험생에게, 합격일까지 남은 시간과 현재 실력을 기준으로 오늘 풀 문제, 복습할 개념, 버릴 유형, 회독 순서를 결정해주는 AI 합격 코치.
