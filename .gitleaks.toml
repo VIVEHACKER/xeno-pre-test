@@ -1,0 +1,21 @@
+# gitleaks 설정 — 기본 룰셋 + dev/test placeholder만 정확히 allowlist.
+# 실제 시크릿은 계속 탐지됨 (아래 정확한 placeholder 값/경로만 예외).
+
+title = "cpa-first gitleaks"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "dev/test placeholder secrets (실제 시크릿 아님)"
+# 정확한 placeholder 문자열만 허용 — 실제 시크릿은 매칭되지 않음.
+regexes = [
+  '''dev-insecure-change-me''',
+  '''dev-only-compose-secret-not-for-prod-32chars''',
+  '''test-secret-0123456789-0123456789''',
+  '''verify-secret-0123456789-0123456789-abcd''',
+]
+# .env.example은 템플릿(placeholder만).
+paths = [
+  '''\.env\.example$''',
+]
