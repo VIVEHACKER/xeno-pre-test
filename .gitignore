@@ -33,3 +33,7 @@ Thumbs.db
 .idea/
 *.swp
 .gstack/
+.harness/
+.claude/
+CLAUDE.md
+.omx/

@@ -1,0 +1,48 @@
+# Build context hygiene — keep the image small and free of dev/secret cruft.
+# IMPORTANT: data/seeds and prototype/ are NOT excluded (needed at runtime).
+
+# Virtualenvs
+.venv
+venv
+
+# VCS / CI
+.git
+.github
+
+# Caches
+.pytest_cache
+.mypy_cache
+.ruff_cache
+__pycache__
+**/__pycache__
+*.pyc
+
+# Harness / agent tooling
+.harness
+.claude
+CLAUDE.md
+
+# Tests & docs (not needed in the runtime image)
+tests
+docs
+
+# Runtime / generated data (regenerated; never bake into the image)
+data/runtime
+data/warehouse
+*.sqlite3
+
+# Secrets / local env
+.env
+.env.*
+!.env.example
+
+# Heavy one-off seed scripts (data/seeds JSON is kept; these builders are not)
+scripts/_seed_*
+
+# Node / frontend tooling (prototype/ static assets are kept above)
+node_modules
+
+# Packaging artifacts
+*.egg-info
+build
+dist

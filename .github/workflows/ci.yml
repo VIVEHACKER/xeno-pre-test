@@ -6,29 +6,54 @@ on:
   pull_request:
     branches: [main]
 
+# Avoid wasted runs: cancel superseded runs on the same ref.
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  PYTHON_VERSION: "3.12"
+  IMAGE_NAME: cpa-first
+
 jobs:
-  test:
+  # ---------------------------------------------------------------------------
+  # Lint + type-check + tests (with coverage) + JSON seed validation.
+  # ---------------------------------------------------------------------------
+  quality:
+    name: Quality (lint, types, tests, seeds)
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: ["3.11", "3.12"]
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Set up Python ${{ env.PYTHON_VERSION }}
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: ${{ env.PYTHON_VERSION }}
           cache: pip
 
-      - name: Install
+      - name: Install project (dev + observability extras)
         run: |
           python -m pip install --upgrade pip
-          pip install -e ".[dev]"
+          pip install -e ".[dev,observability]"
 
-      - name: Run pytest
-        run: pytest -v
+      - name: Ruff lint (new production modules)
+        run: |
+          ruff check \
+            cpa_first/config.py \
+            cpa_first/logging_config.py \
+            cpa_first/ratelimit.py \
+            cpa_first/llm.py \
+            cpa_first/db \
+            cpa_first/auth
+
+      - name: Mypy type-check (scoped via pyproject)
+        run: mypy
+
+      - name: Pytest with coverage
+        run: pytest -q --cov=cpa_first --cov-report=term-missing
 
       - name: Validate JSON seeds against schemas
         run: |
@@ -39,3 +64,162 @@ jobs:
             "data/seeds/rag/*.rag_chunk.json" \
             "data/seeds/terms/*.term.json" \
             --quiet
+
+  # ---------------------------------------------------------------------------
+  # Prove Alembic migrations work up AND down against a real Postgres 16.
+  # ---------------------------------------------------------------------------
+  migrations:
+    name: Migrations (up / down / up on Postgres 16)
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: postgres
+        ports:
+          - 5432:5432
+        # Wait until Postgres is ready before the job's steps run.
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      DATABASE_URL: postgresql+psycopg://postgres:postgres@localhost:5432/postgres
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ env.PYTHON_VERSION }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+
+      - name: Install project
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Alembic upgrade head
+        run: alembic upgrade head
+
+      - name: Alembic downgrade base (prove down migrations work)
+        run: alembic downgrade base
+
+      - name: Alembic upgrade head (prove re-apply works)
+        run: alembic upgrade head
+
+  # ---------------------------------------------------------------------------
+  # Secret scanning. Own job so it gates independently of build/test.
+  # ---------------------------------------------------------------------------
+  secret-scan:
+    name: Secret scan (gitleaks)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # gitleaks scans git history; fetch it all.
+          fetch-depth: 0
+
+      - name: Gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # GITLEAKS_LICENSE is only required for gitleaks-action in GitHub
+          # organizations; harmless (empty) for personal repos.
+          GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE }}
+
+  # ---------------------------------------------------------------------------
+  # Prove the container image builds. Depends on the Dockerfile created by a
+  # separate task; if the Dockerfile is missing the build (and thus this job)
+  # fails loudly, which is the intended signal.
+  # ---------------------------------------------------------------------------
+  docker-build:
+    name: Docker build (verify image builds)
+    runs-on: ubuntu-latest
+    needs: quality
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build image (no push)
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: false
+          tags: ${{ env.IMAGE_NAME }}:ci
+          load: true
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  # ---------------------------------------------------------------------------
+  # Build + push to GHCR, then trigger the PaaS deploy. main + push only.
+  # Migrations are run on the PaaS by the container entrypoint (alembic upgrade
+  # head), NOT here — this job only ships the image and pings the deploy hook.
+  # ---------------------------------------------------------------------------
+  deploy:
+    name: Deploy (GHCR + Render)
+    runs-on: ubuntu-latest
+    needs: [quality, migrations, docker-build]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push image (tagged by commit SHA)
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository }}:${{ github.sha }}
+            ghcr.io/${{ github.repository }}:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      # --- PaaS deploy: Render -------------------------------------------------
+      # GitHub Actions has no native `if: secrets.X` syntax, so we surface the
+      # secret as an env var (env can read secrets) and gate the step on it.
+      # The Render service is configured to pull ghcr.io/<repo>:latest and runs
+      # `alembic upgrade head` on boot via the container entrypoint.
+      - name: Trigger Render deploy
+        if: env.RENDER_DEPLOY_HOOK != ''
+        env:
+          RENDER_DEPLOY_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK }}
+        run: |
+          echo "Triggering Render deploy hook..."
+          curl --fail --silent --show-error --request POST "$RENDER_DEPLOY_HOOK"
+
+      # --- PaaS deploy: Fly.io (alternative) -----------------------------------
+      # Uncomment to use Fly.io instead of Render. Requires FLY_API_TOKEN secret
+      # and a fly.toml in the repo. Fly also runs `alembic upgrade head` on
+      # deploy via the container entrypoint / [deploy] release_command.
+      #
+      # - name: Set up flyctl
+      #   if: env.FLY_API_TOKEN != ''
+      #   uses: superfly/flyctl-actions/setup-flyctl@master
+      #
+      # - name: Fly deploy
+      #   if: env.FLY_API_TOKEN != ''
+      #   env:
+      #     FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+      #   run: |
+      #     flyctl deploy \
+      #       --image ghcr.io/${{ github.repository }}:${{ github.sha }} \
+      #       --remote-only

@@ -14,11 +14,11 @@ from __future__ import annotations
 
 import math
 import re
+from collections.abc import Callable
 from dataclasses import dataclass, field
-from typing import Any, Callable
+from typing import Any
 
 from cpa_first.solver.solver import SolveResult
-
 
 Rule = Callable[[dict[str, Any]], "ReasonedTrace | None"]
 
@@ -116,7 +116,9 @@ def _unsupported_trace(question: dict[str, Any]) -> ReasonedTrace:
 
 def _trap_patterns(question: dict[str, Any]) -> list[str]:
     """평가셋의 attractor_traps를 trap_patterns로 펼친다. 출제자가 의도한 함정 = 숨겨진 의도."""
-    return [str(t) for t in (question.get("attractor_traps") or []) if isinstance(t, str) and t.strip()]
+    return [
+        str(t) for t in (question.get("attractor_traps") or []) if isinstance(t, str) and t.strip()
+    ]
 
 
 def _entry_point_from_question(question: dict[str, Any]) -> str:
@@ -158,7 +160,8 @@ def _known_solution_trace(question: dict[str, Any]) -> ReasonedTrace | None:
         rule_id="known_solution_bank",
         chosen_index=chosen,
         answer_text=f"{chosen + 1}번 {choices[chosen]}",
-        signals=_stem_signals(question.get("stem", "")) or [
+        signals=_stem_signals(question.get("stem", ""))
+        or [
             "검수 풀이 데이터가 존재하는 기출/학습 문항",
             f"과목={question.get('subject')}, 단원={question.get('unit')}",
         ],
@@ -409,7 +412,11 @@ def _solve_revaluation_loss(question: dict[str, Any]) -> ReasonedTrace | None:
         chosen_index=chosen,
         answer_text=f"{chosen + 1}번 {question['choices'][chosen]}",
         signals=["재평가모형", "감가상각누계액 제거", "재평가손실", "잉여금 대체 없음"],
-        concepts=["재평가증가분은 OCI", "이후 감소분은 기존 재평가잉여금 먼저 차감", "초과 감소분은 당기손익"],
+        concepts=[
+            "재평가증가분은 OCI",
+            "이후 감소분은 기존 재평가잉여금 먼저 차감",
+            "초과 감소분은 당기손익",
+        ],
         formula_steps=[
             f"1차 감가상각비 = ({cost:,.0f} - {residual:,.0f}) / {life} = {first_depr:,.0f}원",
             f"1차 재평가잉여금 = {fair_value_1:,.0f} - {carrying_before_first_revaluation:,.0f} = {surplus:,.0f}원",
@@ -443,9 +450,7 @@ def _solve_corporate_tax(question: dict[str, Any]) -> ReasonedTrace | None:
         formula_steps.append(f"산출세액 = {base:,.0f} × 9% = {value:,.0f}원")
     else:
         excess = min(base, 20_000_000_000) - 200_000_000
-        formula_steps.append(
-            f"산출세액 = 200,000,000×9% + {excess:,.0f}×19% = {value:,.0f}원"
-        )
+        formula_steps.append(f"산출세액 = 200,000,000×9% + {excess:,.0f}×19% = {value:,.0f}원")
 
     return ReasonedTrace(
         rule_id="tax_corporate_progressive_rate",
@@ -489,6 +494,83 @@ def _corporate_tax_2026(base: float) -> float:
     return tax
 
 
+def _solve_straight_line_depreciation(question: dict[str, Any]) -> ReasonedTrace | None:
+    stem = question.get("stem", "")
+    if "정액법" not in stem or "감가상각" not in stem:
+        return None
+    # 누계액은 경과연수 의존 → 미지원(연 감가상각비만 확정, 오답 방지)
+    if "감가상각누계액" in stem:
+        return None
+    # 숫자 앞 조사(은/는/이/가/:)·공백 허용
+    cost = re.search(r"취득원가[^0-9]{0,6}([0-9,]+)\s*원", stem)
+    life = re.search(r"내용연수[^0-9]{0,4}(\d+)\s*년", stem)
+    if not cost or not life:
+        return None
+    residual = re.search(r"잔존가치[^0-9]{0,6}([0-9,]+)\s*원", stem)
+    c = _parse_number(cost.group(1))
+    n = int(life.group(1))
+    r = _parse_number(residual.group(1)) if residual else 0.0
+    if n <= 0:
+        return None
+    annual = (c - r) / n
+    value = math.floor(annual) if "절사" in stem else round(annual)
+    chosen = _choose_closest_money(question["choices"], value)
+    if chosen < 0:
+        return None
+
+    return ReasonedTrace(
+        rule_id="accounting_straight_line_depreciation",
+        chosen_index=chosen,
+        answer_text=f"{chosen + 1}번 {question['choices'][chosen]}",
+        signals=["정액법", "감가상각", "취득원가", "내용연수"],
+        concepts=["정액법 감가상각비 = (취득원가 - 잔존가치) / 내용연수"],
+        formula_steps=[
+            f"취득원가 = {c:,.0f}원, 잔존가치 = {r:,.0f}원, 내용연수 = {n}년",
+            f"감가상각비 = ({c:,.0f} - {r:,.0f}) / {n} = {value:,.0f}원",
+        ],
+        choice_notes=_choice_notes(question["choices"], chosen, value),
+        computed_value=value,
+        confidence=0.93,
+        entry_point="감가가능액(취득원가-잔존가치)을 내용연수로 균등 배분",
+        trap_patterns=_trap_patterns(question),
+    )
+
+
+def _solve_bep_sales(question: dict[str, Any]) -> ReasonedTrace | None:
+    stem = question.get("stem", "")
+    if "손익분기점" not in stem or "매출" not in stem:
+        return None
+    fixed = re.search(r"고정(?:원가|비)[^0-9]{0,8}([0-9,]+)\s*원", stem)
+    cmr = re.search(r"공헌이익률[^0-9]{0,6}([0-9.]+)\s*%", stem)
+    if not fixed or not cmr:
+        return None
+    f = _parse_number(fixed.group(1))
+    ratio = float(cmr.group(1)) / 100
+    if ratio <= 0:
+        return None
+    value = round(f / ratio)
+    chosen = _choose_closest_money(question["choices"], value)
+    if chosen < 0:
+        return None
+
+    return ReasonedTrace(
+        rule_id="cost_bep_sales",
+        chosen_index=chosen,
+        answer_text=f"{chosen + 1}번 {question['choices'][chosen]}",
+        signals=["손익분기점", "고정비", "공헌이익률"],
+        concepts=["손익분기점 매출액 = 고정비 / 공헌이익률"],
+        formula_steps=[
+            f"고정비 = {f:,.0f}원, 공헌이익률 = {ratio:.1%}",
+            f"BEP 매출액 = {f:,.0f} / {ratio:.1%} = {value:,.0f}원",
+        ],
+        choice_notes=_choice_notes(question["choices"], chosen, value),
+        computed_value=value,
+        confidence=0.92,
+        entry_point="고정비를 공헌이익률로 나눠 손익분기 매출액 산출",
+        trap_patterns=_trap_patterns(question),
+    )
+
+
 def _stem_signals(stem: str) -> list[str]:
     candidates = [
         "순현재가치",
@@ -499,6 +581,9 @@ def _stem_signals(stem: str) -> list[str]:
         "재평가모형",
         "법인세율",
         "산출세액",
+        "정액법",
+        "손익분기점",
+        "공헌이익률",
     ]
     return [signal for signal in candidates if signal in stem]
 
@@ -535,7 +620,7 @@ def _money_values(text: str) -> list[float]:
     values: list[float] = []
     for match in re.finditer(r"(?:₩\s*)?([0-9][0-9,]*(?:\.\d+)?)\s*(억\s*원|억원|원)?", text):
         unit = (match.group(2) or "").replace(" ", "")
-        if unit in {"억원", "억원"}:
+        if unit in {"억원"}:
             values.append(_parse_number(match.group(1)) * 100_000_000)
         elif unit == "원" or match.group(0).strip().startswith("₩"):
             values.append(_parse_number(match.group(1)))
@@ -546,7 +631,7 @@ def _money_after(stem: str, label: str) -> float | None:
     start = stem.find(label)
     if start < 0:
         return None
-    window = stem[start + len(label): start + len(label) + 120]
+    window = stem[start + len(label) : start + len(label) + 120]
     match = re.search(r"([0-9][0-9,]*)원", window)
     return _parse_number(match.group(1)) if match else None
 
@@ -562,4 +647,6 @@ _RULES: tuple[Rule, ...] = (
     _solve_gordon_growth,
     _solve_revaluation_loss,
     _solve_corporate_tax,
+    _solve_straight_line_depreciation,
+    _solve_bep_sales,
 )

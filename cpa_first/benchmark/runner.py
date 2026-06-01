@@ -11,23 +11,25 @@ from __future__ import annotations
 import argparse
 import json
 import re
+from collections.abc import Callable
 from dataclasses import asdict, dataclass, field
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any
 
 from dotenv import load_dotenv
 
 from cpa_first.solver import create_solver, load_evaluation_questions
 from cpa_first.solver.solver import Solver, SolveResult
 
-
 # 풀이 품질 객관 지표용 정규식.
 # K-IFRS 1xxx호, 법인세법/소득세법/부가가치세법/상법/국세기본법 등 조문 인용 탐지.
 _CITATION_PATTERNS = [
     re.compile(r"K[-\s]?IFRS\s*1\d{3}호?", re.IGNORECASE),
     re.compile(r"기업회계기준서"),
-    re.compile(r"(법인세법|소득세법|부가가치세법|상속세\s*및\s*증여세법|국세기본법|상법|국제조세조정)(\s*시행령|\s*시행규칙)?\s*제\s*\d+조"),
+    re.compile(
+        r"(법인세법|소득세법|부가가치세법|상속세\s*및\s*증여세법|국세기본법|상법|국제조세조정)(\s*시행령|\s*시행규칙)?\s*제\s*\d+조"
+    ),
     re.compile(r"제\s*\d+조의?\s*\d*"),
 ]
 _INSUFFICIENT_RE = re.compile(r"INSUFFICIENT\s+EVIDENCE", re.IGNORECASE)
@@ -88,11 +90,11 @@ class BenchmarkResult:
 
 
 def _now_iso() -> str:
-    return datetime.now(timezone.utc).isoformat(timespec="seconds")
+    return datetime.now(UTC).isoformat(timespec="seconds")
 
 
 def _run_id() -> str:
-    return datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    return datetime.now(UTC).strftime("%Y%m%dT%H%M%SZ")
 
 
 def _count_citations(text: str) -> int:
@@ -192,14 +194,18 @@ def _compute_quality_metrics(scores: list[QuestionScore]) -> dict[str, Any]:
     attractor_hits = sum(1 for s in wrong_with_traps if s.attractor_hit)
     return {
         "answer_parse_rate": round(sum(1 for s in scores if s.answer_parse_ok) / n, 4),
-        "insufficient_evidence_rate": round(sum(1 for s in scores if s.insufficient_evidence) / n, 4),
+        "insufficient_evidence_rate": round(
+            sum(1 for s in scores if s.insufficient_evidence) / n, 4
+        ),
         "avg_rationale_chars": round(sum(rationale_chars) / n, 1),
         "min_rationale_chars": min(rationale_chars),
         "max_rationale_chars": max(rationale_chars),
         "avg_citation_count": round(sum(citation_counts) / n, 2),
         "answered_with_citation_rate": round(sum(1 for c in citation_counts if c > 0) / n, 4),
         "attractor_traps_evaluated": len(wrong_with_traps),
-        "attractor_hit_rate_among_wrong": round(attractor_hits / len(wrong_with_traps), 4) if wrong_with_traps else None,
+        "attractor_hit_rate_among_wrong": round(attractor_hits / len(wrong_with_traps), 4)
+        if wrong_with_traps
+        else None,
     }
 
 
@@ -241,6 +247,7 @@ def run_benchmark(
     progress_every = max(1, total // 20)  # 5% 단위 진행률
     import sys
     import time as _time
+
     t0 = _time.monotonic()
     for idx, q in enumerate(questions, start=1):
         try:
@@ -260,7 +267,7 @@ def run_benchmark(
             rate = idx / elapsed if elapsed > 0 else 0.0
             eta = (total - idx) / rate if rate > 0 else 0.0
             print(
-                f"[bench] {idx}/{total} ({idx*100//total}%) "
+                f"[bench] {idx}/{total} ({idx * 100 // total}%) "
                 f"elapsed={elapsed:.0f}s eta={eta:.0f}s",
                 file=sys.stderr,
                 flush=True,
@@ -281,9 +288,9 @@ def run_benchmark(
     pass_status = _pass_status(per_subject, overall)
     quality_metrics = _compute_quality_metrics(graded_scores)
     quality_metrics["flagged_excluded"] = len(flagged_scores)
-    quality_metrics["flagged_reasons"] = sorted({
-        (s.questionable_reason or "unspecified") for s in flagged_scores
-    })
+    quality_metrics["flagged_reasons"] = sorted(
+        {(s.questionable_reason or "unspecified") for s in flagged_scores}
+    )
     finished_at = _now_iso()
 
     result = BenchmarkResult(
@@ -327,11 +334,24 @@ def _serialize(result: BenchmarkResult) -> dict[str, Any]:
 def cli() -> int:
     parser = argparse.ArgumentParser(description="CPA First 응시자 벤치마크")
     parser.add_argument("--mode", choices=["reasoned", "mock", "stub", "live"], default=None)
+    parser.add_argument(
+        "--backend",
+        choices=["codex", "ollama", "anthropic"],
+        default=None,
+        help="live 모드 LLM 백엔드. 지정 시 mode=live 강제 (키 없이 codex/ollama 가능).",
+    )
+    parser.add_argument("--model", default=None, help="백엔드 모델 override")
     parser.add_argument("--eval-dir", type=Path, default=None)
     parser.add_argument("--no-persist", action="store_true")
     args = parser.parse_args()
 
-    solver = create_solver(mode=args.mode) if args.mode else create_solver()
+    extra = {"model": args.model} if args.model else {}
+    if args.backend:
+        solver = create_solver(mode="live", backend=args.backend, **extra)
+    elif args.mode:
+        solver = create_solver(mode=args.mode, **extra)
+    else:
+        solver = create_solver()
     result = run_benchmark(
         eval_dir=args.eval_dir,
         solver=solver,
@@ -350,8 +370,10 @@ def cli() -> int:
     print()
     print("[by subject]")
     for subject, stats in result.per_subject.items():
-        print(f"  - {subject:<10} {stats['correct']}/{int(stats['total'])} "
-              f"= {stats['accuracy'] * 100:.1f}%")
+        print(
+            f"  - {subject:<10} {stats['correct']}/{int(stats['total'])} "
+            f"= {stats['accuracy'] * 100:.1f}%"
+        )
     if result.per_difficulty:
         print()
         print("[by difficulty]")
@@ -359,21 +381,27 @@ def cli() -> int:
             if diff not in result.per_difficulty:
                 continue
             stats = result.per_difficulty[diff]
-            print(f"  - {diff:<10} {stats['correct']}/{int(stats['total'])} "
-                  f"= {stats['accuracy'] * 100:.1f}%")
+            print(
+                f"  - {diff:<10} {stats['correct']}/{int(stats['total'])} "
+                f"= {stats['accuracy'] * 100:.1f}%"
+            )
     if result.per_bloom:
         print()
         print("[by bloom level]")
         for level, stats in result.per_bloom.items():
-            print(f"  - {level:<10} {stats['correct']}/{int(stats['total'])} "
-                  f"= {stats['accuracy'] * 100:.1f}%")
+            print(
+                f"  - {level:<10} {stats['correct']}/{int(stats['total'])} "
+                f"= {stats['accuracy'] * 100:.1f}%"
+            )
     if result.quality_metrics:
         print()
         print("[rationale quality]")
         qm = result.quality_metrics
         print(f"  answer_parse_rate         : {qm['answer_parse_rate'] * 100:.1f}%")
         print(f"  insufficient_evidence_rate: {qm['insufficient_evidence_rate'] * 100:.1f}%")
-        print(f"  avg_rationale_chars       : {qm['avg_rationale_chars']:.0f} (min {qm['min_rationale_chars']}, max {qm['max_rationale_chars']})")
+        print(
+            f"  avg_rationale_chars       : {qm['avg_rationale_chars']:.0f} (min {qm['min_rationale_chars']}, max {qm['max_rationale_chars']})"
+        )
         print(f"  avg_citation_count        : {qm['avg_citation_count']:.2f}")
         print(f"  answered_with_citation    : {qm['answered_with_citation_rate'] * 100:.1f}%")
         if qm.get("attractor_hit_rate_among_wrong") is not None:
