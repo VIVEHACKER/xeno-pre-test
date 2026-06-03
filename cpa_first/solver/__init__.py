@@ -7,16 +7,17 @@ live 모드: Anthropic Claude API 호출. ANTHROPIC_API_KEY 필요.
 환경변수 CPA_SOLVER_MODE=live 또는 인자로 mode='live' 지정.
 """
 
+from cpa_first.solver.ensemble import EnsembleSolver, create_ensemble_solver
+from cpa_first.solver.solver import (
+    Solver,
+    SolveResult,
+    create_solver,
+    load_evaluation_questions,
+)
 from cpa_first.solver.tools import (
     amortization_table,
     calculator,
     date_diff,
-)
-from cpa_first.solver.solver import (
-    SolveResult,
-    Solver,
-    create_solver,
-    load_evaluation_questions,
 )
 
 __all__ = [
@@ -24,6 +25,8 @@ __all__ = [
     "SolveResult",
     "create_solver",
     "load_evaluation_questions",
+    "EnsembleSolver",
+    "create_ensemble_solver",
     "calculator",
     "amortization_table",
     "date_diff",
