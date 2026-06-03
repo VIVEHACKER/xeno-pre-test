@@ -1,0 +1,29 @@
+{
+  "question_id": "cpa1-genh-business-005",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "조직이론 - 조직구조 및 통제",
+  "applicable_year": 2026,
+  "stem": "조직이론의 여러 개념에 관한 다음 설명 중 가장 옳은 것은?",
+  "choices": [
+    "민츠버그(Mintzberg)의 조직유형 중 '기계적 관료제(machine bureaucracy)'는 핵심 조정기제로 산출물의 표준화(standardization of outputs)를 사용하며, 사업부제(divisionalized form)의 핵심부문은 운영핵심(operating core)이다",
+    "번스와 스토커(Burns & Stalker)에 따르면 안정적이고 예측 가능한 환경에는 분권화·낮은 공식화의 유기적 구조(organic structure)가, 동태적 환경에는 기계적 구조(mechanistic structure)가 더 적합하다",
+    "톰슨(Thompson)의 기술 분류에서 '집약형 기술(intensive technology)'은 종합병원처럼 다양한 기술이 대상에 맞춰 결합되며, 부서 간 상호의존성이 가장 높은 교호적(reciprocal) 의존성을 보인다",
+    "우드워드(Woodward)의 연구에서 대량생산(mass production) 기술 조직은 단위소량생산이나 연속공정생산 조직에 비해 관리계층의 수가 가장 적고 통제범위가 좁은(narrow) 유기적 구조를 띤다"
+  ],
+  "correct_choice": 2,
+  "correct_answer": "톰슨(Thompson)의 기술 분류에서 '집약형 기술(intensive technology)'은 종합병원처럼 다양한 기술이 대상에 맞춰 결합되며, 부서 간 상호의존성이 가장 높은 교호적(reciprocal) 의존성을 보인다",
+  "explanation": "정답(3): 톰슨은 상호의존성을 집합적(pooled)<순차적(sequential)<교호적(reciprocal) 순으로 분류했고, 집약형 기술은 병원·연구개발처럼 대상의 상태에 따라 여러 전문기술을 가변적으로 투입·재결합하므로 교호적(상호) 의존성이 가장 높고 조정난이도와 비용도 가장 크다. 오답(1): 기계적 관료제의 핵심 조정기제는 '산출물 표준화'가 아니라 '작업과정(업무)의 표준화(standardization of work processes)'이며 핵심부문은 기술구조(technostructure)이다. 사업부제는 산출물 표준화·중간관리층(middle line)이 핵심이다. 오답(2): 번스와 스토커는 안정적 환경에 기계적 구조, 동태적·불확실한 환경에 유기적 구조가 적합하다고 보았다(설명이 정반대). 오답(4): 우드워드 연구에서 관리계층이 가장 많고 통제범위가 가장 넓은 것은 연속공정생산이며, 단위소량·연속공정생산이 유기적, 대량생산이 기계적 구조에 가깝다.",
+  "concept_tags": [],
+  "expected_seconds": 120,
+  "difficulty": "hard",
+  "difficulty_score": 4,
+  "bloom_level": "analyze",
+  "attractor_traps": [
+    "선택1: 기계적 관료제(작업과정 표준화/기술구조)와 사업부제(산출물 표준화/중간라인)의 조정기제·핵심부문을 서로 뒤바꾼 정의 혼동",
+    "선택2: 번스와 스토커의 환경-구조 적합 관계(안정→기계적, 동태→유기적)를 정반대로 서술",
+    "선택4: 우드워드의 기술복잡성-구조 관계에서 대량생산(기계적)을 유기적이라 하고 통제범위·계층수를 반대로 기술"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}
