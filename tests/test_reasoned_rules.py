@@ -50,8 +50,44 @@ def test_bep_sales():
     assert res.chosen_index == 2  # 3,000,000 / 0.30 = 10,000,000
 
 
+def test_cogs():
+    q = _q(
+        "cogs-1",
+        "㈜한국의 기초상품재고는 200,000원, 당기순매입액은 1,500,000원, "
+        "기말상품재고는 300,000원이다. 매출원가는 얼마인가?",
+        ["1,300,000원", "1,400,000원", "1,500,000원", "1,600,000원"],
+    )
+    res = solve_reasoned(q)
+    assert res.tool_calls[0]["rule_id"] == "accounting_cogs"
+    assert res.chosen_index == 1  # 200,000 + 1,500,000 − 300,000 = 1,400,000
+
+
+def test_cogs_skips_complex():
+    # 평가손실/감모 등 복잡형은 규칙 미발동 (오답 방지)
+    q = _q(
+        "cogs-2",
+        "기초재고 200,000원, 당기매입 1,500,000원, 기말재고 300,000원이며 "
+        "재고자산평가손실 50,000원이 발생했다. 매출원가는?",
+        ["1,400,000원", "1,450,000원", "1,500,000원", "1,350,000원"],
+    )
+    res = solve_reasoned(q)
+    assert res.tool_calls[0]["rule_id"] != "accounting_cogs"
+
+
+def test_eps():
+    q = _q(
+        "eps-1",
+        "㈜대한의 당기순이익은 11,000,000원, 우선주배당금은 1,000,000원이며 "
+        "가중평균유통보통주식수는 10,000주이다. 기본주당순이익(EPS)은?",
+        ["900원", "1,000원", "1,100원", "1,200원"],
+    )
+    res = solve_reasoned(q)
+    assert res.tool_calls[0]["rule_id"] == "accounting_eps"
+    assert res.chosen_index == 1  # (11,000,000 − 1,000,000) / 10,000 = 1,000
+
+
 def test_rule_does_not_misfire_on_unrelated():
-    # 정액법/손익분기점 신호 없는 문항엔 신규 규칙이 발동하지 않음
+    # 계산 신호 없는 개념형 문항엔 신규 계산 규칙이 발동하지 않음
     q = _q(
         "u-1",
         "다음 중 무형자산으로 분류할 수 없는 것은?",
@@ -61,4 +97,6 @@ def test_rule_does_not_misfire_on_unrelated():
     assert res.tool_calls[0]["rule_id"] not in {
         "accounting_straight_line_depreciation",
         "cost_bep_sales",
+        "accounting_cogs",
+        "accounting_eps",
     }
