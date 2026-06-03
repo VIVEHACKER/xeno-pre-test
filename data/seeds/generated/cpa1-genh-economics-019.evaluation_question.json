@@ -1,0 +1,31 @@
+{
+  "question_id": "cpa1-genh-economics-019",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "거시-환율/국제수지(이자율평가)",
+  "applicable_year": 2026,
+  "stem": "현재 원/달러 현물환율 S = 1,040 (원/$)이다. 국내(원화) 명목이자율 i = 8%, 미국(달러) 명목이자율 i* = 4% 이며, 모두 동일 만기 1년 기준이다. 위험을 고려하지 않은 무위험이자율평가(커버된 이자율평가, CIP)가 성립할 때 1년 만기 선물환율 F(원/$)는?",
+  "choices": [
+    "1,080",
+    "1,081.6",
+    "1,000",
+    "1,000.5"
+  ],
+  "correct_choice": 0,
+  "correct_answer": "1,080",
+  "explanation": "CIP: F/S = (1+i)/(1+i*) → F = 1,040 × (1.08/1.04) = 1,040 × (27/26) = 1,080. 국내금리가 높으므로 원화는 선물에서 평가절하(달러 선물 프리미엄)된다.",
+  "concept_tags": [],
+  "expected_seconds": 90,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "apply",
+  "attractor_traps": [
+    "1,081.6 — 정확식 대신 근사식 F ≈ S(1 + (i-i*)) = 1,040×1.04를 적용한 함정.",
+    "1,000 — (1+i*)/(1+i)로 분자·분모를 뒤집어 환율 방향을 반대로 본 함정.",
+    "1,000.5 — 뒤집은 비율에 근사식을 섞어 쓴 복합 오류 함정."
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft",
+  "flagged_questionable": true,
+  "questionable_reason": "independent solver disagreed (3-way consensus failed)"
+}

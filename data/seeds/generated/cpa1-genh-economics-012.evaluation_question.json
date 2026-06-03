@@ -1,0 +1,31 @@
+{
+  "question_id": "cpa1-genh-economics-012",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "거시: 환율/국제수지 (이자율평가)",
+  "applicable_year": 2026,
+  "stem": "현재 원/달러 현물환율은 1,200원이다. 국내(원화) 1년 명목이자율은 5%, 미국(달러화) 1년 명목이자율은 2%이다. 무위험 이자율평가(covered interest parity)가 성립할 때, 차익거래가 사라지는 1년 만기 원/달러 선물환율은 약 얼마인가?",
+  "choices": [
+    "1,164.57원",
+    "1,200.00원",
+    "1,235.29원",
+    "1,236.00원"
+  ],
+  "correct_choice": 2,
+  "correct_answer": "1,235.29원",
+  "explanation": "무위험 이자율평가: F/S = (1 + i_원)/(1 + i_달러). F = 1,200 × (1.05/1.02) = 1,200 × 1.02941… ≈ 1,235.29원. 국내 금리가 더 높으므로 선물환율에서 원화가 약세(달러 비싸짐)가 되어 균형이 성립한다.",
+  "concept_tags": [],
+  "expected_seconds": 120,
+  "difficulty": "hard",
+  "difficulty_score": 4,
+  "bloom_level": "analyze",
+  "attractor_traps": [
+    "근사식으로 F ≈ S×(1 + i_원 - i_달러) = 1,200×1.03 = 1,236원(정확식과 미세하게 다름)",
+    "금리차 부호를 반대로 적용 F = 1,200×(1.02/1.05) ≈ 1,165원(원화 강세로 잘못 판단)",
+    "금리평가를 적용하지 않고 현물환율 1,200원을 그대로 선택"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft",
+  "flagged_questionable": true,
+  "questionable_reason": "independent solver disagreed (3-way consensus failed)"
+}

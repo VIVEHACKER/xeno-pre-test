@@ -1,0 +1,31 @@
+{
+  "question_id": "cpa1-genh-business-017",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "재무관리 - 옵션(이항모형)",
+  "applicable_year": 2026,
+  "stem": "1기간 이항모형으로 유럽형 콜옵션을 평가한다. 현재주가 S=100이며, 1기간 후 주가는 상승 시 120(u=1.2) 또는 하락 시 90(d=0.9)이 된다. 1기간 무위험이자율은 5%이고, 행사가격은 K=100이다. 위험중립 평가법에 따른 콜옵션의 현재가치로 가장 가까운 것은?",
+  "choices": [
+    "7.62",
+    "9.52",
+    "10.00",
+    "13.33"
+  ],
+  "correct_choice": 1,
+  "correct_answer": "9.52",
+  "explanation": "위험중립확률 p = ((1+r)−d)/(u−d) = (1.05−0.9)/(1.2−0.9) = 0.15/0.30 = 0.5. 만기 페이오프: Cu=max(120−100,0)=20, Cd=max(90−100,0)=0. 콜가치 = (p·Cu+(1−p)·Cd)/(1+r) = (0.5×20+0.5×0)/1.05 = 10/1.05 = 9.52.",
+  "concept_tags": [],
+  "expected_seconds": 120,
+  "difficulty": "hard",
+  "difficulty_score": 4,
+  "bloom_level": "analyze",
+  "attractor_traps": [
+    "10.00: 위험중립 기대 페이오프(0.5×20=10)를 할인하지 않은 값(현재가치화 누락)",
+    "7.62: 위험중립확률 대신 헤지비율(델타=2/3)을 확률로 잘못 사용하여 (2/3×20)/1.05≈12.7 또는 변형 계산",
+    "13.33: 헤지비율 0.6667에 20을 곱한 무할인 값(델타와 확률 혼동)"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft",
+  "flagged_questionable": true,
+  "questionable_reason": "independent solver disagreed (3-way consensus failed)"
+}

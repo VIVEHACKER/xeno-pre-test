@@ -1,0 +1,31 @@
+{
+  "question_id": "cpa1-genh-business-014",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "재무관리 - WACC/MM",
+  "applicable_year": 2026,
+  "stem": "(주)가람의 자본구조는 시장가치 기준으로 부채 40%, 자기자본 60%이다. 세전 타인자본비용은 8%, 자기자본비용은 15%, 법인세율은 25%이다. 가중평균자본비용(WACC)으로 가장 가까운 것은? (단, 부채의 시장가치와 장부가치는 동일하다고 가정한다.)",
+  "choices": [
+    "10.40%",
+    "11.40%",
+    "12.20%",
+    "13.00%"
+  ],
+  "correct_choice": 1,
+  "correct_answer": "11.40%",
+  "explanation": "WACC = (E/V)×re + (D/V)×rd×(1−t) = 0.6×0.15 + 0.4×0.08×(1−0.25) = 0.09 + 0.024 = 0.114 = 11.40%. 타인자본비용에만 세금절감효과(1−t)를 적용하고 자기자본비용에는 적용하지 않는 것이 핵심이다.",
+  "concept_tags": [],
+  "expected_seconds": 90,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "apply",
+  "attractor_traps": [
+    "10.40%: 자기자본비중과 부채비중을 바꿔 0.4×0.15+0.6×0.08×0.75로 계산한 결과(가중치 혼동)",
+    "12.20%: 세금절감효과를 누락하여 0.6×0.15+0.4×0.08=0.122로 계산(세후 조정 누락)",
+    "13.00%: 세금절감효과를 자기자본비용에도 잘못 적용하거나 단순 평균(15+8)/2 근방으로 오인"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft",
+  "flagged_questionable": true,
+  "questionable_reason": "independent solver disagreed (3-way consensus failed)"
+}

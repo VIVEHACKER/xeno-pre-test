@@ -1,0 +1,31 @@
+{
+  "question_id": "cpa1-genh-economics-013",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "거시: 경제성장 (솔로우 황금률)",
+  "applicable_year": 2026,
+  "stem": "1인당 생산함수가 y = √k(= k^0.5)인 솔로우 모형 경제를 고려하자. 인구증가율 n = 0.02, 감가상각률 δ = 0.08이고 기술진보는 없다. 정상상태 1인당 소비를 극대화하는 자본의 황금률(golden rule) 수준에서, 이를 달성하는 저축률 s는?",
+  "choices": [
+    "0.2",
+    "0.4",
+    "0.5",
+    "0.8"
+  ],
+  "correct_choice": 2,
+  "correct_answer": "0.5",
+  "explanation": "황금률 조건은 MPK = n + δ. MPK = 0.5k^(-0.5) = 0.10 → k^0.5 = 5 → k* = 25. 정상상태 조건 s·f(k) = (n+δ)k에서 s×√25 = 0.10×25 → s×5 = 2.5 → s = 0.5. (콥-더글러스 y=k^α에서 황금률 저축률은 자본탄력성 α와 같다는 성질과도 일치: α=0.5.)",
+  "concept_tags": [],
+  "expected_seconds": 120,
+  "difficulty": "hard",
+  "difficulty_score": 4,
+  "bloom_level": "analyze",
+  "attractor_traps": [
+    "MPK = δ만 사용(인구증가 누락): 0.5k^-0.5=0.08 → k≈39, s 계산이 틀려 0.4 선택",
+    "황금률 자본 k*=25, y=5에서 소비/생산 등을 혼동해 1-α=0.5를 거꾸로 적용하거나 0.2(=α 오인) 선택",
+    "감가상각률 δ=0.08만 보고 저축률을 0.8로 자릿수 혼동"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft",
+  "flagged_questionable": true,
+  "questionable_reason": "independent solver disagreed (3-way consensus failed)"
+}

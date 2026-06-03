@@ -1,0 +1,31 @@
+{
+  "question_id": "cpa1-genh-economics-011",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "거시: 화폐/물가 (화폐수량설·피셔)",
+  "applicable_year": 2026,
+  "stem": "어떤 경제에서 화폐수량설(MV = PY)이 성립하고 화폐유통속도 V는 일정하다. 명목화폐공급량은 연 6% 증가하고 실질GDP는 연 2% 성장한다. 또한 실질이자율은 3%로 일정하다고 가정한다. 피셔방정식이 성립할 때 이 경제의 명목이자율은 대략 얼마인가?",
+  "choices": [
+    "3%",
+    "5%",
+    "7%",
+    "9%"
+  ],
+  "correct_choice": 2,
+  "correct_answer": "7%",
+  "explanation": "V 일정이므로 증가율 형태로 (화폐증가율) = (인플레이션율) + (실질성장률), 즉 6% = π + 2% → π = 4%. 피셔방정식 i ≈ r + π = 3% + 4% = 7%.",
+  "concept_tags": [],
+  "expected_seconds": 90,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "apply",
+  "attractor_traps": [
+    "인플레이션을 화폐증가율 6% 그대로 보고 i=3%+6%=9%로 계산",
+    "실질성장률 2%를 그대로 명목이자율 가산해 3%+2%=5%로 계산",
+    "실질이자율 3%만 답으로 선택(인플레이션 미반영)"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft",
+  "flagged_questionable": true,
+  "questionable_reason": "independent solver disagreed (3-way consensus failed)"
+}

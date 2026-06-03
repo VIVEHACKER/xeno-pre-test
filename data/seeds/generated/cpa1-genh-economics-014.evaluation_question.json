@@ -1,0 +1,31 @@
+{
+  "question_id": "cpa1-genh-economics-014",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "미시-시장구조(과점/쿠르노)",
+  "applicable_year": 2026,
+  "stem": "동질재 시장에 두 기업이 쿠르노(Cournot) 수량경쟁을 한다. 시장 역수요함수는 P = 120 - Q (Q = q1 + q2)이다. 기업 1의 한계비용은 MC1 = 0, 기업 2의 한계비용은 MC2 = 30이며 고정비용은 없다. 내쉬균형에서 각 기업의 생산량과 시장가격으로 옳은 것은?",
+  "choices": [
+    "q1 = 50, q2 = 20, P = 50",
+    "q1 = 40, q2 = 40, P = 40",
+    "q1 = 60, q2 = 30, P = 30",
+    "q1 = 45, q2 = 30, P = 45"
+  ],
+  "correct_choice": 0,
+  "correct_answer": "q1 = 50, q2 = 20, P = 50",
+  "explanation": "각 기업의 반응함수를 구한다. 기업 1: max (120-q1-q2)q1 → 120-2q1-q2=0. 기업 2: max (120-q1-q2-30)q2 → 90-q1-2q2=0. 두 식을 연립하면 q1=50, q2=20. 따라서 Q=70, P=120-70=50. 비용이 낮은 기업 1이 더 많이 생산한다.",
+  "concept_tags": [],
+  "expected_seconds": 120,
+  "difficulty": "hard",
+  "difficulty_score": 4,
+  "bloom_level": "analyze",
+  "attractor_traps": [
+    "q1=40, q2=40, P=40 — 두 기업 비용을 모두 0으로 보고 대칭 균형(q=a/3=40)으로 잘못 계산한 함정.",
+    "q1=60, q2=30, P=30 — 가격이 고비용 기업의 MC(30)와 같아진다고 베르트랑식으로 혼동한 함정.",
+    "q1=45, q2=30, P=45 — 반응함수에서 비용항 부호/대입을 잘못해 비대칭폭을 과소 추정한 함정."
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft",
+  "flagged_questionable": true,
+  "questionable_reason": "independent solver disagreed (3-way consensus failed)"
+}

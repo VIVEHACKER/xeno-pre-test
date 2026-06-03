@@ -1,0 +1,31 @@
+{
+  "question_id": "cpa1-genh-economics-010",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "거시: IS-LM 균형",
+  "applicable_year": 2026,
+  "stem": "폐쇄경제 IS-LM 모형이 다음과 같다. 소비 C = 100 + 0.8(Y - T), 투자 I = 200 - 25r, 정부지출 G = 200, 조세 T = 200(정액세), 실질화폐수요 L = 0.5Y - 25r, 실질화폐공급 M/P = 150이다(r은 %단위, 즉 r=5는 5%). 동시균형에서 국민소득 Y와 이자율 r은?",
+  "choices": [
+    "Y = 600, r = 4",
+    "Y = 700, r = 8",
+    "Y = 750, r = 9",
+    "Y = 800, r = 6"
+  ],
+  "correct_choice": 1,
+  "correct_answer": "Y = 700, r = 8",
+  "explanation": "IS: Y = 100 + 0.8(Y-200) + (200-25r) + 200 = 0.8Y + 340 - 25r → 0.2Y = 340 - 25r → Y = 1700 - 125r. LM: 150 = 0.5Y - 25r → r = 0.02Y - 6. 대입: Y = 1700 - 125(0.02Y-6) = 1700 - 2.5Y + 750 → 3.5Y = 2450 → Y = 700, r = 0.02×700 - 6 = 8.",
+  "concept_tags": [],
+  "expected_seconds": 120,
+  "difficulty": "hard",
+  "difficulty_score": 4,
+  "bloom_level": "analyze",
+  "attractor_traps": [
+    "LM만으로 화폐시장에서 r을 풀 때 부호를 틀려 r=6, Y=800을 얻음",
+    "조세를 가처분소득에서 빼지 않고 C=100+0.8Y로 두어 승수를 키워 Y=750, r=9 도출",
+    "IS 식의 절편 합산 실수(340 대신 300)로 Y=600, r=4 도출"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft",
+  "flagged_questionable": true,
+  "questionable_reason": "independent solver disagreed (3-way consensus failed)"
+}

@@ -1,0 +1,31 @@
+{
+  "question_id": "cpa1-genh-economics-008",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "미시: 소비자/생산자이론 (가격차별)",
+  "applicable_year": 2026,
+  "stem": "어떤 독점기업이 동일한 선호를 가진 다수의 소비자를 상대한다. 대표 소비자의 수요함수는 P = 20 - Q이고, 한계비용은 MC = 4로 일정하며 고정비용은 없다. 기업이 가입비(고정요금)와 단위당 사용료로 구성된 이부가격제(two-part tariff)를 완전하게 시행할 때, 소비자 1인당 받는 최적 가입비는 얼마인가?",
+  "choices": [
+    "32",
+    "64",
+    "96",
+    "128"
+  ],
+  "correct_choice": 3,
+  "correct_answer": "128",
+  "explanation": "이부가격제 최적화에서 단위 사용료는 한계비용과 같게 설정(P=MC=4)하여 소비자 잉여를 극대화한 뒤, 그 전부를 가입비로 흡수한다. P=4일 때 Q=16, 소비자잉여 = ½×16×(20-4) = ½×16×16 = 128. 따라서 최적 가입비 = 128(이때 단위당 이윤은 0이므로 가입비가 곧 이윤).",
+  "concept_tags": [],
+  "expected_seconds": 120,
+  "difficulty": "hard",
+  "difficulty_score": 4,
+  "bloom_level": "analyze",
+  "attractor_traps": [
+    "MR=MC로 단일가격 독점 산출(Q=8, P=12)을 구한 뒤 그 점의 소비자잉여 ½×8×8=32를 가입비로 오인",
+    "단일가격 독점이윤 (12-4)×8=64를 답으로 선택",
+    "독점이윤 64와 그 점의 소비자잉여 32를 합한 96을 가입비로 혼동(이부가격은 P=MC로 설정해야 함)"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft",
+  "flagged_questionable": true,
+  "questionable_reason": "independent solver disagreed (3-way consensus failed)"
+}

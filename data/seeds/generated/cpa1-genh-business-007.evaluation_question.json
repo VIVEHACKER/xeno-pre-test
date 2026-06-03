@@ -1,0 +1,29 @@
+{
+  "question_id": "cpa1-genh-business-007",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "재무관리-포트폴리오이론",
+  "applicable_year": 2026,
+  "stem": "두 위험자산 A, B로만 포트폴리오를 구성한다. 자산 A의 기대수익률은 12%, 표준편차는 20%이고, 자산 B의 기대수익률은 8%, 표준편차는 10%이다. 두 자산 수익률의 상관계수는 0.2이다. 공매도가 허용될 때, 포트폴리오의 분산을 최소화하는 자산 A의 투자비중(w_A)으로 가장 옳은 것은? (소수 셋째 자리에서 반올림)",
+  "choices": [
+    "0.14",
+    "0.20",
+    "0.50",
+    "0.86"
+  ],
+  "correct_choice": 0,
+  "correct_answer": "0.14",
+  "explanation": "최소분산포트폴리오 비중은 w_A = (σ_B² − Cov(A,B)) / (σ_A² + σ_B² − 2·Cov(A,B))이다. Cov(A,B) = 0.2×0.20×0.10 = 0.004. 따라서 w_A = (0.01 − 0.004) / (0.04 + 0.01 − 2×0.004) = 0.006 / 0.042 = 0.1429 ≈ 0.14. 기대수익률은 최소분산 비중 계산에 전혀 사용되지 않는다는 점이 핵심이다.",
+  "concept_tags": [],
+  "expected_seconds": 120,
+  "difficulty": "hard",
+  "difficulty_score": 4,
+  "bloom_level": "analyze",
+  "attractor_traps": [
+    "0.20: 공분산 항을 누락하고 w_A = σ_B²/(σ_A²+σ_B²) = 0.01/0.05로 계산한 결과",
+    "0.50: 표준편차 차이나 기대수익률을 무시하고 단순 균등분할로 착각",
+    "0.86: 분자에서 σ_A²−Cov를 사용해 분자·분모 자산을 뒤바꿔 부호/대상을 혼동한 결과(이는 자산 B의 최소분산 비중)"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,31 @@
+{
+  "question_id": "cpa1-genh-business-016",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "재무관리 - 옵션(블랙숄즈)",
+  "applicable_year": 2026,
+  "stem": "블랙-숄즈 모형으로 무배당 주식에 대한 유럽형 콜옵션을 평가한다. 현재주가 S=100, 행사가격 K=100, 무위험이자율 r=5%(연속복리), 만기 T=1년이다. 계산 결과 N(d1)=0.6368, N(d2)=0.5596이며, e^(−rT)=0.9512이다. 동일 조건의 유럽형 풋옵션 가치로 가장 가까운 것은? (풋-콜 패리티를 활용하라.)",
+  "choices": [
+    "4.61",
+    "5.57",
+    "7.72",
+    "10.45"
+  ],
+  "correct_choice": 1,
+  "correct_answer": "5.57",
+  "explanation": "콜가치 C = S·N(d1) − K·e^(−rT)·N(d2) = 100×0.6368 − 100×0.9512×0.5596 = 63.68 − 53.23 = 10.45. 풋-콜 패리티 P = C − S + K·e^(−rT) = 10.45 − 100 + 95.12 = 5.57.",
+  "concept_tags": [],
+  "expected_seconds": 120,
+  "difficulty": "hard",
+  "difficulty_score": 4,
+  "bloom_level": "analyze",
+  "attractor_traps": [
+    "10.45: 콜옵션 가치를 그대로 풋옵션 가치로 답함(패리티 적용 누락)",
+    "7.72: K 할인을 누락하고 C=100×0.6368−100×0.5596=7.72로 콜을 잘못 구함",
+    "4.61: N(d1)과 N(d2)를 서로 바꿔 대입한 음수/오류값 근방"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft",
+  "flagged_questionable": true,
+  "questionable_reason": "independent solver disagreed (3-way consensus failed)"
+}

@@ -1,0 +1,31 @@
+{
+  "question_id": "cpa1-genh-economics-015",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "거시-IS-LM(구축효과)",
+  "applicable_year": 2026,
+  "stem": "폐쇄경제 IS-LM 모형이 다음과 같다. 재화시장: Y = C + I + G, C = 100 + 0.75(Y - T), I = 200 - 25r, G = 100, T = 100. 화폐시장: 실질화폐수요 (M/P) = 0.5Y - 50r, 실질화폐공급 (M/P) = 500. 이제 정부지출 G를 100만큼 늘려 200으로 증가시켰다. (P는 고정) 이때 발생하는 구축효과(crowding-out)의 크기, 즉 '단순승수만 적용했을 때의 국민소득 증가분'에서 '실제 국민소득 증가분'을 뺀 값은?",
+  "choices": [
+    "200",
+    "0",
+    "100",
+    "400"
+  ],
+  "correct_choice": 0,
+  "correct_answer": "200",
+  "explanation": "IS곡선: 0.25Y = 325 - 25r → Y = 1300 - 100r. LM곡선: Y = 1000 + 100r. 연립하면 초기 Y=1150, r=1.5. ΔG=100 후 IS: Y = 1700 - 100r → 새 균형 Y=1350, r=3.5. 실제 ΔY=200. 단순지출승수 1/(1-0.75)=4이므로 이자율 고정 시 ΔY=100×4=400. 구축효과 = 400-200 = 200.",
+  "concept_tags": [],
+  "expected_seconds": 120,
+  "difficulty": "hard",
+  "difficulty_score": 4,
+  "bloom_level": "analyze",
+  "attractor_traps": [
+    "400 — 단순승수 효과 자체(400)를 구축효과로 착각한 함정.",
+    "100 — ΔG(=100)를 그대로 구축효과로 본 함정.",
+    "0 — LM이 수평(유동성함정)이라 구축효과가 없다고 잘못 가정한 함정."
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft",
+  "flagged_questionable": true,
+  "questionable_reason": "independent solver disagreed (3-way consensus failed)"
+}

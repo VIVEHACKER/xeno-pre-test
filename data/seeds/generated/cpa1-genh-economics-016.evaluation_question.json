@@ -1,0 +1,31 @@
+{
+  "question_id": "cpa1-genh-economics-016",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "거시-경제성장(솔로우/황금률)",
+  "applicable_year": 2026,
+  "stem": "솔로우(Solow) 성장모형에서 1인당 생산함수는 y = k^0.5 이다. 저축률 s = 0.4, 감가상각률 δ = 0.05, 인구증가율 n = 0.03, 기술진보율 g = 0.02 이다. 현재 균제상태(steady state)와 자본의 황금률(golden rule) 수준에 관한 설명으로 옳은 것은?",
+  "choices": [
+    "현재 1인당 자본은 16, 1인당 소비는 2.4이며, 현재 저축률은 황금률 저축률(0.5)보다 낮으므로 저축률을 높이면 균제상태 소비가 증가한다.",
+    "현재 1인당 자본은 16이고 이는 황금률 자본(25)을 초과하므로, 저축률을 낮춰야 균제상태 소비가 증가한다.",
+    "현재 1인당 자본은 64, 1인당 소비는 4.8이며 이미 황금률 상태이므로 저축률을 바꿀 필요가 없다.",
+    "황금률 자본은 MPK = δ 조건에서 결정되어 100이며, 현재 자본 16은 이보다 작으므로 동태적 비효율 상태이다."
+  ],
+  "correct_choice": 0,
+  "correct_answer": "현재 1인당 자본은 16, 1인당 소비는 2.4이며, 현재 저축률은 황금률 저축률(0.5)보다 낮으므로 저축률을 높이면 균제상태 소비가 증가한다.",
+  "explanation": "균제상태: s·k^0.5 = (n+g+δ)k → k* = (s/(n+g+δ))^2 = (0.4/0.1)^2 = 16, y*=4, c*=(1-s)·y*=0.6×4=2.4. 황금률: MPK = n+g+δ, 즉 0.5k^(-0.5)=0.1 → k_gold=25. α=0.5인 콥-더글러스에서 황금률 저축률 = α = 0.5. 현재 s=0.4 < 0.5이므로 자본이 황금률보다 적고(16<25, 동태적 효율), 저축률을 높이면 균제 소비가 늘어난다.",
+  "concept_tags": [],
+  "expected_seconds": 120,
+  "difficulty": "hard",
+  "difficulty_score": 4,
+  "bloom_level": "analyze",
+  "attractor_traps": [
+    "k=16>황금률25 — 부등호 방향을 뒤집어 자본 과잉(동태적 비효율)으로 본 함정.",
+    "k=64 — k* 공식에서 지수(1/(1-α)=2)를 제곱이 아닌 다른 값으로 잘못 적용한 함정.",
+    "황금률 조건을 MPK=δ(δ만 고려)로 써서 k_gold=100으로 계산한 함정 — 올바른 조건은 MPK=n+g+δ."
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft",
+  "flagged_questionable": true,
+  "questionable_reason": "independent solver disagreed (3-way consensus failed)"
+}

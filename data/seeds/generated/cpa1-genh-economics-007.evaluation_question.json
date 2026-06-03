@@ -1,0 +1,31 @@
+{
+  "question_id": "cpa1-genh-economics-007",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "미시: 시장구조 (과점)",
+  "applicable_year": 2026,
+  "stem": "동질재 시장에서 두 기업이 산출량을 동시에 결정하는 쿠르노(Cournot) 복점 경쟁을 한다. 시장 역수요는 P = 100 - Q (단, Q = q₁ + q₂)이고, 한계비용은 각각 MC₁ = 10, MC₂ = 40으로 일정하다. 고정비용은 없다. 쿠르노-내쉬 균형에서 시장가격과 기업 1의 이윤은 각각 얼마인가?",
+  "choices": [
+    "가격 = 40, 기업 1의 이윤 = 900",
+    "가격 = 50, 기업 1의 이윤 = 1,600",
+    "가격 = 50, 기업 1의 이윤 = 900",
+    "가격 = 70, 기업 1의 이윤 = 3,600"
+  ],
+  "correct_choice": 1,
+  "correct_answer": "가격 = 50, 기업 1의 이윤 = 1,600",
+  "explanation": "기업 1의 반응함수: 이윤 (100-q₁-q₂-10)q₁ 극대화 → q₁ = (90-q₂)/2. 기업 2: q₂ = (60-q₁)/2. 연립하면 q₁ = 30 + q₁/4 → q₁ = 40, q₂ = 10. 따라서 Q = 50, P = 100 - 50 = 50. 기업 1의 이윤 = (50-10)×40 = 1,600. (저비용 기업이 시장을 더 많이 점유한다.)",
+  "concept_tags": [],
+  "expected_seconds": 120,
+  "difficulty": "hard",
+  "difficulty_score": 4,
+  "bloom_level": "analyze",
+  "attractor_traps": [
+    "가격=50은 맞지만 이윤을 (50-10)×q₂=40×10이나 잘못된 q로 계산해 900을 얻음",
+    "비용 대칭으로 오인하여 두 기업 모두 q=(100-10)/3=30, Q=60, P=40으로 계산",
+    "독점(또는 담합) 가격 P=70(저비용 기업 단독: Q=45)을 균형으로 혼동"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft",
+  "flagged_questionable": true,
+  "questionable_reason": "independent solver disagreed (3-way consensus failed)"
+}

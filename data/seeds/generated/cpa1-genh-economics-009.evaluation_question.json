@@ -1,0 +1,31 @@
+{
+  "question_id": "cpa1-genh-economics-009",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "미시: 공공재 (사뮤엘슨 조건)",
+  "applicable_year": 2026,
+  "stem": "한 경제에 소비자 A와 B만 존재하고, 공공재 G에 대한 한계지불용의(사적재로 표시한 한계대체율)는 각각 MRSᴬ = 10 - G, MRSᴮ = 16 - G이다. 공공재 생산의 한계변환율(한계비용)은 MRT = 14로 일정하다. 사회적으로 최적인 공공재 공급량 G*는?",
+  "choices": [
+    "2",
+    "6",
+    "12",
+    "13"
+  ],
+  "correct_choice": 1,
+  "correct_answer": "6",
+  "explanation": "공공재는 비경합적이므로 사뮤엘슨 조건 ΣMRS = MRT를 적용한다. (10-G)+(16-G) = 14 → 26 - 2G = 14 → 2G = 12 → G* = 6. (개별 한계대체율을 '합산'하는 것이 핵심.)",
+  "concept_tags": [],
+  "expected_seconds": 90,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "apply",
+  "attractor_traps": [
+    "MRS를 합하지 않고 평균을 MRT와 같게 둠: (26-2G)/2=14 → G=-1 부근 오류 회피용으로 잘못 보정해 2를 선택",
+    "지불용의가 더 큰 소비자 B만 고려: 16-G=14 → G=2",
+    "두 절편의 합(26)에서 MRT를 빼고 2로 나누지 않은 채 26-14=12를 답으로 오인"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft",
+  "flagged_questionable": true,
+  "questionable_reason": "independent solver disagreed (3-way consensus failed)"
+}

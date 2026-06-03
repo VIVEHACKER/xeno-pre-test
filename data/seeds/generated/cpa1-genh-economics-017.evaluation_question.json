@@ -1,0 +1,31 @@
+{
+  "question_id": "cpa1-genh-economics-017",
+  "exam": "CPA_1",
+  "subject": "economics",
+  "unit": "미시-공공재(사무엘슨 조건)",
+  "applicable_year": 2026,
+  "stem": "두 소비자 A, B만 존재하는 경제에서 공공재 G에 대한 각자의 한계지불용의(역수요)는 A: P_A = 50 - G, B: P_B = 80 - 2G 이다. 공공재 공급의 한계비용은 일정하게 MC = 100 이다. 사회적으로 효율적인 공공재 공급량은?",
+  "choices": [
+    "10",
+    "50/3 ≈ 16.7",
+    "30",
+    "공급하지 않는 것(G = 0)"
+  ],
+  "correct_choice": 0,
+  "correct_answer": "10",
+  "explanation": "공공재는 비경합적이므로 사무엘슨 조건상 한계지불용의를 '수직(세로) 합산'한 것이 MC와 같아야 한다. (50-G)+(80-2G) = 100 → 130-3G = 100 → G = 10. 이때 P_A=40, P_B=60으로 모두 양(+)이라 내부해가 성립한다.",
+  "concept_tags": [],
+  "expected_seconds": 90,
+  "difficulty": "mid",
+  "difficulty_score": 3,
+  "bloom_level": "apply",
+  "attractor_traps": [
+    "50/3 — 두 수요를 수평(수량) 합산하는 사적재 방식으로 풀어 MC와 만나는 점을 잘못 구한 함정.",
+    "30 — A 또는 B 한 사람의 수요만 MC와 일치시켜(개별 한계지불용의=100) 잘못 푼 함정.",
+    "G=0 — 개별 소비자의 최대 지불용의(80)가 MC(100)보다 작으니 공급 불가라고 본 함정. 합산하면 공급이 효율적이다."
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft",
+  "flagged_questionable": true,
+  "questionable_reason": "independent solver disagreed (3-way consensus failed)"
+}

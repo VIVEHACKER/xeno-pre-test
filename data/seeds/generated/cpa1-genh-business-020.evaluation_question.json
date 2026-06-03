@@ -1,0 +1,31 @@
+{
+  "question_id": "cpa1-genh-business-020",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "경영학 - 동기부여/생산운영",
+  "applicable_year": 2026,
+  "stem": "동기부여 이론과 생산운영관리 개념에 대한 다음 설명 중 옳은 것은?",
+  "choices": [
+    "허즈버그(Herzberg)의 2요인이론에서 급여, 작업조건, 대인관계는 위생요인이므로 충분히 개선하면 종업원의 적극적 동기부여(만족)를 직접 창출한다.",
+    "애덤스(Adams)의 공정성이론에 따르면, 자신의 투입 대비 산출 비율이 비교대상보다 낮다고 지각한 종업원은 투입을 줄이거나 비교대상을 바꾸는 등으로 불공정을 해소하려 한다.",
+    "JIT(적시생산)는 안전재고를 충분히 확보하여 수요변동과 공급중단에 대비하는 것을 핵심으로 하며, 이를 위해 대량의 완충재고(buffer)를 전제로 한다.",
+    "브룸(Vroom)의 기대이론에서 동기부여의 강도는 기대감(expectancy), 수단성(instrumentality), 유의성(valence)의 합으로 결정되며 세 요소 중 하나라도 높으면 동기가 강해진다."
+  ],
+  "correct_choice": 1,
+  "correct_answer": "애덤스(Adams)의 공정성이론에 따르면, 자신의 투입 대비 산출 비율이 비교대상보다 낮다고 지각한 종업원은 투입을 줄이거나 비교대상을 바꾸는 등으로 불공정을 해소하려 한다.",
+  "explanation": "공정성이론(형평성이론)의 핵심은 자신의 산출/투입 비율을 준거인물과 비교하여 불공정을 지각하면 이를 줄이려는 행동(투입 조정, 산출 조정, 인지적 왜곡, 준거대상 변경, 이직 등)을 한다는 것으로, 보기 2가 정확하다.",
+  "concept_tags": [],
+  "expected_seconds": 120,
+  "difficulty": "hard",
+  "difficulty_score": 4,
+  "bloom_level": "analyze",
+  "attractor_traps": [
+    "허즈버그: 위생요인은 불만족을 예방할 뿐 적극적 만족(동기)을 창출하지 못한다(위생요인을 동기요인으로 혼동)",
+    "JIT: JIT는 재고를 낭비로 보아 최소화하는 무재고 지향 시스템으로, '대량 완충재고 전제'는 정반대 설명",
+    "브룸 기대이론: 동기 = 기대감×수단성×유의성의 '곱'이며, 하나라도 0이면 동기가 0이 된다(합이 아니라 곱)"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft",
+  "flagged_questionable": true,
+  "questionable_reason": "independent solver disagreed (3-way consensus failed)"
+}

@@ -1,0 +1,29 @@
+{
+  "question_id": "cpa1-genh-business-009",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "재무관리-자본구조(MM)",
+  "applicable_year": 2026,
+  "stem": "법인세가 존재하는 MM 세계에서 어떤 기업의 무부채 자기자본비용(자산수익률)은 10%, 세전 타인자본비용은 6%, 법인세율은 25%이다. 이 기업은 목표자본구조로 부채비율을 부채/기업가치(D/V) = 0.4로 유지한다. MM 명제 II(법인세 고려)에 따른 이 기업의 자기자본비용(r_e)으로 가장 옳은 것은?",
+  "choices": [
+    "12.00%",
+    "11.20%",
+    "12.67%",
+    "13.50%"
+  ],
+  "correct_choice": 0,
+  "correct_answer": "12.00%",
+  "explanation": "D/V=0.4이면 E/V=0.6이므로 D/E = 0.4/0.6 = 2/3. MM 명제 II(법인세): r_e = r_U + (r_U − r_d)(1−T)(D/E) = 0.10 + (0.10−0.06)(1−0.25)(2/3) = 0.10 + 0.04×0.75×0.6667 = 0.10 + 0.02 = 0.12. 가중치는 D/E를 써야 하며 (1−T)를 반드시 곱해야 한다.",
+  "concept_tags": [],
+  "expected_seconds": 120,
+  "difficulty": "hard",
+  "difficulty_score": 4,
+  "bloom_level": "analyze",
+  "attractor_traps": [
+    "11.20%: 공식의 가중치에 D/E 대신 D/V(=0.4)를 잘못 대입(0.10+0.04×0.75×0.4)",
+    "12.67%: (1−T) 항을 누락하여 무세금 MM 공식으로 계산(0.10+0.04×0.6667)",
+    "13.50%: WACC(9%)와 혼동하거나 D/E와 비율을 모두 잘못 결합한 임의 값"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft"
+}

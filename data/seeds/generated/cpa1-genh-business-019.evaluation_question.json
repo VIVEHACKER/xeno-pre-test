@@ -1,0 +1,31 @@
+{
+  "question_id": "cpa1-genh-business-019",
+  "exam": "CPA_1",
+  "subject": "business",
+  "unit": "재무관리 - 자본예산(NPV/IRR)",
+  "applicable_year": 2026,
+  "stem": "(주)다온은 상호배타적인 두 투자안 중 하나를 선택해야 한다. 자본비용은 연 10%이다. 투자안 A: 0시점 −10,000, 1년 말 +12,000(이후 현금흐름 없음). 투자안 B: 0시점 −10,000, 1~5년 말 매년 +3,000. 분석 결과 IRR은 A=20%, B≈15.2%이고, 10%에서 NPV는 A≈909, B≈1,372이다. 두 투자안의 NPV가 일치하는 교차수익률(Fisher rate)은 약 12.6%이다. 자본비용 10%에서 옳은 의사결정은?",
+  "choices": [
+    "IRR이 더 높은 A를 선택한다. IRR이 항상 주주가치 극대화 기준이기 때문이다.",
+    "NPV가 더 큰 B를 선택한다. 자본비용이 교차수익률보다 낮아 NPV와 IRR 순위가 상충하며, 가치가산 기준인 NPV가 우선하기 때문이다.",
+    "두 투자안의 IRR이 모두 자본비용을 초과하므로 A와 B를 모두 채택한다.",
+    "교차수익률(12.6%)이 자본비용(10%)보다 높으므로 두 투자안 모두 기각한다."
+  ],
+  "correct_choice": 1,
+  "correct_answer": "NPV가 더 큰 B를 선택한다. 자본비용이 교차수익률보다 낮아 NPV와 IRR 순위가 상충하며, 가치가산 기준인 NPV가 우선하기 때문이다.",
+  "explanation": "자본비용 10%가 교차수익률 12.6%보다 낮은 구간에서는 NPV와 IRR의 순위가 상충한다(IRR은 A, NPV는 B를 선호). 상호배타적 투자안에서는 재투자수익률 가정과 규모/시기 차이를 올바르게 반영하는 NPV법이 우월하므로 NPV가 더 큰 B를 선택한다. 증분(B−A) IRR이 12.6%(교차수익률)로 자본비용 10%를 초과한다는 점도 B 채택을 뒷받침한다.",
+  "concept_tags": [],
+  "expected_seconds": 120,
+  "difficulty": "hard",
+  "difficulty_score": 4,
+  "bloom_level": "analyze",
+  "attractor_traps": [
+    "A 선택(IRR 우선): 상호배타적 투자안에서 IRR을 절대기준으로 삼는 전형적 오류(규모/재투자 가정 무시)",
+    "둘 다 채택: 상호배타적(하나만 선택)이라는 제약을 독립투자안으로 오해",
+    "둘 다 기각: 교차수익률을 의사결정 기준선(허들율)으로 잘못 사용"
+  ],
+  "rights_status": "synthetic_seed",
+  "review_status": "ai_draft",
+  "flagged_questionable": true,
+  "questionable_reason": "independent solver disagreed (3-way consensus failed)"
+}
