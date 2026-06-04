@@ -1,0 +1,29 @@
+{
+  "chunk_id": "national-tax-statute-of-limitations",
+  "source": {
+    "source_kind": "official_regulation_paraphrase",
+    "title": "국세 부과제척기간 — 일반 5년, 부정행위 가중",
+    "reference": "국세기본법 제26조의2"
+  },
+  "subject": "tax",
+  "unit": "national_tax_basic_act",
+  "topic_tags": [
+    "national_tax_basic_act",
+    "statute_of_limitations",
+    "assessment_period",
+    "verbal_rule"
+  ],
+  "applicable_year": 2026,
+  "text": "국세 부과제척기간(국세기본법 제26조의2): 신고납세 세목과 부과과세 세목 모두 '국세를 부과할 수 있는 날부터 5년'이 일반 원칙이다. 가중 사유: ①법정신고기한까지 무신고 시 7년, ②부정행위(사기 기타 부정한 행위)로 포탈·환급·공제 시 10년, ③부정행위로 상속세·증여세 포탈 시 15년. 원천징수의무자에 대한 부과는 별도 제척기간 규정 없이 5년 원칙 또는 국세징수권 소멸시효(5년/10년)를 따른다. '모든 세목 일률 7년'이나 '일률 10년'은 잘못된 진술이다. 제척기간(부과권)과 소멸시효(징수권)는 구별된다.",
+  "keywords": [
+    "부과제척기간",
+    "일반 5년",
+    "무신고 7년",
+    "부정행위 10년",
+    "상속증여 부정 15년",
+    "소멸시효",
+    "부과할 수 있는 날"
+  ],
+  "rights_status": "official_paraphrase",
+  "review_status": "ai_draft"
+}

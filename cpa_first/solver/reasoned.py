@@ -571,6 +571,83 @@ def _solve_bep_sales(question: dict[str, Any]) -> ReasonedTrace | None:
     )
 
 
+def _solve_cogs(question: dict[str, Any]) -> ReasonedTrace | None:
+    """매출원가 = 기초재고 + 당기매입 − 기말재고 (단일 단계, 평가손실/감모 없는 기본형)."""
+    stem = question.get("stem", "")
+    if "매출원가" not in stem:
+        return None
+    # 복잡형(평가손실·감모·원가율 등)은 미지원 → 오답 방지
+    if any(x in stem for x in ("평가손실", "평가충당", "감모", "비정상", "원가율", "매출총이익률")):
+        return None
+    begin = re.search(r"기초(?:상품)?재고(?:액)?[^0-9]{0,6}([0-9,]+)\s*원", stem)
+    purchase = re.search(r"당기(?:순)?매입(?:액)?[^0-9]{0,6}([0-9,]+)\s*원", stem)
+    end = re.search(r"기말(?:상품)?재고(?:액)?[^0-9]{0,6}([0-9,]+)\s*원", stem)
+    if not (begin and purchase and end):
+        return None
+    b = _parse_number(begin.group(1))
+    p = _parse_number(purchase.group(1))
+    e = _parse_number(end.group(1))
+    value = round(b + p - e)
+    chosen = _choose_closest_money(question["choices"], value)
+    if chosen < 0:
+        return None
+
+    return ReasonedTrace(
+        rule_id="accounting_cogs",
+        chosen_index=chosen,
+        answer_text=f"{chosen + 1}번 {question['choices'][chosen]}",
+        signals=["매출원가", "기초재고", "당기매입", "기말재고"],
+        concepts=["매출원가 = 기초재고 + 당기매입 − 기말재고"],
+        formula_steps=[
+            f"기초재고 {b:,.0f} + 당기매입 {p:,.0f} − 기말재고 {e:,.0f} = {value:,.0f}원",
+        ],
+        choice_notes=_choice_notes(question["choices"], chosen, value),
+        computed_value=value,
+        confidence=0.9,
+        entry_point="판매가능재고에서 기말재고를 차감해 매출원가 산출",
+        trap_patterns=_trap_patterns(question),
+    )
+
+
+def _solve_eps(question: dict[str, Any]) -> ReasonedTrace | None:
+    """기본주당순이익 = (당기순이익 − 우선주배당) / 가중평균유통보통주식수."""
+    stem = question.get("stem", "")
+    if "주당순이익" not in stem and "EPS" not in stem:
+        return None
+    ni = re.search(r"당기순이익[^0-9]{0,6}([0-9,]+)\s*원", stem)
+    shares = re.search(
+        r"(?:가중평균)?\s*(?:유통)?\s*보통주(?:식)?\s*수?[^0-9]{0,6}([0-9,]+)\s*주", stem
+    ) or re.search(r"주식\s*수[^0-9]{0,6}([0-9,]+)\s*주", stem)
+    if not ni or not shares:
+        return None
+    pref = re.search(r"우선주\s*배당(?:금)?[^0-9]{0,6}([0-9,]+)\s*원", stem)
+    net = _parse_number(ni.group(1)) - (_parse_number(pref.group(1)) if pref else 0.0)
+    n = _parse_number(shares.group(1))
+    if n <= 0:
+        return None
+    value = round(net / n)
+    chosen = _choose_closest_money(question["choices"], value)
+    if chosen < 0:
+        return None
+
+    return ReasonedTrace(
+        rule_id="accounting_eps",
+        chosen_index=chosen,
+        answer_text=f"{chosen + 1}번 {question['choices'][chosen]}",
+        signals=["주당순이익", "당기순이익", "가중평균유통보통주식수"],
+        concepts=["기본 EPS = (당기순이익 − 우선주배당) / 가중평균유통보통주식수"],
+        formula_steps=[
+            f"보통주 귀속 순이익 = {net:,.0f}원, 가중평균주식수 = {n:,.0f}주",
+            f"EPS = {net:,.0f} / {n:,.0f} = {value:,.0f}원",
+        ],
+        choice_notes=_choice_notes(question["choices"], chosen, value),
+        computed_value=value,
+        confidence=0.9,
+        entry_point="우선주배당을 차감한 보통주 귀속 이익을 가중평균주식수로 나눔",
+        trap_patterns=_trap_patterns(question),
+    )
+
+
 def _stem_signals(stem: str) -> list[str]:
     candidates = [
         "순현재가치",
@@ -584,6 +661,8 @@ def _stem_signals(stem: str) -> list[str]:
         "정액법",
         "손익분기점",
         "공헌이익률",
+        "매출원가",
+        "주당순이익",
     ]
     return [signal for signal in candidates if signal in stem]
 
@@ -649,4 +728,6 @@ _RULES: tuple[Rule, ...] = (
     _solve_corporate_tax,
     _solve_straight_line_depreciation,
     _solve_bep_sales,
+    _solve_cogs,
+    _solve_eps,
 )

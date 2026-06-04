@@ -1,0 +1,27 @@
+{
+  "chunk_id": "inheritance-gift-tax-filing-deadline",
+  "source": {
+    "source_kind": "official_regulation_paraphrase",
+    "title": "상속세·증여세 신고기한 — 기산점은 '속하는 달의 말일'",
+    "reference": "상속세 및 증여세법 제67조 / 제68조"
+  },
+  "subject": "tax",
+  "unit": "inheritance_gift_tax",
+  "topic_tags": [
+    "inheritance_gift_tax",
+    "filing_deadline",
+    "verbal_rule"
+  ],
+  "applicable_year": 2026,
+  "text": "상속세 과세표준 신고기한: 상속개시일이 '속하는 달의 말일부터' 6개월 이내(상증법 제67조). 기산점은 상속개시일 당일이 아니라 그 달의 말일이라는 점이 핵심 함정이다. 예: 상속개시일 2026.5.15 → 속하는 달의 말일 2026.5.31 → 6개월 후 2026.11.30이 신고기한. (상속개시일 5.15에서 6개월=11.15로 계산하면 오답.) 피상속인이나 상속인 전원이 비거주자인 경우에는 9개월 이내. 증여세 신고기한: 증여받은 날이 속하는 달의 말일부터 3개월 이내(상증법 제68조).",
+  "keywords": [
+    "상속세 신고기한",
+    "속하는 달의 말일부터",
+    "6개월",
+    "비거주자 9개월",
+    "증여세 3개월",
+    "기산점"
+  ],
+  "rights_status": "official_paraphrase",
+  "review_status": "ai_draft"
+}

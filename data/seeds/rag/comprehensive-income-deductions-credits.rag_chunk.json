@@ -1,0 +1,29 @@
+{
+  "chunk_id": "comprehensive-income-deductions-credits",
+  "source": {
+    "source_kind": "official_regulation_paraphrase",
+    "title": "종합소득공제·세액공제 — 자녀세액공제·경로우대·기부금(2026년 기준)",
+    "reference": "소득세법 제50조~제51조 / 제59조의2 / 제59조의4"
+  },
+  "subject": "tax",
+  "unit": "income_tax",
+  "topic_tags": [
+    "income_tax",
+    "income_deduction",
+    "tax_credit",
+    "child_tax_credit",
+    "donation"
+  ],
+  "applicable_year": 2026,
+  "text": "2026년 기준 주요 공제. 자녀세액공제(8세 이상 기본공제대상 자녀): 1명 연 15만원, 2명 연 35만원, 3명 이상은 35만원 + 셋째부터 1명당 30만원 추가. 경로우대 추가공제: 70세 이상 1명당 연 100만원(소득공제). 인적공제 기본공제: 1명당 연 150만원, 배우자공제 소득요건은 연간 소득금액 100만원 이하(근로소득만 있으면 총급여 500만원 이하). 기부금: 종합소득자는 원칙적으로 기부금 '세액공제'를 적용한다. 다만 사업소득만 있는 거주자(세액공제 적용 대상에서 제외되는 자)는 기부금을 '필요경비'에 산입한다. 즉 '사업소득만 있는 자를 제외한 거주자'가 세액공제 대상이고, 제외된 사업소득자는 필요경비 산입 — 이 둘의 적용 주체를 뒤바꾸면 오답이다.",
+  "keywords": [
+    "자녀세액공제 2명 35만원",
+    "경로우대 100만원",
+    "배우자공제 소득 100만원",
+    "기부금 세액공제",
+    "사업소득 기부금 필요경비",
+    "종합소득공제"
+  ],
+  "rights_status": "official_paraphrase",
+  "review_status": "ai_draft"
+}

@@ -1,0 +1,28 @@
+{
+  "chunk_id": "acquisition-tax-and-surtaxes",
+  "source": {
+    "source_kind": "official_regulation_paraphrase",
+    "title": "취득세 + 부가세(지방교육세·농어촌특별세) 계산 구조",
+    "reference": "지방세법 제11조·제151조 / 농어촌특별세법 제5조"
+  },
+  "subject": "tax",
+  "unit": "local_tax_etc",
+  "topic_tags": [
+    "local_tax",
+    "acquisition_tax",
+    "local_education_tax",
+    "special_rural_development_tax"
+  ],
+  "applicable_year": 2026,
+  "text": "유상승계취득(주택 외 일반 부동산)의 취득세 표준세율은 4%다(주택은 1~3%, 혼동 주의). 취득 시 본세인 취득세에 두 가지 부가세(surtax)가 따라붙는다. (1) 지방교육세 = (취득세 표준세율 4% − 2%) × 과세표준 × 20% = 과세표준 × 2% × 20% = 과세표준 × 0.4%. (2) 농어촌특별세 = 취득세 표준세율분의 일정액 기준, 과세표준 × 0.2%(표준세율 2% 부분에 10% 적용). 합계 계산 예(과세표준 1,200,000,000): 취득세 48,000,000(4%) + 지방교육세 4,800,000(0.4%) + 농어촌특별세 2,400,000(0.2%) = 55,200,000원. 흔한 오류: 취득세율을 5%로 오산, 지방교육세를 4%×20%로 과대계산, 농어촌특별세 누락.",
+  "keywords": [
+    "취득세 4%",
+    "지방교육세",
+    "농어촌특별세",
+    "부가세 surtax",
+    "유상승계취득",
+    "과세표준"
+  ],
+  "rights_status": "official_paraphrase",
+  "review_status": "ai_draft"
+}
