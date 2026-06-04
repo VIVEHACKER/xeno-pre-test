@@ -341,12 +341,20 @@ def cli() -> int:
         help="live 모드 LLM 백엔드. 지정 시 mode=live 강제 (키 없이 codex/ollama 가능).",
     )
     parser.add_argument("--model", default=None, help="백엔드 모델 override")
+    parser.add_argument(
+        "--backends",
+        default=None,
+        help="교차-모델 앙상블 (콤마 구분, 강한 백엔드 먼저, 예: codex,anthropic). 다수결+합의 신뢰도.",
+    )
     parser.add_argument("--eval-dir", type=Path, default=None)
     parser.add_argument("--no-persist", action="store_true")
     args = parser.parse_args()
 
     extra = {"model": args.model} if args.model else {}
-    if args.backend:
+    if args.backends:
+        backend_list = [b.strip() for b in args.backends.split(",") if b.strip()]
+        solver = create_solver(backends=backend_list, **extra)
+    elif args.backend:
         solver = create_solver(mode="live", backend=args.backend, **extra)
     elif args.mode:
         solver = create_solver(mode=args.mode, **extra)

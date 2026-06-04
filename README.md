@@ -141,6 +141,23 @@ python -m cpa_first.benchmark.runner --backend anthropic
 > 참고: codex/ollama 백엔드는 호출당 수십 초로 **배치·오프라인(벤치마크·문항생성·검수)** 에 적합하다.
 > 저지연 per-request API 서빙에는 anthropic 백엔드(키)나 호스팅 모델을 권장.
 
+### 교차-모델 앙상블 (최대 정확도/신뢰도)
+
+여러 백엔드로 풀어 **다수결 + 합의 신뢰도**를 산출한다 (`cpa_first/solver/ensemble.py`):
+
+```bash
+# 강한 백엔드 먼저(우선순위 tie-break). 다수결 + agreement confidence.
+python -m cpa_first.benchmark.runner --backends codex,anthropic --eval-dir data/seeds/evaluation
+```
+
+`create_solver(backends=["codex","anthropic"])` → `EnsembleSolver`. 결과의 `tool_calls[0]`에
+`agreement`(합의도)·`unanimous`·`backend_answers`가 담겨, **만장일치는 자동 신뢰**하고
+**불일치는 인간검토/RAG로 라우팅**할 수 있다.
+
+> 실측(2026-06, KMMLU 실제 기출): 서로 다른 모델(Claude·codex/GPT)이 **합의하면 비-법 과목에서
+> ~98% 정답**(자동 신뢰 구간). **단, 법(상법)은 두 모델 오류가 상관돼 합의해도 틀릴 수 있어**
+> 앙상블로 못 고친다 → 법은 권위 조문 RAG가 필요. (단일 백엔드는 codex가 Claude보다 강했음.)
+
 ### 실전 기출로 재측정 (데이터는 직접 준비)
 
 현재 평가셋(`data/seeds/evaluation/`)은 LLM이 생성한 문항이라 LLM 풀이엔 in-distribution

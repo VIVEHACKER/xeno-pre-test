@@ -65,8 +65,15 @@ def create_solver(
     *,
     rag_dir: Any = None,
     backend: str | None = None,
+    backends: list[str] | None = None,
     **kwargs: Any,
-) -> Solver:
+) -> Any:
+    # backends 2개 이상 → 교차-모델 앙상블(다수결 + 합의 신뢰도). 최대 정확도/신뢰도 경로.
+    if backends and len(backends) >= 2:
+        from cpa_first.solver.ensemble import create_ensemble_solver
+
+        return create_ensemble_solver(backends, rag_dir=rag_dir, model=kwargs.get("model"))
+
     resolved_mode = mode or os.environ.get("CPA_SOLVER_MODE", "reasoned")
     rag_chunks: list[Any] = []
     if rag_dir is not None:
