@@ -1,0 +1,241 @@
+{
+  "model": "qwen3.5:27b-int4",
+  "total": 26,
+  "correct": 15,
+  "accuracy": 0.5769,
+  "answer_parse_rate": 0.6538,
+  "elapsed_secs": 16750.7,
+  "avg_secs_per_q": 644.3,
+  "per_subject": {
+    "accounting": {
+      "correct": 3,
+      "total": 7,
+      "accuracy": 0.4286
+    },
+    "corporate_law": {
+      "correct": 4,
+      "total": 4,
+      "accuracy": 1.0
+    },
+    "economics": {
+      "correct": 1,
+      "total": 1,
+      "accuracy": 1.0
+    },
+    "tax": {
+      "correct": 7,
+      "total": 14,
+      "accuracy": 0.5
+    }
+  },
+  "rows": [
+    {
+      "question_id": "cpa1-eval-accounting-020",
+      "subject": "accounting",
+      "chosen": 0,
+      "correct_choice": 1,
+      "ok": false,
+      "secs": 731.9
+    },
+    {
+      "question_id": "cpa1-eval-accounting-022",
+      "subject": "accounting",
+      "chosen": 2,
+      "correct_choice": 2,
+      "ok": true,
+      "secs": 414.8
+    },
+    {
+      "question_id": "cpa1-eval-accounting-024",
+      "subject": "accounting",
+      "chosen": 0,
+      "correct_choice": 0,
+      "ok": true,
+      "secs": 250.0
+    },
+    {
+      "question_id": "cpa1-eval-accounting-025",
+      "subject": "accounting",
+      "chosen": 1,
+      "correct_choice": 4,
+      "ok": false,
+      "secs": 328.0
+    },
+    {
+      "question_id": "cpa1-eval-accounting-049",
+      "subject": "accounting",
+      "chosen": -1,
+      "correct_choice": 2,
+      "ok": false,
+      "secs": 900.0
+    },
+    {
+      "question_id": "cpa1-eval-accounting-053",
+      "subject": "accounting",
+      "chosen": -1,
+      "correct_choice": 0,
+      "ok": false,
+      "secs": 900.0
+    },
+    {
+      "question_id": "cpa1-eval-accounting-054",
+      "subject": "accounting",
+      "chosen": 1,
+      "correct_choice": 1,
+      "ok": true,
+      "secs": 617.0
+    },
+    {
+      "question_id": "cpa1-eval-corporate_law-003",
+      "subject": "corporate_law",
+      "chosen": 3,
+      "correct_choice": 3,
+      "ok": true,
+      "secs": 179.7
+    },
+    {
+      "question_id": "cpa1-eval-corporate_law-007",
+      "subject": "corporate_law",
+      "chosen": 1,
+      "correct_choice": 1,
+      "ok": true,
+      "secs": 331.9
+    },
+    {
+      "question_id": "cpa1-eval-corporate_law-008",
+      "subject": "corporate_law",
+      "chosen": 3,
+      "correct_choice": 3,
+      "ok": true,
+      "secs": 714.5
+    },
+    {
+      "question_id": "cpa1-eval-corporate_law-011",
+      "subject": "corporate_law",
+      "chosen": 1,
+      "correct_choice": 1,
+      "ok": true,
+      "secs": 505.4
+    },
+    {
+      "question_id": "cpa1-eval-economics-015",
+      "subject": "economics",
+      "chosen": 1,
+      "correct_choice": 1,
+      "ok": true,
+      "secs": 444.0
+    },
+    {
+      "question_id": "cpa1-eval-tax-008",
+      "subject": "tax",
+      "chosen": 1,
+      "correct_choice": 1,
+      "ok": true,
+      "secs": 674.2
+    },
+    {
+      "question_id": "cpa1-eval-tax-009",
+      "subject": "tax",
+      "chosen": -1,
+      "correct_choice": 2,
+      "ok": false,
+      "secs": 900.0
+    },
+    {
+      "question_id": "cpa1-eval-tax-010",
+      "subject": "tax",
+      "chosen": -1,
+      "correct_choice": 4,
+      "ok": false,
+      "secs": 900.0
+    },
+    {
+      "question_id": "cpa1-eval-tax-012",
+      "subject": "tax",
+      "chosen": 2,
+      "correct_choice": 2,
+      "ok": true,
+      "secs": 356.6
+    },
+    {
+      "question_id": "cpa1-eval-tax-013",
+      "subject": "tax",
+      "chosen": 2,
+      "correct_choice": 2,
+      "ok": true,
+      "secs": 658.8
+    },
+    {
+      "question_id": "cpa1-eval-tax-020",
+      "subject": "tax",
+      "chosen": 2,
+      "correct_choice": 2,
+      "ok": true,
+      "secs": 634.0
+    },
+    {
+      "question_id": "cpa1-eval-tax-022",
+      "subject": "tax",
+      "chosen": -1,
+      "correct_choice": 1,
+      "ok": false,
+      "secs": 900.0
+    },
+    {
+      "question_id": "cpa1-eval-tax-024",
+      "subject": "tax",
+      "chosen": 3,
+      "correct_choice": 3,
+      "ok": true,
+      "secs": 623.2
+    },
+    {
+      "question_id": "cpa1-eval-tax-025",
+      "subject": "tax",
+      "chosen": 2,
+      "correct_choice": 2,
+      "ok": true,
+      "secs": 703.1
+    },
+    {
+      "question_id": "cpa1-eval-tax-027",
+      "subject": "tax",
+      "chosen": -1,
+      "correct_choice": 1,
+      "ok": false,
+      "secs": 900.0
+    },
+    {
+      "question_id": "cpa1-eval-tax-033",
+      "subject": "tax",
+      "chosen": -1,
+      "correct_choice": 1,
+      "ok": false,
+      "secs": 900.0
+    },
+    {
+      "question_id": "cpa1-eval-tax-036",
+      "subject": "tax",
+      "chosen": 1,
+      "correct_choice": 1,
+      "ok": true,
+      "secs": 483.5
+    },
+    {
+      "question_id": "cpa1-eval-tax-037",
+      "subject": "tax",
+      "chosen": -1,
+      "correct_choice": 4,
+      "ok": false,
+      "secs": 900.0
+    },
+    {
+      "question_id": "cpa1-eval-tax-038",
+      "subject": "tax",
+      "chosen": -1,
+      "correct_choice": 1,
+      "ok": false,
+      "secs": 900.0
+    }
+  ]
+}

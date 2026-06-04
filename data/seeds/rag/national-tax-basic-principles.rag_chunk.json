@@ -1,0 +1,29 @@
+{
+  "chunk_id": "national-tax-basic-principles",
+  "source": {
+    "source_kind": "official_regulation_paraphrase",
+    "title": "국세부과의 원칙 vs 세법적용의 원칙 — 조문별 분류",
+    "reference": "국세기본법 제14조~제20조"
+  },
+  "subject": "tax",
+  "unit": "national_tax_basic_act",
+  "topic_tags": [
+    "national_tax_basic_act",
+    "tax_imposition_principle",
+    "tax_application_principle",
+    "verbal_rule"
+  ],
+  "applicable_year": 2026,
+  "text": "국세기본법은 '국세부과의 원칙'과 '세법적용의 원칙'을 구분한다. 국세부과의 원칙(제14조~제17조)은 4가지: ①실질과세의 원칙(제14조), ②신의성실의 원칙(제15조), ③근거과세의 원칙(제16조), ④조세감면의 사후관리(제17조). 세법적용의 원칙(제18조~제20조)은: ①세법해석의 기준 및 소급과세의 금지(제18조), ②세무공무원 재량의 한계(제19조), ③기업회계의 존중(제20조). 따라서 '소급과세 금지'는 국세부과의 원칙이 아니라 세법적용의 원칙에 속한다. '조세감면의 사후관리'는 명칭이 생소하지만 엄연히 국세부과의 원칙 중 하나다. 신의성실의 원칙은 국세부과의 원칙에 속한다(세법적용의 원칙으로 혼동 주의).",
+  "keywords": [
+    "국세부과의 원칙",
+    "세법적용의 원칙",
+    "실질과세",
+    "신의성실",
+    "근거과세",
+    "조세감면 사후관리",
+    "소급과세 금지"
+  ],
+  "rights_status": "official_paraphrase",
+  "review_status": "ai_draft"
+}

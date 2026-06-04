@@ -1,0 +1,29 @@
+{
+  "chunk_id": "corporate-tax-bad-debt-allowance",
+  "source": {
+    "source_kind": "official_regulation_paraphrase",
+    "title": "법인세 대손충당금 한도와 세무조정 — 한도초과 및 전기유보 추인",
+    "reference": "법인세법 제34조 / 시행령 제61조"
+  },
+  "subject": "tax",
+  "unit": "corporate_tax",
+  "topic_tags": [
+    "corporate_tax",
+    "bad_debt_allowance",
+    "tax_adjustment",
+    "yubo_reversal"
+  ],
+  "applicable_year": 2026,
+  "text": "대손충당금 손금산입 한도 = 기말 세무상 채권가액 × 설정률. 설정률 = Max(1%, 대손실적률). 대손실적률 = 당기 세무상 대손금 ÷ 전기말 세무상 채권가액. 세무조정은 두 단계로 나뉜다. (1) 당기 한도초과: 결산서상 설정액 − 한도액 > 0 이면 그 초과액을 손금불산입(유보)한다. (2) 전기말 부인누계액(전기 한도초과로 유보된 금액)은 당기에 전액 추인하여 손금산입(△유보)한다. 즉 대손충당금은 총액법이 아니라 '당기 설정액 부인 + 전기 유보 추인'을 함께 처리해야 한다. 전기 유보 추인을 누락하면 오답이 된다. 예: 한도 12,000,000, 결산설정 18,000,000 → 한도초과 6,000,000 손금불산입(유보); 전기 부인누계 2,000,000 → 손금산입 2,000,000(△유보).",
+  "keywords": [
+    "대손충당금",
+    "대손실적률",
+    "설정률 Max(1%, 실적률)",
+    "한도초과",
+    "손금불산입 유보",
+    "전기 부인누계 추인",
+    "손금산입 마이너스유보"
+  ],
+  "rights_status": "official_paraphrase",
+  "review_status": "ai_draft"
+}
