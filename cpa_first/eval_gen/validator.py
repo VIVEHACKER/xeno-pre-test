@@ -19,11 +19,11 @@ correct_choice와 대조한다. 불일치 시 cross_check_passed=False가 채워
 
 from __future__ import annotations
 
+from collections.abc import Callable
 from dataclasses import dataclass, field
-from typing import Any, Callable
+from typing import Any
 
 from cpa_first.eval_gen._json_extract import extract_json_object
-
 
 SYSTEM_PROMPT = """당신은 한국 CPA 1차 시험 검토위원입니다.
 주어진 객관식 문항을 채점위원 관점에서 점검합니다.
@@ -85,9 +85,7 @@ CROSS_CHECK_USER_TEMPLATE = """과목: {subject}
 
 
 def _build_cross_check_prompt(question: dict[str, Any]) -> str:
-    choices_block = "\n".join(
-        f"{i}. {c}" for i, c in enumerate(question["choices"])
-    )
+    choices_block = "\n".join(f"{i}. {c}" for i, c in enumerate(question["choices"]))
     year = question.get("applicable_year")
     year_line = f"적용연도: {year}" if year else "적용연도: 미지정"
     return CROSS_CHECK_USER_TEMPLATE.format(
@@ -101,6 +99,7 @@ def _build_cross_check_prompt(question: dict[str, Any]) -> str:
 
 def _extract_answer_index(raw: str, max_choices: int) -> int:
     import re
+
     m = re.search(r"ANSWER\s*:\s*(\d+)", raw or "", re.IGNORECASE)
     if not m:
         return -1
@@ -136,9 +135,7 @@ def validate_question(
     """
     import json
 
-    user = USER_TEMPLATE.format(
-        question_json=json.dumps(question, ensure_ascii=False, indent=2)
-    )
+    user = USER_TEMPLATE.format(question_json=json.dumps(question, ensure_ascii=False, indent=2))
     raw = invoke(SYSTEM_PROMPT, user) or ""
     parsed = extract_json_object(raw)
 
@@ -174,8 +171,11 @@ def validate_question(
     )
 
     # 정답키 교차검증: 최종 채택될 본문을 풀어 본다(revised 있으면 revised, 아니면 원본).
+    # cross_check_invoke를 생성기와 '다른' 백엔드로 주입하면 독립 모델 교차검증이 된다.
     if cross_check and verdict != "reject":
-        target = revised if revised else question
+        # revised는 변경 필드만 담은 부분 패치일 수 있다(run_plan이 q.update로 병합).
+        # 따라서 원본에 병합한 완전한 본문을 교차검증한다(choices 누락 KeyError·키 None 오플래그 방지).
+        target = {**question, **revised} if revised else question
         invoker = cross_check_invoke or invoke
         chosen, cross_raw = cross_check_question(target, invoker)
         expected = target.get("correct_choice")
@@ -183,10 +183,24 @@ def validate_question(
         result.cross_check_rationale = cross_raw
         if chosen < 0 or chosen != expected:
             result.cross_check_passed = False
-            result.issues.append(
-                f"cross_check_failed: model chose {chosen}, key={expected}"
-            )
+            result.issues.append(f"cross_check_failed: model chose {chosen}, key={expected}")
         else:
             result.cross_check_passed = True
 
     return result
+
+
+def flag_if_questionable(question: dict[str, Any], result: ValidationResult) -> bool:
+    """cross_check이 불일치(독립 모델이 정답키와 다른 답)면 문항에 questionable 플래그를 단다.
+
+    reject가 아니라 flag로 남기는 이유: 독립 모델도 틀릴 수 있으므로 자동 폐기 대신
+    사람 검토 대상으로 표시한다(validator 설계 의도). cross_check을 안 돌렸으면(None) no-op.
+    반환: 플래그를 달았으면 True.
+    """
+    if result.cross_check_passed is False:
+        question["flagged_questionable"] = True
+        question["questionable_reason"] = (
+            result.issues[-1] if result.issues else "cross_check disagreement"
+        )
+        return True
+    return False
