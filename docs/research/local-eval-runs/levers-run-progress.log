@@ -1,0 +1,304 @@
+=== [1/2] CONTROL-8 회귀검증 (scaffold, temp0, samples1) Fri Jun  5 11:45:11 KST 2026 ===
+[rag] 36 chunks from data/seeds/rag
+[resume] 0건 완료. scaffold=True samples=1 temp=0.0
+[1/8] cpa1-eval-tax-007 s1/1 O chose=2 ans=2 700s (elapsed 0.2h)
+[2/8] cpa1-eval-tax-011 s1/1 X chose=2 ans=1 771s (elapsed 0.4h)
+[3/8] cpa1-eval-tax-015 s1/1 O chose=2 ans=2 1188s (elapsed 0.7h)
+[4/8] cpa1-eval-tax-016 s1/1 O chose=1 ans=1 128s (elapsed 0.8h)
+[5/8] cpa1-eval-tax-019 s1/1 O chose=1 ans=1 148s (elapsed 0.8h)
+[6/8] cpa1-eval-tax-022 s1/1 O chose=1 ans=1 1809s (elapsed 1.3h)
+[7/8] cpa1-eval-tax-024 s1/1 O chose=3 ans=3 347s (elapsed 1.4h)
+[8/8] cpa1-eval-tax-025 s1/1 O chose=2 ans=2 521s (elapsed 1.6h)
+
+집계 저장: docs/research/local-eval-runs/levers-control.summary.json
+{
+  "model": "qwen3.5:27b-int4",
+  "calc_scaffold": true,
+  "samples": 1,
+  "temperature": 0.0,
+  "num_predict": 16000,
+  "timeout": 3000,
+  "n_questions": 8,
+  "majority_vote_correct": 7,
+  "majority_vote_accuracy_pct": 87.5,
+  "rows": [
+    {
+      "question_id": "cpa1-eval-tax-007",
+      "samples_done": 1,
+      "votes": [
+        2
+      ],
+      "majority": 2,
+      "ans": 2,
+      "mv_ok": true
+    },
+    {
+      "question_id": "cpa1-eval-tax-011",
+      "samples_done": 1,
+      "votes": [
+        2
+      ],
+      "majority": 2,
+      "ans": 1,
+      "mv_ok": false
+    },
+    {
+      "question_id": "cpa1-eval-tax-015",
+      "samples_done": 1,
+      "votes": [
+        2
+      ],
+      "majority": 2,
+      "ans": 2,
+      "mv_ok": true
+    },
+    {
+      "question_id": "cpa1-eval-tax-016",
+      "samples_done": 1,
+      "votes": [
+        1
+      ],
+      "majority": 1,
+      "ans": 1,
+      "mv_ok": true
+    },
+    {
+      "question_id": "cpa1-eval-tax-019",
+      "samples_done": 1,
+      "votes": [
+        1
+      ],
+      "majority": 1,
+      "ans": 1,
+      "mv_ok": true
+    },
+    {
+      "question_id": "cpa1-eval-tax-022",
+      "samples_done": 1,
+      "votes": [
+        1
+      ],
+      "majority": 1,
+      "ans": 1,
+      "mv_ok": true
+    },
+    {
+      "question_id": "cpa1-eval-tax-024",
+      "samples_done": 1,
+      "votes": [
+        3
+      ],
+      "majority": 3,
+      "ans": 3,
+      "mv_ok": true
+    },
+    {
+      "question_id": "cpa1-eval-tax-025",
+      "samples_done": 1,
+      "votes": [
+        2
+      ],
+      "majority": 2,
+      "ans": 2,
+      "mv_ok": true
+    }
+  ]
+}
+=== [2/2] FAIL-12 회복+self-consistency (scaffold, temp0.6, samples3, budget20k/4000) Fri Jun  5 13:18:42 KST 2026 ===
+[rag] 36 chunks from data/seeds/rag
+[resume] 0건 완료. scaffold=True samples=3 temp=0.6
+[1/12] cpa1-eval-tax-008 s1/3 X chose=3 ans=1 343s (elapsed 0.1h)
+[1/12] cpa1-eval-tax-008 s2/3 X chose=3 ans=1 476s (elapsed 0.2h)
+[1/12] cpa1-eval-tax-008 s3/3 X chose=3 ans=1 145s (elapsed 0.3h)
+[2/12] cpa1-eval-tax-009 s1/3 X chose=-1 ans=2 1427s (elapsed 0.7h)
+[2/12] cpa1-eval-tax-009 s2/3 X chose=1 ans=2 1337s (elapsed 1.0h)
+[2/12] cpa1-eval-tax-009 s3/3 X chose=4 ans=2 940s (elapsed 1.3h)
+[3/12] cpa1-eval-tax-012 s1/3 X chose=3 ans=2 1338s (elapsed 1.7h)
+[3/12] cpa1-eval-tax-012 s2/3 X chose=3 ans=2 295s (elapsed 1.8h)
+[3/12] cpa1-eval-tax-012 s3/3 X chose=3 ans=2 411s (elapsed 1.9h)
+[4/12] cpa1-eval-tax-017 s1/3 O chose=0 ans=0 649s (elapsed 2.0h)
+[4/12] cpa1-eval-tax-017 s2/3 O chose=0 ans=0 241s (elapsed 2.1h)
+[4/12] cpa1-eval-tax-017 s3/3 O chose=0 ans=0 445s (elapsed 2.2h)
+[5/12] cpa1-eval-tax-020 s1/3 O chose=2 ans=2 683s (elapsed 2.4h)
+[5/12] cpa1-eval-tax-020 s2/3 O chose=2 ans=2 326s (elapsed 2.5h)
+[5/12] cpa1-eval-tax-020 s3/3 O chose=2 ans=2 552s (elapsed 2.7h)
+[6/12] cpa1-eval-tax-021 s1/3 X chose=2 ans=3 530s (elapsed 2.8h)
+[6/12] cpa1-eval-tax-021 s2/3 X chose=0 ans=3 379s (elapsed 2.9h)
+[6/12] cpa1-eval-tax-021 s3/3 X chose=0 ans=3 292s (elapsed 3.0h)
+[7/12] cpa1-eval-tax-027 s1/3 O chose=1 ans=1 436s (elapsed 3.1h)
+[7/12] cpa1-eval-tax-027 s2/3 O chose=1 ans=1 273s (elapsed 3.2h)
+[7/12] cpa1-eval-tax-027 s3/3 X chose=4 ans=1 291s (elapsed 3.3h)
+[8/12] cpa1-eval-tax-031 s1/3 O chose=1 ans=1 67s (elapsed 3.3h)
+[8/12] cpa1-eval-tax-031 s2/3 X chose=0 ans=1 150s (elapsed 3.3h)
+[8/12] cpa1-eval-tax-031 s3/3 X chose=0 ans=1 309s (elapsed 3.4h)
+[9/12] cpa1-eval-tax-033 s1/3 X chose=3 ans=1 868s (elapsed 3.7h)
+[9/12] cpa1-eval-tax-033 s2/3 X chose=2 ans=1 421s (elapsed 3.8h)
+[9/12] cpa1-eval-tax-033 s3/3 X chose=2 ans=1 352s (elapsed 3.9h)
+[10/12] cpa1-eval-tax-034 s1/3 X chose=0 ans=1 187s (elapsed 3.9h)
+[10/12] cpa1-eval-tax-034 s2/3 X chose=0 ans=1 203s (elapsed 4.0h)
+[10/12] cpa1-eval-tax-034 s3/3 X chose=0 ans=1 345s (elapsed 4.1h)
+[11/12] cpa1-eval-tax-036 s1/3 X chose=2 ans=1 271s (elapsed 4.2h)
+[11/12] cpa1-eval-tax-036 s2/3 X chose=2 ans=1 310s (elapsed 4.2h)
+[11/12] cpa1-eval-tax-036 s3/3 O chose=1 ans=1 686s (elapsed 4.4h)
+[12/12] cpa1-eval-tax-038 s1/3 X chose=0 ans=1 525s (elapsed 4.6h)
+[12/12] cpa1-eval-tax-038 s2/3 O chose=1 ans=1 1205s (elapsed 4.9h)
+  ERR cpa1-eval-tax-038 s3: timed out
+[12/12] cpa1-eval-tax-038 s3/3 X chose=-1 ans=1 4000s (elapsed 6.0h)
+
+집계 저장: docs/research/local-eval-runs/levers-fail.summary.json
+{
+  "model": "qwen3.5:27b-int4",
+  "calc_scaffold": true,
+  "samples": 3,
+  "temperature": 0.6,
+  "num_predict": 20000,
+  "timeout": 4000,
+  "n_questions": 12,
+  "majority_vote_correct": 3,
+  "majority_vote_accuracy_pct": 25.0,
+  "rows": [
+    {
+      "question_id": "cpa1-eval-tax-008",
+      "samples_done": 3,
+      "votes": [
+        3,
+        3,
+        3
+      ],
+      "majority": 3,
+      "ans": 1,
+      "mv_ok": false
+    },
+    {
+      "question_id": "cpa1-eval-tax-009",
+      "samples_done": 3,
+      "votes": [
+        1,
+        4
+      ],
+      "majority": 1,
+      "ans": 2,
+      "mv_ok": false
+    },
+    {
+      "question_id": "cpa1-eval-tax-012",
+      "samples_done": 3,
+      "votes": [
+        3,
+        3,
+        3
+      ],
+      "majority": 3,
+      "ans": 2,
+      "mv_ok": false
+    },
+    {
+      "question_id": "cpa1-eval-tax-017",
+      "samples_done": 3,
+      "votes": [
+        0,
+        0,
+        0
+      ],
+      "majority": 0,
+      "ans": 0,
+      "mv_ok": true
+    },
+    {
+      "question_id": "cpa1-eval-tax-020",
+      "samples_done": 3,
+      "votes": [
+        2,
+        2,
+        2
+      ],
+      "majority": 2,
+      "ans": 2,
+      "mv_ok": true
+    },
+    {
+      "question_id": "cpa1-eval-tax-021",
+      "samples_done": 3,
+      "votes": [
+        2,
+        0,
+        0
+      ],
+      "majority": 0,
+      "ans": 3,
+      "mv_ok": false
+    },
+    {
+      "question_id": "cpa1-eval-tax-027",
+      "samples_done": 3,
+      "votes": [
+        1,
+        1,
+        4
+      ],
+      "majority": 1,
+      "ans": 1,
+      "mv_ok": true
+    },
+    {
+      "question_id": "cpa1-eval-tax-031",
+      "samples_done": 3,
+      "votes": [
+        1,
+        0,
+        0
+      ],
+      "majority": 0,
+      "ans": 1,
+      "mv_ok": false
+    },
+    {
+      "question_id": "cpa1-eval-tax-033",
+      "samples_done": 3,
+      "votes": [
+        3,
+        2,
+        2
+      ],
+      "majority": 2,
+      "ans": 1,
+      "mv_ok": false
+    },
+    {
+      "question_id": "cpa1-eval-tax-034",
+      "samples_done": 3,
+      "votes": [
+        0,
+        0,
+        0
+      ],
+      "majority": 0,
+      "ans": 1,
+      "mv_ok": false
+    },
+    {
+      "question_id": "cpa1-eval-tax-036",
+      "samples_done": 3,
+      "votes": [
+        2,
+        2,
+        1
+      ],
+      "majority": 2,
+      "ans": 1,
+      "mv_ok": false
+    },
+    {
+      "question_id": "cpa1-eval-tax-038",
+      "samples_done": 3,
+      "votes": [
+        0,
+        1
+      ],
+      "majority": 0,
+      "ans": 1,
+      "mv_ok": false
+    }
+  ]
+}
+=== ALL DONE Fri Jun  5 19:20:36 KST 2026 ===

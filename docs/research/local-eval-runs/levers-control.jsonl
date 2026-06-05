@@ -1,0 +1,8 @@
+{"question_id": "cpa1-eval-tax-007", "sample": 1, "chosen": 2, "correct_choice": 2, "ok": true, "secs": 699.6}
+{"question_id": "cpa1-eval-tax-011", "sample": 1, "chosen": 2, "correct_choice": 1, "ok": false, "secs": 770.6}
+{"question_id": "cpa1-eval-tax-015", "sample": 1, "chosen": 2, "correct_choice": 2, "ok": true, "secs": 1188.1}
+{"question_id": "cpa1-eval-tax-016", "sample": 1, "chosen": 1, "correct_choice": 1, "ok": true, "secs": 127.5}
+{"question_id": "cpa1-eval-tax-019", "sample": 1, "chosen": 1, "correct_choice": 1, "ok": true, "secs": 147.9}
+{"question_id": "cpa1-eval-tax-022", "sample": 1, "chosen": 1, "correct_choice": 1, "ok": true, "secs": 1809.0}
+{"question_id": "cpa1-eval-tax-024", "sample": 1, "chosen": 3, "correct_choice": 3, "ok": true, "secs": 347.1}
+{"question_id": "cpa1-eval-tax-025", "sample": 1, "chosen": 2, "correct_choice": 2, "ok": true, "secs": 521.4}

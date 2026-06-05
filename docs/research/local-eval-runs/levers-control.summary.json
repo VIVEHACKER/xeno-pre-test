@@ -1,0 +1,93 @@
+{
+  "model": "qwen3.5:27b-int4",
+  "calc_scaffold": true,
+  "samples": 1,
+  "temperature": 0.0,
+  "num_predict": 16000,
+  "timeout": 3000,
+  "n_questions": 8,
+  "majority_vote_correct": 7,
+  "majority_vote_accuracy_pct": 87.5,
+  "rows": [
+    {
+      "question_id": "cpa1-eval-tax-007",
+      "samples_done": 1,
+      "votes": [
+        2
+      ],
+      "majority": 2,
+      "ans": 2,
+      "mv_ok": true
+    },
+    {
+      "question_id": "cpa1-eval-tax-011",
+      "samples_done": 1,
+      "votes": [
+        2
+      ],
+      "majority": 2,
+      "ans": 1,
+      "mv_ok": false
+    },
+    {
+      "question_id": "cpa1-eval-tax-015",
+      "samples_done": 1,
+      "votes": [
+        2
+      ],
+      "majority": 2,
+      "ans": 2,
+      "mv_ok": true
+    },
+    {
+      "question_id": "cpa1-eval-tax-016",
+      "samples_done": 1,
+      "votes": [
+        1
+      ],
+      "majority": 1,
+      "ans": 1,
+      "mv_ok": true
+    },
+    {
+      "question_id": "cpa1-eval-tax-019",
+      "samples_done": 1,
+      "votes": [
+        1
+      ],
+      "majority": 1,
+      "ans": 1,
+      "mv_ok": true
+    },
+    {
+      "question_id": "cpa1-eval-tax-022",
+      "samples_done": 1,
+      "votes": [
+        1
+      ],
+      "majority": 1,
+      "ans": 1,
+      "mv_ok": true
+    },
+    {
+      "question_id": "cpa1-eval-tax-024",
+      "samples_done": 1,
+      "votes": [
+        3
+      ],
+      "majority": 3,
+      "ans": 3,
+      "mv_ok": true
+    },
+    {
+      "question_id": "cpa1-eval-tax-025",
+      "samples_done": 1,
+      "votes": [
+        2
+      ],
+      "majority": 2,
+      "ans": 2,
+      "mv_ok": true
+    }
+  ]
+}
