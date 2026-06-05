@@ -14,9 +14,9 @@ from __future__ import annotations
 import argparse
 import sys
 from collections import Counter
+from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Callable
 
 from dotenv import load_dotenv
 
@@ -36,11 +36,11 @@ if str(ROOT) not in sys.path:
 
 from cpa_first.eval_gen import (  # noqa: E402
     BatchSpec,
+    flag_if_questionable,
     generate_batch,
     validate_question,
     write_question,
 )
-
 
 EVAL_DIR = ROOT / "data" / "seeds" / "evaluation"
 
@@ -221,9 +221,12 @@ PLANS = {
 def _mock_invoke_factory() -> Callable[[str, str], str]:
     """오프라인 dry-run용. system 프롬프트 키워드로 generator/validator 분기."""
     import json
+
     counter = {"n": 0}
 
     def invoke(system: str, user: str) -> str:
+        if "응시자" in system:  # cross_check(답 가린 풀이) prompt
+            return "[MOCK] 풀이 근거.\nANSWER: 0"
         if "검토위원" in system:
             return json.dumps(
                 {"verdict": "approve", "issues": [], "attractor_traps": ["mock trap"]}
@@ -253,7 +256,14 @@ def run_plan(
     plan: list[GenItem],
     invoke: Callable[[str, str], str],
     target_dir: Path,
+    *,
+    cross_check_invoke: Callable[[str, str], str] | None = None,
 ) -> dict:
+    """생성→검증→저장. cross_check_invoke가 주어지면 '독립 모델'로 정답키를 교차검증한다.
+
+    독립 cross-check이 정답키와 불일치하면 문항을 폐기하지 않고 flagged_questionable로
+    표시해 저장한다(독립 모델도 틀릴 수 있으므로 사람 검토 대상으로 남김).
+    """
     stats = Counter()
     written: list[Path] = []
     verdict_count = Counter()
@@ -265,15 +275,23 @@ def run_plan(
             difficulty=item.difficulty,
             count=item.count,
         )
-        print(f"[gen] {item.subject:<10} {item.unit:<24} {item.difficulty:<5} x{item.count}", flush=True)
+        print(
+            f"[gen] {item.subject:<10} {item.unit:<24} {item.difficulty:<5} x{item.count}",
+            flush=True,
+        )
         questions = generate_batch(spec, invoke)
         if not questions:
             stats["batch_failed"] += 1
-            print(f"  -> batch failed (no parse)", flush=True)
+            print("  -> batch failed (no parse)", flush=True)
             continue
 
         for q in questions[: item.count]:
-            vr = validate_question(q, invoke)
+            vr = validate_question(
+                q,
+                invoke,
+                cross_check=cross_check_invoke is not None,
+                cross_check_invoke=cross_check_invoke,
+            )
             verdict_count[vr.verdict] += 1
             if vr.verdict == "reject":
                 stats["rejected"] += 1
@@ -286,10 +304,19 @@ def run_plan(
                 q["review_status"] = "ai_draft_verified"
             q["attractor_traps"] = vr.attractor_traps
 
+            if flag_if_questionable(q, vr):
+                stats["flagged_questionable"] += 1
+
             path = write_question(q, target_dir)
             written.append(path)
             stats["written"] += 1
-            print(f"  ok: {path.name} (verdict={vr.verdict})", flush=True)
+            if vr.cross_check_passed is None:
+                cc = ""
+            elif vr.cross_check_passed:
+                cc = " cc✓"
+            else:
+                cc = f" cc✗(키={q.get('correct_choice')},독립={vr.cross_check_chosen})"
+            print(f"  ok: {path.name} (verdict={vr.verdict}{cc})", flush=True)
 
     return {
         "written": written,
@@ -309,17 +336,38 @@ def main() -> int:
         help="평가셋 저장 디렉터리 (기본: data/seeds/evaluation)",
     )
     parser.add_argument("--model", default=None, help="anthropic model override")
+    parser.add_argument(
+        "--cross-check-backend",
+        default="codex",
+        help="정답키 독립 교차검증 백엔드 (codex|ollama|anthropic). 생성기와 다른 모델 권장. 기본 codex(keyless)",
+    )
+    parser.add_argument("--cross-check-model", default=None, help="cross-check 모델 override")
+    parser.add_argument(
+        "--no-cross-check",
+        action="store_true",
+        help="독립 cross-check 비활성화 (검토위원 verdict만)",
+    )
     args = parser.parse_args()
 
     if args.dry_run:
         invoke = _mock_invoke_factory()
+        # dry-run: 같은 mock이 cross_check(응시자) 프롬프트도 처리 → 배선만 점검
+        cross_check_invoke = None if args.no_cross_check else invoke
     else:
         from cpa_first.eval_gen._anthropic_invoke import make_anthropic_invoke
+
         invoke = make_anthropic_invoke(model=args.model or "claude-opus-4-7")
+        if args.no_cross_check:
+            cross_check_invoke = None
+        else:
+            from cpa_first.llm import make_invoke
+
+            cross_check_invoke = make_invoke(args.cross_check_backend, model=args.cross_check_model)
 
     plan = PLANS[args.plan]
-    print(f"plan={args.plan} items={len(plan)} target_dir={args.target_dir}")
-    result = run_plan(plan, invoke, args.target_dir)
+    cc_label = "off" if cross_check_invoke is None else f"{args.cross_check_backend}(독립)"
+    print(f"plan={args.plan} items={len(plan)} target_dir={args.target_dir} cross_check={cc_label}")
+    result = run_plan(plan, invoke, args.target_dir, cross_check_invoke=cross_check_invoke)
 
     print()
     print(f"written  : {len(result['written'])}")

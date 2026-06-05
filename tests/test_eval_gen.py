@@ -7,17 +7,15 @@ from __future__ import annotations
 
 import json
 
-import pytest
-
 from cpa_first.eval_gen import (
     BatchSpec,
     ValidationResult,
+    flag_if_questionable,
     generate_batch,
     next_question_id,
     validate_question,
     write_question,
 )
-
 
 # ----- generator -----
 
@@ -85,7 +83,9 @@ def test_generate_batch_gives_up_after_retries():
 def test_generate_batch_strips_extra_prose():
     """모델이 ```json 코드블록으로 감싸도 파싱 성공."""
     spec = BatchSpec(subject="tax", unit="vat", difficulty="mid", count=1)
-    invoke = lambda system, user: f"여기 결과입니다:\n```json\n{_fake_batch_json('vat', 1)}\n```\n끝."
+    invoke = lambda system, user: (
+        f"여기 결과입니다:\n```json\n{_fake_batch_json('vat', 1)}\n```\n끝."
+    )
     result = generate_batch(spec, invoke)
     assert len(result) == 1
 
@@ -134,6 +134,97 @@ def test_validate_bad_json_returns_reject():
     r = validate_question({"stem": "s"}, invoke)
     assert r.verdict == "reject"
     assert "parse" in r.issues[0].lower() or "json" in r.issues[0].lower()
+
+
+# ----- 독립 모델 cross-check -----
+
+
+def _reviewer_approve(system, user):
+    return json.dumps({"verdict": "approve", "issues": [], "attractor_traps": []})
+
+
+def test_cross_check_pass_with_independent_invoke():
+    """독립 cross_check_invoke가 정답키와 일치 → cross_check_passed True."""
+    q = {
+        "stem": "s",
+        "subject": "tax",
+        "unit": "vat",
+        "choices": ["a", "b", "c", "d"],
+        "correct_choice": 2,
+    }
+    independent = lambda system, user: "풀이.\nANSWER: 2"
+    r = validate_question(q, _reviewer_approve, cross_check=True, cross_check_invoke=independent)
+    assert r.verdict == "approve"
+    assert r.cross_check_passed is True
+    assert r.cross_check_chosen == 2
+
+
+def test_cross_check_fail_with_independent_invoke():
+    """독립 모델이 정답키와 다른 답 → cross_check_passed False + issues 기록."""
+    q = {
+        "stem": "s",
+        "subject": "tax",
+        "unit": "vat",
+        "choices": ["a", "b", "c", "d"],
+        "correct_choice": 2,
+    }
+    independent = lambda system, user: "풀이.\nANSWER: 1"  # 키(2)와 불일치
+    r = validate_question(q, _reviewer_approve, cross_check=True, cross_check_invoke=independent)
+    assert r.cross_check_passed is False
+    assert r.cross_check_chosen == 1
+    assert any("cross_check_failed" in i for i in r.issues)
+
+
+def test_cross_check_uses_independent_not_reviewer():
+    """cross_check 풀이는 reviewer invoke가 아니라 독립 invoke로 호출돼야 한다."""
+    calls = {"independent": 0}
+
+    def independent(system, user):
+        calls["independent"] += 1
+        return "ANSWER: 0"
+
+    q = {"stem": "s", "choices": ["a", "b"], "correct_choice": 0}
+    validate_question(q, _reviewer_approve, cross_check=True, cross_check_invoke=independent)
+    assert calls["independent"] == 1  # 독립 invoke가 정확히 1회 풀이
+
+
+def test_flag_if_questionable_marks_disagreement():
+    q = {"stem": "s", "correct_choice": 2}
+    res = ValidationResult(
+        verdict="approve",
+        cross_check_passed=False,
+        issues=["cross_check_failed: model chose 1, key=2"],
+    )
+    assert flag_if_questionable(q, res) is True
+    assert q["flagged_questionable"] is True
+    assert "cross_check_failed" in q["questionable_reason"]
+
+
+def test_flag_if_questionable_noop_when_passed():
+    q = {"stem": "s", "correct_choice": 2}
+    res = ValidationResult(verdict="approve", cross_check_passed=True)
+    assert flag_if_questionable(q, res) is False
+    assert "flagged_questionable" not in q
+
+
+def test_cross_check_handles_partial_revision():
+    """revised가 부분 패치(stem만)여도 원본과 병합해 cross-check — KeyError/오플래그 없이."""
+    partial = {"stem": "수정된 본문만"}  # choices/correct_choice 없는 부분 패치
+    review = lambda system, user: json.dumps(
+        {"verdict": "revise", "issues": [], "attractor_traps": [], "revised": partial}
+    )
+    independent = lambda system, user: "ANSWER: 1"  # 원본 correct_choice=1과 일치
+    q = {
+        "stem": "원본",
+        "subject": "tax",
+        "unit": "vat",
+        "choices": ["a", "b", "c", "d"],
+        "correct_choice": 1,
+    }
+    r = validate_question(q, review, cross_check=True, cross_check_invoke=independent)
+    assert r.verdict == "revise"
+    assert r.cross_check_passed is True  # 병합본(choices=원본, key=1) 기준 일치
+    assert r.cross_check_chosen == 1
 
 
 def test_validate_cross_check_passes_when_model_picks_key():
