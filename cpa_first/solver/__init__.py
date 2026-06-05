@@ -8,6 +8,11 @@ live 모드: Anthropic Claude API 호출. ANTHROPIC_API_KEY 필요.
 """
 
 from cpa_first.solver.ensemble import EnsembleSolver, create_ensemble_solver
+from cpa_first.solver.routing import (
+    RoutingSolver,
+    create_routing_solver,
+    parse_routes,
+)
 from cpa_first.solver.solver import (
     Solver,
     SolveResult,
@@ -27,6 +32,9 @@ __all__ = [
     "load_evaluation_questions",
     "EnsembleSolver",
     "create_ensemble_solver",
+    "RoutingSolver",
+    "create_routing_solver",
+    "parse_routes",
     "calculator",
     "amortization_table",
     "date_diff",

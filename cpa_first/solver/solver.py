@@ -67,8 +67,23 @@ def create_solver(
     rag_dir: Any = None,
     backend: str | None = None,
     backends: list[str] | None = None,
+    routes: dict[str, str] | None = None,
     **kwargs: Any,
 ) -> Any:
+    # routes 인자(명시) → 과목별 라우팅 solver. 사용자가 직접 요청한 것이므로 최우선.
+    # 예: 계산 부담 큰 세법만 클라우드(codex), 나머지는 로컬(ollama).
+    if routes:
+        from cpa_first.solver.routing import create_routing_solver
+
+        return create_routing_solver(
+            routes,
+            default_backend=backend,
+            rag_dir=rag_dir,
+            model=kwargs.get("model"),
+            calc_scaffold=kwargs.get("calc_scaffold", False),
+            rag_top_k=kwargs.get("rag_top_k", 3),
+        )
+
     # backends 2개 이상 → 교차-모델 앙상블(다수결 + 합의 신뢰도). 최대 정확도/신뢰도 경로.
     if backends and len(backends) >= 2:
         from cpa_first.solver.ensemble import create_ensemble_solver
@@ -83,6 +98,20 @@ def create_solver(
         rag_chunks = load_chunks(rag_dir)
 
     if resolved_mode == "live":
+        # CPA_LLM_ROUTES env → 과목별 라우팅. live 모드 + 주입 invoke 없을 때만 발동한다.
+        # (mock/reasoned 모드나 명시 backends/invoke를 env가 덮어쓰지 않게 함)
+        env_routes = os.environ.get("CPA_LLM_ROUTES")
+        if env_routes and kwargs.get("invoke") is None:
+            from cpa_first.solver.routing import create_routing_solver
+
+            return create_routing_solver(
+                None,
+                default_backend=backend,
+                rag_dir=rag_dir,
+                model=kwargs.get("model"),
+                calc_scaffold=kwargs.get("calc_scaffold", False),
+                rag_top_k=kwargs.get("rag_top_k", 3),
+            )
         # 백엔드 우선순위: 주입 invoke > backend 인자/CPA_LLM_BACKEND env > anthropic(기본).
         if kwargs.get("invoke") is not None:
             return Solver(
