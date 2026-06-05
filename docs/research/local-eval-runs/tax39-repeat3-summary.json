@@ -1,0 +1,29 @@
+{
+  "model": "qwen3.5:27b-int4",
+  "runs": 3,
+  "n_questions": 39,
+  "rag": true,
+  "config": {
+    "num_predict": 16000,
+    "num_ctx": 24000,
+    "timeout": 3000,
+    "temperature": 0.0
+  },
+  "source_of_truth": "tax39-repeat3-progress.log (/tmp/bench_repeat3.log) — jsonl was truncated by concurrent session, do NOT aggregate from jsonl",
+  "run_accuracy_pct": {
+    "1": 69.2,
+    "2": 69.2,
+    "3": 69.2
+  },
+  "mean_accuracy_pct": 69.2,
+  "stdev_accuracy_pct": 0.0,
+  "majority_vote_accuracy_pct": 69.2,
+  "stability": {
+    "always_right": 27,
+    "always_wrong": 12,
+    "flaky": 0,
+    "flaky_ids": []
+  },
+  "note": "이전 self-summary(70.3/64.5/69.2, mean68.0 std2.5)는 잘린 jsonl(107/117줄)로 집계된 아티팩트. 완전 로그 기준 3런이 문항 단위로 완전 동일 → temp=0 + 고정설정에서 사실상 결정론적. 과거 보고한 ±10%p 비결정성은 timeout 차이로 인한 truncation(-1 오답)과 소표본/잘린파일이 원인이었음.",
+  "wrong_questions_count": 12
+}
