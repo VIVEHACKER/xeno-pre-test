@@ -1,0 +1,14 @@
+=== CLOUD 천장테스트 (codex, 동일 RAG+scaffold) Fri Jun  5 19:39:12 KST 2026 ===
+[rag] 36 chunks
+[resume] 0건 완료
+[1/9] cpa1-eval-tax-008 O chose=1 ans=1 200s (elapsed 3.3m)
+[2/9] cpa1-eval-tax-009 O chose=2 ans=2 153s (elapsed 5.9m)
+[3/9] cpa1-eval-tax-012 O chose=2 ans=2 152s (elapsed 8.4m)
+[4/9] cpa1-eval-tax-021 O chose=3 ans=3 58s (elapsed 9.4m)
+[5/9] cpa1-eval-tax-031 O chose=1 ans=1 64s (elapsed 10.4m)
+[6/9] cpa1-eval-tax-033 O chose=1 ans=1 143s (elapsed 12.8m)
+[7/9] cpa1-eval-tax-034 X chose=0 ans=1 33s (elapsed 13.4m)
+[8/9] cpa1-eval-tax-036 O chose=1 ans=1 215s (elapsed 17.0m)
+[9/9] cpa1-eval-tax-038 O chose=1 ans=1 89s (elapsed 18.4m)
+{"n": 9, "correct": 8, "accuracy_pct": 88.9}
+=== CLOUD DONE Fri Jun  5 19:57:38 KST 2026 ===
