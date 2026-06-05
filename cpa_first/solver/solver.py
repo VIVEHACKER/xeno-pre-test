@@ -39,6 +39,7 @@ class Solver:
     invoke: Callable[[str, str], str] | None = None  # 테스트용 주입 가능
     rag_chunks: list[Any] = field(default_factory=list)  # 있으면 live에 context 주입
     rag_top_k: int = 3
+    calc_scaffold: bool = False  # True면 계산형 문제 단계강제 스캐폴드를 system에 추가
 
     def solve(self, question: dict[str, Any]) -> SolveResult:
         if self.mode == "reasoned":
@@ -159,6 +160,17 @@ SYSTEM_PROMPT = """당신은 한국 공인회계사 1차 시험(회계학·세�
 세법은 적용연도를 반드시 확인한다. 회계는 K-IFRS 기준이다."""
 
 
+# 계산형 문제(다단계 세무조정/한도/세율 적용)에서 규칙은 알지만 적용 단계에서 틀리는
+# 실패를 줄이기 위한 추가 규율. opt-in(Solver.calc_scaffold)으로만 붙인다.
+CALC_SCAFFOLD = """
+계산 규율 (금액 계산 문제에서 반드시 따른다):
+- 자료의 각 항목을 한 줄씩 나열하고 [가산(+)/차감(-)/제외/불산입] 분류를 먼저 확정한다. 분류를 끝내기 전에 합산하지 않는다.
+- 각 분류에는 근거(조문/한도식)를 한 단어라도 붙인다. 예: "본인급여 -, 소법§33①7 불산입".
+- 모든 금액에 단위(원/만원/억원)를 매 줄 명시하고, 합산 직전에 단위를 통일한다.
+- 한도가 있는 항목(대손충당금·접대비·기부금·이월결손금 등)은 한도식을 먼저 쓰고 Min/Max로 한도초과를 분리한다.
+- 최종 금액을 보기와 대조하고, 가장 가까운 매력적 오답과의 '차액'이 어느 항목에서 비롯됐는지 한 줄로 확인한 뒤 ANSWER를 확정한다."""
+
+
 USER_TEMPLATE = """과목: {subject}
 단원: {unit}
 {year_line}
@@ -189,10 +201,12 @@ def _solve_live(question: dict[str, Any], solver: Solver) -> SolveResult:
     if context_block:
         user_message = f"{context_block}\n\n{user_message}"
 
+    system_prompt = SYSTEM_PROMPT + CALC_SCAFFOLD if solver.calc_scaffold else SYSTEM_PROMPT
+
     if solver.invoke is not None:
-        raw = solver.invoke(SYSTEM_PROMPT, user_message)
+        raw = solver.invoke(system_prompt, user_message)
     else:
-        raw = _call_anthropic(solver, user_message)
+        raw = _call_anthropic(solver, system_prompt, user_message)
 
     chosen = _extract_answer_index(raw, len(question["choices"]))
 
@@ -212,8 +226,15 @@ def _build_rag_context(solver: Solver, question: dict[str, Any]) -> str:
     # 지연 import: rag 모듈이 없어도 solver 자체는 동작해야 함
     from cpa_first.rag import format_context, retrieve
 
+    # "다음 중 옳지 않은 것" 유형은 변별 키워드가 stem이 아니라 보기에 있다.
+    # stem만으로 검색하면 해당 규칙 청크가 누락되므로 보기를 쿼리에 합친다.
+    query = question["stem"]
+    choices = question.get("choices")
+    if choices:
+        query = query + "\n" + "\n".join(str(c) for c in choices)
+
     hits = retrieve(
-        question["stem"],
+        query,
         solver.rag_chunks,
         subject=question.get("subject"),
         unit=question.get("unit"),
@@ -222,7 +243,7 @@ def _build_rag_context(solver: Solver, question: dict[str, Any]) -> str:
     return format_context(hits)
 
 
-def _call_anthropic(solver: Solver, user_message: str) -> str:
+def _call_anthropic(solver: Solver, system_prompt: str, user_message: str) -> str:
     """Anthropic 호출 골격. live 모드에서만 사용. 비용 관리 책임은 호출자.
 
     RateLimit/일시적 네트워크 에러는 exponential backoff로 최대 3회 재시도한다.
@@ -247,7 +268,7 @@ def _call_anthropic(solver: Solver, user_message: str) -> str:
             response = solver.client.messages.create(
                 model=solver.model,
                 max_tokens=2000,
-                system=SYSTEM_PROMPT,
+                system=system_prompt,
                 messages=[{"role": "user", "content": user_message}],
             )
             parts: list[str] = []
