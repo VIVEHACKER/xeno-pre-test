@@ -1,0 +1,18 @@
+{
+  "plan_items": 3,
+  "stats": {
+    "flagged_questionable": 2,
+    "written": 3
+  },
+  "verdicts": {
+    "revise": 1,
+    "approve": 2
+  },
+  "written_files": [
+    "cpa1-eval-accounting-001.evaluation_question.json",
+    "cpa1-eval-business-001.evaluation_question.json",
+    "cpa1-eval-tax-001.evaluation_question.json"
+  ],
+  "gen_backend": "codex",
+  "cross_check_backend": "ollama"
+}

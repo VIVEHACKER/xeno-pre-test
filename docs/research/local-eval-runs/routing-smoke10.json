@@ -1,0 +1,130 @@
+{
+  "mode": "routing",
+  "routes": {
+    "tax": "codex"
+  },
+  "default_backend": "ollama",
+  "total": 10,
+  "correct": 10,
+  "accuracy": 1.0,
+  "elapsed_secs": 1785.2,
+  "per_subject": {
+    "accounting": {
+      "n": 2,
+      "correct": 2,
+      "accuracy": 1.0
+    },
+    "business": {
+      "n": 2,
+      "correct": 2,
+      "accuracy": 1.0
+    },
+    "corporate_law": {
+      "n": 2,
+      "correct": 2,
+      "accuracy": 1.0
+    },
+    "economics": {
+      "n": 2,
+      "correct": 2,
+      "accuracy": 1.0
+    },
+    "tax": {
+      "n": 2,
+      "correct": 2,
+      "accuracy": 1.0
+    }
+  },
+  "rows": [
+    {
+      "question_id": "cpa1-eval-accounting-001",
+      "subject": "accounting",
+      "backend": "ollama",
+      "correct": true,
+      "chosen": 1,
+      "expected": 1,
+      "secs": 160.1
+    },
+    {
+      "question_id": "cpa1-eval-accounting-002",
+      "subject": "accounting",
+      "backend": "ollama",
+      "correct": true,
+      "chosen": 2,
+      "expected": 2,
+      "secs": 225.0
+    },
+    {
+      "question_id": "cpa1-eval-business-001",
+      "subject": "business",
+      "backend": "ollama",
+      "correct": true,
+      "chosen": 0,
+      "expected": 0,
+      "secs": 200.7
+    },
+    {
+      "question_id": "cpa1-eval-business-002",
+      "subject": "business",
+      "backend": "ollama",
+      "correct": true,
+      "chosen": 2,
+      "expected": 2,
+      "secs": 157.5
+    },
+    {
+      "question_id": "cpa1-eval-corporate_law-001",
+      "subject": "corporate_law",
+      "backend": "ollama",
+      "correct": true,
+      "chosen": 0,
+      "expected": 0,
+      "secs": 372.0
+    },
+    {
+      "question_id": "cpa1-eval-corporate_law-002",
+      "subject": "corporate_law",
+      "backend": "ollama",
+      "correct": true,
+      "chosen": 3,
+      "expected": 3,
+      "secs": 132.8
+    },
+    {
+      "question_id": "cpa1-eval-economics-001",
+      "subject": "economics",
+      "backend": "ollama",
+      "correct": true,
+      "chosen": 1,
+      "expected": 1,
+      "secs": 224.6
+    },
+    {
+      "question_id": "cpa1-eval-economics-002",
+      "subject": "economics",
+      "backend": "ollama",
+      "correct": true,
+      "chosen": 0,
+      "expected": 0,
+      "secs": 251.0
+    },
+    {
+      "question_id": "cpa1-eval-tax-001",
+      "subject": "tax",
+      "backend": "codex",
+      "correct": true,
+      "chosen": 2,
+      "expected": 2,
+      "secs": 38.8
+    },
+    {
+      "question_id": "cpa1-eval-tax-002",
+      "subject": "tax",
+      "backend": "codex",
+      "correct": true,
+      "chosen": 2,
+      "expected": 2,
+      "secs": 22.7
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+# 2026-06-11 — 3대 능력 실측 검증 + 학습 루프 구축
+
+질문: **"실제 문제 풀이·제작 능력이 있고, 따라가기만 하면 개념과 풀이력이 자연스럽게 늘
+합격 가이드라인을 주는 AI인가?"**
+
+판정(요약): **검증 전 기준으로는 '아니오'** — 두뇌(풀이·제작)는 합격선 위로 실측됐지만,
+제품이 그것을 학습자에게 전달하지 못하고 있었다(처방이 풀 문항을 0개 추천, 풀이 AI는
+API 미연결, 튜토리얼 미노출). **이번 작업으로 전달 경로를 구축**했고, 남은 한계는 아래에
+정직하게 기록한다.
+
+## 1. 풀이 능력 — 실측
+
+| 측정 | 백엔드 | 데이터 | 결과 | 출처 |
+|---|---|---|---|---|
+| CPA-core 4과목 (실 KMMLU 120문항) | codex | 실기출 유사(공개 벤치) | **95% (114/120)**, RAG-on 세법 100% | 2026-06-codex-capability-baseline.md |
+| 세법 로컬 천장 | qwen3.5:27b-int4 | 자체 39문항 | 69.2% (12문항 항상 오답) | tax39-repeat3-summary.json |
+| 로컬 최난도 9문항 | codex | 동일 RAG+프롬프트 | **8/9 (88.9%)** — 병목은 지식이 아니라 다단계 계산 | cloud-run-progress.log |
+| 라우팅 solver 제품 경로 E2E (과목별 2문항, 세법→codex, 나머지→로컬) | routing | 자체 10문항 | **10/10 (100%)** — 세법 2문항은 로컬 항상-오답군인데 codex가 각 23·39초에 정답. 로컬 과목 문항당 133~372초(연습용 한계) | local-eval-runs/routing-smoke10.json |
+
+**발견·수정한 결함**: `cpa_first/llm.py`의 ollama 어댑터가 `num_ctx`/`num_predict`를 설정하지
+않아 제품 경로(라우팅 solver)가 ollama 기본 4k 컨텍스트로 동작 — 벤치마크(16k 명시)와
+제품의 정확도가 괴리될 구조였다. 옵션 명시 + env 설정(`CPA_OLLAMA_NUM_CTX` 등)으로 수정.
+
+**합격선 대비**: CPA 1차 합격 기준(평균 60%·과목 40%) 대비 클라우드 백엔드는 전 과목
+크게 상회. 로컬 단독은 세법(43.6%→69.2% 천장)이 과락권이므로 라우팅(세법→클라우드)이
+운영 전제다.
+
+## 2. 문제 제작 능력 — 실측
+
+이번 소표본(3문항: 회계 mid·경영 easy·세법 hard, 생성/검토=codex, **교차검증=ollama 독립모델**):
+
+- 구조 유효성 3/3, 검토 verdict: approve 2 · revise 1
+- **정답키 1/3 오류 — 독립 교차검증이 포착**: 회계 CVP 문항이 해설로는 "6,000단위(=index 1)"를
+  도출하고 키는 `correct_choice: 2`(7,200단위)로 기록. 원인은 해설의 한국식 "2번"(1-기반)을
+  0-기반 인덱스로 그대로 적는 **인덱스 규약 혼동**. 수기 검산으로 확정(공헌이익 120,000원/묶음,
+  목표공헌이익 2.4억 → 2,000묶음 → A 6,000단위).
+- 세법 hard 문항은 수기 검산 결과 키 정확(손금불산입 138,000,000원 = 특례초과 1억 + 일반초과
+  2천만 + 비지정 1.8천만). 플래그는 로컬모델 ANSWER 파싱 실패(-1)에 의한 절차적 오탐.
+
+**구축한 가드**: `reconcile_correct_choice()` — 생성기에 `correct_answer`(정답 원문)를 요구하고
+`choices[correct_choice]==correct_answer`를 코드로 대조. 불일치 시 교정(repaired), 대조 불가 시
+폐기(dropped), 미제공 시 unverified 경고. 프롬프트 지시("0-기반")만으로는 막지 못함을 실측으로
+확인했기 때문에 결정론 가드를 추가했다.
+
+기존 실측(2026-06-05, 25문항): 구조 100%, 정답키 96%. + `--items` CLI로 약점 타겟 생성 가능해짐
+(`subject:unit:difficulty:count`).
+
+## 3. 합격 가이드라인 — 검증 결과 '구조적 단절' → 구축
+
+검증에서 확인된 단절: 처방 엔진·진단·풀이맵 159·튜토리얼 23·용어그래프 1,001은 구현돼
+있었으나 **처방의 `problems_to_solve`가 항상 빈 배열**(prescribe.py:301), 다주차 플랜 부재,
+튜토리얼 API 부재, 선수개념 그래프 미사용, AI 풀이 미연결 — "따라가기만 하면"의 모든
+관절이 끊겨 있었다.
+
+구축(전부 결정론·근거 추적 evidence_refs 포함, 테스트 450개 통과):
+
+| 모듈/엔드포인트 | 역할 |
+|---|---|
+| `engine/recommend.py` | 과락(<40%) 최우선·약개념 매칭·기시도 감점 점수로 problems_to_solve/skip 채움 |
+| `engine/study_plan.py` | D-day→주차 분해, 단계 진행 압축, 과락 과목 시간 floor 15%, 망각 방지 유지시간 |
+| `engine/learning_path.py` | 약개념→선수개념 BFS 역추적, 깊은 선수부터 학습 순서 + 자원(청크/문항/튜토리얼) |
+| `GET /tutorials`, `/tutorials/{id}` | 23개 튜토리얼 노출 |
+| `GET /practice`, `/practice/{id}` | 문항 뱅크 159 (정답·해설 비노출, 커서 페이지네이션) |
+| `POST /attempts/diagnose` (확장) | 시도 후 공식 해설 반환 |
+| `POST /practice/{id}/ai-explain` | 라우팅 solver AI 풀이 — 시도한 문항만(403), blind dict(정답 필드 제거 후 solve), 5/min 제한, 키 불일치 정직 표기 |
+| `GET /learning-path` | 활성 처방의 약개념 → 학습 경로 |
+
+학습 루프: 진단 → 처방(문항+로드맵) → 연습(무정답) → 시도 진단(해설+오답원인+다음행동)
+→ 로그 누적 → `/user-state/refresh` 재진단 → 갱신된 처방. 전 단계 API로 닫힘.
+
+### 3.1 적대적 리뷰 적발 → 수정 (정답 노출 경계)
+
+이중 리뷰(내부 code-reviewer + codex 적대적)가 정답 노출 우회 3경로를 적발, 전부 수정:
+
+1. **정적 마운트 우회 (P1)**: `prototype/problem_solution_maps.json`(정답 은행 전체)이
+   정적 서빙으로 공개되고 있었음 — `_UiStaticFiles`로 해당 파일 404 차단.
+2. **공개 evidence 우회 (P1)**: `/evidence/problem_solution_map/{id}`가 무인증으로
+   정답키·해설 반환 — 정답 포함 evidence 2종을 인증+해당 문항 시도 후로 게이트.
+3. **blind dict 중첩 누수 (P2)**: ai-explain의 solver 입력에서 top-level 정답 필드만
+   제거하고 `solution_paths.answer_index`가 남아 있었음 — 블랙리스트를 화이트리스트
+   (`_SOLVER_INPUT_FIELDS`)로 교체.
+4. **중복 과목 음수 시간 (P2)**: 같은 과목을 중복 입력하면 과락 floor 중복 적용으로
+   주간 배분에 음수 시간 발생 — API 422 거부 + 엔진 dedupe/클램프 이중 방어.
+
+전부 회귀 테스트로 고정 (tests/test_guidance_api.py).
+
+## 4. 남은 한계 (정직 기록)
+
+1. **실제 기출 PDF 미수집** — 권리 검토 게이트에 막혀 있음. "실전 기출 전수 정답률"은
+   직접 측정이 아니라 KMMLU(공개 유사기출) + 자체 159문항 측정임.
+2. **상법 실기출 검증 부재** — 합성 15문항 93%(codex)만 존재. KMMLU 'Law'는 행정법이라
+   대용 불가.
+3. **로컬 단독 세법 과락권** — 라우팅으로 해소하지만 클라우드 의존(비용/오프라인 제약).
+4. **ai-explain 로컬 지연** — qwen3.5:27b 기준 문항당 2~6분 실측. 운영은 anthropic 백엔드
+   권장(저지연). 미설정 시 503으로 정직하게 차단.
+5. **UI 미통합** — 프로토타입 UI는 새 처방 필드(problems_to_solve/study_plan)와 신규
+   엔드포인트를 아직 렌더링하지 않음. API까지가 이번 범위.
+6. **decision rules 35개는 수동 작성(machine_draft)** — 합격수기 자동 추출 파이프라인(M4)은
+   여전히 docs-only.
+7. **추천 가중치는 휴리스틱** — 실사용 로그 기반 보정(A/B, 수렴 측정)은 데이터 누적 후 가능.
+
+## 5. 재현 명령
+
+```bash
+# 라우팅 제품 경로 E2E
+CPA_OLLAMA_MODEL=qwen3.5:27b-int4 .venv/bin/python scripts/benchmark_routing.py \
+  --routes tax:codex --default ollama --rag data/seeds/rag --per-subject 2
+
+# 생성 품질(독립 교차검증)
+CPA_OLLAMA_MODEL=qwen3.5:27b-int4 .venv/bin/python scripts/verify_gen_quality.py
+
+# 전체 테스트 / 린트
+.venv/bin/pytest -q && ruff check .
+```
