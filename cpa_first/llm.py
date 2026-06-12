@@ -96,8 +96,15 @@ def ollama_invoke_factory(
     *,
     host: str = "http://localhost:11434",
     timeout: int = 240,
+    num_predict: int = 8000,
+    num_ctx: int = 16000,
 ) -> Invoke:
-    """로컬 ollama `/api/chat` 기반 invoke. 완전 오프라인."""
+    """로컬 ollama `/api/chat` 기반 invoke. 완전 오프라인.
+
+    num_predict/num_ctx를 항상 명시한다 — ollama 기본 컨텍스트(4k)는 RAG 프롬프트
+    + reasoning 모델의 긴 thinking을 담지 못해 ANSWER 줄이 잘린다(벤치마크 실측과
+    제품 경로의 정확도 괴리 원인이었음).
+    """
 
     def _invoke(system: str, user: str) -> str:
         import httpx
@@ -112,6 +119,11 @@ def ollama_invoke_factory(
                         {"role": "system", "content": system},
                         {"role": "user", "content": user},
                     ],
+                    "options": {
+                        "temperature": 0.0,
+                        "num_predict": num_predict,
+                        "num_ctx": num_ctx,
+                    },
                 },
                 timeout=timeout,
             )
@@ -174,6 +186,9 @@ def make_invoke(backend: str | None = None, *, model: str | None = None) -> Invo
         return ollama_invoke_factory(
             model=model or os.environ.get("CPA_OLLAMA_MODEL", "qwen2.5:32b"),
             host=os.environ.get("CPA_OLLAMA_HOST", "http://localhost:11434"),
+            timeout=int(os.environ.get("CPA_OLLAMA_TIMEOUT", "600")),
+            num_predict=int(os.environ.get("CPA_OLLAMA_NUM_PREDICT", "8000")),
+            num_ctx=int(os.environ.get("CPA_OLLAMA_NUM_CTX", "16000")),
         )
     if name == "anthropic":
         return anthropic_invoke_factory(model=model or "claude-opus-4-7")
