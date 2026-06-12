@@ -48,8 +48,10 @@ def _fake_batch_json(unit: str = "lease", n: int = 2) -> str:
 
 def test_generate_batch_parses_json():
     spec = BatchSpec(subject="accounting", unit="lease", difficulty="hard", count=2)
+
     def invoke(system, user):
         return _fake_batch_json("lease", 2)
+
     result = generate_batch(spec, invoke)
     assert len(result) == 2
     assert all(q["subject"] == "accounting" for q in result)
@@ -76,8 +78,10 @@ def test_generate_batch_retries_on_bad_json():
 
 def test_generate_batch_gives_up_after_retries():
     spec = BatchSpec(subject="accounting", unit="lease", difficulty="hard", count=2)
+
     def invoke(system, user):
         return "garbage"
+
     result = generate_batch(spec, invoke, max_retries=1)
     assert result == []
 
@@ -85,10 +89,10 @@ def test_generate_batch_gives_up_after_retries():
 def test_generate_batch_strips_extra_prose():
     """모델이 ```json 코드블록으로 감싸도 파싱 성공."""
     spec = BatchSpec(subject="tax", unit="vat", difficulty="mid", count=1)
+
     def invoke(system, user):
-        return (
-            f"여기 결과입니다:\n```json\n{_fake_batch_json('vat', 1)}\n```\n끝."
-        )
+        return f"여기 결과입니다:\n```json\n{_fake_batch_json('vat', 1)}\n```\n끝."
+
     result = generate_batch(spec, invoke)
     assert len(result) == 1
 
@@ -101,6 +105,7 @@ def test_validate_approve():
         return json.dumps(
             {"verdict": "approve", "issues": [], "attractor_traps": ["계산 실수 유도"]}
         )
+
     q = {"question_id": "x", "stem": "s", "choices": ["a", "b"], "correct_choice": 0}
     r = validate_question(q, invoke)
     assert r.verdict == "approve"
@@ -110,6 +115,7 @@ def test_validate_approve():
 
 def test_validate_revise_uses_revised():
     revised_q = {"stem": "수정된 본문", "choices": ["a", "b", "c", "d"], "correct_choice": 1}
+
     def invoke(system, user):
         return json.dumps(
             {
@@ -119,6 +125,7 @@ def test_validate_revise_uses_revised():
                 "revised": revised_q,
             }
         )
+
     q = {"stem": "원본", "choices": ["a", "b", "c", "d"], "correct_choice": 0}
     r = validate_question(q, invoke)
     assert r.verdict == "revise"
@@ -127,9 +134,8 @@ def test_validate_revise_uses_revised():
 
 def test_validate_reject():
     def invoke(system, user):
-        return json.dumps(
-            {"verdict": "reject", "issues": ["복수 정답"], "attractor_traps": []}
-        )
+        return json.dumps({"verdict": "reject", "issues": ["복수 정답"], "attractor_traps": []})
+
     q = {"stem": "s"}
     r = validate_question(q, invoke)
     assert r.verdict == "reject"
@@ -138,6 +144,7 @@ def test_validate_reject():
 def test_validate_bad_json_returns_reject():
     def invoke(system, user):
         return "garbage"
+
     r = validate_question({"stem": "s"}, invoke)
     assert r.verdict == "reject"
     assert "parse" in r.issues[0].lower() or "json" in r.issues[0].lower()
@@ -159,8 +166,10 @@ def test_cross_check_pass_with_independent_invoke():
         "choices": ["a", "b", "c", "d"],
         "correct_choice": 2,
     }
+
     def independent(system, user):
         return "풀이.\nANSWER: 2"
+
     r = validate_question(q, _reviewer_approve, cross_check=True, cross_check_invoke=independent)
     assert r.verdict == "approve"
     assert r.cross_check_passed is True
@@ -176,8 +185,10 @@ def test_cross_check_fail_with_independent_invoke():
         "choices": ["a", "b", "c", "d"],
         "correct_choice": 2,
     }
+
     def independent(system, user):
         return "풀이.\nANSWER: 1"  # 키(2)와 불일치
+
     r = validate_question(q, _reviewer_approve, cross_check=True, cross_check_invoke=independent)
     assert r.cross_check_passed is False
     assert r.cross_check_chosen == 1
@@ -219,12 +230,15 @@ def test_flag_if_questionable_noop_when_passed():
 def test_cross_check_handles_partial_revision():
     """revised가 부분 패치(stem만)여도 원본과 병합해 cross-check — KeyError/오플래그 없이."""
     partial = {"stem": "수정된 본문만"}  # choices/correct_choice 없는 부분 패치
+
     def review(system, user):
         return json.dumps(
             {"verdict": "revise", "issues": [], "attractor_traps": [], "revised": partial}
         )
+
     def independent(system, user):
         return "ANSWER: 1"  # 원본 correct_choice=1과 일치
+
     q = {
         "stem": "원본",
         "subject": "tax",
@@ -240,10 +254,9 @@ def test_cross_check_handles_partial_revision():
 
 def test_validate_cross_check_passes_when_model_picks_key():
     """검토위원이 approve + 풀이 모델이 correct_choice와 같은 보기를 골랐을 때."""
+
     def review_invoke(system, user):
-        return json.dumps(
-            {"verdict": "approve", "issues": [], "attractor_traps": []}
-        )
+        return json.dumps({"verdict": "approve", "issues": [], "attractor_traps": []})
 
     def cc_invoke(system, user):
         # correct_choice=2와 일치하도록 응답
@@ -265,10 +278,9 @@ def test_validate_cross_check_passes_when_model_picks_key():
 
 def test_validate_cross_check_fails_when_model_disagrees():
     """검토위원은 approve였지만 풀이 모델이 다른 보기를 골랐을 때."""
+
     def review_invoke(system, user):
-        return json.dumps(
-            {"verdict": "approve", "issues": [], "attractor_traps": []}
-        )
+        return json.dumps({"verdict": "approve", "issues": [], "attractor_traps": []})
 
     def cc_invoke(system, user):
         # correct_choice=0인데 모델은 2를 고름 → cross_check_failed
@@ -344,6 +356,7 @@ def test_write_question_does_not_overwrite(tmp_path):
 def test_pipeline_with_validation_revise(tmp_path):
     """generate → validate(revise) → write 시 revised 본문이 저장돼야 한다."""
     spec = BatchSpec(subject="accounting", unit="lease", difficulty="hard", count=1)
+
     def gen_invoke(system, user):
         return _fake_batch_json("lease", 1)
 
@@ -352,9 +365,15 @@ def test_pipeline_with_validation_revise(tmp_path):
         "choices": ["A1", "B1", "C1", "D1"],
         "correct_choice": 2,
     }
+
     def val_invoke(system, user):
         return json.dumps(
-            {"verdict": "revise", "issues": ["x"], "attractor_traps": ["t"], "revised": revised_payload}
+            {
+                "verdict": "revise",
+                "issues": ["x"],
+                "attractor_traps": ["t"],
+                "revised": revised_payload,
+            }
         )
 
     [q] = generate_batch(spec, gen_invoke)
@@ -370,3 +389,58 @@ def test_pipeline_with_validation_revise(tmp_path):
     assert data["correct_choice"] == 2
     assert data["review_status"] == "ai_draft_revised"
     assert data["attractor_traps"] == ["t"]
+
+
+# ----- key guard (correct_answer ↔ correct_choice 정합성) -----
+
+
+def test_reconcile_ok_when_answer_matches_key():
+    from cpa_first.eval_gen.generator import reconcile_correct_choice
+
+    q = {"choices": ["100원", "200원", "300원"], "correct_choice": 1, "correct_answer": "200원"}
+    out, status = reconcile_correct_choice(q)
+    assert status == "ok"
+    assert out["correct_choice"] == 1
+
+
+def test_reconcile_repairs_one_based_confusion():
+    """해설 '2번'(1-기반)을 correct_choice=2(0-기반)로 적는 실측 결함을 교정한다."""
+    from cpa_first.eval_gen.generator import reconcile_correct_choice
+
+    q = {
+        "choices": ["5,400단위", "6,000단위", "7,200단위", "9,000단위"],
+        "correct_choice": 2,
+        "correct_answer": "6,000단위",
+    }
+    out, status = reconcile_correct_choice(q)
+    assert status == "repaired"
+    assert out["correct_choice"] == 1
+    assert "key_repair_note" in out
+
+
+def test_reconcile_drops_unverifiable_key():
+    from cpa_first.eval_gen.generator import reconcile_correct_choice
+
+    q = {"choices": ["A", "B"], "correct_choice": 0, "correct_answer": "존재하지 않는 보기"}
+    out, status = reconcile_correct_choice(q)
+    assert status == "dropped"
+    assert out is None
+
+
+def test_reconcile_passthrough_without_correct_answer():
+    """correct_answer 미제공(구형 출력) — 통과하되 'unverified'로 구분(호출자 경고용)."""
+    from cpa_first.eval_gen.generator import reconcile_correct_choice
+
+    q = {"choices": ["A", "B"], "correct_choice": 0}
+    out, status = reconcile_correct_choice(q)
+    assert status == "unverified"
+    assert out["correct_choice"] == 0
+
+
+def test_reconcile_normalizes_whitespace():
+    from cpa_first.eval_gen.generator import reconcile_correct_choice
+
+    q = {"choices": ["1,000  원", "2,000원"], "correct_choice": 1, "correct_answer": "1,000 원"}
+    out, status = reconcile_correct_choice(q)
+    assert status == "repaired"
+    assert out["correct_choice"] == 0

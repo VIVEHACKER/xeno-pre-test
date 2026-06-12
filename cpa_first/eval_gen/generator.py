@@ -6,11 +6,11 @@ invoke(system, user) → 모델 raw 출력 문자열.
 
 from __future__ import annotations
 
+from collections.abc import Callable
 from dataclasses import dataclass
-from typing import Any, Callable
+from typing import Any
 
 from cpa_first.eval_gen._json_extract import extract_json_object
-
 
 SYSTEM_PROMPT = """당신은 한국 공인회계사 1차 시험(회계학·세법개론) 출제위원입니다.
 다음 규칙을 엄격히 지킵니다.
@@ -19,8 +19,9 @@ SYSTEM_PROMPT = """당신은 한국 공인회계사 1차 시험(회계학·세�
 2. 4지선다 객관식. 정답은 유일해야 한다.
 3. 매력적 오답(attractive distractors)을 반드시 포함한다 — 계산 실수 유도, 자주 헷갈리는 정의·조문, 부호·연도 혼동 등.
 4. 출력은 JSON만. 코드블록(```json) 사용 가능. 다른 설명 금지.
-5. 각 문항에 다음 키를 채운다: exam='CPA_1', subject, unit, applicable_year, stem, choices(4-5개), correct_choice(0-기반), explanation, concept_tags, expected_seconds, difficulty, difficulty_score, bloom_level.
+5. 각 문항에 다음 키를 채운다: exam='CPA_1', subject, unit, applicable_year, stem, choices(4-5개), correct_choice(0-기반), correct_answer(정답 보기의 원문 텍스트 그대로), explanation, concept_tags, expected_seconds, difficulty, difficulty_score, bloom_level.
 6. difficulty와 difficulty_score 매핑: easy=1-2, mid=3, hard=4-5. bloom_level은 remember/understand/apply/analyze/evaluate 중 하나.
+7. correct_choice는 반드시 0-기반 인덱스다(첫 보기=0). choices[correct_choice]와 correct_answer가 정확히 일치해야 한다. explanation에서 정답을 지칭할 때는 "N번" 표기 대신 정답 보기의 텍스트를 그대로 인용한다(1-기반/0-기반 혼동 방지).
 
 출력 스키마:
 {
@@ -98,6 +99,45 @@ def _bloom_for(difficulty: str) -> str:
     return {"easy": "understand", "mid": "apply", "hard": "analyze"}.get(difficulty, "apply")
 
 
+def _norm_choice(text: Any) -> str:
+    """보기 텍스트 비교용 정규화 — 공백 차이만 흡수(의미 변형 금지)."""
+    return " ".join(str(text).split())
+
+
+def reconcile_correct_choice(q: dict[str, Any]) -> tuple[dict[str, Any] | None, str]:
+    """correct_answer(정답 원문)와 correct_choice(0-기반 인덱스)의 정합성을 코드로 검증한다.
+
+    실측 근거: 생성 모델이 해설에는 한국식 "2번"(1-기반)을 쓰면서 correct_choice에
+    그대로 2(0-기반)를 기록하는 인덱스 혼동이 관찰됨 — 프롬프트 지시만으로는 못 막아
+    결정론적 가드를 둔다.
+
+    반환: (문항 | None, 상태). 상태:
+    - "ok"         : 일치
+    - "unverified" : correct_answer 미제공(구형 출력) → 가드 불가, 통과하되 호출자가 경고
+    - "repaired"   : correct_answer가 다른 보기와 일치 → correct_choice를 그 인덱스로 교정
+    - "dropped"    : correct_answer가 어떤 보기와도 불일치 → 정답키 검증 불가, 폐기(None)
+    """
+    answer = q.get("correct_answer")
+    if answer is None:
+        return q, "unverified"
+
+    choices = [_norm_choice(c) for c in q.get("choices") or []]
+    target = _norm_choice(answer)
+    if target not in choices:
+        return None, "dropped"
+
+    matched_index = choices.index(target)
+    if matched_index == q.get("correct_choice"):
+        return q, "ok"
+
+    repaired = {**q, "correct_choice": matched_index}
+    repaired["key_repair_note"] = (
+        f"correct_choice {q.get('correct_choice')}→{matched_index}: "
+        f"correct_answer 원문과 보기 인덱스 불일치를 코드 가드가 교정"
+    )
+    return repaired, "repaired"
+
+
 def generate_batch(
     spec: BatchSpec,
     invoke: Callable[[str, str], str],
@@ -110,15 +150,25 @@ def generate_batch(
     """
     user = _build_user_prompt(spec)
     last_raw = ""
-    for attempt in range(max_retries + 1):
+    for _attempt in range(max_retries + 1):
         last_raw = invoke(SYSTEM_PROMPT, user) or ""
         parsed = extract_json_object(last_raw)
         if isinstance(parsed, dict) and isinstance(parsed.get("questions"), list):
-            questions = [
-                _hydrate(dict(q), spec)
-                for q in parsed["questions"]
-                if isinstance(q, dict) and q.get("choices") and "correct_choice" in q
-            ]
+            questions: list[dict[str, Any]] = []
+            for q in parsed["questions"]:
+                if not (isinstance(q, dict) and q.get("choices") and "correct_choice" in q):
+                    continue
+                reconciled, status = reconcile_correct_choice(dict(q))
+                if reconciled is None:
+                    continue  # 정답키 검증 불가 — 폐기가 잘못된 키 유입보다 낫다
+                if status == "repaired":
+                    print(f"  [key-guard] {reconciled['key_repair_note']}", flush=True)
+                elif status == "unverified":
+                    print(
+                        "  [key-guard] correct_answer 누락 — 인덱스 정합성 미검증 문항",
+                        flush=True,
+                    )
+                questions.append(_hydrate(reconciled, spec))
             if questions:
                 return questions
     return []
