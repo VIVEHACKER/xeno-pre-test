@@ -8,7 +8,6 @@ from cpa_first.engine import (
     infer_current_stage,
 )
 
-
 PROBLEMS = [
     {
         "problem_id": "P-A1",

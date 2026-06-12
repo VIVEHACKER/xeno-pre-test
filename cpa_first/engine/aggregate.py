@@ -15,10 +15,10 @@ M5 학습 루프의 코어. 사용자가 풀이 로그를 충분히 남기면
 
 from __future__ import annotations
 
-from typing import Any, Iterable
+from collections.abc import Iterable
+from typing import Any
 
 from cpa_first.subjects import is_known_subject
-
 
 # 행동 신호 임계값. 변경 시 영향: stage 추정 + 추론 risk_tag.
 TIME_OVERRUN_RISK_THRESHOLD = 0.30

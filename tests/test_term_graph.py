@@ -12,12 +12,11 @@
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
 
 import pytest
 from jsonschema import Draft202012Validator
-
-import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = ROOT / "scripts"
@@ -25,7 +24,6 @@ if str(SCRIPTS) not in sys.path:
     sys.path.insert(0, str(SCRIPTS))
 
 import build_term_graph as builder  # noqa: E402
-
 
 SCHEMA_DIR = ROOT / "data" / "schemas"
 TERMS_DIR = ROOT / "data" / "seeds" / "terms"

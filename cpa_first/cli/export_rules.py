@@ -18,7 +18,6 @@ import sqlite3
 import sys
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_DB = ROOT / "data" / "warehouse" / "cpa_first.sqlite"
 DEFAULT_OUT_DIR = ROOT / "data" / "seeds" / "decision_rules"

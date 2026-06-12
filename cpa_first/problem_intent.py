@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from typing import Any
 
-
 QUESTION_TYPE_TOKENS = (
     ("옳지 않은", "statement_selection"),
     ("아닌", "statement_selection"),

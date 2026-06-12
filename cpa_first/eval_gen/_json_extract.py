@@ -10,7 +10,6 @@ import json
 import re
 from typing import Any
 
-
 _CODE_BLOCK = re.compile(r"```(?:json)?\s*(\{.*?\})\s*```", re.DOTALL | re.IGNORECASE)
 
 

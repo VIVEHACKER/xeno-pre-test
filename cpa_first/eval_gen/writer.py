@@ -10,7 +10,6 @@ import re
 from pathlib import Path
 from typing import Any
 
-
 _ID_PATTERN = re.compile(r"^cpa1-eval-(?P<subject>[a-z_]+)-(?P<num>\d+)$")
 
 

@@ -9,7 +9,6 @@ import pytest
 from cpa_first.benchmark import run_benchmark
 from cpa_first.solver import Solver
 
-
 ROOT = Path(__file__).resolve().parents[1]
 EVAL_DIR = ROOT / "data" / "seeds" / "evaluation"
 

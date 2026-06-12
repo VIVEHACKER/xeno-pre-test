@@ -24,7 +24,6 @@ from cpa_first.subjects import (
     schema_enum_rule_subjects,
 )
 
-
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_DIR = ROOT / "data" / "schemas"
 

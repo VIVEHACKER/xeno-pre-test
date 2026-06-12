@@ -5,7 +5,6 @@ from pathlib import Path
 
 from cpa_first.cli.validate import validate_file
 
-
 ROOT = Path(__file__).resolve().parents[1]
 
 

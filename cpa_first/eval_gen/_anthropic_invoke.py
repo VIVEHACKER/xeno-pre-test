@@ -10,8 +10,7 @@ import os
 import random
 import sys
 import time
-from typing import Callable
-
+from collections.abc import Callable
 
 DEFAULT_MODEL = "claude-opus-4-7"
 RETRYABLE_STATUS = {429, 500, 502, 503, 504, 529}

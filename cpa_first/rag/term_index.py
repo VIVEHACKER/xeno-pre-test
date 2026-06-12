@@ -19,7 +19,6 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
-
 _ASCII_TOKEN_RE = re.compile(r"^[A-Za-z0-9]+$")
 
 
@@ -44,7 +43,7 @@ class Term:
     confusable_with: tuple[str, ...] = ()  # 다른 term_id 목록
 
     @classmethod
-    def from_dict(cls, data: dict[str, Any]) -> "Term":
+    def from_dict(cls, data: dict[str, Any]) -> Term:
         return cls(
             term_id=data["term_id"],
             name_ko=data["name_ko"],
@@ -64,7 +63,7 @@ class Edge:
     weight: float
 
     @classmethod
-    def from_dict(cls, data: dict[str, Any]) -> "Edge":
+    def from_dict(cls, data: dict[str, Any]) -> Edge:
         return cls(
             from_term=data["from_term"],
             to_kind=data["to_kind"],
@@ -123,7 +122,7 @@ class TermIndex:
                 self._term_to_chunks[edge.from_term].append(edge.to_id)
 
     @classmethod
-    def from_paths(cls, terms_dir: Path, edges_path: Path) -> "TermIndex":
+    def from_paths(cls, terms_dir: Path, edges_path: Path) -> TermIndex:
         return cls(terms=load_terms(terms_dir), edges=load_edges(edges_path))
 
     def matched_terms(self, query: str) -> set[str]:

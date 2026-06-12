@@ -22,7 +22,6 @@ from cpa_first.engine import (
     prescribe,
 )
 
-
 ROOT = Path(__file__).resolve().parents[1]
 RULES_DIR = ROOT / "data" / "seeds" / "decision_rules"
 USER_STATES_DIR = ROOT / "data" / "seeds" / "user_states"

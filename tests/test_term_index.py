@@ -26,7 +26,6 @@ from cpa_first.rag import (
     retrieve,
 )
 
-
 ROOT = Path(__file__).resolve().parents[1]
 RAG_DIR = ROOT / "data" / "seeds" / "rag"
 TERMS_DIR = ROOT / "data" / "seeds" / "terms"

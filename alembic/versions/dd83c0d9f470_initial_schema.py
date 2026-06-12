@@ -1,7 +1,7 @@
 """initial schema
 
 Revision ID: dd83c0d9f470
-Revises: 
+Revises:
 Create Date: 2026-05-31 19:03:49.370405
 
 """
@@ -9,9 +9,9 @@ from __future__ import annotations
 
 from collections.abc import Sequence
 
-from alembic import op
 import sqlalchemy as sa
 
+from alembic import op
 
 # revision identifiers, used by Alembic.
 revision: str = 'dd83c0d9f470'

@@ -15,12 +15,11 @@ import glob
 import json
 import re
 import sys
+from collections.abc import Iterable
 from pathlib import Path
-from typing import Iterable
 
 from jsonschema import Draft202012Validator
 from jsonschema.exceptions import ValidationError
-
 
 ROOT = Path(__file__).resolve().parents[2]
 SCHEMA_DIR = ROOT / "data" / "schemas"

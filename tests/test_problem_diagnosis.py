@@ -9,7 +9,6 @@ from cpa_first.engine.problem_diagnosis import (
     load_problem_solution_maps,
 )
 
-
 ROOT = Path(__file__).resolve().parents[1]
 MAPS_PATH = ROOT / "prototype" / "problem_solution_maps.json"
 

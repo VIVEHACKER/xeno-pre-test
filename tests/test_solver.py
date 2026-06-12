@@ -20,7 +20,6 @@ from cpa_first.solver.solver import (
     load_evaluation_questions,
 )
 
-
 QUESTION = {
     "question_id": "test-001",
     "exam": "CPA_1",
@@ -54,7 +53,7 @@ def test_calculator_div_zero():
 
 
 def test_calculator_rejects_unknown_op():
-    with pytest.raises(Exception):
+    with pytest.raises((ValueError, KeyError)):
         calculator({"op": "sqrt", "operands": [4]})
 
 
@@ -239,7 +238,8 @@ def test_solver_unknown_mode_raises():
 
 def test_live_invoke_injection_parses_answer():
     """invoke 함수를 직접 주입해 Anthropic 없이 live 경로를 단위 테스트."""
-    fake_invoke = lambda system, user: "1회전: 식. 2회전: 검산.\nANSWER: 2"
+    def fake_invoke(system, user):
+        return "1회전: 식. 2회전: 검산.\nANSWER: 2"
     solver = Solver(mode="live", invoke=fake_invoke)
     result = solver.solve(QUESTION)
     assert result.chosen_index == 2
@@ -247,14 +247,16 @@ def test_live_invoke_injection_parses_answer():
 
 
 def test_live_invoke_missing_answer_returns_neg_one():
-    fake_invoke = lambda system, user: "근거가 부족합니다."
+    def fake_invoke(system, user):
+        return "근거가 부족합니다."
     solver = Solver(mode="live", invoke=fake_invoke)
     result = solver.solve(QUESTION)
     assert result.chosen_index == -1
 
 
 def test_live_invoke_out_of_range_returns_neg_one():
-    fake_invoke = lambda system, user: "ANSWER: 99"
+    def fake_invoke(system, user):
+        return "ANSWER: 99"
     solver = Solver(mode="live", invoke=fake_invoke)
     result = solver.solve(QUESTION)
     assert result.chosen_index == -1

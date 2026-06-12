@@ -42,7 +42,7 @@ class RagChunk:
     applicable_year: int | None = None
 
     @classmethod
-    def from_dict(cls, data: dict[str, Any]) -> "RagChunk":
+    def from_dict(cls, data: dict[str, Any]) -> RagChunk:
         return cls(
             chunk_id=data["chunk_id"],
             subject=data["subject"],
@@ -78,7 +78,7 @@ def retrieve(
     unit: str | None = None,
     top_k: int = 3,
     min_score: float = 0.5,
-    term_index: "TermIndex | None" = None,
+    term_index: TermIndex | None = None,
 ) -> list[RetrievalHit]:
     """query 텍스트로 chunks를 검색. 점수 desc + chunk_id asc 정렬.
 

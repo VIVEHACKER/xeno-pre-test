@@ -12,8 +12,8 @@ SUBJECTS에 한 줄 추가하고 schemas/*.json의 enum을 SUBJECT_IDS와 동기
 
 from __future__ import annotations
 
+from collections.abc import Iterable
 from dataclasses import dataclass
-from typing import Iterable
 
 
 @dataclass(frozen=True)
