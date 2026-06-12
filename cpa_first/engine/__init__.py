@@ -1,10 +1,11 @@
-"""처방 엔진 (M2)."""
+"""처방 엔진 (M2) + 학습 루프 엔진 (M3: 추천/로드맵/학습경로)."""
 
 from cpa_first.engine.aggregate import (
     aggregate_subject_state,
     aggregate_user_state,
     infer_current_stage,
 )
+from cpa_first.engine.learning_path import build_learning_path
 from cpa_first.engine.prescribe import (
     load_decision_rules,
     load_problem_intelligence,
@@ -15,6 +16,8 @@ from cpa_first.engine.problem_diagnosis import (
     diagnose_problem_attempt,
     load_problem_solution_maps,
 )
+from cpa_first.engine.recommend import recommend_problems
+from cpa_first.engine.study_plan import build_study_plan
 
 __all__ = [
     "prescribe",
@@ -26,4 +29,7 @@ __all__ = [
     "infer_current_stage",
     "diagnose_problem_attempt",
     "load_problem_solution_maps",
+    "recommend_problems",
+    "build_study_plan",
+    "build_learning_path",
 ]

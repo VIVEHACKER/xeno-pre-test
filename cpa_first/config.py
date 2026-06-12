@@ -58,6 +58,8 @@ class Settings(BaseSettings):
     rate_limit_login: str = "5/minute"
     rate_limit_register: str = "5/minute"
     rate_limit_refresh: str = "20/minute"
+    # AI 풀이 해설은 호출당 LLM 비용/지연이 커 보수적으로 제한.
+    rate_limit_ai_explain: str = "5/minute"
     rate_limit_enabled: bool = True
     # 레이트리밋 키 산정 시 신뢰하는 프록시 홉 수 (PaaS LB 앞단). X-Forwarded-For의
     # 우측에서 이 수만큼 들어간 항목을 실제 클라이언트로 본다. 0이면 XFF 무시(직접 peer).
@@ -74,6 +76,11 @@ class Settings(BaseSettings):
     seed_dir: str | None = None  # None이면 패키지 기본 위치
     anthropic_api_key: str | None = None
     cpa_solver_mode: str = "reasoned"
+    # AI 풀이 해설 백엔드 (ollama|anthropic|codex). None이면 /practice/*/ai-explain 비활성(503).
+    # codex는 호출당 수십 초라 per-request 비권장 — ollama(로컬)/anthropic(저지연) 권장.
+    ai_explain_backend: str | None = None
+    # 과목별 라우팅 override ("tax:codex,..."). 비우면 전 과목 ai_explain_backend 사용.
+    ai_explain_routes: str = ""
 
     # --- Server ---
     host: str = "0.0.0.0"

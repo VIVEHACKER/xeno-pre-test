@@ -41,6 +41,10 @@ def refresh_rate_limit() -> str:
     return get_settings().rate_limit_refresh
 
 
+def ai_explain_rate_limit() -> str:
+    return get_settings().rate_limit_ai_explain
+
+
 _settings = get_settings()
 limiter = Limiter(
     key_func=client_ip,

@@ -72,12 +72,118 @@
     },
     "problems_to_solve": {
       "type": "array",
-      "items": { "type": "string" },
-      "description": "problem_id 목록."
+      "description": "오늘 풀 문항 추천 — 이유와 근거 참조 포함(따라갈 수 있는 처방의 핵심).",
+      "items": {
+        "type": "object",
+        "required": ["question_id", "subject", "reason", "evidence_refs"],
+        "properties": {
+          "question_id": { "type": "string" },
+          "subject": { "type": "string" },
+          "unit": { "type": ["string", "null"] },
+          "reason": { "type": "string" },
+          "priority_score": { "type": "number" },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["ref_type", "ref_id"],
+              "properties": {
+                "ref_type": { "type": "string" },
+                "ref_id": { "type": "string" },
+                "note": { "type": ["string", "null"] }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
     },
     "problems_to_skip": {
       "type": "array",
-      "items": { "type": "string" }
+      "description": "지금 단계에서 건너뛸 문항 — 스킵 사유 포함.",
+      "items": {
+        "type": "object",
+        "required": ["question_id", "subject", "reason"],
+        "properties": {
+          "question_id": { "type": "string" },
+          "subject": { "type": "string" },
+          "unit": { "type": ["string", "null"] },
+          "reason": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "study_plan": {
+      "type": "object",
+      "description": "시험일까지의 다주차 로드맵(build_study_plan 산출).",
+      "required": ["total_weeks", "hours_per_week", "pass_bar", "weeks", "strategy_summary"],
+      "properties": {
+        "total_weeks": { "type": "integer", "minimum": 1 },
+        "hours_per_week": { "type": "number", "minimum": 0 },
+        "pass_bar": {
+          "type": "object",
+          "required": ["average", "per_subject_floor"],
+          "properties": {
+            "average": { "type": "number" },
+            "per_subject_floor": { "type": "number" }
+          },
+          "additionalProperties": false
+        },
+        "weeks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "week_no",
+              "days_range",
+              "stage",
+              "theme",
+              "subject_allocation",
+              "milestone",
+              "verification_metric"
+            ],
+            "properties": {
+              "week_no": { "type": "integer", "minimum": 1 },
+              "days_range": { "type": "string" },
+              "stage": { "type": "string" },
+              "theme": { "type": "string" },
+              "subject_allocation": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["subject", "hours", "reason"],
+                  "properties": {
+                    "subject": { "type": "string" },
+                    "hours": { "type": "number", "minimum": 0 },
+                    "reason": { "type": "string" }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "milestone": { "type": "string" },
+              "verification_metric": { "type": "string" }
+            },
+            "additionalProperties": false
+          }
+        },
+        "strategy_summary": { "type": "string" },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["ref_type", "ref_id"],
+            "properties": {
+              "ref_type": { "type": "string" },
+              "ref_id": { "type": "string" },
+              "note": { "type": ["string", "null"] }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
     },
     "triggered_rule_keys": {
       "type": "array",

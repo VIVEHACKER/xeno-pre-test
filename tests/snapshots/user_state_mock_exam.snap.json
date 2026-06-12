@@ -90,6 +90,219 @@
   ],
   "problems_to_solve": [],
   "problems_to_skip": [],
+  "study_plan": {
+    "total_weeks": 9,
+    "hours_per_week": 63.0,
+    "pass_bar": {
+      "average": 0.6,
+      "per_subject_floor": 0.4
+    },
+    "weeks": [
+      {
+        "week_no": 1,
+        "days_range": "D-60~D-54",
+        "stage": "mock_exam",
+        "theme": "모의고사 실전 감각 훈련",
+        "subject_allocation": [
+          {
+            "subject": "accounting",
+            "hours": 29.07,
+            "reason": "회계 정답률 68% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+          },
+          {
+            "subject": "tax",
+            "hours": 33.93,
+            "reason": "세법 정답률 62% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+          }
+        ],
+        "milestone": "전 과목 모의고사 1회 응시와 오답 분석 완료 (1/6주차)",
+        "verification_metric": "모의고사 전 과목 평균 60% 이상, 매 과목 40% 이상"
+      },
+      {
+        "week_no": 2,
+        "days_range": "D-53~D-47",
+        "stage": "mock_exam",
+        "theme": "모의고사 실전 감각 훈련",
+        "subject_allocation": [
+          {
+            "subject": "accounting",
+            "hours": 29.07,
+            "reason": "회계 정답률 68% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+          },
+          {
+            "subject": "tax",
+            "hours": 33.93,
+            "reason": "세법 정답률 62% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+          }
+        ],
+        "milestone": "전 과목 모의고사 1회 응시와 오답 분석 완료 (2/6주차)",
+        "verification_metric": "모의고사 전 과목 평균 60% 이상, 매 과목 40% 이상"
+      },
+      {
+        "week_no": 3,
+        "days_range": "D-46~D-40",
+        "stage": "mock_exam",
+        "theme": "모의고사 실전 감각 훈련",
+        "subject_allocation": [
+          {
+            "subject": "accounting",
+            "hours": 29.07,
+            "reason": "회계 정답률 68% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+          },
+          {
+            "subject": "tax",
+            "hours": 33.93,
+            "reason": "세법 정답률 62% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+          }
+        ],
+        "milestone": "전 과목 모의고사 1회 응시와 오답 분석 완료 (3/6주차)",
+        "verification_metric": "모의고사 전 과목 평균 60% 이상, 매 과목 40% 이상"
+      },
+      {
+        "week_no": 4,
+        "days_range": "D-39~D-33",
+        "stage": "mock_exam",
+        "theme": "모의고사 실전 감각 훈련",
+        "subject_allocation": [
+          {
+            "subject": "accounting",
+            "hours": 29.07,
+            "reason": "회계 정답률 68% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+          },
+          {
+            "subject": "tax",
+            "hours": 33.93,
+            "reason": "세법 정답률 62% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+          }
+        ],
+        "milestone": "전 과목 모의고사 1회 응시와 오답 분석 완료 (4/6주차)",
+        "verification_metric": "모의고사 전 과목 평균 60% 이상, 매 과목 40% 이상"
+      },
+      {
+        "week_no": 5,
+        "days_range": "D-32~D-26",
+        "stage": "mock_exam",
+        "theme": "모의고사 실전 감각 훈련",
+        "subject_allocation": [
+          {
+            "subject": "accounting",
+            "hours": 29.07,
+            "reason": "회계 정답률 68% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+          },
+          {
+            "subject": "tax",
+            "hours": 33.93,
+            "reason": "세법 정답률 62% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+          }
+        ],
+        "milestone": "전 과목 모의고사 1회 응시와 오답 분석 완료 (5/6주차)",
+        "verification_metric": "모의고사 전 과목 평균 60% 이상, 매 과목 40% 이상"
+      },
+      {
+        "week_no": 6,
+        "days_range": "D-25~D-19",
+        "stage": "mock_exam",
+        "theme": "모의고사 실전 감각 훈련",
+        "subject_allocation": [
+          {
+            "subject": "accounting",
+            "hours": 29.07,
+            "reason": "회계 정답률 68% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+          },
+          {
+            "subject": "tax",
+            "hours": 33.93,
+            "reason": "세법 정답률 62% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+          }
+        ],
+        "milestone": "전 과목 모의고사 1회 응시와 오답 분석 완료 (6/6주차)",
+        "verification_metric": "모의고사 전 과목 평균 60% 이상, 매 과목 40% 이상"
+      },
+      {
+        "week_no": 7,
+        "days_range": "D-18~D-12",
+        "stage": "final",
+        "theme": "최종 정리와 과락 방어",
+        "subject_allocation": [
+          {
+            "subject": "accounting",
+            "hours": 29.07,
+            "reason": "회계 정답률 68% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+          },
+          {
+            "subject": "tax",
+            "hours": 33.93,
+            "reason": "세법 정답률 62% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+          }
+        ],
+        "milestone": "전 범위 핵심 요약 점검 완료 (1/3주차)",
+        "verification_metric": "최종 점검 모의고사 평균 60% 이상 AND 매 과목 40% 이상"
+      },
+      {
+        "week_no": 8,
+        "days_range": "D-11~D-5",
+        "stage": "final",
+        "theme": "최종 정리와 과락 방어",
+        "subject_allocation": [
+          {
+            "subject": "accounting",
+            "hours": 29.07,
+            "reason": "회계 정답률 68% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+          },
+          {
+            "subject": "tax",
+            "hours": 33.93,
+            "reason": "세법 정답률 62% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+          }
+        ],
+        "milestone": "전 범위 핵심 요약 점검 완료 (2/3주차)",
+        "verification_metric": "최종 점검 모의고사 평균 60% 이상 AND 매 과목 40% 이상"
+      },
+      {
+        "week_no": 9,
+        "days_range": "D-4~D-0",
+        "stage": "final",
+        "theme": "최종 정리와 과락 방어",
+        "subject_allocation": [
+          {
+            "subject": "accounting",
+            "hours": 29.07,
+            "reason": "회계 정답률 68% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+          },
+          {
+            "subject": "tax",
+            "hours": 33.93,
+            "reason": "세법 정답률 62% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+          }
+        ],
+        "milestone": "모의/최종 점검 — 전 과목 평균 60% 이상 및 매 과목 40% 이상(과락 방어) 확인",
+        "verification_metric": "최종 점검 모의고사에서 전 과목 평균 60% 이상 AND 매 과목 40% 이상 득점"
+      }
+    ],
+    "strategy_summary": "D-60 기준 총 9주 로드맵: 모의고사 6주 → 파이널 3주. 약점 과목(회계, 세법)에 시간을 가중 배정한다. 합격 기준은 전 과목 평균 60% 이상 AND 매 과목 40% 이상이다.",
+    "evidence_refs": [
+      {
+        "ref_type": "user_state",
+        "ref_id": "seed-user-mock-exam",
+        "note": "stage=mock_exam, days_until_exam=60, available_hours_per_day=9"
+      },
+      {
+        "ref_type": "subject_state",
+        "ref_id": "accounting",
+        "note": "accuracy=0.68, time_overrun_rate=0.28"
+      },
+      {
+        "ref_type": "subject_state",
+        "ref_id": "tax",
+        "note": "accuracy=0.62, time_overrun_rate=0.16"
+      },
+      {
+        "ref_type": "pass_criteria",
+        "ref_id": "CPA_1",
+        "note": "전 과목 평균 60% 이상 AND 매 과목 40% 이상(과락 기준)"
+      }
+    ]
+  },
   "triggered_rule_keys": [
     "cvp_formula_classification_first",
     "anti_perfectionism_pass_drill",

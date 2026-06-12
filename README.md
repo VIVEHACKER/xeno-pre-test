@@ -70,7 +70,12 @@ python -m cpa_first.api.main --port 8000
 
 - 인증: `POST /auth/register`, `/auth/login`(5/분 제한), `/auth/refresh`, `/auth/logout`, `GET /auth/me`
 - 진단: `POST /diagnose`, `GET /prescription`, `POST /user-state/refresh` *(인증 필요)*
-- 로그/응시: `POST/GET/DELETE /logs`, `POST /attempts/diagnose`, `GET/DELETE /attempts` *(인증 필요)*
+  — 처방에 **풀 문항 추천**(`problems_to_solve`/`problems_to_skip`, 이유+근거 포함)과
+  **시험일까지 다주차 로드맵**(`study_plan`, 과락 방어 마일스톤 포함)이 채워진다
+- 학습 루프: `GET /learning-path?concepts=`(약점 → 선수개념 학습 순서, 인증),
+  `GET /tutorials`, `GET /tutorials/{id}`(공개), `GET /practice`(문항 목록·정답 비노출, 커서 페이지네이션),
+  `GET /practice/{question_id}`(본문+보기), `POST /practice/{id}/ai-explain`(AI 단계별 풀이, 5/분 제한, 인증)
+- 로그/응시: `POST/GET/DELETE /logs`, `POST /attempts/diagnose`(시도 후 공식 해설 반환), `GET/DELETE /attempts` *(인증 필요)*
 - 지식그래프(공개): `GET /terms/search`, `GET /terms/{id}`, `GET /problems/{id}`, `GET /evidence/{ref_type}/{id}`
 - 검수(admin): `POST /review/{ref_type}/{ref_id}` → `review_overrides` 테이블에 기록(시드 불변)
 - 운영: `GET /livez`(liveness), `GET /readyz`(DB 포함 readiness), `GET /metrics`(Prometheus)
@@ -87,6 +92,9 @@ python -m cpa_first.api.main --port 8000
 | `CORS_ORIGINS` | 콤마 구분 허용목록 (prod에서 `*` 금지). same-origin이면 비움 |
 | `COOKIE_SECURE` / `COOKIE_SAMESITE` | refresh 쿠키 플래그 (prod `true`/`strict`) |
 | `RATE_LIMIT_LOGIN` / `RATE_LIMIT_DEFAULT` | slowapi 한도 (기본 5/분, 100/분) |
+| `AI_EXPLAIN_BACKEND` | AI 풀이 해설 백엔드 (`ollama`/`anthropic`). 미설정 시 `/practice/*/ai-explain` 503 |
+| `AI_EXPLAIN_ROUTES` | 과목별 라우팅 override (예: `tax:codex`). 비우면 전 과목 동일 백엔드 |
+| `CPA_OLLAMA_MODEL` / `CPA_OLLAMA_NUM_CTX` / `CPA_OLLAMA_NUM_PREDICT` | ollama 백엔드 모델·컨텍스트 (기본 16000/8000 — 미설정 시 reasoning 출력 잘림 방지) |
 | `LOG_JSON`, `SENTRY_DSN`, `METRICS_ENABLED` | 관측성 |
 
 ## 프로덕션 배포 (Docker → 관리형 PaaS)

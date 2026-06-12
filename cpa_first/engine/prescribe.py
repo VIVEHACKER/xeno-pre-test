@@ -12,7 +12,6 @@ from pathlib import Path
 
 from cpa_first.subjects import matches_rule_subject, primary_subject
 
-
 # risk_score 산출용 임계값. PRD §4.6의 누적 항목을 자동화 가능한 신호로 옮긴 것.
 FAIL_RISK_ACCURACY = 0.40
 TIME_OVERRUN_THRESHOLD = 0.30
@@ -286,9 +285,28 @@ def prescribe(
     *,
     generated_at: str,
     problem_intel: list[dict] | None = None,
+    solution_maps: list[dict] | None = None,
+    attempted_question_ids: set[str] | frozenset = frozenset(),
 ) -> dict:
+    """진단 → 처방. solution_maps가 주어지면 실제 풀 문항 추천까지 채운다.
+
+    problems_to_solve/skip은 "오늘 무엇을 풀지"의 답 — 이게 비어 있으면
+    학습자가 따라갈 수 없으므로, API 경로는 항상 solution_maps를 주입한다.
+    """
+    from cpa_first.engine.recommend import recommend_problems
+    from cpa_first.engine.study_plan import build_study_plan
+
     matched = [r for r in decision_rules if _matches(r, user_state)]
     matched.sort(key=lambda r: (-float(r.get("confidence", 0)), r["rule_key"]))
+
+    if solution_maps:
+        recommendation = recommend_problems(
+            user_state,
+            solution_maps,
+            attempted_question_ids=attempted_question_ids,
+        )
+    else:
+        recommendation = {"problems_to_solve": [], "problems_to_skip": []}
 
     return {
         "prescription_id": _prescription_id(user_state, matched),
@@ -298,8 +316,9 @@ def prescribe(
         "weekly_goal": _weekly_goal(matched, user_state),
         "daily_tasks": _daily_tasks(matched, user_state),
         "concepts_to_review": _concepts_to_review(user_state, problem_intel),
-        "problems_to_solve": [],
-        "problems_to_skip": [],
+        "problems_to_solve": recommendation["problems_to_solve"],
+        "problems_to_skip": recommendation["problems_to_skip"],
+        "study_plan": build_study_plan(user_state),
         "triggered_rule_keys": [r["rule_key"] for r in matched],
         "evidence_refs": _evidence_refs(matched, user_state),
     }
