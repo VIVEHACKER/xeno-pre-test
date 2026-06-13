@@ -42,13 +42,34 @@ def main() -> int:
     ap.add_argument("--routes", default="tax:codex", help='"과목:백엔드,..." 형식')
     ap.add_argument("--default", default="ollama", help="라우트 외 과목 백엔드")
     ap.add_argument("--eval-dir", default="data/seeds/evaluation")
+    ap.add_argument(
+        "--questions-files",
+        default="",
+        help="쉼표구분 JSON 배열 파일 경로 — 실기출(parsed) 등 비-시드 문항 채점용. 지정 시 --eval-dir 무시",
+    )
     ap.add_argument("--rag", default="data/seeds/rag")
+    ap.add_argument(
+        "--skip-math-lossy",
+        action="store_true",
+        help="수식이 PUA 글리프로 유실된 문항 제외 (실기출 PDF 추출 한계 — 텍스트로 풀이 불가)",
+    )
     ap.add_argument("--per-subject", type=int, default=2, help="과목별 표본 수(0=전체)")
     ap.add_argument("--ids", default="", help="쉼표구분 question_id만 채점(표본 무시)")
     ap.add_argument("--out", default="")
     args = ap.parse_args()
 
-    questions = load_evaluation_questions(args.eval_dir)
+    if args.questions_files:
+        questions = []
+        for fp in args.questions_files.split(","):
+            fp = fp.strip()
+            if fp:
+                questions.extend(json.loads(Path(fp).read_text(encoding="utf-8")))
+    else:
+        questions = load_evaluation_questions(args.eval_dir)
+    if args.skip_math_lossy:
+        skipped = sum(1 for q in questions if q.get("math_lossy"))
+        questions = [q for q in questions if not q.get("math_lossy")]
+        print(f"[skip] math_lossy {skipped}문항 제외", file=sys.stderr)
     if args.ids:
         wanted = {x.strip() for x in args.ids.split(",") if x.strip()}
         questions = [q for q in questions if q["question_id"] in wanted]

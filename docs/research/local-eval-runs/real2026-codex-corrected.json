@@ -1,0 +1,44 @@
+{
+  "source": "real2026-codex (clean+rerun17 merged)",
+  "total": 164,
+  "demonstrated_correct": 151,
+  "demonstrated_wrong": 8,
+  "unresolved": 5,
+  "raw_accuracy": 0.8659,
+  "corrected_accuracy": 0.9207,
+  "accuracy_on_resolved": 0.9497,
+  "unresolved_ids": [
+    "cpa1-real-2026-corporate_law-030",
+    "cpa1-real-2026-corporate_law-040",
+    "cpa1-real-2026-business-004",
+    "cpa1-real-2026-business-007",
+    "cpa1-real-2026-economics-028"
+  ],
+  "per_subject": {
+    "corporate_law": {
+      "correct": 38,
+      "wrong": 0,
+      "unresolved": 2
+    },
+    "tax": {
+      "correct": 34,
+      "wrong": 5,
+      "unresolved": 0
+    },
+    "accounting": {
+      "correct": 47,
+      "wrong": 3,
+      "unresolved": 0
+    },
+    "business": {
+      "correct": 23,
+      "wrong": 0,
+      "unresolved": 2
+    },
+    "economics": {
+      "correct": 9,
+      "wrong": 0,
+      "unresolved": 1
+    }
+  }
+}

@@ -181,7 +181,10 @@ def make_invoke(backend: str | None = None, *, model: str | None = None) -> Invo
     model = model or os.environ.get("CPA_LLM_MODEL") or None
 
     if name == "codex":
-        return lambda system, user: codex_invoke(system, user, model=model)
+        # 세법 계산형·다단계 추론 문항은 240초를 넘길 수 있다(실측: 벤치마크 chose=-1의
+        # 주원인이 codex 타임아웃이었음 — 재실행하니 정답). env로 조정 가능하게 한다.
+        codex_timeout = int(os.environ.get("CPA_CODEX_TIMEOUT", "240"))
+        return lambda system, user: codex_invoke(system, user, model=model, timeout=codex_timeout)
     if name == "ollama":
         return ollama_invoke_factory(
             model=model or os.environ.get("CPA_OLLAMA_MODEL", "qwen2.5:32b"),
