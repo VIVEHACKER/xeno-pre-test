@@ -674,35 +674,65 @@ function buildDailyPrescription(payload, rx = null) {
 
 function renderDailyPrescription(payload, rx = null) {
 	const prescription = buildDailyPrescription(payload, rx);
-	latestTodayProblemIds = prescription.problems.map(
-		(problem) => problem.question_id,
-	);
+
+	// A) problems_to_solve: 서버 제공 시 우선, 없으면 클라이언트 폴백
+	const serverProblems = rx?.problems_to_solve?.length
+		? rx.problems_to_solve
+		: null;
+	const displayProblems = serverProblems || prescription.problems;
+	latestTodayProblemIds = displayProblems.map((p) => p.question_id);
+
 	$("#dailyCommandTitle").textContent = prescription.title;
 	$("#dailyCommandReason").textContent = prescription.reason;
 	$("#dailyStudyBudget").textContent = prescription.budget;
 	$("#dailyRiskMode").textContent = prescription.riskMode;
 	$("#dailyWeakSubject").textContent = prescription.weakSubject;
 	$("#dailyVerification").textContent = prescription.verification;
-	$("#todayProblemSummary").textContent = prescription.problems.length
-		? `${prescription.problems.length}개 문제`
+	$("#todayProblemSummary").textContent = displayProblems.length
+		? `${displayProblems.length}개 문제`
 		: "풀이맵 로딩 중";
 	$("#todayRotationMode").textContent = prescription.rotationMode;
 
-	$("#todayProblemList").innerHTML = prescription.problems.length
-		? prescription.problems
-				.map((problem, index) => {
-					const analysis = problem.question_analysis || {};
-					return `
+	// 문제 카드 렌더 — 서버 처방은 reason/priority_score 추가 표시
+	if (serverProblems) {
+		$("#todayProblemList").innerHTML = serverProblems
+			.map((problem, index) => {
+				const subjectLabel = escapeHtml(
+					SUBJECT_LABEL[problem.subject] ?? problem.subject,
+				);
+				const unitText = escapeHtml(unitLabel(problem.unit));
+				const reasonText = escapeHtml(problem.reason || "");
+				const scoreText =
+					problem.priority_score != null
+						? ` · 우선도 ${Math.round(problem.priority_score * 100)}`
+						: "";
+				return `
             <button class="today-problem-card" type="button" data-problem-id="${escapeAttr(problem.question_id)}">
-              <span>${index + 1} · ${escapeHtml(SUBJECT_LABEL[displaySubjectKey(problem)] ?? problem.subject)}</span>
-              <strong>${escapeHtml(unitLabel(problem.unit))}</strong>
-              <small>${escapeHtml(analysis.asked_output || problem.question_id)}</small>
-              <p>${escapeHtml(analysis.examiner_intent || problem.explanation || "개념 선택과 보기 판별을 확인합니다.")}</p>
+              <span>${index + 1} · ${subjectLabel}${scoreText}</span>
+              <strong>${unitText}</strong>
+              <small>${escapeHtml(problem.question_id)}</small>
+              <p>${reasonText}</p>
             </button>
           `;
-				})
-				.join("")
-		: `<div class="empty-state"><strong>풀이맵 로딩 대기</strong><p>로딩되면 오늘 풀 문제가 자동으로 채워집니다.</p></div>`;
+			})
+			.join("");
+	} else {
+		$("#todayProblemList").innerHTML = prescription.problems.length
+			? prescription.problems
+					.map((problem, index) => {
+						const analysis = problem.question_analysis || {};
+						return `
+              <button class="today-problem-card" type="button" data-problem-id="${escapeAttr(problem.question_id)}">
+                <span>${index + 1} · ${escapeHtml(SUBJECT_LABEL[displaySubjectKey(problem)] ?? problem.subject)}</span>
+                <strong>${escapeHtml(unitLabel(problem.unit))}</strong>
+                <small>${escapeHtml(analysis.asked_output || problem.question_id)}</small>
+                <p>${escapeHtml(analysis.examiner_intent || problem.explanation || "개념 선택과 보기 판별을 확인합니다.")}</p>
+              </button>
+            `;
+					})
+					.join("")
+			: `<div class="empty-state"><strong>풀이맵 로딩 대기</strong><p>로딩되면 오늘 풀 문제가 자동으로 채워집니다.</p></div>`;
+	}
 
 	$("#todayConceptList").innerHTML = prescription.concepts.length
 		? prescription.concepts
@@ -718,9 +748,19 @@ function renderDailyPrescription(payload, rx = null) {
 				.join("")
 		: `<p class="muted-note">우선순위 개념이 없습니다.</p>`;
 
-	$("#todayDeferList").innerHTML = prescription.deferItems
-		.map((item) => `<li>${escapeHtml(item)}</li>`)
-		.join("");
+	// B) problems_to_skip: 서버 제공 시 앞에 추가.
+	// skipItems·deferItems 모두 raw 텍스트로 만들고 렌더 시점에서 일괄 escapeHtml —
+	// 혼합 배열에 일관된 이스케이프를 적용해 XSS 회귀를 차단(코드리뷰 P1).
+	const skipItems = rx?.problems_to_skip?.length
+		? rx.problems_to_skip.map(
+				(item) =>
+					`건너뛸 문제: ${SUBJECT_LABEL[item.subject] ?? item.subject} ${unitLabel(item.unit)} — ${item.reason}`,
+			)
+		: [];
+	const allDeferItems = [...skipItems, ...prescription.deferItems];
+	$("#todayDeferList").innerHTML = allDeferItems.length
+		? allDeferItems.map((item) => `<li>${escapeHtml(item)}</li>`).join("")
+		: "";
 
 	$("#todayRotationList").innerHTML = prescription.rotation
 		.map((item) => `<li>${escapeHtml(item)}</li>`)
@@ -829,6 +869,138 @@ async function loadEvidenceDetail(refType, refId) {
 	}
 }
 
+// ============================================================
+// 학습 로드맵 — study_plan 렌더 + /learning-path 로드
+// ============================================================
+
+function renderStudyPlan(rx) {
+	const plan = rx?.study_plan;
+
+	const strategyTitle = $("#roadmapStrategyTitle");
+	const strategySummary = $("#roadmapStrategySummary");
+	const metaRow = $("#roadmapMeta");
+	const weeksContainer = $("#roadmapWeeks");
+	const weekCountEl = $("#roadmapWeekCount");
+
+	if (!strategyTitle || !weeksContainer) return;
+
+	if (!plan) {
+		strategyTitle.textContent = "처방을 완료하면 전략 요약이 표시됩니다.";
+		strategySummary.textContent =
+			"진단 후 처방의 학습 계획이 자동으로 로드됩니다.";
+		if (metaRow) metaRow.hidden = true;
+		weeksContainer.innerHTML = `<p class="muted-note">처방 데이터가 없습니다. 레벨 진단 후 자동으로 채워집니다.</p>`;
+		if (weekCountEl) weekCountEl.textContent = "—";
+		return;
+	}
+
+	strategyTitle.textContent = plan.strategy_summary || "학습 전략";
+	if (strategySummary) strategySummary.textContent = "";
+	if (metaRow) {
+		metaRow.hidden = false;
+		const totalWeeksEl = $("#roadmapTotalWeeks");
+		const hoursEl = $("#roadmapHoursPerWeek");
+		const passBarEl = $("#roadmapPassBar");
+		if (totalWeeksEl)
+			totalWeeksEl.textContent = `총 ${plan.total_weeks ?? "—"}주`;
+		if (hoursEl) hoursEl.textContent = `주당 ${plan.hours_per_week ?? "—"}시간`;
+		if (passBarEl) {
+			const avg =
+				plan.pass_bar?.average != null
+					? `평균 ${Math.round(plan.pass_bar.average * 100)}%`
+					: "평균 60%";
+			const floor =
+				plan.pass_bar?.per_subject_floor != null
+					? `과목 ${Math.round(plan.pass_bar.per_subject_floor * 100)}%`
+					: "과목 40%";
+			passBarEl.textContent = `${avg} · ${floor}`;
+		}
+	}
+
+	const weeks = plan.weeks || [];
+	if (weekCountEl) weekCountEl.textContent = `${weeks.length}주`;
+	if (!weeks.length) {
+		weeksContainer.innerHTML = `<p class="muted-note">주차 데이터가 없습니다.</p>`;
+		return;
+	}
+
+	weeksContainer.innerHTML = weeks
+		.map((week) => {
+			const allocs = (week.subject_allocation || [])
+				.map(
+					(alloc) =>
+						`<span class="alloc-chip" title="${escapeAttr(alloc.reason ?? "")}">${escapeHtml(SUBJECT_LABEL[alloc.subject] ?? alloc.subject)} ${escapeHtml(String(alloc.hours ?? ""))}h</span>`,
+				)
+				.join("");
+			return `
+        <div class="roadmap-week">
+          <div class="roadmap-week-head">
+            <span class="roadmap-week-no">W${escapeHtml(String(week.week_no ?? ""))}</span>
+            <span class="roadmap-week-range">${escapeHtml(week.days_range ?? "")}</span>
+            <span class="roadmap-week-stage">${escapeHtml(week.stage ?? "")}</span>
+          </div>
+          <strong class="roadmap-week-theme">${escapeHtml(week.theme ?? "")}</strong>
+          <div class="roadmap-alloc-row">${allocs}</div>
+          ${week.milestone ? `<p class="roadmap-milestone"><span>마일스톤</span> ${escapeHtml(week.milestone)}</p>` : ""}
+          ${week.verification_metric ? `<p class="roadmap-verify muted-note">${escapeHtml(week.verification_metric)}</p>` : ""}
+        </div>
+      `;
+		})
+		.join("");
+}
+
+async function loadLearningPath() {
+	const result = $("#learningPathResult");
+	if (!result) return;
+	result.innerHTML = `<p class="muted-note">경로 불러오는 중…</p>`;
+	try {
+		const data = await apiFetch("/learning-path");
+		const path = data?.path || [];
+		const unmatched = data?.unmatched_concepts || [];
+
+		if (!path.length) {
+			result.innerHTML = `<p class="muted-note">활성 처방의 복습 개념이 없습니다 — 먼저 진단하세요.</p>`;
+			return;
+		}
+
+		const unmatchedHtml = unmatched.length
+			? `<p class="muted-note" style="margin-top:var(--s-3)">매칭 실패 개념: ${escapeHtml(unmatched.join(", "))}</p>`
+			: "";
+
+		result.innerHTML =
+			path
+				.map((node) => {
+					const depth = Number(node.depth ?? 0);
+					const chunkCount = node.resources?.chunks?.length ?? 0;
+					const problemCount = node.resources?.problems?.length ?? 0;
+					const tutorialCount = node.resources?.tutorials?.length ?? 0;
+					const confusable = (node.confusable_with || [])
+						.map((c) => escapeHtml(c.name_ko))
+						.join(", ");
+					return `
+            <div class="lp-node" data-depth="${depth}">
+              <div class="lp-node-head">
+                <span class="lp-node-depth-badge">D${depth}</span>
+                <strong>${escapeHtml(node.name_ko ?? node.term_id)}</strong>
+                <span class="lp-node-subject muted-note">${escapeHtml(SUBJECT_LABEL[node.subject] ?? node.subject ?? "")}</span>
+              </div>
+              ${node.why ? `<p class="lp-node-why">${escapeHtml(node.why)}</p>` : ""}
+              <div class="lp-node-res muted-note">청크 ${chunkCount} · 문제 ${problemCount} · 튜토리얼 ${tutorialCount}</div>
+              ${confusable ? `<p class="lp-node-confusable muted-note">혼동 주의: ${confusable}</p>` : ""}
+            </div>
+          `;
+				})
+				.join("") + unmatchedHtml;
+	} catch (err) {
+		if (err.status === 404) {
+			result.innerHTML = `<p class="muted-note">활성 처방의 복습 개념이 없습니다 — 먼저 진단하세요.</p>`;
+		} else {
+			result.innerHTML = `<p class="muted-note">경로 로딩 실패: ${escapeHtml(err.message)}</p>`;
+			showToast(`학습 경로 로딩 실패: ${err.message}`, "error");
+		}
+	}
+}
+
 function render(rx) {
 	renderDailyPrescription(buildPayload(), rx);
 	renderMetrics(rx);
@@ -836,6 +1008,7 @@ function render(rx) {
 	renderTasks(rx);
 	renderEvidence(rx);
 	renderCoachFromState(buildPayload(), rx);
+	renderStudyPlan(rx);
 }
 
 let inflight = null;
@@ -904,6 +1077,7 @@ const VIEW_TITLE = {
 	dashboard: "오늘의 처방",
 	tutorials: "과목 튜토리얼",
 	problem: "문제 훈련",
+	roadmap: "학습 로드맵",
 	stories: "맞춤 코치",
 	interview: "레벨 진단",
 	terms: "용어 사전",
@@ -992,6 +1166,12 @@ $("#evidenceList").addEventListener("click", (event) => {
 	loadEvidenceDetail(btn.dataset.refType, btn.dataset.refId);
 });
 
+// 학습 경로 버튼
+const loadLearningPathBtn = $("#loadLearningPath");
+if (loadLearningPathBtn) {
+	loadLearningPathBtn.addEventListener("click", () => loadLearningPath());
+}
+
 // ============================================================
 // 과목별 튜토리얼
 // ============================================================
@@ -999,13 +1179,25 @@ $("#evidenceList").addEventListener("click", (event) => {
 let subjectTutorials = [];
 let selectedTutorialId = null;
 let selectedStepIndex = 0;
+const tutorialDetailCache = {};
 
+// /tutorials brief에는 exam_id/phase_id/phase_name이 없고 level·subject_id만 있다.
+// 필터가 "전체"로 붕괴하지 않도록 brief가 가진 필드(level→subject_id)로 그룹핑한다.
+// detail 캐시가 있으면 더 정확한 phase 정보를 쓴다(상세 조회 후).
 function phaseOptionValue(tutorial) {
-	return `${tutorial.exam_id}:${tutorial.phase_id}`;
+	const detail = tutorialDetailCache[tutorial.tutorial_id];
+	if (detail?.exam_id || detail?.phase_id) {
+		return `${detail.exam_id ?? ""}:${detail.phase_id ?? ""}`;
+	}
+	return tutorial.level ?? tutorial.subject_id ?? "";
 }
 
 function phaseOptionLabel(tutorial) {
-	return `${tutorial.exam_id} · ${tutorial.phase_name}`;
+	const detail = tutorialDetailCache[tutorial.tutorial_id];
+	if (detail?.exam_id || detail?.phase_name) {
+		return `${detail.exam_id ?? ""} · ${detail.phase_name ?? ""}`;
+	}
+	return tutorial.level ?? tutorial.subject_name ?? "";
 }
 
 function filteredTutorials() {
@@ -1018,7 +1210,9 @@ function filteredTutorials() {
 function renderTutorialFilters() {
 	const phases = new Map();
 	subjectTutorials.forEach((tutorial) => {
-		phases.set(phaseOptionValue(tutorial), phaseOptionLabel(tutorial));
+		const value = phaseOptionValue(tutorial);
+		const label = phaseOptionLabel(tutorial);
+		if (value) phases.set(value, label);
 	});
 	$("#tutorialPhaseFilter").innerHTML = [
 		`<option value="all">전체</option>`,
@@ -1050,31 +1244,44 @@ function renderTutorialSubjectOptions() {
 				`<option value="${escapeAttr(tutorial.tutorial_id)}" ${tutorial.tutorial_id === selectedTutorialId ? "selected" : ""}>${escapeHtml(tutorial.subject_name)} · ${escapeHtml(tutorial.entry_topic)}</option>`,
 		)
 		.join("");
-	renderSelectedTutorial();
+	renderSelectedTutorial().catch((err) => {
+		$("#tutorialSummary").textContent = `튜토리얼 로딩 실패: ${err.message}`;
+	});
 }
 
-function renderSelectedTutorial() {
-	const tutorial = subjectTutorials.find(
-		(item) => item.tutorial_id === selectedTutorialId,
+async function renderSelectedTutorial() {
+	const capturedId = selectedTutorialId;
+	const brief = subjectTutorials.find(
+		(item) => item.tutorial_id === capturedId,
 	);
-	if (!tutorial) {
+	if (!brief) {
 		$("#tutorialTitle").textContent = "튜토리얼 데이터 없음";
-		$("#tutorialObjective").textContent =
-			"subject_tutorials.json을 먼저 생성해야 합니다.";
+		$("#tutorialObjective").textContent = "API에서 튜토리얼을 불러와야 합니다.";
 		$("#tutorialAtoms").innerHTML = "";
 		$("#tutorialFlow").innerHTML = "";
 		$("#tutorialStepDetail").innerHTML = "";
 		return;
 	}
+
+	let tutorial = tutorialDetailCache[capturedId];
+	if (!tutorial) {
+		const data = await apiFetch(`/tutorials/${encodeURIComponent(capturedId)}`);
+		tutorialDetailCache[capturedId] = data;
+		tutorial = data;
+	}
+
+	// 비동기 응답 사이에 선택이 바뀐 경우 렌더 무시
+	if (selectedTutorialId !== capturedId) return;
+
 	selectedStepIndex = Math.min(selectedStepIndex, tutorial.steps.length - 1);
 	$("#tutorialSummary").textContent =
-		`${subjectTutorials.length}개 과목 · ${subjectTutorials.reduce((sum, item) => sum + item.steps.length, 0)}개 단계`;
+		`${subjectTutorials.length}개 과목 · ${subjectTutorials.reduce((sum, item) => sum + (item.n_steps ?? 0), 0)}개 단계`;
 	$("#tutorialMeta").textContent =
-		`${tutorial.exam_id} · ${tutorial.phase_name} · ${tutorial.assessment_type === "written" ? "주관식" : "객관식"}`;
+		`${tutorial.exam_id ?? ""} · ${tutorial.phase_name ?? ""} · ${tutorial.assessment_type === "written" ? "주관식" : "객관식"}`;
 	$("#tutorialTitle").textContent = tutorial.title;
 	$("#tutorialObjective").textContent = tutorial.objective;
 	$("#tutorialTopic").textContent = tutorial.entry_topic;
-	$("#tutorialAtoms").innerHTML = tutorial.concept_atoms
+	$("#tutorialAtoms").innerHTML = (tutorial.concept_atoms ?? [])
 		.map(
 			(atom, index) => `
         <article>
@@ -1165,16 +1372,11 @@ function renderTutorialStep(tutorial, index) {
 
 async function loadSubjectTutorials() {
 	try {
-		const response = await fetch("subject_tutorials.json", {
-			cache: "no-store",
-		});
-		if (!response.ok) throw new Error(`tutorials ${response.status}`);
-		const data = await response.json();
+		const data = await apiFetch("/tutorials");
 		subjectTutorials = data.tutorials || [];
 		renderTutorialFilters();
 	} catch (err) {
 		$("#tutorialSummary").textContent = `튜토리얼 로딩 실패: ${err.message}`;
-		renderSelectedTutorial();
 	}
 }
 
@@ -1187,14 +1389,18 @@ $("#tutorialPhaseFilter").addEventListener("change", () => {
 $("#tutorialSubjectSelect").addEventListener("change", (event) => {
 	selectedTutorialId = event.target.value;
 	selectedStepIndex = 0;
-	renderSelectedTutorial();
+	renderSelectedTutorial().catch((err) => {
+		$("#tutorialSummary").textContent = `튜토리얼 로딩 실패: ${err.message}`;
+	});
 });
 
 $("#tutorialFlow").addEventListener("click", (event) => {
 	const button = event.target.closest(".tutorial-step-button");
 	if (!button) return;
 	selectedStepIndex = Number(button.dataset.stepIndex);
-	renderSelectedTutorial();
+	renderSelectedTutorial().catch((err) => {
+		$("#tutorialSummary").textContent = `튜토리얼 로딩 실패: ${err.message}`;
+	});
 });
 
 // ============================================================
@@ -1264,81 +1470,6 @@ function openProblemMap(problemId) {
 	selectedProblemId = problemId;
 	$("#problemSubjectFilter").value = "all";
 	renderProblemOptions();
-}
-
-function problemPathByType(item, pathType) {
-	return (item.solution_paths || []).find(
-		(path) => path.path_type === pathType,
-	);
-}
-
-function problemChoiceElimination(item, choiceIndex) {
-	const path = problemPathByType(item, "choice_elimination");
-	return (
-		(path?.choice_eliminations || []).find(
-			(choice) => choice.choice_index === choiceIndex,
-		) || null
-	);
-}
-
-function diagnoseProblemAttemptLocal(
-	item,
-	selectedChoice,
-	timeSeconds,
-	timeLimitSeconds = 120,
-) {
-	const correct = selectedChoice === item.correct_choice;
-	const slow = Number.isFinite(timeSeconds) && timeSeconds > timeLimitSeconds;
-	const recommendedPath = !correct
-		? problemPathByType(item, "choice_elimination")
-		: slow
-			? problemPathByType(item, "structure")
-			: problemPathByType(item, "reverse_check");
-	const missingLinks =
-		correct && !slow ? [] : recommendedPath?.concept_links || [];
-	const mistakeTags = [];
-	if (!correct) mistakeTags.push("concept_gap", "distractor_trap");
-	if (slow) mistakeTags.push("time_pressure");
-	const action = !correct
-		? {
-				action_type: "concept_rebuild",
-				action_text:
-					"선택한 보기와 정답 보기의 조건 차이를 표시하고 같은 개념의 기초-예제-유제 순서로 다시 풉니다.",
-			}
-		: slow
-			? {
-					action_type: "speed_rebuild",
-					action_text:
-						"정답은 맞혔지만 제한 시간을 넘겼으므로 표/구조식으로 조건 분리 시간을 줄입니다.",
-				}
-			: {
-					action_type: "advance_to_variant",
-					action_text:
-						"핵심 개념과 검산이 통과됐으므로 같은 단원의 낮은 난도 변형 문제로 이동합니다.",
-				};
-
-	return {
-		question_id: item.question_id,
-		correct,
-		selected_choice: selectedChoice,
-		selected_choice_text: item.choices[selectedChoice],
-		correct_choice: item.correct_choice,
-		correct_choice_text: item.choices[item.correct_choice],
-		time_seconds: Number.isFinite(timeSeconds) ? timeSeconds : null,
-		time_limit_seconds: timeLimitSeconds,
-		time_over_limit: slow,
-		mistake_tags: mistakeTags,
-		selected_choice_elimination: problemChoiceElimination(item, selectedChoice),
-		recommended_path: recommendedPath,
-		missing_concept_links: missingLinks,
-		next_tutorial: {
-			tutorial_id: item.tutorial_id,
-			focus_concepts: missingLinks
-				.slice(0, 3)
-				.map((link) => link.concept_label),
-		},
-		next_action: action,
-	};
 }
 
 function formatElapsed(totalSeconds) {
@@ -1434,7 +1565,7 @@ function resetProblemAttempt() {
 	startAttemptTimer();
 }
 
-function renderAttemptDiagnosis(diagnosis, persistenceLabel) {
+function renderAttemptDiagnosis(diagnosis, persistenceLabel, explanation) {
 	latestAttemptDiagnosis = diagnosis;
 	stopAttemptTimer();
 	const tags = diagnosis.mistake_tags?.length
@@ -1460,6 +1591,12 @@ function renderAttemptDiagnosis(diagnosis, persistenceLabel) {
 		.slice(0, 4)
 		.map((step) => `<li>${escapeHtml(step)}</li>`)
 		.join("");
+	const explanationSection = explanation
+		? `<div class="attempt-next-action">
+      <span>공식 해설</span>
+      <p>${escapeHtml(explanation)}</p>
+    </div>`
+		: "";
 
 	setAttemptStatus({
 		selected: `${diagnosis.selected_choice + 1}번`,
@@ -1494,8 +1631,43 @@ function renderAttemptDiagnosis(diagnosis, persistenceLabel) {
 				? `<ol class="attempt-concept-list">${links}</ol>`
 				: `<p class="attempt-clear">이번 시도는 개념 재진입보다 변형 문제로 넘어가는 편이 낫습니다.</p>`
 		}
+    ${explanationSection}
+    <div class="attempt-next-action">
+      <button id="runAiExplain" type="button">AI 풀이 보기</button>
+    </div>
   `;
 }
+
+// AI 풀이 버튼 — #problemAttemptDiagnosis에 이벤트 위임 (채점마다 innerHTML 교체 후에도 동작)
+$("#problemAttemptDiagnosis").addEventListener("click", async (event) => {
+	if (!event.target.closest("#runAiExplain")) return;
+	const btn = event.target.closest("#runAiExplain");
+	if (!selectedProblemId) return;
+	btn.disabled = true;
+	btn.textContent = "AI 풀이 로딩 중…";
+	try {
+		const result = await apiJson(
+			`/practice/${encodeURIComponent(selectedProblemId)}/ai-explain`,
+			"POST",
+		);
+		const matchLabel = result.ai_matches_key ? "정답 일치" : "정답 불일치";
+		btn.closest(".attempt-next-action").innerHTML = `
+      <span>AI 풀이 (${escapeHtml(matchLabel)})</span>
+      <p>${escapeHtml(result.walkthrough || "")}</p>
+      ${result.official_explanation ? `<p class="muted-note">${escapeHtml(result.official_explanation)}</p>` : ""}
+    `;
+	} catch (err) {
+		btn.disabled = false;
+		btn.textContent = "AI 풀이 보기";
+		if (err.status === 503) {
+			showToast("AI 해설 백엔드 미설정", "info");
+		} else if (err.status === 403) {
+			showToast("먼저 채점하세요", "info");
+		} else {
+			showToast(`AI 풀이 실패: ${err.message}`, "error");
+		}
+	}
+});
 
 async function submitProblemAttemptDiagnosis() {
 	const item = problemSolutionMaps.find(
@@ -1512,24 +1684,14 @@ async function submitProblemAttemptDiagnosis() {
 
 	try {
 		const data = await apiJson("/attempts/diagnose", "POST", payload);
-		renderAttemptDiagnosis(data.diagnosis, "서버 기록됨");
+		renderAttemptDiagnosis(data.diagnosis, "서버 기록됨", data.explanation);
 	} catch (err) {
-		// 상태 인지형 폴백: 네트워크 오류일 때만 로컬 미리보기.
-		// 401은 apiFetch가 이미 refresh/login 흐름을 태웠으므로 마스킹하지 않음.
-		// 403/5xx 등 서버 에러도 "로컬 미리보기 성공"으로 위장하지 않고 그대로 노출.
 		if (err.isNetworkError) {
-			const diagnosis = diagnoseProblemAttemptLocal(
-				item,
-				selectedAttemptChoice,
-				timeSeconds,
-				120,
-			);
-			renderAttemptDiagnosis(diagnosis, "로컬 미리보기 (오프라인)");
-			showToast("서버에 연결할 수 없어 로컬 미리보기로 채점했습니다.", "info");
+			showToast("오프라인이라 채점 불가. 네트워크를 확인하세요.", "error");
 			return;
 		}
 		if (err.status === 401) {
-			// refresh 실패 시 apiFetch가 이미 로그인 게이트를 띄움.
+			// apiFetch가 이미 로그인 게이트를 띄움.
 			showToast("세션이 만료되어 다시 로그인해야 합니다.", "error");
 			return;
 		}
@@ -1607,16 +1769,15 @@ function renderQuestionAnalysis(item) {
   `;
 }
 
-function renderSelectedProblemMap() {
+async function renderSelectedProblemMap() {
 	const item = problemSolutionMaps.find(
 		(problem) => problem.question_id === selectedProblemId,
 	);
 	if (!item) {
-		$("#problemSolutionSummary").textContent = "문제 풀이맵 없음";
+		$("#problemSolutionSummary").textContent = "문제 목록 없음";
 		$("#problemMeta").textContent = "데이터 없음";
 		$("#problemTitle").textContent = "문제별 풀이 지능";
-		$("#problemStem").textContent =
-			"problem_solution_maps.json을 먼저 생성해야 합니다.";
+		$("#problemStem").textContent = "문제를 선택하면 본문이 표시됩니다.";
 		$("#problemConceptTags").innerHTML = "";
 		$("#problemChoiceBoard").innerHTML = "";
 		setAttemptStatus();
@@ -1628,61 +1789,66 @@ function renderSelectedProblemMap() {
 		return;
 	}
 
+	// brief 메타 먼저 렌더
 	$("#problemSolutionSummary").textContent =
-		`${problemSolutionMaps.length}개 문제 · ${problemSolutionMaps.reduce((sum, problem) => sum + problem.solution_paths.length, 0)}개 풀이`;
+		`${problemSolutionMaps.length}개 문제`;
 	$("#problemMeta").textContent =
 		`${SUBJECT_LABEL[displaySubjectKey(item)] ?? item.subject} · ${item.unit} · ${item.applicable_year ?? "연도 미지정"}`;
 	$("#problemTitle").textContent = item.question_id;
-	$("#problemStem").textContent = item.stem;
-	$("#problemConceptTags").innerHTML = item.concept_tags
+	$("#problemStem").textContent = "본문 로딩 중…";
+	$("#problemConceptTags").innerHTML = (item.concept_tags || [])
 		.map((tag) => `<span>${escapeHtml(tag)}</span>`)
 		.join("");
 	$("#problemCorrectAnswer").textContent = "정답 비공개";
-	$("#problemRightsStatus").textContent = item.rights_status;
-	$("#problemReviewStatus").textContent = item.review_status;
-	renderChoiceBoard(item);
-	renderQuestionAnalysis(item);
+	$("#problemRightsStatus").textContent = "—";
+	$("#problemReviewStatus").textContent = "—";
+	$("#problemChoiceBoard").innerHTML = "";
+	// 풀이 전엔 풀이 경로·출제 분석 숨김
+	$("#problemSolutionPaths").innerHTML =
+		`<p class="muted-note">풀이 후 공개됩니다.</p>`;
+	$("#problemQuestionType").textContent = "—";
+	$("#problemIntent").innerHTML =
+		`<p class="muted-note">풀이 후 공개됩니다.</p>`;
+	$("#stemConditionList").innerHTML = "";
 	resetProblemAttempt();
-	$("#problemSolutionPaths").innerHTML = `
-    <details class="solution-library">
-      <summary>풀이 경로 ${item.solution_paths.length}개</summary>
-      <div class="solution-library-grid">
-        ${item.solution_paths
-					.map(
-						(path) => `
-              <article class="problem-path-card">
-                <p class="eyebrow">${escapeHtml(path.path_type)} · 신뢰도 ${Math.round(path.confidence * 100)}%</p>
-                <h3>${escapeHtml(path.label)}</h3>
-                <p>${escapeHtml(path.why_this_path)}</p>
-                <div class="problem-path-meta">
-                  ${path.trigger_signals.map((signal) => `<span>${escapeHtml(signal)}</span>`).join("")}
-                </div>
-                <ol>
-                  ${path.ordered_steps.map((step) => `<li>${escapeHtml(step)}</li>`).join("")}
-                </ol>
-              </article>
-            `,
-					)
-					.join("")}
-      </div>
-    </details>
-  `;
+
+	// 동시성 보호: 요청 시 id 캡처, 응답 시 일치할 때만 렌더
+	const capturedId = selectedProblemId;
+	try {
+		const detail = await apiFetch(
+			`/practice/${encodeURIComponent(capturedId)}`,
+		);
+		if (selectedProblemId !== capturedId) return; // stale — 다른 문제 선택됨
+		$("#problemStem").textContent = detail.stem;
+		renderChoiceBoard(detail);
+	} catch (err) {
+		if (selectedProblemId !== capturedId) return;
+		$("#problemStem").textContent = `본문 로딩 실패: ${err.message}`;
+	}
 }
 
-async function loadProblemSolutionMaps() {
+async function loadPracticeList() {
 	try {
-		const response = await fetch("problem_solution_maps.json", {
-			cache: "no-store",
-		});
-		if (!response.ok) throw new Error(`problem solutions ${response.status}`);
-		const data = await response.json();
-		problemSolutionMaps = data.problem_solution_maps || [];
+		// 서버가 limit을 50으로 클램프 + next_cursor 페이지네이션. 전 과목을 다 받지
+		// 않으면 question_id 정렬상 앞 페이지(회계)만 로드돼 세법·상법·경영·경제 문항과
+		// 처방 추천 문항에 도달할 수 없다(코드리뷰 P1) — 커서가 끝날 때까지 모두 수집.
+		const all = [];
+		let cursor = "";
+		for (let page = 0; page < 40; page++) {
+			const qs = cursor ? `&after=${encodeURIComponent(cursor)}` : "";
+			const data = await apiFetch(`/practice?limit=50${qs}`);
+			const batch = data.questions || [];
+			all.push(...batch);
+			cursor = data.next_cursor;
+			if (!cursor || !batch.length) break;
+		}
+		problemSolutionMaps = all;
 		renderProblemFilters();
 		renderDailyPrescription(buildPayload(), latestPrescription);
 	} catch (err) {
 		$("#problemSolutionSummary").textContent =
-			`문제 풀이맵 로딩 실패: ${err.message}`;
-		renderSelectedProblemMap();
+			`문제 목록 로딩 실패: ${err.message}`;
+		renderSelectedProblemMap().catch(() => {});
 	}
 }
 
@@ -1975,7 +2141,7 @@ function bootApp() {
 	renderWeek();
 	loadDataManifest();
 	loadSubjectTutorials();
-	loadProblemSolutionMaps();
+	loadPracticeList();
 	initTermsView();
 }
 

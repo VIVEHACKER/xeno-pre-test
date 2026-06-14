@@ -2978,3 +2978,215 @@ h3 {
 		min-width: 0;
 	}
 }
+
+/* ============================================================
+   학습 로드맵 뷰
+   ============================================================ */
+
+.roadmap-header-panel {
+	margin-bottom: var(--s-4);
+}
+
+.roadmap-meta-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--s-2);
+	margin-top: var(--s-3);
+}
+
+.roadmap-meta-chip {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--s-1) var(--s-3);
+	border-radius: var(--r-md);
+	border: 1px solid var(--border);
+	background: var(--surface-2);
+	font-size: var(--t-12);
+	font-weight: 500;
+	color: var(--ink-2);
+}
+
+.roadmap-meta-chip--warn {
+	border-color: var(--warning);
+	background: var(--warning-soft);
+	color: var(--warning);
+}
+
+/* 주차 카드 */
+.roadmap-week {
+	border: 1px solid var(--border);
+	border-radius: var(--r-lg);
+	padding: var(--s-4);
+	margin-bottom: var(--s-3);
+	background: var(--surface);
+}
+
+.roadmap-week-head {
+	display: flex;
+	align-items: center;
+	gap: var(--s-2);
+	margin-bottom: var(--s-2);
+}
+
+.roadmap-week-no {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 32px;
+	height: 24px;
+	padding: 0 var(--s-2);
+	border-radius: var(--r-sm);
+	background: var(--accent);
+	color: #fff;
+	font-size: var(--t-11);
+	font-weight: 700;
+	letter-spacing: 0.02em;
+}
+
+.roadmap-week-range {
+	font-size: var(--t-12);
+	color: var(--muted);
+	font-family: var(--font-mono);
+}
+
+.roadmap-week-stage {
+	margin-left: auto;
+	font-size: var(--t-11);
+	font-weight: 500;
+	color: var(--muted);
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+
+.roadmap-week-theme {
+	display: block;
+	font-size: var(--t-14);
+	font-weight: 600;
+	color: var(--ink);
+	margin-bottom: var(--s-2);
+}
+
+/* 과목 배분 칩 */
+.roadmap-alloc-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--s-1);
+	margin-bottom: var(--s-2);
+}
+
+.alloc-chip {
+	display: inline-flex;
+	align-items: center;
+	padding: 2px var(--s-2);
+	border-radius: var(--r-sm);
+	border: 1px solid var(--border);
+	background: var(--surface-2);
+	font-size: var(--t-11);
+	font-weight: 500;
+	color: var(--ink-2);
+	white-space: nowrap;
+}
+
+.roadmap-milestone {
+	font-size: var(--t-13);
+	color: var(--ink-2);
+	margin-top: var(--s-2);
+}
+
+.roadmap-milestone span {
+	font-size: var(--t-11);
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: var(--accent);
+	margin-right: var(--s-1);
+}
+
+.roadmap-verify {
+	font-size: var(--t-12);
+	margin-top: var(--s-1);
+}
+
+/* 학습 경로 노드 */
+.lp-node {
+	border-left: 2px solid var(--border);
+	padding: var(--s-3) var(--s-4);
+	margin-bottom: var(--s-2);
+	border-radius: 0 var(--r-md) var(--r-md) 0;
+	background: var(--surface);
+}
+
+.lp-node[data-depth="0"] {
+	border-left-color: var(--accent);
+	background: var(--accent-soft);
+}
+
+.lp-node[data-depth="1"] {
+	margin-left: var(--s-5);
+	border-left-color: var(--border-strong);
+}
+
+.lp-node[data-depth="2"] {
+	margin-left: calc(var(--s-5) * 2);
+	border-left-color: var(--border);
+}
+
+.lp-node[data-depth="3"],
+.lp-node[data-depth^="4"],
+.lp-node[data-depth^="5"] {
+	margin-left: calc(var(--s-5) * 3);
+	border-left-color: var(--border);
+}
+
+.lp-node-head {
+	display: flex;
+	align-items: center;
+	gap: var(--s-2);
+	margin-bottom: var(--s-1);
+}
+
+.lp-node-depth-badge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 24px;
+	height: 20px;
+	padding: 0 var(--s-1);
+	border-radius: var(--r-sm);
+	background: var(--surface-3);
+	font-size: var(--t-11);
+	font-weight: 700;
+	font-family: var(--font-mono);
+	color: var(--ink-2);
+}
+
+.lp-node[data-depth="0"] .lp-node-depth-badge {
+	background: var(--accent);
+	color: #fff;
+}
+
+.lp-node-head strong {
+	font-size: var(--t-14);
+	font-weight: 600;
+	color: var(--ink);
+}
+
+.lp-node-subject {
+	margin-left: auto;
+	font-size: var(--t-11);
+}
+
+.lp-node-why {
+	font-size: var(--t-13);
+	color: var(--ink-2);
+	margin-bottom: var(--s-1);
+}
+
+.lp-node-res {
+	font-size: var(--t-12);
+}
+
+.lp-node-confusable {
+	font-size: var(--t-12);
+	margin-top: var(--s-1);
+}

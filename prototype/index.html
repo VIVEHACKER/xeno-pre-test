@@ -21,6 +21,7 @@
           <button class="nav-item active" data-view="dashboard" data-key="d">오늘의 처방<span class="nav-key">g d</span></button>
           <button class="nav-item" data-view="tutorials" data-key="t">과목 튜토리얼<span class="nav-key">g t</span></button>
           <button class="nav-item" data-view="problem" data-key="p">문제 훈련<span class="nav-key">g p</span></button>
+          <button class="nav-item" data-view="roadmap" data-key="m">학습 로드맵<span class="nav-key">g m</span></button>
           <button class="nav-item" data-view="stories" data-key="s">맞춤 코치<span class="nav-key">g s</span></button>
           <button class="nav-item" data-view="interview" data-key="i">레벨 진단<span class="nav-key">g i</span></button>
           <button class="nav-item" data-view="terms" data-key="r">용어 사전<span class="nav-key">g r</span></button>
@@ -425,6 +426,42 @@
             <p class="selected-question">
               사용자에게 수기를 읽히는 화면이 아니라, 내부 전략 데이터를 적용한 수준 판정 화면입니다.
             </p>
+          </div>
+        </section>
+
+        <section class="view" id="roadmap">
+          <div class="panel roadmap-header-panel">
+            <p class="eyebrow">학습 로드맵</p>
+            <h2 id="roadmapStrategyTitle">처방을 완료하면 전략 요약이 표시됩니다.</h2>
+            <p id="roadmapStrategySummary" class="muted-note">진단 후 처방의 학습 계획이 자동으로 로드됩니다.</p>
+            <div class="roadmap-meta-row" id="roadmapMeta" hidden>
+              <span class="roadmap-meta-chip" id="roadmapTotalWeeks">—주</span>
+              <span class="roadmap-meta-chip" id="roadmapHoursPerWeek">주당 —시간</span>
+              <span class="roadmap-meta-chip roadmap-meta-chip--warn" id="roadmapPassBar">평균 60% · 과목 40%</span>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-h">
+              <h2>주차별 타임라인</h2>
+              <span class="meta" id="roadmapWeekCount">—</span>
+            </div>
+            <div id="roadmapWeeks">
+              <p class="muted-note">처방 데이터가 없습니다. 레벨 진단 후 자동으로 채워집니다.</p>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-h">
+              <h2>학습 경로</h2>
+              <span class="meta">약점 개념 → 심화 연결</span>
+            </div>
+            <div style="margin-bottom: var(--s-4);">
+              <button class="btn btn--primary" type="button" id="loadLearningPath">학습 경로 불러오기</button>
+            </div>
+            <div id="learningPathResult">
+              <p class="muted-note">버튼을 클릭하면 활성 처방의 복습 개념을 기반으로 경로가 표시됩니다.</p>
+            </div>
           </div>
         </section>
 
