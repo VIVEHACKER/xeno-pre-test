@@ -39,3 +39,6 @@ CLAUDE.md
 .omx/
 # 실기출 원문 (공식 출처 다운로드본 — 재배포 회피, manifest provenance만 추적)
 data/real_exams/
+
+# 비전 에이전트 임시 crop
+.tmp_crops/
