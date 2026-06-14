@@ -1,0 +1,32 @@
+{
+  "vision_recovered_economics": {
+    "total": 68,
+    "correct": 65,
+    "accuracy": 0.9559,
+    "by_year": {
+      "2024": {
+        "correct": 23,
+        "n": 23
+      },
+      "2025": {
+        "correct": 22,
+        "n": 23
+      },
+      "2026": {
+        "correct": 20,
+        "n": 22
+      }
+    },
+    "genuine_wrong": 3
+  },
+  "economics_2026_complete": {
+    "correct": 29,
+    "n": 32,
+    "accuracy": 0.9062
+  },
+  "cpa1_2026_all_subjects_with_math": {
+    "correct": 174,
+    "n": 186,
+    "accuracy": 0.9355
+  }
+}
