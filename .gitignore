@@ -42,3 +42,6 @@ data/real_exams/
 
 # 비전 에이전트 임시 crop
 .tmp_crops/
+
+# UI 검증 런타임 산출물(임시)
+data/runtime/ui_*.sqlite3*
