@@ -12,10 +12,18 @@ from cpa_first.explain_gen.generator import (
     generate_explanation,
     run_batch,
 )
+from cpa_first.explain_gen.tutorial_judge import (
+    judge_tutorial,
+    run_tutorial_judge_batch,
+    summarize_tutorial_judgments,
+)
 
 __all__ = [
     "SOLVER_INPUT_FIELDS",
     "build_blind_question",
     "generate_explanation",
     "run_batch",
+    "judge_tutorial",
+    "run_tutorial_judge_batch",
+    "summarize_tutorial_judgments",
 ]
