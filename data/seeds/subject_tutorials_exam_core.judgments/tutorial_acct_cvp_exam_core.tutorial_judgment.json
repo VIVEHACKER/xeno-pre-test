@@ -1,0 +1,26 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_acct_cvp_exam_core",
+  "subject_id": "cpa1_accounting",
+  "ontology_node": "acct_cvp",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "minor_issues",
+  "worked_example_recomputed": true,
+  "step_findings": [
+    {
+      "step_type": "past_exam_bridge",
+      "severity": "uncertain",
+      "category": "exam_relevance",
+      "issue": "Step 5 claims the embedded problems are the actual 2026 CPA 1차 회계학 45번·46번 with specific data (three-product mix 50:30:20, product-B discontinuation with 최대조업도 20,000 등). The numbers are internally consistent and reproduce correctly, but I cannot verify against the genuine 2026 exam that the problem numbers and figures match. If misattributed, it misleads on 기출 정확성.",
+      "correction": "전문가가 실제 2026 CPA 1차 회계학 45·46번 원문과 대조해 문항번호·수치(배합 50:30:20, 추적가능 고정원가 40, 최대조업도 20,000, 잠식효과 A+2,000·C+3,000)가 일치하는지 확인 필요. 불일치 시 '재현/각색' 표기 유지하되 실제 문항번호 정정."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "major": 0,
+    "minor": 0,
+    "uncertain": 1
+  },
+  "expert_review_priority": 4,
+  "summary": "CVP/관련원가 튜토리얼 6개 스텝의 모든 계산(공헌이익, 단일·복수제품 BEP, 목표이익 세전환원, 안전한계율, 특별주문 증분이익, 제품 유지·중단 순영향, 배합변경 재계산)을 처음부터 재계산해 전부 일치. K-IFRS 1002(재고자산) 인용 및 관리회계 비규율 서술도 정확. 스텝 간 모순 없음. 유일한 검수 포인트는 Step 5가 2026 회계학 45·46번 실기출이라 특정한 부분으로, 실제 문항과의 일치는 검증 불가하여 uncertain으로만 표시. 계산 오류 0건이라 clean에 가까우나 실기출 귀속 확인을 위해 priority 4."
+}

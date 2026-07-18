@@ -1,0 +1,33 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_acct_conceptual_framework_exam_core",
+  "subject_id": "cpa1_accounting",
+  "ontology_node": "acct_conceptual_framework",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "minor_issues",
+  "worked_example_recomputed": false,
+  "step_findings": [
+    {
+      "step_type": "variation",
+      "severity": "uncertain",
+      "category": "standard_citation",
+      "issue": "6번째 스텝(variation) model_answer에서 진술 (다) '중립적 정보는 목적이 없거나 정보이용자의 행동에 영향을 미치지 않는 정보를 의미하지 않는다'를 옳다고 판정하며 근거를 '문단 2.17'로 인용. 그러나 '중립적 정보는 목적이 없거나 행동에 영향이 없는 정보를 의미하지 않는다'는 문장은 중립성을 서술하는 문단 2.15에 위치한다(2.16은 '중립성은 신중성으로 뒷받침', 2.17은 신중성·비대칭). 실제로 같은 튜토리얼 2번째 스텝은 신중성 관련을 2.16으로 인용하고 있어 2.17 배정과 어긋난다. 문단 번호 정밀도가 이 튜토리얼의 핵심 학습목표이므로 확인 필요.",
+      "correction": "(다)의 근거 문단을 2.17 → 2.15로 수정(중립성 서술 문단). 내가 번호를 착각했을 가능성 있어 원문 대조 요망."
+    },
+    {
+      "step_type": "past_exam_bridge",
+      "severity": "uncertain",
+      "category": "standard_citation",
+      "issue": "5번째 스텝(2026 기출) model_answer에서 진술 (가) '유용한 재무정보의 질적특성은 …현재 및 잠재적 투자자, 대여자와 그 밖의 채권자에게 가장 유용할 정보의 유형을 식별하는 것이다'를 옳다고 하며 근거를 '문단 2.2'로 인용. 이 문장은 2장 서론에 해당하는 문단 2.1(질적특성이 식별하는 정보의 유형)의 원문으로 보이며 2.2가 아닐 가능성. 같은 튜토리얼 2번째 스텝은 근본적 질적특성을 2.5, 목적적합성을 2.6으로 인용하는 체계와 대조 필요.",
+      "correction": "(가)의 근거 문단을 2.2 → 2.1(2장 서론, 질적특성이 식별하는 정보 유형)로 확인·수정 검토. 원문 문단 대조 요망."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "major": 0,
+    "minor": 0,
+    "uncertain": 2
+  },
+  "expert_review_priority": 4,
+  "summary": "6개 스텝의 정답(④/③/A·C/①/③/②)과 실질 내용(개념체계 지위, 주요이용자 3집단, 질적특성 2계층, 신중성 비대칭 불허, 2018 개정 자산·부채 정의 및 인식기준, 함정 4유형)은 모두 사실·논리적으로 정확하다. worked_example·guided_practice에 수치 계산이 없어 재계산 대상은 없음. 유일한 검수 포인트는 문단 번호 정밀도 2건: 6번 스텝의 중립성 서술 인용(2.17 → 2.15로 추정)과 5번 스텝 (가)의 서론 인용(2.2 → 2.1로 추정). 둘 다 내 기억 오차 가능성이 있어 uncertain으로 올렸으니 개념체계 원문 문단과 대조 필요. 내용 오류가 아닌 인용 번호 수준이라 verdict는 minor_issues, priority 4."
+}

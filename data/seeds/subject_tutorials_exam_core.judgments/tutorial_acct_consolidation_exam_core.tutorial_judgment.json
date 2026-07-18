@@ -1,0 +1,26 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_acct_consolidation_exam_core",
+  "subject_id": "cpa1_accounting",
+  "ontology_node": "acct_consolidation",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "minor_issues",
+  "worked_example_recomputed": true,
+  "step_findings": [
+    {
+      "step_type": "past_exam_bridge / variation",
+      "severity": "uncertain",
+      "category": "exam_relevance",
+      "issue": "스텝5·6은 2026 기출의 구체적 정답 수치(31번 영업권 420,000, 27번 지배기업귀속 34,800·비지배지분귀속 5,200, 26번 비지배지분 23,200·기타포괄손익누계액 4,000)를 단정적으로 인용하나, 해당 문항 전체 데이터가 튜토리얼 본문에 제시되지 않아 이 서브에이전트가 독립 재현으로 검증할 수 없다. 반면 스텝5의 480,000은 주어진 데이터로 완전 재현되어 정확하다.",
+      "correction": "전문가는 이 인용 수치들을 실제 2026 CPA 1차 회계학 26·27·31번 공식 정답·해설과 대조 확인 요망. 스텝5 480,000 및 스텝2~4·6의 모든 자체완결 계산은 재현 검증 완료(오류 없음)."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "major": 0,
+    "minor": 0,
+    "uncertain": 1
+  },
+  "expert_review_priority": 4,
+  "summary": "연결·지분법 6-step 튜토리얼. 자체완결 계산 전부(스텝2 327,000; 스텝3 342,000·영업권0; 스텝4 영업권60,000·NCI236,000; 스텝5 480,000; 스텝6 DTL240,000) 처음부터 재계산해 전건 일치. 기준서 인용 정확(IAS 28.28 내부거래, 28.32 공정가치차액 상각, 1109/1110/1028/1103 적용, FVOCI 채무상품 재분류 vs 재평가잉여금 비재분류 구분 모두 타당). 유일한 미검증 항목은 스텝5·6에 인용된 2026 기출의 외부 정답 수치(420,000·34,800·5,200·23,200·4,000)로, 문항 원데이터가 없어 독립 재현 불가 → uncertain 플래그. 계산·법령 오류는 발견되지 않음."
+}

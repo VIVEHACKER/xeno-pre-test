@@ -1,0 +1,26 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_acct_inventory_exam_core",
+  "subject_id": "cpa1_accounting",
+  "ontology_node": "acct_inventory",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "minor_issues",
+  "worked_example_recomputed": true,
+  "step_findings": [
+    {
+      "step_type": "concept",
+      "severity": "uncertain",
+      "category": "factual",
+      "issue": "물가 상승기·수량 유지 시 매출원가 크기 순서를 '총평균법 ≥ 이동평균법 ≥ FIFO'로 제시한다(model_answer (3), checkpoints). FIFO가 최소라는 부분은 확정적으로 옳으나, 총평균(총평균법)과 이동평균의 대소 관계는 매입·매출의 시점 배열에 따라 역전될 수 있는 비확정적 관계로, 항상 성립하는 정리가 아니다. core_explanation은 '경향이 있다'로 완화했지만 model_answer의 부등호 및 checkpoint는 확정적으로 진술한다.",
+      "correction": "'FIFO가 매출원가 최소·기말재고 최대'만 확정적 관계로 두고, 총평균 vs 이동평균은 '일반적으로 총평균의 매출원가가 다소 크게 나타나는 경향이 있으나 매입·판매 시점 배열에 따라 역전 가능(비확정)'으로 완화 표기 권장. 워크드 예제(총평균 218,400 > 이동평균 215,500)는 한 사례일 뿐 일반 증명이 아님."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "major": 0,
+    "minor": 0,
+    "uncertain": 1
+  },
+  "expert_review_priority": 4,
+  "summary": "재고자산 exam_core 튜토리얼의 4개 계산 스텝(worked_example·guided_practice·past_exam_bridge·variation)을 처음부터 재계산한 결과 모든 수치(336,000/210,000/218,400/215,500, 감모·평가·매출원가 108,000·128,000, 총액검산)가 정확히 일치했다. K-IFRS 제1002호(문단 9·10~11·23~27·28·33)·제1115호 위탁판매 인용, LIFO 금지, 선적지/도착지/적송품/시송품 귀속, 감모(장부단가)→평가(실재수량) 순서, 기초 충당금 차감 로직 모두 정확하다. 유일한 검수 포인트는 개념 스텝에서 '총평균 ≥ 이동평균'을 확정적 순서로 진술한 부분 — 이 대소는 비확정적이므로 완화 표기가 필요(uncertain/minor). 전반적으로 매우 견고한 초안이며 계산·법령 오류 없음."
+}

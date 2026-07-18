@@ -1,0 +1,33 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_tax_vat_supply_exam_core",
+  "subject_id": "cpa1_tax",
+  "ontology_node": "tax_vat_supply",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "minor_issues",
+  "worked_example_recomputed": true,
+  "step_findings": [
+    {
+      "step_type": "worked_example",
+      "severity": "minor",
+      "category": "legal_article",
+      "issue": "중간지급조건부의 6개월 기간요건 기산·종기를 '계약금 지급일부터 잔금 지급일까지'로 서술(core_explanation 및 step 3·6 반복). 부가가치세법 시행령 제28조 제3항/시행규칙 제18조의 정확한 기준은 '계약금을 받기로 한 날의 다음 날부터 재화를 인도하거나 이용가능하게 하는 날까지'이며 종기는 잔금 지급일이 아니라 인도일/이용가능일이다.",
+      "correction": "6개월 요건의 종기는 '재화 인도일(또는 이용가능일)'로 정정. 본 튜토리얼 예제들은 잔금 지급일=인도일이라 계산 결과에는 영향 없음(계산 정오와 무관한 정의 정밀도 문제)."
+    },
+    {
+      "step_type": "concept",
+      "severity": "uncertain",
+      "category": "standard_citation",
+      "issue": "자기적립마일리지로만 전부 결제받은 사업상 증여의 제외 근거를 '시행령 제20조'로 인용. 사업상 증여 제외 항목(견본품 등)과 마일리지 관련 규정의 정확한 조문 위치는 검수자 재확인 필요.",
+      "correction": "사업상 증여 제외 대상 및 자기적립마일리지 결제분의 근거 조문(시행령 제20조 사업상 증여 범위 관련 조항)이 현행 조문과 일치하는지 원문 대조 권장. 결론(제외=비과세)은 타당."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "major": 0,
+    "minor": 1,
+    "uncertain": 1
+  },
+  "expert_review_priority": 4,
+  "summary": "부가가치세 과세거래·공급시기 튜토리얼. worked_example(58,000,000)·guided_practice(18,000,000)·variation(0/10,000,000) 세 계산 예제를 모두 처음부터 재계산해 정확히 일치 확인. 간주공급(제10조), 재화/용역 공급시기(제15·16조), 선발급 특례(제17조), 장기할부·중간지급조건부(시행령 제28조), 계속적 용역·선불임대료 안분(시행령 제29조), 폐업 시 공급시기, 무상 재화 과세 vs 무상 용역 비과세 등 핵심 법령 인용이 모두 내용과 부합. 발견된 이슈는 계산 정오에 영향 없는 정의 정밀도 1건(중간지급조건부 6개월 종기를 '잔금 지급일'로 서술 — 정확히는 인도일)과 마일리지 제외 조문 인용 재확인 1건뿐. 전반적으로 사실·계산 정확도가 매우 높은 초안."
+}

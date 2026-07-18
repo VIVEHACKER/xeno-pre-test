@@ -1,0 +1,33 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_cpa1_business_strategy_exam_core",
+  "subject_id": "cpa1_business",
+  "ontology_node": "cpa1_business_strategy",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "minor_issues",
+  "worked_example_recomputed": true,
+  "step_findings": [
+    {
+      "step_type": "concept",
+      "severity": "minor",
+      "category": "factual",
+      "issue": "VRIO 프레임워크(가치·희소성·모방불가능성·조직)를 Barney(1991)에 귀속시킴. concept_atoms와 concept 스텝 모두 'VRIO(Barney, 1991)'로 서술.",
+      "correction": "Barney(1991, 'Firm Resources and Sustained Competitive Advantage')가 제시한 것은 VRIN(Value·Rareness·Imitability·Non-substitutability) 프레임워크임. 조직(O)을 추가한 VRIO는 Barney(1995 'Looking Inside for Competitive Advantage' 및 1997 교재)에서 정립됨. RBV의 창시가 1991인 것은 맞으나 VRIO 4요건 자체를 1991로 단정하는 것은 부정확. CPA 실전 정오판정에서 연도·요건명까지 묻는 경우는 드물어 감점 위험은 낮음."
+    },
+    {
+      "step_type": "concept",
+      "severity": "uncertain",
+      "category": "factual",
+      "issue": "'V+R이면 일시적 경쟁우위, V만 있으면 경쟁등위'라는 VRIO 단계별 귀결 서술.",
+      "correction": "VRIO 표준 해석(V→경쟁등위, V+R→일시적 우위, V+R+I→미실현 지속우위 잠재, +O→실현)과 일치하여 오류 아님. 다만 위 VRIO 귀속 문제와 연동되므로 전문가가 프레임워크 명칭·연도와 함께 일괄 확인 권장."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "major": 0,
+    "minor": 1,
+    "uncertain": 1
+  },
+  "expert_review_priority": 4,
+  "summary": "경영전략 튜토리얼은 계산(BCG 상대적 시장점유율 4개 사업부 재계산 일치)·법령(상법 제522·434·522조의3·374조, 자본시장법 제133조 이하 모두 정확)·개념(Porter 5요인, 본원적 전략, 거래비용이론 Coase/Williamson, 그린메일 정의 및 스텝 간 일관성) 측면에서 전반적으로 견고함. 유일한 실질 지적은 VRIO 프레임워크를 Barney(1991)에 귀속시킨 학술 인용 부정확(1991은 VRIN, VRIO는 1995/1997)으로, exam 감점 위험은 낮은 minor 사안. critical/major 없음 → minor_issues, 우선순위 4.\""
+}

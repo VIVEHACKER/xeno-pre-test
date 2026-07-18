@@ -1,0 +1,26 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_tax_corporate_depreciation_exam_core",
+  "subject_id": "cpa1_tax",
+  "ontology_node": "tax_corporate_depreciation",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "minor_issues",
+  "worked_example_recomputed": true,
+  "step_findings": [
+    {
+      "step_type": "concept",
+      "severity": "uncertain",
+      "category": "legal_article",
+      "issue": "즉시상각의제의 근거로 '법인세법 제23조 제4항'을 concept_atoms와 step2 core_explanation에서 인용한다. 즉시상각의제(자본적 지출을 감가상각비로 계상한 것으로 의제)는 실체적으로 법인세법 시행령 제31조 제2항이 규정하는 사항이며, 법 제23조 제4항이 이 내용을 직접 규정하는지 불확실하다(제23조 제2항은 K-IFRS 신고조정 특례로 별도 인용됨).",
+      "correction": "즉시상각의제의 정확한 근거는 법인세법 시행령 제31조(자본적 지출·소액수선비)이다. 법률 제23조 제4항 인용은 전문가가 조문 대조로 확인 필요. 소액수선비 시행령 제31조 인용은 정확함."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "major": 0,
+    "minor": 0,
+    "uncertain": 1
+  },
+  "expert_review_priority": 4,
+  "summary": "6개 step의 모든 계산(감가상각 시부인, 유보 T계정, 대손충당금 총액법, 퇴직연금 추계액 max, 시인부족액 추인 한도)을 처음부터 재계산해 전부 일치. 기준서(1016·1109)와 주요 조문(법인세법 제23·34조, 시행령 제26·31·44조의2)·소액수선비 600만원·퇴직급여충당금 한도율 0%도 정확. 유일한 검수 포인트는 즉시상각의제를 '법인세법 제23조 제4항'으로 인용한 부분(실체는 시행령 제31조)으로 severity=uncertain. 전반적으로 사실·계산 정확도가 높은 초안."
+}

@@ -1,0 +1,18 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_cpa1_econ_international_exam_core",
+  "subject_id": "cpa1_economics",
+  "ontology_node": "cpa1_econ_international",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "clean",
+  "worked_example_recomputed": true,
+  "step_findings": [],
+  "severity_counts": {
+    "critical": 0,
+    "major": 0,
+    "minor": 0,
+    "uncertain": 0
+  },
+  "expert_review_priority": 5,
+  "summary": "6개 스텝 전부 검증 완료, 오류 없음. 계산 재현: 비교우위 기회비용(2Y/0.5Y), 리카도 완전특화 전 과정(p=3/5, B국 Y소비 33, 무역이익 12·18), 빅맥 PPP 4개국(갑·병 절상), 개방항등식(NX=NCO=−50) 모두 처음부터 재계산해 일치. 기준서·법령은 해당 없음(국제무역·개방거시 이론). 사실 검증: 2026 기출 데이터(data/real_exams/cpa1/parsed/2026/economics.questions.json)와 대조해 경제원론 32문항·국제경제 5문항(16·17·18·19·31번) 분류 정확, 31번 먼델-플레밍 문제는 원문 그대로 재현되고 공식 정답키(correct_choice=0 → ① 절하·증가)와 튜토리얼 답이 일치. 스톨퍼-새뮤얼슨 방향(실질임금 하락)·PPP 절상 논리·고정/변동환율 정책 유효성 반전 모두 정확. 스텝 6의 '고정환율에서 순수출은 환율의 함수라 불변' 서술은 Mankiw 소규모개방경제 NX(ε) 표준 모형과 부합하며 최종 답(③)에 영향 없음. 일관성 문제 없음. 전문가 우선순위 최하위."
+}

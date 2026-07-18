@@ -1,0 +1,26 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_acct_income_tax_exam_core",
+  "subject_id": "cpa1_accounting",
+  "ontology_node": "acct_income_tax",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "minor_issues",
+  "worked_example_recomputed": true,
+  "step_findings": [
+    {
+      "step_type": "past_exam_bridge",
+      "severity": "uncertain",
+      "category": "internal_consistency",
+      "issue": "Step 5 종합 분개에서 '대변 이연법인세자산 3,500'은 실제로는 이연법인세자산 감소(12,000→11,000, 1,000)와 신규 이연법인세부채(미수이자 2,500)를 하나의 계정 라인으로 순액 표기한 것이다. 대차 총계(172,500=172,500)와 당기손익 이연 변동(순 3,500 비용)은 정확하나, 이연법인세자산이 3,500 감소한 것처럼 보이는 계정 라벨은 엄밀하지 않다(자산은 1,000만 감소).",
+      "correction": "엄밀 분개는 차변 법인세비용 151,500 / 차변 자기주식처분이익 12,000 / 차변 재평가잉여금 9,000 / 대변 당기법인세부채 160,000 / 대변 이연법인세자산 1,000 / 대변 이연법인세부채(미수이자) 2,500 / 대변 이연법인세부채(토지) 9,000. 순액 표기 시 계정을 '이연법인세 순변동'으로 라벨링하는 것이 정확. 최종 정답 151,500(③)과 총액 검산은 변동 없음."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "major": 0,
+    "minor": 0,
+    "uncertain": 1
+  },
+  "expert_review_priority": 4,
+  "summary": "6개 스텝 전부 계산 재현 완료 — 당기법인세·이연법인세 잔액·세율 3단 변동·자본/OCI 귀속 계산이 모두 정확(Step5 정답 151,500=③ 재현). K-IFRS 1012 문단 47·53·24·46·58·61A·60·51 인용 및 법인세법 제55조 모두 올바름. 유일한 검수 포인트는 Step5 종합분개의 '이연법인세자산 3,500' 순액 라벨링(DTA 감소 1,000 + 미수이자 DTL 2,500 netting)으로, 총계·정답에는 영향 없는 표기상 단순화. 실질 사실오류 없음."
+}

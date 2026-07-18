@@ -1,0 +1,26 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_cpa1_business_marketing_exam_core",
+  "subject_id": "cpa1_business",
+  "ontology_node": "cpa1_business_marketing",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "minor_issues",
+  "worked_example_recomputed": true,
+  "step_findings": [
+    {
+      "step_type": "worked_example",
+      "severity": "uncertain",
+      "category": "factual",
+      "issue": "다속성태도모형을 '피시바인(Fishbein, 1963)' 모형으로 명명하며 A=Σ(신념 bi × 중요도 ei)로 정의한다. 엄밀한 학술적 원전에서 Fishbein(1963) 모형의 e_i는 속성 '중요도(weight)'가 아니라 속성에 대한 '평가(evaluation, 좋음/나쁨)'이며, 중요도 가중치를 쓰는 형태는 흔히 확장/변형(예: adequacy-importance)으로 구분된다. 한국 경영학·CPA 교재에서는 관행적으로 '중요도×신념'으로 가르치므로 시험 목적상 통용되나, 원전 명명과 변수 정의의 정합성은 전문가 확인이 필요하다.",
+      "correction": "내용 계산은 모두 정확(A=5.2>B=5.1, 재계산 후 B=5.3>A=4.8). 다만 원전 인용의 엄밀성 차원에서 e_i를 '중요도'로 서술한 것이 Fishbein 원모형의 '평가'와 다를 수 있음을 검수. 시험 관행(중요도×신념)과 부합하면 그대로 유지 가능."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "major": 0,
+    "minor": 0,
+    "uncertain": 1
+  },
+  "expert_review_priority": 4,
+  "summary": "마케팅 튜토리얼 6스텝을 전수 검증. 계산(피시바인 다속성태도모형 worked_example 물음1·2 및 대안 신념변경)은 처음부터 재계산해 모두 일치(5.2/5.1, 4.8/5.3, 6.1). 마케팅 개념 정확도 매우 높음: Assael 관여도×브랜드차이 2×2, Kotler 세분화 5요건, 스키밍/침투 조건, 유보가격 vs 최저수용가격 정의 교차, VMS 3유형·수직/수평 갈등, SERVQUAL 5차원(PZB 1988) 모두 정확. 정답키(④/④/A·B/④/③/③)도 모두 옳음. 유일한 검수 포인트는 다속성태도모형을 'Fishbein 1963'로 명명하며 e_i를 '중요도'로 정의한 원전 정합성(한국 교재 관행상 통용되나 원모형은 '평가'), severity=uncertain minor. 그 외 오류 없음 — 실질적으로 clean에 근접."
+}

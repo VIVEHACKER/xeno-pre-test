@@ -1,0 +1,26 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_acct_cost_flow_exam_core",
+  "subject_id": "cpa1_accounting",
+  "ontology_node": "acct_cost_flow",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "minor_issues",
+  "worked_example_recomputed": true,
+  "step_findings": [
+    {
+      "step_type": "concept",
+      "severity": "uncertain",
+      "category": "standard_citation",
+      "issue": "Step 2(concept)와 Step 4(guided_practice)는 정상원가계산의 제조간접원가 '배부차이(과소/과대배부)'를 매출원가에서 조정하는 근거로 K-IFRS 1002호 문단 13을 든다. 그러나 문단 13은 고정제조간접원가를 정상조업도 기준으로 배부하고 미배부된 고정제조간접원가를 기간비용으로 인식하라는 규정이다. 정상원가계산의 배부차이는 변동 OH 차이와 가격·효율 차이까지 포괄하는 관리회계 개념이라, 배부차이 전액을 문단 13으로 귀속시키는 것은 개념적 단순화다. 계산 결과·방향은 정확하므로 오류라기보다 인용 정합성 검토 대상.",
+      "correction": "문단 13은 고정제조간접원가의 정상조업도 기준 배부 및 미배부분 기간비용 인식 규정임을 명확히 하고, 배부차이 전액을 매출원가로 조정하는 것은 문단 13의 직접 규정이 아니라 중요성 전제의 실무 관행임을 구분해 서술 권장. 문단 13 인용 자체는 유효."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "major": 0,
+    "minor": 0,
+    "uncertain": 1
+  },
+  "expert_review_priority": 4,
+  "summary": "계산 4개 스텝(foundation·worked_example·guided_practice·variation) 전부 처음부터 재현: 재료사용액 40,000→당기총제조원가 95,000→당기제품제조원가 92,000(step1), 간접재료 5,000 반영 OH 65,000→당기제품제조원가 100,000(step3), 예정배부율 @25→총배부액 50,000→실제발생액 80,000(step4), FIFO 종합원가 재료EU 22,000·전환EU 21,000·정상공손 1,000단위→정상공손 배분 후 기말재공품 23,000(step6) 모두 초안 수치와 일치. K-IFRS 1002호 문단 10·12·13·16·21 인용 내용 모두 실제 조문과 부합(문단16 비정상공손 기간비용, 문단21 표준원가법 유사시 허용 등). 개별/종합·실제/정상/표준 축 구분, 과소/과대배부 방향, 정상공손 기준(당기 검사 통과 합격품의 5%) 모두 정확. 유일한 검토점은 배부차이 조정 근거로서 문단 13 인용의 개념적 단순화(uncertain, minor). 전반적으로 매우 정확한 초안."
+}

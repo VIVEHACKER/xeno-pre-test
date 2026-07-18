@@ -1,0 +1,26 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_acct_standard_cost_exam_core",
+  "subject_id": "cpa1_accounting",
+  "ontology_node": "acct_standard_cost",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "minor_issues",
+  "worked_example_recomputed": true,
+  "step_findings": [
+    {
+      "step_type": "worked_example",
+      "severity": "minor",
+      "category": "internal_consistency",
+      "issue": "직접재료 가격차이를 '구입시점 분리'로 구입량 4,500kg 기준(₩4,500 U)으로 계산하면서, 수량차이는 투입량 4,200kg 기준(₩5,000 U)으로 계산한다. 두 차이의 기준수량이 다른데 이를 단순 합산해 '재료 총차이 ₩9,500 U'로 요약표와 checkpoint에 제시했다. 구입시점 분리에서는 가격차이와 수량차이의 합이 실제원가 대 표준허용원가의 단일 총차이로 재조정(reconcile)되지 않는다. model_answer의 검산도 실제로는 노무 총차이(₩5,100 U)만 검증하고 재료 총차이는 검증하지 않는다.",
+      "correction": "투입량 기준 실제원가 대비 표준허용원가의 총차이는 4,200kg×₩26 − 4,000kg×₩25 = ₩109,200 − ₩100,000 = ₩9,200 U이며, 구입량 기준 가격차이(₩4,500 U)와 투입량 기준 수량차이(₩5,000 U)의 합(₩9,500 U)과 일치하지 않는다. 구입시점 분리에서는 '두 차이의 합=총차이' 검산이 성립하지 않음을 명시하거나, 재료를 사용시점 분리(가격·수량 모두 투입량 4,200kg 기준: 가격차이 (26−25)×4,200=₩4,200 U)로 바꿔야 합산 검산이 성립한다."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "major": 0,
+    "minor": 1,
+    "uncertain": 0
+  },
+  "expert_review_priority": 4,
+  "summary": "6개 스텝의 모든 계산(재료·노무·변동OH 가격/능률차이, 역산으로 SP·SQ·완성품환산량 도출)을 처음부터 재현했고 전부 일치한다(044 SP=₩10·SQ=30,000kg·환산량 10,000·단위당 ₩30, 변형문제 SP=₩20·SQ=9,000·환산량 4,500·단위당 ₩40 모두 정확). K-IFRS 제1002호 문단 21의 표준원가법 허용 서술도 정확하다. 유일한 검수 포인트는 예제(step 3)에서 구입시점 분리로 산출한 가격차이(구입량 기준)와 수량차이(투입량 기준)를 단순 합산해 '재료 총차이 ₩9,500 U'로 제시한 것으로, 이 합은 실제-표준허용 단일 총차이(₩9,200 U)와 재조정되지 않는 미세한 개념적 불일치다. 나머지는 clean. 우선순위 4."
+}

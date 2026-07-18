@@ -1,0 +1,26 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_tax_income_classification_exam_core",
+  "subject_id": "cpa1_tax",
+  "ontology_node": "tax_income_classification",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "minor_issues",
+  "worked_example_recomputed": true,
+  "step_findings": [
+    {
+      "step_type": "concept",
+      "severity": "uncertain",
+      "category": "legal_article",
+      "issue": "기타소득 300만원 이하 선택적 분리과세의 근거를 '소득세법 제14조 제3항 제8호'로 인용(step 2 core_explanation·concept_atom). 금융소득 2천만원 근거로 인용한 '제14조 제3항 제6호'와 함께, 제14조 제3항의 세부 호(號) 번호는 개정으로 재배열된 이력이 있어 확신이 낮다. 계산·실체적 내용은 모두 정확하나 호 번호 자체를 전문가가 현행 조문과 대조 권장.",
+      "correction": "현행 소득세법 제14조 제3항 조문으로 금융소득(이자·배당 2천만원)·기타소득(300만원) 분리과세의 정확한 호 번호를 확인. 실체 규정 내용(2천만원 초과 전액 종합, 기타소득금액 300만원 이하 선택적 분리)은 정확함."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "major": 0,
+    "minor": 0,
+    "uncertain": 1
+  },
+  "expert_review_priority": 4,
+  "summary": "6개 스텝 전부 정독하고 4개 계산형(기타소득금액 12,600,000 / Gross-up 27,700,000 / 결손금 종합소득 22,500,000 / 변형 24,000,000)을 처음부터 재계산해 모두 일치 확인. 소득구분 3분류·금융소득 4분류·의제필요경비 60/80%·배당가산 쌓기 순서·제45조 결손금 공제 순서와 부동산임대업 비대칭·이월결손금 10/15년 기한 등 핵심 법리와 조문(제4·14·16·17·19·20·21·45조, 시행령 제87조, Gross-up 10%)이 정확. 유일한 검수 포인트는 제14조 제3항의 세부 호 번호(제6호·제8호)로 실체 내용은 옳으나 호 번호만 현행 조문 대조 권장. 계산 오류·법리 오류 없음, 사실상 클린에 가까움.\""
+}

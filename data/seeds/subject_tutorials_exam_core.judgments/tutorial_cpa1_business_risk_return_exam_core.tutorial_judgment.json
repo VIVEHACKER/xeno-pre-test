@@ -1,0 +1,18 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_cpa1_business_risk_return_exam_core",
+  "subject_id": "cpa1_business",
+  "ontology_node": "cpa1_business_risk_return",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "clean",
+  "worked_example_recomputed": true,
+  "step_findings": [],
+  "severity_counts": {
+    "critical": 0,
+    "major": 0,
+    "minor": 0,
+    "uncertain": 0
+  },
+  "expert_review_priority": 5,
+  "summary": "경영학 위험·수익률 튜토리얼 6스텝 전수 검증. worked_example·guided_practice·variation·past_exam_bridge의 모든 수치를 처음부터 재계산: E(R)=5%/σ=√150≈12.25%(step1), σ_p=√0.0208≈14.42%(step2), β_A=8/5.2≈1.54(step3), β=1.4·체계적0.0784·비체계적0.0816·R²=0.49(step4), β_A=8/5.4≈1.48→③(step5), MVP w_A≈0.736·동일위험기여 w=0.2·서열 0.736>0.5>0.2(step6) 전부 정확 일치. 공식(2자산분산, Cov=ρσσ, β=ρσ_i/σ_m, MVP비중, R²=ρ², 총위험=체계적+비체계적)과 이론 귀속(Markowitz 1952, Sharpe 1964 CAPM, Tobin 1958 분리정리) 모두 정확. R_f 상승 시 접점포트폴리오 구성 변화 서술도 옳음. 재무 단원이라 K-IFRS·상법 조문 인용은 없어 해당 검증 대상 없음. 스텝 간 모순 없음. 오류 없음—clean."
+}

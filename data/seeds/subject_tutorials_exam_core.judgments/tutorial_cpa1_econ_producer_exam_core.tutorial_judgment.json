@@ -1,0 +1,18 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_cpa1_econ_producer_exam_core",
+  "subject_id": "cpa1_economics",
+  "ontology_node": "cpa1_econ_producer",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "clean",
+  "worked_example_recomputed": true,
+  "step_findings": [],
+  "severity_counts": {
+    "critical": 0,
+    "major": 0,
+    "minor": 0,
+    "uncertain": 0
+  },
+  "expert_review_priority": 5,
+  "summary": "생산자이론/비용 튜토리얼 6스텝의 모든 계산을 독립적으로 재현했고 전부 일치한다. 규모수익(동차성)과 한계생산(2계 미분) 독립성, 비용극소화 MRTS=w/r로부터의 C(Q) 도출, 쌍대성, 단기 U자형 SAC와 장기 포락선 관계, 코너해(선형)·레온티예프·고정비용 함정 처리, 러너지수·조업중단 기준까지 사실·계산·개념 모두 정확하다. worked_example(Q=LK→C=2√Q, Q=100/400 수치검산), guided_practice(K̄=4, SAC 최저 Q*=4에서 SMC=SAC=2=LAC), past_exam_bridge(2026 11번 ③가,다 및 연계 5번 러너지수 2/3), variation 세 소문항 모두 재계산 통과. 오류 없음."
+}

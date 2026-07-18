@@ -1,0 +1,26 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_cpa1_business_organization_exam_core",
+  "subject_id": "cpa1_business",
+  "ontology_node": "cpa1_business_organization",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "minor_issues",
+  "worked_example_recomputed": false,
+  "step_findings": [
+    {
+      "step_type": "guided_practice",
+      "severity": "minor",
+      "category": "factual",
+      "issue": "진성 리더십(authentic leadership)의 구성요소를 '자아인식·내면화된 도덕 관점·관계의 투명성·진솔함'으로 제시했는데, Walumbwa et al.(2008)의 표준 4요소는 자아인식(self-awareness)·관계의 투명성(relational transparency)·내면화된 도덕적 관점(internalized moral perspective)·균형적 정보처리(balanced processing)로, '진솔함' 자리에 '균형적 정보처리'가 들어가야 한다.",
+      "correction": "진성 리더십 4요소 = 자아인식, 관계의 투명성, 내면화된 도덕적 관점, 균형적 정보처리(balanced processing). '진솔함'은 정식 하위차원 명칭이 아님."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "major": 0,
+    "minor": 1,
+    "uncertain": 0
+  },
+  "expert_review_priority": 5,
+  "summary": "경영학 조직행동·조직설계 개념형 튜토리얼로 계산 없음. 6개 스텝의 학자·연도·정의(NGT/델파이 Dalkey&Helmer1963, 집단사고 Janis1972, Bandura1977, 자기감시 Snyder1974, Thomas-Kilmann, Bass1985, 대체이론 Kerr&Jermier1978, AET Weiss&Cropanzano1996, Burns&Stalker1961)와 5개 문항 정답키가 모두 정확·일관됨. 유일한 흠은 진성 리더십 4요소 중 '균형적 정보처리'를 '진솔함'으로 대체한 minor 부정확성. 전반적으로 사실 정확도 높아 검수 우선순위 낮음.\""
+}

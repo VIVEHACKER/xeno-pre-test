@@ -1,0 +1,18 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_acct_budget_exam_core",
+  "subject_id": "cpa1_accounting",
+  "ontology_node": "acct_budget",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "clean",
+  "worked_example_recomputed": true,
+  "step_findings": [],
+  "severity_counts": {
+    "critical": 0,
+    "major": 0,
+    "minor": 0,
+    "uncertain": 0
+  },
+  "expert_review_priority": 5,
+  "summary": "예산/성과평가(관리회계) 6-step 튜토리얼. 모든 계산을 처음부터 재현했고 전부 일치했다. foundation 생산량 12,500단위(12,000+2,000-1,500); worked_example 재료필요 37,500kg(12,500×3), 구입량 38,500kg(37,500+5,000-4,000), 구입액 ￦770,000(38,500×20); guided_practice ROI 20%·RI ￦120,000·신규안 16%·결합ROI 19%·RI기여 +￦20,000; past_exam_bridge 완성 8,000·착수 6,000·재료투입 12,000kg·3월초재고 4,000kg — 모두 정확. 개념·기준서 검증: K-IFRS 제1002호(재고자산)를 예산은 규율하지 않는 내부관리 정보로 올바르게 구분; ROI=영업이익/영업자산, RI=영업이익-영업자산×최저필수수익률, EVA=세후영업이익-투하자본×WACC 정의 정확; ROI 준최적화 vs RI 목표일치성 원리 정확; 선입선출법에서 공정초 전량투입 재료는 착수량만 당기 투입(전환원가 완성도는 미끼)이라는 물량흐름 논리 정확; 목표원가계산=설계단계·카이젠원가계산=제조단계 구분 정확; BSC·품질원가·대체가격 진술 정확. 계산·기준서·법령·개념·일관성 모든 축에서 오류 없음. 검수 우선순위 낮음(clean)."
+}

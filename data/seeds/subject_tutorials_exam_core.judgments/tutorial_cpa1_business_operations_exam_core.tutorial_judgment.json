@@ -1,0 +1,18 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_cpa1_business_operations_exam_core",
+  "subject_id": "cpa1_business",
+  "ontology_node": "cpa1_business_operations",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "clean",
+  "worked_example_recomputed": true,
+  "step_findings": [],
+  "severity_counts": {
+    "critical": 0,
+    "major": 0,
+    "minor": 0,
+    "uncertain": 0
+  },
+  "expert_review_priority": 5,
+  "summary": "경영학 운영관리 계산 튜토리얼(병목·리틀법칙·단일기간재고·EOQ). 6개 스텝의 모든 worked_example/guided_practice/past_exam 계산을 처음부터 재현: 병목=min(8/h) 불변, T=I/R(0.25/0.375주), 단일기간 Cu=6·Co=3·CR=0.667→120개(기대수요 117.5와 구분), EOQ=100·주문비=유지비=2000·4배→2배(200), 기출 business-022 CR=5/13→21세트·business-023 T=1.6주, 변형문제 정답 ②. 전부 일치. 문헌 인용(Little 1961 OR, Harris 1913, Arrow-Harris-Marschak 1951 Econometrica, Edgeworth 1888, Shewhart 1931, Ohno TPS, Goldratt TOC, Little's law) 정확. Q/P시스템 정의, 린 재고관, 제곱근 민감도, 임계비율 방향 감각 모두 정확. 스텝 간 모순 없음. 계산 과목이라 K-IFRS 조문 오류 소지 없음. 검수 우선순위 낮음."
+}

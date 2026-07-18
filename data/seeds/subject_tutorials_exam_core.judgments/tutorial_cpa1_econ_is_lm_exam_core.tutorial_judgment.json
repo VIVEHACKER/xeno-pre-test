@@ -1,0 +1,33 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_cpa1_econ_is_lm_exam_core",
+  "subject_id": "cpa1_economics",
+  "ontology_node": "cpa1_econ_is_lm",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "has_errors",
+  "worked_example_recomputed": true,
+  "step_findings": [
+    {
+      "step_type": "past_exam_bridge",
+      "severity": "major",
+      "category": "internal_consistency",
+      "issue": "Step 5(2026 기출 20번) model_answer의 '직관 점검'이 '다섯 조합 모두 ΔG + 감세액 = 총 10단위로 재정 규모가 같아 보이지만'이라고 단언하나, 실제 선지 합계는 ①5+1=6, ②4+3=7, ③3+5=8, ④2+7=9, ⑤1+9=10으로 6~10까지 단조증가한다. 총액이 고정돼 있지 않으므로 '총액 10을 고정한 채 단위 교환 방향을 비틀어 직관을 저격했다'는 서술도 성립하지 않는다. 정답 ⑤(가중합 8.2 최대)와 각 가중합 수치는 정확하나, 함정 해설의 전제 사실이 틀렸다. 이 등총액 논리는 오히려 Step 4(가 4·나 6·다 6, 나=다 등총액)에서 올바르게 쓰인 것으로 보이며 Step 5로 잘못 전이된 정황.",
+      "correction": "'다섯 조합 모두 총 10단위' 문구 삭제. 실제로는 ①→⑤로 갈수록 재정 총액(ΔG+감세액)이 6→10으로 커지고 가중합도 5.8→8.2로 커진다. ⑤가 정답인 이유는 총액과 가중합이 모두 최대이기 때문으로 재서술하거나, 등총액 함정을 강조하려면 Step 4처럼 실제로 총액이 같은 선지 세트로 문제를 재구성해야 한다."
+    },
+    {
+      "step_type": "past_exam_bridge",
+      "severity": "uncertain",
+      "category": "factual",
+      "issue": "루카스 총공급곡선을 P=(α+m̄)+βY로 표기해 예상 통화충격 m̄을 AS식 안에 넣었다. 표준적인 루카스 공급함수는 Y=Ȳ+γ(P−Pᵉ) 형태로, 예상 통화량은 Pᵉ(기대물가)를 통해 작동하며 공급식에 직접 m̄이 더해지지 않는다. 결론(예상 정책은 물가만·비예상 충격 z만 산출에 영향, 정책무력성 명제)은 옳으나 중간 표현이 비표준적이라 학습자가 AS의 미시적 근거를 오해할 수 있다.",
+      "correction": "루카스 공급곡선은 Y=Ȳ+γ(P−Pᵉ)(또는 P=Pᵉ+(1/γ)(Y−Ȳ))로 제시하고, 예상 통화충격이 Pᵉ을 같은 폭으로 올려 AD·AS를 함께 이동시켜 산출 불변임을 설명하는 것이 표준. 전문가 확인 권장."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "major": 1,
+    "minor": 0,
+    "uncertain": 1
+  },
+  "expert_review_priority": 2,
+  "summary": "계산(Step 3·4·5·6)은 모두 재현되어 균형값·승수·가중합·구축량이 정확하고, 기준 인용(Hicks 1937, Keynes 1936, 한국은행법 제1조 물가안정)도 옳다. 다만 Step 5 기출 20번 model_answer의 '직관 점검'이 다섯 선지의 재정 총액을 모두 10단위로 잘못 단언한다(실제 6·7·8·9·10). 정답 ⑤와 가중합 수치 자체는 맞지만 함정 해설의 전제 사실이 틀려 major. Step 5의 루카스 AS 표기(m̄를 공급식에 삽입)는 비표준적이나 결론은 타당—uncertain으로 전문가 확인 권장. 먼저 볼 곳: Step 5 past_exam_bridge 해설."
+}

@@ -1,0 +1,18 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_cpa1_law_reorganization_exam_core",
+  "subject_id": "cpa1_corporate_law",
+  "ontology_node": "cpa1_law_reorganization",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "clean",
+  "worked_example_recomputed": true,
+  "step_findings": [],
+  "severity_counts": {
+    "critical": 0,
+    "major": 0,
+    "minor": 0,
+    "uncertain": 0
+  },
+  "expert_review_priority": 5,
+  "summary": "합병·분할·조직변경 구조재편 튜토리얼 6-step 전면 검증 결과 오류 없음. 소규모합병 worked_example 계산(신주70만+자기주식25만=95만=9.5%≤10%, 교부금20억=순자산500억의 4%≤5%, 갑 지분15%<20%)을 처음부터 재계산해 모두 일치 확인. 상법 조문 인용도 전부 정확: 제527조의3(소규모합병 10%/5%/20% 요건, 자기주식 합산, 매수청구권 배제 제5항), 제527조의2(간이합병 90%), 제530조의9(분할 연대책임 제1항·배제 제2항·채권자보호 제4항), 제530조의11 제2항(분할합병 매수청구권 준용), 제530조의3 제3항(의결권 배제주식 의결권 부활), 제530조의12(물적분할), 제607조(유한→주식 총사원 일치 원칙+정관 특별결의+법원인가, '로만' 한정 함정 분석 정확), 제604조 제1항 단서, 제530조의2 제4항 vs 제174조 제3항 대비 모두 옳음. 스텝 간 모순 없음. 유일하게 독립 검증 불가한 것은 2026 1차 문10/문30 실제 정답 여부인데 법리 자체가 정확해 위험 낮음. 전문가 검수 우선순위 최하위."
+}

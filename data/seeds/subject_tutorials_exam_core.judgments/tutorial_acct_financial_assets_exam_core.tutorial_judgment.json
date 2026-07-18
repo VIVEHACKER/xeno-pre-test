@@ -1,0 +1,33 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_acct_financial_assets_exam_core",
+  "subject_id": "cpa1_accounting",
+  "ontology_node": "acct_financial_assets",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "has_errors",
+  "worked_example_recomputed": true,
+  "step_findings": [
+    {
+      "step_type": "past_exam_bridge",
+      "severity": "major",
+      "category": "standard_citation",
+      "issue": "FVOCI 채무상품을 FVPL로 재분류하는 규정을 '문단 5.6.6'으로 인용(core_explanation의 '누적 OCI를 재분류조정으로 당기손익에 재분류한다(문단 5.6.6)'와 model_answer의 '[20x2년 1월 1일 재분류일 — FVPL로 전환, 문단 5.6.6]' 두 곳). K-IFRS 제1109호 5.6.6은 FVPL→FVOCI 재분류 규정이고, FVOCI→FVPL(공정가치 계속 측정+누적 OCI 재분류조정으로 당기손익 재분류)은 문단 5.6.7이다. 서술된 회계처리 내용 자체는 정확하나 조문 번호가 한 칸 어긋났다.",
+      "correction": "'문단 5.6.6' 2곳을 모두 '문단 5.6.7'로 정정. (5.6.6=FVPL→FVOCI, 5.6.7=FVOCI→FVPL)"
+    },
+    {
+      "step_type": "concept_atom/past_exam_bridge",
+      "severity": "minor",
+      "category": "standard_citation",
+      "issue": "계약상 현금흐름 재협상에서 '제거요건 충족(새 자산 공정가치 인식·처분손익)'과 '미충족(최초 유효이자율 재할인·변경손익)' 두 경우를 함께 '문단 5.4.3'으로 인용. 5.4.3은 엄밀히는 제거요건 미충족(변경손익) 경우만 규율하며, 제거 충족 시의 신규자산 공정가치 인식은 제거 규정(3.2절)·5.7.1의 영역이다.",
+      "correction": "제거요건 미충족(변경손익)은 5.4.3 유지, 제거 충족(처분손익) 근거는 제거 규정(3.2절)으로 분리 표기하면 정확도 향상. 개념 전달에는 지장 없음."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "major": 1,
+    "minor": 1,
+    "uncertain": 0
+  },
+  "expert_review_priority": 3,
+  "summary": "금융자산(K-IFRS 1109) 튜토리얼의 4개 계산 스텝(FVOCI 채무상품 유효이자율·재순환, 지분상품 FVOCI 재순환 금지, 2026 기출 010 재분류, 011 계약변경 12%/10% 할인)을 전부 재계산했고 모두 정확했다. 표준 인용도 4.1.1, 5.1.1, 5.7.5, B5.7.1, 5.7.10, 5.4.1, 4.4.1, 5.6.1, 1032 등 대부분 정확. 유일한 실질 오류는 past_exam_bridge에서 FVOCI→FVPL 재분류를 '문단 5.6.6'으로 인용한 것(정답은 5.6.7, 2곳). 서술 내용은 맞고 조문 번호만 어긋나 major 1건. 계산 신뢰도가 높아 전문가 검수 우선순위는 중간(3)."
+}

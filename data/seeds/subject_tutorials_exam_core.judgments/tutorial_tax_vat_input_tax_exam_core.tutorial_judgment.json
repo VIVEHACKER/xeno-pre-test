@@ -1,0 +1,33 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_tax_vat_input_tax_exam_core",
+  "subject_id": "cpa1_tax",
+  "ontology_node": "tax_vat_input_tax",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "has_errors",
+  "worked_example_recomputed": true,
+  "step_findings": [
+    {
+      "step_type": "concept",
+      "severity": "major",
+      "category": "legal_article",
+      "issue": "면세사업 관련 매입세액 불공제를 '부가가치세법 §39 제1항 제4호'로 인용(step 2 지문 (마)). 제4호는 '사업과 직접 관련 없는 지출'이고, 면세사업 관련 매입세액은 토지 관련 매입세액과 함께 제7호다. 같은 오류가 step 3 worked_example(면세사업 원재료), step 5 past_exam_bridge(면세사업 원재료)에도 반복된다. 특히 이 튜토리얼은 토지 불공제는 '제7호'(step 4)로 올바르게 인용하면서 면세는 '제4호'로 인용해 내부 모순까지 있다.",
+      "correction": "면세사업 관련 매입세액 불공제 근거는 부가가치세법 제39조 제1항 제7호(면세사업등 관련 매입세액과 토지 관련 매입세액)로 수정. 제4호는 사업무관 지출."
+    },
+    {
+      "step_type": "worked_example",
+      "severity": "uncertain",
+      "category": "legal_article",
+      "issue": "공통매입세액 안분계산 생략 특례(면세공급가액 비율 5% 미만 + 공통매입세액 5백만원 미만이면 전액 공제)를 '부가가치세법 시행령 §81 제3항'으로 인용. concept_atoms #4, step 3, step 5, step 6에서 모두 제3항으로 인용됨. 현행 시행령상 이 안분계산 생략 특례는 제81조 제4항으로 기억된다(제1항 산식 → 제4항 생략 특례). 시행령 항 번호는 개정으로 이동 가능하므로 단정하지 않고 검수 대상으로 올림.",
+      "correction": "현행 부가가치세법 시행령 제81조 조문을 확인해 안분계산 생략 특례 항 번호를 정정(제4항으로 추정). 5백만원 이상 배제 단서 위치도 함께 확인."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "major": 1,
+    "minor": 0,
+    "uncertain": 1
+  },
+  "expert_review_priority": 2,
+  "summary": "매입세액공제 튜토리얼. 계산은 5개 예제(11,420,000 / 12,700,000 / 17,534,400 / 14,760,000·13,800,000)를 전부 재현했고 모두 정확하며, 안분생략 특례의 '비율 5%+금액 500만원' 이중조건, 면세재화 매입세액 부존재, 공급시기 기준 공제, 등록전 매입세액 20일 특례 등 실질 논리도 타당하다. 오류는 조문 번호에 집중: (1) 면세사업 관련 매입세액 불공제를 §39 제1항 제4호로 3회 반복 인용했으나 실제는 제7호(토지와 함께)이고 제4호는 사업무관 지출 — 토지는 제7호로 맞게 인용해 내부 모순까지 있는 major 오류. (2) 안분생략 특례를 시행령 §81 제3항으로 반복 인용했으나 현행은 제4항으로 추정(uncertain). §37·§38·§45·§46③·§42, 조특법 §108(중고차 10/110) 등 나머지 인용은 타당. 전문가는 §39 호수 정정을 최우선으로."
+}

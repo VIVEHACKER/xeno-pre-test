@@ -1,0 +1,18 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_cpa1_econ_money_exam_core",
+  "subject_id": "cpa1_economics",
+  "ontology_node": "cpa1_econ_money",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "clean",
+  "worked_example_recomputed": true,
+  "step_findings": [],
+  "severity_counts": {
+    "critical": 0,
+    "major": 0,
+    "minor": 0,
+    "uncertain": 0
+  },
+  "expert_review_priority": 5,
+  "summary": "6개 스텝 전부 독립 재계산·사실검증 통과. 계산: S1 본원통화140/M1 500, S2 승수4.17, S3 H250·M1 700·m2.8(z=0.1 교차검증 일치), S4 π6%·i8.12%·원리금108, S5 기출23번 H600·m2.5 및 24번 π5%·원리금106, S6 c기준 m3.57·k기준 m4 모두 정확히 재현. 기준서·법령: 한국은행법 제1조(물가안정 목적)·제55조 이하(지급준비제도), 피셔 정확식 (1+i)=(1+r)(1+π), 화폐수량방정식 증가율형 π=%ΔM+%ΔV−%ΔY, 통화승수 (k+1)/(k+z) 및 통화량대비 대체공식 1/(c+z(1−c)) 모두 올바름. 개념(시재금=지급준비금 분류, 현금누출로 인한 k상승시 승수하락, 화폐중립성, 명목화폐수요 물가에 우상향·이자율에 우하향·기대인플레 경로) 정확. 스텝 간 π값 차이(S4 6% vs S5-24 5%)는 유통속도 변화율 전제 차이로 각각 내적 일관. 오류 없음, 전문가 검수 우선순위 최하."
+}

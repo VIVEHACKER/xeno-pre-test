@@ -1,0 +1,18 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_cpa1_business_capital_structure_exam_core",
+  "subject_id": "cpa1_business",
+  "ontology_node": "cpa1_business_capital_structure",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "clean",
+  "worked_example_recomputed": true,
+  "step_findings": [],
+  "severity_counts": {
+    "critical": 0,
+    "major": 0,
+    "minor": 0,
+    "uncertain": 0
+  },
+  "expert_review_priority": 5,
+  "summary": "6개 스텝 전부 사실·계산·법령 검증 통과. 계산 재현: (1) foundation DOL=2, DFL=2, DCL=4, 매출10%→EPS40% 정확, 검산(EBIT 48, 세전 28) 일치. (2) MM무세금 VL=VU=1000, ke=16%, WACC=12%=ρ 정확. (3) MM1963 VU=120, VL=140, SL=90, ke=11.67%, WACC=8.57%(동치식 0.10×(1−0.4×50/140) 일치), VL 및 SL 재검산 모두 140/90으로 정합. (4) 배당 MM1961 배당락 9000+배당 1000=부 10000 불변, 자사주매입 후 주가 10000 불변 정확. (5) 2026기출 009 VB=VA=2000억 정답③ 논리 정확. (6) 변형 tc=25% VU=300·VL=325, 무세금 VU=400·VL=400, 세금스위치가 VU 분자까지 바꾼다는 지적 정확. 법령: 상법 제462조 제1항(배당가능이익 한도), 제458조(이익배당액 1/10 이상을 자본금 1/2 도달까지 이익준비금 적립), 제341조(자기주식 취득 배당가능이익 한도) 모두 조문·요건 정확. MM 명제 I·II 공식, 감세효과 자본화(B×tc), 신호효과 방향, 안정배당 vs 배당성향 구분 모두 정확. 오류 없음. 본 과목은 재무/경영학이라 K-IFRS 기준서 검증 대상 없음."
+}

@@ -1,0 +1,26 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_tax_corporate_income_exam_core",
+  "subject_id": "cpa1_tax",
+  "ontology_node": "tax_corporate_income",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "minor_issues",
+  "worked_example_recomputed": true,
+  "step_findings": [
+    {
+      "step_type": "past_exam_bridge",
+      "severity": "minor",
+      "category": "legal_article",
+      "issue": "Step 5 core_explanation과 model_answer에서 기간경과분 미지급이자 손금 특례의 예외(차입일부터 이자지급일까지 1년 초과 특수관계인 차입금 이자 → 손금불산입 유보)를 '시행령 제70조 제1항 단서'로 인용했으나, 미지급이자(지급이자) 결산조정 손금인정과 그 특수관계인 예외는 시행령 제70조 제3항이 규정한다. 제70조 제1항은 이자수익(원천징수대상 미수이자)의 귀속시기 규정이다. 실질 판정(② 지문이 옳지 않다, 손금불산입 유보 조정 필요)과 요건 설명은 정확하며 항 번호만 부정확.",
+      "correction": "'시행령 제70조 제1항'을 '시행령 제70조 제3항'으로 수정. (제70조 제1항은 이자수익 귀속시기; Step 2·Step 4의 원천징수대상 미수이자 익금불산입 인용은 제70조 제1항으로 정확함.) 항 번호는 개정 연혁에 따라 달라질 수 있으므로 적용연도 시행령 확인 권장."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "major": 0,
+    "minor": 1,
+    "uncertain": 0
+  },
+  "expert_review_priority": 4,
+  "summary": "세법개론 법인세 익금·손금 세무조정 튜토리얼. 6개 스텝 전부 정독, worked_example·guided_practice·variation의 수입배당금 익금불산입(18,800,000 / 96,000,000 / 5,600,000)을 처음부터 재계산해 전부 일치. 3개월 보유요건 배제, 손금불산입 이자 차감, 지급이자 안분 산식 모두 정확하고 통합 산식과도 부합. 조문 인용(제17·18·18의2·21·23·40조, 시행령 제43·68·70·71·106조) 대부분 정확. 유일한 결함은 Step 5에서 미지급이자 특례를 시행령 제70조 제1항으로 인용(정답은 제70조 제3항)한 minor 항 번호 오류로, 실질 설명과 정답(②)은 옳음. 전반적으로 clean에 가까운 minor_issues.\""
+}

@@ -1,0 +1,26 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_acct_liabilities_exam_core",
+  "subject_id": "cpa1_accounting",
+  "ontology_node": "acct_liabilities",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "minor_issues",
+  "worked_example_recomputed": true,
+  "step_findings": [
+    {
+      "step_type": "past_exam_bridge",
+      "severity": "uncertain",
+      "category": "exam_relevance",
+      "issue": "model_answer가 '실제 2026년 13번의 정답도 ₩182,891(⑤)이다'라고 실제 기출 정답·선지번호를 단정한다. 계산은 내부적으로 완전히 정합(962,771−779,880=182,891)하나, 실제 2026 1차 기출의 정답/선지 배치는 독립 검증 불가. 12번(잔액 500,300)·14번(상환할증금 97,400) 등 실기출 수치 주장도 동일.",
+      "correction": "프로젝트가 수집한 공식 2026 1차 기출(scripts/collect_real_exams.py·정답키 254/254)과 대조하여 13번 정답 182,891·선지 ⑤, 12번·14번 수치가 실제와 일치하는지 확인. 계산 방법론 자체는 정확하므로 표현을 '동형 문제 기준'으로 유지하되 실제 정답 단정은 실기출 대조 후 확정."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "major": 0,
+    "minor": 0,
+    "uncertain": 1
+  },
+  "expert_review_priority": 4,
+  "summary": "6개 스텝 전체의 계산을 처음부터 재현한 결과 모든 수치가 model_answer와 정확히 일치(발행가 945,496 / 상각표 962,771·980,910 / 복구충당부채 310,450·감가 462,090·기말 341,495 / 조건변경 10%테스트 11.94%·이익 182,891 / 12번 500,300 / 함정1 7.37% 비실질). 기준서 인용도 전부 정확: 1109(사채·조건변경), 1037 문단14/45/63/66/86(충당부채), 1016 문단16+해석서2101(복구), 1032(전환사채), 개념체계 부채정의. 10%테스트에 원래 유효이자율 사용·비실질 변경 시 제거 없이 재할인 처리 등 핵심 논점도 옳다. 계산·법령 오류 없음. 유일한 검수 포인트는 past_exam_bridge가 실제 2026 기출 13번 정답을 ⑤ 182,891로 단정한 부분 — 방법론은 정확하나 실기출 정답키 대조가 필요(uncertain)."
+}

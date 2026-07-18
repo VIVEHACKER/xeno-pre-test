@@ -1,0 +1,26 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_cpa1_econ_demand_supply_exam_core",
+  "subject_id": "cpa1_economics",
+  "ontology_node": "cpa1_econ_demand_supply",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "minor_issues",
+  "worked_example_recomputed": true,
+  "step_findings": [
+    {
+      "step_type": "past_exam_bridge",
+      "severity": "uncertain",
+      "category": "exam_relevance",
+      "issue": "본문과 past_exam_bridge/worked_example이 '2026년 1차 경제원론 7번=피구세(Q_D=100-P, Q_S=P), 5번=러너지수·독점 결합, 12번=보조금 정오조합형'이라고 구체적 문항번호-내용 매핑을 단정한다. 계산·개념은 모두 정확하나 이 문항번호↔내용 매핑 자체는 실제 기출 대조 없이 확인 불가하다. related_question_ids(cpa1-real-2026-economics-012/007/005)와 서술이 실제 수집 기출과 일치하는지 검증 필요.",
+      "correction": "scripts/collect_real_exams.py·parse_real_exams.py로 수집된 2026 실기출 원문과 대조하여 5/7/12번의 실제 내용이 서술과 일치하는지 확인. 불일치 시 문항번호를 실제 값으로 교정."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "major": 0,
+    "minor": 0,
+    "uncertain": 1
+  },
+  "expert_review_priority": 4,
+  "summary": "경제원론 수요·공급·탄력성·조세/보조금 귀착 튜토리얼. 6개 step의 모든 계산(균형 P*=50·Q*=50, CS/PS=1250, 탄력성 1.5=러너 2/3, 조세 귀착 5/5·DWL 25, 보조금 대칭 DWL 25, 완전비탄력 DWL=0)을 처음부터 재현했고 전부 정확. 잉여 검산 항등식(총잉여감소-조세수입=DWL, 정부지출-잉여증가=DWL)도 일치. 러너지수=1/ε, DWL∝t², 부담비율=ε_s/(ε_d+ε_s), 램지 역탄력성 등 개념도 정확. 유일한 미확인 사항은 2026 실기출 문항번호(5/7/12)와 내용의 매핑으로, 실제 수집 기출 대조가 필요(exam_relevance, uncertain). 계산·법령 오류 없음, priority 4."
+}

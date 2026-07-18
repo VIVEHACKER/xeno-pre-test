@@ -1,0 +1,110 @@
+# exam_core 튜토리얼 사실 정확성 검수 큐 (2026-07-18)
+
+> AI judge(claude-opus-4-8, 생성 모델 claude-fable-5와 교차) 채점. **최종 판정이 아니라 전문가 검수 우선순위 큐**다.
+> judge도 조문 번호를 착각할 수 있어 확신 없는 건은 `확인필요(uncertain)`로 남겼다 — 반드시 원문(기준서·법령·기출) 대조 후 확정할 것.
+
+## 종합
+
+- 채점 대상: **48개** 튜토리얼
+- 판정: clean 15 · minor_issues 27 · has_errors 5 · serious_errors 1 (clean율 31%)
+- 지적 심각도: 치명 1 · 중대 5 · 경미 11 · 확인필요 35
+- 오류 범주: 법조문 20 · 기출귀속 10 · 사실 9 · 기준서인용 8 · 일관성 5
+
+**핵심 패턴**: 계산형(자본·현금흐름·원가·CVP·예산)은 독립 재계산 결과 대부분 정확. 오류는 **법 조문·기준서 번호 인용**에 집중 — 서술 내용은 맞는데 조문 번호를 헛짚는 유형이 지배적. 계산 오류는 0건.
+
+## 과목별 판정
+
+| 과목 | clean | minor | has_errors | serious |
+|---|---|---|---|---|
+| 회계학 | 3 | 10 | 2 | 0 |
+| 경영학 | 5 | 4 | 0 | 0 |
+| 경제원론 | 5 | 2 | 1 | 0 |
+| 기업법 | 1 | 5 | 0 | 1 |
+| 세법개론 | 1 | 6 | 2 | 0 |
+
+## A. 즉시 수정 — 치명·중대 오류 (원문 대조 후 확정)
+
+### A1. [치명] tutorial_cpa1_law_commercial_general_exam_core (기업법) — 법조문
+- **문제**: step5 core_explanation에서 주주총회 특별결의 요건(상법 제434조)을 '출석 의결권 3분의 2 이상 및 발행주식총수의 4분의 1 이상'이라 서술하고, 정답 수치인 '3분의 1'을 오히려 기출이 치환한 오답이라고 지목함. 요건 수치를 반대로 가르쳐 학습자가 옳은 지문을 틀린 것으로 판단하게 만듦.
+- **수정안**: 상법 제434조 특별결의 = 출석한 주주의 의결권의 3분의 2 이상 + 발행주식총수의 3분의 1 이상. '발행주식총수의 4분의 1 이상'은 제368조 보통결의 요건(출석 의결권 과반수 + 발행주식총수 4분의 1 이상)이며 특별결의와 무관함. 즉 '3분의 1'이 정답 수치이고 이를 '4분의 1'로 바꾼 것이 오답 치환임.
+
+### A2. [중대] tutorial_acct_government_exam_core (회계학) — 법조문
+- **문제**: 현금흐름표를 국가 재무제표에 '규칙에 규정되어 있으나 시행 유예'된 것으로 서술함(core_explanation과 model_answer 모두). 국가회계법 제14조 및 「국가회계기준에 관한 규칙」상 국가 재무제표는 재정상태표·재정운영표·순자산변동표 3종뿐이며 현금흐름표 규정 자체가 없다. 규정은 있으나 시행이 유예된 현금흐름표는 국가가 아니라 지방자치단체에 해당한다. 국가/지방을 구분하는 대표적 출제 포인트를 반대로 서술한 것.
+- **수정안**: 국가 재무제표는 재정상태표·재정운영표·순자산변동표 3종으로 현금흐름표를 포함하지 않는다. 현금흐름표가 규칙(「지방자치단체 회계기준에 관한 규칙」 제6조: 재정상태표·재정운영표·현금흐름표·순자산변동표 4종)에 규정되어 있으나 부칙으로 시행이 유예된 것은 지방자치단체회계다. 해당 문장을 지방자치단체 회계로 옮기거나, 국가 서술에서는 삭제할 것.
+
+### A3. [중대] tutorial_cpa1_econ_is_lm_exam_core (경제원론) — 일관성
+- **문제**: Step 5(2026 기출 20번) model_answer의 '직관 점검'이 '다섯 조합 모두 ΔG + 감세액 = 총 10단위로 재정 규모가 같아 보이지만'이라고 단언하나, 실제 선지 합계는 ①5+1=6, ②4+3=7, ③3+5=8, ④2+7=9, ⑤1+9=10으로 6~10까지 단조증가한다. 총액이 고정돼 있지 않으므로 '총액 10을 고정한 채 단위 교환 방향을 비틀어 직관을 저격했다'는 서술도 성립하지 않는다. 정답 ⑤(가중합 8.2 최대)와 각 가중합 수치는 정확하나, 함정 해설의 전제 사실이 틀렸다. 이 등총액 논리는 오히려 Step 4(가 4·나 6·다 6, 나=다 등총액)에서 올바르게 쓰인 것으로 보이며 Step 5로 잘못 전이된 정황.
+- **수정안**: '다섯 조합 모두 총 10단위' 문구 삭제. 실제로는 ①→⑤로 갈수록 재정 총액(ΔG+감세액)이 6→10으로 커지고 가중합도 5.8→8.2로 커진다. ⑤가 정답인 이유는 총액과 가중합이 모두 최대이기 때문으로 재서술하거나, 등총액 함정을 강조하려면 Step 4처럼 실제로 총액이 같은 선지 세트로 문제를 재구성해야 한다.
+
+### A4. [중대] tutorial_tax_corporate_tax_base_exam_core (세법개론) — 법조문
+- **문제**: 이월결손금 공제한도를 일반 내국법인(비중소기업) '각 사업연도 소득의 80%'라고 반복 서술한다(concept_atoms[1], concept step core_explanation·model_answer·checkpoint, worked_example·guided_practice·past_exam_bridge 전반). 2016년 도입 당시 80%였으나 2018.1.1 이후 개시 사업연도 70%, 2019.1.1 이후 개시 사업연도부터 60%로 축소되어, 제26기(2026) 일반법인 한도는 60%이다. 다행히 모든 예제에서 결손금이 60% 한도에도 미달(또는 정확히 일치)하여 최종 정답 수치는 바뀌지 않으나, 법령 내용·체크리스트로 제시된 '80%' 자체가 현행법과 불일치한다.
+- **수정안**: 일반 내국법인 이월결손금 공제한도 = 각 사업연도 소득금액의 60%(2019.1.1 이후 개시 사업연도, 법인세법 제13조 제1항). 중소기업·회생계획 이행 법인 등은 100%. 예제 정답은 불변이나 '80%' 표기와 checkpoint를 60%로 수정 필요. 적용연도 확인 문구는 유지.
+
+### A5. [중대] tutorial_tax_vat_input_tax_exam_core (세법개론) — 법조문
+- **문제**: 면세사업 관련 매입세액 불공제를 '부가가치세법 §39 제1항 제4호'로 인용(step 2 지문 (마)). 제4호는 '사업과 직접 관련 없는 지출'이고, 면세사업 관련 매입세액은 토지 관련 매입세액과 함께 제7호다. 같은 오류가 step 3 worked_example(면세사업 원재료), step 5 past_exam_bridge(면세사업 원재료)에도 반복된다. 특히 이 튜토리얼은 토지 불공제는 '제7호'(step 4)로 올바르게 인용하면서 면세는 '제4호'로 인용해 내부 모순까지 있다.
+- **수정안**: 면세사업 관련 매입세액 불공제 근거는 부가가치세법 제39조 제1항 제7호(면세사업등 관련 매입세액과 토지 관련 매입세액)로 수정. 제4호는 사업무관 지출.
+
+### A6. [중대] tutorial_acct_financial_assets_exam_core (회계학) — 기준서인용
+- **문제**: FVOCI 채무상품을 FVPL로 재분류하는 규정을 '문단 5.6.6'으로 인용(core_explanation의 '누적 OCI를 재분류조정으로 당기손익에 재분류한다(문단 5.6.6)'와 model_answer의 '[20x2년 1월 1일 재분류일 — FVPL로 전환, 문단 5.6.6]' 두 곳). K-IFRS 제1109호 5.6.6은 FVPL→FVOCI 재분류 규정이고, FVOCI→FVPL(공정가치 계속 측정+누적 OCI 재분류조정으로 당기손익 재분류)은 문단 5.6.7이다. 서술된 회계처리 내용 자체는 정확하나 조문 번호가 한 칸 어긋났다.
+- **수정안**: '문단 5.6.6' 2곳을 모두 '문단 5.6.7'로 정정. (5.6.6=FVPL→FVOCI, 5.6.7=FVOCI→FVPL)
+
+## B. 확인 필요 — judge 불확실 (전문가 판단 우선)
+
+judge가 오류로 단정하지 못한 건. 대부분 문단/조문 번호 정밀도 또는 기출 귀속 검증.
+
+- `tutorial_acct_conceptual_framework_exam_core` (기준서인용, variation): 6번째 스텝(variation) model_answer에서 진술 (다) '중립적 정보는 목적이 없거나 정보이용자의 행동에 영향을 미치지 않는 정보를 의미하지 않는다'를 옳다고 판정하며 근거를 '문단 2.17'로 인용. 그러나 '중립적 정보는 목적이 없거나 행동에 영향이 없는 정보를 의미하지 않는다'는 문장은 중립성을 서술
+- `tutorial_acct_conceptual_framework_exam_core` (기준서인용, past_exam_bridge): 5번째 스텝(2026 기출) model_answer에서 진술 (가) '유용한 재무정보의 질적특성은 …현재 및 잠재적 투자자, 대여자와 그 밖의 채권자에게 가장 유용할 정보의 유형을 식별하는 것이다'를 옳다고 하며 근거를 '문단 2.2'로 인용. 이 문장은 2장 서론에 해당하는 문단 2.1(질적특성이 식별하는 정보의 유형)
+- `tutorial_acct_consolidation_exam_core` (기출귀속, past_exam_bridge / variation): 스텝5·6은 2026 기출의 구체적 정답 수치(31번 영업권 420,000, 27번 지배기업귀속 34,800·비지배지분귀속 5,200, 26번 비지배지분 23,200·기타포괄손익누계액 4,000)를 단정적으로 인용하나, 해당 문항 전체 데이터가 튜토리얼 본문에 제시되지 않아 이 서브에이전트가 독립 재현으로 검증할 수 없다
+- `tutorial_acct_cost_flow_exam_core` (기준서인용, concept): Step 2(concept)와 Step 4(guided_practice)는 정상원가계산의 제조간접원가 '배부차이(과소/과대배부)'를 매출원가에서 조정하는 근거로 K-IFRS 1002호 문단 13을 든다. 그러나 문단 13은 고정제조간접원가를 정상조업도 기준으로 배부하고 미배부된 고정제조간접원가를 기간비용으로 인식하라는 규
+- `tutorial_acct_cvp_exam_core` (기출귀속, past_exam_bridge): Step 5 claims the embedded problems are the actual 2026 CPA 1차 회계학 45번·46번 with specific data (three-product mix 50:30:20, product-B discontinuation with 최대조업도 20,000 등). The numbe
+- `tutorial_acct_income_tax_exam_core` (일관성, past_exam_bridge): Step 5 종합 분개에서 '대변 이연법인세자산 3,500'은 실제로는 이연법인세자산 감소(12,000→11,000, 1,000)와 신규 이연법인세부채(미수이자 2,500)를 하나의 계정 라인으로 순액 표기한 것이다. 대차 총계(172,500=172,500)와 당기손익 이연 변동(순 3,500 비용)은 정확하나, 이연법인
+- `tutorial_acct_inventory_exam_core` (사실, concept): 물가 상승기·수량 유지 시 매출원가 크기 순서를 '총평균법 ≥ 이동평균법 ≥ FIFO'로 제시한다(model_answer (3), checkpoints). FIFO가 최소라는 부분은 확정적으로 옳으나, 총평균(총평균법)과 이동평균의 대소 관계는 매입·매출의 시점 배열에 따라 역전될 수 있는 비확정적 관계로, 항상 성립하는
+- `tutorial_acct_liabilities_exam_core` (기출귀속, past_exam_bridge): model_answer가 '실제 2026년 13번의 정답도 ₩182,891(⑤)이다'라고 실제 기출 정답·선지번호를 단정한다. 계산은 내부적으로 완전히 정합(962,771−779,880=182,891)하나, 실제 2026 1차 기출의 정답/선지 배치는 독립 검증 불가. 12번(잔액 500,300)·14번(상환할증금 97,
+- `tutorial_acct_ppe_exam_core` (기출귀속, past_exam_bridge): '이 노드는 최소 5문항(4·7·12·16·17번)이 출제된 최상위 빈출 영역'이라는 2026년 1차 회계학 문항 번호 및 빈출도 주장, 그리고 related_question_ids(cpa1-real-2026-accounting-007/012/017)의 실제 출제 내용 대응 여부는 파일 내부에서 독립 검증 불가. 계산·기
+- `tutorial_acct_revenue_exam_core` (일관성, past_exam_bridge): 판매후리스 차익 인식을 '사용권 보유 비율만큼만 차익을 인식한다'고 서술했으나, 이어지는 식은 (FV 2,000,000 − 리스부채 1,544,340)/2,000,000 = 구매자에게 이전된 권리 비율을 곱한다. 문구('보유 비율')와 실제 계산(이전 비율)이 개념적으로 어긋난다.
+- `tutorial_cpa1_business_marketing_exam_core` (사실, worked_example): 다속성태도모형을 '피시바인(Fishbein, 1963)' 모형으로 명명하며 A=Σ(신념 bi × 중요도 ei)로 정의한다. 엄밀한 학술적 원전에서 Fishbein(1963) 모형의 e_i는 속성 '중요도(weight)'가 아니라 속성에 대한 '평가(evaluation, 좋음/나쁨)'이며, 중요도 가중치를 쓰는 형태는 흔히
+- `tutorial_cpa1_business_strategy_exam_core` (사실, concept): 'V+R이면 일시적 경쟁우위, V만 있으면 경쟁등위'라는 VRIO 단계별 귀결 서술.
+- `tutorial_cpa1_business_time_value_exam_core` (기출귀속, past_exam_bridge): business-016 교체투자 도입시기 판단(참고 서술)에서 2년째 한계비용을 '20×1.15+0.7=23.7'로 계산하는데 계수 1.15의 출처가 본문에 설명되지 않음. 원문제 데이터(운영비 인상률 또는 (1+r)^2≈1.1449 적용 여부)가 없어 한계비용 산식(운영비+매각대금 이자만 포함, 잔존가치 하락분 미반영)
+- `tutorial_cpa1_econ_consumer_exam_core` (기출귀속, past_exam_bridge): '2026년 1차 경제원론은 32문항 중 5문항(002,003,004,009,010)을 소비자이론에서 출제'라고 단정. 리포지토리의 파싱된 실기출 데이터(data/real_exams/cpa1/parsed/2026/economics.questions.json)에는 정확히 32문항(001~032)이 수록되어 있어 내부적으로는
+- `tutorial_cpa1_econ_demand_supply_exam_core` (기출귀속, past_exam_bridge): 본문과 past_exam_bridge/worked_example이 '2026년 1차 경제원론 7번=피구세(Q_D=100-P, Q_S=P), 5번=러너지수·독점 결합, 12번=보조금 정오조합형'이라고 구체적 문항번호-내용 매핑을 단정한다. 계산·개념은 모두 정확하나 이 문항번호↔내용 매핑 자체는 실제 기출 대조 없이 확인 
+- `tutorial_cpa1_econ_is_lm_exam_core` (사실, past_exam_bridge): 루카스 총공급곡선을 P=(α+m̄)+βY로 표기해 예상 통화충격 m̄을 AS식 안에 넣었다. 표준적인 루카스 공급함수는 Y=Ȳ+γ(P−Pᵉ) 형태로, 예상 통화량은 Pᵉ(기대물가)를 통해 작동하며 공급식에 직접 m̄이 더해지지 않는다. 결론(예상 정책은 물가만·비예상 충격 z만 산출에 영향, 정책무력성 명제)은 옳으나 중
+- `tutorial_cpa1_law_cpa_act_exam_core` (법조문, foundation): 공인회계사법 제4조 결격사유 '3단 사다리'에서 실형을 '집행 종료·면제 후 5년 미경과 시 결격'으로 서술. 한국 전문자격·공직 결격 규정은 실형에 대해 3년 패턴과 5년 패턴이 법마다 갈리며(국가공무원법 5년, 다수 법령 3년), 공인회계사법 제4조가 5년인지 3년인지 메모리만으로 확정 불가. 이 '5년'은 past_
+- `tutorial_cpa1_law_cpa_act_exam_core` (법조문, guided_practice): 회계법인 요건 격자 '3·7·5' 중 '이사와 직원 중 공인회계사 7명 이상(제24조 제2항 및 시행령)' 수치와 근거 조문을 확정할 수 없음. 이사 3명(제26조)·자본금 5억원(제27조)·유한회사 준용(제40조)은 상대적으로 신뢰 가능하나, '7명'과 그 법적 근거(본법 vs 시행령)는 검증 필요.
+- `tutorial_cpa1_law_cpa_act_exam_core` (기출귀속, past_exam_bridge): 2026년 1차 기업법 제39·40번의 구체적 지문 내용(제39번 인사·조직 지원업무 병행금지가 옳은 지문, 제40번 자본금 '3억원'이 정답 오답지문, 선고유예+2년 이식이 오답 등)을 사실로 단정. 이는 실제 기출 지문에 대한 사실 주장이라 수집된 기출 데이터(related_question_ids: cpa1-real-
+- `tutorial_cpa1_law_external_audit_exam_core` (법조문, guided_practice): 소규모 상장법인(직전 사업연도 말 자산총액 1천억원 미만인 주권상장법인)의 내부회계관리제도 감사인 검증수준을 '감사가 아닌 검토로 완화'한다고 사실로 단정(step4 ㄹ 해설, step5·step6에서도 반복). 외감법 제8조 제6항의 원칙은 '상장법인 감사인=감사'이며, 소규모 상장법인 검토 완화는 개정 연혁·부칙·시행
+- `tutorial_cpa1_law_external_audit_exam_core` (법조문, concept): '연결재무제표의 감사인은 재무제표의 감사인과 동일하여야 한다'를 제9조로 인용. 해당 동일감사인 요건의 근거 조문 번호가 제9조가 맞는지 확인 필요(선임 관련 규정과의 위치 혼동 가능).
+- `tutorial_cpa1_law_external_audit_exam_core` (법조문, worked_example): 주기적 지정(제11조) 대상을 '주권상장법인과 소유·경영이 분리되지 아니한 대형비상장주식회사'로만 서술. 현행 제11조 주기적 지정 대상 범위(대형비상장주식회사 요건의 정확한 표현, 금융회사 포함 여부, 상장법인 중 제외되는 유형)의 정확성 확인 필요.
+- `tutorial_cpa1_law_external_audit_exam_core` (사실, concept): 파트너 로테이션을 '주권상장법인 감사 시 동일 담당이사 연속 3개 사업연도 초과 금지 + 연속 3개 사업연도 수행한 소속 공인회계사 다음 사업연도 3분의 2 이상 교체'로 서술. 담당이사 연속 사업연도 상한과 소속 회계사 교체 비율(3분의 2)의 현행 수치가 시행령 개정 기준과 일치하는지 확인 필요.
+- `tutorial_cpa1_law_financing_exam_core` (법조문, guided_practice): Step 4 model_answer (3)에서 준비금 자본전입 시 주주가 신주 주주가 되는 시점을 '이사회 결의 시 배정기준일, 주주총회 결의 시 결의가 있은 때'로 옳게 설명하면서 근거를 '(제461조 제2항·제3항)'으로 인용했다. 이사회 결의 시 배정기준일 규정은 제461조 제3항으로 맞으나, 주주총회 결의로 자본전
+- `tutorial_cpa1_law_organs_exam_core` (기출귀속, past_exam_bridge): 2026년 1차 실기출 문항 번호와 논점의 대응(19=전자투표, 20=담보제공, 21=제401조 제3자책임, 22=자기거래, 23=대표소송 제403조⑤, 24=감사위원회, 25=대표이사 거래)이 매우 구체적으로 단정되어 있으나, 튜토리얼 내부만으로는 실제 공식 기출 문항 번호와의 1:1 일치를 독립 검증할 수 없다. 법리
+- `tutorial_tax_corporate_depreciation_exam_core` (법조문, concept): 즉시상각의제의 근거로 '법인세법 제23조 제4항'을 concept_atoms와 step2 core_explanation에서 인용한다. 즉시상각의제(자본적 지출을 감가상각비로 계상한 것으로 의제)는 실체적으로 법인세법 시행령 제31조 제2항이 규정하는 사항이며, 법 제23조 제4항이 이 내용을 직접 규정하는지 불확실하다(제
+- `tutorial_tax_corporate_tax_base_exam_core` (사실, worked_example): 산출세액 대비 세액공제·최저한세 처리 순서, 감면 전 과세표준에 조특법 익금불산입 20,000,000 복원, 외국납부세액공제를 최저한세 판정 후 차감하는 전 과정이 정확하다. 다만 외국납부세액공제(법인세법 제57조)에 공제한도가 존재한다는 점을 무전제로 전액 차감하는데, 시험 문제 가정상 문제없으나 전문가는 한도 언급 필
+- `tutorial_tax_income_classification_exam_core` (법조문, concept): 기타소득 300만원 이하 선택적 분리과세의 근거를 '소득세법 제14조 제3항 제8호'로 인용(step 2 core_explanation·concept_atom). 금융소득 2천만원 근거로 인용한 '제14조 제3항 제6호'와 함께, 제14조 제3항의 세부 호(號) 번호는 개정으로 재배열된 이력이 있어 확신이 낮다. 계산·실
+- `tutorial_tax_income_withholding_exam_core` (사실, worked_example): 배당가산율(Gross-up율)을 2026년 적용 10%로 단정. 배당가산율은 연도 의존 수치로, 과거 오랜 기간 11%였다가 인하된 값이므로 2026 귀속 실제 적용률(10% 여부)을 법령/유예규정으로 확인 필요. 다만 튜토리얼이 '적용연도 확인'으로 자체 헤지했고, 인용된 2026 기출 정답(35,400,000=34,0
+- `tutorial_tax_income_withholding_exam_core` (법조문, past_exam_bridge): 납세조합 세액공제를 '3%, 연 100만원 한도'로 기술. 납세조합공제율은 과거 5%였다가 인하·한도 신설된 연혁이 있어 2026 귀속 적용률(3%)과 100만원 한도의 시행연도 확인 필요(소득세법 제150조).
+- `tutorial_tax_income_withholding_exam_core` (법조문, guided_practice): 산업재산권 양도의 필요경비 의제율을 60%로 적용. 과거 80%→70%→60%로 인하된 항목이라 2026 적용률이 60%가 맞는지 소득세법 시행령 제87조로 확인 권장(계산 결과는 60% 전제 하에 정확).
+- `tutorial_tax_local_and_other_exam_core` (법조문, concept): '심판청구와 심사청구를 같은 날 함께 제기하면 심사청구가 각하된다'는 규칙을 국세기본법 제55조에 근거하여 반복 단정(step 2·5·6). 심사·심판 중복제기 금지 자체는 제55조로 확실하나, '동일 날짜 제기 시 특정하여 심사청구를 각하'한다는 tie-break이 명문 조항인지 통칙·심판례상 실무인지 확신이 어렵다.
+- `tutorial_tax_local_and_other_exam_core` (기출귀속, past_exam_bridge): 2026년 1차 세법개론 40문항 중 이 노드 8문항의 출제 배치(국세기본법 1~5번, 상증세 38·39번, 지방세 40번)와 cpa1-real-2026-tax-038 정답 638,000,000원 등 실기출 귀속 주장은 외부 원문 대조 없이는 검증 불가.
+- `tutorial_tax_vat_input_tax_exam_core` (법조문, worked_example): 공통매입세액 안분계산 생략 특례(면세공급가액 비율 5% 미만 + 공통매입세액 5백만원 미만이면 전액 공제)를 '부가가치세법 시행령 §81 제3항'으로 인용. concept_atoms #4, step 3, step 5, step 6에서 모두 제3항으로 인용됨. 현행 시행령상 이 안분계산 생략 특례는 제81조 제4항으로 기억
+- `tutorial_tax_vat_supply_exam_core` (기준서인용, concept): 자기적립마일리지로만 전부 결제받은 사업상 증여의 제외 근거를 '시행령 제20조'로 인용. 사업상 증여 제외 항목(견본품 등)과 마일리지 관련 규정의 정확한 조문 위치는 검수자 재확인 필요.
+
+## C. clean — 오류 미검출 (계산 재현 완료 포함)
+
+- `tutorial_acct_budget_exam_core` (회계학) (계산 재현✓)
+- `tutorial_acct_cash_flow_exam_core` (회계학) (계산 재현✓)
+- `tutorial_acct_equity_exam_core` (회계학) (계산 재현✓)
+- `tutorial_cpa1_business_capital_budgeting_exam_core` (경영학) (계산 재현✓)
+- `tutorial_cpa1_business_capital_structure_exam_core` (경영학) (계산 재현✓)
+- `tutorial_cpa1_business_derivatives_exam_core` (경영학) (계산 재현✓)
+- `tutorial_cpa1_business_operations_exam_core` (경영학) (계산 재현✓)
+- `tutorial_cpa1_business_risk_return_exam_core` (경영학) (계산 재현✓)
+- `tutorial_cpa1_econ_gdp_exam_core` (경제원론) (계산 재현✓)
+- `tutorial_cpa1_econ_international_exam_core` (경제원론) (계산 재현✓)
+- `tutorial_cpa1_econ_market_exam_core` (경제원론) (계산 재현✓)
+- `tutorial_cpa1_econ_money_exam_core` (경제원론) (계산 재현✓)
+- `tutorial_cpa1_econ_producer_exam_core` (경제원론) (계산 재현✓)
+- `tutorial_cpa1_law_reorganization_exam_core` (기업법) (계산 재현✓)
+- `tutorial_tax_framework_exam_core` (세법개론) (계산 재현✓)
+
+---
+검수 데이터: `data/seeds/subject_tutorials_exam_core.judgments/*.tutorial_judgment.json` (튜토리얼당 1건, step_findings 상세 포함). 재생성: `scripts/judge_tutorials.py --judge-backend codex`(독립 2차 채점 권장).

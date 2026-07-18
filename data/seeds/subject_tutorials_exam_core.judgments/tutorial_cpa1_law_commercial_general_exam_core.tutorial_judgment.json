@@ -1,0 +1,26 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_cpa1_law_commercial_general_exam_core",
+  "subject_id": "cpa1_corporate_law",
+  "ontology_node": "cpa1_law_commercial_general",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "serious_errors",
+  "worked_example_recomputed": true,
+  "step_findings": [
+    {
+      "step_type": "past_exam_bridge",
+      "severity": "critical",
+      "category": "legal_article",
+      "issue": "step5 core_explanation에서 주주총회 특별결의 요건(상법 제434조)을 '출석 의결권 3분의 2 이상 및 발행주식총수의 4분의 1 이상'이라 서술하고, 정답 수치인 '3분의 1'을 오히려 기출이 치환한 오답이라고 지목함. 요건 수치를 반대로 가르쳐 학습자가 옳은 지문을 틀린 것으로 판단하게 만듦.",
+      "correction": "상법 제434조 특별결의 = 출석한 주주의 의결권의 3분의 2 이상 + 발행주식총수의 3분의 1 이상. '발행주식총수의 4분의 1 이상'은 제368조 보통결의 요건(출석 의결권 과반수 + 발행주식총수 4분의 1 이상)이며 특별결의와 무관함. 즉 '3분의 1'이 정답 수치이고 이를 '4분의 1'로 바꾼 것이 오답 치환임."
+    }
+  ],
+  "severity_counts": {
+    "critical": 1,
+    "major": 0,
+    "minor": 0,
+    "uncertain": 0
+  },
+  "expert_review_priority": 1,
+  "summary": "상법총칙·상행위 조문 인용은 제4~47·67~70·84·114·122·168의3·168의5 등 거의 전부 실제 조문과 일치해 정확도가 높음. 그러나 step5(기출문제) 설명에 삽입된 주주총회 특별결의 요건(제434조)에서 발행주식총수 정족수를 '3분의 1'이 아닌 '4분의 1'로 반대로 서술하고 정답 수치를 오답 치환으로 지목하는 치명적 법령 오류가 1건 존재함. 이 부분(보통결의 제368조와 혼동)이 최우선 검수 대상."
+}

@@ -1,0 +1,18 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_tax_framework_exam_core",
+  "subject_id": "cpa1_tax",
+  "ontology_node": "tax_framework",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "clean",
+  "worked_example_recomputed": true,
+  "step_findings": [],
+  "severity_counts": {
+    "critical": 0,
+    "major": 0,
+    "minor": 0,
+    "uncertain": 0
+  },
+  "expert_review_priority": 5,
+  "summary": "국세기본법 총론 튜토리얼 6스텝 전수 검증. 조문 인용(제21·22·26·26의2·27조 성립·확정·소멸/제14~20조 부과·적용 원칙/제45·45의2·45의3·48조 수정·경정·기한후신고 및 가산세 감면율/제81의15·81의6·81의4조 권리구제·세무조사)이 현행법과 모두 일치. 정답키(④②-④⑤③) 정확. worked_example 재계산: 실질귀속 40,000,000 + 본인명의 15,000,000 = 55,000,000 > 종합과세 기준 20,000,000 → 종합과세 대상, 정확. 판례 대법원 2008두8499 전합(2012.1.19.) 실질귀속 3요건 인용 정확. 스텝 간 모순 없음. 오류 없음. 유일하게 낮은 신뢰도로 남는 지점은 과세전적부심사 결정·통지 지연 시 납부지연가산세 50% 감면 수치이나, 관련 조항 및 문제 논리와 정합적이어서 clean 판정. 전문가 검수 우선순위 최하위."
+}

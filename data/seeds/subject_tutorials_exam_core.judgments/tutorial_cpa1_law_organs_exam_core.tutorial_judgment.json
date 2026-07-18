@@ -1,0 +1,26 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_cpa1_law_organs_exam_core",
+  "subject_id": "cpa1_corporate_law",
+  "ontology_node": "cpa1_law_organs",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "minor_issues",
+  "worked_example_recomputed": true,
+  "step_findings": [
+    {
+      "step_type": "past_exam_bridge",
+      "severity": "uncertain",
+      "category": "exam_relevance",
+      "issue": "2026년 1차 실기출 문항 번호와 논점의 대응(19=전자투표, 20=담보제공, 21=제401조 제3자책임, 22=자기거래, 23=대표소송 제403조⑤, 24=감사위원회, 25=대표이사 거래)이 매우 구체적으로 단정되어 있으나, 튜토리얼 내부만으로는 실제 공식 기출 문항 번호와의 1:1 일치를 독립 검증할 수 없다. 법리 내용 자체는 정확. related_question_ids(019/020/024)는 데이터셋에 존재하지만 21/22/23/25번 매핑은 미확인.",
+      "correction": "실제 2026 공식 기출 원본(data/seeds 또는 collect_real_exams.py 산출물)과 문항 번호-논점 매핑을 대조 검증 권장. 법령 내용은 수정 불필요."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "major": 0,
+    "minor": 0,
+    "uncertain": 1
+  },
+  "expert_review_priority": 5,
+  "summary": "기업법 주식회사 기관 튜토리얼 6-step 전면 검증 결과 법령·계산·판례 오류 없음. 두 개 계산 예제(제434조 특별결의 정족수, 제409조 감사선임 3%룰·전자투표 완화)를 처음부터 재계산해 전부 일치. 인용 조문(제361·368①·368의2/3/4·371·391·393①·398·399·400·401·402·403⑤·409②③④·415조의2⑥·434·530계열)과 대법원 2015다45451 전합 법리(경과실 상대방 보호, 증명책임 회사)가 모두 정확. 근거규범 스왑(서면=정관/전자=이사회)·모수 처리·원칙-예외 단서 논점도 정합. 유일한 검수 대상은 2026 기출 문항 번호와 논점의 구체적 대응 주장으로, 법리는 옳으나 번호 매핑은 원본 대조가 필요(uncertain)."
+}

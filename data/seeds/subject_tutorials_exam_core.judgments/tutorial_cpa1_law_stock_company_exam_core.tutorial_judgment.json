@@ -1,0 +1,26 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_cpa1_law_stock_company_exam_core",
+  "subject_id": "cpa1_corporate_law",
+  "ontology_node": "cpa1_law_stock_company",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "minor_issues",
+  "worked_example_recomputed": false,
+  "step_findings": [
+    {
+      "step_type": "past_exam_bridge",
+      "severity": "minor",
+      "category": "legal_article",
+      "issue": "이익준비금(상법 제458조) 적립 기준을 '금전배당 기준'이라고 서술했으나, 조문상 적립 기준은 '이익배당액'으로 현물배당도 포함되며 주식배당만 제외된다. '금전배당 기준'은 현물배당을 누락한 단순화다.",
+      "correction": "이익준비금은 '매 결산기 이익배당액'의 10분의 1 이상을 적립하되(제458조 본문), 주식배당의 경우는 제외한다(단서). 기준은 금전배당이 아니라 이익배당액(금전+현물, 주식배당 제외)이다. 다만 주식배당 제외라는 핵심 논점은 정확하다."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "major": 0,
+    "minor": 1,
+    "uncertain": 0
+  },
+  "expert_review_priority": 4,
+  "summary": "기업법 주식회사 튜토리얼(계산 없는 법령 대조형). 6개 스텝의 상법 조문 인용을 전수 검증: 제331·289·298·313·316조(설립), 제344·344의3·345·335의2·335의3조(종류주식·양도), 제393·389·209조 및 2015다45451 전합(대표권), 제397의2·398·399·400·401·402·403조(이사 책임), 제368의3·368의4·420의4·360의24·360의25·360의26·461·434·439조(기출 패턴)까지 모두 정확. 판례 번호·기간(1월/20일/2주/30일/2개월)·비율(4분의1, 3분의2, 1%)·기산점 서술 오류 없음. 유일한 minor: 제458조 이익준비금 기준을 '금전배당'으로 단순화(현물배당 누락)했으나 주식배당 제외라는 핵심은 정확. 계산 스텝이 없어 재계산 대상 없음. 전반적으로 매우 정확한 초안."
+}

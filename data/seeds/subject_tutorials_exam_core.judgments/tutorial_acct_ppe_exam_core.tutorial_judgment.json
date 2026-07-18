@@ -1,0 +1,33 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_acct_ppe_exam_core",
+  "subject_id": "cpa1_accounting",
+  "ontology_node": "acct_ppe",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "minor_issues",
+  "worked_example_recomputed": true,
+  "step_findings": [
+    {
+      "step_type": "variation",
+      "severity": "minor",
+      "category": "standard_citation",
+      "issue": "(가) 해설에서 '내용연수를 신뢰성 있게 결정할 수 없는 무형자산은 10년 이내 정액법 상각'이라는 오답 서술을 '일반기업회계기준의 규정'이라고 귀속했으나, 일반기업회계기준의 무형자산 상각기간 원칙은 20년 이내이지 10년이 아니다. K-IFRS 하에서 비한정 무형자산은 상각하지 않고 매년 손상검사한다는 핵심 정정은 정확하나, '10년=일반기업회계기준'이라는 귀속은 부정확하다.",
+      "correction": "핵심 정정(비한정 무형자산 상각 금지·매년 손상검사, 제1038호·제1036호)은 유지. 다만 '10년 상각'을 일반기업회계기준으로 귀속하지 말 것 — 일반기업회계기준상 무형자산 상각기간은 원칙적으로 20년 이내. '10년'은 특정 기준서 수치가 아닌 가공된 함정 수치로 설명하는 편이 정확."
+    },
+    {
+      "step_type": "past_exam_bridge",
+      "severity": "uncertain",
+      "category": "exam_relevance",
+      "issue": "'이 노드는 최소 5문항(4·7·12·16·17번)이 출제된 최상위 빈출 영역'이라는 2026년 1차 회계학 문항 번호 및 빈출도 주장, 그리고 related_question_ids(cpa1-real-2026-accounting-007/012/017)의 실제 출제 내용 대응 여부는 파일 내부에서 독립 검증 불가. 계산·기준서는 모두 정확하나 구체적 기출 문항 번호 매핑은 실제 2026 기출과 대조 필요.",
+      "correction": "실제 2026년 1차 회계학 기출(scripts/collect_real_exams.py·parse_real_exams.py 수집분)과 문항 번호(4·7·12·16·17)·유형(연수합계법 추정변경, 복구충당부채 재측정, 정부보조금 방법전환) 대응을 전문가가 대조 확인 권장."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "major": 0,
+    "minor": 1,
+    "uncertain": 1
+  },
+  "expert_review_priority": 4,
+  "summary": "유형자산·무형자산 6-step 튜토리얼의 모든 워크드 계산을 처음부터 재현했고 전부 일치한다: 취득원가 1,100,000(교육훈련비 제외), 전진법 재상각 200,000, 후속원가+연수합계법 종합 250,000(순이익 감소), 정부보조금 양 방법 순효과 -80,000 동치, 복구충당부채 재측정 500,300, 월할 상각 180,000. K-IFRS 인용(1016 유형자산, 1008 추정변경, 1020 정부보조금, 1023 차입원가, 1037 충당부채, 1038 무형자산, 1036 손상)은 모두 실제 규정 내용과 정확히 대응. 발견된 이슈는 2건뿐: (1) 변형문제 해설에서 '10년 상각'을 일반기업회계기준으로 귀속한 부정확성(실제 K-GAAP 원칙은 20년 이내) — minor, 핵심 정정 자체는 옳음. (2) 2026 기출 문항 번호·빈출도 주장은 실제 기출과 대조 필요 — uncertain. 심각한 계산·법령 오류는 없음, 검수 우선순위 낮음."
+}

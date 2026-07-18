@@ -1,0 +1,40 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_cpa1_law_cpa_act_exam_core",
+  "subject_id": "cpa1_corporate_law",
+  "ontology_node": "cpa1_law_cpa_act",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "minor_issues",
+  "worked_example_recomputed": true,
+  "step_findings": [
+    {
+      "step_type": "foundation",
+      "severity": "uncertain",
+      "category": "legal_article",
+      "issue": "공인회계사법 제4조 결격사유 '3단 사다리'에서 실형을 '집행 종료·면제 후 5년 미경과 시 결격'으로 서술. 한국 전문자격·공직 결격 규정은 실형에 대해 3년 패턴과 5년 패턴이 법마다 갈리며(국가공무원법 5년, 다수 법령 3년), 공인회계사법 제4조가 5년인지 3년인지 메모리만으로 확정 불가. 이 '5년'은 past_exam_bridge·variation·checkpoints·model_answer에 반복 인용되어 오류 시 파급이 크다.",
+      "correction": "공인회계사법 제4조(결격사유) 현행 원문을 직접 대조하여 금고 이상 실형의 결격기간(집행 종료·면제 후 N년)을 확정할 것. 만약 3년이면 튜토리얼 전체의 '5년'을 '3년'으로 일괄 수정. 집행유예(유예기간 만료 후 2년)·선고유예(유예기간 중) 및 형법 제60조 면소간주는 유지 가능."
+    },
+    {
+      "step_type": "guided_practice",
+      "severity": "uncertain",
+      "category": "legal_article",
+      "issue": "회계법인 요건 격자 '3·7·5' 중 '이사와 직원 중 공인회계사 7명 이상(제24조 제2항 및 시행령)' 수치와 근거 조문을 확정할 수 없음. 이사 3명(제26조)·자본금 5억원(제27조)·유한회사 준용(제40조)은 상대적으로 신뢰 가능하나, '7명'과 그 법적 근거(본법 vs 시행령)는 검증 필요.",
+      "correction": "공인회계사법 제24조(등록요건 등) 및 시행령을 대조해 회계법인 소속 공인회계사 최소 인원(이사+직원)과 조문 위치를 확정. 시행령 위임 수치이면 적용연도 개정 여부까지 확인."
+    },
+    {
+      "step_type": "past_exam_bridge",
+      "severity": "uncertain",
+      "category": "exam_relevance",
+      "issue": "2026년 1차 기업법 제39·40번의 구체적 지문 내용(제39번 인사·조직 지원업무 병행금지가 옳은 지문, 제40번 자본금 '3억원'이 정답 오답지문, 선고유예+2년 이식이 오답 등)을 사실로 단정. 이는 실제 기출 지문에 대한 사실 주장이라 수집된 기출 데이터(related_question_ids: cpa1-real-2026-corporate_law-039/040)와 원문 대조가 필요.",
+      "correction": "프로젝트가 수집한 2026 실기출 파싱 결과(scripts/collect_real_exams.py 산출물)와 제39·40번 각 선택지 원문을 대조하여, 오답지문·정답지문 귀속이 정확한지 확인. 불일치 시 해당 서술 수정."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "major": 0,
+    "minor": 0,
+    "uncertain": 3
+  },
+  "expert_review_priority": 2,
+  "summary": "공인회계사법 튜토리얼. 조문 번호(제2·3·7·15·20·21·26·27·40조)와 법리 구조(선고유예 면소 간주=형법 제60조, 자기검토위협, 유한회사 준용)는 대체로 일관되고 타당하며, worked_example의 날짜 논리(배우자 8개월 퇴직<1년→수임불가; 甲 선고유예 종료→비결격, 乙 집행유예 만료후2년→2027-12-31까지 결격)도 명시된 규칙과 내적으로 일치한다. 다만 튜토리얼 전반에 반복되는 핵심 수치 두 개를 메모리만으로 확정할 수 없어 우선 검수 대상으로 올린다: (1) 제4조 실형 결격기간 '5년'(한국 전문자격법은 3년/5년 패턴이 갈림 — 공인회계사법 원문 확인 필요, 이 수치가 틀리면 foundation·past_exam_bridge·variation·checkpoints 전부 연동 오류), (2) 회계법인 '공인회계사 7명 이상' 및 근거(제24조 제2항/시행령 수치). 확실한 사실 오류는 발견하지 못했으나, 실형 기간은 load-bearing이라 전문가가 가장 먼저 봐야 한다."
+}

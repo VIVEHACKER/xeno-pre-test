@@ -1,0 +1,18 @@
+{
+  "schema": "tutorial_accuracy_judgment.v1",
+  "tutorial_id": "tutorial_cpa1_business_capital_budgeting_exam_core",
+  "subject_id": "cpa1_business",
+  "ontology_node": "cpa1_business_capital_budgeting",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
+  "overall_verdict": "clean",
+  "worked_example_recomputed": true,
+  "step_findings": [],
+  "severity_counts": {
+    "critical": 0,
+    "major": 0,
+    "minor": 0,
+    "uncertain": 0
+  },
+  "expert_review_priority": 5,
+  "summary": "경영학 자본예산 6-step 튜토리얼 전수 재계산 검증. 6개 스텝 모두 수치·기준서·조문 정확. Step1 NPV=24.35, Step3 OCF=370/NPV=141.16, Step4 증분NPV=27.27·증분IRR=25%, Step5 WAPI_A=1.10 vs WAPI_B=1.15로 정답 ④ 도출, Step6 EAC=20.62·교체시점 t=1 모두 재계산 일치. PVIFA/PVIF 계수(2.4869, 3.1699, 0.6830) 실측 정확. K-IFRS 제1016호(유형자산)·법인세법 제55조(세율) 인용 정확. 순운전자본 부호(매입채무 증가→NWC 감소→가산)는 표준 시험 처리와 일치. WAPI·증분분석·EAC 교체결정 논리 모두 정합. 오류 없음, verdict=clean."
+}
