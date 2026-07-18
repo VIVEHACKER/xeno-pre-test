@@ -349,8 +349,8 @@ def test_exam_core_tutorials_served_with_level_filter(anon_client):
     exam_core = anon_client.get("/tutorials", params={"level": "exam_core"}).json()
     intro = anon_client.get("/tutorials", params={"level": "intro_low"}).json()
 
-    # 난이도 축이 실제로 존재 — exam_core가 다수 (감사 지적: 이전엔 intro_low 단일값)
-    assert exam_core["count"] >= 40
+    # 난이도 축이 실제로 존재 — exam_core가 CPA1 잎 노드 48개 전부 (감사: intro_low 단일값이었음)
+    assert exam_core["count"] == 48
     assert intro["count"] >= 20
     assert all_t["count"] == exam_core["count"] + intro["count"]
     assert all(t["level"] == "exam_core" for t in exam_core["tutorials"])
