@@ -213,5 +213,24 @@ D섹션 20건을 실기출 정답키·재계산으로 3차 검증. **1건 수정
 - `cpa1_business_marketing` Fishbein e_i를 '중요도'로 정의(학술 원전은 '평가'이나 국내 CPA 교재 관행상 통용)
 - `cpa1_business_strategy` VRIO를 Barney 1991 귀속(엄밀히 VRIN=1991, VRIO=1995이나 다위치 조율 재작성 필요·시험 통용)
 
+## F. 법령 원문 확정 (2026-07-18 4차 — law.go.kr 조회)
+
+E섹션 잔여 항목을 국가법령정보센터(law.go.kr) 원문·복수 권위 출처로 확정. **4항목 정정(38곳), 4항목 원문 대조로 튜토리얼 정확 확인(수정 불필요).**
+
+### F1. 정정 적용 (원문으로 오류 확정)
+- `acct_government` 유가증권 평가 8곳: 「국가회계기준에 관한 규칙」 제33조 — 투자목적 장기·단기투자증권은 신뢰성 있게 공정가액 측정 가능 시 공정가액 평가·순자산조정 반영(정부출자금은 미반영). blanket '유가증권 원가법' 서술이 실기출 040 공식답(순자산 18,000)과 모순됐던 것을 정정, worked_example 순자산 14,000→14,500 재계산.
+- `tax_vat_input_tax` 안분생략 특례 6곳: 부가가치세법 시행령 제81조 — 안분계산 생략(전액공제) 특례는 **제3항이 아니라 제2항 제1호**(면세비율 5% 미만·공통매입 500만원 이상 배제는 그 단서). 항 번호만 오류였고 계산은 정확.
+- `cpa1_law_external_audit` 동일감사인 1곳: 외감법 — 연결·별도 재무제표 동일감사인 요건은 제9조가 아니라 **제4조 제1항** 괄호규정('재무제표 및 연결재무제표의 감사인은 동일하여야 한다')(CaseNote verbatim+3출처).
+- `cpa1_business_marketing` Fishbein 14곳: 다속성태도모형 A=Σ(bi×ei)의 ei는 '중요도'가 아니라 **'평가(evaluation)'**(Ajzen 원논문 등) — 중요도 가중치는 별개 모형. 계산 불변, 개념 라벨 정정.
+- `cpa1_business_strategy` VRIO 2곳: **VRIO=Barney 1995**(RBV·VRIN=1991). '자원기반관점(RBV, Barney 1991)에서 발전한 VRIO 분석틀(Barney, 1995)'로 정정.
+
+### F2. 원문 대조 결과 튜토리얼이 정확 — 수정 불필요
+- `tax_corporate_depreciation`: 즉시상각의제 = 법인세법 제23조 제4항(2018 전부개정으로 법 본문 상향, 시행령 제31조는 소액수선비 세부) — 정확.
+- `tax_income_classification`: 금융소득 2천만원=소득세법 제14조 제3항 제6호, 기타소득 300만원=제8호 — 현행 정확(개정 후에도 유지).
+- `tax_vat_supply`: 마일리지 전부결제 증여 제외 = 부가세법 제10조 제5항 단서 + 시행령 제20조 제3호 — 정확.
+- (government 정부출자금 원가·재고 저가법도 원문 일치로 유지)
+
+**성과**: E4의 '법령원문 필요' 7건 중 조문 오류 3건 확정 정정(부가세 제3항→제2항, 외감 제9조→제4조1항, government 유가증권), 3건은 원문 확인 결과 튜토리얼이 정확, 학술 2건(Fishbein·VRIO) 정정. 웹 조회(law.go.kr)로 '추측 금지·원문 확정' 원칙을 지키며 해결.
+
 ---
 검수 데이터: `data/seeds/subject_tutorials_exam_core.judgments/*.tutorial_judgment.json` (튜토리얼당 1건, step_findings 상세 포함). 재생성: `scripts/judge_tutorials.py --judge-backend codex`(독립 2차 채점 권장).
