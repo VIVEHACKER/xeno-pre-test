@@ -67,6 +67,33 @@ def load_real_exam_questions(
     return questions
 
 
+# 2차(주관식) 과목 한국어명. 1차 SUBJECTS 레지스트리와 분리 — 2차 트랙은
+# 진단/처방 엔진에 연결되지 않는 읽기 전용 참고 자산이다(PRD가 2차를 명시 제외).
+CPA2_SUBJECT_NAMES = {
+    "tax": "세법",
+    "financial_management": "재무관리",
+    "audit": "회계감사",
+    "cost_accounting": "원가관리회계",
+    "financial_accounting": "재무회계",
+}
+
+
+def load_cpa2_subjective(base_dir: Path | str) -> list[dict[str, Any]]:
+    """2차 주관식 파싱 문항 로드. 모범답안·채점기준은 비공개(null)로 정직 태깅.
+
+    반환 순서는 (year, subject, question_id)로 결정론적. 없으면 빈 리스트.
+    """
+    parsed_dir = Path(base_dir) / "parsed"
+    if not parsed_dir.exists():
+        return []
+    items: list[dict[str, Any]] = []
+    for year_dir in sorted(p for p in parsed_dir.iterdir() if p.is_dir()):
+        for path in sorted(year_dir.glob("*.subjective.json")):
+            items.extend(json.loads(path.read_text(encoding="utf-8")))
+    items.sort(key=lambda q: (q.get("applicable_year") or 0, q["subject"], q["question_id"]))
+    return items
+
+
 def load_explanations(explanations_dir: Path | str) -> dict[str, dict[str, Any]]:
     """explanations/ 아래 전 해설 레코드를 question_id로 인덱싱해 반환."""
     base = Path(explanations_dir)

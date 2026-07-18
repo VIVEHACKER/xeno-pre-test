@@ -35,6 +35,15 @@ POSTS = {
     2024: {"round": 59, "ntt_ids": [134641, 134086]},
 }
 
+# 2차(주관식) 문제 게시글 — 같은 게시판. 금감원은 2차 '문제'만 공개하고
+# 모범답안·채점기준은 비공개다. manifest에 이 한계를 명시한다.
+POSTS_CPA2 = {
+    2026: {"round": 61, "ntt_ids": [218897]},
+    2025: {"round": 60, "ntt_ids": [195384]},
+    2024: {"round": 59, "ntt_ids": [136813]},
+    2023: {"round": 58, "ntt_ids": [128479]},
+}
+
 _HREF_RE = re.compile(
     r'href="(/cpa/cmmn/file/fileDown\.do[^"]*)"[^>]*>\s*<img[^>]*alt="([^"]+?)\s*다운로드"'
 )
@@ -93,10 +102,15 @@ def download(client: httpx.Client, url: str, dest: Path) -> str:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--years", default="", help="쉼표구분 연도 (기본: 전부)")
-    ap.add_argument("--out-dir", type=Path, default=Path("data/real_exams/cpa1"))
+    ap.add_argument("--phase", type=int, choices=(1, 2), default=1, help="1차|2차")
+    ap.add_argument("--out-dir", type=Path, default=None)
     args = ap.parse_args()
 
-    years = [int(y) for y in args.years.split(",") if y.strip()] if args.years else sorted(POSTS)
+    posts = POSTS if args.phase == 1 else POSTS_CPA2
+    if args.out_dir is None:
+        args.out_dir = Path(f"data/real_exams/cpa{args.phase}")
+
+    years = [int(y) for y in args.years.split(",") if y.strip()] if args.years else sorted(posts)
     manifest_path = args.out_dir / "manifest.json"
     manifest: dict = (
         json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.exists() else {}
@@ -104,7 +118,7 @@ def main() -> int:
 
     with httpx.Client(headers={"User-Agent": UA}, timeout=60, follow_redirects=True) as client:
         for year in years:
-            post = POSTS[year]
+            post = posts[year]
             year_dir = args.out_dir / str(year)
             entries = []
             for ntt_id in post["ntt_ids"]:
@@ -131,13 +145,16 @@ def main() -> int:
                 print(f"[{year}] 수집 실패 — 게시글 구조 변경 가능성", file=sys.stderr)
                 continue
             manifest[str(year)] = {
-                "exam": "CPA_1",
+                "exam": f"CPA_{args.phase}",
                 "round": post["round"],
                 "post_ntt_ids": post["ntt_ids"],
                 "source_owner": "금융감독원",
                 "rights_policy": "official_download_check_required",
                 "usage": "evaluation_only",
                 "training_policy": "train_after_rights_review",
+                "answer_key_policy": (
+                    "확정답안 공개(1차)" if args.phase == 1 else "모범답안·채점기준 비공개(금감원 정책)"
+                ),
                 "files": entries,
             }
 

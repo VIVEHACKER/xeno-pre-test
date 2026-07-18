@@ -48,8 +48,10 @@ from cpa_first.logging_config import configure_logging, get_logger
 from cpa_first.rag import TermIndex, load_chunks
 from cpa_first.ratelimit import ai_explain_rate_limit, limiter
 from cpa_first.real_exams import (
+    CPA2_SUBJECT_NAMES,
     SOURCE_SYNTHETIC,
     build_practice_entry,
+    load_cpa2_subjective,
     load_explanations,
     load_real_exam_questions,
 )
@@ -286,6 +288,7 @@ def create_app(
     tutorials_exam_core_path = seed_base / "data" / "seeds" / "subject_tutorials_exam_core.json"
     problem_maps_path = prototype_dir / "problem_solution_maps.json"
     real_exams_base = real_exams_dir or (seed_base / "data" / "real_exams" / "cpa1")
+    cpa2_base = seed_base / "data" / "real_exams" / "cpa2"
 
     if settings.sentry_dsn:
         import sentry_sdk
@@ -421,6 +424,10 @@ def create_app(
         # 합성 문항과 ID 충돌 시 합성이 우선(실기출 ID는 cpa1-real-* 네임스페이스라 실제 충돌 없음).
         problem_maps_by_id.setdefault(entry["question_id"], entry)
 
+    # 2차 주관식 트랙 — 읽기 전용 참고 자산(모범답안 비공개). 1차 학습 루프와 분리.
+    cpa2_questions = load_cpa2_subjective(cpa2_base)
+    cpa2_by_id = {q["question_id"]: q for q in cpa2_questions}
+
     terms_full = _load_terms_full(terms_dir) if terms_dir.exists() else {}
     term_index = (
         TermIndex.from_paths(terms_dir, edges_path)
@@ -540,6 +547,7 @@ def create_app(
             "problems": len(problems),
             "problem_solution_maps": len(problem_solution_maps),
             "real_exam_questions": len(real_exam_entries),
+            "cpa2_subjective_questions": len(cpa2_questions),
             "terms": len(terms_full),
             "term_edges": len(term_index.edges),
         }
@@ -555,6 +563,7 @@ def create_app(
             "problems": len(problems),
             "problem_solution_maps": len(problem_solution_maps),
             "real_exam_questions": len(real_exam_entries),
+            "cpa2_subjective_questions": len(cpa2_questions),
             "terms": len(terms_full),
             "term_edges": len(term_index.edges),
         }
@@ -698,6 +707,45 @@ def create_app(
         if tutorial is None:
             raise HTTPException(status_code=404, detail=f"tutorial not found: {tutorial_id}")
         return tutorial
+
+    # ─────────────────────── 2차 주관식 기출 (PUBLIC · 참고 자산) ───────────────────────
+    # 읽기 전용. 모범답안·채점기준은 금감원 비공개라 없음 — 그 한계를 응답에 명시한다.
+    # 1차 학습 루프(진단/처방/ai-explain)와 분리: 2차 채점 시스템은 아직 없다.
+
+    @app.get("/cpa2/practice")
+    def list_cpa2_practice(subject: str = "", year: int = 0) -> dict[str, Any]:
+        items = [
+            {
+                "question_id": q["question_id"],
+                "subject": q["subject"],
+                "subject_name": CPA2_SUBJECT_NAMES.get(q["subject"], q["subject"]),
+                "applicable_year": q.get("applicable_year"),
+                "number": q.get("number"),
+                "points": q.get("points"),
+                "n_sub_questions": len(q.get("sub_questions") or []),
+                "review_status": q.get("review_status"),
+            }
+            for q in cpa2_questions
+            if (not subject or q["subject"] == subject)
+            and (not year or q.get("applicable_year") == year)
+        ]
+        return {
+            "count": len(items),
+            "questions": items,
+            "answer_key_policy": "모범답안·채점기준은 금융감독원 비공개 — 문제 본문만 제공(참고용)",
+            "coverage_note": "2023~2025 파싱 완료. 2026은 스캔본이라 비전 복원 대기.",
+        }
+
+    @app.get("/cpa2/practice/{question_id}")
+    def get_cpa2_practice(question_id: str) -> dict[str, Any]:
+        q = cpa2_by_id.get(question_id)
+        if q is None:
+            raise HTTPException(status_code=404, detail=f"cpa2 question not found: {question_id}")
+        return {
+            **q,
+            "subject_name": CPA2_SUBJECT_NAMES.get(q["subject"], q["subject"]),
+            "note": "2차 주관식. 모범답안 비공개 — AI 자동 채점은 미지원(로드맵).",
+        }
 
     # ───────────────────────── 연습 문항 (PUBLIC 목록 · 정답 비노출) ─────────────────────────
 
