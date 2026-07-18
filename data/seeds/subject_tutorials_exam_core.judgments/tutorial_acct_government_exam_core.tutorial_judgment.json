@@ -3,31 +3,32 @@
   "tutorial_id": "tutorial_acct_government_exam_core",
   "subject_id": "cpa1_accounting",
   "ontology_node": "acct_government",
-  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
-  "overall_verdict": "has_errors",
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-rejudge-2026-07",
+  "overall_verdict": "minor_issues",
   "worked_example_recomputed": true,
   "step_findings": [
     {
-      "step_type": "foundation",
-      "severity": "major",
+      "step_type": "guided_practice",
+      "severity": "uncertain",
       "category": "legal_article",
-      "issue": "현금흐름표를 국가 재무제표에 '규칙에 규정되어 있으나 시행 유예'된 것으로 서술함(core_explanation과 model_answer 모두). 국가회계법 제14조 및 「국가회계기준에 관한 규칙」상 국가 재무제표는 재정상태표·재정운영표·순자산변동표 3종뿐이며 현금흐름표 규정 자체가 없다. 규정은 있으나 시행이 유예된 현금흐름표는 국가가 아니라 지방자치단체에 해당한다. 국가/지방을 구분하는 대표적 출제 포인트를 반대로 서술한 것.",
-      "correction": "국가 재무제표는 재정상태표·재정운영표·순자산변동표 3종으로 현금흐름표를 포함하지 않는다. 현금흐름표가 규칙(「지방자치단체 회계기준에 관한 규칙」 제6조: 재정상태표·재정운영표·현금흐름표·순자산변동표 4종)에 규정되어 있으나 부칙으로 시행이 유예된 것은 지방자치단체회계다. 해당 문장을 지방자치단체 회계로 옮기거나, 국가 서술에서는 삭제할 것."
+      "issue": "가산세·가산금을 본세에 포함하지 않고 별도로 '부과·징수할 금액이 확정되어 청구권이 발생한 때' 국세수익으로 인식한다는 진술(step4·step5·step6에서 반복)은 국가회계기준에 관한 규칙의 비교환수익(국세) 인식 조문 원문과 한 단어씩 대조가 필요하다. 개념 방향은 타당하나 '확정 시점' 문구와 가산세/가산금 구분처리는 조문 확인 대상.",
+      "correction": "국가회계기준에 관한 규칙 제30조(비교환수익의 인식기준) 및 국세수익 관련 조문에서 가산세·가산금의 별도 인식·인식시점 문구를 원문 대조하여 확정. 개념상 오류 정황은 없음."
     },
     {
-      "step_type": "concept",
-      "severity": "minor",
-      "category": "internal_consistency",
-      "issue": "concept_atoms[1]에도 동일하게 '현금흐름표는 규칙에 규정되어 있으나 아직 시행되지 않았다'가 국가 재무제표 맥락으로 들어가 foundation 스텝의 오류가 반복됨.",
-      "correction": "foundation 수정과 동일하게 현금흐름표 유예 진술을 지방자치단체회계로 귀속시킬 것."
+      "step_type": "past_exam_bridge",
+      "severity": "uncertain",
+      "category": "exam_relevance",
+      "issue": "2026년 1차 회계학 정부회계 블록(36~40번 연속 5문항), 40번 계산형 정답 ￦18,000, 36번 '지방회계법상 검토의견', 39번 '가산세 본세포함 지문이 오답'이라는 진술은 실제 공식 기출·정답키와 독립 대조가 필요하다(에이전트가 원문 검증 불가).",
+      "correction": "cpa1-real-2026-accounting-036·039·040 원문과 정답키를 대조하여 문항번호·정답 18,000·지문 정오를 확정. 36번 검토의견(지방회계법 제7조)·가산세 처리 방향 자체는 규정과 정합적."
     }
   ],
   "severity_counts": {
     "critical": 0,
-    "major": 1,
-    "minor": 1,
-    "uncertain": 0
+    "major": 0,
+    "minor": 0,
+    "uncertain": 2
   },
-  "expert_review_priority": 2,
-  "summary": "정부회계 튜토리얼 6스텝 검증. 재정상태표 순자산 계산 예제는 처음부터 재계산해 14,000으로 일치하고 평가규정 태그(무상=장부가액, 재고 저가법, 원가법)도 정확하며, 수익 인식시점·가산세 분리·지방회계법 검토의견 등 법령 사실도 대부분 정확하다. 유일한 실질 오류는 '규정되어 있으나 시행 유예된 현금흐름표'를 국가 재무제표에 귀속시킨 점 — 실제로는 국가는 재무제표 3종(현금흐름표 없음)이고 유예된 현금흐름표는 지방자치단체회계에 해당한다. 국가/지방 구분 출제 포인트를 반대로 서술한 major 오류이며 concept_atoms에도 반복된다."
+  "expert_review_priority": 4,
+  "summary": "정부회계(국가·지방) 튜토리얼로 법령체계·재무제표 대응·회계실체 통합·자산평가·수익인식·재정상태표 순자산 계산을 다룬다. worked_example를 처음부터 재계산해 14,000으로 model_answer와 일치 확인. 근거법령(국가회계법/국가회계기준에 관한 규칙, 지방회계법/지방자치단체 회계기준에 관한 규칙), 재무제표 3종 vs 지방 4종·현금흐름표 시행유예, 국가회계실체 3구성(공기업 제외), 순자산변동표 5개 순서, 재정운영표 원가중심 구조, 비교환수익→재원조달, 무상관리전환=장부가액/유상=공정가액, 재평가는 일반유형자산·사회기반시설만·순자산조정 반영, 재고 저가법, 유가증권 원가법, 지방회계법 검토의견(감사의견 아님) 등 핵심 법령·개념이 모두 정확했다. 하드 에러 없음. 다만 가산세·가산금 별도 인식시점 문구와 2026 기출 40번 정답 ￦18,000 등 실기출 대조는 전문가 확인용으로 남긴다(둘 다 방향은 정합적, uncertain).",
+  "note_2nd_pass": "수정본 재채점 — 1차 A항목 6건은 해소 확인, 이 판정은 그 후 남은/새 발견"
 }

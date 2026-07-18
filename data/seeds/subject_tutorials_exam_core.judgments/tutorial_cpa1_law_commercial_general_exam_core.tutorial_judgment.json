@@ -3,24 +3,25 @@
   "tutorial_id": "tutorial_cpa1_law_commercial_general_exam_core",
   "subject_id": "cpa1_corporate_law",
   "ontology_node": "cpa1_law_commercial_general",
-  "judge_model": "claude-opus-4-8/tutorial-accuracy-workflow",
-  "overall_verdict": "serious_errors",
-  "worked_example_recomputed": true,
+  "judge_model": "claude-opus-4-8/tutorial-accuracy-rejudge-2026-07",
+  "overall_verdict": "minor_issues",
+  "worked_example_recomputed": false,
   "step_findings": [
     {
-      "step_type": "past_exam_bridge",
-      "severity": "critical",
-      "category": "legal_article",
-      "issue": "step5 core_explanation에서 주주총회 특별결의 요건(상법 제434조)을 '출석 의결권 3분의 2 이상 및 발행주식총수의 4분의 1 이상'이라 서술하고, 정답 수치인 '3분의 1'을 오히려 기출이 치환한 오답이라고 지목함. 요건 수치를 반대로 가르쳐 학습자가 옳은 지문을 틀린 것으로 판단하게 만듦.",
-      "correction": "상법 제434조 특별결의 = 출석한 주주의 의결권의 3분의 2 이상 + 발행주식총수의 3분의 1 이상. '발행주식총수의 4분의 1 이상'은 제368조 보통결의 요건(출석 의결권 과반수 + 발행주식총수 4분의 1 이상)이며 특별결의와 무관함. 즉 '3분의 1'이 정답 수치이고 이를 '4분의 1'로 바꾼 것이 오답 치환임."
+      "step_type": "past_exam_bridge/variation",
+      "severity": "uncertain",
+      "category": "exam_relevance",
+      "issue": "두 스텝(past_exam_bridge, variation)이 2026년 1차 기업법 실제 시험지에 대한 매우 구체적인 주장을 다수 담고 있다: 기출 1번 정답 ②(제16조 권한범위 치환), 3번(제41조 10년→20년·제45조 2년→1년·제434조 3분의1→4분의1 치환, 옳은 지문은 제42조 제2항), 5번(전표 보존기간, 제37조 반전, 옳은 지문 제8조), 6번(금융리스 인도 주체 치환), 7번(운송주선에 여객운송 삽입), 8번 ⑤(익명조합원 성년후견개시). 상법 조문 인용은 전부 정확하게 검증되었으나, 이 '문항 번호↔정답↔치환유형' 대응은 실제 2026 기출 시험지 원문과 대조하지 못했다.",
+      "correction": "related_question_ids(cpa1-real-2026-corporate_law-001/003/005 등)와 data/의 실기출 정답키를 대조해 문항 번호·정답·치환 지문 매핑을 확인할 것. 조문 내용 자체는 오류 없음."
     }
   ],
   "severity_counts": {
-    "critical": 1,
+    "critical": 0,
     "major": 0,
     "minor": 0,
-    "uncertain": 0
+    "uncertain": 1
   },
-  "expert_review_priority": 1,
-  "summary": "상법총칙·상행위 조문 인용은 제4~47·67~70·84·114·122·168의3·168의5 등 거의 전부 실제 조문과 일치해 정확도가 높음. 그러나 step5(기출문제) 설명에 삽입된 주주총회 특별결의 요건(제434조)에서 발행주식총수 정족수를 '3분의 1'이 아닌 '4분의 1'로 반대로 서술하고 정답 수치를 오답 치환으로 지목하는 치명적 법령 오류가 1건 존재함. 이 부분(보통결의 제368조와 혼동)이 최우선 검수 대상."
+  "expert_review_priority": 4,
+  "summary": "상법총칙·상행위 튜토리얼 6스텝의 모든 조문 인용(제3~9·11·13~17·25·33·37·41·42·44·45·46·47·67~70·78·83·84·114·122·168의3·168의5·434조)과 숫자(경업금지 10년/약정 20년, 양도인 책임 2년, 개입권 2주·1년, 검사통지 6월, 전표 5년, 금융리스 3개월, 운송주선 1년, 익명조합 6월)를 실제 상법과 대조한 결과 실질적 법령·사실 오류를 발견하지 못함. 간주/추정 구분(제16조·제47조 제2항), 표현지배인 재판상 제외(제14조), 매수인 긴급매각 법원허가(제70조), 익명조합원 성년후견 배제(제84조) 등 함정 논점도 모두 정확. 유일한 검수 대상은 조문이 아니라 '2026년 실기출 문항 번호·정답·치환 매핑'의 원문 대조 여부이며, 이는 오류가 아닌 미검증 사항으로 uncertain 처리. 계산이 없는 법령 튜토리얼이라 재계산 대상 없음. 전반적으로 인용 정확도가 높은 상위 품질 초안.",
+  "note_2nd_pass": "수정본 재채점 — 1차 A항목 6건은 해소 확인, 이 판정은 그 후 남은/새 발견"
 }
