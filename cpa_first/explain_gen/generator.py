@@ -125,20 +125,38 @@ def run_batch(
 ) -> dict[str, Any]:
     """배치 실행. 문항당 1파일 저장 — 파일 존재 = 완료 = 재실행 시 스킵.
 
-    verified가 아니어도 저장한다(재시도로 덮으려면 파일 삭제 후 재실행).
+    mismatch/parse_failed도 저장한다(재시도로 덮으려면 파일 삭제 후 재실행).
+    backend_error는 저장하지 않는다 — 일시적 서버 다운이 체크포인트를 오염시키면
+    (파일 존재=완료=스킵) 재실행이 그 문항들을 영원히 건너뛴다(실사고: ollama
+    다운으로 backend_error 500건이 파일로 저장돼 배치가 무의미하게 완주됨).
+    연속 5회 backend_error면 서버 다운으로 판단하고 배치를 중단한다.
     반환: 상태별 카운트 요약.
     """
     out = Path(out_dir)
     counts: dict[str, int] = {"skipped_existing": 0}
+    consecutive_backend_errors = 0
     for i, question in enumerate(questions, start=1):
         path = explanation_path(out, question)
         if skip_existing and path.exists():
             counts["skipped_existing"] += 1
             continue
         record = generate_explanation(question, solver, max_attempts=max_attempts)
+        counts[record["status"]] = counts.get(record["status"], 0) + 1
+        if record["status"] == STATUS_BACKEND_ERROR:
+            consecutive_backend_errors += 1
+            if progress is not None:
+                progress(
+                    f"[{i}/{len(questions)}] {question['question_id']} "
+                    f"→ backend_error (미저장: {record.get('error', '')[:120]})"
+                )
+            if consecutive_backend_errors >= 5:
+                if progress is not None:
+                    progress("backend_error 연속 5회 — 서버 다운으로 판단, 배치 중단")
+                break
+            continue
+        consecutive_backend_errors = 0
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-        counts[record["status"]] = counts.get(record["status"], 0) + 1
         if progress is not None:
             progress(
                 f"[{i}/{len(questions)}] {question['question_id']} "

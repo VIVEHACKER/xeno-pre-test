@@ -281,3 +281,21 @@ def test_diagnose_real_exam_without_explanation_says_none(real_client):
 def test_health_counts_real_exams(real_client):
     body = real_client.get("/health").json()
     assert body["real_exam_questions"] == 2
+
+
+class DownSolver:
+    """항상 백엔드 예외 — 서버 다운 시나리오."""
+
+    def solve(self, question: dict):
+        raise RuntimeError("connection refused")
+
+
+def test_run_batch_does_not_persist_backend_errors(tmp_path):
+    """backend_error는 체크포인트 파일로 저장되면 안 된다 (오염 방지)."""
+    questions = [_question(f"cpa1-real-2026-tax-{i:03d}") for i in range(1, 8)]
+    out = tmp_path / "explanations"
+    counts = run_batch(questions, DownSolver(), out, max_attempts=1)
+    # 파일이 하나도 생기지 않아야 재실행 시 다시 시도된다
+    assert list(out.rglob("*.explanation.json")) == []
+    # 연속 5회에서 Circuit Breaker 중단 — 7문항 전부 소진하지 않음
+    assert counts["backend_error"] == 5
