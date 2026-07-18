@@ -341,3 +341,30 @@ def test_study_plan_no_negative_hours_on_duplicates():
     for week in plan["weeks"]:
         for alloc in week["subject_allocation"]:
             assert alloc["hours"] >= 0, f"음수 배분: {alloc}"
+
+
+def test_exam_core_tutorials_served_with_level_filter(anon_client):
+    """exam_core 튜토리얼이 intro_low와 함께 서빙되고 level/ontology_node 필터가 동작한다."""
+    all_t = anon_client.get("/tutorials").json()
+    exam_core = anon_client.get("/tutorials", params={"level": "exam_core"}).json()
+    intro = anon_client.get("/tutorials", params={"level": "intro_low"}).json()
+
+    # 난이도 축이 실제로 존재 — exam_core가 다수 (감사 지적: 이전엔 intro_low 단일값)
+    assert exam_core["count"] >= 40
+    assert intro["count"] >= 20
+    assert all_t["count"] == exam_core["count"] + intro["count"]
+    assert all(t["level"] == "exam_core" for t in exam_core["tutorials"])
+
+    # 재무회계 중급 핵심 단원이 실제로 커버됨 (감사: 유효이자율·수익인식 등 0개였음)
+    nodes = {t["ontology_node"] for t in exam_core["tutorials"]}
+    assert {"acct_revenue", "acct_financial_assets", "acct_income_tax"} <= nodes
+
+
+def test_exam_core_tutorial_has_journal_entries(anon_client):
+    """재무회계 exam_core 튜토리얼은 차변/대변 분개 표기를 포함한다 (감사: 0개였음)."""
+    import json as _json
+
+    detail = anon_client.get("/tutorials/tutorial_acct_revenue_exam_core")
+    assert detail.status_code == 200
+    body = _json.dumps(detail.json(), ensure_ascii=False)
+    assert "차변" in body and "대변" in body

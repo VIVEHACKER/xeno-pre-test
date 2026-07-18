@@ -32,12 +32,43 @@ FILENAME_PATTERNS: tuple[tuple[str, str], ...] = (
     ("prescription", "prescription"),
     ("decision_rule", "decision_rule"),
     ("mistake_log", "mistake_log"),
+    ("subject_tutorials_exam_core", "subject_tutorials_exam_core"),
     ("subject_tutorials", "subject_tutorials"),
     ("evaluation_question", "evaluation_question"),
     ("rag_chunk", "rag_chunk"),
     ("term_edge", "term_edge"),
     ("term", "term"),
 )
+
+# exam_core 의미 검증용 — 분개(차변/대변) 표기가 필수인 재무회계 계열 노드.
+JOURNAL_ENTRY_REQUIRED_NODES = {
+    "acct_revenue",
+    "acct_inventory",
+    "acct_ppe",
+    "acct_financial_assets",
+    "acct_liabilities",
+    "acct_equity",
+    "acct_income_tax",
+    "acct_consolidation",
+}
+
+# worked_example에 숫자 계산 과정이 필수가 아닌 서술형 노드(법·경영관리·개념체계·절차).
+VERBAL_NODES = {
+    "acct_conceptual_framework",
+    "cpa1_business_organization",
+    "cpa1_business_strategy",
+    "cpa1_business_marketing",
+    "cpa1_business_operations",
+    "cpa1_law_commercial_general",
+    "cpa1_law_stock_company",
+    "cpa1_law_organs",
+    "cpa1_law_financing",
+    "cpa1_law_reorganization",
+    "cpa1_law_cpa_act",
+    "cpa1_law_external_audit",
+    "tax_framework",
+    "tax_local_and_other",
+}
 
 KNOWN_SCHEMAS = {key for _, key in FILENAME_PATTERNS}
 
@@ -74,7 +105,76 @@ def validate_file(file_path: Path, schema_key: str) -> list[str]:
     return [_format_error(err) for err in errors] + _semantic_errors(data, schema_key)
 
 
+def _ontology_node_ids() -> set[str]:
+    path = ROOT / "data" / "seeds" / "exam_ontology.json"
+    if not path.exists():
+        return set()
+    with path.open("r", encoding="utf-8") as f:
+        ontology = json.load(f)
+    return {
+        node[0] for subject in ontology.get("subjects", []) for node in subject.get("nodes", [])
+    }
+
+
+def _real_exam_question_ids() -> set[str]:
+    from cpa_first.real_exams import load_real_exam_questions
+
+    base = ROOT / "data" / "real_exams" / "cpa1"
+    return {q["question_id"] for q in load_real_exam_questions(base)}
+
+
+def _exam_core_semantic_errors(data: dict) -> list[str]:
+    """exam_core 튜토리얼 의미 검증 — 스키마가 못 잡는 콘텐츠 품질 게이트.
+
+    감사에서 확인된 결핍의 재발 방지: 분개 표기 0개, 계산 없는 worked_example,
+    기출 미연결 past_exam_bridge, 온톨로지 비매핑.
+    """
+    errors: list[str] = []
+    ontology_ids = _ontology_node_ids()
+    real_ids = _real_exam_question_ids()
+
+    for t_idx, tutorial in enumerate(data.get("tutorials") or []):
+        prefix = f"tutorials/{t_idx}({tutorial.get('tutorial_id', '?')})"
+        node = tutorial.get("ontology_node", "")
+        if ontology_ids and node not in ontology_ids:
+            errors.append(f"[{prefix}] ontology_node not in exam_ontology.json: {node!r}")
+
+        steps = {s.get("step_type"): s for s in tutorial.get("steps") or []}
+        full_text = json.dumps(tutorial.get("steps") or [], ensure_ascii=False)
+
+        if node in JOURNAL_ENTRY_REQUIRED_NODES:
+            if full_text.count("차변") < 2 or full_text.count("대변") < 2:
+                errors.append(
+                    f"[{prefix}] 재무회계 노드는 차변/대변 분개 표기가 최소 2회 필요 "
+                    f"(차변 {full_text.count('차변')}회, 대변 {full_text.count('대변')}회)"
+                )
+
+        worked = steps.get("worked_example")
+        if worked and node not in VERBAL_NODES:
+            answer = str(worked.get("model_answer") or "")
+            if not (re.search(r"\d", answer) and ("=" in answer or "→" in answer)):
+                errors.append(
+                    f"[{prefix}] 계산형 노드의 worked_example.model_answer에 "
+                    "숫자 계산 과정(= 또는 →)이 없음"
+                )
+
+        bridge = steps.get("past_exam_bridge")
+        if bridge is not None:
+            related = bridge.get("related_question_ids") or []
+            if not related:
+                errors.append(f"[{prefix}] past_exam_bridge에 related_question_ids가 비어 있음")
+            elif real_ids:
+                unknown = [qid for qid in related if qid not in real_ids]
+                if unknown:
+                    errors.append(
+                        f"[{prefix}] past_exam_bridge가 존재하지 않는 기출 ID 참조: {unknown}"
+                    )
+    return errors
+
+
 def _semantic_errors(data: dict, schema_key: str) -> list[str]:
+    if schema_key == "subject_tutorials_exam_core":
+        return _exam_core_semantic_errors(data)
     if schema_key != "evaluation_question":
         return []
 
