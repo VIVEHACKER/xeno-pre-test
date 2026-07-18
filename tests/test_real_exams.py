@@ -183,9 +183,10 @@ def test_practice_entry_gates_unverified_explanation():
     verified = {"status": STATUS_VERIFIED, "walkthrough": "단계별 풀이", "model": "m"}
     mismatch = {"status": STATUS_MISMATCH, "walkthrough": "오답 풀이", "model": "m"}
 
+    # 답 일치 + judge 미실행 → 본문 노출하되 '근거 미검증' 라벨
     e1 = build_practice_entry(q, verified)
     assert e1["explanation"] == "단계별 풀이"
-    assert e1["explanation_kind"] == "ai_verified_answer_match"
+    assert e1["explanation_kind"] == "ai_answer_verified_reasoning_unreviewed"
 
     e2 = build_practice_entry(q, mismatch)
     assert e2["explanation"] == ""  # 오답 해설은 학습자 비노출
@@ -194,6 +195,24 @@ def test_practice_entry_gates_unverified_explanation():
     e3 = build_practice_entry(q, None)
     assert e3["explanation"] == ""
     assert e3["source"] == "real_exam"
+
+
+def test_practice_entry_judgment_gates_reasoning():
+    """judge fail 해설은 답이 맞아도 본문을 노출하지 않는다 (우연 정답 차단)."""
+    q = _question()
+    verified = {"status": STATUS_VERIFIED, "walkthrough": "근거 있는 풀이", "model": "m"}
+
+    passed = build_practice_entry(q, verified, {"verdict": "pass"})
+    assert passed["explanation"] == "근거 있는 풀이"
+    assert passed["explanation_kind"] == "ai_answer_and_reasoning_verified"
+    assert passed["reasoning_verdict"] == "pass"
+
+    failed = build_practice_entry(
+        q, verified, {"verdict": "fail", "errors": ["기준서 문단 오인용"]}
+    )
+    assert failed["explanation"] == ""  # 근거 오류 확정 — 노출 금지
+    assert failed["explanation_kind"] == "ai_answer_verified_reasoning_rejected"
+    assert failed["reasoning_errors"] == ["기준서 문단 오인용"]
 
 
 # ───────────────────────── API 통합 ─────────────────────────
@@ -263,7 +282,7 @@ def test_diagnose_real_exam_returns_verified_explanation(real_client):
     assert body["diagnosis"]["correct_choice"] == 2
     assert body["diagnosis"]["recommended_path"] is None  # 실기출은 풀이경로 없음
     assert body["explanation"] == "풀이 근거 (chosen=2)"
-    assert body["explanation_kind"] == "ai_verified_answer_match"
+    assert body["explanation_kind"] == "ai_answer_verified_reasoning_unreviewed"
 
 
 def test_diagnose_real_exam_without_explanation_says_none(real_client):

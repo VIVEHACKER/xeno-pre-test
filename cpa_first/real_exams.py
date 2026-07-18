@@ -106,16 +106,55 @@ def load_explanations(explanations_dir: Path | str) -> dict[str, dict[str, Any]]
     return records
 
 
+def load_judgments(judgments_dir: Path | str) -> dict[str, dict[str, Any]]:
+    """judgments/ 아래 풀이과정 채점 레코드를 question_id로 인덱싱해 반환."""
+    base = Path(judgments_dir)
+    if not base.exists():
+        return {}
+    records: dict[str, dict[str, Any]] = {}
+    for path in sorted(base.rglob("*.judgment.json")):
+        record = json.loads(path.read_text(encoding="utf-8"))
+        records[record["question_id"]] = record
+    return records
+
+
 def build_practice_entry(
-    question: dict[str, Any], explanation: dict[str, Any] | None
+    question: dict[str, Any],
+    explanation: dict[str, Any] | None,
+    judgment: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """실기출 문항을 /practice 학습 루프 항목으로 변환.
 
-    해설은 정답키 일치 검증(STATUS_VERIFIED)을 통과한 것만 본문을 싣는다.
-    나머지는 explanation_kind='none'으로 정직하게 비워둔다 — 오답일 수 있는
-    AI 해설을 학습자에게 공식 해설처럼 보여주지 않는다.
+    해설 노출 게이트는 2단계다:
+    1) 정답키 일치(STATUS_VERIFIED) — AI가 고른 답이 공식 정답과 같은가. 통과 못하면 미노출.
+    2) 풀이과정 채점(judgment) — 답이 맞아도 근거가 틀릴 수 있다(우연 정답).
+       judge가 fail이면 본문을 노출하지 않는다(실측: 로컬 모델은 답 일치 해설의
+       ~40%가 근거 오류). judge가 없으면 'reasoning_unreviewed'로 정직 태깅하되
+       본문은 싣되 라벨로 미검증임을 알린다.
+
+    explanation_kind:
+    - none                              : 정답 불일치 or 해설 없음 (본문 미노출)
+    - ai_answer_and_reasoning_verified  : 답 일치 + judge pass (본문 노출)
+    - ai_answer_verified_reasoning_unreviewed : 답 일치 + judge 미실행 (본문 노출, 미검증 라벨)
+    - ai_answer_verified_reasoning_rejected   : 답 일치 + judge fail (본문 미노출)
     """
     verified = explanation is not None and explanation.get("status") == STATUS_VERIFIED
+    verdict = judgment.get("verdict") if judgment else None
+
+    if not verified:
+        kind = "none"
+        show_body = False
+    elif verdict == "pass":
+        kind = "ai_answer_and_reasoning_verified"
+        show_body = True
+    elif verdict == "fail":
+        kind = "ai_answer_verified_reasoning_rejected"
+        show_body = False  # 근거 오류 확정 — 노출 금지
+    else:
+        # judge 미실행(또는 judge_parse_failed): 답만 검증됨. 본문은 노출하되 미검증 라벨.
+        kind = "ai_answer_verified_reasoning_unreviewed"
+        show_body = True
+
     entry = {
         "question_id": question["question_id"],
         "exam": question.get("exam"),
@@ -133,10 +172,13 @@ def build_practice_entry(
             "table_lossy": bool(question.get("table_lossy")),
             "math_lossy": bool(question.get("math_lossy")),
         },
-        "explanation": explanation["walkthrough"] if verified else "",
-        "explanation_kind": "ai_verified_answer_match" if verified else "none",
+        "explanation": explanation["walkthrough"] if (verified and show_body) else "",
+        "explanation_kind": kind,
     }
     if explanation is not None:
         entry["explanation_status"] = explanation.get("status")
         entry["explanation_model"] = explanation.get("model")
+    if judgment is not None:
+        entry["reasoning_verdict"] = verdict
+        entry["reasoning_errors"] = judgment.get("errors", []) if verdict == "fail" else []
     return entry

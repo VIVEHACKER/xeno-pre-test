@@ -53,6 +53,7 @@ from cpa_first.real_exams import (
     build_practice_entry,
     load_cpa2_subjective,
     load_explanations,
+    load_judgments,
     load_real_exam_questions,
 )
 from cpa_first.subjects import all_subject_ids
@@ -416,8 +417,13 @@ def create_app(
         m.setdefault("explanation_kind", "seed_solution_map")
     real_exam_questions = load_real_exam_questions(real_exams_base)
     real_exam_explanations = load_explanations(real_exams_base / "explanations")
+    real_exam_judgments = load_judgments(real_exams_base / "judgments")
     real_exam_entries = [
-        build_practice_entry(q, real_exam_explanations.get(q["question_id"]))
+        build_practice_entry(
+            q,
+            real_exam_explanations.get(q["question_id"]),
+            real_exam_judgments.get(q["question_id"]),
+        )
         for q in real_exam_questions
     ]
     for entry in real_exam_entries:
@@ -1075,8 +1081,9 @@ def create_app(
         )
         db_session.commit()
         # 풀이 후에는 해설을 함께 제공한다(시도 전 노출은 /practice가 차단).
-        # explanation_kind로 출처를 정직하게 표시: seed_solution_map(합성 시드) |
-        # ai_verified_answer_match(실기출, AI 생성·정답키 일치 검증) | none(해설 없음).
+        # explanation_kind로 출처·검증수준을 정직하게 표시: seed_solution_map(합성 시드) |
+        # ai_answer_and_reasoning_verified(답+근거 검증) |
+        # ai_answer_verified_reasoning_unreviewed(답만 검증) | none(해설 없음).
         explanation = problem_map.get("explanation", "")
         kind = problem_map.get("explanation_kind") or (
             "seed_solution_map" if explanation else "none"
