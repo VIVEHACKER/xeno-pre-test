@@ -18,15 +18,19 @@ def load_problem_solution_maps(path: Path) -> list[dict[str, Any]]:
     return list(payload.get("problem_solution_maps") or [])
 
 
-def _path_by_type(problem_map: dict[str, Any], path_type: str) -> dict[str, Any]:
+def _path_by_type(problem_map: dict[str, Any], path_type: str) -> dict[str, Any] | None:
+    """path_type 매칭 풀이경로. 없으면 None — 실기출처럼 solution_paths가 없는
+    문항도 정오·속도 진단은 가능해야 한다(경로 추천만 생략)."""
     for path in problem_map.get("solution_paths") or []:
         if path.get("path_type") == path_type:
             return path
-    raise ValueError(f"solution path not found: {path_type}")
+    return None
 
 
 def _choice_elimination(problem_map: dict[str, Any], choice_index: int) -> dict[str, Any] | None:
     path = _path_by_type(problem_map, "choice_elimination")
+    if path is None:
+        return None
     for row in path.get("choice_eliminations") or []:
         if row.get("choice_index") == choice_index:
             return row
@@ -77,7 +81,11 @@ def diagnose_problem_attempt(
         recommended_path = _path_by_type(problem_map, "reverse_check")
 
     selected_elimination = _choice_elimination(problem_map, selected_choice)
-    missing_links = [] if correct and not slow else list(recommended_path.get("concept_links") or [])
+    missing_links = (
+        []
+        if correct and not slow or recommended_path is None
+        else list(recommended_path.get("concept_links") or [])
+    )
 
     mistake_tags: list[str] = []
     if not correct:
@@ -86,9 +94,7 @@ def diagnose_problem_attempt(
         mistake_tags.append("time_pressure")
 
     focus_concepts = [
-        link["concept_label"]
-        for link in missing_links[:3]
-        if link.get("concept_label")
+        link["concept_label"] for link in missing_links[:3] if link.get("concept_label")
     ]
 
     return {
@@ -105,7 +111,9 @@ def diagnose_problem_attempt(
         "time_over_limit": slow,
         "mistake_tags": mistake_tags,
         "selected_choice_elimination": selected_elimination,
-        "recommended_path": {
+        "recommended_path": None
+        if recommended_path is None
+        else {
             "path_id": recommended_path["path_id"],
             "path_type": recommended_path["path_type"],
             "label": recommended_path["label"],
@@ -125,10 +133,16 @@ def diagnose_problem_attempt(
                 "ref_id": problem_map["question_id"],
                 "note": problem_map.get("unit", ""),
             },
-            {
-                "ref_type": "solution_path",
-                "ref_id": recommended_path["path_id"],
-                "note": recommended_path.get("label", ""),
-            },
+            *(
+                []
+                if recommended_path is None
+                else [
+                    {
+                        "ref_type": "solution_path",
+                        "ref_id": recommended_path["path_id"],
+                        "note": recommended_path.get("label", ""),
+                    }
+                ]
+            ),
         ],
     }

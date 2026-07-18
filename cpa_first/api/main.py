@@ -47,6 +47,12 @@ from cpa_first.engine import (
 from cpa_first.logging_config import configure_logging, get_logger
 from cpa_first.rag import TermIndex, load_chunks
 from cpa_first.ratelimit import ai_explain_rate_limit, limiter
+from cpa_first.real_exams import (
+    SOURCE_SYNTHETIC,
+    build_practice_entry,
+    load_explanations,
+    load_real_exam_questions,
+)
 from cpa_first.subjects import all_subject_ids
 
 logger = get_logger("cpa_first.api")
@@ -264,6 +270,7 @@ def create_app(
     database: Database | None = None,
     seed_dir: Path | None = None,
     prototype_dir: Path = PROTOTYPE_DIR,
+    real_exams_dir: Path | None = None,
 ) -> FastAPI:
     """앱 팩토리. 테스트는 settings/database/seed 디렉터리를 주입할 수 있다."""
     settings = settings or get_settings()
@@ -277,6 +284,7 @@ def create_app(
     rag_dir = seed_base / "data" / "seeds" / "rag"
     tutorials_path = seed_base / "data" / "seeds" / "subject_tutorials.json"
     problem_maps_path = prototype_dir / "problem_solution_maps.json"
+    real_exams_base = real_exams_dir or (seed_base / "data" / "real_exams" / "cpa1")
 
     if settings.sentry_dsn:
         import sentry_sdk
@@ -397,6 +405,21 @@ def create_app(
     }
     rules_by_key = {r["rule_key"]: r for r in rules}
 
+    # ── 실기출 로드: 파싱 문항 + 검증된 AI 해설을 학습 루프 항목으로 병합 ──
+    # 합성 159문항과 같은 인터페이스(/practice·/attempts/diagnose·ai-explain)로 서빙.
+    for m in problem_solution_maps:
+        m.setdefault("source", SOURCE_SYNTHETIC)
+        m.setdefault("explanation_kind", "seed_solution_map")
+    real_exam_questions = load_real_exam_questions(real_exams_base)
+    real_exam_explanations = load_explanations(real_exams_base / "explanations")
+    real_exam_entries = [
+        build_practice_entry(q, real_exam_explanations.get(q["question_id"]))
+        for q in real_exam_questions
+    ]
+    for entry in real_exam_entries:
+        # 합성 문항과 ID 충돌 시 합성이 우선(실기출 ID는 cpa1-real-* 네임스페이스라 실제 충돌 없음).
+        problem_maps_by_id.setdefault(entry["question_id"], entry)
+
     terms_full = _load_terms_full(terms_dir) if terms_dir.exists() else {}
     term_index = (
         TermIndex.from_paths(terms_dir, edges_path)
@@ -415,7 +438,10 @@ def create_app(
         for tid, t in tutorials_by_id.items()
     }
     # 연습 문항 목록(정렬 고정) — 정답/해설은 응답 직전에 제거한다.
-    practice_questions = sorted(problem_solution_maps, key=lambda m: m["question_id"])
+    # 합성 시드 + 실기출을 하나의 학습 루프로 서빙 (source 필터로 구분 가능).
+    practice_questions = sorted(
+        [*problem_solution_maps, *real_exam_entries], key=lambda m: m["question_id"]
+    )
 
     # AI 풀이 solver는 lazy 생성(설정 없으면 None 유지). 테스트는 app.state.ai_solver 주입.
     # sync 핸들러는 threadpool에서 돌므로 이중 생성 방지 락이 필요하다.
@@ -477,6 +503,7 @@ def create_app(
             "decision_rules": len(rules),
             "problems": len(problems),
             "problem_solution_maps": len(problem_solution_maps),
+            "real_exam_questions": len(real_exam_entries),
             "terms": len(terms_full),
             "term_edges": len(term_index.edges),
         }
@@ -491,6 +518,7 @@ def create_app(
             "decision_rules": len(rules),
             "problems": len(problems),
             "problem_solution_maps": len(problem_solution_maps),
+            "real_exam_questions": len(real_exam_entries),
             "terms": len(terms_full),
             "term_edges": len(term_index.edges),
         }
@@ -631,26 +659,45 @@ def create_app(
     # ───────────────────────── 연습 문항 (PUBLIC 목록 · 정답 비노출) ─────────────────────────
 
     def _practice_brief(m: dict) -> dict[str, Any]:
-        return {
+        brief = {
             "question_id": m["question_id"],
             "subject": m["subject"],
             "unit": m.get("unit"),
             "applicable_year": m.get("applicable_year"),
             "concept_tags": m.get("concept_tags") or [],
             "tutorial_id": m.get("tutorial_id"),
+            "source": m.get("source", SOURCE_SYNTHETIC),
+            "has_explanation": bool(m.get("explanation")),
         }
+        # 실기출 파싱 품질 경고(표/수식 손실) — 학습자가 원문 PDF 대조 필요 여부를 알게.
+        flags = m.get("quality_flags")
+        if flags and (flags.get("table_lossy") or flags.get("math_lossy")):
+            brief["quality_flags"] = flags
+        return brief
 
     @app.get("/practice")
     def list_practice(
-        subject: str = "", unit: str = "", limit: int = 20, after: str = ""
+        subject: str = "",
+        unit: str = "",
+        source: str = "",
+        year: int = 0,
+        limit: int = 20,
+        after: str = "",
     ) -> dict[str, Any]:
-        """풀 문항 목록 (커서 기반 페이지네이션, 정답/해설 비노출)."""
+        """풀 문항 목록 (커서 기반 페이지네이션, 정답/해설 비노출).
+
+        source=real_exam|synthetic, year=응시연도 필터.
+        """
         capped = max(1, min(limit, 50))
         out: list[dict[str, Any]] = []
         for m in practice_questions:
             if subject and m["subject"] != subject:
                 continue
             if unit and m.get("unit") != unit:
+                continue
+            if source and m.get("source", SOURCE_SYNTHETIC) != source:
+                continue
+            if year and m.get("applicable_year") != year:
                 continue
             if after and m["question_id"] <= after:
                 continue
@@ -712,6 +759,9 @@ def create_app(
             "ai_matches_key": matches,
             "walkthrough": result.rationale,
             "official_explanation": m.get("explanation", ""),
+            # 해설 출처 정직 표기 — 실기출의 저장 해설도 AI 생성(정답 일치 검증)이다.
+            "official_explanation_kind": m.get("explanation_kind")
+            or ("seed_solution_map" if m.get("explanation") else "none"),
             "note": None if matches else "AI 풀이가 공식 정답과 불일치 — 공식 해설을 우선하세요.",
         }
 
@@ -932,12 +982,19 @@ def create_app(
             diagnosis=diagnosis,
         )
         db_session.commit()
-        # 풀이 후에는 공식 해설을 함께 제공한다(시도 전 노출은 /practice가 차단).
+        # 풀이 후에는 해설을 함께 제공한다(시도 전 노출은 /practice가 차단).
+        # explanation_kind로 출처를 정직하게 표시: seed_solution_map(합성 시드) |
+        # ai_verified_answer_match(실기출, AI 생성·정답키 일치 검증) | none(해설 없음).
+        explanation = problem_map.get("explanation", "")
+        kind = problem_map.get("explanation_kind") or (
+            "seed_solution_map" if explanation else "none"
+        )
         return {
             "status": "ok",
             "attempt": record,
             "diagnosis": diagnosis,
-            "explanation": problem_map.get("explanation", ""),
+            "explanation": explanation,
+            "explanation_kind": kind if explanation else "none",
         }
 
     @app.get("/attempts")
