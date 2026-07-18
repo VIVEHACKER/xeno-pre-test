@@ -15,34 +15,56 @@
     "triggered_rule_keys"
   ],
   "properties": {
-    "prescription_id": { "type": "string" },
-    "user_id": { "type": "string" },
+    "prescription_id": {
+      "type": "string"
+    },
+    "user_id": {
+      "type": "string"
+    },
     "generated_at": {
       "type": "string",
       "format": "date-time"
     },
     "diagnosis": {
       "type": "object",
-      "required": ["summary", "risk_level"],
+      "required": [
+        "summary",
+        "risk_level"
+      ],
       "properties": {
-        "summary": { "type": "string" },
+        "summary": {
+          "type": "string"
+        },
         "risk_level": {
           "type": "string",
-          "enum": ["low", "moderate", "high"]
+          "enum": [
+            "low",
+            "moderate",
+            "high"
+          ]
         },
         "risk_drivers": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         }
       },
       "additionalProperties": false
     },
     "weekly_goal": {
       "type": "object",
-      "required": ["goal_text", "verification_metric"],
+      "required": [
+        "goal_text",
+        "verification_metric"
+      ],
       "properties": {
-        "goal_text": { "type": "string" },
-        "verification_metric": { "type": "string" }
+        "goal_text": {
+          "type": "string"
+        },
+        "verification_metric": {
+          "type": "string"
+        }
       },
       "additionalProperties": false
     },
@@ -51,12 +73,20 @@
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["task_text"],
+        "required": [
+          "task_text"
+        ],
         "properties": {
-          "task_text": { "type": "string" },
+          "task_text": {
+            "type": "string"
+          },
           "subject": {
             "type": "string",
-            "enum": ["accounting", "tax", "mixed"]
+            "enum": [
+              "accounting",
+              "tax",
+              "mixed"
+            ]
           },
           "estimated_minutes": {
             "type": "integer",
@@ -68,29 +98,61 @@
     },
     "concepts_to_review": {
       "type": "array",
-      "items": { "type": "string" }
+      "items": {
+        "type": "string"
+      }
     },
     "problems_to_solve": {
       "type": "array",
       "description": "오늘 풀 문항 추천 — 이유와 근거 참조 포함(따라갈 수 있는 처방의 핵심).",
       "items": {
         "type": "object",
-        "required": ["question_id", "subject", "reason", "evidence_refs"],
+        "required": [
+          "question_id",
+          "subject",
+          "reason",
+          "evidence_refs"
+        ],
         "properties": {
-          "question_id": { "type": "string" },
-          "subject": { "type": "string" },
-          "unit": { "type": ["string", "null"] },
-          "reason": { "type": "string" },
-          "priority_score": { "type": "number" },
+          "question_id": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "unit": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "reason": {
+            "type": "string"
+          },
+          "priority_score": {
+            "type": "number"
+          },
           "evidence_refs": {
             "type": "array",
             "items": {
               "type": "object",
-              "required": ["ref_type", "ref_id"],
+              "required": [
+                "ref_type",
+                "ref_id"
+              ],
               "properties": {
-                "ref_type": { "type": "string" },
-                "ref_id": { "type": "string" },
-                "note": { "type": ["string", "null"] }
+                "ref_type": {
+                  "type": "string"
+                },
+                "ref_id": {
+                  "type": "string"
+                },
+                "note": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
               },
               "additionalProperties": false
             }
@@ -104,12 +166,27 @@
       "description": "지금 단계에서 건너뛸 문항 — 스킵 사유 포함.",
       "items": {
         "type": "object",
-        "required": ["question_id", "subject", "reason"],
+        "required": [
+          "question_id",
+          "subject",
+          "reason"
+        ],
         "properties": {
-          "question_id": { "type": "string" },
-          "subject": { "type": "string" },
-          "unit": { "type": ["string", "null"] },
-          "reason": { "type": "string" }
+          "question_id": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "unit": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "reason": {
+            "type": "string"
+          }
         },
         "additionalProperties": false
       }
@@ -117,16 +194,36 @@
     "study_plan": {
       "type": "object",
       "description": "시험일까지의 다주차 로드맵(build_study_plan 산출).",
-      "required": ["total_weeks", "hours_per_week", "pass_bar", "weeks", "strategy_summary"],
+      "required": [
+        "total_weeks",
+        "hours_per_week",
+        "pass_bar",
+        "weeks",
+        "strategy_summary",
+        "feasibility"
+      ],
       "properties": {
-        "total_weeks": { "type": "integer", "minimum": 1 },
-        "hours_per_week": { "type": "number", "minimum": 0 },
+        "total_weeks": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "hours_per_week": {
+          "type": "number",
+          "minimum": 0
+        },
         "pass_bar": {
           "type": "object",
-          "required": ["average", "per_subject_floor"],
+          "required": [
+            "average",
+            "per_subject_floor"
+          ],
           "properties": {
-            "average": { "type": "number" },
-            "per_subject_floor": { "type": "number" }
+            "average": {
+              "type": "number"
+            },
+            "per_subject_floor": {
+              "type": "number"
+            }
           },
           "additionalProperties": false
         },
@@ -142,45 +239,183 @@
               "theme",
               "subject_allocation",
               "milestone",
-              "verification_metric"
+              "verification_metric",
+              "focus_content"
             ],
             "properties": {
-              "week_no": { "type": "integer", "minimum": 1 },
-              "days_range": { "type": "string" },
-              "stage": { "type": "string" },
-              "theme": { "type": "string" },
+              "week_no": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "days_range": {
+                "type": "string"
+              },
+              "stage": {
+                "type": "string"
+              },
+              "theme": {
+                "type": "string"
+              },
               "subject_allocation": {
                 "type": "array",
                 "items": {
                   "type": "object",
-                  "required": ["subject", "hours", "reason"],
+                  "required": [
+                    "subject",
+                    "hours",
+                    "reason"
+                  ],
                   "properties": {
-                    "subject": { "type": "string" },
-                    "hours": { "type": "number", "minimum": 0 },
-                    "reason": { "type": "string" }
+                    "subject": {
+                      "type": "string"
+                    },
+                    "hours": {
+                      "type": "number",
+                      "minimum": 0
+                    },
+                    "reason": {
+                      "type": "string"
+                    }
                   },
                   "additionalProperties": false
                 }
               },
-              "milestone": { "type": "string" },
-              "verification_metric": { "type": "string" }
+              "milestone": {
+                "type": "string"
+              },
+              "verification_metric": {
+                "type": "string"
+              },
+              "focus_content": {
+                "type": "array",
+                "description": "이번 주 학습 콘텐츠 배정 (튜토리얼/문항 세트 참조).",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "type"
+                  ],
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "tutorial",
+                        "practice_set",
+                        "real_exam_set",
+                        "mock_exam",
+                        "wrong_answer_review"
+                      ]
+                    },
+                    "subject": {
+                      "type": "string"
+                    },
+                    "tutorial_id": {
+                      "type": "string"
+                    },
+                    "level": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "ontology_node": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "source": {
+                      "type": "string"
+                    },
+                    "year": {
+                      "type": "integer"
+                    },
+                    "available_questions": {
+                      "type": "integer"
+                    },
+                    "note": {
+                      "type": "string"
+                    },
+                    "api_query": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
             },
             "additionalProperties": false
           }
         },
-        "strategy_summary": { "type": "string" },
+        "strategy_summary": {
+          "type": "string"
+        },
         "evidence_refs": {
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["ref_type", "ref_id"],
+            "required": [
+              "ref_type",
+              "ref_id"
+            ],
             "properties": {
-              "ref_type": { "type": "string" },
-              "ref_id": { "type": "string" },
-              "note": { "type": ["string", "null"] }
+              "ref_type": {
+                "type": "string"
+              },
+              "ref_id": {
+                "type": "string"
+              },
+              "note": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
             },
             "additionalProperties": false
           }
+        },
+        "feasibility": {
+          "type": "object",
+          "description": "계획 학습시간 vs 합격 필요 추정치 대조 (경고 장치).",
+          "required": [
+            "required_hours_estimate",
+            "planned_hours",
+            "ratio",
+            "verdict",
+            "note",
+            "assumption"
+          ],
+          "properties": {
+            "required_hours_estimate": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "planned_hours": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "ratio": {
+              "type": "number",
+              "minimum": 0
+            },
+            "verdict": {
+              "type": "string",
+              "enum": [
+                "sufficient",
+                "tight",
+                "insufficient"
+              ]
+            },
+            "note": {
+              "type": "string",
+              "minLength": 1
+            },
+            "assumption": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
         }
       },
       "additionalProperties": false
@@ -188,7 +423,9 @@
     "triggered_rule_keys": {
       "type": "array",
       "description": "이 처방을 발동시킨 decision_rule.rule_key 목록.",
-      "items": { "type": "string" }
+      "items": {
+        "type": "string"
+      }
     },
     "evidence_refs": {
       "type": "array",
@@ -196,7 +433,10 @@
       "description": "근거 추적용 참조. 처방 검증 가능성의 핵심.",
       "items": {
         "type": "object",
-        "required": ["ref_type", "ref_id"],
+        "required": [
+          "ref_type",
+          "ref_id"
+        ],
         "properties": {
           "ref_type": {
             "type": "string",
@@ -208,8 +448,15 @@
               "user_state"
             ]
           },
-          "ref_id": { "type": "string" },
-          "note": { "type": ["string", "null"] }
+          "ref_id": {
+            "type": "string"
+          },
+          "note": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
         },
         "additionalProperties": false
       }

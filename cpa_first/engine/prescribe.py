@@ -287,6 +287,7 @@ def prescribe(
     problem_intel: list[dict] | None = None,
     solution_maps: list[dict] | None = None,
     attempted_question_ids: set[str] | frozenset = frozenset(),
+    study_plan_catalog: dict | None = None,
 ) -> dict:
     """진단 → 처방. solution_maps가 주어지면 실제 풀 문항 추천까지 채운다.
 
@@ -318,7 +319,7 @@ def prescribe(
         "concepts_to_review": _concepts_to_review(user_state, problem_intel),
         "problems_to_solve": recommendation["problems_to_solve"],
         "problems_to_skip": recommendation["problems_to_skip"],
-        "study_plan": build_study_plan(user_state),
+        "study_plan": build_study_plan(user_state, content_catalog=study_plan_catalog),
         "triggered_rule_keys": [r["rule_key"] for r in matched],
         "evidence_refs": _evidence_refs(matched, user_state),
     }

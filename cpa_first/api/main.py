@@ -283,6 +283,7 @@ def create_app(
     edges_path = seed_base / "data" / "seeds" / "term_graph" / "edges.jsonl"
     rag_dir = seed_base / "data" / "seeds" / "rag"
     tutorials_path = seed_base / "data" / "seeds" / "subject_tutorials.json"
+    tutorials_exam_core_path = seed_base / "data" / "seeds" / "subject_tutorials_exam_core.json"
     problem_maps_path = prototype_dir / "problem_solution_maps.json"
     real_exams_base = real_exams_dir or (seed_base / "data" / "real_exams" / "cpa1")
 
@@ -427,7 +428,11 @@ def create_app(
         else TermIndex(terms=[], edges=[])
     )
     chunks_by_id = {c.chunk_id: c for c in (load_chunks(rag_dir) if rag_dir.exists() else [])}
-    tutorials_full = _load_tutorials_full(tutorials_path)
+    # intro(기존) + exam_core(난이도 축 확장) 병합 — 같은 /tutorials 인터페이스로 서빙.
+    tutorials_full = [
+        *_load_tutorials_full(tutorials_path),
+        *_load_tutorials_full(tutorials_exam_core_path),
+    ]
     tutorials_by_id = {t["tutorial_id"]: t for t in tutorials_full}
     tutorials_meta = {
         tid: {
@@ -442,6 +447,37 @@ def create_app(
     practice_questions = sorted(
         [*problem_solution_maps, *real_exam_entries], key=lambda m: m["question_id"]
     )
+
+    # study_plan 주차↔콘텐츠 매핑용 카탈로그 — 엔진 과목 키(accounting 등)로 변환.
+    # CPA1 튜토리얼만: 플랜 엔진은 현재 1차 로드맵 전용이다.
+    def _engine_subject(subject_id: str) -> str | None:
+        return subject_id.split("_", 1)[1] if subject_id.startswith("cpa1_") else None
+
+    catalog_tutorials = [
+        {
+            "tutorial_id": t["tutorial_id"],
+            "subject": _engine_subject(t.get("subject_id", "")),
+            "level": t.get("level"),
+            "ontology_node": t.get("ontology_node"),
+            "priority": 1 if t.get("level") == "intro_low" else 2,
+        }
+        for t in tutorials_full
+        if _engine_subject(t.get("subject_id", ""))
+    ]
+    real_exam_years: dict[str, dict[int, int]] = {}
+    for entry in real_exam_entries:
+        year = entry.get("applicable_year")
+        if year:
+            by_year = real_exam_years.setdefault(entry["subject"], {})
+            by_year[year] = by_year.get(year, 0) + 1
+    synthetic_counts: dict[str, int] = {}
+    for m in problem_solution_maps:
+        synthetic_counts[m["subject"]] = synthetic_counts.get(m["subject"], 0) + 1
+    study_plan_catalog = {
+        "tutorials": catalog_tutorials,
+        "real_exam_years": real_exam_years,
+        "synthetic_counts": synthetic_counts,
+    }
 
     # AI 풀이 solver는 lazy 생성(설정 없으면 None 유지). 테스트는 app.state.ai_solver 주입.
     # sync 핸들러는 threadpool에서 돌므로 이중 생성 방지 락이 필요하다.
@@ -631,7 +667,9 @@ def create_app(
         return sid == subject or sid.endswith(f"_{subject}")
 
     @app.get("/tutorials")
-    def list_tutorials(subject: str = "") -> dict[str, Any]:
+    def list_tutorials(
+        subject: str = "", level: str = "", ontology_node: str = ""
+    ) -> dict[str, Any]:
         items = [
             {
                 "tutorial_id": t["tutorial_id"],
@@ -641,10 +679,15 @@ def create_app(
                 "level": t.get("level", ""),
                 "objective": t.get("objective", ""),
                 "entry_topic": t.get("entry_topic", ""),
+                "ontology_node": t.get("ontology_node"),
+                "review_status": t.get("review_status"),
+                "prerequisite_tutorial_id": t.get("prerequisite_tutorial_id"),
                 "n_steps": len(t.get("steps") or []),
             }
             for t in tutorials_full
-            if not subject or _tutorial_matches_subject(t, subject)
+            if (not subject or _tutorial_matches_subject(t, subject))
+            and (not level or t.get("level") == level)
+            and (not ontology_node or t.get("ontology_node") == ontology_node)
         ]
         items.sort(key=lambda x: x["tutorial_id"])
         return {"count": len(items), "tutorials": items}
@@ -806,6 +849,7 @@ def create_app(
             problem_intel=problems,
             solution_maps=problem_solution_maps,
             attempted_question_ids=_attempted_ids(db_session, user.id),
+            study_plan_catalog=study_plan_catalog,
         )
         repo.upsert_user_state(db_session, user_id=user.id, state=user_state)
         repo.save_prescription(db_session, user_id=user.id, prescription=rx)
@@ -1042,6 +1086,7 @@ def create_app(
             problem_intel=problems,
             solution_maps=problem_solution_maps,
             attempted_question_ids=_attempted_ids(db_session, user.id),
+            study_plan_catalog=study_plan_catalog,
         )
         repo.upsert_user_state(db_session, user_id=user.id, state=user_state)
         repo.save_prescription(db_session, user_id=user.id, prescription=rx)

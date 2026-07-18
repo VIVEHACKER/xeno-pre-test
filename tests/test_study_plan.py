@@ -102,11 +102,46 @@ def test_d7_compression_keeps_final_stage():
     assert plan["weeks"][0]["stage"] == "final"
 
 
-def test_max_weeks_cap():
-    """D-200이라도 max_weeks=16으로 상한."""
-    plan = build_study_plan(make_user_state(days=200))
+def test_max_weeks_default_supports_one_year():
+    """기본 상한 52주 — D-365 입력이 절단 없이 1년 로드맵으로 표현된다."""
+    plan = build_study_plan(make_user_state(days=365))
+    assert plan["total_weeks"] == 52
+    assert len(plan["weeks"]) == 52
+
+    # D-200은 ceil(200/7)=29주 그대로 (과거 16주 절단 회귀 방지)
+    plan_200 = build_study_plan(make_user_state(days=200))
+    assert plan_200["total_weeks"] == 29
+
+
+def test_max_weeks_override_still_caps():
+    plan = build_study_plan(make_user_state(days=200), max_weeks=16)
     assert plan["total_weeks"] == 16
     assert len(plan["weeks"]) == 16
+
+
+def test_feasibility_sufficient_vs_insufficient():
+    """총 학습시간 vs 필요 추정치 대조 — 시간 부족을 조용히 넘기지 않는다."""
+    # D-365 × 10h/일 = 3,650h ≥ intro부터 필요 3,500h → sufficient
+    rich = build_study_plan(make_user_state(days=365, stage="intro", hours=10))
+    assert rich["feasibility"]["verdict"] == "sufficient"
+    assert rich["feasibility"]["planned_hours"] >= rich["feasibility"]["required_hours_estimate"]
+
+    # D-90 × 2h/일 ≈ 182h → intro부터는 명백히 insufficient + 경고 노트
+    poor = build_study_plan(make_user_state(days=90, stage="intro", hours=2))
+    assert poor["feasibility"]["verdict"] == "insufficient"
+    assert "합격권 도달이 어렵다" in poor["feasibility"]["note"]
+    # 추정 가정을 정직하게 명시
+    assert "3,500h" in poor["feasibility"]["assumption"]
+
+
+def test_feasibility_scales_with_remaining_stages():
+    """뒤 단계에서 시작할수록 필요 추정치가 줄어든다 (잔여 가중치 비례)."""
+    from_intro = build_study_plan(make_user_state(days=90, stage="intro"))
+    from_mock = build_study_plan(make_user_state(days=90, stage="mock_exam"))
+    assert (
+        from_mock["feasibility"]["required_hours_estimate"]
+        < from_intro["feasibility"]["required_hours_estimate"]
+    )
 
 
 def test_days_range_format():
@@ -242,3 +277,134 @@ def test_strategy_summary_mentions_plan_shape():
     summary = plan["strategy_summary"]
     assert "13주" in summary
     assert "과락" in summary
+
+
+# ---------------------------------------------------------------- 주차↔콘텐츠 매핑
+
+
+def make_catalog() -> dict:
+    return {
+        "tutorials": [
+            {
+                "tutorial_id": "tutorial_cpa1_accounting",
+                "subject": "accounting",
+                "level": "intro_low",
+                "ontology_node": None,
+                "priority": 1,
+            },
+            {
+                "tutorial_id": "tutorial_acct_revenue_exam_core",
+                "subject": "accounting",
+                "level": "exam_core",
+                "ontology_node": "acct_revenue",
+                "priority": 2,
+            },
+            {
+                "tutorial_id": "tutorial_acct_inventory_exam_core",
+                "subject": "accounting",
+                "level": "exam_core",
+                "ontology_node": "acct_inventory",
+                "priority": 2,
+            },
+            {
+                "tutorial_id": "tutorial_tax_corporate_income_exam_core",
+                "subject": "tax",
+                "level": "exam_core",
+                "ontology_node": "tax_corporate_income",
+                "priority": 2,
+            },
+        ],
+        "real_exam_years": {
+            "accounting": {2024: 50, 2025: 44, 2026: 50},
+            "tax": {2024: 40, 2025: 40, 2026: 39},
+        },
+        "synthetic_counts": {"accounting": 60, "tax": 39},
+    }
+
+
+def test_week_content_assignment_covers_all_content_types():
+    """카탈로그가 주어지면 주차에 튜토리얼/연습/기출/모의/오답복습이 배정된다."""
+    plan = build_study_plan(
+        make_user_state(days=180, stage="intro"), content_catalog=make_catalog()
+    )
+    types_by_stage: dict[str, set[str]] = {}
+    for week in plan["weeks"]:
+        for item in week["focus_content"]:
+            types_by_stage.setdefault(week["stage"], set()).add(item["type"])
+
+    teaching = (
+        types_by_stage.get("intro", set())
+        | types_by_stage.get("post_lecture", set())
+        | types_by_stage.get("objective_entry", set())
+    )
+    assert "tutorial" in teaching
+    assert "practice_set" in types_by_stage["objective_entry"]
+    assert "real_exam_set" in types_by_stage["past_exam_rotation"]
+    assert "mock_exam" in types_by_stage["mock_exam"]
+    assert "wrong_answer_review" in types_by_stage["final"]
+
+
+def test_all_catalog_tutorials_assigned_exactly_once():
+    plan = build_study_plan(
+        make_user_state(days=180, stage="intro"), content_catalog=make_catalog()
+    )
+    assigned = [
+        item["tutorial_id"]
+        for week in plan["weeks"]
+        for item in week["focus_content"]
+        if item["type"] == "tutorial"
+    ]
+    expected = {t["tutorial_id"] for t in make_catalog()["tutorials"]}
+    assert set(assigned) == expected
+    assert len(assigned) == len(expected)  # 중복 배정 없음
+
+
+def test_intro_tutorial_scheduled_before_exam_core():
+    """입문 튜토리얼이 exam_core보다 같은 주 또는 앞 주에 배정된다."""
+    plan = build_study_plan(
+        make_user_state(days=180, stage="intro"), content_catalog=make_catalog()
+    )
+    week_of: dict[str, int] = {}
+    for week in plan["weeks"]:
+        for item in week["focus_content"]:
+            if item["type"] == "tutorial":
+                week_of[item["tutorial_id"]] = week["week_no"]
+    assert week_of["tutorial_cpa1_accounting"] <= week_of["tutorial_acct_revenue_exam_core"]
+
+
+def test_past_exam_rotation_cycles_years_ascending():
+    plan = build_study_plan(
+        make_user_state(days=180, stage="intro"), content_catalog=make_catalog()
+    )
+    rotation_years = []
+    for week in plan["weeks"]:
+        if week["stage"] != "past_exam_rotation":
+            continue
+        years = {item["year"] for item in week["focus_content"] if item["type"] == "real_exam_set"}
+        assert len(years) == 1  # 한 주는 한 연도 회독
+        rotation_years.append(years.pop())
+    assert rotation_years[: 3] == [2024, 2025, 2026]
+
+
+def test_api_query_resolvable_refs():
+    """focus_content 참조는 /practice·/attempts 쿼리로 바로 해석 가능해야 한다."""
+    plan = build_study_plan(
+        make_user_state(days=180, stage="intro"), content_catalog=make_catalog()
+    )
+    for week in plan["weeks"]:
+        for item in week["focus_content"]:
+            if item["type"] != "tutorial":
+                assert item["api_query"].startswith("/"), item
+
+
+def test_no_catalog_yields_empty_focus_content():
+    plan = build_study_plan(make_user_state(days=90))
+    assert all(week["focus_content"] == [] for week in plan["weeks"])
+
+
+def test_content_assignment_deterministic():
+    a = build_study_plan(make_user_state(days=180, stage="intro"), content_catalog=make_catalog())
+    b = build_study_plan(make_user_state(days=180, stage="intro"), content_catalog=make_catalog())
+    assert json.dumps(a, ensure_ascii=False, sort_keys=True) == json.dumps(
+        b, ensure_ascii=False, sort_keys=True
+    )

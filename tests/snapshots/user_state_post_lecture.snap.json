@@ -1,10 +1,32 @@
 {
-  "prescription_id": "rx-seed-user-post-lecture-db7808b4d707bc72",
-  "user_id": "seed-user-post-lecture",
-  "generated_at": "2026-05-11T04:00:00+00:00",
+  "concepts_to_review": [
+    "세법: 법인세 손금",
+    "세법: 부가가치세",
+    "원가관리: CVP"
+  ],
+  "daily_tasks": [
+    {
+      "estimated_minutes": 30,
+      "subject": "accounting",
+      "task_text": "신규 단원 진입을 중단하고, 약점 단원의 객관식 기초형부터 회복한다. 매일 동일 단원 객관식 12문항을 동일 시간대에 반복해 흡수율을 끌어올린다."
+    },
+    {
+      "estimated_minutes": 30,
+      "subject": "mixed",
+      "task_text": "문제량 확대를 잠시 멈추고, 핵심 개념 5개를 골라 정의/적용/예외/구분 기준 4단으로 재정렬한다. 재정렬 후 같은 단원 객관식 15문항으로 검증한다."
+    },
+    {
+      "estimated_minutes": 60,
+      "subject": "mixed",
+      "task_text": "신규 강의 확장을 제한하고 객관식 세트와 오답 원인 분류를 주간 처방에 포함한다."
+    },
+    {
+      "estimated_minutes": 45,
+      "subject": "mixed",
+      "task_text": "회계학과 세법개론을 주간 점수 상승의 중심축으로 두고, 나머지 과목은 유지 블록으로 분리한다."
+    }
+  ],
   "diagnosis": {
-    "summary": "단계 post_lecture에서 매칭된 신호: 회계학 과락 방어, 개념 재정렬 우선, 객관식 전환 조건, 회계/세법 핵심축 집중. 잔여 240일, 리스크 점수 60/100.",
-    "risk_level": "high",
     "risk_drivers": [
       "accounting 과락 위험(accuracy<0.4)",
       "accounting 핵심 개념 공백",
@@ -16,391 +38,814 @@
       "회계/세법 핵심축 집중",
       "concept_gap",
       "objective_entry_delay"
-    ]
+    ],
+    "risk_level": "high",
+    "summary": "단계 post_lecture에서 매칭된 신호: 회계학 과락 방어, 개념 재정렬 우선, 객관식 전환 조건, 회계/세법 핵심축 집중. 잔여 240일, 리스크 점수 60/100."
   },
-  "weekly_goal": {
-    "goal_text": "신규 단원 진입을 중단하고, 약점 단원의 객관식 기초형부터 회복한다. 매일 동일 단원 객관식 12문항을 동일 시간대에 반복해 흡수율을 끌어올린다.",
-    "verification_metric": "주간 처방 수행률 80% 이상, 매칭 규칙 accounting_fail_defense 관련 약점 지표 측정"
-  },
-  "daily_tasks": [
+  "evidence_refs": [
     {
-      "task_text": "신규 단원 진입을 중단하고, 약점 단원의 객관식 기초형부터 회복한다. 매일 동일 단원 객관식 12문항을 동일 시간대에 반복해 흡수율을 끌어올린다.",
-      "subject": "accounting",
-      "estimated_minutes": 30
+      "note": "stage=post_lecture, days_until_exam=240",
+      "ref_id": "seed-user-post-lecture",
+      "ref_type": "user_state"
     },
     {
-      "task_text": "문제량 확대를 잠시 멈추고, 핵심 개념 5개를 골라 정의/적용/예외/구분 기준 4단으로 재정렬한다. 재정렬 후 같은 단원 객관식 15문항으로 검증한다.",
-      "subject": "mixed",
-      "estimated_minutes": 30
+      "note": "회계학 과락 방어",
+      "ref_id": "accounting_fail_defense",
+      "ref_type": "decision_rule"
     },
     {
-      "task_text": "신규 강의 확장을 제한하고 객관식 세트와 오답 원인 분류를 주간 처방에 포함한다.",
-      "subject": "mixed",
-      "estimated_minutes": 60
+      "note": "개념 재정렬 우선",
+      "ref_id": "concept_rebuild_priority",
+      "ref_type": "decision_rule"
     },
     {
-      "task_text": "회계학과 세법개론을 주간 점수 상승의 중심축으로 두고, 나머지 과목은 유지 블록으로 분리한다.",
-      "subject": "mixed",
-      "estimated_minutes": 45
+      "note": "객관식 전환 조건",
+      "ref_id": "objective_entry_timing",
+      "ref_type": "decision_rule"
+    },
+    {
+      "note": "회계/세법 핵심축 집중",
+      "ref_id": "accounting_tax_core_focus",
+      "ref_type": "decision_rule"
     }
   ],
-  "concepts_to_review": [
-    "세법: 법인세 손금",
-    "세법: 부가가치세",
-    "원가관리: CVP"
-  ],
-  "problems_to_solve": [],
+  "generated_at": "2026-05-11T04:00:00+00:00",
+  "prescription_id": "rx-seed-user-post-lecture-db7808b4d707bc72",
   "problems_to_skip": [],
+  "problems_to_solve": [],
   "study_plan": {
-    "total_weeks": 16,
+    "evidence_refs": [
+      {
+        "note": "stage=post_lecture, days_until_exam=240, available_hours_per_day=8",
+        "ref_id": "seed-user-post-lecture",
+        "ref_type": "user_state"
+      },
+      {
+        "note": "accuracy=0.38, time_overrun_rate=0.18",
+        "ref_id": "accounting",
+        "ref_type": "subject_state"
+      },
+      {
+        "note": "accuracy=0.41, time_overrun_rate=0.22",
+        "ref_id": "tax",
+        "ref_type": "subject_state"
+      },
+      {
+        "note": "전 과목 평균 60% 이상 AND 매 과목 40% 이상(과락 기준)",
+        "ref_id": "CPA_1",
+        "ref_type": "pass_criteria"
+      }
+    ],
+    "feasibility": {
+      "assumption": "전체 여정 필요시간을 3,500h(통상 3,000~5,000h 수험 통계의 중앙 추정)로 두고 잔여 단계 가중치 비율로 환산한 추정치 — 개인 편차가 크다.",
+      "note": "계획 학습시간 1960h는 필요 추정치 3231h의 61%에 불과하다 — 이 시간으로는 합격권 도달이 어렵다. available_hours_per_day 상향 또는 목표 시험 연도 조정을 권한다.",
+      "planned_hours": 1960,
+      "ratio": 0.61,
+      "required_hours_estimate": 3231,
+      "verdict": "insufficient"
+    },
     "hours_per_week": 56.0,
     "pass_bar": {
       "average": 0.6,
       "per_subject_floor": 0.4
     },
+    "strategy_summary": "D-240 기준 총 35주 로드맵: 강의 복습 6주 → 객관식 진입 8주 → 기출 회독 11주 → 모의고사 6주 → 파이널 4주. 과락 위험 과목(회계)은 주당 최소 15% 시간을 보장해 40% 과락선을 방어한다. 약점 과목(세법)에 시간을 가중 배정한다. 합격 기준은 전 과목 평균 60% 이상 AND 매 과목 40% 이상이다.",
+    "total_weeks": 35,
     "weeks": [
       {
-        "week_no": 1,
         "days_range": "D-240~D-234",
+        "focus_content": [],
+        "milestone": "수강 단원 복습과 기본문제 풀이 완료 (1/6주차)",
         "stage": "post_lecture",
-        "theme": "강의 복습과 기본 문제 정착",
         "subject_allocation": [
           {
-            "subject": "accounting",
             "hours": 35.81,
-            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다."
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
           },
           {
-            "subject": "tax",
             "hours": 20.19,
-            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
           }
         ],
-        "milestone": "수강 단원 복습과 기본문제 풀이 완료 (1/3주차)",
-        "verification_metric": "복습 단원 기본문제 정답률 70% 이상"
+        "theme": "강의 복습과 기본 문제 정착",
+        "verification_metric": "복습 단원 기본문제 정답률 70% 이상",
+        "week_no": 1
       },
       {
-        "week_no": 2,
         "days_range": "D-233~D-227",
+        "focus_content": [],
+        "milestone": "수강 단원 복습과 기본문제 풀이 완료 (2/6주차)",
         "stage": "post_lecture",
-        "theme": "강의 복습과 기본 문제 정착",
         "subject_allocation": [
           {
-            "subject": "accounting",
             "hours": 35.81,
-            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다."
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
           },
           {
-            "subject": "tax",
             "hours": 20.19,
-            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
           }
         ],
-        "milestone": "수강 단원 복습과 기본문제 풀이 완료 (2/3주차)",
-        "verification_metric": "복습 단원 기본문제 정답률 70% 이상"
+        "theme": "강의 복습과 기본 문제 정착",
+        "verification_metric": "복습 단원 기본문제 정답률 70% 이상",
+        "week_no": 2
       },
       {
-        "week_no": 3,
         "days_range": "D-226~D-220",
+        "focus_content": [],
+        "milestone": "수강 단원 복습과 기본문제 풀이 완료 (3/6주차)",
         "stage": "post_lecture",
+        "subject_allocation": [
+          {
+            "hours": 35.81,
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
+          },
+          {
+            "hours": 20.19,
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
+          }
+        ],
         "theme": "강의 복습과 기본 문제 정착",
-        "subject_allocation": [
-          {
-            "subject": "accounting",
-            "hours": 35.81,
-            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다."
-          },
-          {
-            "subject": "tax",
-            "hours": 20.19,
-            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
-          }
-        ],
-        "milestone": "수강 단원 복습과 기본문제 풀이 완료 (3/3주차)",
-        "verification_metric": "복습 단원 기본문제 정답률 70% 이상"
+        "verification_metric": "복습 단원 기본문제 정답률 70% 이상",
+        "week_no": 3
       },
       {
-        "week_no": 4,
         "days_range": "D-219~D-213",
-        "stage": "objective_entry",
-        "theme": "객관식 유형 진입 훈련",
+        "focus_content": [],
+        "milestone": "수강 단원 복습과 기본문제 풀이 완료 (4/6주차)",
+        "stage": "post_lecture",
         "subject_allocation": [
           {
-            "subject": "accounting",
             "hours": 35.81,
-            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다."
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
           },
           {
-            "subject": "tax",
             "hours": 20.19,
-            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
           }
         ],
-        "milestone": "객관식 유형별 문제 세트 풀이 완료 (1/4주차)",
-        "verification_metric": "객관식 세트 정답률 55% 이상, 문항당 평균 풀이 시간 기록"
+        "theme": "강의 복습과 기본 문제 정착",
+        "verification_metric": "복습 단원 기본문제 정답률 70% 이상",
+        "week_no": 4
       },
       {
-        "week_no": 5,
         "days_range": "D-212~D-206",
-        "stage": "objective_entry",
-        "theme": "객관식 유형 진입 훈련",
+        "focus_content": [],
+        "milestone": "수강 단원 복습과 기본문제 풀이 완료 (5/6주차)",
+        "stage": "post_lecture",
         "subject_allocation": [
           {
-            "subject": "accounting",
             "hours": 35.81,
-            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다."
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
           },
           {
-            "subject": "tax",
             "hours": 20.19,
-            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
           }
         ],
-        "milestone": "객관식 유형별 문제 세트 풀이 완료 (2/4주차)",
-        "verification_metric": "객관식 세트 정답률 55% 이상, 문항당 평균 풀이 시간 기록"
+        "theme": "강의 복습과 기본 문제 정착",
+        "verification_metric": "복습 단원 기본문제 정답률 70% 이상",
+        "week_no": 5
       },
       {
-        "week_no": 6,
         "days_range": "D-205~D-199",
-        "stage": "objective_entry",
-        "theme": "객관식 유형 진입 훈련",
+        "focus_content": [],
+        "milestone": "수강 단원 복습과 기본문제 풀이 완료 (6/6주차)",
+        "stage": "post_lecture",
         "subject_allocation": [
           {
-            "subject": "accounting",
             "hours": 35.81,
-            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다."
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
           },
           {
-            "subject": "tax",
             "hours": 20.19,
-            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
           }
         ],
-        "milestone": "객관식 유형별 문제 세트 풀이 완료 (3/4주차)",
-        "verification_metric": "객관식 세트 정답률 55% 이상, 문항당 평균 풀이 시간 기록"
+        "theme": "강의 복습과 기본 문제 정착",
+        "verification_metric": "복습 단원 기본문제 정답률 70% 이상",
+        "week_no": 6
       },
       {
-        "week_no": 7,
         "days_range": "D-198~D-192",
+        "focus_content": [],
+        "milestone": "객관식 유형별 문제 세트 풀이 완료 (1/8주차)",
         "stage": "objective_entry",
+        "subject_allocation": [
+          {
+            "hours": 35.81,
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
+          },
+          {
+            "hours": 20.19,
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
+          }
+        ],
         "theme": "객관식 유형 진입 훈련",
-        "subject_allocation": [
-          {
-            "subject": "accounting",
-            "hours": 35.81,
-            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다."
-          },
-          {
-            "subject": "tax",
-            "hours": 20.19,
-            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
-          }
-        ],
-        "milestone": "객관식 유형별 문제 세트 풀이 완료 (4/4주차)",
-        "verification_metric": "객관식 세트 정답률 55% 이상, 문항당 평균 풀이 시간 기록"
+        "verification_metric": "객관식 세트 정답률 55% 이상, 문항당 평균 풀이 시간 기록",
+        "week_no": 7
       },
       {
-        "week_no": 8,
         "days_range": "D-191~D-185",
-        "stage": "past_exam_rotation",
-        "theme": "기출 회독과 약점 보강",
+        "focus_content": [],
+        "milestone": "객관식 유형별 문제 세트 풀이 완료 (2/8주차)",
+        "stage": "objective_entry",
         "subject_allocation": [
           {
-            "subject": "accounting",
             "hours": 35.81,
-            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다."
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
           },
           {
-            "subject": "tax",
             "hours": 20.19,
-            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
           }
         ],
-        "milestone": "기출 1개년 회독과 오답 분석 완료 (1/4주차)",
-        "verification_metric": "기출 1회분 정답률 60% 이상, 시간 초과율 30% 이하"
+        "theme": "객관식 유형 진입 훈련",
+        "verification_metric": "객관식 세트 정답률 55% 이상, 문항당 평균 풀이 시간 기록",
+        "week_no": 8
       },
       {
-        "week_no": 9,
         "days_range": "D-184~D-178",
-        "stage": "past_exam_rotation",
-        "theme": "기출 회독과 약점 보강",
+        "focus_content": [],
+        "milestone": "객관식 유형별 문제 세트 풀이 완료 (3/8주차)",
+        "stage": "objective_entry",
         "subject_allocation": [
           {
-            "subject": "accounting",
             "hours": 35.81,
-            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다."
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
           },
           {
-            "subject": "tax",
             "hours": 20.19,
-            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
           }
         ],
-        "milestone": "기출 1개년 회독과 오답 분석 완료 (2/4주차)",
-        "verification_metric": "기출 1회분 정답률 60% 이상, 시간 초과율 30% 이하"
+        "theme": "객관식 유형 진입 훈련",
+        "verification_metric": "객관식 세트 정답률 55% 이상, 문항당 평균 풀이 시간 기록",
+        "week_no": 9
       },
       {
-        "week_no": 10,
         "days_range": "D-177~D-171",
-        "stage": "past_exam_rotation",
-        "theme": "기출 회독과 약점 보강",
+        "focus_content": [],
+        "milestone": "객관식 유형별 문제 세트 풀이 완료 (4/8주차)",
+        "stage": "objective_entry",
         "subject_allocation": [
           {
-            "subject": "accounting",
             "hours": 35.81,
-            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다."
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
           },
           {
-            "subject": "tax",
             "hours": 20.19,
-            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
           }
         ],
-        "milestone": "기출 1개년 회독과 오답 분석 완료 (3/4주차)",
-        "verification_metric": "기출 1회분 정답률 60% 이상, 시간 초과율 30% 이하"
+        "theme": "객관식 유형 진입 훈련",
+        "verification_metric": "객관식 세트 정답률 55% 이상, 문항당 평균 풀이 시간 기록",
+        "week_no": 10
       },
       {
-        "week_no": 11,
         "days_range": "D-170~D-164",
-        "stage": "past_exam_rotation",
-        "theme": "기출 회독과 약점 보강",
+        "focus_content": [],
+        "milestone": "객관식 유형별 문제 세트 풀이 완료 (5/8주차)",
+        "stage": "objective_entry",
         "subject_allocation": [
           {
-            "subject": "accounting",
             "hours": 35.81,
-            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다."
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
           },
           {
-            "subject": "tax",
             "hours": 20.19,
-            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
           }
         ],
-        "milestone": "기출 1개년 회독과 오답 분석 완료 (4/4주차)",
-        "verification_metric": "기출 1회분 정답률 60% 이상, 시간 초과율 30% 이하"
+        "theme": "객관식 유형 진입 훈련",
+        "verification_metric": "객관식 세트 정답률 55% 이상, 문항당 평균 풀이 시간 기록",
+        "week_no": 11
       },
       {
-        "week_no": 12,
         "days_range": "D-163~D-157",
-        "stage": "mock_exam",
-        "theme": "모의고사 실전 감각 훈련",
+        "focus_content": [],
+        "milestone": "객관식 유형별 문제 세트 풀이 완료 (6/8주차)",
+        "stage": "objective_entry",
         "subject_allocation": [
           {
-            "subject": "accounting",
             "hours": 35.81,
-            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다."
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
           },
           {
-            "subject": "tax",
             "hours": 20.19,
-            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
           }
         ],
-        "milestone": "전 과목 모의고사 1회 응시와 오답 분석 완료 (1/3주차)",
-        "verification_metric": "모의고사 전 과목 평균 60% 이상, 매 과목 40% 이상"
+        "theme": "객관식 유형 진입 훈련",
+        "verification_metric": "객관식 세트 정답률 55% 이상, 문항당 평균 풀이 시간 기록",
+        "week_no": 12
       },
       {
-        "week_no": 13,
         "days_range": "D-156~D-150",
-        "stage": "mock_exam",
-        "theme": "모의고사 실전 감각 훈련",
+        "focus_content": [],
+        "milestone": "객관식 유형별 문제 세트 풀이 완료 (7/8주차)",
+        "stage": "objective_entry",
         "subject_allocation": [
           {
-            "subject": "accounting",
             "hours": 35.81,
-            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다."
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
           },
           {
-            "subject": "tax",
             "hours": 20.19,
-            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
           }
         ],
-        "milestone": "전 과목 모의고사 1회 응시와 오답 분석 완료 (2/3주차)",
-        "verification_metric": "모의고사 전 과목 평균 60% 이상, 매 과목 40% 이상"
+        "theme": "객관식 유형 진입 훈련",
+        "verification_metric": "객관식 세트 정답률 55% 이상, 문항당 평균 풀이 시간 기록",
+        "week_no": 13
       },
       {
-        "week_no": 14,
         "days_range": "D-149~D-143",
-        "stage": "mock_exam",
-        "theme": "모의고사 실전 감각 훈련",
+        "focus_content": [],
+        "milestone": "객관식 유형별 문제 세트 풀이 완료 (8/8주차)",
+        "stage": "objective_entry",
         "subject_allocation": [
           {
-            "subject": "accounting",
             "hours": 35.81,
-            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다."
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
           },
           {
-            "subject": "tax",
             "hours": 20.19,
-            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
           }
         ],
-        "milestone": "전 과목 모의고사 1회 응시와 오답 분석 완료 (3/3주차)",
-        "verification_metric": "모의고사 전 과목 평균 60% 이상, 매 과목 40% 이상"
+        "theme": "객관식 유형 진입 훈련",
+        "verification_metric": "객관식 세트 정답률 55% 이상, 문항당 평균 풀이 시간 기록",
+        "week_no": 14
       },
       {
-        "week_no": 15,
         "days_range": "D-142~D-136",
-        "stage": "final",
-        "theme": "최종 정리와 과락 방어",
+        "focus_content": [],
+        "milestone": "기출 1개년 회독과 오답 분석 완료 (1/11주차)",
+        "stage": "past_exam_rotation",
         "subject_allocation": [
           {
-            "subject": "accounting",
             "hours": 35.81,
-            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다."
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
           },
           {
-            "subject": "tax",
             "hours": 20.19,
-            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
           }
         ],
-        "milestone": "전 범위 핵심 요약 점검 완료 (1/2주차)",
-        "verification_metric": "최종 점검 모의고사 평균 60% 이상 AND 매 과목 40% 이상"
+        "theme": "기출 회독과 약점 보강",
+        "verification_metric": "기출 1회분 정답률 60% 이상, 시간 초과율 30% 이하",
+        "week_no": 15
       },
       {
-        "week_no": 16,
         "days_range": "D-135~D-129",
-        "stage": "final",
-        "theme": "최종 정리와 과락 방어",
+        "focus_content": [],
+        "milestone": "기출 1개년 회독과 오답 분석 완료 (2/11주차)",
+        "stage": "past_exam_rotation",
         "subject_allocation": [
           {
-            "subject": "accounting",
             "hours": 35.81,
-            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다."
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
           },
           {
-            "subject": "tax",
             "hours": 20.19,
-            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다."
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
           }
         ],
+        "theme": "기출 회독과 약점 보강",
+        "verification_metric": "기출 1회분 정답률 60% 이상, 시간 초과율 30% 이하",
+        "week_no": 16
+      },
+      {
+        "days_range": "D-128~D-122",
+        "focus_content": [],
+        "milestone": "기출 1개년 회독과 오답 분석 완료 (3/11주차)",
+        "stage": "past_exam_rotation",
+        "subject_allocation": [
+          {
+            "hours": 35.81,
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
+          },
+          {
+            "hours": 20.19,
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
+          }
+        ],
+        "theme": "기출 회독과 약점 보강",
+        "verification_metric": "기출 1회분 정답률 60% 이상, 시간 초과율 30% 이하",
+        "week_no": 17
+      },
+      {
+        "days_range": "D-121~D-115",
+        "focus_content": [],
+        "milestone": "기출 1개년 회독과 오답 분석 완료 (4/11주차)",
+        "stage": "past_exam_rotation",
+        "subject_allocation": [
+          {
+            "hours": 35.81,
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
+          },
+          {
+            "hours": 20.19,
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
+          }
+        ],
+        "theme": "기출 회독과 약점 보강",
+        "verification_metric": "기출 1회분 정답률 60% 이상, 시간 초과율 30% 이하",
+        "week_no": 18
+      },
+      {
+        "days_range": "D-114~D-108",
+        "focus_content": [],
+        "milestone": "기출 1개년 회독과 오답 분석 완료 (5/11주차)",
+        "stage": "past_exam_rotation",
+        "subject_allocation": [
+          {
+            "hours": 35.81,
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
+          },
+          {
+            "hours": 20.19,
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
+          }
+        ],
+        "theme": "기출 회독과 약점 보강",
+        "verification_metric": "기출 1회분 정답률 60% 이상, 시간 초과율 30% 이하",
+        "week_no": 19
+      },
+      {
+        "days_range": "D-107~D-101",
+        "focus_content": [],
+        "milestone": "기출 1개년 회독과 오답 분석 완료 (6/11주차)",
+        "stage": "past_exam_rotation",
+        "subject_allocation": [
+          {
+            "hours": 35.81,
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
+          },
+          {
+            "hours": 20.19,
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
+          }
+        ],
+        "theme": "기출 회독과 약점 보강",
+        "verification_metric": "기출 1회분 정답률 60% 이상, 시간 초과율 30% 이하",
+        "week_no": 20
+      },
+      {
+        "days_range": "D-100~D-94",
+        "focus_content": [],
+        "milestone": "기출 1개년 회독과 오답 분석 완료 (7/11주차)",
+        "stage": "past_exam_rotation",
+        "subject_allocation": [
+          {
+            "hours": 35.81,
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
+          },
+          {
+            "hours": 20.19,
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
+          }
+        ],
+        "theme": "기출 회독과 약점 보강",
+        "verification_metric": "기출 1회분 정답률 60% 이상, 시간 초과율 30% 이하",
+        "week_no": 21
+      },
+      {
+        "days_range": "D-93~D-87",
+        "focus_content": [],
+        "milestone": "기출 1개년 회독과 오답 분석 완료 (8/11주차)",
+        "stage": "past_exam_rotation",
+        "subject_allocation": [
+          {
+            "hours": 35.81,
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
+          },
+          {
+            "hours": 20.19,
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
+          }
+        ],
+        "theme": "기출 회독과 약점 보강",
+        "verification_metric": "기출 1회분 정답률 60% 이상, 시간 초과율 30% 이하",
+        "week_no": 22
+      },
+      {
+        "days_range": "D-86~D-80",
+        "focus_content": [],
+        "milestone": "기출 1개년 회독과 오답 분석 완료 (9/11주차)",
+        "stage": "past_exam_rotation",
+        "subject_allocation": [
+          {
+            "hours": 35.81,
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
+          },
+          {
+            "hours": 20.19,
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
+          }
+        ],
+        "theme": "기출 회독과 약점 보강",
+        "verification_metric": "기출 1회분 정답률 60% 이상, 시간 초과율 30% 이하",
+        "week_no": 23
+      },
+      {
+        "days_range": "D-79~D-73",
+        "focus_content": [],
+        "milestone": "기출 1개년 회독과 오답 분석 완료 (10/11주차)",
+        "stage": "past_exam_rotation",
+        "subject_allocation": [
+          {
+            "hours": 35.81,
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
+          },
+          {
+            "hours": 20.19,
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
+          }
+        ],
+        "theme": "기출 회독과 약점 보강",
+        "verification_metric": "기출 1회분 정답률 60% 이상, 시간 초과율 30% 이하",
+        "week_no": 24
+      },
+      {
+        "days_range": "D-72~D-66",
+        "focus_content": [],
+        "milestone": "기출 1개년 회독과 오답 분석 완료 (11/11주차)",
+        "stage": "past_exam_rotation",
+        "subject_allocation": [
+          {
+            "hours": 35.81,
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
+          },
+          {
+            "hours": 20.19,
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
+          }
+        ],
+        "theme": "기출 회독과 약점 보강",
+        "verification_metric": "기출 1회분 정답률 60% 이상, 시간 초과율 30% 이하",
+        "week_no": 25
+      },
+      {
+        "days_range": "D-65~D-59",
+        "focus_content": [],
+        "milestone": "전 과목 모의고사 1회 응시와 오답 분석 완료 (1/6주차)",
+        "stage": "mock_exam",
+        "subject_allocation": [
+          {
+            "hours": 35.81,
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
+          },
+          {
+            "hours": 20.19,
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
+          }
+        ],
+        "theme": "모의고사 실전 감각 훈련",
+        "verification_metric": "모의고사 전 과목 평균 60% 이상, 매 과목 40% 이상",
+        "week_no": 26
+      },
+      {
+        "days_range": "D-58~D-52",
+        "focus_content": [],
+        "milestone": "전 과목 모의고사 1회 응시와 오답 분석 완료 (2/6주차)",
+        "stage": "mock_exam",
+        "subject_allocation": [
+          {
+            "hours": 35.81,
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
+          },
+          {
+            "hours": 20.19,
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
+          }
+        ],
+        "theme": "모의고사 실전 감각 훈련",
+        "verification_metric": "모의고사 전 과목 평균 60% 이상, 매 과목 40% 이상",
+        "week_no": 27
+      },
+      {
+        "days_range": "D-51~D-45",
+        "focus_content": [],
+        "milestone": "전 과목 모의고사 1회 응시와 오답 분석 완료 (3/6주차)",
+        "stage": "mock_exam",
+        "subject_allocation": [
+          {
+            "hours": 35.81,
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
+          },
+          {
+            "hours": 20.19,
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
+          }
+        ],
+        "theme": "모의고사 실전 감각 훈련",
+        "verification_metric": "모의고사 전 과목 평균 60% 이상, 매 과목 40% 이상",
+        "week_no": 28
+      },
+      {
+        "days_range": "D-44~D-38",
+        "focus_content": [],
+        "milestone": "전 과목 모의고사 1회 응시와 오답 분석 완료 (4/6주차)",
+        "stage": "mock_exam",
+        "subject_allocation": [
+          {
+            "hours": 35.81,
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
+          },
+          {
+            "hours": 20.19,
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
+          }
+        ],
+        "theme": "모의고사 실전 감각 훈련",
+        "verification_metric": "모의고사 전 과목 평균 60% 이상, 매 과목 40% 이상",
+        "week_no": 29
+      },
+      {
+        "days_range": "D-37~D-31",
+        "focus_content": [],
+        "milestone": "전 과목 모의고사 1회 응시와 오답 분석 완료 (5/6주차)",
+        "stage": "mock_exam",
+        "subject_allocation": [
+          {
+            "hours": 35.81,
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
+          },
+          {
+            "hours": 20.19,
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
+          }
+        ],
+        "theme": "모의고사 실전 감각 훈련",
+        "verification_metric": "모의고사 전 과목 평균 60% 이상, 매 과목 40% 이상",
+        "week_no": 30
+      },
+      {
+        "days_range": "D-30~D-24",
+        "focus_content": [],
+        "milestone": "전 과목 모의고사 1회 응시와 오답 분석 완료 (6/6주차)",
+        "stage": "mock_exam",
+        "subject_allocation": [
+          {
+            "hours": 35.81,
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
+          },
+          {
+            "hours": 20.19,
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
+          }
+        ],
+        "theme": "모의고사 실전 감각 훈련",
+        "verification_metric": "모의고사 전 과목 평균 60% 이상, 매 과목 40% 이상",
+        "week_no": 31
+      },
+      {
+        "days_range": "D-23~D-17",
+        "focus_content": [],
+        "milestone": "전 범위 핵심 요약 점검 완료 (1/4주차)",
+        "stage": "final",
+        "subject_allocation": [
+          {
+            "hours": 35.81,
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
+          },
+          {
+            "hours": 20.19,
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
+          }
+        ],
+        "theme": "최종 정리와 과락 방어",
+        "verification_metric": "최종 점검 모의고사 평균 60% 이상 AND 매 과목 40% 이상",
+        "week_no": 32
+      },
+      {
+        "days_range": "D-16~D-10",
+        "focus_content": [],
+        "milestone": "전 범위 핵심 요약 점검 완료 (2/4주차)",
+        "stage": "final",
+        "subject_allocation": [
+          {
+            "hours": 35.81,
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
+          },
+          {
+            "hours": 20.19,
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
+          }
+        ],
+        "theme": "최종 정리와 과락 방어",
+        "verification_metric": "최종 점검 모의고사 평균 60% 이상 AND 매 과목 40% 이상",
+        "week_no": 33
+      },
+      {
+        "days_range": "D-9~D-3",
+        "focus_content": [],
+        "milestone": "전 범위 핵심 요약 점검 완료 (3/4주차)",
+        "stage": "final",
+        "subject_allocation": [
+          {
+            "hours": 35.81,
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
+          },
+          {
+            "hours": 20.19,
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
+          }
+        ],
+        "theme": "최종 정리와 과락 방어",
+        "verification_metric": "최종 점검 모의고사 평균 60% 이상 AND 매 과목 40% 이상",
+        "week_no": 34
+      },
+      {
+        "days_range": "D-2~D-0",
+        "focus_content": [],
         "milestone": "모의/최종 점검 — 전 과목 평균 60% 이상 및 매 과목 40% 이상(과락 방어) 확인",
-        "verification_metric": "최종 점검 모의고사에서 전 과목 평균 60% 이상 AND 매 과목 40% 이상 득점"
-      }
-    ],
-    "strategy_summary": "D-240 기준 총 16주 로드맵: 강의 복습 3주 → 객관식 진입 4주 → 기출 회독 4주 → 모의고사 3주 → 파이널 2주. 과락 위험 과목(회계)은 주당 최소 15% 시간을 보장해 40% 과락선을 방어한다. 약점 과목(세법)에 시간을 가중 배정한다. 합격 기준은 전 과목 평균 60% 이상 AND 매 과목 40% 이상이다.",
-    "evidence_refs": [
-      {
-        "ref_type": "user_state",
-        "ref_id": "seed-user-post-lecture",
-        "note": "stage=post_lecture, days_until_exam=240, available_hours_per_day=8"
-      },
-      {
-        "ref_type": "subject_state",
-        "ref_id": "accounting",
-        "note": "accuracy=0.38, time_overrun_rate=0.18"
-      },
-      {
-        "ref_type": "subject_state",
-        "ref_id": "tax",
-        "note": "accuracy=0.41, time_overrun_rate=0.22"
-      },
-      {
-        "ref_type": "pass_criteria",
-        "ref_id": "CPA_1",
-        "note": "전 과목 평균 60% 이상 AND 매 과목 40% 이상(과락 기준)"
+        "stage": "final",
+        "subject_allocation": [
+          {
+            "hours": 35.81,
+            "reason": "회계 정답률 38% — 과락선(40%) 미달이라 집중 보강 가중을 적용하고 주당 최소 15% 시간을 보장한다.",
+            "subject": "accounting"
+          },
+          {
+            "hours": 20.19,
+            "reason": "세법 정답률 41% — 약점 가중 배분으로 정답률이 낮을수록 시간을 더 배정한다.",
+            "subject": "tax"
+          }
+        ],
+        "theme": "최종 정리와 과락 방어",
+        "verification_metric": "최종 점검 모의고사에서 전 과목 평균 60% 이상 AND 매 과목 40% 이상 득점",
+        "week_no": 35
       }
     ]
   },
@@ -410,31 +855,9 @@
     "objective_entry_timing",
     "accounting_tax_core_focus"
   ],
-  "evidence_refs": [
-    {
-      "ref_type": "user_state",
-      "ref_id": "seed-user-post-lecture",
-      "note": "stage=post_lecture, days_until_exam=240"
-    },
-    {
-      "ref_type": "decision_rule",
-      "ref_id": "accounting_fail_defense",
-      "note": "회계학 과락 방어"
-    },
-    {
-      "ref_type": "decision_rule",
-      "ref_id": "concept_rebuild_priority",
-      "note": "개념 재정렬 우선"
-    },
-    {
-      "ref_type": "decision_rule",
-      "ref_id": "objective_entry_timing",
-      "note": "객관식 전환 조건"
-    },
-    {
-      "ref_type": "decision_rule",
-      "ref_id": "accounting_tax_core_focus",
-      "note": "회계/세법 핵심축 집중"
-    }
-  ]
+  "user_id": "seed-user-post-lecture",
+  "weekly_goal": {
+    "goal_text": "신규 단원 진입을 중단하고, 약점 단원의 객관식 기초형부터 회복한다. 매일 동일 단원 객관식 12문항을 동일 시간대에 반복해 흡수율을 끌어올린다.",
+    "verification_metric": "주간 처방 수행률 80% 이상, 매칭 규칙 accounting_fail_defense 관련 약점 지표 측정"
+  }
 }

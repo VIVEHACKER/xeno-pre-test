@@ -83,6 +83,20 @@ STAGE_METRICS: dict[str, str] = {
 PASS_AVERAGE = 0.60
 PASS_SUBJECT_FLOOR = 0.40
 
+# 플랜 지평 상한. 1년(52주) 완주 로드맵을 표현할 수 있어야 한다 —
+# 과거 16주 상한은 D-365 입력을 조용히 절단해 "1년 플랜" 자체가 불가능했다.
+DEFAULT_MAX_WEEKS = 52
+
+# 합격 필요 총 학습시간 추정(시간). 통상 수험 통계 3,000~5,000h 범위의 보수적
+# 중앙 추정 — 정밀 통계가 아니므로 feasibility 노트에 가정임을 명시한다.
+TOTAL_REQUIRED_HOURS = 3500
+
+# feasibility 판정 임계값: planned/required 비율.
+FEASIBILITY_TIGHT_RATIO = 0.70
+
+# 튜토리얼(교습 콘텐츠)을 배정하는 단계.
+TEACHING_STAGES = frozenset({"intro", "post_lecture", "objective_entry"})
+
 # 과목 시간 배분 임계값. FAIL_RISK_ACCURACY는 prescribe.py와 동일 기준.
 FAIL_RISK_ACCURACY = 0.40
 STABLE_ACCURACY = 0.70
@@ -312,6 +326,166 @@ def _strategy_summary(
     return " ".join(parts)
 
 
+def _feasibility(current_stage: str, total_weeks: int, hours_per_week: float) -> dict:
+    """계획 시간 vs 합격 필요 시간 대조 — '이 계획으로 되는가'에 대한 정직한 답.
+
+    필요 시간은 전체 여정 3,500h(통상 3,000~5,000h 통계의 중앙 추정)에
+    잔여 단계 가중치 비율을 곱해 추정한다. 정밀 예측이 아니라 경고 장치다.
+    """
+    stages = _remaining_stages(current_stage)
+    total_weight = sum(STAGE_WEEK_WEIGHTS.values())
+    remaining_weight = sum(STAGE_WEEK_WEIGHTS[s] for s in stages)
+    required = round(TOTAL_REQUIRED_HOURS * remaining_weight / total_weight)
+    planned = round(total_weeks * hours_per_week)
+    ratio = planned / required if required > 0 else 0.0
+
+    if ratio >= 1.0:
+        verdict = "sufficient"
+        note = (
+            f"계획 학습시간 {planned}h가 잔여 단계 필요 추정치 {required}h를 충족한다. "
+            "페이스 유지 시 시간 관점에서는 합격권 진입이 가능하다."
+        )
+    elif ratio >= FEASIBILITY_TIGHT_RATIO:
+        verdict = "tight"
+        note = (
+            f"계획 학습시간 {planned}h가 필요 추정치 {required}h의 "
+            f"{round(ratio * 100)}%다. 가용 시간을 늘리거나 우선순위 낮은 "
+            "범위를 전략적으로 버리는 선택이 필요하다."
+        )
+    else:
+        verdict = "insufficient"
+        note = (
+            f"계획 학습시간 {planned}h는 필요 추정치 {required}h의 "
+            f"{round(ratio * 100)}%에 불과하다 — 이 시간으로는 합격권 도달이 "
+            "어렵다. available_hours_per_day 상향 또는 목표 시험 연도 조정을 권한다."
+        )
+    return {
+        "required_hours_estimate": required,
+        "planned_hours": planned,
+        "ratio": round(ratio, 2),
+        "verdict": verdict,
+        "note": note,
+        "assumption": (
+            "전체 여정 필요시간을 3,500h(통상 3,000~5,000h 수험 통계의 중앙 추정)로 두고 "
+            "잔여 단계 가중치 비율로 환산한 추정치 — 개인 편차가 크다."
+        ),
+    }
+
+
+def _catalog_tutorials_by_subject(content_catalog: dict | None) -> dict[str, list[dict]]:
+    """카탈로그 튜토리얼을 엔진 과목 키로 그룹핑. intro 먼저, 그다음 우선순위·ID 순."""
+    grouped: dict[str, list[dict]] = {}
+    for t in (content_catalog or {}).get("tutorials", []):
+        grouped.setdefault(t["subject"], []).append(t)
+    for items in grouped.values():
+        items.sort(
+            key=lambda t: (
+                0 if t.get("level") == "intro_low" else 1,
+                t.get("priority", 9),
+                t["tutorial_id"],
+            )
+        )
+    return grouped
+
+
+def _assign_week_content(
+    weeks: list[dict],
+    subject_states: list[dict],
+    content_catalog: dict | None,
+) -> None:
+    """주차별 focus_content 배정 — '이번 주에 무엇을 공부하는가'의 구체적 답.
+
+    - 교습 단계(intro/post_lecture/objective_entry): 과목별 튜토리얼을 해당
+      단계 주차들에 결정론적으로 균등 분할 배정
+    - objective_entry: 합성 연습 세트 참조 추가
+    - past_exam_rotation: 기출 연도를 오래된 순으로 순환 배정 (연도별 회독)
+    - mock_exam: 최신 연도 실전 모의 응시
+    - final: 오답 전면 복습
+    항목의 refs는 /tutorials·/practice API 쿼리로 바로 해석 가능한 형태다.
+    """
+    for week in weeks:
+        week["focus_content"] = []
+    if not content_catalog:
+        return
+
+    subjects = [s["subject"] for s in subject_states]
+    tutorials_by_subject = _catalog_tutorials_by_subject(content_catalog)
+    real_years_by_subject: dict[str, dict[int, int]] = content_catalog.get("real_exam_years", {})
+    synthetic_counts: dict[str, int] = content_catalog.get("synthetic_counts", {})
+    all_years = sorted({y for years in real_years_by_subject.values() for y in years})
+
+    teaching_idx = [i for i, w in enumerate(weeks) if w["stage"] in TEACHING_STAGES]
+    for subject in subjects:
+        tuts = tutorials_by_subject.get(subject, [])
+        if not tuts or not teaching_idx:
+            continue
+        # 튜토리얼을 교습 주차에 균등 분할(앞 주차부터). n주에 m개 → 주당 ceil 분배.
+        per_week = math.ceil(len(tuts) / len(teaching_idx))
+        for slot, start in enumerate(range(0, len(tuts), per_week)):
+            if slot >= len(teaching_idx):
+                break
+            for t in tuts[start : start + per_week]:
+                weeks[teaching_idx[slot]]["focus_content"].append(
+                    {
+                        "type": "tutorial",
+                        "subject": subject,
+                        "tutorial_id": t["tutorial_id"],
+                        "level": t.get("level"),
+                        "ontology_node": t.get("ontology_node"),
+                    }
+                )
+
+    rotation_slot = 0
+    for week in weeks:
+        stage = week["stage"]
+        if stage == "objective_entry":
+            for subject in subjects:
+                count = synthetic_counts.get(subject, 0)
+                if count:
+                    week["focus_content"].append(
+                        {
+                            "type": "practice_set",
+                            "subject": subject,
+                            "source": "synthetic",
+                            "available_questions": count,
+                            "api_query": f"/practice?source=synthetic&subject={subject}",
+                        }
+                    )
+        elif stage == "past_exam_rotation" and all_years:
+            year = all_years[rotation_slot % len(all_years)]
+            rotation_slot += 1
+            for subject in subjects:
+                count = real_years_by_subject.get(subject, {}).get(year, 0)
+                if count:
+                    week["focus_content"].append(
+                        {
+                            "type": "real_exam_set",
+                            "subject": subject,
+                            "year": year,
+                            "available_questions": count,
+                            "api_query": f"/practice?source=real_exam&year={year}&subject={subject}",
+                        }
+                    )
+        elif stage == "mock_exam" and all_years:
+            year = all_years[-1]
+            week["focus_content"].append(
+                {
+                    "type": "mock_exam",
+                    "year": year,
+                    "note": f"{year}년 기출 전 과목을 실제 시험 시간 배분으로 응시한다.",
+                    "api_query": f"/practice?source=real_exam&year={year}",
+                }
+            )
+        elif stage == "final":
+            week["focus_content"].append(
+                {
+                    "type": "wrong_answer_review",
+                    "note": "누적 오답 전면 재풀이 — /attempts에서 오답 문항을 조회해 재시도한다.",
+                    "api_query": "/attempts",
+                }
+            )
+
+
 def _fallback_plan(user_state: dict, hours_per_week: float) -> dict:
     """subject_states가 비었을 때의 진단 보강 1주 플랜."""
     n = len(FALLBACK_SUBJECTS)
@@ -354,12 +528,20 @@ def _fallback_plan(user_state: dict, hours_per_week: float) -> dict:
     }
 
 
-def build_study_plan(user_state: dict, *, max_weeks: int = 16) -> dict:
+def build_study_plan(
+    user_state: dict,
+    *,
+    max_weeks: int = DEFAULT_MAX_WEEKS,
+    content_catalog: dict | None = None,
+) -> dict:
     """D-day 기반 다주차 학습 로드맵을 생성한다.
 
     동일 user_state 입력은 동일 출력을 보장한다. 모든 주에 측정 가능한
     verification_metric을, 모든 과목 배분에 한국어 reason을 첨부하고,
     evidence_refs로 근거 추적이 가능하다.
+
+    content_catalog가 주어지면 주차별 focus_content(튜토리얼/문항 세트 배정)를
+    채운다 — 주차 테마 문자열만으로는 '이번 주에 무엇을 공부할지'를 알 수 없다.
     """
     days = int(user_state["days_until_exam"])
     hours_per_week = round(float(user_state["available_hours_per_day"]) * 7, 2)
@@ -401,11 +583,14 @@ def build_study_plan(user_state: dict, *, max_weeks: int = 16) -> dict:
     weeks[-1]["milestone"] = FINAL_WEEK_MILESTONE
     weeks[-1]["verification_metric"] = FINAL_WEEK_METRIC
 
+    _assign_week_content(weeks, subject_states, content_catalog)
+
     return {
         "total_weeks": total_weeks,
         "hours_per_week": hours_per_week,
         "pass_bar": {"average": PASS_AVERAGE, "per_subject_floor": PASS_SUBJECT_FLOOR},
         "weeks": weeks,
+        "feasibility": _feasibility(user_state["current_stage"], total_weeks, hours_per_week),
         "strategy_summary": _strategy_summary(user_state, total_weeks, stage_weeks),
         "evidence_refs": _evidence_refs(user_state),
     }
